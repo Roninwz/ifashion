@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.person.mapper.TagMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.Tag">
+    <id column="id_tag" jdbcType="INTEGER" property="idTag" />
+    <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
+    <result column="tag_mark" jdbcType="VARCHAR" property="tagMark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_tag, tag_name, tag_mark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tag
+    where id_tag = #{idTag,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tag
+    where id_tag = #{idTag,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.person.entity.Tag">
+    insert into tag (id_tag, tag_name, tag_mark
+      )
+    values (#{idTag,jdbcType=INTEGER}, #{tagName,jdbcType=VARCHAR}, #{tagMark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.person.entity.Tag">
+    insert into tag
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idTag != null">
+        id_tag,
+      </if>
+      <if test="tagName != null">
+        tag_name,
+      </if>
+      <if test="tagMark != null">
+        tag_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idTag != null">
+        #{idTag,jdbcType=INTEGER},
+      </if>
+      <if test="tagName != null">
+        #{tagName,jdbcType=VARCHAR},
+      </if>
+      <if test="tagMark != null">
+        #{tagMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.person.entity.Tag">
+    update tag
+    <set>
+      <if test="tagName != null">
+        tag_name = #{tagName,jdbcType=VARCHAR},
+      </if>
+      <if test="tagMark != null">
+        tag_mark = #{tagMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_tag = #{idTag,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.person.entity.Tag">
+    update tag
+    set tag_name = #{tagName,jdbcType=VARCHAR},
+      tag_mark = #{tagMark,jdbcType=VARCHAR}
+    where id_tag = #{idTag,jdbcType=INTEGER}
+  </update>
+</mapper>

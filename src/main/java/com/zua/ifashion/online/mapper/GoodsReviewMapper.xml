@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.online.mapper.GoodsReviewMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.online.entity.GoodsReview">
+    <id column="id_goodsreview" jdbcType="INTEGER" property="idGoodsreview" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="review_content" jdbcType="VARCHAR" property="reviewContent" />
+    <result column="review_rank" jdbcType="VARCHAR" property="reviewRank" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_goodsreview, user_id, goods_id, review_content, review_rank
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from goods_review
+    where id_goodsreview = #{idGoodsreview,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from goods_review
+    where id_goodsreview = #{idGoodsreview,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.online.entity.GoodsReview">
+    insert into goods_review (id_goodsreview, user_id, goods_id, 
+      review_content, review_rank)
+    values (#{idGoodsreview,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, 
+      #{reviewContent,jdbcType=VARCHAR}, #{reviewRank,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.online.entity.GoodsReview">
+    insert into goods_review
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idGoodsreview != null">
+        id_goodsreview,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="reviewContent != null">
+        review_content,
+      </if>
+      <if test="reviewRank != null">
+        review_rank,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idGoodsreview != null">
+        #{idGoodsreview,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="reviewContent != null">
+        #{reviewContent,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewRank != null">
+        #{reviewRank,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.online.entity.GoodsReview">
+    update goods_review
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="reviewContent != null">
+        review_content = #{reviewContent,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewRank != null">
+        review_rank = #{reviewRank,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_goodsreview = #{idGoodsreview,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.online.entity.GoodsReview">
+    update goods_review
+    set user_id = #{userId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      review_content = #{reviewContent,jdbcType=VARCHAR},
+      review_rank = #{reviewRank,jdbcType=VARCHAR}
+    where id_goodsreview = #{idGoodsreview,jdbcType=INTEGER}
+  </update>
+</mapper>

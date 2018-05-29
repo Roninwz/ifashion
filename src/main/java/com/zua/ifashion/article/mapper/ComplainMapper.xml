@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.article.mapper.ComplainMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.article.entity.Complain">
+    <id column="id_complain" jdbcType="INTEGER" property="idComplain" />
+    <result column="review_id" jdbcType="INTEGER" property="reviewId" />
+    <result column="complain_userid" jdbcType="INTEGER" property="complainUserid" />
+    <result column="complained_userid" jdbcType="INTEGER" property="complainedUserid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.article.entity.Complain">
+    <result column="complain_reason" jdbcType="LONGVARCHAR" property="complainReason" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_complain, review_id, complain_userid, complained_userid
+  </sql>
+  <sql id="Blob_Column_List">
+    complain_reason
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from complain
+    where id_complain = #{idComplain,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from complain
+    where id_complain = #{idComplain,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.article.entity.Complain">
+    insert into complain (id_complain, review_id, complain_userid, 
+      complained_userid, complain_reason)
+    values (#{idComplain,jdbcType=INTEGER}, #{reviewId,jdbcType=INTEGER}, #{complainUserid,jdbcType=INTEGER}, 
+      #{complainedUserid,jdbcType=INTEGER}, #{complainReason,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.article.entity.Complain">
+    insert into complain
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idComplain != null">
+        id_complain,
+      </if>
+      <if test="reviewId != null">
+        review_id,
+      </if>
+      <if test="complainUserid != null">
+        complain_userid,
+      </if>
+      <if test="complainedUserid != null">
+        complained_userid,
+      </if>
+      <if test="complainReason != null">
+        complain_reason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idComplain != null">
+        #{idComplain,jdbcType=INTEGER},
+      </if>
+      <if test="reviewId != null">
+        #{reviewId,jdbcType=INTEGER},
+      </if>
+      <if test="complainUserid != null">
+        #{complainUserid,jdbcType=INTEGER},
+      </if>
+      <if test="complainedUserid != null">
+        #{complainedUserid,jdbcType=INTEGER},
+      </if>
+      <if test="complainReason != null">
+        #{complainReason,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.article.entity.Complain">
+    update complain
+    <set>
+      <if test="reviewId != null">
+        review_id = #{reviewId,jdbcType=INTEGER},
+      </if>
+      <if test="complainUserid != null">
+        complain_userid = #{complainUserid,jdbcType=INTEGER},
+      </if>
+      <if test="complainedUserid != null">
+        complained_userid = #{complainedUserid,jdbcType=INTEGER},
+      </if>
+      <if test="complainReason != null">
+        complain_reason = #{complainReason,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_complain = #{idComplain,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.article.entity.Complain">
+    update complain
+    set review_id = #{reviewId,jdbcType=INTEGER},
+      complain_userid = #{complainUserid,jdbcType=INTEGER},
+      complained_userid = #{complainedUserid,jdbcType=INTEGER},
+      complain_reason = #{complainReason,jdbcType=LONGVARCHAR}
+    where id_complain = #{idComplain,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.article.entity.Complain">
+    update complain
+    set review_id = #{reviewId,jdbcType=INTEGER},
+      complain_userid = #{complainUserid,jdbcType=INTEGER},
+      complained_userid = #{complainedUserid,jdbcType=INTEGER}
+    where id_complain = #{idComplain,jdbcType=INTEGER}
+  </update>
+</mapper>

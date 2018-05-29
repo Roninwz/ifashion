@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.article.mapper.ReplyReviewMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.article.entity.ReplyReview">
+    <id column="id_replyreview" jdbcType="INTEGER" property="idReplyreview" />
+    <result column="review_id" jdbcType="INTEGER" property="reviewId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="usered_id" jdbcType="INTEGER" property="useredId" />
+    <result column="reply_date" jdbcType="TIMESTAMP" property="replyDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.article.entity.ReplyReview">
+    <result column="reply_content" jdbcType="LONGVARCHAR" property="replyContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_replyreview, review_id, user_id, usered_id, reply_date
+  </sql>
+  <sql id="Blob_Column_List">
+    reply_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from reply_review
+    where id_replyreview = #{idReplyreview,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from reply_review
+    where id_replyreview = #{idReplyreview,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+    insert into reply_review (id_replyreview, review_id, user_id, 
+      usered_id, reply_date, reply_content
+      )
+    values (#{idReplyreview,jdbcType=INTEGER}, #{reviewId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{useredId,jdbcType=INTEGER}, #{replyDate,jdbcType=TIMESTAMP}, #{replyContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+    insert into reply_review
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idReplyreview != null">
+        id_replyreview,
+      </if>
+      <if test="reviewId != null">
+        review_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="useredId != null">
+        usered_id,
+      </if>
+      <if test="replyDate != null">
+        reply_date,
+      </if>
+      <if test="replyContent != null">
+        reply_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idReplyreview != null">
+        #{idReplyreview,jdbcType=INTEGER},
+      </if>
+      <if test="reviewId != null">
+        #{reviewId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="useredId != null">
+        #{useredId,jdbcType=INTEGER},
+      </if>
+      <if test="replyDate != null">
+        #{replyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyContent != null">
+        #{replyContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+    update reply_review
+    <set>
+      <if test="reviewId != null">
+        review_id = #{reviewId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="useredId != null">
+        usered_id = #{useredId,jdbcType=INTEGER},
+      </if>
+      <if test="replyDate != null">
+        reply_date = #{replyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyContent != null">
+        reply_content = #{replyContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_replyreview = #{idReplyreview,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+    update reply_review
+    set review_id = #{reviewId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      usered_id = #{useredId,jdbcType=INTEGER},
+      reply_date = #{replyDate,jdbcType=TIMESTAMP},
+      reply_content = #{replyContent,jdbcType=LONGVARCHAR}
+    where id_replyreview = #{idReplyreview,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+    update reply_review
+    set review_id = #{reviewId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      usered_id = #{useredId,jdbcType=INTEGER},
+      reply_date = #{replyDate,jdbcType=TIMESTAMP}
+    where id_replyreview = #{idReplyreview,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<!-- 加载 映射文件 -->
+	<mappers>
+		<!-- 
+			和spring整合后，使用mapper扫描器，这里不需要配置了
+		 但必须遵循mapper.xml和mapper.java同名且在同一个目录
+		 -->
+
+	</mappers>
+	
+	
+	<!-- 配置别名 -->
+	
+	
+	<!-- 全局setting配置，根据需要 -->
+
+    
+
+	
+	
+
+</configuration>

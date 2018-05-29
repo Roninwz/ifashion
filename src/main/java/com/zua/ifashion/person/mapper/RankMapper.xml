@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.person.mapper.RankMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.Rank">
+    <id column="id_rank" jdbcType="INTEGER" property="idRank" />
+    <result column="rank_name" jdbcType="VARCHAR" property="rankName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_rank, rank_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rank
+    where id_rank = #{idRank,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rank
+    where id_rank = #{idRank,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.person.entity.Rank">
+    insert into rank (id_rank, rank_name)
+    values (#{idRank,jdbcType=INTEGER}, #{rankName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.person.entity.Rank">
+    insert into rank
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idRank != null">
+        id_rank,
+      </if>
+      <if test="rankName != null">
+        rank_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idRank != null">
+        #{idRank,jdbcType=INTEGER},
+      </if>
+      <if test="rankName != null">
+        #{rankName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.person.entity.Rank">
+    update rank
+    <set>
+      <if test="rankName != null">
+        rank_name = #{rankName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_rank = #{idRank,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.person.entity.Rank">
+    update rank
+    set rank_name = #{rankName,jdbcType=VARCHAR}
+    where id_rank = #{idRank,jdbcType=INTEGER}
+  </update>
+</mapper>

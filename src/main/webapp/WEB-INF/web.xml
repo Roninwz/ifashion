@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ifashion</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 发生网页错误,跳转到错误界面 -->
+  <!-- <error-page>
+      <exception-type>java.lang.Throwable</exception-type>
+      <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+      <error-code>500</error-code>
+      <location>/500.jsp</location>
+  </error-page>
+  <error-page>
+      <error-code>404</error-code>
+      <location>/404.jsp</location>
+  </error-page> -->
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring/applicationContext-*.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- springmvc前端控制器 -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--  配置springmvc加载的配置文件，默认是/WEB-INF/servlet名称-servlet.xml-->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring/springmvc.xml</param-value>
+    </init-param>
+  </servlet>
+  <!--
+  第一种：*.action,访问以.action结尾由DispatcherServlet进行解析
+  第二种：/ 所有访问的地址都有DispatcherServlet进行解析，对于静态文件的解析需要配置不让DispatcherServlet进行解析，使用此种方法能实现RESTful风格的url
+  第三种：/*  这样配置不对 ，使用这种配置，最终要转发到jsp页面时，仍然会由DispatcherServlet解析jsp地址，不能根据jsp页面找到handle,回报错
+   -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.action</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

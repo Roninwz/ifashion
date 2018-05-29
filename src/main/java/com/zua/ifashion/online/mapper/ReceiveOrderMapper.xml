@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.online.mapper.ReceiveOrderMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.online.entity.ReceiveOrder">
+    <id column="id_receiveorder" jdbcType="INTEGER" property="idReceiveorder" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="designer_id" jdbcType="INTEGER" property="designerId" />
+    <result column="orders_id" jdbcType="INTEGER" property="ordersId" />
+    <result column="start_date" jdbcType="TIMESTAMP" property="startDate" />
+    <result column="end_state" jdbcType="TIMESTAMP" property="endState" />
+    <result column="orders_date" jdbcType="TIMESTAMP" property="ordersDate" />
+    <result column="true_order" jdbcType="VARCHAR" property="trueOrder" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_receiveorder, user_id, designer_id, orders_id, start_date, end_state, orders_date, 
+    true_order
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from receive_order
+    where id_receiveorder = #{idReceiveorder,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from receive_order
+    where id_receiveorder = #{idReceiveorder,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.online.entity.ReceiveOrder">
+    insert into receive_order (id_receiveorder, user_id, designer_id, 
+      orders_id, start_date, end_state, 
+      orders_date, true_order)
+    values (#{idReceiveorder,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{designerId,jdbcType=INTEGER}, 
+      #{ordersId,jdbcType=INTEGER}, #{startDate,jdbcType=TIMESTAMP}, #{endState,jdbcType=TIMESTAMP}, 
+      #{ordersDate,jdbcType=TIMESTAMP}, #{trueOrder,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.online.entity.ReceiveOrder">
+    insert into receive_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idReceiveorder != null">
+        id_receiveorder,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="designerId != null">
+        designer_id,
+      </if>
+      <if test="ordersId != null">
+        orders_id,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="endState != null">
+        end_state,
+      </if>
+      <if test="ordersDate != null">
+        orders_date,
+      </if>
+      <if test="trueOrder != null">
+        true_order,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idReceiveorder != null">
+        #{idReceiveorder,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="designerId != null">
+        #{designerId,jdbcType=INTEGER},
+      </if>
+      <if test="ordersId != null">
+        #{ordersId,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endState != null">
+        #{endState,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordersDate != null">
+        #{ordersDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trueOrder != null">
+        #{trueOrder,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.online.entity.ReceiveOrder">
+    update receive_order
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="designerId != null">
+        designer_id = #{designerId,jdbcType=INTEGER},
+      </if>
+      <if test="ordersId != null">
+        orders_id = #{ordersId,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endState != null">
+        end_state = #{endState,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordersDate != null">
+        orders_date = #{ordersDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="trueOrder != null">
+        true_order = #{trueOrder,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_receiveorder = #{idReceiveorder,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.online.entity.ReceiveOrder">
+    update receive_order
+    set user_id = #{userId,jdbcType=INTEGER},
+      designer_id = #{designerId,jdbcType=INTEGER},
+      orders_id = #{ordersId,jdbcType=INTEGER},
+      start_date = #{startDate,jdbcType=TIMESTAMP},
+      end_state = #{endState,jdbcType=TIMESTAMP},
+      orders_date = #{ordersDate,jdbcType=TIMESTAMP},
+      true_order = #{trueOrder,jdbcType=VARCHAR}
+    where id_receiveorder = #{idReceiveorder,jdbcType=INTEGER}
+  </update>
+</mapper>

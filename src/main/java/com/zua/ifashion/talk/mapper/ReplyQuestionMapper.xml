@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.talk.mapper.ReplyQuestionMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.talk.entity.ReplyQuestion">
+    <id column="id_replyquestion" jdbcType="INTEGER" property="idReplyquestion" />
+    <result column="question_id" jdbcType="INTEGER" property="questionId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="reply_date" jdbcType="TIMESTAMP" property="replyDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.talk.entity.ReplyQuestion">
+    <result column="reply_content" jdbcType="LONGVARCHAR" property="replyContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_replyquestion, question_id, user_id, reply_date
+  </sql>
+  <sql id="Blob_Column_List">
+    reply_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from reply_question
+    where id_replyquestion = #{idReplyquestion,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from reply_question
+    where id_replyquestion = #{idReplyquestion,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    insert into reply_question (id_replyquestion, question_id, user_id, 
+      reply_date, reply_content)
+    values (#{idReplyquestion,jdbcType=INTEGER}, #{questionId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{replyDate,jdbcType=TIMESTAMP}, #{replyContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    insert into reply_question
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idReplyquestion != null">
+        id_replyquestion,
+      </if>
+      <if test="questionId != null">
+        question_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="replyDate != null">
+        reply_date,
+      </if>
+      <if test="replyContent != null">
+        reply_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idReplyquestion != null">
+        #{idReplyquestion,jdbcType=INTEGER},
+      </if>
+      <if test="questionId != null">
+        #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="replyDate != null">
+        #{replyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyContent != null">
+        #{replyContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    update reply_question
+    <set>
+      <if test="questionId != null">
+        question_id = #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="replyDate != null">
+        reply_date = #{replyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="replyContent != null">
+        reply_content = #{replyContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_replyquestion = #{idReplyquestion,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    update reply_question
+    set question_id = #{questionId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      reply_date = #{replyDate,jdbcType=TIMESTAMP},
+      reply_content = #{replyContent,jdbcType=LONGVARCHAR}
+    where id_replyquestion = #{idReplyquestion,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    update reply_question
+    set question_id = #{questionId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      reply_date = #{replyDate,jdbcType=TIMESTAMP}
+    where id_replyquestion = #{idReplyquestion,jdbcType=INTEGER}
+  </update>
+</mapper>

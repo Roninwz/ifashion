@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.person.mapper.MagazineMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.Magazine">
+    <id column="id_maga" jdbcType="INTEGER" property="idMaga" />
+    <result column="maga_imgurl" jdbcType="VARCHAR" property="magaImgurl" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.person.entity.MagazineWithBLOBs">
+    <result column="maga_content" jdbcType="LONGVARCHAR" property="magaContent" />
+    <result column="maga_introduction" jdbcType="LONGVARCHAR" property="magaIntroduction" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_maga, maga_imgurl
+  </sql>
+  <sql id="Blob_Column_List">
+    maga_content, maga_introduction
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from magazine
+    where id_maga = #{idMaga,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from magazine
+    where id_maga = #{idMaga,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.person.entity.MagazineWithBLOBs">
+    insert into magazine (id_maga, maga_imgurl, maga_content, 
+      maga_introduction)
+    values (#{idMaga,jdbcType=INTEGER}, #{magaImgurl,jdbcType=VARCHAR}, #{magaContent,jdbcType=LONGVARCHAR}, 
+      #{magaIntroduction,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.person.entity.MagazineWithBLOBs">
+    insert into magazine
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idMaga != null">
+        id_maga,
+      </if>
+      <if test="magaImgurl != null">
+        maga_imgurl,
+      </if>
+      <if test="magaContent != null">
+        maga_content,
+      </if>
+      <if test="magaIntroduction != null">
+        maga_introduction,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idMaga != null">
+        #{idMaga,jdbcType=INTEGER},
+      </if>
+      <if test="magaImgurl != null">
+        #{magaImgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="magaContent != null">
+        #{magaContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="magaIntroduction != null">
+        #{magaIntroduction,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.person.entity.MagazineWithBLOBs">
+    update magazine
+    <set>
+      <if test="magaImgurl != null">
+        maga_imgurl = #{magaImgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="magaContent != null">
+        maga_content = #{magaContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="magaIntroduction != null">
+        maga_introduction = #{magaIntroduction,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_maga = #{idMaga,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.person.entity.MagazineWithBLOBs">
+    update magazine
+    set maga_imgurl = #{magaImgurl,jdbcType=VARCHAR},
+      maga_content = #{magaContent,jdbcType=LONGVARCHAR},
+      maga_introduction = #{magaIntroduction,jdbcType=LONGVARCHAR}
+    where id_maga = #{idMaga,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.person.entity.Magazine">
+    update magazine
+    set maga_imgurl = #{magaImgurl,jdbcType=VARCHAR}
+    where id_maga = #{idMaga,jdbcType=INTEGER}
+  </update>
+</mapper>

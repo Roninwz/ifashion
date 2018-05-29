@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.article.mapper.ArticleReviewMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.article.entity.ArticleReview">
+    <id column="id_review" jdbcType="INTEGER" property="idReview" />
+    <result column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="review_zan" jdbcType="INTEGER" property="reviewZan" />
+    <result column="review_date" jdbcType="TIMESTAMP" property="reviewDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.article.entity.ArticleReview">
+    <result column="review_content" jdbcType="LONGVARCHAR" property="reviewContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_review, article_id, user_id, review_zan, review_date
+  </sql>
+  <sql id="Blob_Column_List">
+    review_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article_review
+    where id_review = #{idReview,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from article_review
+    where id_review = #{idReview,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.article.entity.ArticleReview">
+    insert into article_review (id_review, article_id, user_id, 
+      review_zan, review_date, review_content
+      )
+    values (#{idReview,jdbcType=INTEGER}, #{articleId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{reviewZan,jdbcType=INTEGER}, #{reviewDate,jdbcType=TIMESTAMP}, #{reviewContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.article.entity.ArticleReview">
+    insert into article_review
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idReview != null">
+        id_review,
+      </if>
+      <if test="articleId != null">
+        article_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="reviewZan != null">
+        review_zan,
+      </if>
+      <if test="reviewDate != null">
+        review_date,
+      </if>
+      <if test="reviewContent != null">
+        review_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idReview != null">
+        #{idReview,jdbcType=INTEGER},
+      </if>
+      <if test="articleId != null">
+        #{articleId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="reviewZan != null">
+        #{reviewZan,jdbcType=INTEGER},
+      </if>
+      <if test="reviewDate != null">
+        #{reviewDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewContent != null">
+        #{reviewContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.article.entity.ArticleReview">
+    update article_review
+    <set>
+      <if test="articleId != null">
+        article_id = #{articleId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="reviewZan != null">
+        review_zan = #{reviewZan,jdbcType=INTEGER},
+      </if>
+      <if test="reviewDate != null">
+        review_date = #{reviewDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewContent != null">
+        review_content = #{reviewContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_review = #{idReview,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.article.entity.ArticleReview">
+    update article_review
+    set article_id = #{articleId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      review_zan = #{reviewZan,jdbcType=INTEGER},
+      review_date = #{reviewDate,jdbcType=TIMESTAMP},
+      review_content = #{reviewContent,jdbcType=LONGVARCHAR}
+    where id_review = #{idReview,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.article.entity.ArticleReview">
+    update article_review
+    set article_id = #{articleId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      review_zan = #{reviewZan,jdbcType=INTEGER},
+      review_date = #{reviewDate,jdbcType=TIMESTAMP}
+    where id_review = #{idReview,jdbcType=INTEGER}
+  </update>
+</mapper>

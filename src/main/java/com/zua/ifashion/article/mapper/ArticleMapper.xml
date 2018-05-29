@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.article.mapper.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.article.entity.Article">
+    <id column="id_article" jdbcType="INTEGER" property="idArticle" />
+    <result column="articletype_id" jdbcType="INTEGER" property="articletypeId" />
+    <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
+    <result column="imgmark" jdbcType="VARCHAR" property="imgmark" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="article_date" jdbcType="DATE" property="articleDate" />
+    <result column="publish_id" jdbcType="INTEGER" property="publishId" />
+    <result column="zan_num" jdbcType="INTEGER" property="zanNum" />
+    <result column="collect_num" jdbcType="INTEGER" property="collectNum" />
+    <result column="review_num" jdbcType="INTEGER" property="reviewNum" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.article.entity.Article">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_article, articletype_id, imgurl, imgmark, tag, article_date, publish_id, zan_num, 
+    collect_num, review_num, state
+  </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where id_article = #{idArticle,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from article
+    where id_article = #{idArticle,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.article.entity.Article">
+    insert into article (id_article, articletype_id, imgurl, 
+      imgmark, tag, article_date, 
+      publish_id, zan_num, collect_num, 
+      review_num, state, content
+      )
+    values (#{idArticle,jdbcType=INTEGER}, #{articletypeId,jdbcType=INTEGER}, #{imgurl,jdbcType=VARCHAR}, 
+      #{imgmark,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, #{articleDate,jdbcType=DATE}, 
+      #{publishId,jdbcType=INTEGER}, #{zanNum,jdbcType=INTEGER}, #{collectNum,jdbcType=INTEGER}, 
+      #{reviewNum,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.article.entity.Article">
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idArticle != null">
+        id_article,
+      </if>
+      <if test="articletypeId != null">
+        articletype_id,
+      </if>
+      <if test="imgurl != null">
+        imgurl,
+      </if>
+      <if test="imgmark != null">
+        imgmark,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="articleDate != null">
+        article_date,
+      </if>
+      <if test="publishId != null">
+        publish_id,
+      </if>
+      <if test="zanNum != null">
+        zan_num,
+      </if>
+      <if test="collectNum != null">
+        collect_num,
+      </if>
+      <if test="reviewNum != null">
+        review_num,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idArticle != null">
+        #{idArticle,jdbcType=INTEGER},
+      </if>
+      <if test="articletypeId != null">
+        #{articletypeId,jdbcType=INTEGER},
+      </if>
+      <if test="imgurl != null">
+        #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgmark != null">
+        #{imgmark,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="articleDate != null">
+        #{articleDate,jdbcType=DATE},
+      </if>
+      <if test="publishId != null">
+        #{publishId,jdbcType=INTEGER},
+      </if>
+      <if test="zanNum != null">
+        #{zanNum,jdbcType=INTEGER},
+      </if>
+      <if test="collectNum != null">
+        #{collectNum,jdbcType=INTEGER},
+      </if>
+      <if test="reviewNum != null">
+        #{reviewNum,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.article.entity.Article">
+    update article
+    <set>
+      <if test="articletypeId != null">
+        articletype_id = #{articletypeId,jdbcType=INTEGER},
+      </if>
+      <if test="imgurl != null">
+        imgurl = #{imgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="imgmark != null">
+        imgmark = #{imgmark,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="articleDate != null">
+        article_date = #{articleDate,jdbcType=DATE},
+      </if>
+      <if test="publishId != null">
+        publish_id = #{publishId,jdbcType=INTEGER},
+      </if>
+      <if test="zanNum != null">
+        zan_num = #{zanNum,jdbcType=INTEGER},
+      </if>
+      <if test="collectNum != null">
+        collect_num = #{collectNum,jdbcType=INTEGER},
+      </if>
+      <if test="reviewNum != null">
+        review_num = #{reviewNum,jdbcType=INTEGER},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_article = #{idArticle,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.article.entity.Article">
+    update article
+    set articletype_id = #{articletypeId,jdbcType=INTEGER},
+      imgurl = #{imgurl,jdbcType=VARCHAR},
+      imgmark = #{imgmark,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      article_date = #{articleDate,jdbcType=DATE},
+      publish_id = #{publishId,jdbcType=INTEGER},
+      zan_num = #{zanNum,jdbcType=INTEGER},
+      collect_num = #{collectNum,jdbcType=INTEGER},
+      review_num = #{reviewNum,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id_article = #{idArticle,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.article.entity.Article">
+    update article
+    set articletype_id = #{articletypeId,jdbcType=INTEGER},
+      imgurl = #{imgurl,jdbcType=VARCHAR},
+      imgmark = #{imgmark,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      article_date = #{articleDate,jdbcType=DATE},
+      publish_id = #{publishId,jdbcType=INTEGER},
+      zan_num = #{zanNum,jdbcType=INTEGER},
+      collect_num = #{collectNum,jdbcType=INTEGER},
+      review_num = #{reviewNum,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER}
+    where id_article = #{idArticle,jdbcType=INTEGER}
+  </update>
+</mapper>

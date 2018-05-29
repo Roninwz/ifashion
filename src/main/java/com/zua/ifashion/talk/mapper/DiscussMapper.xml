@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.talk.mapper.DiscussMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.talk.entity.Discuss">
+    <id column="id_discuss" jdbcType="INTEGER" property="idDiscuss" />
+    <result column="topic_id" jdbcType="INTEGER" property="topicId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="discuss_title" jdbcType="VARCHAR" property="discussTitle" />
+    <result column="discuss_imgurl" jdbcType="VARCHAR" property="discussImgurl" />
+    <result column="discuss_date" jdbcType="TIMESTAMP" property="discussDate" />
+    <result column="review_num" jdbcType="INTEGER" property="reviewNum" />
+    <result column="look_num" jdbcType="INTEGER" property="lookNum" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.talk.entity.Discuss">
+    <result column="discuss_content" jdbcType="LONGVARCHAR" property="discussContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id_discuss, topic_id, user_id, discuss_title, discuss_imgurl, discuss_date, review_num, 
+    look_num
+  </sql>
+  <sql id="Blob_Column_List">
+    discuss_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from discuss
+    where id_discuss = #{idDiscuss,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from discuss
+    where id_discuss = #{idDiscuss,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zua.ifashion.talk.entity.Discuss">
+    insert into discuss (id_discuss, topic_id, user_id, 
+      discuss_title, discuss_imgurl, discuss_date, 
+      review_num, look_num, discuss_content
+      )
+    values (#{idDiscuss,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{discussTitle,jdbcType=VARCHAR}, #{discussImgurl,jdbcType=VARCHAR}, #{discussDate,jdbcType=TIMESTAMP}, 
+      #{reviewNum,jdbcType=INTEGER}, #{lookNum,jdbcType=INTEGER}, #{discussContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zua.ifashion.talk.entity.Discuss">
+    insert into discuss
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idDiscuss != null">
+        id_discuss,
+      </if>
+      <if test="topicId != null">
+        topic_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="discussTitle != null">
+        discuss_title,
+      </if>
+      <if test="discussImgurl != null">
+        discuss_imgurl,
+      </if>
+      <if test="discussDate != null">
+        discuss_date,
+      </if>
+      <if test="reviewNum != null">
+        review_num,
+      </if>
+      <if test="lookNum != null">
+        look_num,
+      </if>
+      <if test="discussContent != null">
+        discuss_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idDiscuss != null">
+        #{idDiscuss,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null">
+        #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="discussTitle != null">
+        #{discussTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="discussImgurl != null">
+        #{discussImgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="discussDate != null">
+        #{discussDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewNum != null">
+        #{reviewNum,jdbcType=INTEGER},
+      </if>
+      <if test="lookNum != null">
+        #{lookNum,jdbcType=INTEGER},
+      </if>
+      <if test="discussContent != null">
+        #{discussContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zua.ifashion.talk.entity.Discuss">
+    update discuss
+    <set>
+      <if test="topicId != null">
+        topic_id = #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="discussTitle != null">
+        discuss_title = #{discussTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="discussImgurl != null">
+        discuss_imgurl = #{discussImgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="discussDate != null">
+        discuss_date = #{discussDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reviewNum != null">
+        review_num = #{reviewNum,jdbcType=INTEGER},
+      </if>
+      <if test="lookNum != null">
+        look_num = #{lookNum,jdbcType=INTEGER},
+      </if>
+      <if test="discussContent != null">
+        discuss_content = #{discussContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id_discuss = #{idDiscuss,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zua.ifashion.talk.entity.Discuss">
+    update discuss
+    set topic_id = #{topicId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      discuss_title = #{discussTitle,jdbcType=VARCHAR},
+      discuss_imgurl = #{discussImgurl,jdbcType=VARCHAR},
+      discuss_date = #{discussDate,jdbcType=TIMESTAMP},
+      review_num = #{reviewNum,jdbcType=INTEGER},
+      look_num = #{lookNum,jdbcType=INTEGER},
+      discuss_content = #{discussContent,jdbcType=LONGVARCHAR}
+    where id_discuss = #{idDiscuss,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zua.ifashion.talk.entity.Discuss">
+    update discuss
+    set topic_id = #{topicId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      discuss_title = #{discussTitle,jdbcType=VARCHAR},
+      discuss_imgurl = #{discussImgurl,jdbcType=VARCHAR},
+      discuss_date = #{discussDate,jdbcType=TIMESTAMP},
+      review_num = #{reviewNum,jdbcType=INTEGER},
+      look_num = #{lookNum,jdbcType=INTEGER}
+    where id_discuss = #{idDiscuss,jdbcType=INTEGER}
+  </update>
+</mapper>
