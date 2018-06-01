@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="BooleanParameter" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="CastToConcreteClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ClassReferencesSubclass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="DeclareCollectionAsInterface" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="FeatureEnvy" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="InstanceVariableOfConcreteClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="InstanceofChain" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="InstanceofInterfaces" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="InstanceofThis" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="InterfaceMethodClashesWithObject" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="LocalVariableOfConcreteClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="MagicNumber" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="MethodOnlyUsedFromInnerClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="MethodReturnOfConcreteClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="OptionalUsedAsFieldOrParameterType" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="OverlyStrongTypeCast" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ParameterOfConcreteClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="PublicMethodNotExposedInInterface" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="StaticMethodOnlyUsedInOneClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="StaticVariableOfConcreteClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="TypeMayBeWeakened" enabled="false" level="ERROR" enabled_by_default="false" />
+  </profile>
+</component>

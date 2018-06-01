@@ -7,7 +7,7 @@
     <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
     <result column="imgmark" jdbcType="VARCHAR" property="imgmark" />
     <result column="tag" jdbcType="VARCHAR" property="tag" />
-    <result column="article_date" jdbcType="DATE" property="articleDate" />
+    <result column="article_date" jdbcType="datetime" property="articleDate" />
     <result column="publish_id" jdbcType="INTEGER" property="publishId" />
     <result column="zan_num" jdbcType="INTEGER" property="zanNum" />
     <result column="collect_num" jdbcType="INTEGER" property="collectNum" />
