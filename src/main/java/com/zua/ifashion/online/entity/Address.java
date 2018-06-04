@@ -1,7 +1,7 @@
 package com.zua.ifashion.online.entity;
 
 public class Address {
-    private Integer idAddress;
+    private Integer addressId;
 
     private Integer userId;
 
@@ -9,12 +9,12 @@ public class Address {
 
     private Integer addressState;
 
-    public Integer getIdAddress() {
-        return idAddress;
+    public Integer getAddressId() {
+        return addressId;
     }
 
-    public void setIdAddress(Integer idAddress) {
-        this.idAddress = idAddress;
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 
     public Integer getUserId() {
@@ -39,5 +39,15 @@ public class Address {
 
     public void setAddressState(Integer addressState) {
         this.addressState = addressState;
+    }
+
+    public Address(Integer addressId, Integer userId, String addressContent, Integer addressState) {
+        this.addressId = addressId;
+        this.userId = userId;
+        this.addressContent = addressContent;
+        this.addressState = addressState;
+    }
+
+    public Address() {
     }
 }

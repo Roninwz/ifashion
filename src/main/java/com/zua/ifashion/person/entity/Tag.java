@@ -1,18 +1,27 @@
 package com.zua.ifashion.person.entity;
 
 public class Tag {
-    private Integer idTag;
+    private Integer tagId;
 
     private String tagName;
 
     private String tagMark;
 
-    public Integer getIdTag() {
-        return idTag;
+    public Tag(Integer tagId, String tagName, String tagMark) {
+        this.tagId = tagId;
+        this.tagName = tagName;
+        this.tagMark = tagMark;
     }
 
-    public void setIdTag(Integer idTag) {
-        this.idTag = idTag;
+    public Tag() {
+    }
+
+    public Integer getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(Integer tagId) {
+        this.tagId = tagId;
     }
 
     public String getTagName() {

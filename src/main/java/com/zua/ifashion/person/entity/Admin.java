@@ -1,18 +1,18 @@
 package com.zua.ifashion.person.entity;
 
 public class Admin {
-    private Integer idAdmin;
+    private Integer adminId;
 
     private String adminName;
 
     private String password;
 
-    public Integer getIdAdmin() {
-        return idAdmin;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setIdAdmin(Integer idAdmin) {
-        this.idAdmin = idAdmin;
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
     public String getAdminName() {
@@ -29,5 +29,14 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public Admin(Integer adminId, String adminName, String password) {
+        this.adminId = adminId;
+        this.adminName = adminName;
+        this.password = password;
+    }
+
+    public Admin() {
     }
 }

@@ -1,7 +1,7 @@
 package com.zua.ifashion.talk.entity;
 
 public class Topic {
-    private Integer idTopic;
+    private Integer topicId;
 
     private Integer userId;
 
@@ -13,12 +13,12 @@ public class Topic {
 
     private String topicContent;
 
-    public Integer getIdTopic() {
-        return idTopic;
+    public Integer getTopicId() {
+        return topicId;
     }
 
-    public void setIdTopic(Integer idTopic) {
-        this.idTopic = idTopic;
+    public void setTopicId(Integer topicId) {
+        this.topicId = topicId;
     }
 
     public Integer getUserId() {
@@ -59,5 +59,17 @@ public class Topic {
 
     public void setTopicContent(String topicContent) {
         this.topicContent = topicContent == null ? null : topicContent.trim();
+    }
+
+    public Topic(Integer topicId, Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent) {
+        this.topicId = topicId;
+        this.userId = userId;
+        this.topicImgurl = topicImgurl;
+        this.topicPeople = topicPeople;
+        this.lookNum = lookNum;
+        this.topicContent = topicContent;
+    }
+
+    public Topic() {
     }
 }

@@ -1,16 +1,16 @@
 package com.zua.ifashion.online.entity;
 
 public class GoodsType {
-    private Integer idGoodstype;
+    private Integer goodstypeId;
 
     private String goodstypeName;
 
-    public Integer getIdGoodstype() {
-        return idGoodstype;
+    public Integer getGoodstypeId() {
+        return goodstypeId;
     }
 
-    public void setIdGoodstype(Integer idGoodstype) {
-        this.idGoodstype = idGoodstype;
+    public void setGoodstypeId(Integer goodstypeId) {
+        this.goodstypeId = goodstypeId;
     }
 
     public String getGoodstypeName() {
@@ -19,5 +19,13 @@ public class GoodsType {
 
     public void setGoodstypeName(String goodstypeName) {
         this.goodstypeName = goodstypeName == null ? null : goodstypeName.trim();
+    }
+
+    public GoodsType(Integer goodstypeId, String goodstypeName) {
+        this.goodstypeId = goodstypeId;
+        this.goodstypeName = goodstypeName;
+    }
+
+    public GoodsType() {
     }
 }

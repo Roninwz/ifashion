@@ -3,7 +3,7 @@ package com.zua.ifashion.talk.entity;
 import java.util.Date;
 
 public class DiscussReply {
-    private Integer idDiscussreply;
+    private Integer discussreplyId;
 
     private Integer discussId;
 
@@ -15,12 +15,24 @@ public class DiscussReply {
 
     private String discussreplyContent;
 
-    public Integer getIdDiscussreply() {
-        return idDiscussreply;
+    public DiscussReply() {
     }
 
-    public void setIdDiscussreply(Integer idDiscussreply) {
-        this.idDiscussreply = idDiscussreply;
+    public DiscussReply(Integer discussreplyId, Integer discussId, Integer userId, Integer discussreplyZan, Date discussreplyDate, String discussreplyContent) {
+        this.discussreplyId = discussreplyId;
+        this.discussId = discussId;
+        this.userId = userId;
+        this.discussreplyZan = discussreplyZan;
+        this.discussreplyDate = discussreplyDate;
+        this.discussreplyContent = discussreplyContent;
+    }
+
+    public Integer getDiscussreplyId() {
+        return discussreplyId;
+    }
+
+    public void setDiscussreplyId(Integer discussreplyId) {
+        this.discussreplyId = discussreplyId;
     }
 
     public Integer getDiscussId() {

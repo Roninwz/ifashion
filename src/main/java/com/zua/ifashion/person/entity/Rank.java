@@ -1,16 +1,16 @@
 package com.zua.ifashion.person.entity;
 
 public class Rank {
-    private Integer idRank;
+    private Integer rankId;
 
     private String rankName;
 
-    public Integer getIdRank() {
-        return idRank;
+    public Integer getRankId() {
+        return rankId;
     }
 
-    public void setIdRank(Integer idRank) {
-        this.idRank = idRank;
+    public void setRankId(Integer rankId) {
+        this.rankId = rankId;
     }
 
     public String getRankName() {
@@ -19,5 +19,13 @@ public class Rank {
 
     public void setRankName(String rankName) {
         this.rankName = rankName == null ? null : rankName.trim();
+    }
+
+    public Rank(Integer rankId, String rankName) {
+        this.rankId = rankId;
+        this.rankName = rankName;
+    }
+
+    public Rank() {
     }
 }

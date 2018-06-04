@@ -1,16 +1,16 @@
 package com.zua.ifashion.person.entity;
 
 public class UserAttention {
-    private Integer idAttention;
+    private Integer attentionId;
 
     private Integer userId;
 
-    public Integer getIdAttention() {
-        return idAttention;
+    public Integer getAttentionId() {
+        return attentionId;
     }
 
-    public void setIdAttention(Integer idAttention) {
-        this.idAttention = idAttention;
+    public void setAttentionId(Integer attentionId) {
+        this.attentionId = attentionId;
     }
 
     public Integer getUserId() {
@@ -19,5 +19,13 @@ public class UserAttention {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public UserAttention(Integer attentionId, Integer userId) {
+        this.attentionId = attentionId;
+        this.userId = userId;
+    }
+
+    public UserAttention() {
     }
 }

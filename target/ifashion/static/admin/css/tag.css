@@ -1,0 +1,49 @@
+em {
+    font-style: normal;
+}
+
+.main {
+    /* position: relative; */
+    /* width: 996px; */
+    /* margin: 50px auto; */
+    /* margin-top: 10px; */
+    /* //margin-left: 50px; */
+    /* margin-left: 185px; */
+    font-size: 14px;
+}
+
+
+/* .main .select-box {
+    margin-top: 50px;
+    overflow: hidden;
+} */
+
+.main .select-list {
+    float: left;
+    padding: 20px;
+    margin-right: 20px;
+    /* border: 1px solid #AFCC99; */
+    /* border-top: 2px solid #AFCC99; */
+    border-radius: 3px;
+}
+
+.main .select-list span {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 8px;
+    background: #eee;
+    color: #aaa;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.main .select-list input {
+    top: 5px;
+}
+
+.main .select-list .cur {
+    background: #52575B;
+    color: #fff;
+}

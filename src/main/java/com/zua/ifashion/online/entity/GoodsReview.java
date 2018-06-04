@@ -1,7 +1,7 @@
 package com.zua.ifashion.online.entity;
 
 public class GoodsReview {
-    private Integer idGoodsreview;
+    private Integer goodsreviewgId;
 
     private Integer userId;
 
@@ -11,12 +11,12 @@ public class GoodsReview {
 
     private String reviewRank;
 
-    public Integer getIdGoodsreview() {
-        return idGoodsreview;
+    public Integer getGoodsreviewgId() {
+        return goodsreviewgId;
     }
 
-    public void setIdGoodsreview(Integer idGoodsreview) {
-        this.idGoodsreview = idGoodsreview;
+    public void setGoodsreviewgId(Integer goodsreviewgId) {
+        this.goodsreviewgId = goodsreviewgId;
     }
 
     public Integer getUserId() {
@@ -49,5 +49,16 @@ public class GoodsReview {
 
     public void setReviewRank(String reviewRank) {
         this.reviewRank = reviewRank == null ? null : reviewRank.trim();
+    }
+
+    public GoodsReview(Integer goodsreviewgId, Integer userId, Integer goodsId, String reviewContent, String reviewRank) {
+        this.goodsreviewgId = goodsreviewgId;
+        this.userId = userId;
+        this.goodsId = goodsId;
+        this.reviewContent = reviewContent;
+        this.reviewRank = reviewRank;
+    }
+
+    public GoodsReview() {
     }
 }

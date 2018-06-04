@@ -1,7 +1,7 @@
 package com.zua.ifashion.person.entity;
 
 public class AdminRole {
-    private Integer idAdminrole;
+    private Integer adminroleId;
 
     private Integer adminId;
 
@@ -9,12 +9,12 @@ public class AdminRole {
 
     private Integer state;
 
-    public Integer getIdAdminrole() {
-        return idAdminrole;
+    public Integer getAdminroleId() {
+        return adminroleId;
     }
 
-    public void setIdAdminrole(Integer idAdminrole) {
-        this.idAdminrole = idAdminrole;
+    public void setAdminroleId(Integer adminroleId) {
+        this.adminroleId = adminroleId;
     }
 
     public Integer getAdminId() {
@@ -39,5 +39,15 @@ public class AdminRole {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public AdminRole(Integer adminroleId, Integer adminId, Integer roleId, Integer state) {
+        this.adminroleId = adminroleId;
+        this.adminId = adminId;
+        this.roleId = roleId;
+        this.state = state;
+    }
+
+    public AdminRole() {
     }
 }

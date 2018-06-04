@@ -2,16 +2,23 @@ package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.Module;
 
+import java.util.List;
+
 public interface ModuleMapper {
-    int deleteByPrimaryKey(Integer idModule);
+    //添加功能模块
+    int addModuleSelective(Module module);
+    //删除功能模块
+    int deleteModule(Integer moduleId);
+    //更新功能模块
+    int updateModuleSelective(Module module);
+    //通过Id查询功能模块
+     Module selectByModuleId(Integer moduleId);
+    //获取所有功能模块
+     List<Module> getAllModules();
 
-    int insert(Module record);
+    //通过模块功能Id查询功能模块下的一级菜单
+//     Module selectMenuOneById(Integer moduleId);
+        int getAllModuleCount();
 
-    int insertSelective(Module record);
 
-    Module selectByPrimaryKey(Integer idModule);
-
-    int updateByPrimaryKeySelective(Module record);
-
-    int updateByPrimaryKey(Module record);
 }

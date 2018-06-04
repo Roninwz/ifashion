@@ -1,18 +1,27 @@
 package com.zua.ifashion.person.entity;
 
 public class RoleModule {
-    private Integer idRolemodule;
+    private Integer rolemoduleId;
 
     private Integer roleId;
 
     private Integer moduleId;
 
-    public Integer getIdRolemodule() {
-        return idRolemodule;
+    public RoleModule(Integer rolemoduleId, Integer roleId, Integer moduleId) {
+        this.rolemoduleId = rolemoduleId;
+        this.roleId = roleId;
+        this.moduleId = moduleId;
     }
 
-    public void setIdRolemodule(Integer idRolemodule) {
-        this.idRolemodule = idRolemodule;
+    public RoleModule() {
+    }
+
+    public Integer getRolemoduleId() {
+        return rolemoduleId;
+    }
+
+    public void setRolemoduleId(Integer rolemoduleId) {
+        this.rolemoduleId = rolemoduleId;
     }
 
     public Integer getRoleId() {

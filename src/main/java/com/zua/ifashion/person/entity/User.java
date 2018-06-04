@@ -3,7 +3,7 @@ package com.zua.ifashion.person.entity;
 import java.util.Date;
 
 public class User {
-    private Integer idUser;
+    private Integer userId;
 
     private Integer rankId;
 
@@ -19,6 +19,8 @@ public class User {
 
     private Integer age;
 
+    private Date birth;
+
     private Integer userMark;
 
     private Integer score;
@@ -33,12 +35,12 @@ public class User {
 
     private Integer state;
 
-    public Integer getIdUser() {
-        return idUser;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getRankId() {
@@ -97,6 +99,14 @@ public class User {
         this.age = age;
     }
 
+    public Date getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
+
     public Integer getUserMark() {
         return userMark;
     }
@@ -151,5 +161,27 @@ public class User {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public User(Integer userId, Integer rankId, String username, String password, String tel, String email, String sex, Integer age, Date birth, Integer userMark, Integer score, String userImgurl, String userIntroduce, Date registerDate, String userTag, Integer state) {
+        this.userId = userId;
+        this.rankId = rankId;
+        this.username = username;
+        this.password = password;
+        this.tel = tel;
+        this.email = email;
+        this.sex = sex;
+        this.age = age;
+        this.birth = birth;
+        this.userMark = userMark;
+        this.score = score;
+        this.userImgurl = userImgurl;
+        this.userIntroduce = userIntroduce;
+        this.registerDate = registerDate;
+        this.userTag = userTag;
+        this.state = state;
+    }
+
+    public User() {
     }
 }

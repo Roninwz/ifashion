@@ -1,7 +1,7 @@
 package com.zua.ifashion.person.entity;
 
 public class Module {
-    private Integer idModule;
+    private Integer moduleId;
 
     private String moduleName;
 
@@ -9,12 +9,12 @@ public class Module {
 
     private Integer parentId;
 
-    public Integer getIdModule() {
-        return idModule;
+    public Integer getModuleId() {
+        return moduleId;
     }
 
-    public void setIdModule(Integer idModule) {
-        this.idModule = idModule;
+    public void setModuleId(Integer moduleId) {
+        this.moduleId = moduleId;
     }
 
     public String getModuleName() {
@@ -39,5 +39,15 @@ public class Module {
 
     public void setParentId(Integer parentId) {
         this.parentId = parentId;
+    }
+
+    public Module(Integer moduleId, String moduleName, String moduleUrl, Integer parentId) {
+        this.moduleId = moduleId;
+        this.moduleName = moduleName;
+        this.moduleUrl = moduleUrl;
+        this.parentId = parentId;
+    }
+
+    public Module() {
     }
 }

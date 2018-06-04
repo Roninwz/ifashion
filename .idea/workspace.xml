@@ -7,10 +7,269 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dea3ab67-edd4-491b-8108-b718ce8c25d0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Roninwz.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/AdminLoginController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/ImageGenController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/UserLoginController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/UserRegisterController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/AdminRoleService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/AdminService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/ModuleService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/RankService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/RoleModuleService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/RoleService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/TagService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/UserService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/AdminRoleServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/AdminServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/ModuleServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/RankServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/RoleModuleServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/RoleServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/TagServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/UserServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/vo/UserAttentionVo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/EmptyUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/ListUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/RandUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/RandomValidateCode.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/index.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/test/login.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/test/login2.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/test/register.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/css/style2.0.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/p1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/p2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/p3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/p4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/page1_0.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/page1_1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/page1_2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/img/page1_3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/js/com.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/admin/login/js/jquery-1.8.0.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/common/jquery/jquery-3.1.1.min.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Article.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Article.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleReview.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleReview.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleType.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleType.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Complain.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Complain.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ReplyReview.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ReplyReview.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Address.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Address.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Goods.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Goods.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/GoodsImg.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/GoodsImg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/GoodsReview.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/GoodsReview.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/GoodsType.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/GoodsType.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Orders.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Orders.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/ReceiveOrder.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/ReceiveOrder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/AddressMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/AddressMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/AddressMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/AddressMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsImgMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsImgMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsImgMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsImgMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsReviewMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsReviewMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsReviewMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsReviewMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsTypeMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsTypeMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsTypeMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsTypeMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/OrdersMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/OrdersMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/OrdersMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/OrdersMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/ReceiveOrderMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/ReceiveOrderMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/ReceiveOrderMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/ReceiveOrderMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Admin.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/AdminRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/AdminRole.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Magazine.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Magazine.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Message.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Message.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Module.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Module.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/MyCollect.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/MyCollect.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/MyMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/MyMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Rank.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Rank.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Role.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Role.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/RoleModule.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/RoleModule.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Tag.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Tag.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/UserAttention.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/UserAttention.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MagazineMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MagazineMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MagazineMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MagazineMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyCollectMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyCollectMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyCollectMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyCollectMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyMessageMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyMessageMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyMessageMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyMessageMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Discuss.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Discuss.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/DiscussReply.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/DiscussReply.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Question.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Question.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/ReplyQuestion.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/ReplyQuestion.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/SqlMapConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/SqlMapConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/Article.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/Article.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/ArticleReview.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/ArticleReview.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/ArticleType.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/ArticleType.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/Complain.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/Complain.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/ReplyReview.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/entity/ReplyReview.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ArticleMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ArticleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ArticleReviewMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ArticleReviewMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ArticleTypeMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ArticleTypeMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ComplainMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ComplainMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ReplyReviewMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/article/mapper/ReplyReviewMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/Address.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/Address.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/Goods.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/Goods.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/GoodsImg.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/GoodsImg.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/GoodsReview.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/GoodsReview.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/GoodsType.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/GoodsType.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/Orders.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/Orders.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/ReceiveOrder.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/entity/ReceiveOrder.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/AddressMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/AddressMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsImgMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsImgMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsReviewMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsReviewMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsTypeMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/GoodsTypeMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/OrdersMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/OrdersMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/ReceiveOrderMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/online/mapper/ReceiveOrderMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Admin.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Admin.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/AdminRole.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/AdminRole.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Magazine.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Magazine.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Message.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Message.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Module.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Module.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/MyCollect.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/MyCollect.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/MyMessage.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/MyMessage.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Rank.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Rank.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Role.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Role.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/RoleModule.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/RoleModule.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Tag.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/Tag.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/UserAttention.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/entity/UserAttention.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/AdminMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/AdminMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/AdminRoleMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/AdminRoleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MagazineMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MagazineMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MessageMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MessageMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/ModuleMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/ModuleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MyCollectMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MyCollectMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MyMessageMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/MyMessageMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/RankMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/RankMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/RoleMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/RoleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/RoleModuleMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/RoleModuleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/TagMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/TagMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/UserAttentionMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/UserAttentionMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/UserMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/person/mapper/UserMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/Discuss.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/Discuss.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/DiscussReply.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/DiscussReply.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/Question.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/Question.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/ReplyQuestion.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/ReplyQuestion.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/Topic.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/entity/Topic.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/DiscussMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/DiscussMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/DiscussReplyMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/DiscussReplyMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/TopicMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/zua/ifashion/talk/mapper/TopicMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/SqlMapConfig.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/SqlMapConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/target/classes/spring/applicationContext-dao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" afterPath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/Article.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/Article.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/ArticleReview.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/ArticleReview.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/ArticleType.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/ArticleType.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/Complain.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/Complain.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/ReplyReview.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/entity/ReplyReview.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ArticleMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ArticleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ArticleReviewMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ArticleReviewMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ArticleTypeMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ArticleTypeMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ComplainMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ComplainMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ReplyReviewMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/article/mapper/ReplyReviewMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/Address.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/Address.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/Goods.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/Goods.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/GoodsImg.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/GoodsImg.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/GoodsReview.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/GoodsReview.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/GoodsType.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/GoodsType.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/Orders.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/Orders.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/ReceiveOrder.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/entity/ReceiveOrder.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/AddressMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/AddressMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsImgMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsImgMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsReviewMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsReviewMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsTypeMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/GoodsTypeMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/OrdersMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/OrdersMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/ReceiveOrderMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/online/mapper/ReceiveOrderMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Admin.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Admin.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/AdminRole.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/AdminRole.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Magazine.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Magazine.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Message.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Message.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Module.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Module.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/MyCollect.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/MyCollect.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/MyMessage.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/MyMessage.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Rank.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Rank.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Role.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Role.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/RoleModule.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/RoleModule.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Tag.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/Tag.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/User.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/UserAttention.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/entity/UserAttention.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/AdminMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/AdminMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/AdminRoleMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/AdminRoleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MagazineMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MagazineMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MessageMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MessageMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/ModuleMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/ModuleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MyCollectMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MyCollectMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MyMessageMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/MyMessageMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/RankMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/RankMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/RoleMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/RoleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/RoleModuleMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/RoleModuleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/TagMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/TagMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/UserAttentionMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/UserAttentionMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/UserMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/person/mapper/UserMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/Discuss.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/Discuss.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/DiscussReply.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/DiscussReply.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/Question.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/Question.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/ReplyQuestion.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/ReplyQuestion.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/Topic.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/entity/Topic.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/DiscussMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/DiscussMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/DiscussReplyMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/DiscussReplyMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/TopicMapper.class" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/com/zua/ifashion/talk/mapper/TopicMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/mybatis/SqlMapConfig.xml" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/mybatis/SqlMapConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/spring/applicationContext-dao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/spring/springmvc.xml" afterPath="$PROJECT_DIR$/target/ifashion/WEB-INF/classes/spring/springmvc.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,6 +283,9 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ifashion$ifashion.coverage" NAME="ifashion Coverage Results" MODIFIED="1527992895826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="ifashion" />
   </component>
@@ -33,6 +295,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Class" />
         <option value="Jsp File" />
       </list>
     </option>
@@ -40,10 +304,20 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>r</find>
+      <find>admin/</find>
     </findStrings>
+    <replaceStrings>
+      <replace>static/admin/</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+    <push-targets>
+      <push-target-info target-remote="ifashion" target-branch="master" repo="$PROJECT_DIR$" source="master" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -51,61 +325,79 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleReview.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/UserAttention.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Article.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Article.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/UserAttention.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/UserServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/index.jsp" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleType.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-transaction.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleReview.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/common/util/GeneratorSqlMap.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/GeneratorSqlMap.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ReplyReview.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Discuss.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Orders.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MagazineMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/AddressMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsImgMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsTypeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/OrdersMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/QuestionMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext-transaction.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/SqlMapConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/AdminRoleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsReviewMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/ReceiveOrderMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyMessageMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyCollectMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/AdminRoleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/AdminRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/TagService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/TagServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/TagService.java" />
+        <option value="$PROJECT_DIR$/1.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/RankService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/RoleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/RankServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/RoleModuleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/RoleModuleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/ModuleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/ModuleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/vo/UserAttentionVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/mapper/MagazineMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/mapper/RoleModuleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/UserLoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/mapper/ModuleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/ImageGenController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/EmptyUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/RandomValidateCode.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/AdminLoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/index.jsp" />
       </list>
     </option>
   </component>
@@ -128,6 +420,11 @@
         <option name="userSettingsFile" value="F:\JavaSoftWare\apache-maven-3.5.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -140,10 +437,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="609" />
-    <option name="y" value="13" />
-    <option name="width" value="640" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="563" />
+    <option name="y" value="58" />
+    <option name="width" value="799" />
     <option name="height" value="760" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -154,16 +451,124 @@
             <id />
           </State>
           <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class structureJava</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Cucumber</id>
+          </State>
+          <State>
+            <id>Data flow issuesGroovy</id>
+          </State>
+          <State>
+            <id>Declaration redundancyGroovy</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Error handlingGroovy</id>
+          </State>
+          <State>
+            <id>Error handlingJava</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>GSPGrailsGroovy</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>GrailsGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Guice Inspections</id>
+          </State>
+          <State>
+            <id>ImportsJava</id>
+          </State>
+          <State>
             <id>Java</id>
+          </State>
+          <State>
+            <id>JavaFX</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Probable bugsKotlin</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>Redundant constructsKotlin</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XSLT</id>
           </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Abstraction issuesJava</id>
+            <id>unused</id>
           </State>
         </selected-state>
       </profile-state>
     </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -180,7 +585,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,36 +607,39 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ifashion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ifashion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\resources" />
-      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java" />
-      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java\com\zua\ifashion\talk" />
-      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java\com\zua\ifashion\person" />
-      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java\com\zua\ifashion\online" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java" />
       <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java\com\zua\ifashion\util" />
+      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\webapp\static\admin\login" />
+      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\webapp\WEB-INF\jsp\admin\login" />
+      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java\com\zua\ifashion\person\controller" />
+      <recent name="F:\JavaWorkspace\ideawork\ifashion\src\main\java\com\zua\ifashion\person\service\impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -452,46 +863,56 @@
       <workItem from="1527601447494" duration="25000" />
       <workItem from="1527777361754" duration="155000" />
       <workItem from="1527777593472" duration="605000" />
+      <workItem from="1527897781127" duration="833000" />
+      <workItem from="1527898640265" duration="1690000" />
+      <workItem from="1527923134696" duration="1233000" />
+      <workItem from="1527924412265" duration="3047000" />
+      <workItem from="1527944567721" duration="720000" />
+      <workItem from="1527947884012" duration="6341000" />
+      <workItem from="1527988524747" duration="15349000" />
+      <workItem from="1528011116211" duration="4954000" />
+      <workItem from="1528071173099" duration="1262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17990000" />
+    <option name="totallyTimeSpent" value="53419000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5030722" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961598" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32824427" sideWeight="0.5030722" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.4969278" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.67127496" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42901236" sideWeight="0.49239543" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969278" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33563748" sideWeight="0.49239543" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961598" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961598" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.014592934" sideWeight="0.50760454" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.49078342" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969278" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,380 +925,336 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/RoleModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/AdminRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/vo/UserAttentionVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Magazine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/MagazineWithBLOBs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/MyCollect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MessageMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MagazineMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="221">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/TagMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login/js/com.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/admin/login/css/style2.0.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsImgMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/AddressMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsTypeMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/mapper/ModuleMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/mapper/RoleModuleMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/mapper/MagazineMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/UserLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="119">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/js/com.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/EmptyUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/admin/login/js/com.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/test/login2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/test/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="69" column="30" lean-forward="false" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/ImageGenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="58" column="72" lean-forward="false" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/RandomValidateCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="100" column="48" lean-forward="false" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/OrdersMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/service/impl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/ReplyQuestionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/QuestionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/GoodsReviewMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/mapper/ReceiveOrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyCollectMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/MyMessageMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RankMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/ModuleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserAttentionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1475">
-          <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-transaction.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="45" column="85" lean-forward="false" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/SqlMapConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ReplyReview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/ReplyQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Discuss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/UserAttention.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        <state relative-caret-position="204">
+          <caret line="50" column="75" lean-forward="false" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="194" column="27" lean-forward="false" selection-start-line="194" selection-start-column="27" selection-end-line="194" selection-end-column="27" />
+        <state relative-caret-position="217">
+          <caret line="240" column="32" lean-forward="false" selection-start-line="240" selection-start-column="32" selection-end-line="240" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Complain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/RoleModuleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="119">
+          <caret line="13" column="85" lean-forward="false" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="195" column="51" lean-forward="false" selection-start-line="195" selection-start-column="25" selection-end-line="195" selection-end-column="51" />
-          <folding>
-            <marker date="1527777738455" expanded="true" signature="1622:1787" ph="select , fro... " />
-            <marker date="1527777738455" expanded="true" signature="1873:1945" ph="delete from article... " />
-            <marker date="1527777738455" expanded="true" signature="2041:2615" ph="insert into article... " />
-            <marker date="1527777738455" expanded="true" signature="4797:5942" ph="update article... " />
-            <marker date="1527777738455" expanded="true" signature="6059:6647" ph="update article... " />
-            <marker date="1527777738455" expanded="true" signature="6755:7294" ph="update article... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="51" column="23" lean-forward="false" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/online/entity/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/ArticleReview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="49" column="31" lean-forward="true" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
-          <folding>
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/entity/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1000">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="460">
+          <caret line="251" column="75" lean-forward="false" selection-start-line="251" selection-start-column="75" selection-end-line="251" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="64" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleReviewMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ArticleTypeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ComplainMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/article/mapper/ReplyReviewMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="59" column="37" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-transaction.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="45" column="80" lean-forward="false" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/SqlMapConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="105" column="39" lean-forward="false" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/mapper/AdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="29" column="93" lean-forward="false" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/entity/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="91" column="33" lean-forward="true" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/person/controller/AdminLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/util/GeneratorSqlMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>

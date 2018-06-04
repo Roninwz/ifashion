@@ -2,17 +2,20 @@ package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.Role;
 
+import java.util.List;
+
 public interface RoleMapper {
-    int deleteByPrimaryKey(Integer idRole);
+    //添加角色
+    int addRole(Role role);
+    //删除角色
+    int deleteRole(Integer roleId);
+    //修改角色
+    int updateRole(Role role);
 
-    int insert(Role record);
+    Role selectRoleByRoleId(Integer roleId);
 
-
-    int insertSelective(Role record);
-
-    Role selectByPrimaryKey(Integer idRole);
-
-    int updateByPrimaryKeySelective(Role record);
-
-    int updateByPrimaryKey(Role record);
+    //查询所有角色
+    List<Role> getAllRoles();
+    //查询角色数量
+    int getAllRoleCount();
 }

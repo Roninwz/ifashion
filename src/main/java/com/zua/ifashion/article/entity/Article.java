@@ -3,9 +3,11 @@ package com.zua.ifashion.article.entity;
 import java.util.Date;
 
 public class Article {
-    private Integer idArticle;
+    private Integer articleId;
 
     private Integer articletypeId;
+
+    private String content;
 
     private String imgurl;
 
@@ -25,14 +27,14 @@ public class Article {
 
     private Integer state;
 
-    private String content;
 
-    public Integer getIdArticle() {
-        return idArticle;
+
+    public Integer getArticleId() {
+        return articleId;
     }
 
-    public void setIdArticle(Integer idArticle) {
-        this.idArticle = idArticle;
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
     }
 
     public Integer getArticletypeId() {
@@ -121,5 +123,23 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Article(Integer articleId, Integer articletypeId, String content, String imgurl, String imgmark, String tag, Date articleDate, Integer publishId, Integer zanNum, Integer collectNum, Integer reviewNum, Integer state) {
+        this.articleId = articleId;
+        this.articletypeId = articletypeId;
+        this.content = content;
+        this.imgurl = imgurl;
+        this.imgmark = imgmark;
+        this.tag = tag;
+        this.articleDate = articleDate;
+        this.publishId = publishId;
+        this.zanNum = zanNum;
+        this.collectNum = collectNum;
+        this.reviewNum = reviewNum;
+        this.state = state;
+    }
+
+    public Article() {
     }
 }

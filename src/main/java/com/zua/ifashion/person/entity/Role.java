@@ -1,16 +1,16 @@
 package com.zua.ifashion.person.entity;
 
 public class Role {
-    private Integer idRole;
+    private Integer roleId;
 
     private String roleName;
 
-    public Integer getIdRole() {
-        return idRole;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setIdRole(Integer idRole) {
-        this.idRole = idRole;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public String getRoleName() {
@@ -19,5 +19,13 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName == null ? null : roleName.trim();
+    }
+
+    public Role(Integer roleId, String roleName) {
+        this.roleId = roleId;
+        this.roleName = roleName;
+    }
+
+    public Role() {
     }
 }

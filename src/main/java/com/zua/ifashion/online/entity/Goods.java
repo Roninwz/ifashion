@@ -3,7 +3,7 @@ package com.zua.ifashion.online.entity;
 import java.util.Date;
 
 public class Goods {
-    private Integer idGoods;
+    private Integer goodsId;
 
     private Integer userId;
 
@@ -19,7 +19,7 @@ public class Goods {
 
     private Integer goodsSale;
 
-    private Integer reviewnum;
+    private Integer reviewNum;
 
     private String size;
 
@@ -27,12 +27,12 @@ public class Goods {
 
     private String goodsIntroduce;
 
-    public Integer getIdGoods() {
-        return idGoods;
+    public Integer getGoodsId() {
+        return goodsId;
     }
 
-    public void setIdGoods(Integer idGoods) {
-        this.idGoods = idGoods;
+    public void setGoodsId(Integer goodsId) {
+        this.goodsId = goodsId;
     }
 
     public Integer getUserId() {
@@ -91,12 +91,12 @@ public class Goods {
         this.goodsSale = goodsSale;
     }
 
-    public Integer getReviewnum() {
-        return reviewnum;
+    public Integer getReviewNum() {
+        return reviewNum;
     }
 
-    public void setReviewnum(Integer reviewnum) {
-        this.reviewnum = reviewnum;
+    public void setReviewNum(Integer reviewNum) {
+        this.reviewNum = reviewNum;
     }
 
     public String getSize() {
@@ -121,5 +121,23 @@ public class Goods {
 
     public void setGoodsIntroduce(String goodsIntroduce) {
         this.goodsIntroduce = goodsIntroduce == null ? null : goodsIntroduce.trim();
+    }
+
+    public Goods(Integer goodsId, Integer userId, Integer goodstypeId, String goodsName, Double goodsPrice, Date goodsDate, Integer goodsCount, Integer goodsSale, Integer reviewNum, String size, String color, String goodsIntroduce) {
+        this.goodsId = goodsId;
+        this.userId = userId;
+        this.goodstypeId = goodstypeId;
+        this.goodsName = goodsName;
+        this.goodsPrice = goodsPrice;
+        this.goodsDate = goodsDate;
+        this.goodsCount = goodsCount;
+        this.goodsSale = goodsSale;
+        this.reviewNum = reviewNum;
+        this.size = size;
+        this.color = color;
+        this.goodsIntroduce = goodsIntroduce;
+    }
+
+    public Goods() {
     }
 }

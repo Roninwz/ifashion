@@ -54,11 +54,12 @@
 		<!-- 指定扫描的包名 
 		如果扫描多个包，每个包中间使用半角逗号分隔
 		-->
-		<property name="basePackage" 
-		value="com.zua.ifashion.person.mapper,
-		com.zua.ifashion.online.mapper,
+		<!--com.zua.ifashion.online.mapper,
 		com.zua.ifashion.talk.mapper,
-		com.zua.ifashion.article.mapper"/>
+		com.zua.ifashion.article.mapper-->
+		<property name="basePackage" 
+		value="com.zua.ifashion.person.mapper
+		"/>
 		<!--
 		name使用sqlSessionFactoryBeanName
 		name若使用sqlSessionFactory，则该bean先执行，加载db.properties后执行

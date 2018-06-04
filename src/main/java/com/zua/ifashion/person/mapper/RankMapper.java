@@ -2,16 +2,20 @@ package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.Rank;
 
+import java.util.List;
+
 public interface RankMapper {
-    int deleteByPrimaryKey(Integer idRank);
+    //添加
+    int addRank(Rank rank);
+    //删除
+    int deleteRank(Integer rankId);
+    //修改
+    int updateRank(Rank rank);
 
-    int insert(Rank record);
+    Rank selectRankByRankId(Integer rankId);
 
-    int insertSelective(Rank record);
-
-    Rank selectByPrimaryKey(Integer idRank);
-
-    int updateByPrimaryKeySelective(Rank record);
-
-    int updateByPrimaryKey(Rank record);
+    //查询所有
+    List<Rank> getAllRanks();
+    //查询等级数量
+    int getAllRankCount();
 }

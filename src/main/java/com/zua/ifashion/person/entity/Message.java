@@ -3,7 +3,7 @@ package com.zua.ifashion.person.entity;
 import java.util.Date;
 
 public class Message {
-    private Long idMessage;
+    private Long messageId;
 
     private Integer senderId;
 
@@ -11,7 +11,7 @@ public class Message {
 
     private Integer state;
 
-    private String messagetype;
+    private String messageType;
 
     private Date messageDate;
 
@@ -19,12 +19,12 @@ public class Message {
 
     private String content;
 
-    public Long getIdMessage() {
-        return idMessage;
+    public Long getMessageId() {
+        return messageId;
     }
 
-    public void setIdMessage(Long idMessage) {
-        this.idMessage = idMessage;
+    public void setMessageId(Long messageId) {
+        this.messageId = messageId;
     }
 
     public Integer getSenderId() {
@@ -51,12 +51,12 @@ public class Message {
         this.state = state;
     }
 
-    public String getMessagetype() {
-        return messagetype;
+    public String getMessageType() {
+        return messageType;
     }
 
-    public void setMessagetype(String messagetype) {
-        this.messagetype = messagetype == null ? null : messagetype.trim();
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
     }
 
     public Date getMessageDate() {
@@ -81,5 +81,19 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Message(Long messageId, Integer senderId, Integer receiverId, Integer state, String messageType, Date messageDate, String mark, String content) {
+        this.messageId = messageId;
+        this.senderId = senderId;
+        this.receiverId = receiverId;
+        this.state = state;
+        this.messageType = messageType;
+        this.messageDate = messageDate;
+        this.mark = mark;
+        this.content = content;
+    }
+
+    public Message() {
     }
 }

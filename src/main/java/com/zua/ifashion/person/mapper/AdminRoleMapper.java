@@ -2,16 +2,24 @@ package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.AdminRole;
 
+import java.util.List;
+
 public interface AdminRoleMapper {
-    int deleteByPrimaryKey(Integer idAdminrole);
 
-    int insert(AdminRole record);
 
-    int insertSelective(AdminRole record);
+     int addAdminRoleSelective(AdminRole adminRole);
 
-    AdminRole selectByPrimaryKey(Integer idAdminrole);
 
-    int updateByPrimaryKeySelective(AdminRole record);
+     int deleteAdminRole(int adminroleId);
 
-    int updateByPrimaryKey(AdminRole record);
+
+     int updateAdminRoleSelective(AdminRole adminRole);
+
+     AdminRole selectAdminRoleById(int adminroleId);
+
+    //根据管理员id查询出AdminRole集合
+     List<AdminRole> selectAdminRoleByAdminId(int adminId);
+
+     List<AdminRole> getAllAdminRole();
+
 }

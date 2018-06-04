@@ -1,17 +1,25 @@
 package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.UserAttention;
+import com.zua.ifashion.person.vo.UserAttentionVo;
+
+import java.util.List;
 
 public interface UserAttentionMapper {
-    int deleteByPrimaryKey(Integer idAttention);
 
-    int insert(UserAttention record);
+    int addUserAttention();
 
-    int insertSelective(UserAttention record);
+    int deleteUserAttention();
 
-    UserAttention selectByPrimaryKey(Integer idAttention);
+    //查询关注的人
 
-    int updateByPrimaryKeySelective(UserAttention record);
+    UserAttention selectUserAttentionByName();
+    //获取关注的所有人
+    List<UserAttentionVo> getAllUserAttentions();
+    //获取关注的用户
+    List<UserAttentionVo> getAllAttentionUsers();
+    //获取关注的设计师
+    List<UserAttentionVo> getAllAttentionDesigners();
 
-    int updateByPrimaryKey(UserAttention record);
+    int getAllUserAttentionCount();
 }

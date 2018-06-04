@@ -1,17 +1,20 @@
 package com.zua.ifashion.person.mapper;
 
+
 import com.zua.ifashion.person.entity.Tag;
 
+import java.util.List;
+
 public interface TagMapper {
-    int deleteByPrimaryKey(Integer idTag);
 
-    int insert(Tag record);
-
-    int insertSelective(Tag record);
-
-    Tag selectByPrimaryKey(Integer idTag);
-
-    int updateByPrimaryKeySelective(Tag record);
-
-    int updateByPrimaryKey(Tag record);
+    //添加标签
+    int addTagSelective(Tag tag);
+    //删除标签
+    int deleteTag(int tagId);
+    //修改标签
+    int updateTagSelective(Tag tag);
+    //查询所有标签
+    List<Tag> getAllTags();
+    //查询标签数量
+    int getAllTagCount();
 }

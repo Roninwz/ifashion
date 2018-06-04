@@ -23,6 +23,16 @@
 		<property name="maxUploadSize" value="10485760000"></property><!-- 最大上传文件大小 -->
 		<property name="maxInMemorySize" value="10960"></property>
 	</bean>
+
+
+	<!-- 设置静态资源的访问 -->
+	<mvc:resources location="/static/" mapping="/static/**"/>
+	<!--打开视图解析器 -->
+	<bean
+			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp"></property>
+	</bean>
 	<!-- 配置扫描注解的包 ,如果有多个用,号隔开 -->
 	<context:component-scan
 		base-package="

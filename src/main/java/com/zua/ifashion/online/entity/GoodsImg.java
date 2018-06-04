@@ -1,18 +1,18 @@
 package com.zua.ifashion.online.entity;
 
 public class GoodsImg {
-    private Integer idGoodsimg;
+    private Integer goodsimgId;
 
     private Integer goodsId;
 
     private String goodsImgurl;
 
-    public Integer getIdGoodsimg() {
-        return idGoodsimg;
+    public Integer getGoodsimgId() {
+        return goodsimgId;
     }
 
-    public void setIdGoodsimg(Integer idGoodsimg) {
-        this.idGoodsimg = idGoodsimg;
+    public void setGoodsimgId(Integer goodsimgId) {
+        this.goodsimgId = goodsimgId;
     }
 
     public Integer getGoodsId() {
@@ -29,5 +29,14 @@ public class GoodsImg {
 
     public void setGoodsImgurl(String goodsImgurl) {
         this.goodsImgurl = goodsImgurl == null ? null : goodsImgurl.trim();
+    }
+
+    public GoodsImg(Integer goodsimgId, Integer goodsId, String goodsImgurl) {
+        this.goodsimgId = goodsimgId;
+        this.goodsId = goodsId;
+        this.goodsImgurl = goodsImgurl;
+    }
+
+    public GoodsImg() {
     }
 }

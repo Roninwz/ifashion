@@ -3,7 +3,7 @@ package com.zua.ifashion.article.entity;
 import java.util.Date;
 
 public class ReplyReview {
-    private Integer idReplyreview;
+    private Integer replyreviewId;
 
     private Integer reviewId;
 
@@ -15,12 +15,12 @@ public class ReplyReview {
 
     private String replyContent;
 
-    public Integer getIdReplyreview() {
-        return idReplyreview;
+    public Integer getReplyreviewId() {
+        return replyreviewId;
     }
 
-    public void setIdReplyreview(Integer idReplyreview) {
-        this.idReplyreview = idReplyreview;
+    public void setReplyreviewId(Integer replyreviewId) {
+        this.replyreviewId = replyreviewId;
     }
 
     public Integer getReviewId() {
@@ -61,5 +61,17 @@ public class ReplyReview {
 
     public void setReplyContent(String replyContent) {
         this.replyContent = replyContent == null ? null : replyContent.trim();
+    }
+
+    public ReplyReview(Integer replyreviewId, Integer reviewId, Integer userId, Integer useredId, Date replyDate, String replyContent) {
+        this.replyreviewId = replyreviewId;
+        this.reviewId = reviewId;
+        this.userId = userId;
+        this.useredId = useredId;
+        this.replyDate = replyDate;
+        this.replyContent = replyContent;
+    }
+
+    public ReplyReview() {
     }
 }

@@ -1,16 +1,16 @@
 package com.zua.ifashion.article.entity;
 
 public class ArticleType {
-    private Integer idArticletype;
+    private Integer articletypeId;
 
     private String articletypeName;
 
-    public Integer getIdArticletype() {
-        return idArticletype;
+    public Integer getArticletypeId() {
+        return articletypeId;
     }
 
-    public void setIdArticletype(Integer idArticletype) {
-        this.idArticletype = idArticletype;
+    public void setArticletypeId(Integer articletypeId) {
+        this.articletypeId = articletypeId;
     }
 
     public String getArticletypeName() {
@@ -19,5 +19,13 @@ public class ArticleType {
 
     public void setArticletypeName(String articletypeName) {
         this.articletypeName = articletypeName == null ? null : articletypeName.trim();
+    }
+
+    public ArticleType(Integer articletypeId, String articletypeName) {
+        this.articletypeId = articletypeId;
+        this.articletypeName = articletypeName;
+    }
+
+    public ArticleType() {
     }
 }

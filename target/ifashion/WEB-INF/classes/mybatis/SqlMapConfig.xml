@@ -3,15 +3,33 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	
-	<!-- 加载 映射文件 -->
-	<mappers>
-		<!-- 
-			和spring整合后，使用mapper扫描器，这里不需要配置了
-		 但必须遵循mapper.xml和mapper.java同名且在同一个目录
-		 -->
+	<!-- 配置别名 -->
+	<typeAliases>
 
-	</mappers>
+
+		<typeAlias type="com.zua.ifashion.person.entity.User" alias="User"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Admin" alias="Admin"/>
+		<typeAlias type="com.zua.ifashion.person.entity.AdminRole" alias="AdminRole"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Magazine" alias="Magazine"/>
+		<typeAlias type="com.zua.ifashion.person.entity.MagazineWithBLOBs" alias="MagazineWithBLOBs"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Message" alias="Message"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Module" alias="Module"/>
+		<typeAlias type="com.zua.ifashion.person.entity.MyCollect" alias="MyCollect"/>
+		<typeAlias type="com.zua.ifashion.person.entity.MyMessage" alias="MyMessage"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Rank" alias="Rank"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Role" alias="Role"/>
+		<typeAlias type="com.zua.ifashion.person.entity.RoleModule" alias="RoleModule"/>
+		<typeAlias type="com.zua.ifashion.person.entity.Tag" alias="Tag"/>
+	</typeAliases>
+
+	<!-- 加载 映射文件 -->
+	<!--<mappers>-->
+		<!--&lt;!&ndash; -->
+			<!--和spring整合后，使用mapper扫描器，这里不需要配置了-->
+		 <!--但必须遵循mapper.xml和mapper.java同名且在同一个目录-->
+		 <!--&ndash;&gt;-->
+
+	<!--</mappers>-->
 	
 	
 	<!-- 配置别名 -->

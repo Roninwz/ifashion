@@ -3,7 +3,7 @@ package com.zua.ifashion.online.entity;
 import java.util.Date;
 
 public class Orders {
-    private Integer idOrders;
+    private Integer ordersId;
 
     private Integer userId;
 
@@ -19,12 +19,12 @@ public class Orders {
 
     private Date endDate;
 
-    public Integer getIdOrders() {
-        return idOrders;
+    public Integer getOrdersId() {
+        return ordersId;
     }
 
-    public void setIdOrders(Integer idOrders) {
-        this.idOrders = idOrders;
+    public void setOrdersId(Integer ordersId) {
+        this.ordersId = ordersId;
     }
 
     public Integer getUserId() {
@@ -81,5 +81,19 @@ public class Orders {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Orders(Integer ordersId, Integer userId, Integer designerId, Integer goodsId, Integer addressId, Integer ordersState, Date ordersDate, Date endDate) {
+        this.ordersId = ordersId;
+        this.userId = userId;
+        this.designerId = designerId;
+        this.goodsId = goodsId;
+        this.addressId = addressId;
+        this.ordersState = ordersState;
+        this.ordersDate = ordersDate;
+        this.endDate = endDate;
+    }
+
+    public Orders() {
     }
 }

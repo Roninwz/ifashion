@@ -3,7 +3,7 @@ package com.zua.ifashion.online.entity;
 import java.util.Date;
 
 public class ReceiveOrder {
-    private Integer idReceiveorder;
+    private Integer receiveorderId;
 
     private Integer userId;
 
@@ -19,12 +19,12 @@ public class ReceiveOrder {
 
     private String trueOrder;
 
-    public Integer getIdReceiveorder() {
-        return idReceiveorder;
+    public Integer getReceiveorderId() {
+        return receiveorderId;
     }
 
-    public void setIdReceiveorder(Integer idReceiveorder) {
-        this.idReceiveorder = idReceiveorder;
+    public void setReceiveorderId(Integer receiveorderId) {
+        this.receiveorderId = receiveorderId;
     }
 
     public Integer getUserId() {
@@ -81,5 +81,19 @@ public class ReceiveOrder {
 
     public void setTrueOrder(String trueOrder) {
         this.trueOrder = trueOrder == null ? null : trueOrder.trim();
+    }
+
+    public ReceiveOrder(Integer receiveorderId, Integer userId, Integer designerId, Integer ordersId, Date startDate, Date endState, Date ordersDate, String trueOrder) {
+        this.receiveorderId = receiveorderId;
+        this.userId = userId;
+        this.designerId = designerId;
+        this.ordersId = ordersId;
+        this.startDate = startDate;
+        this.endState = endState;
+        this.ordersDate = ordersDate;
+        this.trueOrder = trueOrder;
+    }
+
+    public ReceiveOrder() {
     }
 }
