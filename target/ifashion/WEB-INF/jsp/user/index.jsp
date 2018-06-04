@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="static/user/common/top/css/newindex_v201607.css">
     <link rel="stylesheet" href="static/user/common/top/css/newconment_v201607.css">
     <link rel="stylesheet" href="static/user/login/css/login.css">
-    <%--<link rel="stylesheet" href="${pageContext.request.contextPath }/static/user/login/css/login.css">--%>
+
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
     <%--导航栏js--%>
     <script src="static/user/common/top/js/index_search.js"></script>
@@ -33,9 +33,8 @@
     <script src="static/user/common/js/mouse.js"></script>
     <script src="static/user/login/js/login.js"></script>
     <%--登录js--%>
-    <%--<script src="${pageContext.request.contextPath}/static/user/login/js/jquery-1.10.2.min.js"></script>--%>
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
-
+    <%--其它js--%>
 
 </head>
 <body>

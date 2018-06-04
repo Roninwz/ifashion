@@ -5,7 +5,29 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<!-- 配置别名 -->
 	<typeAliases>
+		<!--文章模块-->
 
+		<typeAlias type="com.zua.ifashion.article.entity.Article" alias="Article"/>
+		<typeAlias type="com.zua.ifashion.article.entity.ArticleReview" alias="ArticleReview"/>
+		<typeAlias type="com.zua.ifashion.article.entity.ArticleType" alias="ArticleType"/>
+		<typeAlias type="com.zua.ifashion.article.entity.Complain" alias="Complain"/>
+		<typeAlias type="com.zua.ifashion.article.entity.ReplyReview" alias="ReplyReview"/>
+		<!--在线定制模块 -->
+		<typeAlias type="com.zua.ifashion.online.entity.Address" alias="Address"/>
+		<typeAlias type="com.zua.ifashion.online.entity.Goods" alias="Goods"/>
+		<typeAlias type="com.zua.ifashion.online.entity.GoodsImg" alias="GoodsImg"/>
+		<typeAlias type="com.zua.ifashion.online.entity.GoodsReview" alias="GoodsReview"/>
+		<typeAlias type="com.zua.ifashion.online.entity.GoodsType" alias="GoodsType"/>
+		<typeAlias type="com.zua.ifashion.online.entity.Orders" alias="Orders"/>
+		<typeAlias type="com.zua.ifashion.online.entity.ReceiveOrder" alias="ReceiveOrder"/>
+		<!--论坛模块-->
+		<typeAlias type="com.zua.ifashion.talk.entity.Discuss" alias="Discuss"/>
+		<typeAlias type="com.zua.ifashion.talk.entity.DiscussReply" alias="DiscussReply"/>
+		<typeAlias type="com.zua.ifashion.talk.entity.Question" alias="Question"/>
+		<typeAlias type="com.zua.ifashion.talk.entity.ReplyQuestion" alias="ReplyQuestion"/>
+		<typeAlias type="com.zua.ifashion.talk.entity.Topic" alias="Topic"/>
+
+		<!--person模块-->
 
 		<typeAlias type="com.zua.ifashion.person.entity.User" alias="User"/>
 		<typeAlias type="com.zua.ifashion.person.entity.Admin" alias="Admin"/>
