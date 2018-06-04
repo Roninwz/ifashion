@@ -18,7 +18,7 @@ public class UserLoginController {
    @RequestMapping(value="login",method=RequestMethod.GET)
     public String userLogin(){
 
-        return "test/login2";
+        return "user/index";
     }
 
     @SuppressWarnings("unused")
