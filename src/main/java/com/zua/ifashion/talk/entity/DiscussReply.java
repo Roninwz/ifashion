@@ -27,6 +27,14 @@ public class DiscussReply {
         this.discussreplyContent = discussreplyContent;
     }
 
+    public DiscussReply(Integer discussId, Integer userId, Integer discussreplyZan, Date discussreplyDate, String discussreplyContent) {
+        this.discussId = discussId;
+        this.userId = userId;
+        this.discussreplyZan = discussreplyZan;
+        this.discussreplyDate = discussreplyDate;
+        this.discussreplyContent = discussreplyContent;
+    }
+
     public Integer getDiscussreplyId() {
         return discussreplyId;
     }
