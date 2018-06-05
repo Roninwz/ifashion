@@ -11,12 +11,14 @@ body,div,span,h2,h3,p,a,font,dl,dt,dd,ul,li{
     padding:0;
     border:0;
     outline:0;
-    font-size:100%;
-    vertical-align:baseline;
+    /*font-size:100%;*/
+    /*vertical-align:baseline;*/
     background:transparent;
 }
 
 .footer{
+    /*position: relative;*/
+    /*margin-top: 20px;*/
     width:100%;
     background:url(../images/foot-bg-pc.png);
     background-size:cover;

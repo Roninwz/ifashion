@@ -122,7 +122,7 @@
         <input type="hidden" name="return-url" value="">
         <div class="clearfix"></div>
         <label class="remember"><input name="remember" type="checkbox" checked/>下次自动登录 </label>
-        <a class="forgot">忘记密码？</a>
+        <a class="forgot" id="forgot">忘记密码？</a>
     </form>
 </div>
 

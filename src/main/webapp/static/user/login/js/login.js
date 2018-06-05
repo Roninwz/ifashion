@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     $("a.forgot").click(function(){
         $("#login-modal").modal("hide");
         $("#forgetform").modal({show:!0})
