@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dea3ab67-edd4-491b-8108-b718ce8c25d0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifashion.iml" afterPath="$PROJECT_DIR$/ifashion.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Discuss.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Discuss.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/DiscussReply.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/DiscussReply.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/entity/Topic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/TopicMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" />
-    </list>
+    <list default="true" id="dea3ab67-edd4-491b-8108-b718ce8c25d0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,8 +81,8 @@
       <file leaf-file-name="DiscussReplyMapper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+            <state relative-caret-position="341">
+              <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -803,12 +790,12 @@
       <workItem from="1528011116211" duration="4954000" />
       <workItem from="1528071173099" duration="11601000" />
       <workItem from="1528096131266" duration="4480000" />
-      <workItem from="1528168072089" duration="25426000" />
+      <workItem from="1528168072089" duration="25562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93664000" />
+    <option name="totallyTimeSpent" value="93800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -1293,8 +1280,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zua/ifashion/talk/mapper/DiscussReplyMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="341">
+          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
