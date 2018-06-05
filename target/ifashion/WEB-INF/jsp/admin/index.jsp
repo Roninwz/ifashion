@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -31,10 +32,10 @@
     <script type="text/javascript" src="static/admin/lib/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="static/admin/h-ui/css/H-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="static/admin/h-ui.static/admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="static/admin/h-uiadmin/css/H-ui.admin.css" />
     <link rel="stylesheet" type="text/css" href="static/admin/lib/Hui-iconfont/1.0.8/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="static/admin/h-ui.static/admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="static/admin/h-ui.static/admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/admin/h-uiadmin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="static/admin/h-uiadmin/css/style.css" />
     <link rel="stylesheet" type="text/css" href="static/admin/css/index.css">
     <!--[if IE 6]>
     <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
@@ -88,88 +89,95 @@
 <aside class="Hui-aside">
 
     <div class="menu_dropdown bk_2">
+
         <!-- 文章管理 -->
+
+        <c:forEach items="${adminModuleVos}" var="adminModuleVos">
         <dl  l id="menu-article">
-            <dt><i class="Hui-iconfont">&#xe616;</i> &nbsp;&nbsp;文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe616;</i> &nbsp;&nbsp;${adminModuleVos.moduleName}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a href="article.html" title="文章管理">&nbsp;文章管理</a></li>
+                    <c:set value="${adminModuleVos.modules}" var="bigmodules"/>
+                    <c:forEach items="${bigmodules}" var="smallmodules">
+                    <li><a href="${smallmodules.moduleUrl}.action" title="文章管理">&nbsp;${smallmodules.moduleName}</a></li>
+                    </c:forEach>
                     <!-- <li><a href=".html" title="类别管理">&nbsp;类别管理</a></li> -->
-                    <li><a href="review.html" title="评论列表">&nbsp;评论列表</a></li>
-                    <li><a href="complain.html" title="举报反馈">&nbsp;举报反馈</a></li>
+                    <%--<li><a href="review.html" title="评论列表">&nbsp;${adminModuleVos.module}</a></li>--%>
+                    <%--<li><a href="complain.html" title="举报反馈">&nbsp;${adminModuleVos.module}</a></li>--%>
                 </ul>
             </dd>
         </dl>
+        </c:forEach>
         <!-- 用户管理 -->
 
-        <dl id="menu-member">
-            <dt><i class="Hui-iconfont">&#xe60d;</i> &nbsp;&nbsp;用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a href="user.html" title="用户列表">&nbsp;用户列表</a></li>
-                    <!-- <li><a href="member-del.html" title="删除的会员">删除的会员</a></li> -->
-                    <!-- <li><a href="member-level.html" title="等级管理">等级管理</a></li> -->
-                    <!-- <li><a href="member-scoreoperation.html" title="积分管理">积分管理</a></li> -->
-                    <!-- <li><a href="member-record-browse.html" title="浏览记录">浏览记录</a></li> -->
-                    <!-- <li><a href="member-record-download.html" title="下载记录">下载记录</a></li> -->
-                    <!-- <li><a href="member-record-share.html" title="分享记录">分享记录</a></li> -->
-                </ul>
-            </dd>
-        </dl>
-        <!-- 权限管理 -->
-        <dl id="menu-admin">
-            <dt><i class="Hui-iconfont">&#xe62d;</i>&nbsp; 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a href="role.html" title="角色管理">&nbsp;角色管理</a></li>
-                    <li><a href="permission.html" title="权限管理">&nbsp;权限管理</a></li>
-                    <li><a href="adminlist.html" title="管理员列表">&nbsp;管理员列表</a></li>
-                </ul>
-            </dd>
-        </dl>
-        <!-- 社区管理 -->
-        <dl id="menu-tongji">
-            <dt><i class="Hui-iconfont">&#xe61a;</i>&nbsp;&nbsp;&nbsp;社区管理 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a href="topic.html" title="话题管理">&nbsp;话题管理</a></li>
-                    <li><a href="discuss.html" title="话题讨论列表">&nbsp;话题讨论列表</a></li>
-                    <!-- <li><a href="charts-3.html" title="区域图">区域图</a></li>
-                    <li><a href="charts-4.html" title="柱状图">柱状图</a></li>
-                    <li><a href="charts-5.html" title="饼状图">饼状图</a></li>
-                    <li><a href="charts-6.html" title="3D柱状图">3D柱状图</a></li>
-                    <li><a href="charts-7.html" title="3D饼状图">3D饼状图</a></li> -->
-                </ul>
-            </dd>
-        </dl>
+        <%--<dl id="menu-member">--%>
+            <%--<dt><i class="Hui-iconfont">&#xe60d;</i> &nbsp;&nbsp;用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>--%>
+            <%--<dd>--%>
+                <%--<ul>--%>
+                    <%--<li><a href="user.html" title="用户列表">&nbsp;用户列表</a></li>--%>
+                    <%--<!-- <li><a href="member-del.html" title="删除的会员">删除的会员</a></li> -->--%>
+                    <%--<!-- <li><a href="member-level.html" title="等级管理">等级管理</a></li> -->--%>
+                    <%--<!-- <li><a href="member-scoreoperation.html" title="积分管理">积分管理</a></li> -->--%>
+                    <%--<!-- <li><a href="member-record-browse.html" title="浏览记录">浏览记录</a></li> -->--%>
+                    <%--<!-- <li><a href="member-record-download.html" title="下载记录">下载记录</a></li> -->--%>
+                    <%--<!-- <li><a href="member-record-share.html" title="分享记录">分享记录</a></li> -->--%>
+                <%--</ul>--%>
+            <%--</dd>--%>
+        <%--</dl>--%>
+        <%--<!-- 权限管理 -->--%>
+        <%--<dl id="menu-admin">--%>
+            <%--<dt><i class="Hui-iconfont">&#xe62d;</i>&nbsp; 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>--%>
+            <%--<dd>--%>
+                <%--<ul>--%>
+                    <%--<li><a href="role.html" title="角色管理">&nbsp;角色管理</a></li>--%>
+                    <%--<li><a href="permission.html" title="权限管理">&nbsp;权限管理</a></li>--%>
+                    <%--<li><a href="adminlist.html" title="管理员列表">&nbsp;管理员列表</a></li>--%>
+                <%--</ul>--%>
+            <%--</dd>--%>
+        <%--</dl>--%>
+        <%--<!-- 社区管理 -->--%>
+        <%--<dl id="menu-tongji">--%>
+            <%--<dt><i class="Hui-iconfont">&#xe61a;</i>&nbsp;&nbsp;&nbsp;社区管理 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>--%>
+            <%--<dd>--%>
+                <%--<ul>--%>
+                    <%--<li><a href="topic.html" title="话题管理">&nbsp;话题管理</a></li>--%>
+                    <%--<li><a href="discuss.html" title="话题讨论列表">&nbsp;话题讨论列表</a></li>--%>
+                    <%--<!-- <li><a href="charts-3.html" title="区域图">区域图</a></li>--%>
+                    <%--<li><a href="charts-4.html" title="柱状图">柱状图</a></li>--%>
+                    <%--<li><a href="charts-5.html" title="饼状图">饼状图</a></li>--%>
+                    <%--<li><a href="charts-6.html" title="3D柱状图">3D柱状图</a></li>--%>
+                    <%--<li><a href="charts-7.html" title="3D饼状图">3D饼状图</a></li> -->--%>
+                <%--</ul>--%>
+            <%--</dd>--%>
+        <%--</dl>--%>
 
-        <!-- 其他管理  .Hui-iconfont-news   -->
-        <dl id="menu-product">
-            <dt><i class="Hui-iconfont">&#xe616;</i> &nbsp;&nbsp;其他管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a href="tag.html" title="标签管理">&nbsp;标签管理</a></li>
-                    <!-- <li><a href="product-category.html" title="分类管理">分类管理</a></li>
-                    <li><a href="product-list.html" title="产品管理">产品管理</a></li> -->
-                </ul>
-            </dd>
-        </dl>
-
-
+        <%--<!-- 其他管理  .Hui-iconfont-news   -->--%>
+        <%--<dl id="menu-product">--%>
+            <%--<dt><i class="Hui-iconfont">&#xe616;</i> &nbsp;&nbsp;其他管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>--%>
+            <%--<dd>--%>
+                <%--<ul>--%>
+                    <%--<li><a href="tag.html" title="标签管理">&nbsp;标签管理</a></li>--%>
+                    <%--<!-- <li><a href="product-category.html" title="分类管理">分类管理</a></li>--%>
+                    <%--<li><a href="product-list.html" title="产品管理">产品管理</a></li> -->--%>
+                <%--</ul>--%>
+            <%--</dd>--%>
+        <%--</dl>--%>
 
 
-        <dl id="menu-system">
-            <dt><i class="Hui-iconfont">&#xe62e;</i>&nbsp;&nbsp; 设置<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a href="system-base.html" title="系统设置">&nbsp;系统设置</a></li>
-                    <!-- <li><a href="system-category.html" title="栏目管理">栏目管理</a></li>
-                    <li><a href="system-data.html" title="数据字典">数据字典</a></li> -->
-                    <li><a href="system-person.html" title="个人设置">&nbsp;个人设置</a></li>
-                    <li><a href="system-log.html" title="系统日志">&nbsp;系统日志</a></li>
-                </ul>
-            </dd>
-        </dl>
+
+
+        <%--<dl id="menu-system">--%>
+            <%--<dt><i class="Hui-iconfont">&#xe62e;</i>&nbsp;&nbsp; 设置<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>--%>
+            <%--<dd>--%>
+                <%--<ul>--%>
+                    <%--<li><a href="system-base.html" title="系统设置">&nbsp;系统设置</a></li>--%>
+                    <%--<!-- <li><a href="system-category.html" title="栏目管理">栏目管理</a></li>--%>
+                    <%--<li><a href="system-data.html" title="数据字典">数据字典</a></li> -->--%>
+                    <%--<li><a href="system-person.html" title="个人设置">&nbsp;个人设置</a></li>--%>
+                    <%--<li><a href="system-log.html" title="系统日志">&nbsp;系统日志</a></li>--%>
+                <%--</ul>--%>
+            <%--</dd>--%>
+        <%--</dl>--%>
     </div>
 </aside>
 <div class="dislpayArrow hidden-xs">
@@ -195,7 +203,7 @@
 <script type="text/javascript" src="static/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="static/admin/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="static/admin/h-ui/js/H-ui.js"></script>
-<script type="text/javascript" src="static/admin/h-ui.static/admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="static/admin/h-uiadmin/js/H-ui.admin.page.js"></script>
 <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->

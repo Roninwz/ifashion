@@ -86,4 +86,21 @@
   </select>
 
 
+  <!-- 查询所有    -->
+  <select id="getAllOneMenus"  resultType="com.zua.ifashion.person.entity.Module">
+    select * from module where parentId is null;
+  </select>
+
+
+  <!-- 查询所有    -->
+  <select id="getAllTwoMenus"  resultType="com.zua.ifashion.person.entity.Module">
+    select * from module where parentId is not null;
+  </select>
+
+
+
+  <!-- 查询所有    -->
+  <select id="getOneMenuTwoMenus" resultType="com.zua.ifashion.person.entity.Module">
+    select * from module where parentId =#{moduleId};
+  </select>
 </mapper>

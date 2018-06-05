@@ -5,7 +5,7 @@ import com.zua.ifashion.person.entity.UserAttention;
 
 public class UserAttentionVo extends UserAttention {
 
-  public   User user;
+    private   User user;
 
     public User getUser() {
         return user;
