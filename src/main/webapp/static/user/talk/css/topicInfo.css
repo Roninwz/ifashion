@@ -1,0 +1,466 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, html {
+    font: 14px/1.5 "PingFang SC","微软雅黑","Microsoft YaHei",Helvetica,"Helvetica Neue",Tahoma,Arial,sans-serif;
+}
+a:link, a:visited, body, html {
+    color: #1c1f21;
+}
+:link, :visited, ins {
+    text-decoration: none;
+}
+a, button, input {
+    outline: 0;
+}
+.clearfix {
+    *zoom:1;
+}
+.clearfix::after {
+    content: "\0020";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+.l {
+    float: left;
+}
+.imv2-arrow2_d::before {
+    content: "\e5cf";
+}
+
+#main {
+    padding: 0;
+    background: #F8FAFC;
+	min-height:750px;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+	padding:0;
+}
+.issue-top {
+    padding-bottom: 48px;
+    width: 100%;
+    box-shadow: 0px 6px 16px 0px rgba(7,17,27,0.1);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+.issue-top .bread-box {
+    padding: 12px 0;
+    font-size: 12px;
+    color: #93999f;
+    line-height: 24px;
+}
+.width-wrap {
+    width: 1152px;
+    margin: 0 auto;
+}
+.issue-top .bread-box a {
+    color: #93999f;
+}
+
+.issue-top .issue-box {
+    margin-top: 0px;
+}
+.width-wrap {
+    width: 1152px;
+    margin: 0 auto;
+}
+.issue-top .issue-box .issue-img-box {
+    position: relative;
+    margin-right: 36px;
+    display: block;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(7,17,27,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.issue-top .issue-box .issue-img-box img {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+fieldset, img {
+    border: 0;
+}
+.issue-top .issue-box .issue-content {
+    position: relative;
+    width: 892px;
+}
+.issue-top .issue-box .issue-content .issue-title {
+    margin-bottom: 3px;
+    font-size: 32px;
+    color: #07111b;
+    letter-spacing: 1.5px;
+    line-height: 48px;
+}
+.more-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+.issue-top .issue-box .issue-desc-box {
+    position: absolute;
+    visibility: hidden;
+}
+.issue-top .issue-box .issue-content .max-height-issue {
+    max-height: 56px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.issue-top .issue-box .issue-content .issue-desc {
+    position: relative;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #4d555d;
+    line-height: 28px;
+    font-weight: 200;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+.issue-top .issue-box .issue-content .issue-desc .look-more-box {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    background: #fff;
+}
+.issue-top .issue-box .issue-content .issue-desc .look-more-box span {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+.issue-top .issue-box .issue-content .issue-desc .look-more {
+    display: inline-block;
+    width: 80px;
+    height: 24px;
+    border: 1px solid #D9DDE1;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #93999f;
+    line-height: 22px;
+    text-align: center;
+    background: #fff;
+}
+.issue-top .issue-box .issue-content .issue-desc .look-more .look-more-icon {
+    position: relative;
+    top: 1px;
+    margin-left: 2px;
+}
+[class*=' imv2-'], [class^=imv2-] {
+    font-family: imv2 !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.issue-top .issue-box .issue-content .issue-desc .no-look-box {
+    display: none;
+}
+.issue-top .issue-box .issue-content .issue-bottom .quiz-btn {
+    margin-right: 36px;
+	margin-top:50px;
+    display: block;
+    width: 137px;
+    height: 48px;
+    background: #F93;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+}
+.issue-box .issue-list-box {
+    margin-top: 16px;
+    width: 800px;
+}
+.issue-list-box {
+    padding-bottom: 72px;
+}
+.issue-list-box .issue-list-title {
+    padding: 0 24px;
+    width: 100%;
+    line-height: 48px;
+    box-sizing: border-box;
+}
+.issue-list-box .issue-list-title .on {
+    color: #07111b;
+}
+.issue-list-box .issue-list-title .issue-ques-title {
+    font-size: 16px;
+}
+.issue-list-box .issue-list {
+    width: 100%;
+}
+ol, ul {
+    list-style: none;
+}
+.issue-list-box .issue-list :first-child.issue-item {
+    margin-top: 8px;
+}
+.issue-list-box .issue-list .issue-item {
+    position: relative;
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(7,17,27,0.05);
+    border-radius: 8px;
+}
+.issue-list-box .issue-list .issue-item .tag-img {
+    display: block;
+    margin-right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+}
+.issue-list-box .issue-list .issue-item .tag-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box {
+    width: 644px;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .tag-box {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 200;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .tag-box a {
+    margin-right: 12px;
+    color: #F93;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .issue-title {
+    display: block;
+    font-size: 14px;
+    color: #07111b;
+    line-height: 24px;
+    word-break: break-all;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .has-answer {
+    margin-top: 8px;
+    width: 644px;
+    padding-left: 24px;
+    border-left: 2px solid #F3F5F7;
+    box-sizing: border-box;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .has-answer .answer-bottom {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #93999f;
+    line-height: 32px;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .has-answer .answer-bottom .issue-btn {
+    margin-right: 16px;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .issue-btn {
+    display: block;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid #D9DDE1;
+    border-radius: 2px;
+    color: #93999f;
+    box-sizing: border-box;
+    line-height: 32px;
+    cursor: pointer;
+}
+.issue-list-box .issue-list .issue-item .issue-content-box .issue-btn i {
+    position: relative;
+    top: 8px;
+    font-size: 16px;
+    margin-right: 4px;
+}
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+    font-style: normal;
+    font-weight: 400;
+}
+.issue-box .issue-right-box {
+    width: 304px;
+}
+.issue-right-box {
+    padding-bottom: 72px;
+}
+.r {
+    float: right;
+}
+.issue-right-box .smalle-title {
+    padding-top: 36px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #07111b;
+    line-height: 24px;
+}
+.issue-right-box .issue-intro-box {
+    padding: 0 24px 36px;
+    width: 100%;
+    background: #EFF2F5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #07111b;
+    line-height: 20px;
+    text-align: center;
+}
+.issue-right-box .issue-intro-box .tag-title {
+    padding-top: 24px;
+    margin-bottom: 8px;
+}
+.issue-right-box .issue-intro-box .tag-box {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 24px;
+}
+.issue-right-box .issue-intro-box .tag-box .tag {
+    padding: 0 12px;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 8px;
+    background: rgba(7,17,27,.05);
+    border-radius: 12px;
+    color: rgba(7, 17, 27, 0.6);
+}
+.issue-right-box .hot-ques {
+    width: 100%;
+    box-sizing: border-box;
+}
+.hot-ques .title {
+    font-size: 16px;
+    color: #14191e;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d0d6d9;
+}
+.hot-ques .title, .hot-ques li .content a, .leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+.hot-ques li {
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1f2;
+}
+.hot-ques li .content a {
+    font-size: 14px;
+    color: #14191e;
+    word-wrap: break-word;
+}
+.hot-ques li .info-bar {
+    height: 20px;
+    margin-top: 7px;
+    overflow: hidden;
+}
+.hot-ques li .info-bar .answer-num {
+    margin-right: 30px;
+}
+.hot-ques li .info-bar a {
+    float: left;
+    font-size: 12px;
+    line-height: 20px;
+    color: #b5b9bc;
+}
+.leifeng-sort .title {
+    font-size: 16px;
+    color: #14191e;
+    height: 40px;
+    border-bottom: 1px solid #d0d6d9;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+.leifeng-sort .title span {
+    float: left;
+}
+.leifeng-sort .title .leifeng-tab {
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+    height: 39px;
+    border-bottom: 2px solid transparent;
+    margin-left: 25px;
+}
+.leifeng-sort .title  .active {
+    color: #F93;
+}
+/*.leifeng-sort .leifeng-day {
+    display: block;
+}*/
+.leifeng-sort .leifeng-tab-box-min {
+    height: 370px;
+    overflow: hidden;
+}
+.leifeng-sort li {
+    position: relative;
+    padding-left: 90px;
+    margin-top: 30px;
+}
+.leifeng-sort .ranking.first {
+    color: #f8b551;
+}
+.leifeng-sort .ranking {
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    width: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+    color: #b5b9bc;
+}
+.leifeng-sort .user-pic {
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.leifeng-sort .user-pic a, .leifeng-sort .user-pic img {
+    display: block;
+    height: 100%;
+}
+.leifeng-sort .user-info, .leifeng-sort .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+.leifeng-sort .user-name a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #787d92;
+    line-height: 20px;
+    text-align: left;
+}
+.leifeng-sort .user-info span {
+    font-size: 12px;
+    color: #b5b9bc;
+    line-height: 20px;
+    text-align: left;
+}
+.leifeng-sort .user-info .answer-num {
+    float: right;
+    text-align: right;
+}
+.leifeng-sort .leifeng-tab-box {
+    display: none;
+}
+.leifeng-sort .ranking.second {
+    color: #787d82;
+}
+.leifeng-sort .ranking.third {
+    color: #ec6941;
+}

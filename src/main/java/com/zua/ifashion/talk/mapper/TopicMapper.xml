@@ -175,15 +175,27 @@
 
   <!--查询比某个时间早的所有话题-->
   <!--List<Topic> selectTopicByTopicStart(Date topicStart);-->
-  <select id="selectTopicByDate" parameterType="Date" resultType="Topic">
+  <select id="selectTopicByTopicStart" parameterType="Date" resultType="Topic">
     select * from topic where topicEnd &lt; #{topicStart}
   </select>
 
 
   <!--查询比某个时间晚的所有话题-->
   <!--List<Topic> selectTopicByTopicEnd(Date topicEnd);-->
-  <select id="selectTopicByDate" parameterType="Date" resultType="Topic">
+  <select id="selectTopicByTopicEnd" parameterType="Date" resultType="Topic">
     select * from topic where topicStart &gt; #{topicEnd}
+  </select>
+
+  <!--//查询某个用户发布话题数量-->
+  <!--int getTopicCountByUserId(Integer userId);-->
+  <select id="getTopicCountByUserId" parameterType="int">
+    select count(*) from topic where userId=#{userId}
+  </select>
+
+  <!--//查询话题数量-->
+  <!--int getAllTopicCount();-->
+  <select id="getAllTopicCount"  resultType="int">
+    select count(*) from topic
   </select>
 
 

@@ -1,6 +1,7 @@
 package com.zua.ifashion.talk.mapper;
 
 import com.zua.ifashion.talk.entity.Discuss;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,9 @@ public interface DiscussMapper {
     //通过话题id来查询讨论
     List<Discuss> selectDiscussByTopicId(Integer topicId);
 
+    //查询某个话题的讨论数量
+    int getDiscussCountByTopicId(Integer topicId);
+
     //查询讨论评论量
     int selectReviewNumByDiscussId(Integer discussId);
 
@@ -37,13 +41,20 @@ public interface DiscussMapper {
     int selectLookNumByDiscussId(Integer discussId);
 
     //查询比某个时间晚的所有讨论
-    List<Discuss> selectDiscussByEDiscussDate(Date discussDate);
+    List<Discuss> selectDiscussByEDiscussDate(@Param("discussDate") Date discussDate);
 
     //查询比某个时间早的所有讨论
-    List<Discuss> selectDiscussByLDiscussDate(Date discussDate);
+    List<Discuss> selectDiscussByLDiscussDate(@Param("discussDate")Date discussDate);
 
     //查询时间段内的讨论
-    List<Discuss> selectAllDiscuss(Date start,Date end);
+    List<Discuss> selectAllDiscuss(@Param("start")Date start,@Param("end")Date end);
+
+    // 查询所有话题数量
+    int getAllDiscussCount();
+
+    //查询所有讨论
+    List<Discuss> getAllDiscuss();
+
 
 
 

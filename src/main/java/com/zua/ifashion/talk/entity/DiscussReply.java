@@ -15,24 +15,28 @@ public class DiscussReply {
 
     private String discussreplyContent;
 
+    private Integer topicId;
+
     public DiscussReply() {
     }
 
-    public DiscussReply(Integer discussreplyId, Integer discussId, Integer userId, Integer discussreplyZan, Date discussreplyDate, String discussreplyContent) {
+    public DiscussReply(Integer discussreplyId, Integer discussId, Integer userId, Integer discussreplyZan, Date discussreplyDate, String discussreplyContent, Integer topicId) {
         this.discussreplyId = discussreplyId;
         this.discussId = discussId;
         this.userId = userId;
         this.discussreplyZan = discussreplyZan;
         this.discussreplyDate = discussreplyDate;
         this.discussreplyContent = discussreplyContent;
+        this.topicId = topicId;
     }
 
-    public DiscussReply(Integer discussId, Integer userId, Integer discussreplyZan, Date discussreplyDate, String discussreplyContent) {
+    public DiscussReply(Integer discussId, Integer userId, Integer discussreplyZan, Date discussreplyDate, String discussreplyContent, Integer topicId) {
         this.discussId = discussId;
         this.userId = userId;
         this.discussreplyZan = discussreplyZan;
         this.discussreplyDate = discussreplyDate;
         this.discussreplyContent = discussreplyContent;
+        this.topicId = topicId;
     }
 
     public Integer getDiscussreplyId() {
@@ -81,5 +85,13 @@ public class DiscussReply {
 
     public void setDiscussreplyContent(String discussreplyContent) {
         this.discussreplyContent = discussreplyContent == null ? null : discussreplyContent.trim();
+    }
+
+    public Integer getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Integer topicId) {
+        this.topicId = topicId;
     }
 }

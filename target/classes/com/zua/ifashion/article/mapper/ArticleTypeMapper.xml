@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zua.ifashion.article.mapper.ArticleTypeMapper">
-  <resultMap id="BaseResultMap" type="com.zua.ifashion.article.entity.ArticleType">
-    <id column="articletypeId" jdbcType="INTEGER" property="articletypeId" />
-    <result column="articletypeName" jdbcType="VARCHAR" property="articletypeName" />
-  </resultMap>
-
-</mapper>

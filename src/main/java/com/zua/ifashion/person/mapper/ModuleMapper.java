@@ -17,8 +17,16 @@ public interface ModuleMapper {
      List<Module> getAllModules();
 
     //通过模块功能Id查询功能模块下的一级菜单
-//     Module selectMenuOneById(Integer moduleId);
+    //     Module selectMenuOneById(Integer moduleId);
         int getAllModuleCount();
+
+        //查询所有的一级
+    List<Module> getAllOneMenus();
+    //查询所有二级菜单
+    List<Module> getAllTwoMenus();
+
+    //根据一级菜单id查询二级菜单
+    List<Module> getOneMenuTwoMenus(Integer moduleId);
 
 
 }

@@ -12,4 +12,194 @@
     <result column="discussreplyContent" jdbcType="LONGVARCHAR" property="discussreplyContent" />
   </resultMap>
 
+
+  <!--//添加评论-->
+  <!--int addDiscussReply(DiscussReply discussReply);-->
+  <insert id="addDiscussReply" parameterType="DiscussReply">
+    insert into discuss_reply (discussreplyId, discussId, userId,
+    discussreplyZan, discussreplyDate,discussreplyContent)
+    values (#{discussreplyId}, #{discussId}, #{userId},
+    #{discussreplyZan}, #{discussreplyDate},#{discussreplyContent})
+  </insert>
+
+  <!--//添加评论-->
+  <!--int addDiscussReplySelective(DiscussReply discussReply);-->
+  <insert id="addDiscussReplySelective" parameterType="DiscussReply">
+    insert into discuss_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="topicId != null">
+        topicId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="topicContent != null">
+        topicContent,
+      </if>
+      <if test="topicImgurl != null">
+        topicImgurl,
+      </if>
+      <if test="topicPeople != null">
+        topicPeople,
+      </if>
+      <if test="lookNum != null">
+        lookNum,
+      </if>
+      <if test="topicStart != null">
+        topicStart,
+      </if>
+      <if test="topicEnd != null">
+        topicEnd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="discussreplyId != null">
+        #{discussreplyId},
+      </if>
+      <if test="discussId != null">
+        #{topicId},
+      </if>
+      <if test="discussId != null">
+        #{userId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="discussreplyZan != null">
+        #{discussreplyZan},
+      </if>
+      <if test="discussreplyDate != null">
+        #{discussreplyDate},
+      </if>
+      <if test="discussreplyContent != null">
+        #{discussreplyContent},
+      </if>
+    </trim>
+  </insert>
+
+  <!--//删除评论-->
+  <!--int deleteDiscussReply(Integer discussreplyId);-->
+  <delete id="deleteDiscussReply" parameterType="int">
+    delete from discuss_reply where discussreplyId = #{discussreplyId}
+  </delete>
+
+  <!--//修改评论-->
+  <!--int updateDiscussReply(DiscussReply discussReply);-->
+  <update id="updateDiscussReply" parameterType="DiscussReply">
+    update discuss_reply
+    set discussId = #{discussId},
+    userId = #{userId},
+    discussreplyZan = #{discussreplyZan},
+    discussreplyDate = #{discussreplyDate},
+    discussreplyContent=#{discussreplyContent}
+    where discussreplyId = #{discussreplyId}
+  </update>
+
+  <!--//修改话题不为空字段-->
+  <!--int updateDiscussReplySelective(DiscussReply discussReply);-->
+  <update id="updateDiscussReplySelective" parameterType="DiscussReply">
+    update discuss_reply
+    <set>
+      <if test="discussId != null">
+        discussId = #{discussId},
+      </if>
+      <if test="userId != null">
+        userId = #{userId},
+      </if>
+      <if test="discussreplyZan != null">
+        discussreplyZan = #{discussreplyZan},
+      </if>
+      <if test="discussreplyDate != null">
+        discussreplyDate = #{discussreplyDate},
+      </if>
+      <if test="discussreplyContent != null">
+        discussreplyContent = #{discussreplyContent},
+      </if>
+    </set>
+    where discussreplyId = #{discussreplyId}
+  </update>
+
+  <!--//通过id查询评论-->
+  <!--int selectDiscussReplyByDiscussreplyId(Integer discussreplyId);-->
+  <select id="selectDiscussReplyByDiscussreplyId" parameterType="int" resultType="DiscussReply">
+    select * from discuss_reply where discussreplyId =#{discussreplyId}
+  </select>
+
+  <!--//通过用户id来查询评论-->
+  <!--List<DiscussReply> selectDiscussReplyByUserId(Integer userId);-->
+  <select id="selectDiscussReplyByUserId" parameterType="int" resultType="DiscussReply">
+    select * from discuss_reply where userId =#{userId}
+  </select>
+
+  <!--//查询某个用户的评论数量-->
+  <!--int getDiscussReplyCountByUserId(Integer userId);-->
+  <select id="getDiscussReplyCountByUserId" parameterType="int" resultType="int">
+    select count(*) from discuss_reply where userId =#{userId}
+  </select>
+
+  <!--//通过discussId来查询评论-->
+  <!--List<DiscussReply> selectDiscussReplyByDiscussId(Integer discussId);-->
+  <select id="selectDiscussReplyByDiscussId" parameterType="int" resultType="DiscussReply">
+    select * from discuss_reply where discussId =#{discussId}
+  </select>
+
+  <!--//查询某篇讨论的所有评论数量-->
+  <!--int getDiscussReplyCountByDiscussId(Integer discussId);-->
+  <select id="getDiscussReplyCountByDiscussId" parameterType="int" resultType="int">
+    select count(*) from discuss_reply where discussId =#{discussId}
+  </select>
+
+  <!--//查询点赞量-->
+  <!--int selectDiscussReplyByDiscussReplyZan(Integer discussId);-->
+  <select id="selectDiscussReplyByDiscussReplyZan" parameterType="int">
+    select discussreplyZan from discuss_reply where discussId=#{discussId}
+  </select>
+
+  <!--//查询回复内容-->
+  <!--int selectDiscussReplyByDiscussReplyContent(Integer discussId);-->
+  <select id="selectDiscussReplyByDiscussReplyContent" parameterType="int">
+    select discussreplyContent from discuss_reply where discussId=#{discussId}
+  </select>
+
+  <!--//根据日期查询回复-->
+  <!--List<DiscussReply> selectDiscussReplyByDiscussreplyDate(Date discussreplyDate);-->
+  <select id="selectDiscussReplyByEDiscussReplyContent" parameterType="int" resultType="DiscussReply">
+    select * from discuss_reply where discussreplyDate &lt; #{discussreplyDate}
+  </select>
+
+  <select id="selectDiscussReplyByLDiscussReplyContent" parameterType="int" resultType="DiscussReply">
+    select * from discuss_reply where discussreplyDate &gt; #{discussreplyDate}
+  </select>
+
+  <!--//查询所有回复-->
+  <!--List<DiscussReply> getAllDiscussReply();-->
+  <select id="getAllDiscussReply"  resultType="DiscussReply">
+    select * from discuss_reply
+  </select>
+
+  <!--//查询所有回复数量-->
+  <!--int getAllDiscussReplyCount();-->
+  <select id="getAllDiscussReplyCount"  resultType="int">
+    select count(*) from discuss_reply
+  </select>
+
+  <!--//查询某个话题的所有回复-->
+  <!--List<DiscussReply> selectDiscussReplyByTopicId(Integer topicId);-->
+  <select id="selectDiscussReplyByTopicId" parameterType="int" resultType="DiscussReply">
+    select * from discuss_reply where topicId=#{topicId}
+  </select>
+
+
+  <!--//查询某个话题的所有回复数量-->
+  <!--int selectDiscussReplyCountByTopicId(Integer topicId);-->
+  <select id="selectDiscussReplyCountByTopicId"  resultType="int">
+    select count(*) from discuss_reply where topicId=#{topicId}
+  </select>
+
+
+
+
+
+
+
 </mapper>

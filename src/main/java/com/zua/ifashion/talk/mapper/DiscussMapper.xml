@@ -160,7 +160,7 @@
 
   <!--//查询比某个时间早的所有讨论-->
   <!--List<Discuss> selectDiscussByLDiscussDate(Date discussDate);-->
-  <select id="selectDiscussByEDiscussDate" parameterType="Date" resultType="Discuss">
+  <select id="selectDiscussByLDiscussDate" parameterType="Date" resultType="Discuss">
     select * from topic where  discussDate &lt; #{discussDate}
   </select>
 
@@ -169,9 +169,24 @@
   <select id="selectAllDiscuss" resultType="Discuss">
     select * from discuss where discussDate between #{0} and #{1}
   </select>
+  <!--马虎-->
+  <!--//查询某个话题的讨论数量-->
+  <!--int getDiscussCountByTopicId(Integer topicId);-->
+  <select id="getDiscussCountByTopicId" parameterType="int">
+    select count(*) from discuss where topicId=#{topicId}
+  </select>
 
+  <!--// 查询所有话题数量-->
+  <!--int getAllDiscussCount();-->
+  <select id="getAllDiscussCount"  resultType="int">
+    select count(*) from discuss
+  </select>
 
-
+  <!--//查询所有讨论-->
+  <!--List<Discuss> getAllDiscuss();-->
+  <select id="getAllDiscuss" resultType="Discuss">
+    select * from discuss
+  </select>
 
 
 

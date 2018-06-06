@@ -28,6 +28,9 @@ public interface TopicMapper {
     //通过用户id来查询话题
     List<Topic> selectTopicByUserId(Integer userId);
 
+    //查询某个用户发布话题数量
+    int getTopicCountByUserId(Integer userId);
+
     //查询话题是否已存在及根据内容
     int selectTopicByTopicContent(@Param("topicContent") String topicContent);
 
@@ -39,6 +42,9 @@ public interface TopicMapper {
 
     //查询所有话题
     List<Topic> getAllTopic();
+
+    //查询话题数量
+    int getAllTopicCount();
 
     //根据时间段查询话题
     List<Topic> selectTopicByDate(Date topicStart,Date topicEnd);

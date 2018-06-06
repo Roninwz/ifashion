@@ -1,0 +1,641 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body,
+html {
+    font: 14px/1.5 "PingFang SC", "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;
+}
+
+a:link,
+a:visited,
+body,
+html {
+    color: #1c1f21;
+}
+
+:link,
+ :visited,
+ins {
+    text-decoration: none;
+}
+
+a,
+button,
+input {
+    outline: 0;
+}
+
+.clearfix::after {
+    content: "\0020";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+.icon-right2::before {
+    content: "\e914";
+}
+#main, .padtop {
+    padding-top: 0px;
+}
+
+#main {
+    min-height: 750px;
+    padding: 20px 0;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.wenda {
+    width: 1152px;
+    margin: 20px auto 0;
+    position: relative !important;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.wenda-main,
+.wenda-mkclass,
+.wenda-sidebar {
+    background: #fff;
+}
+
+.wenda-main {
+    width: 776px;
+    padding: 0 0 48px;
+    margin-right: 48px;
+}
+
+.l {
+    float: left;
+}
+
+.wd-top-slogan {
+    margin-bottom: 4px;
+    height: 96px;
+    background: #F2F2F2;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.wd-top-slogan span {
+    float: left;
+    line-height: 48px;
+    display: inline-block;
+    font-size: 24px;
+    color: #07111b;
+    letter-spacing: 3px;
+}
+
+.wd-top-slogan a {
+    width: 137px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background-color: #F1A040;
+    color: #FFF;
+    float: right;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.nav {
+    padding: 24px;
+    border-bottom: 1px solid #D9DDE1;
+}
+
+li.active {
+    color: #F93;
+}
+.nav a.active {
+    color: #F93;
+}
+
+.nav a {
+    font-size: 16px;
+    color: #93999f;
+    line-height: 20px;
+    text-align: left;
+    margin-right: 50px;
+}
+
+.recommend {
+    width: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.recommend li {
+    width: 100%;
+    margin-top: 4px;
+    padding: 20px 24px;
+    background: #FFFFDF;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    box-sizing: border-box;
+}
+
+.recommend li .recommend-tag {
+    margin-right: 12px;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #93999f;
+    line-height: 24px;
+    background: #FFFFA4;
+    border-radius: 12px;
+}
+
+.recommend li a,
+.recommend li span {
+    display: inline-block;
+}
+
+.recommend li .recommend-tag i {
+    margin-left: 4px;
+    line-height: 24px;
+    color: #F2F2F2;
+}
+
+[class*=' icon-'],
+[class^=icon-] {
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.recommend li .recommend-link {
+    color: #F93;
+}
+
+.recommend li a,
+.recommend li span {
+    display: inline-block;
+}
+
+.wenda-list {
+    min-height: 1130px;
+}
+
+.ques-answer {
+    position: relative;
+    padding-left: 56px;
+    padding-top: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.ques-answer .tag-img {
+    position: absolute;
+    left: 0px;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.ques-answer .tag-img a {
+    display: block;
+}
+
+.ques-answer .tag-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+.ques-answer .from-tag {
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+    color: #787d82;
+}
+
+.ques-answer .from-tag a {
+    font-size: 12px;
+    color:#F93;
+    margin-left: 15px;
+}
+
+.ques-answer .ques-con {
+    line-height: 20px;
+    position: relative;
+}
+
+.ques-answer .ques-con a.ques-con-content {
+    display: block;
+    line-height: 28px;
+    margin-right: 30px;
+    word-break: break-all;
+}
+
+.ques-answer .ques-con a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+.page {
+    margin: 40px auto 20px;
+    overflow: hidden;
+    clear: both;
+    text-align: center;
+}
+
+.page span,
+.page-disabled {
+    height: 32px;
+    color: #c8cdd2;
+}
+
+.page a.text-page-tag.active {
+    background: #4d555d;
+    color: #fff;
+}
+
+.page a {
+    margin: 0 8px;
+    color: #4d555d;
+    border-radius: 16px;
+    -moz-transition: border-color .2s;
+    transition: border-color .2s;
+}
+
+.page a,
+.page span,
+.page-disabled {
+    padding: 0 4px;
+    min-width: 24px;
+    line-height: 32px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+}
+
+.wenda-slider {
+    width: 328px;
+}
+
+.r {
+    float: right;
+}
+
+.user-about {
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.my-follow-class,
+.quiz a,
+.user-about {
+    margin-bottom: 30px;
+}
+
+.user-about .user-info {
+    position: relative;
+    padding-left: 50px;
+    border-bottom: 1px solid #d0d6d9;
+    padding-bottom: 20px;
+}
+
+.user-about .user-info .user-pic {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.user-about .user-info .user-pic a,
+.user-about .user-info .user-pic img {
+    display: block;
+    height: 100%;
+}
+
+.user-about .user-info .user-pic a,
+.user-about .user-info .user-pic img {
+    display: block;
+    height: 100%;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+.user-about .user-info .integral-info,
+.user-about .user-info .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+
+.user-about .user-info .user-name a {
+    font-size: 14px;
+    color: #14191e;
+    line-height: 20px;
+    text-align: left;
+}
+
+.user-about .user-info .integral-info,
+.user-about .user-info .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+
+.user-about .user-info .integral-info .integral {
+    float: left;
+}
+
+.user-about .user-info .integral-info a {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    color: #787d82;
+}
+
+.user-about .user-action {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.user-about .user-action span {
+    position: relative;
+    font-size: 14px;
+    color: #14191e;
+    line-height: 20px;
+    padding: 0 10px;
+    width: 33%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.my-follow-class,
+.quiz a,
+.user-about {
+    margin-bottom: 30px;
+}
+
+.my-follow-class h3 {
+    position: relative;
+    height: 20px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    text-align: left;
+    color: #14191e;
+    line-height: 20px;
+    border-bottom: 1px solid #d0d6d9;
+    margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.my-follow-class .no-tag {
+    height: 120px;
+    background-color: #fffbe5;
+    overflow: hidden;
+}
+
+.my-follow-class .no-tag h4 {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #14191e;
+    text-align: center;
+    line-height: 20px;
+}
+
+.my-follow-class .no-tag .follow-immediately {
+    width: 80px;
+    height: 30px;
+    margin: 15px auto 0;
+    background-color: #ff9902;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.advertisement,
+.hot-ques {
+    margin-bottom: 30px;
+}
+
+.hot-ques .title {
+    font-size: 16px;
+    color: #14191e;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.hot-ques .title,
+.hot-ques li .content a,
+.leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+
+.hot-ques li {
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1f2;
+}
+
+.hot-ques li .content a {
+    font-size: 14px;
+    color: #14191e;
+    word-wrap: break-word;
+}
+
+.hot-ques .title,
+.hot-ques li .content a,
+.leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+
+.hot-ques li .info-bar {
+    height: 20px;
+    margin-top: 7px;
+    overflow: hidden;
+}
+
+.hot-ques li .info-bar .answer-num {
+    margin-right: 30px;
+}
+
+.hot-ques li .info-bar a {
+    float: left;
+    font-size: 12px;
+    line-height: 20px;
+    color: #b5b9bc;
+}
+
+.leifeng-sort .title {
+    font-size: 16px;
+    color: #14191e;
+    height: 40px;
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.leifeng-sort .title span {
+    float: left;
+}
+
+.leifeng-sort .title .leifeng-tab.active {
+    border-color: #F93;
+}
+
+.leifeng-sort .title .leifeng-tab {
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+    height: 39px;
+    border-bottom: 2px solid transparent;
+    margin-left: 25px;
+}
+
+.hot-ques .title,
+.hot-ques li .content a,
+.leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+
+
+/* .leifeng-sort .leifeng-day {
+    display: block;
+} */
+
+.leifeng-sort .leifeng-tab-box-min {
+    height: 370px;
+    overflow: hidden;
+}
+
+.leifeng-sort li {
+    position: relative;
+    padding-left: 90px;
+    margin-top: 30px;
+}
+
+.leifeng-sort .ranking.first {
+    color: #f8b551;
+}
+
+.leifeng-sort .ranking {
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    width: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.leifeng-sort .user-pic {
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.leifeng-sort .user-pic a,
+.leifeng-sort .user-pic img {
+    display: block;
+    height: 100%;
+}
+
+.leifeng-sort .user-info,
+.leifeng-sort .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+
+.leifeng-sort .user-name a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #787d92;
+    line-height: 20px;
+    text-align: left;
+}
+
+.leifeng-sort .user-info span {
+    font-size: 12px;
+    color: #b5b9bc;
+    line-height: 20px;
+    text-align: left;
+}
+
+.leifeng-sort .user-info .answer-num {
+    float: right;
+    text-align: right;
+}
+
+.leifeng-sort .ranking.second {
+    color: #787d82;
+}
+
+.leifeng-sort .ranking.third {
+    color: #ec6941;
+}
+
+
+/* 
+.leifeng-sort .leifeng-week {
+    display: none;
+} */

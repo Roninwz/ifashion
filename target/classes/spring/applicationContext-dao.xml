@@ -58,7 +58,7 @@
 		com.zua.ifashion.talk.mapper,
 		com.zua.ifashion.article.mapper-->
 		<property name="basePackage" 
-		value="com.zua.ifashion.person.mapper
+		value="com.zua.ifashion.person.mapper,com.zua.ifashion.talk.mapper
 		"/>
 		<!--
 		name使用sqlSessionFactoryBeanName
