@@ -13,9 +13,6 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -37,6 +34,11 @@
     <link rel="stylesheet" type="text/css" href="static/admin/h-uiadmin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="static/admin/h-uiadmin/css/style.css" />
     <link rel="stylesheet" type="text/css" href="static/admin/css/index.css">
+
+
+
+
+
     <!--[if IE 6]>
     <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
@@ -53,7 +55,7 @@
     <div class="navbar navbar-fixed-top">
         <div class="container-fluid cl">
             <!-- logo -->
-            <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/admin/index"><img src="static/admin/images/logo.png"></a>
+            <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/admin/index"><img src="${pageContext.request.contextPath }/static/admin/images/logo.png"></a>
 
             <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 
@@ -91,7 +93,7 @@
     <div class="menu_dropdown bk_2">
 
         <!-- 文章管理 -->
-
+        <c:set var="adminModuleVos" value="${sessionScope.adminModuleVos}"/>
         <c:forEach items="${adminModuleVos}" var="adminModuleVos">
         <dl  l id="menu-article">
             <dt><i class="Hui-iconfont">&#xe616;</i> &nbsp;&nbsp;${adminModuleVos.moduleName}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
@@ -193,10 +195,6 @@
 <script type="text/javascript" src="static/admin/h-uiadmin/js/H-ui.admin.page.js"></script>
 <!--/_footer /作为公共模版分离出去-->
 
-<!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript">
-</script>
-<!--/请在上方写此页面业务相关的脚本-->
 
 
 </body>
