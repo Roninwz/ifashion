@@ -1,5 +1,7 @@
 package com.zua.ifashion.talk.entity;
 
+import java.util.Date;
+
 public class Topic {
     private Integer topicId;
 
@@ -12,6 +14,10 @@ public class Topic {
     private Integer lookNum;
 
     private String topicContent;
+
+    private Date topicStart;
+
+    private Date topicEnd;
 
     public Integer getTopicId() {
         return topicId;
@@ -61,13 +67,41 @@ public class Topic {
         this.topicContent = topicContent == null ? null : topicContent.trim();
     }
 
-    public Topic(Integer topicId, Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent) {
+    public Date getTopicStart() {
+        return topicStart;
+    }
+
+    public void setTopicStart(Date topicStart) {
+        this.topicStart = topicStart;
+    }
+
+    public Date getTopicEnd() {
+        return topicEnd;
+    }
+
+    public void setTopicEnd(Date topicEnd) {
+        this.topicEnd = topicEnd;
+    }
+
+    public Topic(Integer topicId, Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent, Date topicStart, Date topicEnd) {
         this.topicId = topicId;
         this.userId = userId;
         this.topicImgurl = topicImgurl;
         this.topicPeople = topicPeople;
         this.lookNum = lookNum;
         this.topicContent = topicContent;
+        this.topicStart = topicStart;
+        this.topicEnd = topicEnd;
+    }
+
+    public Topic(Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent, Date topicStart, Date topicEnd) {
+        this.userId = userId;
+        this.topicImgurl = topicImgurl;
+        this.topicPeople = topicPeople;
+        this.lookNum = lookNum;
+        this.topicContent = topicContent;
+        this.topicStart = topicStart;
+        this.topicEnd = topicEnd;
     }
 
     public Topic() {

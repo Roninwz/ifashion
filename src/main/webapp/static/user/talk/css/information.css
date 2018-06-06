@@ -1,0 +1,455 @@
+@charset "utf-8";
+/* CSS Document */
+body, input, button, select, textarea {
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+    color: #444;
+}
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc {
+    margin: 0;
+    padding: 0;
+}
+.cl {
+    zoom: 1;
+}
+
+
+.cl::after {
+    visibility: hidden;
+	display:block;
+}
+.mn {
+    width: 800px;
+	margin-left:100px;
+	float:left;
+	margin-bottom:1em;
+	overflow: hidden;
+	-moz-box-shadow:10px 15px 5px 10px #666666;
+	 -webkit-box-shadow:10px 15px 5px 10px #666666;
+	  box-shadow:10px 15px 5px 10px #666666;
+
+}
+* {
+    word-wrap: break-word;
+	
+}
+#postlist {
+    border: 0;
+    margin: 0 5px;
+}
+.bm {
+    border: 1px solid #CDCDCD;
+    background: #FFF;
+}
+.pl table {
+    table-layout: fixed;
+    width: 100%;
+}
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+}
+.pview,.ptit {
+    background:#E8E8E8;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+.pview {
+    border-right: 1px solid #000;
+}
+.pls {
+    width: 160px;
+	border-right:1px solid #C2D5E3;
+}
+.plc, .pls {
+    vertical-align: top;
+	overflow: hidden;
+}
+.plc {
+    padding: 0 20px;
+}
+
+.hm {
+    text-align: center;
+}
+.pview .xg1,.ptit .xg1 a {
+    color: #e80084 !important;
+}
+.xi1, .onerror {
+    color: #f26c4f;
+}
+.pipe {
+    margin: 0 5px;
+    color: #ccc;
+}
+.ts {
+    font: 700 16px Tahoma, Geneva, sans-serif;
+}
+.ptit a {
+    color: #e80084;
+}
+a {
+	color:#333;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+}
+.ad .pls,.ad .plc {
+    background: #F2F2F2;
+}
+.pls {
+    border-right-color: #d1d1d1;
+	background:#FFF;
+}
+.ad .pls {
+    padding: 0;
+    height: 4px;
+}
+.ad .plc {
+    padding: 0;
+    overflow: hidden;
+}
+.ad .plc {
+    background: #E5EDF2;
+    padding: 0;
+    overflow: hidden;
+}
+.pls .avatar img {
+    padding: 5px 5px 8px;
+    background: #FFF url(../image/information/midavt_shadow.gif) 0 100% repeat-x;
+}
+a img {
+    border: none;
+}
+.pls .pi {
+    border-bottom: none;
+    padding-top: 0px;
+}
+.pls .pi {
+    padding-left: 15px;
+}
+.pi {
+    height: auto;
+    margin: 0;
+    overflow: visible;
+	padding:10px 0;
+}
+.pls .pi .xw1 {
+    color: #9f2473;
+}
+.xw1 {
+    font-weight: 700;
+}
+.pls p, .pls .pil, .pls .o {
+    margin: 5px 10px 5px 20px;
+}
+.pls .o .buddy {
+    background-image: url("../image/information/friend.gif");
+}
+.pls .o li {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    text-indent: 18px;
+}
+.xl2 li {
+    float: left;
+    margin: 2px 0;
+    padding: 0;
+    width: 48.6%;
+    height: 1.5em;
+    overflow: hidden;
+}
+ul li, .xl li {
+    list-style: none;
+}
+.xi2, .xi2 a, .xi3 a {
+    color: #369;
+}
+.pls .o .pm2 {
+    background-image: url("../image/information/pmto.gif");
+}
+.plc .pi {
+    border-bottom: 1px solid #CDCDCD;
+}
+.pdbt {
+    float: right;
+    margin: -5px 10px 0 0;
+}
+.authicn {
+    cursor: pointer;
+}
+.vm {
+    vertical-align: middle;
+}
+em, cite {
+    font-style: normal;
+}
+.pct {
+    padding-bottom: 1em;
+}
+.pcb {
+    margin-right: 0px;
+	clear:left;
+}
+.t_fsz {
+    min-height: 100px;
+}
+.t_f, .t_f td {
+    font-size: 14px;
+}
+.pcb strong {
+    font-weight: 700;
+}
+.zoom {
+    cursor: pointer;
+}
+.ptg {
+    padding-left: 20px;
+    background: url(../image/information/tag.gif) no-repeat 0 2px;
+}
+.mbm {
+    margin-bottom: 10px !important;
+}
+.ptg a {
+    color: #369;
+}
+.po {
+    border-top: 1px dashed #CDCDCD;
+}
+.pob {
+    line-height: 36px;
+}
+.po p {
+    float: right;
+}
+.po p a, .po p label {
+    margin-right: 6px;
+}
+.bui {
+    margin: -1px 0 0 -1px;
+    padding: 15px 0 15px 20px;
+    width: 430px !important;
+    border: 1px solid #CDCDCD;
+    background: #FFF;
+    box-shadow: 2px 2px 3px #ccc;
+    -webkit-box-shadow: 2px 2px 3px #CCC;
+    -moz-box-shadow: 2px 2px 3px #CCC;
+}
+.p_pop, .p_pof, .sllt {
+    min-width: 60px;
+}
+.pls .avatar {
+    margin: 10px 15px;
+}
+
+.plm {
+    vertical-align: bottom !important;
+}
+#f_pst {
+    border-color: #FFF;
+    margin: 0 5px;
+}
+.bmw {
+    border: 1px solid #CDCDCD;
+}
+#f_pst .plc {
+    padding: 20px;
+}
+.y {
+    float: right;
+}
+#fastsmilies {
+    text-align: right;
+}
+.hasfsl {
+    margin-right: 170px;
+    zoom: 1;
+}
+#f_pst .tedt {
+    width: auto;
+}
+.tedt {
+    border: 1px solid;
+    border-color: #999 #CCC #CCC #999;
+}
+.mtn {
+    margin-top: 5px !important;
+}
+.tedt .bar {
+    padding: 0 10px 0 0;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #CDCDCD;
+    background: #F2F2F2;
+}
+.fpd a.fbld {
+    background-position: 0 0;
+}
+.fpd a {
+    float: left;
+    margin: 2px 5px 0 0;
+    width: 20px;
+    height: 20px;
+    background: url(../image/information/editor.gif) no-repeat;
+    text-indent: -9999px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.fpd a.fclr {
+    background-position: -60px 0;
+}
+.fpd a.fmg {
+    background-position: 0 -20px;
+}
+.fpd a.fsml {
+    background-position: -20px -20px;
+}
+.tedt .area {
+    padding: 4px;
+    background: #FFF;
+    zoom: 1;
+}
+.tedt .pt {
+    width: 100%;
+    margin-right: 0px;
+    padding: 0 !important;
+    border: none;
+    background: #FFF none;
+}
+div.pt {
+    height: 100px;
+    line-height: 100px;
+}
+.pt {
+    overflow-y: auto;
+}
+.xi2, .xi2 a, .xi3 a {
+    color:#F93;
+}
+.pnpost .pn {
+    height: 26px;
+}
+.pnc, a.pnc {
+    border-color: #235994;
+    background-color: #F93;
+    background-position: 0 -48px;
+    color: #fff !important;
+}
+.pn {
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+.pn em, .pn strong {
+    font-weight: 700;
+}
+.pn em, .pn span, .pn strong {
+    padding: 0 10px;
+    line-height: 21px;
+}
+.vm * {
+    vertical-align: middle;
+}
+
+.sd {
+    width: 250px;
+	float:right;
+	overflow:hidden;
+	overflow-y:visible;
+	margin-right:100px;
+	-moz-box-shadow:10px 15px 5px 10px #666666;
+	 -webkit-box-shadow:10px 15px 5px 10px #666666;
+	  box-shadow:10px 15px 5px 10px #666666;
+
+}
+#diyforumdisplayright .frame, #diyforumdisplayright2 .frame, #diyforumdisplayrightjh .frame {
+    background: transparent;
+}
+#ct .frame {
+    margin: 0;
+    border: none;
+}
+#framek1G8GP {
+    border: 0px !important;
+    margin: 0px !important;
+}
+.temp {
+    margin: 1px;
+}
+#portal_block_178 {
+    margin: 0px !important;
+}
+.sd_weekreply .title {
+    background-position: 0 0;
+}
+.sd_weekreply .title, .sd_newhotthread .title, .sd_jinghuatie .title, .sd_newreply .title, .sd_newblog .title, .sd_starsign .title {
+    background: url(../image/information/threadright_title.png) no-repeat;
+    height: 26px;
+    margin-top: 5px;
+    text-indent: -9999px;
+}
+.title {
+    padding: 0 10px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 32px;
+    overflow: hidden;
+}
+.frame .title .titletext, .block .title .titletext {
+    float: left;
+}
+#portal_block_178 .dxb_bc {
+    margin: 0px !important;
+}
+#diyforumdisplayright .module, #diyforumdisplayrightjh .module, #diyforumdisplayright2 .module, .sd_starsign .module {
+    margin: 0 5px;
+    background: #FFF;
+    padding: 6px 15px;
+}
+#diyforumdisplayright .block .xl1 ul li, #diyforumdisplayrightjh .block .xl1 ul li, #diyforumdisplayright2 .block .xl1 ul li {
+    background: url(../image/information/threadright_icon.png) no-repeat 0 8px;
+    height: 23px;
+    line-height: 23px;
+    overflow: hidden;
+}
+.block .xl1 ul li {
+    padding-left: 10px;
+}
+
+.xl li {
+    margin: 2px 0;
+}
+.sd_newhotthread .title {
+    background-position: 0 -26px;
+}
+.img207x180 {
+    background: #FFF;
+    border: 1px solid #A1A1A1;
+    padding: 2px;
+    text-align: center;
+    width: 204px;
+}
+.mt6 {
+    margin-top: 6px;
+}
+#framecB776k {
+    border: 0px !important;
+    margin: 0px !important;
+}
+#ct .sd .block {
+    margin: 0;
+}
+.sd_jinghuatie .title {
+    background-position: 0 -52px;
+}
+.sd_redianguancha .title {
+    text-indent: -9999px;
+    height: 26px;
+    margin-top: 5px;
+    background: url(../image/information/redianguanche_t.png) no-repeat left top;
+}
+
