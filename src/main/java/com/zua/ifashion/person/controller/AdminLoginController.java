@@ -1,7 +1,11 @@
 package com.zua.ifashion.person.controller;
 
 import com.zua.ifashion.person.entity.Admin;
+import com.zua.ifashion.person.entity.AdminRole;
+import com.zua.ifashion.person.entity.Module;
+import com.zua.ifashion.person.entity.RoleModule;
 import com.zua.ifashion.person.service.*;
+import com.zua.ifashion.person.vo.AdminModuleVo;
 import com.zua.ifashion.util.EmptyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/admin")
@@ -86,7 +90,70 @@ public class AdminLoginController {
 //            }
 //            map.put("modules", modules);
 //            session.setAttribute("adminName", adminName);
+
+//            List<AdminModuleVo> adminModuleVos=new ArrayList<>();
+            Set<AdminModuleVo> adminModuleVos=new HashSet<>();
+            int adminId=admin2.getAdminId();
+            System.out.println(adminId);
+            //通过管理员id查询
+           List<AdminRole> adminRoles= adminRoleService.selectAdminRoleByAdminId(adminId);
+           if(!adminRoles.isEmpty()){
+               System.out.println(adminRoles.size());
+                System.out.println(adminRoles);
+               for (AdminRole adminRole:adminRoles) {
+
+                    if(!EmptyUtil.isEmpty(adminRole)){
+
+
+                        //根据角色id查询角色模块功能集合
+                        List<RoleModule> roleModules=roleModuleService.selectRoleModuleByRoleId(adminRole.getRoleId());
+
+                        for (RoleModule roleModule:roleModules) {
+                            //查一级菜单-先查出所有的权限模块再查出所有的一级菜单，通过判断是否相等，去重
+                            Module mo=moduleService.selectByModuleId(roleModule.getModuleId());
+                            List<Module> allOneMenus= moduleService.getAllOneMenus();
+                         for(Module moo:allOneMenus){
+                            if(mo.equals(moo)){
+
+                                System.out.println(mo.getModuleName());
+                                List<Module> modules2=moduleService.getOneMenuTwoMenus(mo.getModuleId());
+                                AdminModuleVo adminModuleVo=new AdminModuleVo();
+                                adminModuleVo.setModuleName(mo.getModuleName());
+                                adminModuleVo.setModules(modules2);
+
+                                adminModuleVos.add(adminModuleVo);
+                                for (Module module:adminModuleVo.getModules()){
+
+                                    System.out.println("该用户所有模块名如下："+module.getModuleName());
+                                }
+                                System.out.println(adminModuleVos.size());
+
+
+
+                            }
+                        }
+
+
+                        }
+                    }
+                }
+           }
+            //根据管理员id查询用户角色集合
+
+            //ListUtil.removeDuplicate(adminModuleVos);去重失败
+//            List<AdminModuleVo> moduleList = new ArrayList<>();
+//            // 去重
+//            adminModuleVos.stream().forEach(
+//                    p -> {
+//                        if (!moduleList.contains(p)) {
+//                            moduleList.add(p);
+//                        }
+//                    }
+//            );
+
             System.out.println(" 登录成功");
+            System.out.println(adminModuleVos.size());
+           map.put("adminModuleVos",adminModuleVos);
             return "admin/index";
         }
 

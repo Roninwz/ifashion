@@ -40,4 +40,19 @@ public class ModuleServiceImpl implements ModuleService {
     public int getAllModuleCount() {
         return moduleMapper.getAllModuleCount();
     }
+
+    @Override
+    public List<Module> getAllOneMenus() {
+        return moduleMapper.getAllOneMenus();
+    }
+
+    @Override
+    public List<Module> getAllTwoMenus() {
+        return moduleMapper.getAllTwoMenus();
+    }
+
+    @Override
+    public List<Module> getOneMenuTwoMenus(Integer moduleId) {
+        return moduleMapper.getOneMenuTwoMenus(moduleId);
+    }
 }

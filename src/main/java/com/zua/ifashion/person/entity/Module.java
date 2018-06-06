@@ -1,5 +1,7 @@
 package com.zua.ifashion.person.entity;
 
+import java.util.Objects;
+
 public class Module {
     private Integer moduleId;
 
@@ -49,5 +51,22 @@ public class Module {
     }
 
     public Module() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Module module = (Module) o;
+        return Objects.equals(moduleId, module.moduleId) &&
+                Objects.equals(moduleName, module.moduleName) &&
+                Objects.equals(moduleUrl, module.moduleUrl) &&
+                Objects.equals(parentId, module.parentId);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(moduleId, moduleName, moduleUrl, parentId);
     }
 }
