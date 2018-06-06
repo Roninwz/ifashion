@@ -15,25 +15,25 @@
     <div class="Hui-article">
         <article class="cl pd-20">
 
-
             <div class="text-c">
                     <span class="select-box inline">
-                            <select name="" class="select">
-                                <option value="0">全部分类</option>
-                                <option value="1">分类一</option>
-                                <option value="2">分类二</option>
-                            </select>
-                            </span> 日期范围：
-                <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;"> -
-                <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
-                <input type="text" name=""  placeholder=" 资讯名称" style="width:250px" class="input-text">
-                <button name=""  class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜文章</button>
+                                    <select name="" class="select">
+                                        <option value="0">全部分类</option>
+                                        <option value="1">用户</option>
+                                        <option value="2">设计师</option>
+                                    </select>
+                                    </span>
+                <input type="text" name=""  placeholder="用户名/设计师名" style="width:250px" class="input-text">
+                <button name="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
             </div>
+            <!-- 导出excel -->
+            <button name="" id="" class="btn btn-success" type="submit"> 导出用户excel</button>
+
             <div class="cl pd-5 bg-1 bk-gray mt-20">
                     <span class="l">
-                            <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-                            <a class="btn btn-primary radius" data-title="添加资讯" href="addarticle.html"><i class="Hui-iconfont">&#xe600;</i> 添加文章</a>
-                            </span>
+                                    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                                    <a class="btn btn-primary radius" data-title="添加用户" href="adduser.html"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
+                                    </span>
                 <span class="r">共有数据：<strong>54</strong> 条</span>
             </div>
             <div class="mt-20">
@@ -41,13 +41,16 @@
                     <thead>
                     <tr class="text-c">
                         <th width="25"><input type="checkbox" name="" value=""></th>
-                        <th width="80">ID</th>
-                        <th width="80">标题</th>
-                        <th width="80">分类</th>
-                        <th width="80">来源</th>
-                        <th width="120">更新时间</th>
-                        <th width="75">浏览次数</th>
-                        <th width="60">发布状态</th>
+                        <th width="40">ID</th>
+                        <th width="80">用户名</th>
+                        <th width="80">电话</th>
+                        <th width="80">邮箱</th>
+                        <th width="60">性别</th>
+                        <th width="60">年龄</th>
+                        <th width="60">时尚积分值</th>
+                        <th width="80">注册时间</th>
+                        <th width="60">用户身份</th>
+                        <th width="60">用户状态</th>
                         <th width="120">操作</th>
                     </tr>
                     </thead>
@@ -58,24 +61,21 @@
                         <td><a style="cursor:pointer" href="articledetail.html">资讯标题</a></td>
                         <td>行业动态</td>
                         <td>H-ui</td>
-                        <td>2014-6-11 11:11:42</td>
+                        <td>2014-6-</td>
+                        <td>21212</td>
+                        <td>21212</td>
                         <td>21212</td>
                         <td class="td-status"><span class="label label-success radius">已发布</span></td>
-                        <td class="f-14 td-manage"><a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>
-                            <a style="text-decoration:none" class="ml-5" href="updatearticle.html" title="编辑"><i class="Hui-iconfont">&#xe6df;编辑</i></a>
+                        <td class="td-status"><span class="label label-success radius">已发布</span></td>
+
+                        <td class="f-14 td-manage">
+                            <a style="text-decoration:none" class="ml-5" href="updateuser.html" title="编辑"><i class="Hui-iconfont">&#xe6df;编辑</i></a>
                             <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;删除</i></a></td>
                     </tr>
 
                     </tbody>
                 </table>
             </div>
-
-
-
-
-
-
-
 
 
         </article>
