@@ -1,11 +1,13 @@
 package com.zua.ifashion.person.controller;
 
-import com.zua.ifashion.person.entity.User;
-import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.person.entity.Tag;
+import com.zua.ifashion.person.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -14,114 +16,9 @@ import java.util.Map;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-
    @Autowired
-    private UserService userService;
-    // 文章管理controller
-    //1.文章管理首页
-    @RequestMapping(value = "/articlemanage", method = RequestMethod.GET)
-    public String adminArticle(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-
-        return "admin/article";
-    }
-    //2.更新文章
-
-    @RequestMapping(value = "/updateArticle", method = RequestMethod.GET)
-    public String updateArticle(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/updatearticle";
-    }
-    //3.更新处理
-
-    @RequestMapping(value = "/updateHandleArticle", method = RequestMethod.POST)
-    public String updateHandleArticle(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/article";
-    }
-    //4.添加文章
-
-    @RequestMapping(value = "/addArticle", method = RequestMethod.GET)
-    public String addArticle(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/addarticle";
-    }
-    //5.添加处理
-
-    @RequestMapping(value = "/addHandleArticle", method = RequestMethod.POST)
-    public String addHandleArticle(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/article";
-    }
-    //6.查询后的页面controller
-    @RequestMapping(value = "/afterSelect", method = RequestMethod.POST)
-    public String afterSelect(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/afterselect";
-    }
-
-
-
-
-
-
-    //社区管理controller
-    @RequestMapping(value = "/topicmanage", method = RequestMethod.GET)
-    public String adminTopic(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/topic";
-    }
-
-
-
-
-
-    //用户管理controller
-    @RequestMapping(value = "/usermanage", method = RequestMethod.GET)
-    public String adminUser(HttpSession session, Map<String, Object> map) {
-
-        List<User> users=userService.getAllUsers();
-        map.put("users",users);
-        session.getAttribute("adminModuleVos");
-        return "admin/user";
-    }
-    @RequestMapping(value = "/adduser", method = RequestMethod.GET)
-    public String addUser(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/adduser";
-    }
-    @RequestMapping(value = "/addhandleuser", method = RequestMethod.GET)
-    public String addHandleUser(HttpSession session) {
-
-
-
-
-
-        session.getAttribute("adminModuleVos");
-        return "admin/adduser";
-    }
-    @RequestMapping(value = "/updateuser", method = RequestMethod.GET)
-    public String updateUser(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/updateuser";
-    }
-    @RequestMapping(value = "/updatehandleuser", method = RequestMethod.GET)
-    public String updateHandleUser(HttpSession session) {
-
-
-
-
-
-
-        session.getAttribute("adminModuleVos");
-
-
-
-
-
-        return "admin/user";
-    }
-
+    private TagService tagService;
+   // adminmanage.action
     //管理员管理controller
     //1.角色管理
     @RequestMapping(value = "/rolemanage", method = RequestMethod.GET)
@@ -136,21 +33,52 @@ public class AdminController {
         return "admin/module";
     }
 
-    //其它管理controller
-    @RequestMapping(value = "/othermanage", method = RequestMethod.GET)
-    public String adminOther(HttpSession session) {
+
+    @RequestMapping(value = "/adminmanage", method = RequestMethod.GET)
+    public String adminAdminManage(HttpSession session) {
         session.getAttribute("adminModuleVos");
-        return "admin/other";
+        return "admin/adminlist";
+    }
+    @RequestMapping(value = "/addadmin", method = RequestMethod.GET)
+    public String addAdmin(HttpSession session) {
+        session.getAttribute("adminModuleVos");
+        return "admin/addadmin";
+    }
+    @RequestMapping(value = "/updateadmin", method = RequestMethod.GET)
+    public String updateAdmin(HttpSession session) {
+        session.getAttribute("adminModuleVos");
+        return "admin/updateadmin";
     }
 
 
 
+   // 其它管理controller
+    @RequestMapping(value = "/tagmanage", method = RequestMethod.GET)
+    public String adminOther(HttpSession session, Map<String,Object> map) {
 
-    //设置controller
-    @RequestMapping(value = "/system", method = RequestMethod.GET)
-    public String adminSystem(HttpSession session) {
+
+        List<Tag> tags=tagService.getAllTags();
+        int tagcount=tagService.getAllTagCount();
+        map.put("tags",tags);
+        map.put("tagcount",tagcount);
         session.getAttribute("adminModuleVos");
-        return "admin/system";
+        return "admin/tag";
     }
 
+
+    @RequestMapping(value = "/addtag", method = RequestMethod.POST)
+    @ResponseBody
+    public Tag addTag(HttpSession session, @RequestBody Tag tag,Map<String, Object> map) {
+//            String isAdd="";
+//         int n= tagService.addTagSelective(tag);
+//         if(n>0){
+//             isAdd="添加失败";
+//         }else {
+//             isAdd="添加成功";
+//         }
+        int n= tagService.addTagSelective(tag);
+
+        session.getAttribute("adminModuleVos");
+        return tag;
+    }
 }

@@ -24,6 +24,25 @@
 		<property name="maxInMemorySize" value="10960"></property>
 	</bean>
 
+	<!-- 配置json数据 -->
+	<bean
+			class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJackson2HttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+	<bean id="mappingJackson2HttpMessageConverter"
+		  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+				<value>text/json;charset=UTF-8</value>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
 
 	<!-- 设置静态资源的访问 -->
 	<mvc:resources location="/static/" mapping="/static/**"/>
@@ -43,30 +62,11 @@
 	com.zua.ifashion.talk.controller,
 	com.zua.ifashion.talk.service,
 	com.zua.ifashion.person.controller,
-	com.zua.ifashion.person.service
+	com.zua.ifashion.person.service,com.zua.ifashion.util.ueditor.controller
 "/>
 	<!-- mvc:annotation-driven默认加载很多的参数绑定方法，比如json转换解析器， 如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter 
 		实际开发时使用mvc:annotation-driven -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 
 
-	<!-- 配置json数据 -->
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-				<ref bean="mappingJackson2HttpMessageConverter" />
-			</list>
-		</property>
-	</bean>
-	<bean id="mappingJackson2HttpMessageConverter"
-		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-		<property name="supportedMediaTypes">
-			<list>
-				<value>text/html;charset=UTF-8</value>
-				<value>text/json;charset=UTF-8</value>
-				<value>application/json;charset=UTF-8</value>
-			</list>
-		</property>
-	</bean>
 </beans>

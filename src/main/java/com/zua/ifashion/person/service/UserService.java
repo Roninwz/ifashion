@@ -21,7 +21,7 @@ public interface UserService {
     int updateUserSelective(User user);
 
     //通过id查询用户
-    User selectUserByUserId(@Param("userId") String userId);
+    User selectUserByUserId(@Param("userId") Integer userId);
     //通过用户名查询用户
     User selectUserByUsername(@Param("username") String username);
 

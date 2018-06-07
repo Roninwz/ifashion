@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User selectUserByUserId(String userId) {
+    public User selectUserByUserId(Integer userId) {
         return userMapper.selectUserByUserId(userId);
     }
 

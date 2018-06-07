@@ -1,5 +1,7 @@
 package com.zua.ifashion.talk.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Topic {
@@ -14,9 +16,9 @@ public class Topic {
     private Integer lookNum;
 
     private String topicContent;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date topicStart;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date topicEnd;
 
     public Integer getTopicId() {
