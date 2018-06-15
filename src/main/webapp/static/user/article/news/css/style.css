@@ -1,0 +1,153 @@
+/* CSS Document */
+@charset "gb2312";
+html{-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+body{color:#000;}
+body,button,input,select,textarea{font:12px/1.5 'microsoft yahei', tahoma,arial,'\5b8b\4f53';}
+input,select,textarea,button{font-size:100%;outline:none}/* 取消表单项聚焦时产生的黄色边框 */
+textarea{resize:none}/* 取消textarea的拖动改变大小的功能 */
+table{border-collapse:collapse;border-spacing:0;}
+th{text-align:inherit;}
+fieldset,img{border:0;}
+img{vertical-align:top;}
+abbr,acronym{border:0;font-variant:normal;}
+del {text-decoration:line-through;}
+address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
+ol,ul,li {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-weight:500;}
+q:before,q:after {content:'';}
+sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+ins,a {text-decoration:none;}
+div:after,ul:after,dl:after,.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+div,ul,dl,.clearfix {zoom:1; /* for IE6 IE7 */}
+a { color:#333;text-decoration:none; outline:none;}
+a:hover { color:#000; text-decoration:none; }
+
+/*清除焦点虚线框*/
+a, area { blr:expression(this.onFocus=this.blur());} /* for IE */
+:focus { outline: none; } /* for Firefox */
+.w1000{width:1002px;margin:0 auto;}
+.partArea{width:100%;min-width:1180px;margin:0 auto;}
+.part01{height:700px;background:url('../image/Gana/gn_01.jpg') 50% 0 no-repeat;}
+.part02{height:474px;background:url('../image/Gana/gn_02.jpg') 50% 0 no-repeat;}
+.part03{height:784px;background:url('../image/Gana/gn_03.jpg') 50% 0 no-repeat;position:relative;}
+.part04{height:753px;background:url('../image/Gana/gn_04.jpg') 50% 0 no-repeat;position:relative;}
+.part05{height:902px;background:url('../image/Gana/gn_05.jpg') 50% 0 no-repeat;position:relative;}
+.part06{background:url('../image/Gana/gn_06.jpg') 50% 0 no-repeat;}
+.part07{height:899px;background:url('../image/Gana/gn_07.jpg') 50% 0 no-repeat;position:relative;}
+.part08{height:850px;background:url('../image/Gana/gn_08.jpg') 50% 0 no-repeat;position:relative;}
+
+.part03 .area{width:1002px;margin:0 auto;height:100%;position:relative;}
+.leftArea{width:756px;height:410px;position:absolute;left:0;top:171px;}
+.leftArea ul{width:100%;height:100%;position:relative;overflow:hidden;}
+.leftArea ul li{position:absolute;left:100%;top:0;}
+.leftArea ul li:first-child{left:0;}
+.leftArea ul li a{display:block;position:relative;}
+.leftArea ul li .bt{position:absolute;left:50%;top:50%;margin:-60px 0 0 -60px;display:block;width:120px;height:120px;background:url('../image/Gana/vBt.png') 0 0 no-repeat;}
+.leftArea .txtDesc{background:url('../image/Gana/opacity07.png') 0 0 repeat;color:#fff;text-align:center; width:100%;height:70px;position:absolute;left:0;top:298px;}
+.leftArea .txtDesc h3{width:736px;margin:0 auto; font-size:22px;padding-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.leftArea .txtDesc .txt{width:736px;margin:0 auto;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rightArea{width:232px;height:613px;position:absolute;right:0;top:170px;}
+.scrollImg{height:553px;margin-bottom:6px;overflow:hidden;}
+.rightArea .prev,.rightArea .next{width:100%;height:24px;display:block;background-color:#a48429; background-image:url('../image/Gana/scrollBtD.png');background-repeat:no-repeat;cursor:pointer;}
+.rightArea .prev{background-position:50% 3px;margin-bottom:6px;}
+.rightArea .next{background-position:50% -586px;}
+.scrollImg ul{height:999999px;}
+.scrollImg li{height:133px;overflow:hidden;margin-bottom:7px;cursor:pointer;}
+
+.part02 .area{width:852px;height:474px;background-color:#c4a13d;position:relative;margin:0 auto;}
+.part02 .scrollAreaA{position:absolute;width:824px;height:446px;left:14px;top:14px;}
+.part02 .scrollAreaA ul{width:100%;position:relative;height:100%;overflow:hidden;}
+.part02 .scrollAreaA li{position:absolute;left:100%;top:0;}
+.part02 .scrollAreaA li:first-child{left:0;}
+.part02 .scrollAreaA li .txt{background:url('../image/Gana/opcity7.png') 0 0 repeat;width:824px;height:96px;position:absolute;left:0;bottom:18px;text-align:center;color:#fff;}
+.part02 .scrollAreaA li .t{font-size:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:10px 0 2px 0;}
+.part02 .scrollAreaA li .desc{font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.part02 .area .prev,.part02 .area .next{width:56px;height:104px;display:block;position:absolute;top:196px;background-image:url('../image/Gana/scrollBtA.png');background-repeat:no-repeat;cursor:pointer;}
+.part02 .area .prev{background-position:0 0;left:-82px;}
+.part02 .area .next{background-position:100% 0;right:-82px;}
+.part02 .area .prev:hover,.part02 .area .next:hover{opacity:0.7;filter:alpha(opacity=70);}
+
+.part04 .picArea{width:976px;position:absolute;left:50%;top:213px;margin-left:-489px;height:530px;}
+.part04 .picArea .list{overflow:hidden;position:absolute;left:0;top:0;width:100%;height:100%;}
+.part04 .picArea li{width:100%;position:absolute;left:100%;top:0;}
+.part04 .picArea li:first-child{left:0;}
+.part04 .picArea .pics{width:462px;position:absolute;top:0;right:0;}
+.part04 .picArea .pics a{float:right;width:226px;height:226px;}
+.part04 .picArea .pics a.first{float:left;}
+.part04 .picArea .big{width:500px;height:500px;overflow:hidden;display:block;position:absolute;left:0;top:0;}
+.part04 .txtDesc{width:462px;height:257px;padding-top:8px; position:absolute;right:0;top:236px;background-color:#fff6d5;}
+.part04 table{height:245px;width:422px;vertical-align:middle;margin:0 auto;}
+.part04 table td{height:100%;width:100%;}
+.part04 .txtDesc .t{text-align:center;font-size:26px;margin-bottom:15px;}
+.part04 .txtDesc .desc{font-size:20px;}
+.part04 .picArea .prev,.part04 .picArea .next{width:56px;height:104px;display:block;position:absolute;top:150px;background-image:url('../image/Gana/scrollBtA.png');background-repeat:no-repeat;cursor:pointer;}
+.part04 .picArea .prev{background-position:0 0;left:-82px;}
+.part04 .picArea .next{background-position:100% 0;right:-82px;}
+.part04 .picArea .prev:hover,.part04 .picArea .next:hover{opacity:0.7;filter:alpha(opacity=70);}
+
+
+.part08 .area{width:1002px;height:548px;position:absolute;left:50%;top:162px;margin-left:-501px;}
+.part08 .area ul{width:100%;position:relative;height:100%;overflow:hidden;}
+.part08 .area li{position:absolute;left:100%;top:0;width:100%;}
+.part08 .area li:first-child{left:0;}
+.part08 .area li .one{margin:0 -15px 0 0;}
+.part08 .area li img{float:left;margin:0 14px 16px 0;}
+.part08 .area .prev,.part08 .area .next{width:39px;height:72px;display:block;position:absolute;top:250px;background-image:url('../image/Gana/scrollBtB.png');background-repeat:no-repeat;cursor:pointer;}
+.part08 .area .prev{background-position:0 0;left:-52px;}
+.part08 .area .next{background-position:100% 0;right:-52px;}
+.part08 .area .prev:hover,.part08 .area .next:hover{opacity:0.7;filter:alpha(opacity=70);}
+
+.part07 .area{width:1002px;height:740px;position:absolute;left:50%;bottom:0;margin-left:-501px;}
+.part07 .scrollA{width:964px;overflow:hidden;height:139px;position:absolute;left:19px;bottom:0;}
+.part07 .scrollA ul{width:999999999px;}
+.part07 .scrollA ul li{float:left;width:128px;border:solid #b08e25 1px;border-bottom-width:10px;margin-right:9px;cursor:pointer;}
+.part07 .area .prev,.part07 .area .next{width:25px;height:46px;display:block;position:absolute;bottom:49px;background-image:url('../image/Gana/scrollBtC.png');background-repeat:no-repeat;cursor:pointer;}
+.part07 .area .prev{background-position:0 0;left:-36px;}
+.part07 .area .next{background-position:100% 0;right:-36px;}
+.part07 .area .prev:hover,.part07 .area .next:hover{opacity:0.7;filter:alpha(opacity=70);}
+.part07 .bigArea{width:1002px;height:590px;position:absolute;left:0;top:0;}
+.part07 .bigArea .big{position:absolute;left:542px;top:0;}
+.part07 .bigArea ul{width:100%;height:100%;position:relative;overflow:hidden;}
+.part07 .bigArea ul li{position:absolute;left:100%;top:0;width:100%;height:100%;}
+.part07 .bigArea ul li:first-child{left:0;}
+.part07 .bigArea .s01{position:absolute;left:19px;top:0;width:474px;height:577px;display:block;overflow:hidden;}
+
+
+.part06 .area{padding-top:184px;width:975px;margin:0 auto;}
+.part06 .area ul{margin-right:-10px;}
+.part06 .area ul li{margin:12px 7px 16px 0;float:left; width:188px;height:280px;padding-bottom:18px;background:url('../image/Gana/txt02_bg.jpg') 50% 100% no-repeat;}
+.part06 .area ul li img{border:1px solid #cba931;}
+.part06 .area ul li.even{margin:0 7px 28px 0;}
+
+.part05 .area{width:1002px;height:740px;position:absolute;left:50%;bottom:0;margin-left:-501px;}
+.part05 .scrollA{width:964px;overflow:hidden;height:139px;position:absolute;left:19px;bottom:0;}
+.part05 .scrollA ul{width:999999999px;}
+.part05 .scrollA ul li{float:left;width:128px;border:solid #b08e25 1px;border-bottom-width:10px;margin-right:9px;cursor:pointer;}
+.part05 .area .prev,.part05 .area .next{width:25px;height:46px;display:block;position:absolute;bottom:49px;background-image:url('../image/Gana/scrollBtC.png');background-repeat:no-repeat;cursor:pointer;}
+.part05 .area .prev{background-position:0 0;left:-36px;}
+.part05 .area .next{background-position:100% 0;right:-36px;}
+.part05 .area .prev:hover,.part05 .area .next:hover{opacity:0.7;filter:alpha(opacity=70);}
+.part05 .bigArea{width:1002px;height:590px;position:absolute;left:0;top:0;}
+.part05 .bigArea .big{position:absolute;left:16px;top:0;}
+.part05 .bigArea ul{width:100%;height:100%;position:relative;overflow:hidden;}
+.part05 .bigArea ul li{position:absolute;left:100%;top:0;width:100%;height:100%;}
+.part05 .bigArea ul li:first-child{left:0;}
+.part05 .bigArea .s01{position:absolute;left:505px;top:0;width:483px;height:576px;overflow:hidden;display:block;}
+
+
+.channel_footer{font:12px arial;clear:both;overflow:hidden;width:960px;margin:0 auto;}
+.channel_footer a{color:#000000;text-decoration:none;}
+.channel_footer a:hover{color:#666666;text-decoration:underline;}
+.channel_footer p{text-align:center;margin:20px auto;}
+.channel_about a{margin:0 10px;}
+
+
+
+
+
+

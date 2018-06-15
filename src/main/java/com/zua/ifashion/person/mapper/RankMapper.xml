@@ -8,35 +8,35 @@
 
 
   <!-- 添加   -->
-  <insert id="addRank" parameterType="com.zua.ifashion.person.entity.Role">
-    insert into role(roleId,roleName) values(#{roleId},#{roleName})
+  <insert id="addRank" parameterType="com.zua.ifashion.person.entity.Rank">
+    insert into rank(rankId,rankName) values(#{rankId},#{rankName})
   </insert>
 
   <!-- 删除    -->
   <delete id="deleteRank" parameterType="int">
-    delete from role where roleId = #{roleId}
+    delete from rank where rankId = #{rankId}
   </delete>
 
   <!-- 修改   -->
-  <update id="updateRank" parameterType="com.zua.ifashion.person.entity.Role">
-    update  role set roleName = #{roleName}
+  <update id="updateRank" parameterType="com.zua.ifashion.person.entity.Rank">
+    update  rank set rankName = #{rankName}
   </update>
 
 
-  <select id="selectRankByRoleId" parameterType="int" resultType="com.zua.ifashion.person.entity.Role">
-    select *  from role where roleId =#{roleId}
+  <select id="selectRankByRankId" parameterType="int" resultType="com.zua.ifashion.person.entity.Rank">
+    select *  from rank where rankId =#{rankId}
   </select>
 
   <!-- 查询所有    -->
-  <select id="getAllRoles"  resultType="com.zua.ifashion.person.entity.Role">
-    select * from role
+  <select id="getAllRanks"  resultType="com.zua.ifashion.person.entity.Rank">
+    select * from rank
   </select>
 
 
 
   <!-- 查询所有数量    -->
-  <select id="getAllRoleCount"  resultType="int">
-    select count(*) from role
+  <select id="getAllRankCount"  resultType="int">
+    select count(*) from rank
   </select>
 
 

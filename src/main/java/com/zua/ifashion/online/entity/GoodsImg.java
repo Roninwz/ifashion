@@ -7,6 +7,16 @@ public class GoodsImg {
 
     private String goodsImgurl;
 
+    private String mask;
+
+    public String getMask() {
+        return mask;
+    }
+
+    public void setMask(String mask) {
+        this.mask = mask;
+    }
+
     public Integer getGoodsimgId() {
         return goodsimgId;
     }
@@ -31,10 +41,11 @@ public class GoodsImg {
         this.goodsImgurl = goodsImgurl == null ? null : goodsImgurl.trim();
     }
 
-    public GoodsImg(Integer goodsimgId, Integer goodsId, String goodsImgurl) {
+    public GoodsImg(Integer goodsimgId, Integer goodsId, String goodsImgurl, String mask) {
         this.goodsimgId = goodsimgId;
         this.goodsId = goodsId;
         this.goodsImgurl = goodsImgurl;
+        this.mask = mask;
     }
 
     public GoodsImg() {

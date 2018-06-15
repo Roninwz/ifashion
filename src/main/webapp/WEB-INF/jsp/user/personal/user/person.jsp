@@ -7,7 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%--fmt  国际化格式--%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -16,6 +19,7 @@
 %>
 <html>
 <head>
+    <meta charset="utf-8">
     <base href="<%=basePath%>">
     <title>Title</title>
     <%--底部css--%>
@@ -78,42 +82,42 @@
 
     </div>
     <!--  左侧公用侧边栏  -->
-    <%--<aside class="menu">--%>
-        <%--<ul>--%>
-            <%--<li class="person">--%>
-                <%--<a href="index.html" class="per">个人中心</a>--%>
-            <%--</li>--%>
-            <%--<li class="person">--%>
-                <%--<a href="#" class="person-detail">个人资料</a>--%>
-                <%--<ul>--%>
-                    <%--<li> <a href="persondetail.html">个人信息</a></li>--%>
-                    <%--<li> <a href="safety.html">安全设置</a></li>--%>
-                    <%--<li> <a href="address.html">收货地址</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
-            <%--<li class="person">--%>
-                <%--<a href="#" class="person-detail">我的交易</a>--%>
-                <%--<ul>--%>
-                    <%--<li><a href="order.html">订单管理</a></li>--%>
-                    <%--<li> <a href="change.html">退款售后</a></li>--%>
-                <%--</ul>--%>
-            <%--</li>--%>
+   <aside class="menu">
+        <ul>
+            <li class="person">
+                <a href="index.html" class="per">个人中心</a>
+            </li>
+            <li class="person">
+                <a href="#" class="person-detail">个人资料</a>
+                <ul>
+                    <li> <a href="persondetail.html">个人信息</a></li>
+                    <li> <a href="safety.html">安全设置</a></li>
+                    <li> <a href="address.html">收货地址</a></li>
+                </ul>
+            </li>
+            <li class="person">
+                <a href="#" class="person-detail">我的交易</a>
+                <ul>
+                    <li><a href="order.html">订单管理</a></li>
+                    <li> <a href="change.html">退款售后</a></li>
+                </ul>
+            </li>
 
 
-            <%--<li class="person">--%>
-                <%--<a href="#" class="person-detail">我的小窝</a>--%>
-                <%--<ul>--%>
-                    <%--<li> <a href="publish.html">我的发表</a></li>--%>
-                    <%--<li> <a href="collection.html">我的收藏</a></li>--%>
-                    <%--<li> <a href="attention.html">我的关注</a></li>--%>
-                    <%--<li> <a href="message.html">我的消息</a></li>--%>
+            <li class="person">
+                <a href="#" class="person-detail">我的小窝</a>
+                <ul>
+                    <li> <a href="publish.html">我的发表</a></li>
+                    <li> <a href="collection.html">我的收藏</a></li>
+                    <li> <a href="attention.html">我的关注</a></li>
+                    <li> <a href="message.html">我的消息</a></li>
 
-                <%--</ul>--%>
-            <%--</li>--%>
+                </ul>
+            </li>
 
-        <%--</ul>--%>
-    <%--</aside>--%>
-    <%@ include file="aside.jsp" %>
+        </ul>
+    </aside>
+    <%--<%@ include file="aside.jsp" %>--%>
 </div>
 
 </body>

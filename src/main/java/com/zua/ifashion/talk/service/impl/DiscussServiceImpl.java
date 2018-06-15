@@ -3,20 +3,24 @@ package com.zua.ifashion.talk.service.impl;
 import com.zua.ifashion.talk.entity.Discuss;
 import com.zua.ifashion.talk.mapper.DiscussMapper;
 import com.zua.ifashion.talk.mapper.DiscussReplyMapper;
+import com.zua.ifashion.talk.mapper.DiscussUserMapper;
 import com.zua.ifashion.talk.service.DiscussService;
+import com.zua.ifashion.talk.vo.DiscussUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-@Service("discussService")
+@Service
 public class DiscussServiceImpl implements DiscussService{
 
     @Autowired
     private DiscussMapper discussMapper;
     @Autowired
     private DiscussReplyMapper discussReplyMapper;
+    @Autowired
+    private DiscussUserMapper discussUserMapper;
 
     @Override
     public int addDiscuss(Discuss discuss) {
@@ -45,13 +49,28 @@ public class DiscussServiceImpl implements DiscussService{
     }
 
     @Override
-    public int selectDiscussByDiscussId(Integer discussId) {
+    public Discuss selectDiscussByDiscussId(Integer discussId) {
         return discussMapper.selectDiscussByDiscussId(discussId);
     }
 
     @Override
     public List<Discuss> selectDiscussByUserId(Integer userId) {
         return discussMapper.selectDiscussByUserId(userId);
+    }
+
+    @Override
+    public int selectDiscussByUserIdCount(Integer userId) {
+        return discussMapper.selectDiscussByUserIdCount(userId);
+    }
+
+    @Override
+    public int selectDiscussByUserIdCountDay(Integer userId) {
+        return discussMapper.selectDiscussByUserIdCountDay(userId);
+    }
+
+    @Override
+    public List<Integer> selectUserIdInDiscuss() {
+        return discussMapper.selectUserIdInDiscuss();
     }
 
     @Override
@@ -98,4 +117,11 @@ public class DiscussServiceImpl implements DiscussService{
     public List<Discuss> getAllDiscuss() {
         return discussMapper.getAllDiscuss();
     }
+
+    @Override
+    public List<DiscussUser> selectDiscussUserByTopicId(Integer topicId) {
+        return discussUserMapper.selectDiscussUserByTopicId(topicId);
+    }
+
+
 }

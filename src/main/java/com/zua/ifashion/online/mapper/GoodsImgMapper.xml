@@ -7,4 +7,96 @@
     <result column="goodsImgurl" jdbcType="VARCHAR" property="goodsImgurl" />
   </resultMap>
 
+  <sql id="goodsImgSql">
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsimgId!=null">
+        goodsimgId
+      </if>
+      <if test="goodsId!=null">
+        goodsId
+      </if>
+      <if test="goodsImgurl!=null">
+        goodsImgurl
+      </if>
+    </trim>
+    <trim prefix="values(" suffix=")" suffixOverrides=",">
+      <if test="goodsimgId!=null">
+        #{goodsimgId}
+      </if>
+      <if test="goodsId!=null">
+        #{goodsId}
+      </if>
+      <if test="goodsImgurl!=null">
+       #{goodsImgurl}
+      </if>
+    </trim>
+  </sql>
+
+  <!--//    添加商品的照片-->
+  <!--public abstract int addGoodsImg(GoodsImg goodsImg);-->
+  <insert id="addGoodsImg" parameterType="GoodsImg">
+    insert into goods_img(goodsimgId,goodsId,goodsImgurl) values(#{goodsimgId},#{goodsId},#{goodsImgurl})
+  </insert>
+
+  <!--//添加商品照片不为空的字段-->
+  <!--public abstract int addGoodsImgSelective(GoodsImg goodsImg);-->
+  <insert id="addGoodsImgSelective" parameterType="GoodsImg">
+    insert into goods_img
+    <include refid="goodsImgSql"></include>
+  </insert>
+
+  <!--//删除商品的照片-->
+  <!--public abstract int deleteGoodsImg(Integer goodImgId);-->
+  <delete id="deleteGoodsImg" parameterType="int">
+    delete * from goods_img where goodsimgId=#{param}
+  </delete>
+
+  <!--//更新商品的照片-->
+  <!--public abstract int updateGoodsImg(GoodsImg goodsImg);-->
+  <update id="updateGoodsImg" parameterType="GoodsImg">
+    update goods_img set goodsimgId=#{goodsimgId},goodsId=#{goodsId},goodsImgurl=#{goodsImgurl}
+
+  </update>
+
+  <!--//    更新商品的照片不为空的字段
+  public abstract int updateGoodsImgSelective(GoodsImg goodsImg);-->
+
+  <update id="updateGoodsImgSelective" parameterType="goodsImg">
+    update goods_img set
+    <if test="goodsimgId!=null">
+      goodsimgId=#{goodsimgId}
+    </if>
+    <if test="goodsId!=null">
+      goodsId=#{goodsId}
+    </if>
+    <if test="goodsImgurl!=null">
+      goodsImgurl=#{goodsImgurl}
+    </if>
+  </update>
+
+  <!--//    根据商品照片id查找信息-->
+  <!--public abstract GoodsImg selectGoodsImgById(Integer goodsImgId);-->
+  <select id="selectGoodsImgById" parameterType="int" resultType="GoodsImg">
+    select * from goods_img where goodsimgId=#{param}
+  </select>
+
+  <!--//    根据商品编号查询该商品的所有照片-->
+  <!--public abstract List<GoodsImg> selectGoodsImgBygoodId(Integer goodsId);-->
+  <select id="selectGoodsImgBygoodId" parameterType="int" resultType="GoodsImg">
+    select * from goods_img where goodsId=#{param}
+  </select>
+
+  <!--//    查询所有的商品照片-->
+  <!--public abstract List<GoodsImg> selectAllGoodsImg();-->
+  <select id="selectAllGoodsImg" resultType="GoodsImg">
+    select * from goods_img
+  </select>
+
+
+
+
+
+
+
+
 </mapper>

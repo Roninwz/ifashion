@@ -12,4 +12,81 @@
     <result column="replyContent" jdbcType="LONGVARCHAR" property="replyContent" />
   </resultMap>
 
+  <!--添加回复评论-->
+  <insert id="addReplyReview" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+      INSERT INTO reply_review (reviewId,userId,useredId,replyDate,replyContent)
+      VALUES (#{reviewId},#{userId},#{useredId},#{replyDate},#{replyContent})
+  </insert>
+
+  <!--添加非空字段回复评论-->
+  <insert id="addReplyReviewSelective" parameterType="com.zua.ifashion.article.entity.ReplyReview">
+    INSERT INTO reply_review
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="reviewId != null">
+        reviewId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="useredId != null">
+        useredId,
+      </if>
+      <if test="replyDate != null">
+        replyDate,
+      </if>
+      <if test="replyContent != null">
+        replyContent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="reviewId != null">
+        #{reviewId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="useredId != null">
+        #{useredId},
+      </if>
+      <if test="replyDate != null">
+        #{replyDate},
+      </if>
+      <if test="replyContent != null">
+        #{replyContent},
+      </if>
+    </trim>
+  </insert>
+
+  <!--根据回复评论id 删除回复评论-->
+  <delete id="deleteReplyReviewByreplyreviewId" parameterType="int">
+      DELETE FROM reply_review WHERE replyreviewId = #{replyreviewId}
+  </delete>
+
+  <!--根据评论id 删除回复评论-->
+  <delete id="deleteReplyReviewByreviewId" parameterType="int">
+    DELETE FROM reply_review WHERE reviewId = #{reviewId}
+  </delete>
+
+  <!--根据文章id 删除回复评论-->
+  <delete id="deleteReplyReviewByArticleId" parameterType="int">
+    DELETE FROM reply_review WHERE articleId = #{articleId}
+  </delete>
+
+  <!--根据评论id查询所有回复评论-->
+  <select id="selectAllReplyReviewByReviewId" parameterType="int" resultType="com.zua.ifashion.article.entity.ReplyReview">
+      SELECT * FROM reply_review WHERE reviewId = #{reviewId}
+  </select>
+
+  <!--根据userId查询所有回复评论-->
+  <select id="selectAllReplyReviewByUserId" parameterType="int" resultType="com.zua.ifashion.article.entity.ReplyReview">
+      SELECT * FROM reply_review WHERE userId = #{userId}
+  </select>
+
+  <!--根据useredId查询所有回复评论-->
+  <select id="selectAllReplyReviewByUseredId" parameterType="int" resultType="com.zua.ifashion.article.entity.ReplyReview">
+      SELECT * FROM reply_review WHERE useredId = #{useredId}
+  </select>
+
+
+
 </mapper>

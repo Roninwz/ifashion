@@ -1,0 +1,8 @@
+.paging{margin: 20px auto 10px;text-align: center;_height:30px;}
+.paging a,.paging span{display: inline-block;height: 23px;border:1px solid #cfcfcf;line-height: 23px;padding: 0 10px;text-align: center;margin:3px;vertical-align: middle;}
+.paging a:hover{border:1px solid #8b0c53;color: #8b0c53;text-decoration: none;}
+.paging span{border:1px solid #8b0c53;background-color: #fae3ed;color: #8b0c53;font-weight: 700;}
+.paging a.prev{background: url(../Images/paging.png) no-repeat 0 0;padding-left: 18px;}
+.paging a.next{background: url(../Images/paging.png) no-repeat right -37px;padding-right: 18px;}
+
+.arrow_prev,.arrow_next {display: inline-block;color: #888888;margin: 0 5px;font-weight: normal;}

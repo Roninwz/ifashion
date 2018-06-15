@@ -9,6 +9,8 @@ public class Goods {
 
     private Integer goodstypeId;
 
+    private Integer goodschildId;
+
     private String goodsName;
 
     private Double goodsPrice;

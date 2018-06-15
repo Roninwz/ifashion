@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.talk.mapper.DiscussUserMapper">
+    <resultMap id="DiscussUserByTopicIdMap" type="com.zua.ifashion.talk.vo.DiscussUser">
+        <id column="discussId" jdbcType="INTEGER" property="discussId" />
+        <result column="topicId" jdbcType="INTEGER" property="topicId" />
+        <result column="userId" jdbcType="INTEGER" property="userId" />
+        <result column="discussDate" jdbcType="TIMESTAMP" property="discussDate" />
+        <result column="reviewNum" jdbcType="INTEGER" property="reviewNum" />
+        <result column="lookNum" jdbcType="INTEGER" property="lookNum" />
+        <result column="discussContent" jdbcType="LONGVARCHAR" property="discussContent" />
+        <association property="user" javaType="User">
+            <result column="username" property="username"></result>
+            <result column="userImgurl" property="userImgurl"></result>
+        </association>
+    </resultMap>
+
+
+
+  <!--List<DiscussUser> selectDiscussUserByTopicId(Integer topicId);-->
+   <select id="selectDiscussUserByTopicId" resultMap="DiscussUserByTopicIdMap">
+        select discussId,topicId,discussDate,discuss.userId,reviewNum,lookNum,
+        discussContent,username,userImgurl from discuss,user
+        where user.userId=discuss.userId and topicId=#{topicId}
+   </select>
+
+
+
+</mapper>

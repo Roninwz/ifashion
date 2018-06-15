@@ -1,6 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%--fmt  国际化格式--%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Title</title>
 
     <script src="${pageContext.request.contextPath}/static/user/common/jquery/jquery-3.1.1.min.js"></script>
@@ -51,8 +56,8 @@
 
 
                         <td class="f-14 td-manage">
-                            <a style="text-decoration:none" class="ml-5" href="admin/updatetag.action" title="编辑"><i class="Hui-iconfont">&#xe6df;编辑</i></a>
-                            <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;删除</i></a></td>
+                            <a style="text-decoration:none" class="ml-5" href="admin/updatetag.action?tagId=${tags.tagId}" title="编辑"><i class="Hui-iconfont">&#xe6df;编辑</i></a>
+                            <a style="text-decoration:none" class="ml-5" onClick="article_del(this,${tags.tagId}" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;删除</i></a></td>
                     </tr>
                     </c:forEach>
                     </tbody>
@@ -113,6 +118,39 @@
             }
         });
 
+    }
+
+
+
+    /*删除*/
+    function article_del(obj, id) {
+        // alert('g');
+        alert(id);
+        var tagId=id;
+        var datas={"tagId":tagId};
+        layer.confirm('确认要删除吗？', function(index) {
+            $.ajax({
+                type: 'POST',
+                url: '${pageContext.request.contextPath}/admin/ajaxdeletetag.action',
+                dataType: 'json', //表示返回值的数据类型
+                contentType: 'application/json;charset=UTF-8', //内容类型
+                traditional: true, //使json格式的字符串不会被转码
+                data: JSON.stringify(datas),
+                success: function(data) {
+                    alert(data);
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!', {
+                        icon: 1,
+                        time: 1000
+                    });
+                },
+                error: function(data) {
+                    alert("data");
+                    alert('1');
+                    console.log(data.msg);
+                },
+            });
+        });
     }
 </script>
 </body>

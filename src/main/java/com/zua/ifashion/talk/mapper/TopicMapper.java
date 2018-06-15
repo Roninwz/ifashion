@@ -1,6 +1,7 @@
 package com.zua.ifashion.talk.mapper;
 
 import com.zua.ifashion.talk.entity.Topic;
+import com.zua.ifashion.talk.vo.TopicUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
@@ -23,7 +24,7 @@ public interface TopicMapper {
     int updateTopicSelective(Topic topic);
 
     //通过id查询话题
-    int selectTopicByTopicId(Integer topicId);
+    Topic selectTopicByTopicId(Integer topicId);
 
     //通过用户id来查询话题
     List<Topic> selectTopicByUserId(Integer userId);
@@ -37,8 +38,14 @@ public interface TopicMapper {
     //查询话题参与人数
     int selectTopicPeopleByTopicId(Integer topicId);
 
+    //根据参与人数给话题排序
+    List<Topic> selectTopicByTopicPeopleOrder();
+
     //查询话题浏览量
     int selectLookNumByTopicId(Integer topicId);
+
+    //根据浏览量来给话题排序
+    List<TopicUser> selectTopicByLookNumOrder();
 
     //查询所有话题
     List<Topic> getAllTopic();

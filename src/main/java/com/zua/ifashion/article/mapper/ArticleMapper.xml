@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zua.ifashion.article.mapper.ArticleMapper">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.zua.ifashion.article.mapper.ArticleMapper">
   <resultMap id="BaseResultMap" type="com.zua.ifashion.article.entity.Article">
     <id column="articleId" jdbcType="INTEGER" property="articleId" />
     <result column="articletypeId" jdbcType="INTEGER" property="articletypeId" />
+    <result column="articleTitle" jdbcType="VARCHAR" property="articleTitle" />
     <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
     <result column="imgmark" jdbcType="VARCHAR" property="imgmark" />
     <result column="tag" jdbcType="VARCHAR" property="tag" />
-    <result column="article_date" jdbcType="datetime" property="articleDate" />
-    <result column="publishId" jdbcType="INTEGER" property="publishId" />
+    <result column="articleDate" jdbcType="DATE" property="articleDate" />
+    <result column="adminId" jdbcType="INTEGER" property="adminId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="zanNum" jdbcType="INTEGER" property="zanNum" />
     <result column="collectNum" jdbcType="INTEGER" property="collectNum" />
     <result column="reviewNum" jdbcType="INTEGER" property="reviewNum" />
@@ -18,9 +19,258 @@
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
 
+  <resultMap id="ArticleUserMap" type="com.zua.ifashion.article.vo.ArticleUserVo">
+      <id column="articleId" jdbcType="INTEGER" property="articleId" />
+      <result column="articletypeId" jdbcType="INTEGER" property="articletypeId" />
+      <result column="articleTitle" jdbcType="VARCHAR" property="articleTitle" />
+      <result column="imgurl" jdbcType="VARCHAR" property="imgurl" />
+      <result column="imgmark" jdbcType="VARCHAR" property="imgmark" />
+      <result column="tag" jdbcType="VARCHAR" property="tag" />
+      <result column="articleDate" jdbcType="DATE" property="articleDate" />
+      <result column="adminId" jdbcType="INTEGER" property="adminId" />
+      <result column="userId" jdbcType="INTEGER" property="userId" />
+      <result column="zanNum" jdbcType="INTEGER" property="zanNum" />
+      <result column="collectNum" jdbcType="INTEGER" property="collectNum" />
+      <result column="reviewNum" jdbcType="INTEGER" property="reviewNum" />
+      <result column="state" jdbcType="INTEGER" property="state" />
+
+      <association property="user" javaType="com.zua.ifashion.person.entity.User">
+          <id column="userId" jdbcType="INTEGER" property="userId" />
+          <result column="username" jdbcType="VARCHAR" property="username" />
+          <result column="userImgurl" jdbcType="VARCHAR" property="userImgurl" />
+      </association>
+  </resultMap>
 
 
+  <!--添加文章-->
+  <insert id="addArticle" parameterType="com.zua.ifashion.article.entity.Article">
+      INSERT INTO article(articleId,articletypeId,articleTitle,content,imgurl,imgmark,
+      tag,articleDate,adminId,userId,zanNum,collectNum,reviewNum,state)
+      VALUES (#{articleId},#{articletypeId},#{articleTitle},#{content},#{imgurl},#{imgmark},
+      #{tag},#{articleDate},#{adminId},#{userId},#{zanNum},#{collectNum},#{reviewNum},
+      #{state})
+  </insert>
 
+  <!--添加不为空字段文章-->
+  <insert id="addArticleSelective" parameterType="com.zua.ifashion.article.entity.Article">
+      INSERT INTO article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="articleId != null">
+        articleId,
+      </if>
+      <if test="articletypeId != null">
+        articletypeId,
+      </if>
+      <if test="articleTitle != null">
+          articleTitle,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="imgurl != null">
+        imgurl,
+      </if>
+      <if test="imgmark != null">
+        imgmark,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="articleDate != null">
+        articleDate,
+      </if>
+      <if test="adminId != null">
+        adminId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="zanNum != null">
+        zanNum,
+      </if>
+      <if test="collectNum != null">
+        collectNum,
+      </if>
+      <if test="reviewNum != null">
+        reviewNum,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="articleId != null">
+        #{articleId},
+      </if>
+      <if test="articletypeId != null">
+        #{articletypeId},
+      </if>
+      <if test="articleTitle != null">
+        #{articleTitle},
+      </if>
+      <if test="content != null">
+        #{content},
+      </if>
+      <if test="imgurl != null">
+        #{imgurl},
+      </if>
+      <if test="imgmark != null">
+        #{imgmark},
+      </if>
+      <if test="tag != null">
+        #{tag},
+      </if>
+      <if test="articleDate != null">
+        #{articleDate},
+      </if>
+      <if test="adminId != null">
+        #{adminId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="zanNum != null">
+        #{zanNum},
+      </if>
+      <if test="collectNum != null">
+        #{collectNum},
+      </if>
+      <if test="reviewNum != null">
+        #{reviewNum},
+      </if>
+      <if test="state != null">
+        #{state},
+      </if>
+    </trim>
+  </insert>
 
+  <!--删除文章-->
+  <delete id="deleteArticle" parameterType="int">
+      DELETE FROM article WHERE articleId = #{articleId}
+  </delete>
+
+  <!--更新文章-->
+  <update id="updateArticle" parameterType="com.zua.ifashion.article.entity.Article">
+      update admin
+      set
+      articletypeId = #{articletypeId},
+      articleTitle = #{articleTitle},
+      content = #{content},
+      imgurl = #{imgurl},
+      imgmark = #{imgmark},
+      tag = #{tag},
+      articleDate = #{articleDate},
+      adminId = #{adminId},
+      userId = #{userId},
+      zanNum = #{zanNum},
+      collectNum = #{collectNum},
+      reviewNum = #{reviewNum},
+      state = #{state}
+      where articleId = #{articleId}
+  </update>
+
+  <!--更新不为空字段文章-->
+  <update id="updateArticleSelective" parameterType="com.zua.ifashion.article.entity.Article">
+      UPDATE article
+      <set>
+        <if test="articletypeId != null">
+          articletypeId = #{articletypeId},
+        </if>
+        <if test="articleTitle != null">
+          articleTitle = #{articleTitle},
+        </if>
+        <if test="content != null">
+          content = #{content},
+        </if>
+        <if test="imgurl != null">
+          imgurl = #{imgurl},
+        </if>
+        <if test="imgmark != null">
+          imgmark = #{imgmark},
+        </if>
+        <if test="tag != null">
+          tag = #{tag},
+        </if>
+        <if test="articleDate != null">
+          articleDate = #{articleDate},
+        </if>
+        <if test="adminId != null">
+          adminId = #{adminId},
+        </if>
+        <if test="userId != null">
+            userId = #{userId},
+        </if>
+        <if test="zanNum != null">
+          zanNum = #{zanNum},
+        </if>
+        <if test="collectNum != null">
+          collectNum = #{collectNum},
+        </if>
+        <if test="reviewNum != null">
+          reviewNum = #{reviewNum},
+        </if>
+        <if test="state != null">
+          state = #{state},
+        </if>
+      </set>
+      where articleId = #{articleId}
+  </update>
+
+  <!--根据文章id查询文章-->
+  <select id="selectArticleByArticleId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article WHERE articleId = #{articleId}
+  </select>
+
+  <!--通过文章类型id查询文章集合-->
+  <select id="selectArticleByArticletypeId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article WHERE articletypeId = #{articletypeId}
+  </select>
+
+  <!--通过文章标签查询文章集合-->
+  <select id="selectArticleByTag" parameterType="string" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article WHERE tag LIKE "%"#{tag}"%"
+  </select>
+
+  <!--通过文章标题模糊查询文章集合-->
+  <select id="selectArticleByTitle" parameterType="string" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article WHERE articleTitle LIKE "%"#{articleTitle}"%"
+  </select>
+
+  <!--查询所有文章-->
+  <select id="selectAllArticle" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article
+  </select>
+
+  <!-- 查询最新发表的十篇文章-->
+  <select id="selectLatestArticle" resultType="com.zua.ifashion.article.entity.Article">
+      select * from article order by articleDate desc limit 10
+  </select>
+
+  <!--根据articletypeId 查询最新发表的十篇文章-->
+  <select id="selectLatestArticleByTypeId" parameterType="int" resultMap="ArticleUserMap">
+      SELECT a.*,u.username,u.userImgurl FROM article a,user u
+        WHERE  u.userId=a.userId
+           AND articletypeId = #{articletypeId} ORDER by articleDate desc limit 10
+  </select>
+
+  <!--根据点赞数 查询最热门的十篇文章-->
+  <select id="selectHottestArticle" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article ORDER BY zanNum DESC limit 10
+  </select>
+
+  <!--根据点赞数和articletypeId 查询最热门的十篇文章-->
+  <select id="selectHottestArticleByTypeId" parameterType="int" resultMap="ArticleUserMap">
+      SELECT a.*,u.username,u.userImgurl FROM article a,user u
+      WHERE  u.userId=a.userId
+      AND articletypeId = #{articletypeId} ORDER BY zanNum DESC limit 10
+  </select>
+
+  <select id="selectUserByArticleId" parameterType="int" resultType="com.zua.ifashion.person.entity.User">
+      SELECT u.* FROM user u,article a WHERE a.articleId = #{articleId} AND u.userId = a.userId
+  </select>
+
+  <select id="selectLatestArticleByUserId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+     SELECT a.* FROM article a,user u WHERE u.userId = #{userId} AND u.userId=a.userId ORDER BY articleDate DESC limit 4
+  </select>
 
 </mapper>

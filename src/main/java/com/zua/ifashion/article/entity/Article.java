@@ -5,6 +5,8 @@ import java.util.Date;
 public class Article {
     private Integer articleId;
 
+    private String articleTitle;
+
     private Integer articletypeId;
 
     private String content;
@@ -17,7 +19,9 @@ public class Article {
 
     private Date articleDate;
 
-    private Integer publishId;
+    private Integer adminId;
+
+    private Integer userId;
 
     private Integer zanNum;
 
@@ -27,7 +31,46 @@ public class Article {
 
     private Integer state;
 
+    public Integer getAdminId() {
+        return adminId;
+    }
 
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public Article(Integer articleId, String articleTitle, Integer articletypeId, String content, String imgurl, String imgmark, String tag, Date articleDate, Integer adminId, Integer userId, Integer zanNum, Integer collectNum, Integer reviewNum, Integer state) {
+        this.articleId = articleId;
+        this.articleTitle = articleTitle;
+        this.articletypeId = articletypeId;
+        this.content = content;
+        this.imgurl = imgurl;
+        this.imgmark = imgmark;
+        this.tag = tag;
+        this.articleDate = articleDate;
+        this.adminId = adminId;
+        this.userId = userId;
+        this.zanNum = zanNum;
+        this.collectNum = collectNum;
+        this.reviewNum = reviewNum;
+        this.state = state;
+    }
+
+    public String getArticleTitle() {
+        return articleTitle;
+    }
+
+    public void setArticleTitle(String articleTitle) {
+        this.articleTitle = articleTitle;
+    }
 
     public Integer getArticleId() {
         return articleId;
@@ -77,13 +120,7 @@ public class Article {
         this.articleDate = articleDate;
     }
 
-    public Integer getPublishId() {
-        return publishId;
-    }
 
-    public void setPublishId(Integer publishId) {
-        this.publishId = publishId;
-    }
 
     public Integer getZanNum() {
         return zanNum;
@@ -125,20 +162,6 @@ public class Article {
         this.content = content == null ? null : content.trim();
     }
 
-    public Article(Integer articleId, Integer articletypeId, String content, String imgurl, String imgmark, String tag, Date articleDate, Integer publishId, Integer zanNum, Integer collectNum, Integer reviewNum, Integer state) {
-        this.articleId = articleId;
-        this.articletypeId = articletypeId;
-        this.content = content;
-        this.imgurl = imgurl;
-        this.imgmark = imgmark;
-        this.tag = tag;
-        this.articleDate = articleDate;
-        this.publishId = publishId;
-        this.zanNum = zanNum;
-        this.collectNum = collectNum;
-        this.reviewNum = reviewNum;
-        this.state = state;
-    }
 
     public Article() {
     }

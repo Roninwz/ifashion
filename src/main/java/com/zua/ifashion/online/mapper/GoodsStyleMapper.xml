@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.online.mapper.GoodsStyleMapper">
+
+
+  <!--//    根据商品的id查询风格-->
+        <!--public List<GoodsStyle> goodsstyleList(Integer goodsId);-->
+  <select id="goodsstyleList" parameterType="int" resultType="com.zua.ifashion.online.entity.GoodsStyle">
+    select  g.* from goos_style_relation s,goods_style g where goodsId=#{param} and s.goodsstyleId=g.goodsstyleId
+  </select>
+</mapper>

@@ -1,0 +1,109 @@
+.channel_top{background-color: #373737;width:100%;height:35px;color:#FFFFFF;}
+.channel_topb{background-color: #404040;width:960px;height:35px;margin:0 auto;}
+.channel_nav{float:left;line-height:35px;color:#777777;}
+.channel_nav a{margin:0 5px;color:#FFFFFF !important;}
+.channel_nav a:hover,.channel_login a:hover{text-decoration:underline;color:#FFFFFF;}
+.channel_search{float:left;width:130px;height:18px;margin:6px 0 0 0px;padding:1px 0px;border:1px solid #cdcbcc;background-color:#FFFFFF;}
+.channel_input{float:left;border:none;background-color:#dadada;width:106px;height:18px;line-height:18px;padding-left:5px;color:#999999;}
+.channel_button{float:left;border:none;background:#e6e6e6 url(../Images/channel.common.png) no-repeat 0 0;width:18px;height:18px;cursor:pointer;}
+.channel_login{float:right;line-height:35px;}
+.channel_login a{margin-right:5px;color:#FFFFFF;}
+
+.channel_link{overflow:hidden;width:960px;margin:0 auto;background:#B9B9B9;border-bottom:1px solid #FFFFFF;}
+.channel_link h3{overflow:hidden;text-indent:-200px;width:90px;height:25px;margin:15px 15px 5px;background:url(../Images/channel.common.png) no-repeat 0 -26px;}
+.channel_link_i{margin:0 10px 10px 20px;}
+.channel_link_i a{margin:0 10px 0 0;line-height:20px;}
+.wraper1 {background-color: #000000;}
+.channel_footer{font:12px arial;clear:both;overflow:hidden;width:960px;margin:0 auto;background-color: #B9B9B9;}
+.channel_footer p{text-align:center;margin:20px auto;}
+.channel_about a{margin:0 10px;color:#000000;}
+/* 2013-11-14 friendlink */
+.t_hot {overflow: hidden;clear: both;width: 920px;margin: 0 auto;border-bottom: 1px solid #FFFFFF;
+padding:10px 20px 10px 20px;background: #B9B9B9;}
+.t_hot strong{width: 90px;height: 25px;float: left;font: 500 21px/25px "microsoft yahei";color:#000000;cursor:pointer; margin-bottom:5px;}
+.t_hot strong:hover,.t_hot .current{font: 600 20px/25px "microsoft yahei";}
+.t_hot span{color: #000000;margin: 0 10px;float: left;font: 500 18px/25px "microsoft yahei";}
+.t_hot ul{clear: both; overflow:hidden;padding-top: 5px;}
+.t_hot .border{ border-top:1px solid #d6d3d3;}
+.t_hot ul li{float:left;padding: 0 10px 0 0;height: 25px;line-height: 25px;}
+.t_hot ul li a{ color:#333333;}
+.t_hot ul li a:hover{color:#8b0c53;}
+.t_hot .hidden{display:none;}
+
+/* 2014-03-04 加微信关注 and 猜你喜欢 */
+.detail_wx {background:url(../Images/detail_wx.jpg) 16px 9px no-repeat #fae3ed;border: 1px solid #e6e6e6;color:#8a0c53; height:30px; line-height:30px;overflow: hidden; padding:0px 35px 0px 40px;margin: 10px auto;width: 505px;}
+.detail_wx span{display:inline-block;float:left;padding-right:28px;color:#8a0c53}
+.detail_wx a{display:inline-block;float:right;color:#8a0c53}
+#look_link{color:#8a0c53;text-decoration: underline;}
+.yourlike {margin: 20px 0 10px 0;width: 270px;overflow: hidden;}
+
+/* 2014-03-10 图库各级页面顶部导航栏替换*/
+.top_bar{background-color:#000000; width:100%;}
+.t1 {width:960px;margin: 0 auto; color:#ffffff; height:35px; position:relative; font-family:"microsoft yahei";}
+.t1 a { color:#ffffff; margin:0 6px;}
+.t1 a:hover { color:#da70c7;}
+.t1_l {float:left; width:220px; line-height:35px; }
+.t1_c {float:left; width:530px; line-height:35px; text-align:right;}
+.t1_r {float:right; width:210px; line-height:35px; margin-top:5px; display:inline; }
+.t_input{float:left;background-color:#FFFFFF;border:0;width:170px;padding-left:5px;height:24px;line-height:24px;color:#999999;}
+.t_button{float:left;width:30px;height:24px;border:none;background:url(../Images/t_button.png) no-repeat 0 0;cursor:pointer;}
+
+
+/* 2014-08-30 文章最终页加时装周导航 lc*/
+/* 2015-02-05 文章最终页加时装周导航 修改  lc*/
+.detail_week {
+	margin: 35px auto;
+	width: 580px;
+	font-family: "Microsoft YaHei";
+}
+.detail_week .tit {
+	height:25px;
+	line-height:25px;
+	background-color:#000000;
+	padding: 13px 0;
+	text-align:center;
+	display:block;
+	letter-spacing: 2px;
+}
+.detail_week .tit span {
+	color:#ffe400;
+	font-size:20px;
+	line-height:25px;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.detail_week .tit .hand {
+	background:url("../Images/hand.png") 0 0 no-repeat;
+	margin-left:10px;
+	width:25px;
+	height:25px;
+}
+.detail_week .nav {
+	width:100%;
+	height:55px;
+	line-height:55px;
+	overflow:hidden;
+	border-bottom:1px dashed #acacac;
+	background-color: #ffffff;
+	padding: 10px 0;
+}
+.detail_week .nav a {
+	width:50%;
+	text-align:center;
+	float:left;
+	display:inline;
+	font-size:21px;
+}
+.detail_week .nav a.m20 {
+	margin:0 20px;
+}
+.detail_week .nav a.ml {
+	border-left: 1px dashed #acacac;
+	margin-left: -1px;
+}
+.detail_week .nav a:hover {
+	font-size:24px;
+	text-decoration:none;
+	color:#000000;
+}

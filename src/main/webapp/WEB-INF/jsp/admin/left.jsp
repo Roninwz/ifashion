@@ -61,8 +61,12 @@
 
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
-                    <li>超级管理员</li>
-                    <li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+                    <span>欢迎您</span>
+                    <li>管理员</li>
+                    <li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">
+                        <c:set var="admin" value="${sessionScope.admin}"/>
+                        ${admin.adminName}
+                        <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
                             <!-- <li><a href="#">切换账户</a></li> -->
@@ -193,6 +197,7 @@
 <script type="text/javascript" src="static/admin/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="static/admin/h-ui/js/H-ui.js"></script>
 <script type="text/javascript" src="static/admin/h-uiadmin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="static/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <!--/_footer /作为公共模版分离出去-->
 
 

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.talk.mapper.QuestionMapper">
+
+
+  <!--//添加问题-->
+  <!--int addQuestion(Question question);-->
+  <insert id="addQuestion" parameterType="Question">
+    insert into question (questionId,userId,questionDate,lookNum,
+    questionContent,attentionNum,reportState,tagId) values(#{questionId},
+    #{userId},#{questionDate},#{lookNum},
+    #{questionContent},#{attentionNum},#{reportState},#{tagId})
+  </insert>
+
+  <!--//添加问题-->
+  <!--int addQuestionSelective(Question question);-->
+  <insert id="addQuestionSelective" parameterType="Question">
+    insert into question
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="questionId != null">
+        questionId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="questionDate != null">
+        questionDate,
+      </if>
+      <if test="lookNum != null">
+        lookNum,
+      </if>
+      <if test="questionContent != null">
+        questionContent,
+      </if>
+      <if test="attentionNum != null">
+        attentionNum,
+      </if>
+      <if test="reportState != null">
+        reportState,
+      </if>
+      <if test="tagId != null">
+        tagId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="questionId != null">
+        #{questionId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="questionDate != null">
+        #{questionDate},
+      </if>
+      <if test="lookNum != null">
+        #{lookNum},
+      </if>
+      <if test="questionContent != null">
+        #{questionContent},
+      </if>
+      <if test="attentionNum != null">
+        #{attentionNum},
+      </if>
+      <if test="reportState != null">
+        #{reportState},
+      </if>
+      <if test="tagId != null">
+        #{tagId},
+      </if>
+    </trim>
+  </insert>
+
+  <!--//删除问题-->
+  <!--int deleteQuestion(Integer questionId);-->
+  <delete id="deleteQuestion" parameterType="int">
+    delete from question where questionId=#{questionId}
+  </delete>
+
+  <!--//修改问题-->
+  <!--int updateQuestion(Question question);-->
+  <update id="updateQuestion" parameterType="Question">
+    update question set userId=#{userId},
+    questionDate=#{questionDate},
+    lookNum=#{lookNum},
+    questionContent=#{questionContent},
+    attentionNum=#{attentionNum},
+    reportState=#{reportState},
+    tagId=#{tagId}
+    where questionId=#{questionId}
+  </update>
+
+  <!--//修改问题不为空字段-->
+  <!--int updateQuestionSelective(Question question);-->
+  <update id="updateQuestionSelective" parameterType="Question">
+    update question
+    <set>
+      <if test="userId != null">
+        userId = #{userId},
+      </if>
+      <if test="questionDate != null">
+        questionDate = #{questionDate},
+      </if>
+      <if test="lookNum != null">
+        lookNum = #{lookNum},
+      </if>
+      <if test="questionContent != null">
+        questionContent = #{questionContent},
+      </if>
+      <if test="attentionNum != null">
+        attentionNum = #{attentionNum},
+      </if>
+      <if test="reportState != null">
+        reportState = #{reportState},
+      </if>
+      <if test="tagId != null">
+        tagId = #{tagId},
+      </if>
+    </set>
+    where questionId = #{questionId}
+  </update>
+
+  <!--//通过id查询问题-->
+  <!--Question selectQuestionByQuestionId(Integer questionId);-->
+  <select id="selectQuestionByQuestionId" parameterType="int" resultType="com.zua.ifashion.talk.entity.Question">
+    select * from question where questionId =#{questionId}
+  </select>
+
+  <!--//通过用户id来查询问题-->
+  <!-- List<Question> selectQuestionByUserId(Integer userId);-->
+  <select id="selectQuestionByUserId" parameterType="int" resultType="com.zua.ifashion.talk.entity.Question">
+    select * from question where userId =#{userId}
+  </select>
+
+  <!--//通过标签Id来查询问题-->
+  <!--List<Question> selectQuestionByTagId(Integer tagId);-->
+  <select id="selectQuestionByTagId" parameterType="int" resultType="com.zua.ifashion.talk.entity.Question">
+    select * from question where tagId=#{tagId}
+  </select>
+
+  <!--//查询问题浏览量-->
+  <!--int selectLookNumByQuestionId(Integer questionId);-->
+  <select id="selectLookNumByQuestionId" resultType="int" parameterType="int">
+    select lookNum from question where questionId=#{questionId}
+  </select>
+
+  <!--//查询问题是否被举报-->
+  <!--int selctReportStateByQuestionId(Integer questionId);-->
+  <select id="selctReportStateByQuestionId" parameterType="int" resultType="int">
+    select reportState from question where questionId=#{questionId}
+  </select>
+
+  <!--//查询问题关注量-->
+  <!--int selectAttentionNumByQuestionId(Integer questionId);-->
+  <select id="selectAttentionNumByQuestionId" resultType="int" parameterType="int">
+    select attentionNum from question where questionId=#{questionId}
+  </select>
+
+  <!--//根据id来查询问题内容-->
+  <!--String selectQuestionContentByQuestionId(Integer questionId);-->
+  <select id="selectQuestionContentByQuestionId" resultType="String" parameterType="int">
+    select questionContent from question where questionId=#{questionId}
+  </select>
+
+  <!--//通过时间来查询问题-->
+  <!--List<Question> selectQuestionByEQuestionDate(Date questionDate);-->
+
+  <!--List<Question> selectQuestionByLQuestionDate(Date questionDate);-->
+  <select id="selectQuestionByEQuestionDate" resultType="com.zua.ifashion.talk.entity.Question" parameterType="Date">
+    select * from question where questionDate &lt; #{questionDate}
+  </select>
+
+  <select id="selectQuestionByLQuestionDate" resultType="com.zua.ifashion.talk.entity.Question" parameterType="Date">
+    select * from question where questionDate &gt; #{questionDate}
+  </select>
+
+
+  <!--//查询每个问题的关注量并排序-->
+  <!--List<Question> selectAttentionNumOrder();-->
+  <select id="selectAttentionNumOrder" resultType="com.zua.ifashion.talk.entity.Question">
+    select * from question order by attentionNum
+  </select>
+
+  <!--//查询所有问题-->
+  <!--List<Question> selectAllQuestion();-->
+  <select id="selectAllQuestion" resultType="com.zua.ifashion.talk.entity.Question">
+    select * from question,user where question.userId=user.userId
+  </select>
+
+
+
+
+
+
+
+
+</mapper>

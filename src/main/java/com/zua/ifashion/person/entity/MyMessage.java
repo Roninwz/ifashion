@@ -3,6 +3,8 @@ package com.zua.ifashion.person.entity;
 public class MyMessage {
     private Integer mymessageId;
 
+    private  Integer userId;
+
     private String mymessageContent;
 
     public Integer getMymessageId() {
@@ -13,6 +15,14 @@ public class MyMessage {
         this.mymessageId = mymessageId;
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     public String getMymessageContent() {
         return mymessageContent;
     }
@@ -21,8 +31,9 @@ public class MyMessage {
         this.mymessageContent = mymessageContent == null ? null : mymessageContent.trim();
     }
 
-    public MyMessage(Integer mymessageId, String mymessageContent) {
+    public MyMessage(Integer mymessageId, Integer userId, String mymessageContent) {
         this.mymessageId = mymessageId;
+        this.userId = userId;
         this.mymessageContent = mymessageContent;
     }
 

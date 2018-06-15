@@ -1,6 +1,7 @@
 package com.zua.ifashion.talk.service;
 
 import com.zua.ifashion.talk.entity.Discuss;
+import com.zua.ifashion.talk.vo.DiscussUser;
 
 import java.util.Date;
 import java.util.List;
@@ -22,10 +23,19 @@ public interface DiscussService {
     int updateDiscussSelective(Discuss discuss);
 
     //通过id查询讨论
-    int selectDiscussByDiscussId(Integer discussId);
+    Discuss selectDiscussByDiscussId(Integer discussId);
 
     //通过用户id来查询讨论
     List<Discuss> selectDiscussByUserId(Integer userId);
+
+    //查询某个用户的讨论数量
+    int selectDiscussByUserIdCount(Integer userId);
+
+    //查询某个用户今日讨论数量
+    int selectDiscussByUserIdCountDay(Integer userId);
+
+    //查询讨论的用户ID
+    List<Integer> selectUserIdInDiscuss();
 
     //通过话题id来查询讨论
     List<Discuss> selectDiscussByTopicId(Integer topicId);
@@ -53,6 +63,9 @@ public interface DiscussService {
 
     //查询所有讨论
     List<Discuss> getAllDiscuss();
+
+    //查询forum页面的讨论
+    List<DiscussUser> selectDiscussUserByTopicId(Integer topicId);
 
 
 }

@@ -1,0 +1,1154 @@
+/* 公共的，头部，大div */
+
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden],
+template {
+    display: none
+}
+
+a {
+    background-color: transparent
+}
+
+a:active,
+a:hover {
+    outline: 0
+}
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+b,
+strong {
+    font-weight: 700
+}
+
+dfn {
+    font-style: italic
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+img {
+    border: 0
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+figure {
+    margin: 1em 40px
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0
+}
+
+pre {
+    overflow: auto
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input {
+    line-height: normal
+}
+
+input[type=checkbox],
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    border: 0;
+    padding: 0
+}
+
+textarea {
+    overflow: auto
+}
+
+optgroup {
+    font-weight: 700
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,
+th {
+    padding: 0
+}
+
+.service-promise-image {
+    width: 100%;
+    height: 122px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/service-promise_59b49c3.png) center top no-repeat
+}
+
+.hair-line-decorated-title {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #61595b;
+    margin: 30px 0
+}
+
+.hair-line-decorated-title .hair-line,
+.hair-line-decorated-title div:first-child,
+.hair-line-decorated-title div:last-child {
+    width: 160px;
+    border-bottom: solid 1px #ccc5c7;
+    margin-top: 15px
+}
+
+.hair-line-decorated-title div:first-child {
+    float: left
+}
+
+.hair-line-decorated-title div:last-child {
+    float: right
+}
+
+.collect-icon-uncollected {
+    width: 25px;
+    height: 25px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/mobile-waterfall_f1468a4.png) 0 -35px no-repeat
+}
+
+.collect-icon-collected {
+    width: 25px;
+    height: 25px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/mobile-waterfall_f1468a4.png) 0 -67px no-repeat
+}
+
+.common-on-sale-time-remain {
+    height: 60px;
+    border-radius: 30px;
+    line-height: 60px;
+    background: #fbf6f2;
+    border: dashed #b5a8ac 1px;
+    color: #877f81;
+    text-align: center;
+    margin-top: 10px
+}
+
+.common-on-sale-time-remain span {
+    color: #ccc5c7
+}
+
+.common-default-normal-txt-content {
+    font-size: 14px;
+    color: #b5a8ac
+}
+
+.coupon-small-module-wrap {
+    display: none
+}
+
+.coupon-small-module-wrap .js-coupon-small {
+    float: right;
+    margin-left: 2px
+}
+
+.coupon-small {
+    width: 127px;
+    height: 44px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    line-height: 44px
+}
+
+.coupon-small-cyan {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/homepage_daa512e.png) -2px -2px no-repeat
+}
+
+.coupon-small-orange {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/homepage_daa512e.png) -131px -2px no-repeat
+}
+
+.coupon-small-pink {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/homepage_daa512e.png) -260px -2px no-repeat
+}
+
+.coupon-small-fetch-pop-up {
+    overflow: hidden;
+    max-height: 400px
+}
+
+.coupon-small-fetch-pop-up .item-list {
+    border-bottom: dashed 1px #ccc5c7;
+    padding: 20px 0
+}
+
+.coupon-small-fetch-pop-up .item-list .button-fetch {
+    width: 120px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    text-align: center;
+    float: right
+}
+
+.coupon-small-fetch-pop-up .item-list .enabled {
+    background: #ccb8d1
+}
+
+.coupon-small-fetch-pop-up .item-list .disabled {
+    background: #ccc5c7
+}
+
+.coupon-small-fetch-pop-up .item-list span {
+    font-size: 16px;
+    color: #61595b;
+    line-height: 60px
+}
+
+.coupon-small-fetch-pop-up .item-list:nth-last-child(1) {
+    border-bottom: 0
+}
+
+.common-icon-avatar-ren-zheng {
+    width: 41px;
+    height: 41px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/homepage_daa512e.png) -389px -2px no-repeat
+}
+
+.toolbar .toolbar-icon-button .common-btn-dialog {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/common_lib_cyzs/image/btn-dialog_0b00266.png) 0 5px no-repeat
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none
+}
+
+img {
+    border-style: none\0
+}
+
+.float-left {
+    float: left
+}
+
+.float-right {
+    float: right
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearfix {
+    _overflow: hidden
+}
+
+.clear-float {
+    clear: both
+}
+
+.ie-hack,
+.badge-base,
+.badge-orange,
+.badge-pink,
+.badge-cyan,
+.badge-red,
+.badge-purple {
+    position: relative;
+    behavior: url(//ydcdn2.ichuanyi.cn/media/pc/css/common_lib_3rd/plugin/pie/1.0.0/PIE.htc)
+}
+
+.content-wrap {
+    margin: 0 20px;
+    padding: 20px 0
+}
+
+.content-item-title {
+    color: #61595b;
+    font-size: 16px;
+    margin: 10px 0
+}
+
+.item-link {
+    padding-right: 35px;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%2060%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath%20d%3D'm60%2061.5-38.25%2038.25-9.75-9.75%2029.25-28.5-29.25-28.5%209.75-9.75z'%20fill%3D'%23c7c7cc'%2F%3E%3C%2Fsvg%3E");
+    background-size: 20px 40px;
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    background-position: -webkit-calc(97%) center;
+    background-position: calc(97%) center
+}
+
+.item-content {
+    clear: both;
+    display: block;
+    border: solid 1px #ccc5c7;
+    height: 120px;
+    margin: 20px auto;
+    background-color: #fff
+}
+
+.item-content .item-media {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px
+}
+
+.item-content .item-inner {
+    margin-left: 100px;
+    padding-top: 10px
+}
+
+.content-devide-line-top {
+    border-top: solid #e2d9e4 1px
+}
+
+.clear-float {
+    clear: both
+}
+
+.toolbar-place-holder {
+    height: 110px
+}
+
+.toolbar {
+    height: 110px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 640px;
+    box-shadow: 0 10px 40px #ccc5c7;
+    z-index: 100
+}
+
+.toolbar .toolbar-icon-button {
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+    margin-left: 40px;
+    float: left;
+    text-align: center;
+    color: #61595b;
+    font-size: 16px
+}
+
+.toolbar .toolbar-icon-button .toolbar-icon-button-icon {
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    background-position: center center
+}
+
+.toolbar .toolbar-icon-button div {
+    text-align: center
+}
+
+.toolbar .toolbar-icon-button:nth-child(1) {
+    margin-left: 30px
+}
+
+.button {
+    border: 1px solid #ccb8d1;
+    color: #ccb8d1;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    line-height: 54px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: 0 0;
+    padding: 0 20px;
+    margin: 0;
+    height: 58px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28px;
+    font-family: inherit;
+    cursor: pointer
+}
+
+input[type=submit].button,
+input[type=button].button {
+    width: 100%
+}
+
+html:not(.watch-active-state) .button:active,
+.button.active-state {
+    background: rgba(204, 184, 209, .15)
+}
+
+.button.button-round {
+    border-radius: 54px
+}
+
+.button.active {
+    background: #ccb8d1;
+    color: #fff
+}
+
+.button.button-big {
+    font-size: 34px;
+    height: 88px;
+    line-height: 84px
+}
+
+.button.button-fill {
+    color: #fff;
+    background: #ccb8d1;
+    border: 0
+}
+
+html:not(.watch-active-state) .button.button-fill:active,
+.button.button-fill.active-state {
+    opacity: .8
+}
+
+.button i.icon:first-child {
+    margin-right: 20px
+}
+
+.button i.icon:last-child {
+    margin-left: 20px
+}
+
+.button i.icon:first-child:last-child {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.list-block {
+    background: #fff;
+    margin-bottom: 20px
+}
+
+.list-block .goods-info .go-to-shop-wrap {
+    width: 130px;
+    box-sizing: border-box
+}
+
+.list-block .goods-info .go-to-shop-wrap .avatar {
+    width: 110px;
+    height: 110px
+}
+
+.list-block ul ul {
+    padding-left: 0;
+    padding-right: 45px
+}
+
+.list-block .item-content {
+    padding-left: 0;
+    padding-right: 15px
+}
+
+.list-block .item-inner {
+    padding-right: 0;
+    padding-left: 15px
+}
+
+.list-block .item-after {
+    margin-left: 0;
+    margin-right: 5px
+}
+
+.list-item-content-title {
+    color: #61595b;
+    font-size: 14px
+}
+
+.list-item-content-title span {
+    font-size: 12px;
+    color: #b5a8ac;
+    margin-left: 20px
+}
+
+.list-item-content-title .single-line-title-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 500px;
+    display: inline-block;
+    font-size: 12px;
+    color: #b5a8ac;
+    margin-left: 20px
+}
+
+.list-item-content-title-pink {
+    color: #ccb8d1;
+    font-size: 14px
+}
+
+.list-item-content-title-pink span {
+    font-size: 12px;
+    color: #b5a8ac;
+    margin-left: 20px
+}
+
+.list-item-content-title-pink .single-line-title-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 500px;
+    display: inline-block;
+    font-size: 12px;
+    color: #b5a8ac;
+    margin-left: 20px
+}
+
+.tabs {
+    float: left;
+    background: #fff;
+    width: 100%
+}
+
+.tabs ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0
+}
+
+.tabs ul li {
+    float: left;
+    line-height: 40px;
+    font-size: 16px;
+    margin: 0 -1px;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding: 0;
+    display: block
+}
+
+.tab-nav {
+    background: #fff;
+    border: solid 1px #e2d9e4;
+    border-bottom: 0;
+    color: #420e4d;
+    cursor: pointer;
+    z-index: 0
+}
+
+.tab-nav-action {
+    background: #da4dfc;
+    border: solid 1px #da4dfc;
+    border-bottom: 0;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10
+}
+
+.tabs-body {
+    float: left;
+    margin-left: -1px;
+    padding: 5px 0 0;
+    width: 100%;
+    border-top: solid 3px #da4dfc
+}
+
+.badge-base,
+.badge-orange,
+.badge-pink,
+.badge-cyan,
+.badge-red,
+.badge-purple {
+    color: #fff;
+    border-radius: 999px;
+    padding: 3px 10px
+}
+
+.badge-orange {
+    background: #ff8a00;
+    width: 40px;
+    height: 20px;
+    font-size: 12px
+}
+
+.badge-pink {
+    background: #ccb8d1
+}
+
+.badge-cyan {
+    background: #5ed5d4
+}
+
+.badge-red {
+    background: #ff4057;
+    width: 40px;
+    height: 20px;
+    font-size: 12px
+}
+
+.badge-purple {
+    background: #420b4c
+}
+
+.pop-up-mask {
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: .5;
+    width: 100%;
+    height: 100%
+}
+
+.pop-up-mask-fade-in {
+    -webkit-animation-name: ani-pop-up-mask-fade-in;
+    -webkit-animation-duration: .3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards
+}
+
+@-webkit-keyframes ani-pop-up-mask-fade-in {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: .5
+    }
+}
+
+.bottom-pop-up {
+    z-index: 300;
+    background: #fff;
+    width: 640px;
+    bottom: 0;
+    position: fixed
+}
+
+.pop-up-content-fly-in-btt {
+    -webkit-animation-name: ani-pop-up-content-fly-in-btt;
+    -webkit-animation-duration: .3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards
+}
+
+@-webkit-keyframes ani-pop-up-content-fly-in-btt {
+    0% {
+        bottom: -1136px
+    }
+    100% {
+        bottom: 0
+    }
+}
+
+* {
+    font-family: SimHei
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff
+}
+
+
+/* 设置整体top */
+
+.header-container {
+    width: 100%;
+    min-width: 1200px;
+    margin-top: 420px;
+}
+
+.header-container .logo-and-service-container {
+    width: 1200px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto
+}
+
+.header-container .logo-and-service-container .logo-container {
+    width: 200px;
+    height: 100px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/logo_2715373.png) no-repeat 25px center
+}
+
+.header-container .logo-and-service-container .service-promise-container {
+    width: 1000px;
+    height: 100px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item {
+    width: 200px;
+    height: 100px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-top: 25px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .content {
+    display: inline-block;
+    height: 50px;
+    margin-left: 10px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-package {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-package_6d46026.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-suit {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-suit_373dfb2.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-deliver {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-deliver_559e956.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-refund {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-refund_24d1bb1.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-online-consult {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-online-consult_865550d.png?__sprite) no-repeat
+}
+
+.header-container .nav-container {
+    width: 100%;
+    min-width: 1200px;
+    height: 40px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/nav-bg_bf59b3e.png) no-repeat center center;
+    background-color: #c726ef;
+    margin: 0 auto
+}
+
+.header-container .nav-container ul {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0
+}
+
+.header-container .nav-container ul li {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    list-style: none;
+    color: #fff;
+    float: left;
+    text-align: center
+}
+
+.header-container .nav-container ul li.active {
+    background-color: #961db6
+}
+
+.header-container .nav-container .header-nav-btn {
+    cursor: pointer
+}
+
+.page-container {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.return-top {
+    position: fixed;
+    z-index: 10000;
+    display: none;
+    cursor: pointer;
+    bottom: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background-image: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/return-top-bg_9120efa.jpg)
+}
+
+.fleft {
+    float: left
+}
+
+.fright {
+    float: right
+}
+
+
+/* .footer-container {
+    clear: both;
+    width: 100%;
+    height: 240px;
+    min-width: 1200px;
+    background-color: #f4f4f4
+} */
+
+
+/* .footer-container .main-content {
+    margin: 0 auto;
+    padding-top: 30px;
+    height: 180px;
+    width: 1200px;
+    background-color: #f4f4f4
+}
+
+.footer-container .main-content .logo-container {
+    width: 320px;
+    text-align: center
+}
+
+.footer-container .main-content .list-container .list-item {
+    margin-left: 25px
+}
+
+.footer-container .main-content .list-container .list-item .title {
+    color: #420e4d;
+    font-size: 12px
+}
+
+.footer-container .main-content .list-container .list-item ul {
+    display: block;
+    padding: 0;
+    margin-top: 7px
+}
+
+.footer-container .main-content .list-container .list-item ul li {
+    list-style: none;
+    color: #999;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px
+}
+
+.footer-container .main-content .list-container .list-item .footer-link {
+    color: #999
+}
+
+.footer-container .main-content .list-container .list-item .footer-link:hover {
+    color: #d94dfc
+}
+
+.footer-container .main-content .list-container .about-us {
+    margin-left: 65px
+}
+
+.footer-container .main-content .list-container .friend-link {
+    margin-left: 80px
+}
+
+.footer-container .main-content .list-container .friend-link ul {
+    margin-right: 40px
+}
+
+.footer-container .copy-right-container {
+    width: 100%;
+    background-color: #ccc
+}
+
+.footer-container .copy-right-container .copy-right {
+    height: 30px;
+    line-height: 30px;
+    width: 1200px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px
+}
+
+.footer-container .qrcode-container {
+    position: relative;
+    color: #5b2e65;
+    font-size: 14px;
+    text-align: center;
+    width: 160px
+}
+
+.footer-container .qrcode-container #footerDlQR {
+    margin-top: 10px
+}
+
+.footer-container .qrcode-container img {
+    position: absolute;
+    bottom: 45px;
+    left: 70px
+} */
+
+* {
+    font-family: SimHei
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff
+}
+
+.header-container {
+    width: 100%;
+    min-width: 1200px
+}
+
+.header-container .logo-and-service-container {
+    width: 1200px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto
+}
+
+.header-container .logo-and-service-container .logo-container {
+    width: 200px;
+    height: 100px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/logo_2715373.png) no-repeat 25px center
+}
+
+.header-container .logo-and-service-container .service-promise-container {
+    width: 1000px;
+    height: 100px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item {
+    width: 200px;
+    height: 100px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-top: 25px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .content {
+    display: inline-block;
+    height: 50px;
+    margin-left: 10px
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-package {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-package_6d46026.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-suit {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-suit_373dfb2.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-deliver {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-deliver_559e956.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-refund {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-refund_24d1bb1.png?__sprite) no-repeat
+}
+
+.header-container .logo-and-service-container .service-promise-container .promise-item .icon-online-consult {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/icon-online-consult_865550d.png?__sprite) no-repeat
+}
+
+.header-container .nav-container {
+    width: 100%;
+    min-width: 1200px;
+    height: 40px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/nav-bg_bf59b3e.png) no-repeat center center;
+    background-color: #c726ef;
+    margin: 0 auto
+}
+
+.header-container .nav-container ul {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0
+}
+
+.header-container .nav-container ul li {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    list-style: none;
+    color: #fff;
+    float: left;
+    text-align: center
+}
+
+.header-container .nav-container ul li.active {
+    background-color: #961db6
+}
+
+.header-container .nav-container .header-nav-btn {
+    cursor: pointer
+}
+
+.page-container {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.return-top {
+    position: fixed;
+    z-index: 10000;
+    display: none;
+    cursor: pointer;
+    bottom: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background-image: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/core/header/image/return-top-bg_9120efa.jpg)
+}
+
+.fleft {
+    float: left
+}
+
+.fright {
+    float: right
+}

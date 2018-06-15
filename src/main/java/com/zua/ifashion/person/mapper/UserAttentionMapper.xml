@@ -4,6 +4,54 @@
   <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.UserAttention">
     <id column="attentionId" jdbcType="INTEGER" property="attentionId" />
     <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userdId" jdbcType="INTEGER" property="userdId" />
   </resultMap>
+
+
+  <insert id="addUserAttentionSelective" parameterType="com.zua.ifashion.person.entity.UserAttention">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="attentionId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_attention
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attentionId != null">
+        attentionId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="userdId != null">
+        userdId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attentionId != null">
+        #{attentionId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userdId != null">
+        #{userdId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <delete id="deleteUserAttention" parameterType="java.lang.Integer">
+    delete from user_attention
+    where attentionId = #{attentionId,jdbcType=INTEGER}
+  </delete>
+
+  <select id="selectUserAttentionById" parameterType="int" resultType="com.zua.ifashion.person.entity.UserAttention">
+    select *  from user_attention where attentionId =#{attentionId}
+  </select>
+
+  <select id="selectUserAttentionByUserId" parameterType="int" resultType="com.zua.ifashion.person.entity.UserAttention">
+    select *  from user_attention where userId =#{userId}
+  </select>
+
+
+  <select id="getAllAttentions" resultType="com.zua.ifashion.person.entity.UserAttention">
+    select *  from user_attention
+  </select>
 
 </mapper>

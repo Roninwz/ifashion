@@ -6,4 +6,16 @@
     <result column="articletypeName" jdbcType="VARCHAR" property="articletypeName" />
   </resultMap>
 
+
+  <!--根据文章类型名称查找文章-->
+  <select id="selectArticleByArticletypeName" parameterType="string" resultType="com.zua.ifashion.article.entity.Article">
+    SELECT * FROM article WHERE articletypeId IN
+      (SELECT articletypeId FROM article_type
+       WHERE articletypeName LIKE "%"#{articletypeName}"%")
+  </select>
+
+  <!--根据类型id查询文章-->
+  <select id="selectArticleByTypeId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article WHERE articleTypeId = #{articleTypeId}
+  </select>
 </mapper>

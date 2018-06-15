@@ -12,4 +12,65 @@
     <result column="reviewContent" jdbcType="LONGVARCHAR" property="reviewContent" />
   </resultMap>
 
+  <resultMap id="ArticleReviewUser" type="com.zua.ifashion.article.vo.ArticleReviewUserVo">
+      <id column="reviewId" jdbcType="INTEGER" property="reviewId" />
+      <result column="articleId" jdbcType="INTEGER" property="articleId" />
+      <result column="userId" jdbcType="INTEGER" property="userId" />
+      <result column="reviewContent" jdbcType="VARCHAR" property="reviewContent"/>
+      <result column="reviewZan" jdbcType="INTEGER" property="reviewZan" />
+      <result column="reviewDate" jdbcType="TIMESTAMP" property="reviewDate" />
+      <association property="user" javaType="com.zua.ifashion.person.entity.User">
+          <id column="userId" jdbcType="INTEGER" property="userId" />
+          <result column="username" jdbcType="VARCHAR" property="username" />
+          <result column="userImgurl" jdbcType="VARCHAR" property="userImgurl" />
+      </association>
+  </resultMap>
+
+
+  <!--根据评论id删除评论-->
+  <delete id="deleteArticleReviewByReviewId" parameterType="int">
+      DELETE FROM article_review WHERE reviewId = #{reviewId}
+  </delete>
+
+  <!--根据用户id删除评论-->
+  <delete id="deleteArticleReviewByUserId" parameterType="int">
+      DELETE FROM article_review WHERE userId = #{userId}
+  </delete>
+
+    <!--根据文章id删除评论    -->
+  <delete id="deleteArticleReviewByArticleId" parameterType="int">
+      DELETE FROM article_review WHERE articleId = #{articleId}
+  </delete>
+
+  <!--根据文章id查询评论-->
+  <select id="selectArticleReviewByArticleId" parameterType="int" resultType="com.zua.ifashion.article.entity.ArticleReview">
+      SELECT * FROM article_review WHERE articleId = #{articleId}
+  </select>
+
+  <!--根据文章id 日期降序查询评论-->
+  <select id="selectLatestReviewByArticleId" parameterType="int" resultType="com.zua.ifashion.article.entity.ArticleReview">
+      SELECT * FROM article_review WHERE articleId = #{articleId} ORDER BY reviewDate DESC
+  </select>
+
+  <!--根据用户id查询评论-->
+  <select id="selectArticleReviewByUserId" parameterType="int" resultType="com.zua.ifashion.article.entity.ArticleReview" >
+      SELECT * FROM article_review WHERE userId = #{userId}
+  </select>
+
+  <!--根据日期降序查询评论-->
+  <select id="selectArticleReviewByReviewDate" resultType="com.zua.ifashion.article.entity.ArticleReview">
+      SELECT * FROM article_review ORDER BY reviewDate DESC
+  </select>
+
+  <!--查询所有评论-->
+  <select id="selectAllArticleReview" resultType="com.zua.ifashion.article.entity.ArticleReview">
+      SELECT * FROM article_review
+  </select>
+
+  <!--根据评论id查询用户-->
+  <select id="selectUserByRevicewId" parameterType="int" resultMap="ArticleReviewUser">
+      SELECT a.*,u.username,u.userImgurl FROM article_review a,user u
+      WHERE a.reviewId = #{reviewId} AND a.userId = u.userId
+  </select>
+
 </mapper>

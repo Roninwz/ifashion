@@ -9,4 +9,83 @@
     <result column="reviewRank" jdbcType="VARCHAR" property="reviewRank" />
   </resultMap>
 
+  <!--public abstract int addGoodsReview(GoodsReview goodsReview);-->
+
+  <!--public abstract int addGoodsReviewSelective(GoodsReview goodsReview);-->
+
+  <!--public abstract int deleteGoodsReview(Integer goodsreviewgId);-->
+  <insert id="addGoodsReview" parameterType="GoodsReview">
+    insert into goods_review(goodsreviewgId,userId,goodsId,reviewContent,reviewRank)
+    values(#{goodsreviewgId},#{userId},#{goodsId},#{reviewContent},#{reviewRank})
+  </insert>
+
+  <insert id="addGoodsReviewSelective" parameterType="GoodsReview">
+    insert into goods_review
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsreviewgId!=null">
+        goodsreviewgId
+      </if>
+      <if test="userId!=null">
+        userId
+      </if>
+      <if test="goodsId!=null">
+        goodsId
+      </if>
+      <if test="reviewContent!=null">
+        reviewContent
+      </if>
+      <if test="reviewRank!=null">
+        reviewRank
+      </if>
+    </trim>
+
+    <trim prefix="values(" suffixOverrides="," suffix=")">
+      <if test="goodsreviewgId!=null">
+        #{goodsreviewgId}
+      </if>
+      <if test="userId!=null">
+       #{userId}
+      </if>
+      <if test="goodsId!=null">
+        #{goodsId}
+      </if>
+      <if test="reviewContent!=null">
+        #{reviewContent}
+      </if>
+      <if test="reviewRank!=null">
+        #{reviewRank}
+      </if>
+    </trim>
+  </insert>
+
+  <delete id="deleteGoodsReview" parameterType="int">
+    DELETE  * from goods_review where goodsreviewgId=#{param}
+  </delete>
+
+  <!--//    根据id查询-->
+  <!--public abstract GoodsReview selectGoodsReviewById(Integer goodsreviewgId);-->
+
+  <!--//    根据用户id查询-->
+  <!--public abstract List<GoodsReview> selectGoodsReviewByUserId(Integer userId);-->
+
+  <!--//    根据商品id查询-->
+  <!--public abstract List<GoodsReview> selectGoodsReviewByGoodsId(Integer goodsId);-->
+
+<select id="selectGoodsReviewById" parameterType="int" resultType="GoodsReview">
+  select * from goods_review where goodsreviewgId=#{param}
+</select>
+
+  <select id="selectGoodsReviewByUserId" resultType="GoodsReview" parameterType="int">
+     select * from goods_review where userId=#{param}
+  </select>
+
+  <select id="selectGoodsReviewByGoodsId" parameterType="int" resultType="GoodsReview">
+    select * from goods_review where goodsId=#{param}
+  </select>
+
+  <!--//查询所有的评论-->
+  <!--public abstract List<GoodsReview> selectAllGoodsReview();-->
+  <select id="selectAllGoodsReview" resultType="GoodsReview">
+    select * from goods_review
+  </select>
 </mapper>

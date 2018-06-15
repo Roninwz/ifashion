@@ -66,10 +66,12 @@ table {
 }
 .plc {
     padding: 0 20px;
+    font-size: small;
 }
 
 .hm {
     text-align: center;
+    font-size: small;
 }
 .pview .xg1,.ptit .xg1 a {
     color: #e80084 !important;
@@ -100,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 .pls {
     border-right-color: #d1d1d1;
 	background:#FFF;
+    font-size: small;
 }
 .ad .pls {
     padding: 0;
@@ -116,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .pls .avatar img {
     padding: 5px 5px 8px;
-    background: #FFF url(../image/information/midavt_shadow.gif) 0 100% repeat-x;
+    background: #FFF url("../image/information/midavt_shadow.gif") 0 100% repeat-x;
 }
 a img {
     border: none;
@@ -133,6 +136,7 @@ a img {
     margin: 0;
     overflow: visible;
 	padding:10px 0;
+    font-size: small;
 }
 .pls .pi .xw1 {
     color: #9f2473;
@@ -205,10 +209,11 @@ em, cite {
 }
 .ptg {
     padding-left: 20px;
-    background: url(../image/information/tag.gif) no-repeat 0 2px;
+    background:url("../image/information/tag.gif") no-repeat 0 2px;
 }
 .mbm {
     margin-bottom: 10px !important;
+    font-size: small;
 }
 .ptg a {
     color: #369;
@@ -290,7 +295,7 @@ em, cite {
     margin: 2px 5px 0 0;
     width: 20px;
     height: 20px;
-    background: url(../image/information/editor.gif) no-repeat;
+    background: url("../image/information/editor.gif") no-repeat;
     text-indent: -9999px;
     line-height: 20px;
     overflow: hidden;
@@ -386,7 +391,7 @@ div.pt {
     background-position: 0 0;
 }
 .sd_weekreply .title, .sd_newhotthread .title, .sd_jinghuatie .title, .sd_newreply .title, .sd_newblog .title, .sd_starsign .title {
-    background: url(../image/information/threadright_title.png) no-repeat;
+    background: url("../image/information/threadright_title.png") no-repeat;
     height: 26px;
     margin-top: 5px;
     text-indent: -9999px;
@@ -411,7 +416,7 @@ div.pt {
     padding: 6px 15px;
 }
 #diyforumdisplayright .block .xl1 ul li, #diyforumdisplayrightjh .block .xl1 ul li, #diyforumdisplayright2 .block .xl1 ul li {
-    background: url(../image/information/threadright_icon.png) no-repeat 0 8px;
+    background: url("../image/information/threadright_icon.png") no-repeat 0 8px;
     height: 23px;
     line-height: 23px;
     overflow: hidden;
@@ -450,6 +455,6 @@ div.pt {
     text-indent: -9999px;
     height: 26px;
     margin-top: 5px;
-    background: url(../image/information/redianguanche_t.png) no-repeat left top;
+    background: url("../image/information/redianguanche_t.png") no-repeat left top;
 }
 

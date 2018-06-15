@@ -40,4 +40,9 @@ public class RoleServiceImpl implements RoleService{
     public int getAllRoleCount() {
         return roleMapper.getAllRoleCount();
     }
+
+    @Override
+    public List<Role> selectRoleNameByAdminId(Integer adminId) {
+        return roleMapper.selectRoleNameByAdminId(adminId);
+    }
 }

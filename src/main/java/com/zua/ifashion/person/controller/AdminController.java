@@ -18,37 +18,7 @@ import java.util.Map;
 public class AdminController {
    @Autowired
     private TagService tagService;
-   // adminmanage.action
-    //管理员管理controller
-    //1.角色管理
-    @RequestMapping(value = "/rolemanage", method = RequestMethod.GET)
-    public String adminRole(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/role";
-    }
-    //2.功能模块管理
-    @RequestMapping(value = "/modulemanage", method = RequestMethod.GET)
-    public String adminModule(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/module";
-    }
 
-
-    @RequestMapping(value = "/adminmanage", method = RequestMethod.GET)
-    public String adminAdminManage(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/adminlist";
-    }
-    @RequestMapping(value = "/addadmin", method = RequestMethod.GET)
-    public String addAdmin(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/addadmin";
-    }
-    @RequestMapping(value = "/updateadmin", method = RequestMethod.GET)
-    public String updateAdmin(HttpSession session) {
-        session.getAttribute("adminModuleVos");
-        return "admin/updateadmin";
-    }
 
 
 
@@ -79,6 +49,49 @@ public class AdminController {
         int n= tagService.addTagSelective(tag);
 
         session.getAttribute("adminModuleVos");
+        return tag;
+    }
+
+//updatetag
+
+
+    // 其它管理controller
+    @RequestMapping(value = "/updatetag", method = RequestMethod.GET)
+    public String updatetag(HttpSession session,Integer tagId,Map<String,Object> map) {
+
+        Tag tag=tagService.selectTagByTagId(tagId);
+
+        map.put("tag",tag);
+
+        session.getAttribute("adminModuleVos");
+        return "admin/updatetag";
+    }
+    // 其它管理controller
+    @RequestMapping(value = "/updatehandletag", method = RequestMethod.POST)
+    public String updatehandletag(HttpSession session,Tag tag,Map<String,Object> map) {
+
+         tagService.updateTagSelective(tag);
+
+        //map.put("tag",tag);
+
+        session.getAttribute("adminModuleVos");
+        return "redirect:/admin/tagmanage.action";
+    }
+
+    @RequestMapping(value = "/ajaxdeletetag", method = RequestMethod.POST)
+    @ResponseBody
+    public Tag ajaxdeleteTag(HttpSession session, @RequestBody Tag tag, Map<String,Object> map) {
+        String msg="";
+
+
+        int n=tagService.deleteTag(tag.getTagId());
+        if(n>0){
+            msg="删除成功";
+        }else {
+            msg="删除失败";
+        }
+        session.getAttribute("adminModuleVos");
+
         return tag;
     }
 }

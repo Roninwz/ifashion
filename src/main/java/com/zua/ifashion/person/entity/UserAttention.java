@@ -5,6 +5,8 @@ public class UserAttention {
 
     private Integer userId;
 
+    private Integer userdId;
+
     public Integer getAttentionId() {
         return attentionId;
     }
@@ -21,9 +23,18 @@ public class UserAttention {
         this.userId = userId;
     }
 
-    public UserAttention(Integer attentionId, Integer userId) {
+    public Integer getUserdId() {
+        return userdId;
+    }
+
+    public void setUserdId(Integer userdId) {
+        this.userdId = userdId;
+    }
+
+    public UserAttention(Integer attentionId, Integer userId, Integer userdId) {
         this.attentionId = attentionId;
         this.userId = userId;
+        this.userdId = userdId;
     }
 
     public UserAttention() {

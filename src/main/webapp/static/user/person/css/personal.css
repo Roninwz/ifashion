@@ -679,8 +679,8 @@ hr {
         margin-left: 100px;
         left: 100px;
         /*overflow: hidden;*/
-        width: 100%;
-        min-height: 585px;
+        width: 1000px;
+        min-height: 685px;
         /*background-color: #ECECEC;*/
         background: #F5F8FA;
         -moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;
@@ -897,7 +897,7 @@ hr {
         width: 160px;
     }
     .main-wrap {
-        width: 700px;
+        width: 1000px;
         margin-left: 180px;
         /*z-index: 1000;*/
     }

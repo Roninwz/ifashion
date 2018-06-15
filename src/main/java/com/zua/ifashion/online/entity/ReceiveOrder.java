@@ -13,11 +13,13 @@ public class ReceiveOrder {
 
     private Date startDate;
 
-    private Date endState;
+    private Date endDate;
 
-    private Date ordersDate;
+    private int orderState;     //订单状态   0已接单 1已发货  2用户确认已收货
 
-    private String trueOrder;
+    private String trueOrder;   //真实订单号
+
+    private String virtulOrder;  //虚拟订单号
 
     public Integer getReceiveorderId() {
         return receiveorderId;
@@ -60,19 +62,19 @@ public class ReceiveOrder {
     }
 
     public Date getEndState() {
-        return endState;
+        return endDate;
     }
 
-    public void setEndState(Date endState) {
-        this.endState = endState;
+    public void setEndState(Date endDate) {
+        this.endDate = endDate;
     }
 
-    public Date getOrdersDate() {
-        return ordersDate;
+    public int getOrderState() {
+        return orderState;
     }
 
-    public void setOrdersDate(Date ordersDate) {
-        this.ordersDate = ordersDate;
+    public void setOrderState(int orderState) {
+        this.orderState = orderState;
     }
 
     public String getTrueOrder() {
@@ -80,18 +82,27 @@ public class ReceiveOrder {
     }
 
     public void setTrueOrder(String trueOrder) {
-        this.trueOrder = trueOrder == null ? null : trueOrder.trim();
+        this.trueOrder = trueOrder;
     }
 
-    public ReceiveOrder(Integer receiveorderId, Integer userId, Integer designerId, Integer ordersId, Date startDate, Date endState, Date ordersDate, String trueOrder) {
+    public String getVirtulOrder() {
+        return virtulOrder;
+    }
+
+    public void setVirtulOrder(String virtulOrder) {
+        this.virtulOrder = virtulOrder;
+    }
+
+    public ReceiveOrder(Integer receiveorderId, Integer userId, Integer designerId, Integer ordersId, Date startDate, Date endDate, int orderState, String trueOrder, String virtulOrder) {
         this.receiveorderId = receiveorderId;
         this.userId = userId;
         this.designerId = designerId;
         this.ordersId = ordersId;
         this.startDate = startDate;
-        this.endState = endState;
-        this.ordersDate = ordersDate;
+        this.endDate = endDate;
+        this.orderState = orderState;
         this.trueOrder = trueOrder;
+        this.virtulOrder = virtulOrder;
     }
 
     public ReceiveOrder() {

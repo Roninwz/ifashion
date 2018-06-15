@@ -164,7 +164,10 @@ public final class ConfigManager {
 	}
 	
 	private String getConfigPath () {
-		return this.parentPath + File.separator + ConfigManager.configFileName;
+		System.out.println("执行到路径地方");
+		System.out.println(this.rootPath + File.separator+"static"+File.separator+"ueditor"+File.separator+ ConfigManager.configFileName);
+		//return this.parentPath + File.separator + ConfigManager.configFileName;
+		return this.rootPath +File.separator+"ueditor"+File.separator+ ConfigManager.configFileName;
 	}
 
 	private String[] getArray ( String key ) {

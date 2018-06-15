@@ -154,6 +154,7 @@ public class AdminLoginController {
             System.out.println(" 登录成功");
             System.out.println(adminModuleVos.size());
            map.put("adminModuleVos",adminModuleVos);
+           session.setAttribute("admin",admin2);
            session.setAttribute("adminModuleVos",adminModuleVos);
             return "admin/index";
         }

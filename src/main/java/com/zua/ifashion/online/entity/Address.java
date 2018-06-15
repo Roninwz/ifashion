@@ -7,7 +7,27 @@ public class Address {
 
     private String addressContent;
 
-    private Integer addressState;
+    private Integer addressState;   //1和0 1是默认地址
+
+    private String addressTel;
+
+    private String receiverName;
+
+    public String getReceiverName() {
+        return receiverName;
+    }
+
+    public void setReceiverName(String receiverName) {
+        this.receiverName = receiverName;
+    }
+
+    public String getAddressTel() {
+        return addressTel;
+    }
+
+    public void setAddressTel(String addressTel) {
+        this.addressTel = addressTel;
+    }
 
     public Integer getAddressId() {
         return addressId;
@@ -29,6 +49,7 @@ public class Address {
         return addressContent;
     }
 
+
     public void setAddressContent(String addressContent) {
         this.addressContent = addressContent == null ? null : addressContent.trim();
     }
@@ -49,5 +70,14 @@ public class Address {
     }
 
     public Address() {
+    }
+
+    public Address(Integer addressId, Integer userId, String addressContent, Integer addressState, String receiverName, String addressTel) {
+        this.addressId = addressId;
+        this.userId = userId;
+        this.addressContent = addressContent;
+        this.addressState = addressState;
+        this.receiverName = receiverName;
+        this.addressTel = addressTel;
     }
 }

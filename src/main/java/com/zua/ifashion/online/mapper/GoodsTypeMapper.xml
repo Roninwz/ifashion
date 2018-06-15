@@ -6,4 +6,48 @@
     <result column="goodstypeName" jdbcType="VARCHAR" property="goodstypeName" />
   </resultMap>
 
+  <!--public abstract int addGoodsType(GoodsType goodsType);-->
+  <!--public abstract int addGoodsTypeSelective(GoodsType goodsType);-->
+  <!--public abstract int deleteGoodsType(Integer goodstypeId);-->
+  <!--public abstract int deleteGoodsType(String goodstypeName);-->
+  <!--public abstract List<GoodsType> selectAllGoodsType();-->
+  <insert id="addGoodsType" parameterType="GoodsType">
+    insert into goods_type(goodstypeId,goodstypeName) values(#{goodstypeId},#{goodstypeName})
+  </insert>
+
+  <insert id="addGoodsTypeSelective" parameterType="GoodsType">
+    insert into goods_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodstypeId!=null">
+        goodstypeId
+      </if>
+      <if test="goodstypeName!=null">
+        goodstypeName
+      </if>
+    </trim>
+    <trim prefix="values(" suffix=")" suffixOverrides=",">
+      <if test="goodstypeId!=null">
+        #{goodstypeId}
+      </if>
+      <if test="goodstypeName!=null">
+        #{goodstypeName}
+      </if>
+    </trim>
+  </insert>
+
+  <!--public abstract int deleteGoodsType(Integer goodstypeId);-->
+  <!--public abstract int deleteGoodsType(String goodstypeName);-->
+  <delete id="deleteGoodsTypeById" parameterType="int">
+    DELETE * from goods_type where goodstypeId=#{param}
+  </delete>
+
+  <delete id="deleteGoodsTypeByName" parameterType="String">
+    delete * from goods_type where goodstypeName=#{param}
+  </delete>
+
+  <!--public abstract List<GoodsType> selectAllGoodsType();-->
+  <select id="selectAllGoodsType" resultType="GoodsType">
+    select * from goods_type
+  </select>
+
 </mapper>

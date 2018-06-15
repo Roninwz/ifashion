@@ -1,6 +1,5 @@
 package com.zua.ifashion.util.ueditor.controller;
 
-import com.zua.ifashion.util.ueditor.util.FileCopyUtil;
 import com.zua.ifashion.util.ueditor.util.LoadPropertiesDataUtils;
 import com.zua.ifashion.util.ueditor.util.RandomUtils;
 import com.zua.ifashion.util.ueditor.util.StringUtils;
@@ -45,14 +44,14 @@ public class UploadImageController {
             System.out.println(basePath);
             System.out.println(visitUrl);
             if(basePath == null || "".equals(basePath)){
-                basePath = "E:/wz/static";  //与properties文件中lyz.uploading.url相同，未读取到文件数据时为basePath赋默认值
+                basePath = "E:/ifashion/static";  //与properties文件中lyz.uploading.url相同，未读取到文件数据时为basePath赋默认值
             }
             if(visitUrl == null || "".equals(visitUrl)){
-                visitUrl = "/upload/"; //与properties文件中lyz.visit.url相同，未读取到文件数据时为visitUrl赋默认值
+                visitUrl = "/static/upload/images/"; //与properties文件中lyz.visit.url相同，未读取到文件数据时为visitUrl赋默认值
             }
             String ext = StringUtils.getExt(upfile.getOriginalFilename());
             String fileName = String.valueOf(System.currentTimeMillis()).concat("_").concat(RandomUtils.getRandom(6)).concat(".").concat(ext);
-           StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             System.out.println(sb);
             System.out.println(fileName);
             System.out.println(ext);

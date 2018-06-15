@@ -181,6 +181,11 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
     <!--dbcp连接池-->
     <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
     <dependency>
@@ -231,7 +236,48 @@
           <artifactId>json</artifactId>
           <version>20160212</version>
       </dependency>
+    <!--分页插件-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>4.2.1</version>
+    </dependency>
 
+
+    <!-- https://mvnrepository.com/artifact/com.github.jsqlparser/jsqlparser -->
+    <dependency>
+      <groupId>com.github.jsqlparser</groupId>
+      <artifactId>jsqlparser</artifactId>
+      <version>0.9.4</version>
+    </dependency>
+
+    <!--发送邮件插件-->
+
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>javax.mail-api</artifactId>
+      <version>1.6.0</version>
+    </dependency>
+<!--秒嘀短信jar-->
+
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.9.0</version>
+    </dependency>
+
+    <!-- DateTimeFormat注解中使用到了joda包中的相关东西 -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.9.7</version>
+    </dependency>
 
 
   </dependencies>

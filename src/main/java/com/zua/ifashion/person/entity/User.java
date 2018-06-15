@@ -1,5 +1,7 @@
 package com.zua.ifashion.person.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {
@@ -10,6 +12,8 @@ public class User {
     private String username;
 
     private String password;
+
+    private  String truename;
 
     private String tel;
 
@@ -28,7 +32,7 @@ public class User {
     private String userImgurl;
 
     private String userIntroduce;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date registerDate;
 
     private String userTag;
@@ -65,6 +69,16 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+
+    public String getTruename() {
+
+        return truename;
+    }
+
+    public void setTruename(String truename) {
+        this.truename = truename;
     }
 
     public String getTel() {
@@ -163,11 +177,12 @@ public class User {
         this.state = state;
     }
 
-    public User(Integer userId, Integer rankId, String username, String password, String tel, String email, String sex, Integer age, Date birth, Integer userMark, Integer score, String userImgurl, String userIntroduce, Date registerDate, String userTag, Integer state) {
+    public User(Integer userId, Integer rankId, String username, String password, String truename, String tel, String email, String sex, Integer age, Date birth, Integer userMark, Integer score, String userImgurl, String userIntroduce, Date registerDate, String userTag, Integer state) {
         this.userId = userId;
         this.rankId = rankId;
         this.username = username;
         this.password = password;
+        this.truename = truename;
         this.tel = tel;
         this.email = email;
         this.sex = sex;

@@ -1,0 +1,78 @@
+﻿.top-wrapper{background-color:#fff;padding:0 0 30px 0;/*border-top:1px solid #000;margin-top:-1px !important;*/}
+.main-wrapper{background-color:#fff;border-top:1px solid #fff;margin-top:-1px !important;}
+/*topnav 登录 注册*/
+.topNavAndLogin{position:relative;z-index:3;background-color:#000;height:35px;line-height:35px;color:#4d4d4d;font-size:14px;word-spacing:6px;min-width:1180px;}
+.topNavAndLogin .login{width:460px;padding-left:10px;}
+.topNavAndLogin .login .u{color:#ba9e66;border-bottom:1px solid #ba9e66;}
+.topNavAndLogin .login .u:hover{border-bottom:0 none;}
+.topNavAndLogin .topNav{width:475px;text-align:right;padding-right:55px;position:relative;}
+.topNavAndLogin a{color:#fff;}
+.topNavAndLogin a:hover{color:#ba9e66;}
+.topNavAndLogin .wx{width:55px;height:36px;position:absolute;right:0;top:0;background:url('http://new-img5.ol-img.com/assets/onlylady/images/watchlady/wx.png') 50% 50% no-repeat;display:inline-block;}
+.topNavAndLogin .wx span{background-position:0 0;position:absolute;right:0;top:100%;}
+.topNavAndLogin .wx:hover span{display:inline-block;}
+.topNavAndLogin .wx span,.sideNav .style_show{display:none;width:130px;height:130px;background-image:url('http://new-img5.ol-img.com/assets/onlylady/images/watchlady/erweima.png');background-repeat:no-repeat;}
+/*logo*/
+.logoAndAd .logo{padding-top:22px;}
+.logoAndAd .t{ line-height: 26px; font-size: 24px;width:55px;display:inline-block;margin-left:22px;text-align:center;padding-top:12px;}
+.logoAndAd .t span{display:block;font-size:12px;background-color:#ba9e66;color:#fff;line-height:18px;height:18px;margin-top:4px;text-transform:capitalize;}
+/*nav*/
+.nav{position:relative;background-color:#000;}
+.nav a{float:left;line-height:60px;color:#fff;font-size:18px;margin-right:86px;}
+.nav a:hover{color:#ba9e66;}
+.nav a.hot,.nav a.hot:hover{margin-right:0;float:right;color:#f60e0e;background:url('http://new-img5.ol-img.com/assets/onlylady/images/watchlady/newIcon.png') 100% 0 no-repeat;}
+
+/*移动版*/
+.spread {padding-top:40px;height:672px;overflow:hidden;position:relative;}
+.spread a {position:absolute;background:url(http://new-img5.ol-img.com/assets/onlylady/images/watchlady/spread.png) 0 0 no-repeat;}
+.spread a.spread_a {left:0;bottom:0;width:280px;height:432px;background-position:0 0;}
+.spread a.spread_a:hover {background-position:-280px 0;}
+.spread a.spread_b {left:280px;bottom:0;z-index:2;width:370px;height:672px;background-position:0 -500px;}
+.spread a.spread_b:hover {background-position:-370px -500px;}
+.spread a.spread_c {left:580px;bottom:0;z-index:1;width:370px;height:640px;background-position:-740px -500px;}
+.spread a.spread_c:hover {background-position:-1110px -500px;}
+.spread a.spread_d {right:0;bottom:0;width:230px;height:432px;background-position:-560px 0;}
+.spread a.spread_d:hover {background-position:-790px 0;}
+
+/*内页 footer*/
+.innerfooter {background:#f4f4f4;border-top:4px solid #000;padding-bottom:20px;}
+.innerfooter .botNav {margin-top:15px;line-height:50px;text-align:center;border-top: 1px solid #c9c9c9;color: #888888;padding: 10px 5px 0;}
+.innerfooter .botNav a {display:inline-block;margin: 0 10px;font-size: 14px;color:#333;}
+.innerfooter .botNav a:hover {color:#ba9e66;}
+.innerfooter .copy{text-align:center;color:#888;font-size:12px;line-height:2;}
+.innerfooter .copy a{color:#888;}
+.innerfooter .copy a:hover{color:#ba9e66;}
+.innerfooter .friendLink dt{font-size:22px;margin:20px 0 10px;}
+.innerfooter .friendLink dd{font-size:14px;line-height:1.8;word-spacing:5px;}
+.innerfooter .friendLink dd div{display:none;}
+.innerfooter .friendLink dd div:first-child{display:block;}
+.innerfooter .friendLink .here{color:#ba9e66;}
+
+/*side nav*/
+.sideNav {display:none; width: 50px;position: fixed;z-index: 999;left: 50%;margin-left: 600px;bottom:50px;_position: absolute;_bottom: 50px;_top: expression(eval(document.documentElement.scrollTop+347));}
+.sideNav a {display: block; height: 50px; margin-bottom:1px;padding:0 5px;color:#fff;font-size:16px; text-align:center;line-height:50px;position:relative; -moz-transition: all .2s;-webkit-transition: all .2s;-o-transition: all .2s;transition: all .2s;}
+.sideNav a span { display:block; font-size:16px; color:#ffffff; line-height:20px; text-align:center;padding:5px 0;}
+.sideNav a{background: url('http://new-img5.ol-img.com/assets/onlylady/images/watchlady/sideNavBg.png') no-repeat 0 -50px;}
+.sideNav a:hover{background-position: -50px -50px;}
+.sideNav a.top{background-position: 0 0;}
+.sideNav a.top:hover{background-position: -50px 0;}
+.sideNav .fd_m_codeA{height:88px;background-position: 0 -100px;}
+.sideNav .fd_m_codeB{height:88px;background-position: -50px -100px;}
+.sideNav .fd_m_codeA:hover{background-position: 0 -100px;}
+.sideNav .fd_m_codeB:hover{background-position: -50px -100px;}
+.sideNav .style_show{left:-136px;top:-21px;display:none;position:absolute;}
+.sideNav .fd_m_codeA:hover .style_show{display:block;background-position:0 -260px;}
+.sideNav .fd_m_codeB:hover .style_show{display:block;background-position:0 0;}
+
+.w1180{width:1180px;margin:0 auto;}
+.w1000{width:1000px;margin:0 auto;}
+
+/*ad*/
+#crazynavdown{ width:1180px; margin:0 auto; position:relative; overflow:hidden;z-index:1;}
+#crazynavdown .s,#crazynavdown .b{ display:none;}
+#crazynavdown .s img,#crazynavdown .s embed{ display:block; height:80px; position:relative; z-index:10;}
+#crazynavdown .b img,#crazynavdown .b embed{ display:block;}
+#crazynavdown .b .b1{height:300px;}
+#crazynavdown .s div{/*height:40px;*/}
+#crazynavdown .close{background: url('http://new-img5.ol-img.com/assets/onlylady/images/index/adclose.gif') no-repeat;bottom:0;cursor: pointer;height: 20px;overflow: hidden;position: absolute;right: 0;width: 50px;z-index:99;}
+#crazynavdown .zz{ width:1180px; height:80px; background:url('http://new-img3.ol-img.com/assets/onlylady/images/index/space.gif'); position:absolute; top:0; left:0; z-index:20; cursor:pointer;}

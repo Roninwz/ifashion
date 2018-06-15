@@ -34,6 +34,7 @@
 		<property name="maxActive" value="10" />
 		<!-- maxIdle 连接池中最多可空闲maxIdle个连接 ，这里取值为5，表示即使没有数据库连接时依然可以保持20空闲的连接，而不被清除，随时处于待命状态。设 0 为没有限制。 -->
 		<property name="maxIdle" value="5" />
+
 	</bean>
 	
 	
@@ -42,9 +43,23 @@
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
 	
 		<property name="dataSource" ref="dataSource" />
+
+		<property name="plugins">
+			<array>
+				<!--之前配置错误 配置成拦截器-->
+				<bean class="com.github.pagehelper.PageHelper">
+					<!-- 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 -->
+					<property name="properties">
+						<value>
+							dialect=mysql
+							reasonable=true
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
 	</bean>
 
-	
 	<!-- 
 		mapper批量扫描，从mapper包中扫描出mapper接口，自动创建代理对象并且在spring容器中注册 
 		前提条件：将mapper.java和mapper.xml映射文件名称保持一致，且在一个目录 中
@@ -58,7 +73,7 @@
 		com.zua.ifashion.talk.mapper,
 		com.zua.ifashion.article.mapper-->
 		<property name="basePackage" 
-		value="com.zua.ifashion.person.mapper,com.zua.ifashion.talk.mapper
+		value="com.zua.ifashion.person.mapper,com.zua.ifashion.talk.mapper,com.zua.ifashion.article.mapper,com.zua.ifashion.online.mapper
 		"/>
 		<!--
 		name使用sqlSessionFactoryBeanName

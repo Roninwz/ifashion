@@ -1,6 +1,7 @@
 package com.zua.ifashion.person.service;
 
 import com.zua.ifashion.person.entity.Role;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface RoleService {
     List<Role> getAllRoles();
     //查询角色数量
     int getAllRoleCount();
+
+    //通过管理员id查询出管理员所拥有角色
+    List<Role> selectRoleNameByAdminId(@Param("adminId") Integer adminId);
 }

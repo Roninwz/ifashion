@@ -1,0 +1,119 @@
+@charset "gb2312";
+.QRcode {
+	position: fixed;
+	_position: absolute;
+	top: 50%;
+	z-index: 997;
+	width: 137px;
+	text-align: center;
+	display:none;
+}
+.QRcode .QR {
+	width: 137px;
+	padding: 8px 0;
+	position: relative;
+	background-color: #fff;
+	margin-bottom: 5px;
+	height:auto;
+}
+.QRcode .QR a {
+	position: absolute;
+	width: 8px;
+	height: 7px;
+	top: 1px;
+	right: 1px;
+	background: url(http://new-icon.ol-img.com/channel/fashion/detail/img/b.png) no-repeat -96px -81px;
+}
+.QRcode .QR img {
+	display:block;
+	margin:0 auto 5px;
+}
+.QRcode .QR .p1 {
+	color: #333333;
+	font: 12px/18px "Microsoft YaHei";
+}
+.QRcode .QR .p2 {
+	color: #a05fd1;
+	font: 12px/18px "Microsoft YaHei";
+}
+.fd_m_wx {
+	display:none;
+	position:absolute;
+	right:5px;
+	top:35px;
+	z-index:999;
+}
+.fd_m_wx img {
+	display:block;
+}
+.channel_nav {
+	position:relative;
+	padding-left:10px;
+}
+.top_sidebar a.fd_m_code1 {
+	background: url(http://new-icon.ol-img.com/article/index/img/wx_code1.png) no-repeat;
+	height: 90px;
+	position: relative;
+	padding:0;
+}
+.top_sidebar a.fd_m_code2 {
+	background: url(http://new-icon.ol-img.com/article/index/img/wx_code3.png) no-repeat;
+	height: 90px;
+	position: relative;
+	padding:0;
+}
+/* gotop */
+.top_sidebar {
+  display: none;
+  width: 50px;
+  position: fixed;
+  z-index: 9997;
+  left: 50%;
+  margin-left: 508px;
+  bottom: 50px;
+  _position: absolute;
+  _bottom: 50px;
+}
+.top_sidebar a {
+  display: block;
+  height: 40px;
+  padding: 5px;
+  margin-bottom: 1px;
+}
+.top_sidebar a span {
+  display: block;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 20px;
+  text-align: center;
+}
+.top_sidebar .top_sidebar_top {
+  background: url(http://new-icon.ol-img.com/ol/channel/beauty_cover/img/top.png) no-repeat 0 0;
+}
+.top_sidebar .top_sidebar_top:hover {
+  background-position: -50px 0;
+}
+.top_sidebar .top_sidebar_code {
+  background: url(http://new-icon.ol-img.com/ol/channel/beauty_cover/img/top.png) no-repeat 0 -200px;
+  height: 90px;
+  position: relative;
+}
+.top_sidebar .ewm_wx {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: -120px;
+  width: 115px;
+  height: 115px;
+  z-index: 9999;
+}
+.move_act {
+  -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+/*顶部广告与公共导航距离 fudandan 20150513*/
+.f_ad_clearance {/*padding-top:10px;*/background:#fff;}
+/*文章页第三方qq空间分享隐藏 20160728fudandan*/
+.qqspace {display:none;}

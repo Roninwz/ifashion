@@ -3,9 +3,53 @@
 <mapper namespace="com.zua.ifashion.person.mapper.MyMessageMapper">
   <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.MyMessage">
     <id column="mymessageId" jdbcType="INTEGER" property="mymessageId" />
+    <id column="userId" jdbcType="INTEGER" property="userId" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.person.entity.MyMessage">
     <result column="mymessageContent" jdbcType="LONGVARCHAR" property="mymessageContent" />
   </resultMap>
 
+
+
+
+
+
+  <insert id="addMyMessageSelective" parameterType="com.zua.ifashion.person.entity.MyMessage">
+    insert into mymessage
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mymessageId != null">
+        mymessageId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>  <if test="mymessageContent != null">
+      mymessageContent,
+      </if>
+
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mymessageId != null">
+        #{mymessageId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if> <if test="mymessageContent != null">
+        #{mymessageContent,jdbcType=LONGVARCHAR},
+      </if>
+
+    </trim>
+  </insert>
+
+
+  <delete id="deleteMyMessage" parameterType="java.lang.Integer">
+    delete from mymessage
+    where mymessageId = #{mymessageId,jdbcType=INTEGER}
+  </delete>
+  <select id="selectMyMessageById" parameterType="int" resultType="com.zua.ifashion.person.entity.MyMessage">
+    select *  from mymessage where mymessageId =#{mymessageId}
+  </select>
+
+  <select id="selectMyMessagesByUserId"  resultType="com.zua.ifashion.person.entity.MyMessage">
+    select *  from mymessage where userId =#{userId}
+  </select>
 </mapper>

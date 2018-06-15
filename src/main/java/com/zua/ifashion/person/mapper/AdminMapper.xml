@@ -20,9 +20,12 @@
     #{createDate,jdbcType=TIMESTAMP}, #{introduce,jdbcType=VARCHAR})
   </insert>
   <insert id="addAdminSelective" parameterType="com.zua.ifashion.person.entity.Admin">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="adminId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into admin
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="idAdmin != null">
+      <if test="adminId != null">
         adminId,
       </if>
       <if test="adminName != null">
@@ -31,7 +34,7 @@
       <if test="password != null">
         password,
       </if>
-      <if test="createdate != null">
+      <if test="createDate != null">
         createDate,
       </if>
       <if test="introduce != null">
@@ -39,7 +42,7 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="idAdmin != null">
+      <if test="adminId != null">
         #{adminId,jdbcType=INTEGER},
       </if>
       <if test="adminName != null">
@@ -48,7 +51,7 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="createdate != null">
+      <if test="createDate != null">
         #{createDate,jdbcType=TIMESTAMP},
       </if>
       <if test="introduce != null">
@@ -58,8 +61,8 @@
   </insert>
 
   <!-- 删除    -->
-  <delete id="deleteUser" parameterType="int">
-    delete from admin where userId = #{userId}
+  <delete id="deleteAdmin" parameterType="int">
+    delete from admin where adminId = #{adminId}
   </delete>
 <!--更新管理员-->
   <update id="updateAdminSelective" parameterType="com.zua.ifashion.person.entity.Admin">
@@ -71,7 +74,7 @@
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="createdate != null">
+      <if test="createDate != null">
         createDate = #{createDate,jdbcType=TIMESTAMP},
       </if>
       <if test="introduce != null">
@@ -84,7 +87,7 @@
     update admin
     set adminName = #{adminName,jdbcType=VARCHAR},
     password = #{password,jdbcType=VARCHAR},
-    createDate = #{createdate,jdbcType=TIMESTAMP},
+    createDate = #{createDate,jdbcType=TIMESTAMP},
     introduce = #{introduce,jdbcType=VARCHAR}
     where adminId = #{adminId,jdbcType=INTEGER}
   </update>

@@ -1,0 +1,11 @@
+﻿document.writeln("<a href=\"http://www.yoka.com/fashion/\" data-type=\"fashion\" target=\"_blank\">时尚</a>");
+        document.writeln("<a href=\"http://www.yoka.com/beauty/\" data-type=\"beauty\" target=\"_blank\">美容</a>");
+        document.writeln("<a href=\"http://www.yoka.com/luxury/\" data-type=\"luxury\" target=\"_blank\">奢华</a>");
+        document.writeln("<a href=\"http://www.yoka.com/star/\" data-type=\"star\" target=\"_blank\">明星</a>");       
+        document.writeln("<a href=\"http://www.yoka.com/life/\" data-type=\"life\" target=\"_blank\">乐活</a>");
+        document.writeln("<a href=\"http://www.yokamen.cn/\" data-type=\"men\" target=\"_blank\">男士</a>");
+        document.writeln("<a href=\"http://www.yoka.com/video/\" data-type=\"video\" target=\"_blank\">视频</a>");
+        document.writeln("<a href=\"http://www.yoka.com/z/\" data-type=\"yoka_z\" target=\"_blank\">独家</a>");
+        document.writeln("<a href=\"http://bbs.yoka.com/\" data-type=\"bbs\" target=\"_blank\">社区</a>");
+        document.writeln("<a href=\"http://brand.yoka.com/\" data-type=\"brand\" target=\"_blank\">品牌</a>");
+        document.writeln("<a href=\"http://www.yoka.com/fashion/professionnews/index.shtml\" target=\"_blank\">资讯</a>");

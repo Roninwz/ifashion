@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.talk.mapper.ReplyQuestionMapper">
+
+
+  <!--//添加回答-->
+  <!--int addReplyQuestion(ReplyQuestion replyQuestion);-->
+  <insert id="addReplyQuestion" parameterType="ReplyQuestion">
+    insert into reply_question (replyquestionId,questionId,userId,replyDate,
+    replyContent,zanNum,againstNum,reportState) values(#{replyquestionId},
+    #{questionId},#{userId},#{replyDate},
+    #{replyContent},#{zanNum},#{againstNum},#{reportState})
+  </insert>
+
+  <!--//添加回答-->
+  <!--int addReplyQuestionSelective(ReplyQuestion replyQuestion);-->
+  <insert id="addReplyQuestionSelective" parameterType="ReplyQuestion">
+    insert into reply_question
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="replyquestionId != null">
+        replyquestionId,
+      </if>
+      <if test="questionId != null">
+        questionId,
+      </if>
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="replyDate != null">
+        replyDate,
+      </if>
+      <if test="replyContent != null">
+        replyContent,
+      </if>
+      <if test="zanNum != null">
+        zanNum,
+      </if>
+      <if test="againstNum != null">
+        againstNum,
+      </if>
+      <if test="reportState != null">
+        reportState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="replyquestionId != null">
+        #{replyquestionId},
+      </if>
+      <if test="questionId != null">
+        #{questionId},
+      </if>
+      <if test="userId != null">
+        #{userId},
+      </if>
+      <if test="replyDate != null">
+        #{replyDate},
+      </if>
+      <if test="replyContent != null">
+        #{replyContent},
+      </if>
+      <if test="zanNum != null">
+        #{zanNum},
+      </if>
+      <if test="againstNum != null">
+        #{againstNum},
+      </if>
+      <if test="reportState != null">
+        #{reportState},
+      </if>
+    </trim>
+  </insert>
+
+  <!--//删除回答-->
+  <!--int deleteReplyQuestion(Integer replyquestionId);-->
+  <delete id="deleteReplyQuestion" parameterType="int">
+    delete from reply_question where replyquestionId=#{replyquestionId}
+  </delete>
+
+  <!--//修改回答-->
+  <!--int updateReplyQuestion(ReplyQuestion replyQuestion);-->
+  <update id="updateReplyQuestion" parameterType="ReplyQuestion">
+    update reply_question set questionId=#{questionId},
+    userId=#{userId},
+    replyDate=#{replyDate},
+    replyContent=#{replyContent},
+    zanNum=#{zanNum},
+    againstNum=#{againstNum},
+    reportState=#{reportState}
+  </update>
+
+  <!--//修改回答不为空字段-->
+  <!--int updateReplyQuestionSelective(ReplyQuestion replyQuestion);-->
+  <update id="updateReplyQuestionSelective" parameterType="ReplyQuestion">
+    update reply_question
+    <set>
+      <if test="questionId != null">
+        questionId = #{questionId},
+      </if>
+      <if test="userId != null">
+        userId = #{userId},
+      </if>
+      <if test="replyDate != null">
+        replyDate = #{replyDate},
+      </if>
+      <if test="replyContent != null">
+        replyContent = #{replyContent},
+      </if>
+      <if test="zanNum != null">
+        zanNum = #{zanNum},
+      </if>
+      <if test="againstNum != null">
+        againstNum = #{againstNum},
+      </if>
+      <if test="reportState != null">
+        reportState = #{reportState},
+      </if>
+    </set>
+    where replyquestionId = #{replyquestionId}
+  </update>
+
+  <!--//通过id查询回答-->
+  <!--ReplyQuestion selectReplyQuestionByReplyquestionId(Integer replyquestionId);-->
+  <select id="selectReplyQuestionByReplyquestionId" parameterType="int" resultType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    select * from reply_question where replyquestionId =#{replyquestionId}
+  </select>
+
+  <!--//通过用户id来查询回答-->
+  <!-- List<ReplyQuestion> selectReplyQuestionByUserId(Integer userId);-->
+  <select id="selectReplyQuestionByUserId" parameterType="int" resultType="com.zua.ifashion.talk.entity.ReplyQuestion">
+    select * from reply_question where userId =#{userId}
+  </select>
+
+  <!--//通过问题ID来查询回答-->
+  <!--List<ReplyQuestion> selectReplyQuestionByQuestionId(Integer questionId);-->
+  <select id="selectReplyQuestionByQuestionId" parameterType="int" resultType="com.zua.ifashion.talk.vo.ReplyQuestionUser">
+    select * from reply_question,user where questionId =#{questionId} and reply_question.userId=user.userId order by zanNum limit 1
+  </select>
+
+  <!--//通过问题ID来查询全部回答-->
+  <!--List<ReplyQuestionUser> selectAReplyQuestionByQuestionId(Integer questionId);-->
+  <select id="selectAReplyQuestionByQuestionId" parameterType="int" resultType="com.zua.ifashion.talk.vo.ReplyQuestionUser">
+    select * from reply_question,user where questionId =#{questionId} and reply_question.userId=user.userId
+  </select>
+
+  <!--//查询回答点赞量-->
+  <!--int selectZanNumByReplyQuestionId(Integer replyquestionId);-->
+  <select id="selectZanNumByReplyQuestionId" parameterType="int" resultType="int">
+    select zanNum from reply_question where replyquestionId=#{replyquestionId}
+  </select>
+
+  <!--//查询回答反对量-->
+  <!--int selectAgainstNumByReplyQuestionId(Integer replyquestionId);-->
+  <select id="selectAgainstNumByReplyQuestionId" parameterType="int" resultType="int">
+    select againstNum from reply_question where replyquestionId=#{replyquestionId}
+  </select>
+
+  <!--//查询回答是否被举报-->
+  <!--int selctReportStateByReplyQuestionId(Integer replyquestionId);-->
+  <select id="selctReportStateByReplyQuestionId" parameterType="int" resultType="int">
+    select reportState from reply_question where replyquestionId=#{replyquestionId}
+  </select>
+
+  <!--//根据id来查询回答内容-->
+  <!--String selectReplyContentByReplyQuestionId(Integer replyquestionId);-->
+  <select id="selectReplyContentByReplyQuestionId" resultType="String" parameterType="int">
+    select replyContent from reply_question where replyquestionId=#{replyquestionId}
+  </select>
+
+  <!--//通过时间来查询回答-->
+  <!--List<ReplyQuestion> selectReplyQuestionByEReplyDate(Date replyDate);-->
+
+  <!--List<ReplyQuestion> selectReplyQuestionByLReplyDate(Date replyDate);-->
+  <select id="selectReplyQuestionByEReplyDate" resultType="com.zua.ifashion.talk.entity.ReplyQuestion" parameterType="Date">
+    select * from reply_question where replyDate &lt; #{replyDate}
+  </select>
+
+  <select id="selectReplyQuestionByLReplyDate" resultType="com.zua.ifashion.talk.entity.ReplyQuestion" parameterType="Date">
+    select * from reply_question where replyDate &gt; #{replyDate}
+  </select>
+
+
+
+
+
+
+
+
+
+
+</mapper>

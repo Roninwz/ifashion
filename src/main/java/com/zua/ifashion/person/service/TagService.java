@@ -16,4 +16,7 @@ public interface TagService  {
     List<Tag> getAllTags();
     //查询标签数量
     int getAllTagCount();
+
+
+    Tag selectTagByTagId(Integer tagId);
 }

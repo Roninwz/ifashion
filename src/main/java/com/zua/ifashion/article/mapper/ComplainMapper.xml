@@ -11,4 +11,65 @@
     <result column="complain_reason" jdbcType="LONGVARCHAR" property="complainReason" />
   </resultMap>
 
+  <!--添加举报-->
+  <insert id="addComplain" parameterType="com.zua.ifashion.article.entity.Complain">
+      INSERT INTO complain (reviewId,complainUserid,complainedUserid,complainReason)
+      VALUES (#{reviewId},#{complainUserid},#{complainedUserid},#{complainReason})
+  </insert>
+
+  <!--添加非空字段举报-->
+  <insert id="addComplainSelective" parameterType="com.zua.ifashion.article.entity.Complain">
+    INSERT INTO article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="reviewId != null">
+        reviewId,
+      </if>
+      <if test="complainUserid != null">
+        complainUserid,
+      </if>
+      <if test="complainedUserid != null">
+        complainedUserid,
+      </if>
+      <if test="complainReason != null">
+        complainReason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="reviewId != null">
+        #{reviewId},
+      </if>
+      <if test="complainUserid != null">
+        #{complainUserid},
+      </if>
+      <if test="complainedUserid != null">
+        #{complainedUserid},
+      </if>
+      <if test="complainReason != null">
+        #{complainReason},
+      </if>
+    </trim>
+  </insert>
+
+  <!--删除举报-->
+  <delete id="deleteComplain" parameterType="int">
+      DELETE FROM complain WHERE complainId = #{complainId}
+  </delete>
+
+  <!--根据userid查询被举报信息-->
+  <select id="selectComplainBycomplainedUserid" parameterType="int" resultType="com.zua.ifashion.article.entity.Complain">
+      SELECT * FROM complain WHERE complainedUserid = #{complainedUserid}
+  </select>
+
+  <!--根据complainId查询举报信息-->
+  <select id="selectComplainByComplainId" parameterType="int" resultType="com.zua.ifashion.article.entity.Complain">
+      SELECT * FROM complain WHERE complainid = #{complainId}
+  </select>
+
+  <!--查询所有举报信息-->
+  <select id="selectAllComplain" resultType="com.zua.ifashion.article.entity.Complain">
+      SELECT * FROM complain
+  </select>
+
+
+
 </mapper>

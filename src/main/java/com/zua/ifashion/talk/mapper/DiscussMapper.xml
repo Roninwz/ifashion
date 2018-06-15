@@ -123,7 +123,7 @@
   </update>
 
   <!--//通过id查询讨论-->
-  <!--int selectDiscussByDiscussId(Integer discussId);-->
+  <!--Discuss selectDiscussByDiscussId(Integer discussId);-->
   <select id="selectDiscussByDiscussId" parameterType="int" resultType="Discuss">
     select * from discuss where discussId =#{discussId}
   </select>
@@ -187,6 +187,28 @@
   <select id="getAllDiscuss" resultType="Discuss">
     select * from discuss
   </select>
+
+  <!--//查询某个用户的讨论数量-->
+  <!--int selectDiscussByUserIdCount(Integer userId);-->
+  <select id="selectDiscussByUserIdCount" resultType="int">
+    select count(*) from discuss where userId=#{0} and YEARWEEK(date_format(discussDate,'%Y-%m-%d')) = YEARWEEK(now())
+  </select>
+
+  <!--//查询某个用户今日讨论数量-->
+  <!--int selectDiscussByUserIdCountDay(Integer userId,Date date1);-->
+  <select id="selectDiscussByUserIdCountDay" resultType="int">
+    select count(*) from discuss where to_days(discussDate) = to_days(now()) AND userId=#{userId};
+  </select>
+
+  <!--//查询讨论的用户ID-->
+  <!--List<Integer> selectUserIdInDiscuss();-->
+  <select id="selectUserIdInDiscuss" resultType="int">
+    select distinct(userId) from discuss
+  </select>
+
+  <!--//查询用户讨论数量并排序-->
+  <!--List<UserDiscuss> selectDiscussCount();-->
+
 
 
 

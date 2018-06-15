@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.online.mapper.GoodsChildTypeMapper">
+
+
+  <!--//    根据大类型的id得到所有的小类型-->
+  <!--public List<GoodsChildType> selectGoodsChildType(Integer goodstypeId);-->
+  <select id="selectGoodsChildType" parameterType="int" resultType="com.zua.ifashion.online.entity.GoodsChildType">
+    select * from goods_child_type where goodstypeId=#{param}
+  </select>
+
+
+</mapper>

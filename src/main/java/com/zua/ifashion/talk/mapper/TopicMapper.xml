@@ -7,20 +7,37 @@
     <result column="topicImgurl" jdbcType="VARCHAR" property="topicImgurl" />
     <result column="topicPeople" jdbcType="INTEGER" property="topicPeople" />
     <result column="lookNum" jdbcType="INTEGER" property="lookNum" />
+    <result column="topicTitle" jdbcType="VARCHAR" property="topicTitle" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.talk.entity.Topic">
     <result column="topicContent" jdbcType="LONGVARCHAR" property="topicContent" />
   </resultMap>
+  <resultMap id="GetTopicUserName" type="com.zua.ifashion.talk.vo.TopicUser">
+    <id column="topicId" jdbcType="INTEGER" property="topicId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="topicImgurl" jdbcType="VARCHAR" property="topicImgurl" />
+    <result column="topicPeople" jdbcType="INTEGER" property="topicPeople" />
+    <result column="lookNum" jdbcType="INTEGER" property="lookNum" />
+    <result column="topicContent" jdbcType="LONGVARCHAR" property="topicContent" />
+    <result column="topicTitle" jdbcType="VARCHAR" property="topicTitle" />
+    <association property="user" javaType="User">
+      <result column="username" property="username"></result>
+      <result column="userImgurl" property="userImgurl"></result>
+    </association>
+  </resultMap>
+
+
+
 
   <!--添加话题-->
   <!--int addTopic(Topic topic);-->
 
   <insert id="addTopic" parameterType="Topic">
     insert into topic (topicId,userId,topicContent,topicImgurl,
-    topicPeople,lookNum,topicStart,topicEnd) values(#{topicId},
+    topicPeople,lookNum,topicStart,topicEnd,topicTitle) values(#{topicId},
     #{userId},#{topicContent},#{topicImgurl},
     #{topicPeople},#{lookNum},#{topicStart},
-    #{topicEnd})
+    #{topicEnd},#{topicTitle})
   </insert>
 
   <!--添加话题-->
@@ -52,6 +69,9 @@
       <if test="topicEnd != null">
         topicEnd,
       </if>
+      <if test="topicTitle != null">
+        topicTitle,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="topicId != null">
@@ -78,6 +98,9 @@
       <if test="topicEnd != null">
         #{topicEnd},
       </if>
+      <if test="topicTitle != null">
+        #{topicTitle},
+      </if>
     </trim>
   </insert>
 
@@ -98,12 +121,13 @@
     lookNum=#{lookNum},
     topicStart=#{topicStart},
     topicEnd=#{topicEnd}
+    topicTitle=#{topicTitle}
   </update>
 
   <!--修改话题不为空字段-->
   <!--int updateTopicSelective(Topic topic);-->
   <update id="updateTopicSelective" parameterType="Topic">
-    update user
+    update topic
     <set>
       <if test="userId != null">
         userId = #{userId},
@@ -126,13 +150,16 @@
       <if test="topicEnd != null">
         topicEnd = #{topicEnd},
       </if>
+      <if test="topicTitle != null">
+        topicTitle = #{topicTitle},
+      </if>
     </set>
     where topicId = #{topicId}
   </update>
 
 
   <!--通过id查询话题-->
-  <!--int selectTopicByTopicId(Integer topicId);-->
+  <!--Topic selectTopicByTopicId(Integer topicId);-->
   <select id="selectTopicByTopicId" parameterType="int" resultType="Topic">
     select * from topic where topicId =#{topicId}
   </select>
@@ -198,6 +225,17 @@
     select count(*) from topic
   </select>
 
+  <!--//根据浏览量来给话题排序并得到用户信息-->
+  <!--List<Topic> selectTopicByLookNumOrder();-->
+  <select id="selectTopicByLookNumOrder" resultMap="GetTopicUserName">
+    select topic.topicId,topic.userId,topic.topicImgurl,topic.topicPeople,topic.lookNum,topic.topicContent,topic.topicStart,topic.topicEnd,topic.topicTitle,user.username,user.userImgurl from topic,user where topic.userId=user.userId order by topic.lookNum desc
+  </select>
+
+  <!--//根据参与人数给话题排序-->
+  <!--List<Topic> selectTopicByTopicPeopleOrder();-->
+  <select id="selectTopicByTopicPeopleOrder" resultType="Topic">
+    select * from topic order by topicPeople desc
+  </select>
 
 
 </mapper>

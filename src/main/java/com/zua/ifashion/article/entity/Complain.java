@@ -1,7 +1,7 @@
 package com.zua.ifashion.article.entity;
 
 public class Complain {
-    private Integer complaincId;
+    private Integer complainId;
 
     private Integer reviewId;
 
@@ -11,12 +11,12 @@ public class Complain {
 
     private String complainReason;
 
-    public Integer getComplaincId() {
-        return complaincId;
+    public Integer getComplainId() {
+        return complainId;
     }
 
-    public void setComplaincId(Integer complaincId) {
-        this.complaincId = complaincId;
+    public void setComplainId(Integer complainId) {
+        this.complainId = complainId;
     }
 
     public Integer getReviewId() {
@@ -51,8 +51,8 @@ public class Complain {
         this.complainReason = complainReason == null ? null : complainReason.trim();
     }
 
-    public Complain(Integer complaincId, Integer reviewId, Integer complainUserid, Integer complainedUserid, String complainReason) {
-        this.complaincId = complaincId;
+    public Complain(Integer complainId, Integer reviewId, Integer complainUserid, Integer complainedUserid, String complainReason) {
+        this.complainId = complainId;
         this.reviewId = reviewId;
         this.complainUserid = complainUserid;
         this.complainedUserid = complainedUserid;

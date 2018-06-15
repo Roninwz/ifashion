@@ -16,4 +16,236 @@
     <result column="goodsIntroduce" jdbcType="VARCHAR" property="goodsIntroduce" />
   </resultMap>
 
+  <!--//    增加商品-->
+  <!--public abstract int addGoods(Goods goods);-->
+
+  <insert id="addGoods" parameterType="Goods">
+    insert INTO goods(goodsId,userId,goodstypeId,goodschildId,goodsName,goodsPrice,goodsDate,goodsCount,goodsSale,reviewNum,size,color)
+    values(#{goodsId},#{userId},#{goodstypeId},#{goodschildId},#{goodsName},#{goodsPrice},#{goodsDate},#{goodsCount},#{goodsSale},#{reviewNum},#{size},#{color})
+  </insert>
+
+ <!-- //    增加商品不为空的字段
+  public abstract int addGoodsSelective(Goods goods);
+-->
+  <insert id="addGoodsSelective" parameterType="Goods">
+    insert into goods
+    <trim prefix="(" suffixOverrides="," suffix=")">
+      <if test="goodsId!=null">
+        goodsId
+      </if>
+      <if test="userId!=null">
+        userId
+      </if>
+      <if test="goodstypeId!=null">
+        goodstypeId
+      </if>
+      <if test="goodschildId!=null">
+        goodschildId
+      </if>
+      <if test="goodsName!=null">
+        goodsName
+      </if>
+      <if test="goodsPrice!=null">
+        goodsPrice
+      </if>
+      <if test="goodsDate!=null">
+        goodsDate
+      </if>
+      <if test="goodsCount!=null">
+        goodsCount
+      </if>
+      <if test="goodsSale!=null">
+        goodsSale
+      </if>
+      <if test="reviewNum!=null">
+        reviewNum
+      </if>
+      <if test="size!=null">
+        size
+      </if>
+      <if test="color!=null">
+        color
+      </if>
+    </trim>
+
+    <trim prefix="values(" suffixOverrides="," suffix=")">
+      <if test="goodsId!=null">
+        #{goodsId}
+      </if>
+      <if test="userId!=null">
+        #{userId}
+      </if>
+      <if test="goodstypeId!=null">
+        #{goodstypeId}
+      </if>
+      <if test="goodschildId!=null">
+        goodschildId
+      </if>
+      <if test="goodsName!=null">
+        #{goodsName}
+      </if>
+      <if test="goodsPrice!=null">
+        #{goodsPrice}
+      </if>
+      <if test="goodsDate!=null">
+        #{goodsDate}
+      </if>
+      <if test="goodsCount!=null">
+        #{goodsCount}
+      </if>
+      <if test="goodsSale!=null">
+        #{goodsSale}
+      </if>
+      <if test="reviewNum!=null">
+        #{reviewNum}
+      </if>
+      <if test="size!=null">
+        #{size}
+      </if>
+      <if test="color!=null">
+        #{color}
+      </if>
+    </trim>
+  </insert>
+
+  <!--//    删除商品-->
+  <!--public abstract int deleteGoods(Integer goodsId);-->
+  <delete id="deleteGoods" parameterType="int">
+    delete * from goods where goodsId=#{param}
+  </delete>
+
+  <!--//    更新商品-->
+  <!--public abstract int updateGoods(Goods goods);-->
+  <update id="updateGoods" parameterType="Goods">
+    UPDATE goods set goodsId=#{goodsId},userId=#{userId},goodstypeId=#{goodstypeId},goodschildId=#{goodschildId},
+      goodsName=#{goodsName},goodsPrice=#{goodsPrice},goodsDate=#{goodsDate},goodsCount=#{goodsCount},goodsSale=#{goodsSale},reviewNum=#{reviewNum},
+      size=#{size},color=#{color}
+  </update>
+
+  <!--//    更新商品不为空的字段-->
+  <!--public abstract int updateGoodsSelective(Goods goods);-->
+
+  <update id="updateGoodsSelective" parameterType="Goods">
+    update goods SET
+    <if test="goodsId!=null">
+      goodsId=#{goodsId}
+    </if>
+    <if test="userId!=null">
+      userId=#{userId}
+    </if>
+    <if test="goodstypeId!=null">
+      goodstypeId=#{goodstypeId}
+    </if>
+    <if test="goodschildId!=null">
+      goodschildId=#{goodschildId}
+    </if>
+    <if test="goodsName!=null">
+      goodsName=#{goodsName}
+    </if>
+    <if test="goodsPrice!=null">
+      goodsPrice=#{goodsPrice}
+    </if>
+    <if test="goodsDate!=null">
+      goodsDate=#{goodsDate}
+    </if>
+    <if test="goodsCount!=null">
+      goodsCount=#{goodsCount}
+    </if>
+    <if test="goodsSale!=null">
+      goodsSale=#{goodsSale}
+    </if>
+    <if test="reviewNum!=null">
+      reviewNum=#{reviewNum}
+    </if>
+    <if test="size!=null">
+      size=#{size}
+    </if>
+    <if test="color!=null">
+      color=#{color}
+    </if>
+
+  </update>
+
+  <!--//    查询所有的商品-->
+  <!--public abstract List<Goods> selectAllGoods();-->
+
+  <select id="selectAllGoods" resultType="Goods">
+    select * from goods
+  </select>
+
+  <!--//    根据id查询商品-->
+  <!--public abstract Goods selectGoodsById(Integer goodsId);-->
+  <select id="selectGoodsById" resultType="Goods" parameterType="int">
+    select * from goods where goodsId=#{param}
+  </select>
+
+  <!--//根据材质名查询所有的商品-->
+  <!--public abstract List<Goods> selectGoodsByMaterial(String goodsmaterialName);-->
+
+  <select id="selectGoodsByMaterial" parameterType="String" resultType="Goods">
+    select g.* from goods g,goods_material_relation r,goods_material m
+      where m.goodsmaterialName like '%' #{param} '%' and m.goodsmaterialId=r.goodsmaterialId
+      and r.goodsId=g.goodsId
+  </select>
+
+ <!-- //    根据风格查询所有的商品
+  public abstract List<Goods> selectGoodsByStyle(String goodsstyleName);-->
+
+  <select id="selectGoodsByStyle" resultType="Goods" parameterType="String">
+    select g.* from goods g,goods_style_relation r,goods_style s
+      where s.goodsstyleName like '%' #{param} '%' and s.goodsstyleId=r.goodsstyleId
+      and r.goodsId=g.goodsId
+  </select>
+
+  <!--//    根据多种条件查询商品-->
+  <!--public abstract List<Goods> selectGoodsByConditions(Integer goodstypeId,Integer goodschildId,Integer goodsmaterialId;);-->
+  <select id="selectGoodsByConditions" resultType="Goods">
+    select goods.* from goods,goods_material_relation m
+    <where>
+      <if test="goodstypeId!=null">
+        goodstypeId = #{goodstypeId}
+      </if>
+      <if test="goodschildId!=null">
+        and goodschildtypeId = #{goodschildId}
+      </if>
+      <if test="goodsmaterialId!=null">
+        and m.goodsId=goods.goodsId and m.goodsmaterialId=#{goodsmaterialId}
+      </if>
+    </where>
+  </select>
+
+  <!--//    根据设计师id得到设计师的作品-->
+  <!--public abstract List<GoodsAndImgDesignerVO> selectGoodsByUserId(Integer userId);-->
+  <resultMap id="selectGoodsByIdMapper" type="com.zua.ifashion.online.vo.GoodsAndImgDesignerVO">
+    <id column="goodsId" property="goodsId"/>
+    <result column="userId" property="userId"/>
+    <result column="goodstypeId" property="goodstypeId"/>
+    <result column="goodschildId" property="goodschildId"/>
+    <result column="goodsName" property="goodsName"/>
+    <result column="goodsPrice" property="goodsPrice"/>
+    <result column="goodsDate" property="goodsDate"/>
+    <result column="goodsCount" property="goodsCount"/>
+    <result column="goodsSale" property="goodsSale"/>
+    <result column="reviewNum" property="reviewNum"/>
+    <result column="size" property="size"/>
+    <result column="color" property="color"/>
+    <result column="goodsIntroduce" property="goodsIntroduce"/>
+    <collection property="goodsImgList" ofType="GoodsImg">
+      <id property="goodsimgId" column="goodsimgId"/>
+      <result property="goodsImgurl" column="goodsImgurl"/>
+    </collection>
+
+  </resultMap>
+
+  <select id="selectGoodsByUserId" parameterType="int" resultMap="selectGoodsByIdMapper">
+    select g.*,img.goodsimgId,img.goodsImgurl from goods_img img,goods g where g.goodsId=img.goodsId and g.userId=#{param}
+  </select>
+
+
+  <!--//    根据商品id得到商品带tupian
+  public abstract List<GoodsAndImgDesignerVO> selectGoodByGoodsId(Integer goodsId);-->
+  <select id="selectGoodByGoodsId" parameterType="int" resultMap="selectGoodsByIdMapper">
+    select g.*,img.goodsimgId,img.goodsImgurl from goods_img img,goods g where g.goodsId=img.goodsId and g.goodsId=#{param}
+  </select>
+
 </mapper>

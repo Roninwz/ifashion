@@ -1,0 +1,804 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main {
+    padding-top: 0px;
+}
+#main {
+    min-height: 750px;
+    padding: 20px 0;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, input, button, textarea, p, blockquote, th, td, form {
+    margin: 0;
+    padding: 0;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    font: 14px/1.5 "PingFang SC","微软雅黑","Microsoft YaHei",Helvetica,"Helvetica Neue",Tahoma,Arial,sans-serif;
+}
+a:link, a:visited, body, html {
+    color: #1c1f21;
+}
+.wenda {
+    margin-top: 40px;
+}
+.wenda {
+    width: 1152px;
+    margin: 20px auto 0;
+}
+.wenda {
+    position: relative !important;
+}
+.clearfix {
+    *zoom:1;
+}
+.clearfix::after {
+    content: "\0020";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+.wenda-main, .wenda-mkclass, .wenda-sidebar {
+    background: #fff;
+}
+.wenda-main {
+    width: 776px;
+    padding: 0 0 48px;
+    margin-right: 48px;
+}
+.l {
+    float: left;
+}
+.wd-top-slogan {
+    margin-bottom: 4px;
+    height: 96px;
+    background: url(/static/img/wenda_title_bg.png);
+    padding: 24px;
+    box-sizing: border-box;
+}
+.wd-top-slogan span {
+    float: left;
+    line-height: 48px;
+    display: inline-block;
+    font-size: 24px;
+    color: #07111b;
+    letter-spacing: 3px;
+}
+.wd-top-slogan a {
+    width: 137px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background-color: #F93;
+    color: #fff;
+    float: right;
+    font-size: 16px;
+    border-radius: 4px;
+}
+:link, :visited, ins {
+    text-decoration: none;
+}
+a, button, input {
+    outline: 0;
+}
+.nav {
+    padding: 24px;
+    border-bottom: 1px solid #D9DDE1;
+}
+.nav a.active {
+    color: #f01414;
+}
+.nav a {
+    font-size: 16px;
+    color: #93999f;
+    line-height: 20px;
+    text-align: left;
+    margin-right: 50px;
+}
+.wenda-list {
+    min-height: 1130px;
+}
+.ques-answer {
+    position: relative;
+    padding-left: 56px;
+    padding-top: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #d0d6d9;
+}
+.ques-answer .tag-img {
+    position: absolute;
+    left: 0px;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+.ques-answer .tag-img a {
+    display: block;
+}
+.ques-answer .tag-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+fieldset, img {
+    border: 0;
+}
+.ques-answer .from-tag {
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+    color: #787d82;
+}
+.ques-answer .from-tag a {
+    font-size: 12px;
+    color: #787d82;
+    margin-left: 15px;
+}
+.ques-answer .ques-con {
+    line-height: 20px;
+    position: relative;
+}
+.ques-answer .ques-con a.ques-con-content {
+    display: block;
+    line-height: 28px;
+    margin-right: 30px;
+    word-break: break-all;
+}
+.ques-answer .ques-con a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #14191e;
+}
+.ques-answer .info-bar {
+    height: 30px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.ques-answer .info-bar .to-answer {
+    float: left;
+    width: 72px;
+    height: 27px;
+    border: 1px solid #d0d6d9;
+    font-size: 14px;
+    line-height: 27px;
+    text-align: center;
+    color: #787d82;
+}
+.ques-answer .info-bar .integral-info {
+    float: left;
+    margin-left: 12px;
+}
+.ques-answer .info-bar .integral-info a {
+    font-size: 14px;
+    line-height: 30px;
+    color: #b5b9bc;
+    text-align: left;
+}
+.ques-answer .info-bar .integral-info span {
+    color: #ff7802;
+}
+.ques-answer .info-bar .answer-num, .ques-answer .info-bar .follow {
+    float: left;
+    font-size: 14px;
+    line-height: 30px;
+    color: #b5b9bc;
+    text-align: left;
+    margin-left: 20px;
+}
+.ques-answer .info-bar .answer-num, .ques-answer .info-bar .follow {
+    float: left;
+    font-size: 14px;
+    line-height: 30px;
+    color: #b5b9bc;
+    text-align: left;
+    margin-left: 20px;
+}
+.ques-answer .info-bar .answer-num i, .ques-answer .info-bar .follow i {
+    font-style: normal;
+}
+.ques-answer .answer-con.first {
+    margin-top: 0px;
+    border: 0;
+}
+.ques-answer .answer-con {
+    padding-bottom: 46px;
+    position: relative;
+}
+.ques-answer .answer-con .user {
+    line-height: 20px;
+    margin-top: 24px;
+}
+.ques-answer .answer-con .user a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #14191e;
+    margin-right: 5px;
+}
+.ques-answer .answer-con .user .signature {
+    font-size: 12px;
+    color: #b5b9bc;
+}
+.ques-answer .answer-con .answer-content, .ques-answer .answer-con .answer-content-all {
+    color: #14191e;
+    line-height: 28px;
+    font-size: 14px;
+    margin-top: 2px;
+    word-break: break-all;
+    overflow: hidden;
+}
+.ques-answer .answer-con .answer-content-all, .ques-answer .answer-con .reply-textarea {
+    display: none;
+}
+.ques-answer .answer-con .ctrl-bar {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    background-color: #fff;
+    z-index: 9;
+}
+.ques-answer .answer-con .ctrl-bar .agree-with {
+    display: inline-block;
+    height: 24px;
+    border: 1px solid #d0d6d9;
+    padding: 0 9px;
+}
+.ques-answer .answer-con .ctrl-bar span {
+    line-height: 24px;
+    font-size: 12px;
+    color: #787d82;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.ques-answer .answer-con .ctrl-bar span b {
+    font-weight: 400;
+}
+.ques-answer .answer-con .ctrl-bar .agree-with em {
+    margin-left: 3px;
+}
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+    font-style: normal;
+    font-weight: 400;
+}
+.ques-answer .share-box {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+}
+.ques-answer .share-box .show-btn {
+    font-size: 12px;
+    color: #787d82;
+    cursor: pointer;
+}
+.ques-answer .share-box .share-box-con {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    top: -5px;
+    left: 28px;
+    width: 145px;
+}
+.ques-answer .answer-con .ctrl-bar .shrink {
+    display: none;
+    float: right;
+    margin-right: 0px;
+    cursor: pointer;
+}
+.ques-answer .reply-con {
+    display: none;
+}
+.ques-answer .release-reply-con {
+    position: relative;
+    padding: 20px 30px 20px 84px;
+    background-color: #f3f3f3;
+    margin-top: 20px;
+}
+
+.ques-answer .release-reply-con .user-pic {
+    position: absolute;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ques-answer .release-reply-con .user-pic a {
+    display: block;
+    height: 100%;
+}
+.ques-answer .release-reply-con .user-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.ques-answer .release-reply-con .user-name a {
+    line-height: 20px;
+    font-size: 14px;
+    color: #787d82;
+    text-align: left;
+}
+.ques-answer .release-reply-con .textarea-con {
+    position: relative;
+    border: 1px solid #d0d6d9;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff;
+}
+.ques-answer .release-reply-con .textarea-con textarea {
+    display: block;
+    resize: none;
+    width: 100%;
+    min-height: 60px;
+}
+.ques-answer .release-reply-con .err-tip {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    color: #f01400;
+    padding: 8px 0;
+}
+.verify-code {
+    float: left;
+}
+.ques-answer .release-reply-con .do-reply-btn {
+    float: right;
+    width: 60px;
+    height: 40px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f01400;
+}
+
+.page {
+    margin: 40px auto 20px;
+}
+.page {
+    overflow: hidden;
+    clear: both;
+    text-align: center;
+}
+.page span, .page-disabled {
+    height: 32px;
+    color: #c8cdd2;
+}
+.page a, .page span, .page-disabled {
+    padding: 0 4px;
+    min-width: 24px;
+    line-height: 32px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+}
+.page a.text-page-tag.active {
+    background: #4d555d;
+    color: #fff;
+}
+.page a {
+    margin: 0 8px;
+    color: #4d555d;
+    border-radius: 16px;
+    -webkit-transition: border-color .2s;
+    -moz-transition: border-color .2s;
+    transition: border-color .2s;
+}
+.wenda-slider {
+    width: 328px;
+}
+.r {
+    float: right;
+}
+.user-about {
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+.my-follow-class, .quiz a, .user-about {
+    margin-bottom: 30px;
+}
+.user-about .user-info {
+    position: relative;
+    padding-left: 50px;
+    border-bottom: 1px solid #d0d6d9;
+    padding-bottom: 20px;
+}
+.user-about .user-info .user-pic {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.user-about .user-info .user-pic a, .user-about .user-info .user-pic img {
+    display: block;
+    height: 100%;
+}
+.user-about .user-info .integral-info, .user-about .user-info .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+.user-about .user-info .user-name a {
+    font-size: 14px;
+    color: #14191e;
+    line-height: 20px;
+    text-align: left;
+}
+.user-about .user-info .integral-info, .user-about .user-info .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+.user-about .user-info .integral-info .integral {
+    float: left;
+}
+.user-about .user-info .integral-info a {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+    color: #787d82;
+}
+.user-about .user-info .integral-info .integral-mall {
+    float: right;
+    text-align: right;
+}
+.user-about .user-action {
+    margin-top: 20px;
+    overflow: hidden;
+}
+.user-about .user-action span {
+    position: relative;
+    font-size: 14px;
+    color: #14191e;
+    line-height: 20px;
+    padding: 0 10px;
+    width: 33%;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+}
+.my-follow-class, .quiz a, .user-about {
+    margin-bottom: 30px;
+}
+.my-follow-class h3 {
+    position: relative;
+    height: 20px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    text-align: left;
+    color: #14191e;
+    line-height: 20px;
+    border-bottom: 1px solid #d0d6d9;
+    margin-bottom: 10px;
+}
+.my-follow-class h3 span {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    color: #999da1;
+    font-size: 20px;
+    cursor: pointer;
+}
+.my-follow-class .tag-box a {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #d0d6d9;
+    font-size: 14px;
+    color: #787d82;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+}
+.advertisement {
+    overflow: hidden;
+}
+.advertisement, .hot-ques {
+    margin-bottom: 30px;
+}
+.advertisement a {
+    display: block;
+}
+.advertisement img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.hot-ques .title {
+    font-size: 16px;
+    color: #14191e;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d0d6d9;
+}
+.hot-ques .title, .hot-ques li .content a, .leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+ol, ul {
+    list-style: none;
+}
+.hot-ques li {
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1f2;
+}
+.hot-ques li .content a {
+    font-size: 14px;
+    color: #14191e;
+    word-wrap: break-word;
+}
+.hot-ques .title, .hot-ques li .content a, .leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+.hot-ques li .info-bar {
+    height: 20px;
+    margin-top: 7px;
+    overflow: hidden;
+}
+.hot-ques li .info-bar .answer-num {
+    margin-right: 30px;
+}
+.hot-ques li .info-bar a {
+    float: left;
+    font-size: 12px;
+    line-height: 20px;
+    color: #b5b9bc;
+}
+.hot-ques li .info-bar .from {
+    float: right;
+}
+.leifeng-sort .title {
+    font-size: 16px;
+    color: #14191e;
+    height: 40px;
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.leifeng-sort .title span {
+    float: left;
+}
+
+.leifeng-sort .title .leifeng-tab.active {
+    border-color: #F93;
+}
+
+.leifeng-sort .title .leifeng-tab {
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+    height: 39px;
+    border-bottom: 2px solid transparent;
+    margin-left: 25px;
+}
+
+.hot-ques .title,
+.hot-ques li .content a,
+.leifeng-sort .title {
+    text-align: left;
+    line-height: 20px;
+}
+
+
+.leifeng-sort .leifeng-day {
+    display: block;
+} 
+
+.leifeng-sort .leifeng-tab-box-min {
+    height: 370px;
+    overflow: hidden;
+}
+
+.leifeng-sort li {
+    position: relative;
+    padding-left: 90px;
+    margin-top: 30px;
+}
+
+.leifeng-sort .ranking.first {
+    color: #f8b551;
+}
+
+.leifeng-sort .ranking {
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    width: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.leifeng-sort .user-pic {
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.leifeng-sort .user-pic a,
+.leifeng-sort .user-pic img {
+    display: block;
+    height: 100%;
+}
+
+.leifeng-sort .user-info,
+.leifeng-sort .user-name {
+    height: 20px;
+    overflow: hidden;
+}
+
+.leifeng-sort .user-name a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #787d92;
+    line-height: 20px;
+    text-align: left;
+}
+
+.leifeng-sort .user-info span {
+    font-size: 12px;
+    color: #b5b9bc;
+    line-height: 20px;
+    text-align: left;
+}
+
+.leifeng-sort .user-info .answer-num {
+    float: right;
+    text-align: right;
+}
+
+.leifeng-sort .ranking.second {
+    color: #787d82;
+}
+
+.leifeng-sort .ranking.third {
+    color: #ec6941;
+} 
+.leifeng-sort .leifeng-week {
+    display: none;
+} 
+.popBox {
+    width:500px;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    box-shadow:2px 3px 0 rgba(190,190,190,0.3);
+    -webkit-box-shadow: 2px 3px 0 rgba(190,190,190,0.3);
+    -moz-box-shadow: 2px 3px 0 rgba(190,190,190,0.3);
+    text-align:center;
+    padding-bottom:20px;
+    background-color: #fff;
+    z-index: 101;
+    font-family:Microsoft YaHei, Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+
+}
+.popBox .shade {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+}
+.popBox .tag-main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -345px;
+    margin-top: -280px;
+    width: 610px;
+    height: 600px;
+    background-color: #fff;
+    padding: 30px 40px;
+}
+.popBox h3 {
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+}
+.popBox h3 i {
+    font-size: 22px;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+    color: #bfc3c5;
+    cursor: pointer;
+}
+[class*=' icon-'], [class^=icon-] {
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.popBox ul {
+    margin-top: 12px;
+    height: 400px;
+    overflow-y: scroll;
+}
+.popBox ul li {
+    float: left;
+    width: 134px;
+    height: 30px;
+    margin-left: 2px;
+    margin-top: 8px;
+    padding: 6px;
+    cursor: pointer;
+}
+.popBox ul img {
+    float: left;
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+}
+.popBox ul span {
+    float: left;
+    font-size: 14px;
+    color: #14191e;
+    line-height: 24px;
+    margin-left: 10px;
+}
+.popBox ul li.active, .popBox ul li:hover {
+    background-color: #edf1f2;
+}
+.popBox ul li.active img, .popBox ul li:hover img {
+    opacity: 1;
+}
+.popBox #ok {
+      margin: 0 auto;
+      float: right;
+      background-color: #F93;
+      width: 100px;
+      height: 40px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 40px;
+      margin-top: 30px;
+      text-align: center;
+  }
+.popBox #cancel {
+    float: right;
+    background-color: #F93;
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 40px;
+    margin-top: 30px;
+    text-align: center;
+    margin-right: 30px;
+}
+.custom-content .btnbox, .quiz a, .popBox #ok,.popBox #cancel{
+    text-align: center;
+}
+
+
+
+
+
+

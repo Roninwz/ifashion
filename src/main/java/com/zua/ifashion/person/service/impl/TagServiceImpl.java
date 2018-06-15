@@ -35,4 +35,9 @@ public class TagServiceImpl implements TagService {
     public int getAllTagCount() {
         return tagMapper.getAllTagCount();
     }
+
+    @Override
+    public Tag selectTagByTagId(Integer tagId) {
+        return tagMapper.selectTagByTagId(tagId);
+    }
 }

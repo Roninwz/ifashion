@@ -1,0 +1,10 @@
+body,ul,li{ margin:0; padding:0;}
+body{ font:12px/1.5 Tomato;}
+
+/*#mytab li { list-style-type:none; color:#fff; display:inline-block; height:70px; line-height:30px; padding:0 20px;}*/
+#mytab li.current{background-colo:;color:red; cursor:pointer;}
+#mytab li.current span{
+    color:#ff6461;
+}
+
+#mycontent ul{ display:none; line-height:25px; margin:0 30px; padding:10px 0;}

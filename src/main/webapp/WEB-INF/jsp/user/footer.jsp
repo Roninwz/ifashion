@@ -22,7 +22,7 @@
 
 
 
-<div class="footer" style="margin-top:50px; height:400px" >
+<div class="footer" style="margin-top:50px; height:450px" >
     <div class="footer-wrap">
         <div class="footer-info">
             <div class="footer-address col-md-6">

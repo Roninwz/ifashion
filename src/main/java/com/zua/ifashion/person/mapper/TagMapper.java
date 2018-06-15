@@ -2,6 +2,7 @@ package com.zua.ifashion.person.mapper;
 
 
 import com.zua.ifashion.person.entity.Tag;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface TagMapper {
     List<Tag> getAllTags();
     //查询标签数量
     int getAllTagCount();
+
+    Tag selectTagByTagId(@Param("tagId") Integer tagId);
 }

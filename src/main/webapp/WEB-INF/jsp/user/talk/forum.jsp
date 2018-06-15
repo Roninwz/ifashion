@@ -6,7 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ include file="../header.jsp" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <%--<%@ include file="../footer.jsp" %>--%>
 <%
@@ -17,9 +19,9 @@
 %>
 <html>
 <head>
-
+    <meta charset="UTF-8">
     <base href="<%=basePath%>">
-    <title>Title</title>
+    <title>论坛</title>
     <%--底部css--%>
     <link rel="stylesheet" href="static/user/common/foot/css/foot.css">
     <%--导航栏css--%>
@@ -42,89 +44,7 @@
 
 </head>
 <body style="background-color: white">
-<div  class='w1180 ad' id="OL_SYS_925_51"><!--大顶通OL_SYS_925_51-->
-</div>
-<!--logo 登录 注册-->
-<div class='w1180 logoAndlogin'>
-    <h1 class='logo'>
-        <a href="">
-            <img src='static/user/common/top/images/top.png' height='72' width='780' style='padding-left:200px' alt='iFashion' title='iFashion' />
-        </a>
-    </h1>
-    <div class="login">
-        <a href="" target="_self" rel="nofollow">登录</a> |
-        <a href="" target="_self" rel="nofollow">注册</a>
-    </div>
-</div>
-<!--<script type="text/javascript" src="../js/passport_olindex.js"></script>-->
-<!--/logo 登录 注册-->
-<!--/nav 搜索-->
-<div class='navSearch'>
-    <div class="navBg"></div>
-    <div class="w1180">
-        <div class="nav1">
-            <a href="" target="_blank" class="here">首页</a>
-            <a href="" target="_blank">穿衣搭配</a>
-            <a href="" target="_blank">社区精选</a>
-            <a href="" target="_blank">资讯</a>
-            <a href="" target="_blank">私人订制</a>
-            <a href="javascript:void(0);" class="searchBt"></a>
-        </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="" target="_blank">社区</a>
-                    <a href="" target="_blank">论坛</a>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
-    <div class='w1180 search'>
-        <form id="searchPage" target="_blank" method="get" action="" accept-charset="utf8">
-            <div class="mainsearch">
-                <input  onkeyup="selBrand('searchpro','auto_brand')" type="text" class="main_input" id="searchpro" autocomplete="off" name="q" value="请输入品牌（拼音、英文、缩写）、产品名称或关键字" >
-                <!--  新加1 -->
-                <div class="c1_se_2_c" id="auto_brand" style="display: none;"></div>
-                <!--  新加1 end -->
-            </div>
-            <!--  新加2 -->
-            <input type="hidden" name="s" value="15679544665037353740"  >
-            <input type="hidden" name="nsid" value="1" class="aritcleType" >
-            <!--  新加2 end -->
-            <input type="button" class="mainbtn" id="J_search_sub" value="">
-            <input type="button" title='关闭搜索' class="closeSearchbtn" value="">
-        </form>
-        <div class='hotpro'>
-            <a href="" title="资讯-夏纳电影节" target="_blank">资讯-夏纳电影节</a>
-            <a href="" title="定制-裙子" target="_blank">定制-裙子</a>
-            <a href="" title="定制-运动鞋" target="_blank">定制-运动鞋</a>
-            <!-- 设计师 -->
-            <a href="" title="设计师-房莹" target="_blank">设计师-房莹</a>
-            <a href="" title="话题" target="_blank">话题-PVC</a>
-        </div>
-    </div>
-
-
-
-</div>
-<!--nav搜索 end-->
-
-<!--crazy start-->
-<div id="crazynavdown"><!--首下拉‘大’扩展大图--->
-    <div id="OL_SYS_938_51" class="w1180 s"></div>
-    <div class="b"><!--首页下拉回收-->
-        <div id="OL_SYS_943_51" class="b1"></div>
-        <!--首下拉‘小’扩展大图-->
-        <div id="OL_SYS_448_51" class="b2"></div>
-    </div>
-</div>
-<!--crazy end-->
-
-
+<%@ include file="../header.jsp" %>
 <div id="main" style="margin-top:-40px">
 
     <div class="wenda clearfix">
@@ -132,12 +52,13 @@
             <div class="l wenda-main">
                 <div class="wd-top-slogan">
                     <span>时尚人士自己的问答社区</span>
-                    <a class="js-quiz" href="javascript:void(0);">我要提问</a>
+                    <a class="js-quiz" href="${pageContext.request.contextPath }/user/seditor.action">我要提问</a>
                 </div>
                 <div class="nav">
-                    <a class="active" href="/wenda">推荐</a>
-                    <a href="/wenda/new">最新</a>
-                    <a href="/wenda/issue">话题</a>
+                    <a class="active" href="">推荐</a>
+                    <a href="">最新</a>
+                    <a href="user/topic.action">话题</a>
+                    <a href="user/question.action">问题</a>
 
 
                 </div>
@@ -148,7 +69,7 @@
                 <ul class="recommend">
                     <li>
                         <a class="recommend-tag canlink" href="">本期话题&nbsp;&nbsp;></a>
-                        <a title="[搭配] [Ava搭配周记] 一整个夏天，裙子撑起了一片天！" class="recommend-link" href="" target="_blank" data-ast="yuanwenindex_1_1499">[搭配] [Ava搭配周记] 一整个夏天，裙子撑起了一片天！</a>
+                        <a title="${topic.topicTitle}" class="recommend-link" href="" target="_blank" data-ast="yuanwenindex_1_1499">${topic.topicTitle}</a>
                     </li>
                 </ul>
                 <!--recommend end-->
@@ -158,26 +79,27 @@
                 <!--左侧列表内容-->
                 <div class="wenda-list">
 
-
+                  <c:forEach var="discussUsers" items="${discussUsers}">
                     <div class="ques-answer">
                         <div class="tag-img">
                             <a href="" target="_blank">
-                                <img src="static/user/talk/image/02_avatar_middle.jpg">
+                                <img src="${discussUsers.user.userImgurl}">
                             </a>
                         </div>
                         <!--.tag-img end-->
                         <div class="from-tag"> 来自
-                            <a href="" target="_blank">AvaFoo</a>
-                            <a style="color:#999">2018-04-28</a>
+                            <a href="" target="_blank">${discussUsers.user.username}</a>
+                            <a style="color:#999"><fmt:formatDate value="${discussUsers.discussDate}"/></a>
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="&nbsp;▎LOOK1
-想要在夏天的人群中吸睛就必须耍点小心机 。内衣小露+一字领+不规则破洞裙+纹身贴+绑带鞋=性感力Max！" class="ques-con-content" href="" target="_blank">▎LOOK1
-                                想要在夏天的人群中吸睛就必须耍点小心机 。内衣小露+一字领+不规则破洞裙+纹身贴+绑带鞋=性感力Max！</a>
+                            <a title="&nbsp;${discussUsers.discussContent}" class="ques-con-content" href="user/forumInfo.action" target="_blank">${discussUsers.discussContent}</a>
 
                         </div>
                     </div>
+                  </c:forEach>
+
+
                     <!--.ques-answer end-->
                     <div class="ques-answer">
                         <div class="tag-img">
@@ -617,14 +539,16 @@
                 <div class="hot-ques">
                     <h3 class="title">热门话题</h3>
                     <ul>
-                        <li>
-                            <p class="content"><a href="" target="_blank">一抹红唇提升时尚品味 阿玛尼小胖丁</a></p>
-                            <div class="info-bar clearfix">
-                                <a class="answer-num" href="/wenda/detail/390322" target="_blank">13 回答</a>
-                                <a class="follow-num" href="/wenda/detail/390322" target="_blank">1 关注</a>
+                        <c:forEach var="tlistr" items="${tlistr}" begin="0" end="5">
+                            <li>
+                                <p class="content"><a href="" target="_blank">${tlistr.topicTitle}</a></p>
+                                <div class="info-bar clearfix">
+                                    <a class="answer-num" href="/wenda/detail/390322" target="_blank">${tlistr.topicPeople} 回答</a>
+                                    <a class="follow-num" href="/wenda/detail/390322" target="_blank">1 关注</a>
 
-                            </div>
-                        </li>
+                                </div>
+                            </li>
+                        </c:forEach>
                         <li>
                             <p class="content"><a href="" target="_blank">Slip Dress，复古与个性，姑娘的选择与挑战</a></p>
                             <div class="info-bar clearfix">
@@ -675,25 +599,40 @@
 
                         <div class="tabdiv leifeng-tab-box leifeng-day js-leifeng-tab-box" data-type="day" style="display:none;">
                             <ul class="leifeng-tab-box-min">
-                                <li>
-                                    <div class="ranking first">1</div>
-                                    <div class="user-pic">
-                                        <a href="" target="_blank">
-                                            <img title="品牌活动君" src="static/user/talk/image/58_avatar_middle.jpg">
-                                        </a>
-                                    </div>
-                                    <!--.user-pic end-->
-                                    <div class="user-name">
-                                        <a href="" target="_blank">品牌活动君</a>
-                                    </div>
-                                    <!--.user-name end-->
-                                    <div class="user-info clearfix">
-                                            <span class="role">街头潮人
-</span>
-                                        <span class="answer-num">23回答</span>
-                                    </div>
-                                    <!--.user-info end-->
-                                </li>
+                                <c:forEach var="ud" items="${ud}" varStatus="status">
+                                    <li>
+                                        <c:choose>
+                                            <c:when test="${status.count=='1'}">
+                                                <div class="ranking first">${status.count}</div>
+                                            </c:when>
+                                            <c:when test="${status.count=='2'}">
+                                                <div class="ranking second">${status.count}</div>
+                                            </c:when>
+                                            <c:when test="${status.count=='3'}">
+                                                <div class="ranking third">${status.count}</div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="ranking ">${status.count}</div>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <div class="user-pic">
+                                            <a href="" target="_blank">
+                                                <img title="${ud.username}" src="static/user/talk/image/58_avatar_middle.jpg">
+                                            </a>
+                                        </div>
+                                        <!--.user-pic end-->
+                                        <div class="user-name">
+                                            <a href="" target="_blank">${ud.username}</a>
+                                        </div>
+                                        <!--.user-name end-->
+                                        <div class="user-info clearfix">
+                                            <span class="role">${ud.rankName}
+                                            </span>
+                                            <span class="answer-num">${ud.count}回答</span>
+                                        </div>
+                                        <!--.user-info end-->
+                                    </li>
+                                </c:forEach>
                                 <li>
                                     <div class="ranking second">2</div>
                                     <div class="user-pic">

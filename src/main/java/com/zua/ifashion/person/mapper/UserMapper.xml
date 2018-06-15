@@ -6,6 +6,7 @@
     <result column="rankId" jdbcType="INTEGER" property="rankId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="truename" jdbcType="VARCHAR" property="truename" />
     <result column="tel" jdbcType="VARCHAR" property="tel" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="sex" jdbcType="CHAR" property="sex" />
@@ -22,7 +23,7 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-    userId, rankId, username, password, tel, email, sex, age, birth, userMark, score,
+    userId, rankId, username, password,truename, tel, email, sex, age, birth, userMark, score,
     userImgurl, userIntroduce, registerDate, userTag, state
   </sql>
 
@@ -30,13 +31,13 @@
 
   <insert id="addUser" parameterType="com.zua.ifashion.person.entity.User">
     insert into user (userId, rankId, username,
-      password, tel, email,
+      password,truename,tel, email,
       sex, age, birth, userMark,
       score, userImgurl, userIntroduce,
       registerDate, userTag, state
       )
     values (#{userId,jdbcType=INTEGER}, #{rankId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
-    #{password,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+    #{password,jdbcType=VARCHAR},#{truename,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
     #{sex,jdbcType=CHAR}, #{age,jdbcType=INTEGER}, #{birth,jdbcType=DATE}, #{userMark,jdbcType=INTEGER},
     #{score,jdbcType=INTEGER}, #{userImgurl,jdbcType=VARCHAR}, #{userIntroduce,jdbcType=VARCHAR},
     #{registerDate,jdbcType=TIMESTAMP}, #{userTag,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}
@@ -56,6 +57,9 @@
       </if>
       <if test="password != null">
         password,
+      </if>
+      <if test="truename != null">
+        truename,
       </if>
       <if test="tel != null">
         tel,
@@ -96,7 +100,7 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="idUser != null">
+      <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="rankId != null">
@@ -107,6 +111,9 @@
       </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="truename != null">
+        #{truename,jdbcType=VARCHAR},
       </if>
       <if test="tel != null">
         #{tel,jdbcType=VARCHAR},
@@ -157,6 +164,7 @@
     set rankId = #{rankId,jdbcType=INTEGER},
     username = #{username,jdbcType=VARCHAR},
     password = #{password,jdbcType=VARCHAR},
+    truename = #{truename,jdbcType=VARCHAR},
     tel = #{tel,jdbcType=VARCHAR},
     email = #{email,jdbcType=VARCHAR},
     sex = #{sex,jdbcType=CHAR},
@@ -177,13 +185,16 @@
     update user
     <set>
       <if test="rankId != null">
-        rank_id = #{rankId,jdbcType=INTEGER},
+        rankId = #{rankId,jdbcType=INTEGER},
       </if>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="truename != null">
+        truename = #{truename,jdbcType=VARCHAR},
       </if>
       <if test="tel != null">
         tel = #{tel,jdbcType=VARCHAR},
@@ -201,22 +212,22 @@
         birth = #{birth,jdbcType=DATE},
       </if>
       <if test="userMark != null">
-        user_mark = #{userMark,jdbcType=INTEGER},
+        userMark = #{userMark,jdbcType=INTEGER},
       </if>
       <if test="score != null">
         score = #{score,jdbcType=INTEGER},
       </if>
       <if test="userImgurl != null">
-        user_imgurl = #{userImgurl,jdbcType=VARCHAR},
+        userImgurl = #{userImgurl,jdbcType=VARCHAR},
       </if>
       <if test="userIntroduce != null">
-        user_introduce = #{userIntroduce,jdbcType=VARCHAR},
+        userIntroduce = #{userIntroduce,jdbcType=VARCHAR},
       </if>
       <if test="registerDate != null">
-        register_date = #{registerDate,jdbcType=TIMESTAMP},
+        registerDate = #{registerDate,jdbcType=TIMESTAMP},
       </if>
       <if test="userTag != null">
-        user_tag = #{userTag,jdbcType=VARCHAR},
+        userTag = #{userTag,jdbcType=VARCHAR},
       </if>
       <if test="state != null">
         state = #{state,jdbcType=INTEGER},
@@ -224,7 +235,17 @@
     </set>
     where userId = #{userId,jdbcType=INTEGER}
   </update>
+  <update id="updatePassword" parameterType="com.zua.ifashion.person.entity.User">
+    update user set  password = #{password,jdbcType=VARCHAR}  where userId = #{userId,jdbcType=INTEGER}
+  </update>
 
+  <update id="updateTel" parameterType="com.zua.ifashion.person.entity.User">
+    update user set  tel = #{tel,jdbcType=VARCHAR}  where userId = #{userId,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateEmail" parameterType="com.zua.ifashion.person.entity.User">
+    update user set  email = #{email,jdbcType=VARCHAR}  where userId = #{userId,jdbcType=INTEGER}
+  </update>
   <!-- 通过用户 id查询用户    -->
   <select id="selectUserByUserId" parameterType="int" resultType="com.zua.ifashion.person.entity.User">
     select * from user where userId =#{userId}
@@ -244,20 +265,46 @@
 
 
   <!-- 通过用户名和密码查询用户    -->
-  <select id="selectUserByUnameAndPass" parameterType="com.zua.ifashion.person.entity.User" resultType="com.zua.ifashion.person.entity.User">
+  <select id="selectUserByUnameAndPass" parameterType="string" resultType="com.zua.ifashion.person.entity.User">
 
-    select * from user where username = #{username} and password = #{password}
+    select * from user where
+    <if test="uname != null and uname != ''">
+      (username = #{uname} or   tel = #{uname} or email = #{uname}) and
+    </if>
+    password = #{password}
   </select>
-  <!-- 查询所有用户    -->
+
+
   <select id="getAllUsers"  resultType="com.zua.ifashion.person.entity.User">
     select * from user
   </select>
 
+    <select id="getAllUsersPage"  resultType="com.zua.ifashion.person.entity.User" parameterType="int">
+        select * from user limit #{curPage},#{pageSize}
+    </select>
 
 
-  <!-- 查询所有用户数量    -->
+
+  <!-- 查询所有人数量    -->
   <select id="getAllUserCount"  resultType="int">
     select count(*) from user
   </select>
+
+  <!-- 查询所有设计师数量    -->
+  <select id="getAllDesigners"  resultType="User">
+    select * from user where state = 1
+  </select>
+
+  <!-- 查询所有用户    -->
+  <select id="getAllPersons"  resultType="User">
+    select * from user where state = 0
+  </select>
+
+  <!-- 模糊查询用户    -->
+  <select id="selectUsersByUname"  parameterType="string" resultType="User">
+    select * from user where username LIKE '%${username}%'
+  </select>
+
+
 
 </mapper>

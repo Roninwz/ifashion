@@ -26,6 +26,7 @@ public class AdminRoleServiceImpl implements AdminRoleService{
 
     @Override
     public int updateAdminRoleSelective(AdminRole adminRole) {
+
         return adminRoleMapper.updateAdminRoleSelective(adminRole);
     }
 

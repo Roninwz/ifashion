@@ -1,5 +1,7 @@
 package com.zua.ifashion.online.entity;
 
+import java.util.Date;
+
 public class GoodsReview {
     private Integer goodsreviewgId;
 
@@ -10,6 +12,16 @@ public class GoodsReview {
     private String reviewContent;
 
     private String reviewRank;
+
+    private Date reviewData;
+
+    public Date getReviewData() {
+        return reviewData;
+    }
+
+    public void setReviewData(Date reviewData) {
+        this.reviewData = reviewData;
+    }
 
     public Integer getGoodsreviewgId() {
         return goodsreviewgId;
@@ -60,5 +72,14 @@ public class GoodsReview {
     }
 
     public GoodsReview() {
+    }
+
+    public GoodsReview(Integer goodsreviewgId, Integer userId, Integer goodsId, String reviewContent, String reviewRank, Date reviewData) {
+        this.goodsreviewgId = goodsreviewgId;
+        this.userId = userId;
+        this.goodsId = goodsId;
+        this.reviewContent = reviewContent;
+        this.reviewRank = reviewRank;
+        this.reviewData = reviewData;
     }
 }

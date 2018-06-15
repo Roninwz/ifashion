@@ -12,4 +12,74 @@
     <result column="trueOrder" jdbcType="VARCHAR" property="trueOrder" />
   </resultMap>
 
+  <!--public abstract int addReceiveOrder(ReceiveOrder receiveOrder);-->
+  <!--public abstract int addReceiveOrderSelective(ReceiveOrder receiveOrder);-->
+
+  <insert id="addReceiveOrder" parameterType="ReceiveOrder">
+     insert into receive_order(receiveorderId,userId,designerId,ordersId,startDate,endDate,orderState,trueOrder,virtulOrder)
+      values(#{receiveorderId},#{userId},#{designerId},#{ordersId},#{startDate},#{endDate},#{orderState},#{trueOrder},#{virtulOrder})
+  </insert>
+<insert id="addReceiveOrderSelective" parameterType="ReceiveOrder">
+  insert into receive_order
+  <trim prefix="(" suffix=")" suffixOverrides=",">
+    <if test="receiveorderId!=null">
+      receiveorderId
+    </if>
+    <if test="userId!=null">
+      userId
+    </if>
+    <if test="designerId!=null">
+      designerId
+    </if>
+    <if test="ordersId!=null">
+      ordersId
+    </if>
+    <if test="startDate!=null">
+      startDate
+    </if>
+    <if test="endDate!=null">
+      endDate
+    </if>
+    <if test="orderState!=null">
+      orderState
+    </if>
+    <if test="trueOrder!=null">
+      trueOrder
+    </if>
+    <if test="virtulOrder!=null">
+      virtulOrder
+    </if>
+  </trim>
+
+  <trim prefix="(" suffix=")" suffixOverrides=",">
+    <if test="receiveorderId!=null">
+      receiveorderId
+    </if>
+    <if test="userId!=null">
+      userId
+    </if>
+    <if test="designerId!=null">
+      #{designerId}
+    </if>
+    <if test="ordersId!=null">
+      #{ordersId}
+    </if>
+    <if test="startDate!=null">
+      #{startDate}
+    </if>
+    <if test="endDate!=null">
+      #{endDate}
+    </if>
+    <if test="orderState!=null">
+      #{orderState}
+    </if>
+    <if test="trueOrder!=null">
+      #{trueOrder}
+    </if>
+    <if test="virtulOrder!=null">
+      #{virtulOrder}
+    </if>
+  </trim>
+</insert>
+
 </mapper>

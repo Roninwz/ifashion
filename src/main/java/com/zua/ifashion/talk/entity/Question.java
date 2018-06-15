@@ -7,15 +7,17 @@ public class Question {
 
     private Integer userId;
 
-    private String questionTitle;
-
     private Date questionDate;
 
     private Integer lookNum;
 
-    private Integer replyNum;
-
     private String questionContent;
+
+    private Integer attentionNum;
+
+    private Integer reportState;
+
+    private Integer tagId;
 
     public Integer getQuestionId() {
         return questionId;
@@ -31,14 +33,6 @@ public class Question {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public String getQuestionTitle() {
-        return questionTitle;
-    }
-
-    public void setQuestionTitle(String questionTitle) {
-        this.questionTitle = questionTitle == null ? null : questionTitle.trim();
     }
 
     public Date getQuestionDate() {
@@ -57,30 +51,57 @@ public class Question {
         this.lookNum = lookNum;
     }
 
-    public Integer getReplyNum() {
-        return replyNum;
-    }
-
-    public void setReplyNum(Integer replyNum) {
-        this.replyNum = replyNum;
-    }
-
     public String getQuestionContent() {
         return questionContent;
     }
 
     public void setQuestionContent(String questionContent) {
-        this.questionContent = questionContent == null ? null : questionContent.trim();
+        this.questionContent = questionContent;
     }
 
-    public Question(Integer questionId, Integer userId, String questionTitle, Date questionDate, Integer lookNum, Integer replyNum, String questionContent) {
+    public Integer getAttentionNum() {
+        return attentionNum;
+    }
+
+    public void setAttentionNum(Integer attentionNum) {
+        this.attentionNum = attentionNum;
+    }
+
+    public Integer getReportState() {
+        return reportState;
+    }
+
+    public void setReportState(Integer reportState) {
+        this.reportState = reportState;
+    }
+
+    public Integer getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(Integer tagId) {
+        this.tagId = tagId;
+    }
+
+    public Question(Integer questionId, Integer userId, Date questionDate, Integer lookNum, String questionContent, Integer attentionNum, Integer reportState, Integer tagId) {
         this.questionId = questionId;
         this.userId = userId;
-        this.questionTitle = questionTitle;
         this.questionDate = questionDate;
         this.lookNum = lookNum;
-        this.replyNum = replyNum;
         this.questionContent = questionContent;
+        this.attentionNum = attentionNum;
+        this.reportState = reportState;
+        this.tagId = tagId;
+    }
+
+    public Question(Integer userId, Date questionDate, Integer lookNum, String questionContent, Integer attentionNum, Integer reportState, Integer tagId) {
+        this.userId = userId;
+        this.questionDate = questionDate;
+        this.lookNum = lookNum;
+        this.questionContent = questionContent;
+        this.attentionNum = attentionNum;
+        this.reportState = reportState;
+        this.tagId = tagId;
     }
 
     public Question() {

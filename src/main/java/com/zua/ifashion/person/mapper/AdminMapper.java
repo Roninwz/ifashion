@@ -13,7 +13,7 @@ public interface AdminMapper {
     //添加管理员不为空字段
     int addAdminSelective(Admin admin);
     //删除管理员
-    int deleteAdmin(Integer adminId);
+    int deleteAdmin(@Param("adminId")Integer adminId);
 
     //更新管理员
     int updateAdmin(Admin admin);

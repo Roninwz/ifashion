@@ -1,0 +1,219 @@
+.SEO_patch_1{
+    padding-top:10px;
+    padding-bottom:5px;
+    font-size:14px;
+    text-indent:2em;
+    padding-left:42px;
+    color:#5c5c5c;
+    line-height:14px;
+    font-weight:bold;
+}
+.SEO_patch_1 span{
+    color:#5c5c5c;
+    font-size:14px;
+    line-height:14px;
+    font-weight:bold;
+}
+.myTab{
+    margin-top:10px;
+    width:270px;
+    height:290px;
+    overflow:hidden;
+    font-size:12px;
+    color:#333333;
+    line-height:24px;
+    font-family:"SimSun";
+    background:#fff;
+    margin-bottom:10px;
+}
+.tabNarbar{
+    height:24px;
+    background:#333;
+    padding-top:1px;
+    padding-left:1px;
+}
+.tabcard{
+    display:none;
+}
+.tabcard ul li{
+    height:24px;
+    line-height:24px;
+    overflow:hidden;
+    padding-left:22px;
+    background:url("../Images/icon.png") no-repeat 12px -230px;
+}
+.tabcard ul li a:hover{
+    text-decoration:underline;
+}
+.tabNarbar ul li{
+    float:left;
+    height:100%;
+    position:relative;
+}
+.tabNarbar ul li.current{
+    background-color:#fff;
+}
+.tabNarbar ul li.current a{
+    color:#333333;
+}
+.tabNarbar ul li a{
+    display:block;
+    height:24px;
+    padding:0px 15px;
+    line-height:24px;
+    color:#fff;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    cursor:pointer;
+}
+span.vSplitLine{
+    display:block;
+    right:-1px;
+    z-index:10;
+    top:6px;
+    width:1px;
+    background-color:#fff;
+    position:absolute;
+    height:12px;
+}
+.fashion_c .tabNarbar ul li a:hover{
+    text-decoration:none;
+	color:#999;
+}
+.tabcards{
+    margin-top:12px;
+}
+#adBody .fashion_menu{
+}
+
+ .arrowImg{
+    width:48px;
+    height:82px;
+    position:absolute;
+    z-index:100;
+}
+ .fashion_menu_1 a:hover{
+     color:#fff;
+ }
+.fashion_menu_2 a:hover{
+    color:#fff;
+}
+.fashion_menu_3 a:hover{
+    color:#fff;
+}
+#myTab .tabNarbar a{
+    -moz-transition:color;
+    -webkit-transition:color 0s ease-in-out 0s;
+}
+ .tabNarbar a:hover{
+     color:#fff;
+ }
+.tabNarbar ul li.current a {
+    color:#333;
+}
+
+#bdshare{
+    float:none;
+}
+.bdshare_custom{
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    font-size:13px;
+}
+
+.bdshare_custom span {
+    background: url("../Images/icon.png") no-repeat scroll right -188px transparent;
+    color: #2F5FC0;
+    font-size: 12px;
+    padding-right: 17px;
+}
+#bdshare ul{
+    padding:2px;
+}
+.bdshare_custom ul {
+    background-color: #FFFFFF;
+    border: 1px solid #DDE2DE;
+    /*display: none;*/
+    left: 0;
+    padding: 2px 2px 0;
+    position: absolute;
+    top: 0;
+    width: 78px;
+}
+
+.bdshare-custom ul li {
+    font-size: 12px;
+    height: 25px;
+    text-align: left;
+    vertical-align: middle;
+    float:none;
+    width:auto;
+}
+#bdshare ul li, #bdshare_s ul li{
+    width:auto;
+    float:none;
+    margin:2px 2px;
+}
+.span.bds_more{
+    float:none;
+}
+#bdshare ul li a{
+    padding:3px 0px;
+    outline:none;
+}
+#bdshare-custom-li{
+    display: none;
+}
+#bottonSharebar{
+    margin:0px 42px;
+    padding-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #AFAFAF;
+    font-size:14px;
+    color:#777;
+    height:24px;
+    line-height:24px;
+}
+.noborder { border:none !important;}
+.detail_vote{
+    border-bottom:none;
+}
+
+.detail_expert span, .detail_nav span {
+    background: url("../Images/icon.png") no-repeat scroll 0 -120px transparent;
+    font: 18px microsoft yahei;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    display:block;
+}
+span.relative_read{
+    font: 18px microsoft yahei;
+    margin: 5px 42px;
+    display: block;
+}
+span.classicMoive{
+    margin: 5px 42px 10px;
+    display: block;
+    font: 18px microsoft yahei;
+}
+.bdshare_custom{
+    display: inline-block;
+}
+.bottomShareTitle{
+    float:left;
+    color: #777777;
+    font-size: 14px;
+    height:24px;
+    line-height:24px;
+}
+.bdshare_custom a{
+    color:#777;
+}
+.bdshare_custom .shareCount{
+    display:none;
+}
+.rel_product span.related_product{
+    font: 18px microsoft yahei;
+    margin: 5px 42px;
+}

@@ -6,7 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%--fmt  国际化格式--%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%
     String path = request.getContextPath();
@@ -16,6 +19,7 @@
 %>
 <html>
 <head>
+    <meta charset="utf-8">
     <base href="<%=basePath%>">
     <title>Title</title>
     <%--底部css--%>
@@ -73,29 +77,7 @@
                 <hr/>
 
                 <!--头像 -->
-                <div class="user-infoPic">
 
-                    <div class="filePic">
-                        <img class="am-circle am-img-thumbnail" src="../images/getAvatar.do.jpg" alt="" />
-                    </div>
-
-                    <p class="am-form-help">头像</p>
-
-                    <div class="info-m">
-                        <div><b>用户名：<i>小叮当</i></b></div>
-                        <div class="u-level">
-													<span class="rank r2">
-														 <s class="vip1"></s><a class="classes" href="#">铜牌会员</a>
-													</span>
-                        </div>
-                        <div class="u-safety">
-                            <a href="safety.html">
-                                账户安全
-                                <span class="u-profile"><i class="bc_ee0000" style="width: 60px;" width="0">60分</i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="check">
                     <ul>
@@ -106,7 +88,7 @@
                                 <div class="fore2"><small>为保证您购物安全，建议您定期更改密码以保护账户安全。</small></div>
                             </div>
                             <div class="fore3">
-                                <a href="password.html">
+                                <a href="user/updatepassword.action">
                                     <div class="am-btn am-btn-secondary">修改</div>
                                 </a>
                             </div>
@@ -130,7 +112,7 @@
                                 <div class="fore2"><small>您验证的手机：186XXXXXXXX 若已丢失或停用，请立即更换</small></div>
                             </div>
                             <div class="fore3">
-                                <a href="bindphone.html">
+                                <a href="user/updatetel.action">
                                     <div class="am-btn am-btn-secondary">换绑</div>
                                 </a>
                             </div>
@@ -142,7 +124,7 @@
                                 <div class="fore2"><small>您验证的邮箱：5831XXX@qq.com 可用于快速找回登录密码</small></div>
                             </div>
                             <div class="fore3">
-                                <a href="email.html">
+                                <a href="user/updateemail.action">
                                     <div class="am-btn am-btn-secondary">换绑</div>
                                 </a>
                             </div>

@@ -23,10 +23,10 @@
         adminroleId,
       </if>
       <if test="adminId != null">
-        admin_id,
+        adminId,
       </if>
       <if test="roleId != null">
-        role_id,
+        roleId,
       </if>
       <if test="state != null">
         state,

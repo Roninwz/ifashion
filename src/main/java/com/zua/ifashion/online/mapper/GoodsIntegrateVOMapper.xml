@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.online.mapper.GoodsIntegrateVOMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.online.entity.GoodsImg">
+    <id column=" goodsimgId" jdbcType="INTEGER" property="goodsimgId" />
+    <result column="goodsId" jdbcType="INTEGER" property="goodsId" />
+    <result column="goodsImgurl" jdbcType="VARCHAR" property="goodsImgurl" />
+  </resultMap>
+
+  <!--//    查询商品的整合信息
+    public List<GoodsIntegrate> selectAllGoodsIntegrate();-->
+  <resultMap id="selectAllGoodsIntegrateMapper" type="com.zua.ifashion.online.vo.GoodsIntegrateVO">
+    <id column="goodstypeId" property="goodstypeId"/>
+    <result column="goodstyleName" property="goodstyleName"/>
+    <collection property="goodsAndImgDesignerVOList" ofType="com.zua.ifashion.online.vo.GoodsAndImgDesignerVO">
+      <id column="goodsId" property="goodsId"/>
+      <result column="userId" property="userId"/>
+      <result column="goodstypeId" property="goodstypeId"/>
+      <result column="goodschildId" property="goodschildId"/>
+      <result column="goodsName" property="goodsName"/>
+      <result column="goodsPrice" property="goodsPrice"/>
+      <result column="goodsDate" property="goodsDate"/>
+      <result column="goodsCount" property="goodsCount"/>
+      <result column="goodsSale" property="goodsSale"/>
+      <result column="reviewNum" property="reviewNum"/>
+      <result column="size" property="size"/>
+      <result column="color" property="color"/>
+      <result column="goodsIntroduce" property="goodsIntroduce"/>
+      <collection property="goodsImgList" ofType="GoodsImg">
+        <id column="goodsImgurl" property="goodsImgurl"/>
+        <result column="mask" property="mask"/>
+      </collection>
+    </collection>
+  </resultMap>
+  <select id="selectAllGoodsIntegrateList" resultMap="selectAllGoodsIntegrateMapper">
+    select g.*,img.goodsImgurl,img.mask,t.goodstypeName from goods g,goods_img img, goods_type t where g.goodsId=img.goodsId
+      and g.goodstypeId=t.goodstypeId
+  </select>
+</mapper>

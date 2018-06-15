@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.online.mapper.GoodsMaterialMapper">
+
+  <!--//    根据商品的id查询材质-->
+  <!--public GoodsMaterial selectGoodsMaterialByGoodsId(Integer goodsId);-->
+  <select id="selectGoodsMaterialByGoodsId" resultType="com.zua.ifashion.online.entity.GoodsMaterial" parameterType="int">
+    select goods_material.* from goods_material,goods_material_relation where goods_material.goodsmaterialId=goods_material_relation.goodsmaterialId and goodsId=#{param}
+  </select>
+</mapper>

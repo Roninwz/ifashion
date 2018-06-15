@@ -1,6 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%--fmt  国际化格式--%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Title</title>
 
 
@@ -20,7 +25,6 @@
     <script type="text/javascript" src="${pageContext.request.contextPath }/static/ueditor/lang/zh-cn/zh-cn.js"></script>
     <!-- 标签选择js -->
     <script src="${pageContext.request.contextPath }/static/admin/js/tag.js"></script>
-
     <!-- 图片上传js -->
     <!-- <script src="js/jquery.min.js"></script> -->
     <script src="${pageContext.request.contextPath }/static/admin/plugin/fileinput/js/bootstrap-fileinput.js"></script>
@@ -47,7 +51,12 @@
             <form class="form form-horizontal" name="upfile" id="form-article-add" enctype='multipart/form-data' action="admin/addHandleTopic.action" method="post">
 
 
-
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>话题标题：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" class="input-text" value="" placeholder=""  name="topicTitle">
+                    </div>
+                </div>
 
 
 
@@ -303,6 +312,7 @@
        UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;
         UE.Editor.prototype.getActionUrl = function(action){
             if(action == '/ueditor/upload/images.action'){
+                alert(basePath)
                 return basePath+'ueditor/upload/images.action';
             }else{
                 return this._bkGetActionUrl.call(this, action);

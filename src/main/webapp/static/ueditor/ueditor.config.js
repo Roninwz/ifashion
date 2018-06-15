@@ -30,7 +30,7 @@
         UEDITOR_HOME_URL: URL
 
         // 服务器统一请求接口路径
-        , serverUrl: URL + "jsp/controller.jsp"
+       /// , serverUrl: URL + "jsp/controller.jsp"
         ,serverUrl: "/ifashion/ueditor/init.action"
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
@@ -295,7 +295,7 @@
         //,toolbarTopOffset:400
 
         //设置远程图片是否抓取到本地保存
-        //,catchRemoteImageEnable: true //设置是否抓取远程图片
+        ,catchRemoteImageEnable: true //设置是否抓取远程图片
 
         //pageBreakTag
         //分页标识符,默认是_ueditor_page_break_tag_

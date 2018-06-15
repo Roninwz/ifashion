@@ -1,0 +1,17 @@
+body,ul,li,div,dl,dt,dd{padding: 0;margin: 0;}
+.subject_nav{overflow:hidden;height:35px;width:100%;background: #151515;}
+.subject_nav_c{height:35px;width:960px;margin:0 auto;color:#FFFFFF;font:12px/35px arial;}
+.subject_nav_c a{color: #FFFFFF !important;text-decoration: none;margin:0 3px;}
+.subject_nav_c a:hover{text-decoration: underline;}
+.subject_nav_index{float: left;width: 170px;font-weight: 700;text-indent:10px;}
+.subject_nav_c dl{float: left;height: 35px;margin-left:7px;padding-right: 7px;background: url(../image/Gana/subject_top_bg.png) no-repeat right bottom;_background:none;}
+.subject_nav_c dl dt{float: left;width:35px;font-weight: 700;line-height: 35px;}
+.subject_nav_c dl dd{float: left;}
+.subject_nav_4{float: left;margin-left:7px;}
+.subject_nav a:link,.subject_nav a:visited,.subject_nav a:hover,.subject_nav a:active{line-height:35px; }
+
+.channel_footer{font:12px arial;clear:both;overflow:hidden;width:960px;margin:0 auto;}
+.channel_footer a{color:#000000;text-decoration:none;}
+.channel_footer a:hover{color:#666666;text-decoration:underline;}
+.channel_footer p{text-align:center;margin:20px auto;}
+.channel_about a{margin:0 10px;}

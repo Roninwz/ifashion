@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -29,6 +30,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.deleteUser(userId);
     }
 
+
     @Override
     public int updateUser(User user) {
         return userMapper.updateUser(user);
@@ -38,6 +40,22 @@ public class UserServiceImpl implements UserService {
     public int updateUserSelective(User user) {
         return userMapper.updateUserSelective(user);
     }
+
+    @Override
+    public int updatePassword(User user) {
+        return userMapper.updatePassword(user);
+    }
+
+    @Override
+    public int updateTel(User user) {
+        return userMapper.updateTel(user);
+    }
+
+    @Override
+    public int updateEmail(User user) {
+        return userMapper.updateEmail(user);
+    }
+
 
     @Override
     public User selectUserByUserId(Integer userId) {
@@ -70,7 +88,28 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> getAllUsersPage(Integer curPage, Integer pageSize) {
+        return userMapper.getAllUsersPage(curPage,pageSize);
+    }
+
+
+    @Override
     public int getAllUserCount() {
         return userMapper.getAllUserCount();
+    }
+
+    @Override
+    public List<User> getAllDesigners() {
+        return userMapper.getAllDesigners();
+    }
+
+    @Override
+    public List<User> getAllPersons() {
+        return userMapper.getAllPersons();
+    }
+
+    @Override
+    public List<User> selectUsersByUname(String username) {
+        return userMapper.selectUsersByUname(username);
     }
 }

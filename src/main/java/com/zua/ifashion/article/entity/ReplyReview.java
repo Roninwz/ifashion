@@ -7,6 +7,8 @@ public class ReplyReview {
 
     private Integer reviewId;
 
+    private Integer articleId;
+
     private Integer userId;
 
     private Integer useredId;
@@ -14,6 +16,14 @@ public class ReplyReview {
     private Date replyDate;
 
     private String replyContent;
+
+    public Integer getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
+    }
 
     public Integer getReplyreviewId() {
         return replyreviewId;
@@ -63,9 +73,10 @@ public class ReplyReview {
         this.replyContent = replyContent == null ? null : replyContent.trim();
     }
 
-    public ReplyReview(Integer replyreviewId, Integer reviewId, Integer userId, Integer useredId, Date replyDate, String replyContent) {
+    public ReplyReview(Integer replyreviewId, Integer reviewId, Integer articleId, Integer userId, Integer useredId, Date replyDate, String replyContent) {
         this.replyreviewId = replyreviewId;
         this.reviewId = reviewId;
+        this.articleId = articleId;
         this.userId = userId;
         this.useredId = useredId;
         this.replyDate = replyDate;

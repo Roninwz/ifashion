@@ -1,0 +1,62 @@
+.fashion_top{background-color: #373737;width:100%;height:35px;color:#FFFFFF;}
+.fashion_topb{background-color: #404040;width:960px;height:35px;margin:0 auto;}
+.fashion_nav{float:left;line-height:35px;color:#777777;}
+.fashion_nav a{margin:0 10px;color:#FFFFFF;}
+.fashion_search{float:left;width:166px;height:18px;margin:6px 0 0 10px;padding:1px;border:1px solid #cdcbcc;background-color:#FFFFFF;}
+.fashion_input{float:left;border:none;background-color:#dadada;width:140px;height:18px;line-height:18px;padding-left:8px;color:#999999;}
+.fashion_button{float:left;border:none;background:#e6e6e6 url(../Images/icon.png) no-repeat 0 0;width:18px;height:18px;cursor:pointer;}
+.fashion_login{float:right;line-height:35px;}
+.fashion_login a{margin-right:10px;color:#FFFFFF;}
+
+.fashion_c{width: 100%;background:url(../Images/sub.png) no-repeat center 0;}
+.fashion_menu{margin:0 auto;border-top:2px solid #FFFFFF;width:960px;height: 30px;background-color: #143477;line-height: 30px;color: #7180a1;}
+.fashion_menu a{color: #FFFFFF;margin:0 6px;}
+.fashion_menu_1{float:left;height:30px;}
+.fashion_menu_1 dt{display:inline;font-weight: 700;margin:0 0 0 25px;color:#FFFFFF;}
+.fashion_menu_1 dt a{margin:0 15px 0 0;}
+.fashion_menu_1 dd{display:inline;}
+.fashion_menu_2,.fashion_menu_3{float: left;margin-left:2px;}
+.fashion_submenu{margin:0 auto;width:960px;height: 43px;border-bottom: 1px solid #dcdcdc;}
+.fashion_submenu dl{height: 42px;line-height: 42px;background-color: #f1f1f1;border-bottom: 1px solid #FFFFFF;}
+.fashion_submenu dt{float: left;width: 267px;height: 42px;}
+.fashion_submenu dd{float:left;margin:2px 0 0 15px;height: 20px;}
+.fashion_submenu dd a{font-size:14px;background: url(../Images/icon.png) no-repeat 0 -42px;padding-left: 15px;margin-right: 5px;}
+
+.com_h2{clear: both;height: 36px;width: 950px;margin-bottom: 20px;background: url(../Images/com_1.png) no-repeat right 0;border:none;}
+.com_h2 h2{float: left;overflow: hidden;text-indent: -999em;width: 310px;height: 36px;}
+.com_h2 h2 a{display: block;width: 310px;height: 36px;}
+.com_h2 span{float: right;margin: 10px 10px 0 0;}
+.com_h2 span a{padding:3px 7px;color:#333333;font:12px "microsoft yahei",'\9ed1\4f53','simsum';}
+.com_h2 span a:hover{background-color:#0b317e;color:#FFFFFF;text-decoration:none;}
+.com_h3{height:22px;font:18px "microsoft yahei",'\9ed1\4f53','simsum';border-bottom: 1px solid #000000; }
+.fashion_c .com_h3 span{font:18px "microsoft yahei",'arial','simsum';color:#2f5fc0;margin-left: 10px; }
+
+.c p{color: #888888;font:12px/2em arial,'simsum';}
+.c p a{color: #333333;margin-left:20px;}
+.c p a:hover{color:#970558;}
+.g_d_120{overflow:hidden;height:165px;margin:14px 20px 10px;}
+.g_d_120_l{float:left;display:block;width:120px;height:160px;margin-right:10px;padding:1px;}
+.g_d_120_r{overflow:hidden;width:190px;}
+.g_d_120_r h3{overflow:hidden;height:22px;line-height:22px;margin-bottom:10px;}
+.g_d_120_r h3 a{font:16px "microsoft yahei",'\9ed1\4f53','simsum';}
+.g_d_120_r li{overflow:hidden;height:27px;line-height:27px;background:url(../Images/icon.png) no-repeat -1px -37px;padding-left:10px;}
+.g_d_120_r li a{font-size:14px;}
+
+.topbd{border-top:1px solid #eeeeee;}
+.mb10{margin-bottom: 10px !important;}
+.mb5{margin-bottom: 5px !important;}
+.c{display:block;overflow:hidden;width:950px;padding:0 5px;margin:0 auto;background-color:#FFFFFF;}
+.c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8{overflow:hidden;margin:0 auto 10px auto;}
+.c1{padding-top:20px;}
+.c3{margin:30px auto;}
+.mt20{margin-top: 20px;}
+.VAS_960x100{margin:0 auto;width:960px;text-align: center;font-size:0;}
+.VAS_950x100{margin:20px auto;width:950px;text-align: center;font-size:0;}
+
+.com_arrow_list li{height: 30px;border-top:1px dotted #333333;line-height: 30px;background: url(../Images/icon.png) no-repeat 0 -68px;padding-left:10px;}
+.com_arrow_list li:first-child{border-top:none}
+
+.c1_l_1_l,.c1_l_1_r{display:none;top:200px;position:absolute;width:16px;height:31px;background:url(../Images/a.png) no-repeat 0 0;}
+.c1_l_1:hover .c1_l_1_l,.c1_l_1:hover .c1_l_1_r{display:block;}
+.c1_l_1_l{left:10px;}
+.c1_l_1_r{right:10px;background-position:-18px 0;}

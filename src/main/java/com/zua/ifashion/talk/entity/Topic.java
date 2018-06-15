@@ -16,10 +16,22 @@ public class Topic {
     private Integer lookNum;
 
     private String topicContent;
+
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date topicStart;
+
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date topicEnd;
+
+    private String topicTitle;
+
+    public String getTopicTitle() {
+        return topicTitle;
+    }
+
+    public void setTopicTitle(String topicTitle) {
+        this.topicTitle = topicTitle;
+    }
 
     public Integer getTopicId() {
         return topicId;
@@ -85,7 +97,18 @@ public class Topic {
         this.topicEnd = topicEnd;
     }
 
-    public Topic(Integer topicId, Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent, Date topicStart, Date topicEnd) {
+    public Topic(Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent, Date topicStart, Date topicEnd, String topicTitle) {
+        this.userId = userId;
+        this.topicImgurl = topicImgurl;
+        this.topicPeople = topicPeople;
+        this.lookNum = lookNum;
+        this.topicContent = topicContent;
+        this.topicStart = topicStart;
+        this.topicEnd = topicEnd;
+        this.topicTitle = topicTitle;
+    }
+
+    public Topic(Integer topicId, Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent, Date topicStart, Date topicEnd, String topicTitle) {
         this.topicId = topicId;
         this.userId = userId;
         this.topicImgurl = topicImgurl;
@@ -94,16 +117,7 @@ public class Topic {
         this.topicContent = topicContent;
         this.topicStart = topicStart;
         this.topicEnd = topicEnd;
-    }
-
-    public Topic(Integer userId, String topicImgurl, Integer topicPeople, Integer lookNum, String topicContent, Date topicStart, Date topicEnd) {
-        this.userId = userId;
-        this.topicImgurl = topicImgurl;
-        this.topicPeople = topicPeople;
-        this.lookNum = lookNum;
-        this.topicContent = topicContent;
-        this.topicStart = topicStart;
-        this.topicEnd = topicEnd;
+        this.topicTitle = topicTitle;
     }
 
     public Topic() {

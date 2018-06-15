@@ -1,0 +1,211 @@
+
+<!-- saved from url=(0042)http://www.idx.com.cn/home/UserDynamicInfo -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=8">
+    <title>IDX爱定客—全球首家在线个性化定制潮鞋品牌,网上定制鞋子的最佳网站！ IDX爱定客——全球首家在线个性化定制品牌，网上定制鞋服3C产品的最佳网站！</title>
+    <meta name="robots" content="all">
+    <meta name="Copyright" content="idx.com.cn">
+    <meta name="keywords" content="爱定客 ,IDX, 定制, 个性定制, 定制鞋 , 帆布鞋 , 潮鞋 ,涂鸦鞋, 时尚鞋款 , 滑板鞋 , 发货快 , 平价 , 退换方便 , 正品保证 , 情侣鞋 , 手机壳 , 卫衣 , 移动电源 , 牛仔裤 , 定制手机壳, 定制衬衫, 定制T恤,亲子鞋,亲子装">
+    <meta name="description" content="IDX爱定客定制商城致力于C2B电商领域，也是全球第一家个性化开店平台。拥有多项专利技术，提供按需生产零库存销售模式，营销渠道遍及全网，并拥有O2O线下体验店。&quot;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--[if ie 6]><script src="http://static.idx.com.cn/scripts/common/ie-png.js" type="text/javascript"></script><![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="./site.css">
+</head>
+<body marginwidth="0" marginheight="0">
+    <div class="banner" id="banner">
+            <div class="d1 clearfix" style="display: none; z-index: 2;">
+                <a class="d1-img" href="http://www.idx.com.cn/item/64997.htm" target="_blank">
+                    <img src="./6e83a09a-4ab7-47b3-a5ca-783efcc281ca.png@85w_85h_2e.png"></a>
+                <div class="d1-info">
+                    <p class="infos"><em>1426353930</em>&nbsp;刚刚上架了iPhone8Plus全包边硬<span style="float:none;">...</span></p>
+                </div>
+            </div>
+            <div class="d1 clearfix" style="z-index: 2; display: none;">
+                <a class="d1-img" href="http://www.idx.com.cn/item/64996.htm" target="_blank">
+                    <img src="./b2dd990f-8544-44e7-adfb-35fef2d5d84e.png@85w_85h_2e.png"></a>
+                <div class="d1-info">
+                        <p class="infos"><em>1426353930</em>&nbsp;刚刚上架了 iPhone8 全包边硬壳</p>
+
+                </div>
+            </div>
+            <div class="d1 clearfix" style="z-index: 2; display: none;">
+                <a class="d1-img" href="http://www.idx.com.cn/item/64995.htm" target="_blank">
+                    <img src="./d53d5d99-d66f-4da9-9721-1652cd618f46.png@85w_85h_2e.png"></a>
+                <div class="d1-info">
+                        <p class="infos"><em>18965186404</em>&nbsp;刚刚上架了  iPhone8 全包边硬壳</p>
+
+                </div>
+            </div>
+            <div class="d1 clearfix" style="z-index: 1; display: block;">
+                <a class="d1-img" href="http://www.idx.com.cn/item/37245.htm" target="_blank">
+                    <img src="./7aaf3e9f-0942-4f2b-bd53-ac2eaabfcee6.png@85w_85h_2e.png"></a>
+                <div class="d1-info">
+                        <p class="infos"><em>1796295493</em>&nbsp;刚刚上架了 魅</p>
+
+                </div>
+            </div>
+            <div class="d2" id="banner_id">
+                <ul>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                    <li class="nuw"></li>
+                </ul>
+            </div>
+
+    </div>
+
+
+<script type="text/javascript" src="./jquery-1.7.2.js"></script>
+<script type="text/javascript">
+
+    //获取首页用户操作信息
+    function getUserDynamicInfo() {
+        $.ajax({
+            type: "GET",
+            url: "http://www.idx.com.cn/home/GetUserDynamicInfo",
+            dataType: "json",
+            success: function (data) {
+
+                if (data == undefined || data == null || data == '')
+                    return;
+
+                var list = data;
+                var html = '';
+                for (var i = 0; i < list.length; i++) {
+                    if (i == 0)
+                        html += '<div class="d1 clearfix" style="display:block;z-index: 1;">'
+                    else
+                        html += '<div class="d1 clearfix" style="display:none; z-index: 2;">'
+                    html += '<a class="d1-img" href="http://www.idx.com.cn/item/' + list[i].CommodityId + '.htm" target="_blank">'
+                    html += '<img src="' + list[i].PictureUrl + '"></a>'
+                    html += '<div class="d1-info">'
+
+                    if (list[i].UserName != undefined && list[i].UserName != null && list[i].UserName != '' && list[i].UserName.indexOf('@') >= 0) {
+                        html += '<p class="infos"><em>' + list[i].UserName.substring(0, list[i].UserName.indexOf('@')) + '</em>&nbsp;'
+                    } else {
+                        html += '<p class="infos"><em>' + list[i].UserName + '</em>&nbsp;'
+                    }
+
+                    switch (list[i].SearchType) {
+                        case '1':
+                            html += '刚刚上架了 ' + list[i].WorkName + '</p>'
+                            break;
+                        case '2':
+                            html += '刚刚出售了 ' + list[i].WorkName + '</p>'
+                            break;
+                        case '3':
+                            html += '刚刚喜欢了 ' + list[i].WorkName + '</p>'
+                            break;
+                        case '4':
+                            html += '刚刚评价了 ' + list[i].WorkName + '</p>'
+                            break;
+                    }
+
+                    html += '</div>'
+                    html += '</div>';
+                }
+                html += '<div class="d2" id="banner_id">'
+                html += '<ul>'
+                html += '<li class="nuw"></li>'
+                html += '<li class=""></li>'
+                html += '<li class=""></li>'
+                html += '<li class=""></li>'
+                html += '</ul>'
+                html += '</div>'
+                $("#banner").html(html);
+
+                stringCut();
+            }
+        });
+    }
+    //10分钟更新一次数据
+    window.setTimeout(getUserDynamicInfo, 600000);
+
+</script>
+<script type="text/javascript">
+
+    $('.infos').each(function () {
+        var manner = $(this).html().replace(/\s*/gm, '');
+        if (manner.length > 45) {
+            var str = manner.substring(0, 45);
+            $(this).html(str).append('<span style="float:none;">...</span>');
+        }
+    })
+
+    //截断字符串
+    function stringCut() {
+        $('.infos').each(function () {
+            var manner = $(this).html().replace(/\s*/gm, '');
+            if (manner.length > 45) {
+                var str = manner.substring(0, 45);
+                $(this).html(str).append('<span style="float:none;">...</span>');
+            }
+        })
+    }
+
+    function Marquee33() {
+        bn_id2 = bn_id + 1;
+        if (bn_id2 > $("#banner .d1").length - 1) {
+            bn_id2 = 0;
+        }
+        $("#banner .d1").eq(bn_id).css("z-index", "2");
+        $("#banner .d1").eq(bn_id2).css("z-index", "1");
+        $("#banner .d1").eq(bn_id2).show();
+        $("#banner .d1").eq(bn_id).fadeOut("slow");
+        $("#banner_id li").removeClass("nuw");
+        $("#banner_id li").eq(bn_id2).addClass("nuw");
+        bn_id = bn_id2;
+    };
+    var bn_id ;
+    var bn_id2;
+    function banner() {
+        bn_id = 0;
+        bn_id2 = 1;
+        var speed33 = 5000;
+        var qhjg = 1;
+        var MyMar33;
+        $("#banner .d1").hide();
+        $("#banner .d1").eq(0).fadeIn("slow");
+        if ($("#banner .d1").length > 1) {
+            $("#banner_id li").eq(0).addClass("nuw");
+
+            MyMar33 = setInterval(Marquee33, speed33);
+
+            $("#banner_id li").click(function () {
+                var bn_id3 = $("#banner_id li").index(this);
+                if (bn_id3 != bn_id && qhjg == 1) {
+                    qhjg = 0;
+                    $("#banner .d1").eq(bn_id).css("z-index", "2");
+                    $("#banner .d1").eq(bn_id3).css("z-index", "1");
+                    $("#banner .d1").eq(bn_id3).show();
+                    $("#banner .d1").eq(bn_id).fadeOut("slow", function () { qhjg = 1; });
+                    $("#banner_id li").removeClass("nuw");
+                    $("#banner_id li").eq(bn_id3).addClass("nuw");
+                    bn_id = bn_id3;
+                }
+            });
+
+            $("#banner_id").hover(
+                function () {
+                    clearInterval(MyMar33);
+                },
+                function () {
+                    MyMar33 = setInterval(Marquee33, speed33);
+                }
+            )
+        }
+        else {
+            $("#banner_id").hide();
+        }
+    }
+    banner();
+
+</script>
+
+
+</body></html>

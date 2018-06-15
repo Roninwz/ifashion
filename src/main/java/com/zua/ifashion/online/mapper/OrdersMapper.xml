@@ -12,4 +12,68 @@
     <result column="endDate" jdbcType="TIMESTAMP" property="endDate" />
   </resultMap>
 
+  <!--public abstract int addOrder(Order order);-->
+  <!--public abstract int addOrderSelective(Order order);-->
+
+  <insert id="addOrder" parameterType="Orders">
+    insert into orders(ordersId,userId,designerId,goodsId,addressId,ordersState,ordersDate,endDate)
+      values(#{ordersId},#{userId},#{designerId},#{goodsId},#{addressId}，#{ordersState})
+  </insert>
+
+  <insert id="addOrderSelective" parameterType="Orders">
+    insert into orders
+    <trim prefix="(" suffixOverrides="," suffix=")">
+      <if test="ordersId!=null">
+        ordersId
+      </if>
+      <if test="userId!=null">
+        userId
+      </if>
+      <if test="designerId!=null">
+        designerId
+      </if>
+      <if test="goodsId!=null">
+        goodsId
+      </if>
+      <if test="addressId!=null">
+        addressId
+      </if>
+      <if test="ordersState!=null">
+        ordersState
+      </if>
+      <if test="ordersDate!=null">
+        ordersDate
+      </if>
+      <if test="endDate!=null">
+        endDate
+      </if>
+    </trim>
+    <trim prefix="(" suffixOverrides="," suffix=")">
+      <if test="ordersId!=null">
+        #{ordersId}
+      </if>
+      <if test="userId!=null">
+        #{userId}
+      </if>
+      <if test="designerId!=null">
+        #{designerId}
+      </if>
+      <if test="goodsId!=null">
+        #{goodsId}
+      </if>
+      <if test="addressId!=null">
+        #{addressId}
+      </if>
+      <if test="ordersState!=null">
+        #{ordersState}
+      </if>
+      <if test="ordersDate!=null">
+        #{ordersDate}
+      </if>
+      <if test="endDate!=null">
+        #{endDate}
+      </if>
+    </trim>
+
+  </insert>
 </mapper>

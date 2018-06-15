@@ -1,11 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zua.ifashion.online.mapper.AddressMapper">
-  <resultMap id="BaseResultMap" type="com.zua.ifashion.online.entity.Address">
-    <id column="addressId" jdbcType="INTEGER" property="addressId" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-    <result column="addressContent" jdbcType="VARCHAR" property="addressContent" />
-    <result column="addressState" jdbcType="INTEGER" property="addressState" />
-  </resultMap>
+
+
+
+  <!--int addAddress(Address address); 添加地址-->
+
+  <insert id="addAddress" parameterType="Address">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="addressId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+     insert into address(addressId,userId,addressContent,addressState,receiverName,addressTel) values(#{addressId},#{userId},#{addressContent},#{addressState},#{receiverName},#{addressTel})
+  </insert>
+
+  <!--//添加管理员不为空字段-->
+  <!--int addAdminSelective(Address admin);-->
+  <insert id="addAddressSelective" parameterType="Address">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="addressId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="addressId!=null">
+          addressId
+        </if>
+      <if test="userId!=null">
+        userId
+      </if>
+      <if test="addressContent!=null">
+        addressContent
+      </if>
+      <if test="addressState!=null">
+        addressState
+      </if>
+      <if test="receiverName!=null">
+        receiverName
+      </if>
+      <if test="addressTel!=null">
+        addressTel
+      </if>
+    </trim>
+
+    <trim prefix="values(" suffixOverrides="," suffix=")">
+      <if test="addressId!=null">
+        #{addressId jdbcType=int}
+      </if>
+      <if test="userId!=null">
+        #{userId jdbcType=int}
+      </if>
+      <if test="addressContent!=null">
+        #{addressContent jdbcType=varchar}
+      </if>
+      <if test="addressState!=null">
+        #{addressState jdbcType=int}
+      </if>
+      <if test="receiverName!=null">
+        #{receiverName}
+      </if>
+      <if test="addressTel!=null">
+        #{addressTel}
+      </if>
+
+    </trim>
+  </insert>
+
+  <!--//删除地址-->
+  <!--int deleteAddress(Integer addressId);-->
+  <delete id="deleteAddress" parameterType="int">
+    delete from address where addressId=#{param}
+  </delete>
+
+  <!--//更新收货地址-->
+  <!--int updateAddress(Address address);-->
+  <update id="updateAddress" parameterType="Address">
+    update address set addressId=#{addressId},userId=#{userId},
+      addressContent=#{addressContent},addressState=#{addressState},receiverName=#{receiverName},addressTel=#{addressTel}
+  </update>
+
+  <!--//更新收货不为空字段-->
+  <!--int updateAddressSelective(Address address);-->
+  <update id="updateAddressSelective" parameterType="Address">
+    update address
+    set
+    <if test="addressId!=null">
+      addressId=#{addressId}
+    </if>
+    <if test="userId!=null">
+      userId=#{userId}
+    </if>
+    <if test="addressContent!=null">
+      addressContent=#{addressContent}
+    </if>
+    <if test="addressState!=null">
+      addressState=#{addressState}
+    </if>
+    <if test="receiverName!=null">
+      receiverName=#{receiverName}
+    </if>
+    <if test="addressTel!=null">
+      addressTel=#{addressTel}
+    </if>
+  </update>
+
+  <!--//通过收货地址id查询收货地址-->
+  <!--Address selectAddressByAddressId(@Param("addressId") Integer addressId);-->
+  <select id="selectAddressByAddressId" parameterType="int" resultType="Address">
+    select * from address where addressId=#{addressId}
+  </select>
+
+  <!--//通过用户Id查询用户的所有收货地址-->
+  <!--List<Address> selectAddressByUserId(@Param("UserId") Integer userId);-->
+  <select id="selectAddressByUserId" parameterType="int" resultType="Address">
+    SELECT  * from address where userId=#{userId}
+  </select>
+
+  <!--//查询所有收货地址-->
+  <!--List<Address> getAllAddress();-->
+  <select id="getAllAddress" resultType="Address">
+    select * from address
+  </select>
+
+  <!--//    通过用户id 和地址id 修改地址-->
+  <!--public abstract int updateAddressById(Integer addressId,Integer addressMark);-->
+  <update id="updateAddressById" parameterType="int">
+    update address set addressState=#{addressMark} where addressId=#{addressId}
+  </update>
 
 </mapper>

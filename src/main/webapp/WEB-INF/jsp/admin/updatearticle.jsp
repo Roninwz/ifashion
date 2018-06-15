@@ -1,32 +1,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%--fmt  国际化格式--%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
+
+    <meta charset="utf-8">
     <title>Title</title>
 
-    <!-- 标签 -->
-    <link rel="stylesheet" type="text/css" href="admin/css/tag.css">
+
     <!-- 图片上传bootstrap fileinput插件 -->
-    <link href="admin/plugin/fileinput/css/bootstrap.min.css" rel="stylesheet">
-    <link href="admin/plugin/fileinput/css/bootstrap-fileinput.css" rel="stylesheet">
-
-    <script type="text/javascript" src="admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-    <script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-    <script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
-    <script type="text/javascript" src="admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-    <script type="text/javascript" src="admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
-    <script type="text/javascript" src="admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-    <script type="text/javascript" src="admin/lib/ueditor/1.4.3/ueditor.all.min.js">
+    <link href="${pageContext.request.contextPath }/static/admin/plugin/fileinput/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/static/admin/plugin/fileinput/css/bootstrap-fileinput.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath }/static/user/common/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/admin/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/ueditor/ueditor.all.js">
     </script>
-    <script type="text/javascript" src="admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath }/static/ueditor/lang/zh-cn/zh-cn.js"></script>
     <!-- 标签选择js -->
-    <script src="admin/js/tag.js"></script>
-
+    <script src="${pageContext.request.contextPath }/static/admin/js/tag.js"></script>
     <!-- 图片上传js -->
     <!-- <script src="js/jquery.min.js"></script> -->
-    <script src="admin/plugin/fileinput/js/bootstrap-fileinput.js"></script>
+    <script src="${pageContext.request.contextPath }/static/admin/plugin/fileinput/js/bootstrap-fileinput.js"></script>
     <!-- bootstrap -->
-    <script src="admin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath }/static/admin/bootstrap/js/bootstrap.min.js"></script>
     <!--/_footer /作为公共模版分离出去-->
+
+
+    <!-- 日期插件 -->
+    <script src="${pageContext.request.contextPath }/static/user/person/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 </head>
 <body>
 <%@ include file="left.jsp"%>
@@ -40,28 +48,27 @@
     <div class="Hui-article">
         <article class="cl pd-20">
 
-            <form class="form form-horizontal" id="form-article-add" enctype='multipart/form-data'>
+            <form class="form form-horizontal" id="form-article-add" enctype='multipart/form-data' action="admin/updateHandleArticle.action" method="post">
+                <input type="text" name="articleId" value="${article.articleId}" hidden>
+
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
                     <div class="formControls col-xs-8 col-sm-9">
-                        <input type="text" class="input-text" value="" placeholder="" id="" name="">
+                        <input type="text" class="input-text" value="${article.articleTitle}" placeholder="" id="" name="articleTitle">
                     </div>
                 </div>
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
                     <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-                                    <select name="" class="select">
-                                        <option value="0">全部栏目</option>
-
-                                        <option value="11">├行业动态</option>
-                                        <option value="12">├行业资讯</option>
-                                        <option value="13">├行业新闻</option>
+                                   <select name="typea" class="select">
+                                        <option value="clothes">穿衣搭配</option>
+                                        <option value="community">社区</option>
+                                        <option value="information">资讯</option>
                                     </select>
                                     </span> </div>
                 </div>
 
                 <!-- 图片上传 -->
-
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片上传</label>
                     <div class="page-header formControls col-xs-4 col-sm-9">
@@ -72,14 +79,14 @@
                             <div class="fileinput fileinput-new" data-provides="fileinput" id="exampleInputUpload">
                                 <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
                                     <!-- 这边有图片需要修改 -->
-                                    <img id='picImg' style="width: 100%;height: auto;max-height: 140px;" src="admin/plugin/fileinput/images/noimage.png" alt="" />
+                                    <img id='picImg' style="width: 100%;height: auto;max-height: 140px;" src="static/admin/plugin/fileinput/images/noimage.png" alt="" />
                                 </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                                 <div>
                                         <span class="btn btn-primary btn-file">
                                                     <span class="fileinput-new">选择文件</span>
                                         <span class="fileinput-exists">换一张</span>
-                                        <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png" />
+                                        <input type="file" name="topImgurl" id="picID" accept="image/gif,image/jpeg,image/x-png" />
                                         </span>
                                     <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
                                 </div>
@@ -91,30 +98,13 @@
                 </div>
 
 
-                <div class="main row cl">
 
 
-
-                    <label class="form-label col-xs-4 col-sm-2">标签选择：</label>
-                    <div class="select-list formControls con3 col-xs-8 col-sm-9">
-
-                        <span><input type="checkbox" name="check1" value="" id="check1" hidden/><em class="con3-1">三文字1</em></span>
-                        <span><input type="checkbox" name="check1"  value="" id="check1" hidden/><em class="con3-2">三文字2</em></span>
-                        <span><input type="checkbox" name="check1"  value="" id="check1" hidden/><em class="con3-3">三文字3</em></span>
-                        <span><input type="checkbox" name="check1" value="" id="check1" hidden/><em class="con3-4">三文字4</em></span>
-                        <span><input type="checkbox" name="check1" value=""  id="check1" hidden/><em class="con3-5">三文字5</em></span>
-                        <span><input type="checkbox" name="check1"  value="" id="check1" hidden/><em class="con3-6">三文字6</em></span>
-                        <span><input type="checkbox" name="check1" value=""  id="check1" hidden/><em class="con3-7">三文字7</em></span>
-                        <span><input type="checkbox" name="check1" value="" id="check1" hidden/><em class="con3-8">三文字8</em></span>
-                    </div>
-
-
-                </div>
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
                     <div class="col-xs-8 col-sm-9">
                         <script id="editor" name="content" type="text/plain">
-                            这里写你的初始化内容
+                          ${article.content}
                         </script>
                         </div>
                         </div>

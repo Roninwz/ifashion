@@ -72,6 +72,11 @@
     select count(*) from tag
   </select>
 
+  <!-- 查询所有数量    -->
+  <select id="selectTagByTagId" parameterType="int"  resultType="com.zua.ifashion.person.entity.Tag">
+    select * from tag WHERE tagId = #{tagId}
+  </select>
+
 
 
 

@@ -1,0 +1,356 @@
+.pop-up-wrap {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999
+}
+
+.pop-up-wrap .pop-up-close-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0
+}
+
+.pop-up-wrap .pop-up-panel-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    padding: 20px;
+    min-width: 100px;
+    min-height: 20px
+}
+
+.pop-up-wrap .btn-close {
+    width: 42px;
+    height: 42px;
+    margin-top: -22px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_adv/pop_up_panel/btn-close_3a54216.png?__sprite) no-repeat;
+    position: absolute;
+    top: 0;
+    right: 10px
+}
+
+.pop-up-wrap .js-content-wrap {
+    position: relative
+}
+
+.pop-up-wrap .download-btn-container {
+    width: 340px;
+    height: 32px;
+    position: absolute;
+    bottom: 50px;
+    right: 30px
+}
+
+.pop-up-wrap .download-btn-container .download-btn-app {
+    width: 158px;
+    height: 32px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/pop_QRCode/image/btn_iphone_download_09ad27d.png) no-repeat;
+    float: left
+}
+
+.pop-up-wrap .download-btn-container .download-btn-androdid {
+    width: 158px;
+    height: 32px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/pop_QRCode/image/btn_android_download_96aa952.png) no-repeat;
+    float: right
+}
+
+.pop-up-wrap .download-qr-code-wrap {
+    position: absolute;
+    top: 170px;
+    right: 120px
+}
+
+.pop-up-wrap .download-qr-code-wrap .download-qr-code {
+    width: 160px;
+    height: 160px
+}
+
+.pop-up-wrap .download-qr-code-wrap .dl-qr-code-description {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 5px;
+    color: #bbb
+}
+
+.pop-up-wrap .download-qr-code-wrap .ichuanyi-logo {
+    position: absolute;
+    top: 65px;
+    left: 65px
+}
+
+.all-menu-container {
+    width: 704px;
+    height: 464px;
+    display: inline-block
+}
+
+.tomorrow-suit-recommend-container {
+    display: inline-block;
+    height: 464px;
+    margin-left: 5px
+}
+
+.waterfall-container {
+    margin-top: 55px
+}
+
+.breadcrumb-container {
+    font-size: 14px;
+    margin: 15px auto;
+    width: 1170px;
+    color: #333
+}
+
+.breadcrumb-container a {
+    color: #333
+}
+
+.breadcrumb-container .breadcrumb-link:hover {
+    color: #d94dfc
+}
+
+.in-suit-item {
+    width: 234px;
+    height: 390px;
+    float: left;
+    margin-top: 5px;
+    position: relative
+}
+
+.in-suit-item .in-suit-pic-warp {
+    width: 220px;
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.in-suit-item img.item-pic {
+    display: block;
+    margin: 2px auto 0
+}
+
+.in-suit-item img.avatar {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    behavior: url(//ydcdn2.ichuanyi.cn/media/pc/css/common_lib_3rd/plugin/pie/1.0.0/PIE.htc)
+}
+
+.in-suit-item .goods-info {
+    margin: 20px 5px 0
+}
+
+.in-suit-item .goods-info .shop-keeper-name {
+    width: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 15px;
+    font-size: 12px;
+    cursor: auto
+}
+
+.in-suit-item .goods-info .like {
+    width: 60px;
+    overflow: hidden;
+    margin-right: 15px;
+    height: 12px;
+    line-height: 12px
+}
+
+.in-suit-item .goods-info .like .icon-like {
+    width: 14px;
+    height: 12px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/module_simple/cell/suit_cell/image/icon-like_69f7482.png) no-repeat;
+    margin-right: 3px;
+    cursor: auto
+}
+
+.in-suit-item .goods-info .like .like-number {
+    cursor: auto;
+    font-size: 12px
+}
+
+.content-container .in-suit-item:hover {
+    box-shadow: 0 0 10px #ccc
+}
+
+.js-waterfall-cell-wrap {
+    z-index: 0
+}
+
+.js-waterfall-cell-wrap:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 #ccc;
+    z-index: 100
+}
+
+.menu-container {
+    height: 230px;
+    width: 350px;
+    background-color: #f4f4f4;
+    margin: 0 2px 2px 0;
+    float: left
+}
+
+.menu-container .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d94dfc;
+    margin: 15px 0 15px 20px
+}
+
+.menu-container .container {
+    width: 320px;
+    margin: 0 auto
+}
+
+.menu-container .container .pic-item {
+    width: 33%;
+    float: left;
+    text-align: center
+}
+
+.menu-container .container .pic-item .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px
+}
+
+.menu-container .container .pic-item .avatar:hover {
+    box-shadow: 0 0 10px #ccc
+}
+
+.menu-container .container .pic-item .name {
+    font-size: 14px;
+    margin: 5px 0 15px;
+    color: #d94dfc
+}
+
+.menu-container .container .list-item {
+    width: 33%;
+    float: left;
+    margin-bottom: 6px;
+    text-align: center
+}
+
+.menu-container .container .list-item a {
+    font-size: 14px;
+    color: #666
+}
+
+.menu-container .container .list-item a:hover {
+    color: #d94dfc
+}
+
+.recommend-pic-container {
+    height: 462px;
+    width: 280px;
+    position: relative
+}
+
+.recommend-pic-container img {
+    height: 462px;
+    width: 280px
+}
+
+.recommend-pic-container img.main-pic {
+    cursor: pointer
+}
+
+.recommend-pic-container .icon-recommend {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/page/suit_recommend/tomorrow_recommend/image/icon_recommend_49bfc4f.png);
+    width: 40px;
+    height: 62px;
+    position: absolute;
+    left: 8px;
+    top: -3px
+}
+
+.recommend-pic-container .recommend-text-container {
+    color: #fff;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/page/suit_recommend/tomorrow_recommend/image/pink_bg_5610c9c.png);
+    width: 280px;
+    height: 155px;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.recommend-pic-container .recommend-text-container .info,
+.recommend-pic-container .recommend-text-container .text {
+    width: 256px;
+    overflow: hidden;
+    margin: 10px auto 0
+}
+
+.recommend-pic-container .recommend-text-container .info {
+    height: 23px;
+    font-size: 20px;
+    margin: 40px auto 0
+}
+
+.recommend-pic-container .recommend-text-container .text {
+    font-size: 18px;
+    line-height: 20px;
+    height: 40px;
+    word-break: break-all
+}
+
+.recommend-pic-container .recommend-text-container .btn {
+    width: 125px;
+    height: 22px;
+    margin: 8px auto 0;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    border: 2px solid #fff;
+    cursor: pointer
+}
+
+.recommend-menu-list {
+    width: 200px;
+    height: 464px;
+    margin-left: 5px;
+    background-color: #fefaff
+}
+
+.recommend-menu-list .recommend-menu-list-wrap {
+    padding: 15px 0 0 20px
+}
+
+.recommend-menu-list .recommend-menu-list-wrap .menu-item {
+    width: 160px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/page/suit_recommend/tomorrow_recommend/image/icon_circle_a5b2178.png) no-repeat 4px 4px;
+    cursor: pointer
+}
+
+.recommend-menu-list .recommend-menu-list-wrap .menu-item:hover {
+    color: #d94dfc
+}
+
+.recommend-menu-list .recommend-menu-list-wrap .menu-item.active {
+    background: url(//ydcdn2.ichuanyi.cn/media/pc/image/page/suit_recommend/tomorrow_recommend/image/icon_triangle_b18b2a3.png) no-repeat 0 2px;
+    color: #d94dfc
+}

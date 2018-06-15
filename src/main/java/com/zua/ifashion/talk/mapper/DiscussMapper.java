@@ -23,10 +23,19 @@ public interface DiscussMapper {
     int updateDiscussSelective(Discuss discuss);
 
     //通过id查询讨论
-    int selectDiscussByDiscussId(Integer discussId);
+    Discuss selectDiscussByDiscussId(Integer discussId);
 
     //通过用户id来查询讨论
     List<Discuss> selectDiscussByUserId(Integer userId);
+
+    //查询某个用户的讨论数量
+    int selectDiscussByUserIdCount(Integer userId);
+
+    //查询某个用户今日讨论数量
+    int selectDiscussByUserIdCountDay(Integer userId);
+
+    //查询讨论的用户ID
+    List<Integer> selectUserIdInDiscuss();
 
     //通过话题id来查询讨论
     List<Discuss> selectDiscussByTopicId(Integer topicId);

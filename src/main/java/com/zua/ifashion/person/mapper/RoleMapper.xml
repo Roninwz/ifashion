@@ -40,6 +40,11 @@
     select count(*) from role
   </select>
 
-
+  <!-- 查询所有数量    -->
+  <select id="selectRoleNameByAdminId"  parameterType="int" resultType="com.zua.ifashion.person.entity.Role">
+    select * from role WHERE roleId in(
+SELECT roleId from admin_role where adminId  = #{adminId}
+)
+  </select>
 
 </mapper>

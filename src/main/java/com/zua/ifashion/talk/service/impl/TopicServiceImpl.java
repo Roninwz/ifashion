@@ -5,13 +5,14 @@ import com.zua.ifashion.talk.mapper.DiscussMapper;
 import com.zua.ifashion.talk.mapper.DiscussReplyMapper;
 import com.zua.ifashion.talk.mapper.TopicMapper;
 import com.zua.ifashion.talk.service.TopicService;
+import com.zua.ifashion.talk.vo.TopicUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-@Service("topicService")
+@Service
 public class TopicServiceImpl implements TopicService{
 
     @Autowired
@@ -49,7 +50,7 @@ public class TopicServiceImpl implements TopicService{
     }
 
     @Override
-    public int selectTopicByTopicId(Integer topicId) {
+    public Topic selectTopicByTopicId(Integer topicId) {
         return topicMapper.selectTopicByTopicId(topicId);
     }
 
@@ -74,8 +75,18 @@ public class TopicServiceImpl implements TopicService{
     }
 
     @Override
+    public List<Topic> selectTopicByTopicPeopleOrder() {
+        return topicMapper.selectTopicByTopicPeopleOrder();
+    }
+
+    @Override
     public int selectLookNumByTopicId(Integer topicId) {
         return selectLookNumByTopicId(topicId);
+    }
+
+    @Override
+    public List<TopicUser> selectTopicByLookNumOrder() {
+        return topicMapper.selectTopicByLookNumOrder();
     }
 
     @Override
