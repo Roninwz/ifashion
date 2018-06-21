@@ -1,5 +1,7 @@
 package com.zua.ifashion.article.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Article {
@@ -17,6 +19,7 @@ public class Article {
 
     private String tag;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date articleDate;
 
     private Integer adminId;

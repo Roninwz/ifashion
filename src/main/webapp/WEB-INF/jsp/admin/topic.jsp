@@ -7,7 +7,7 @@
     <title>Title</title>
 
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/admin/bootstrap/css/bootstrap.min.css">
+    <%--<link rel="stylesheet" href="${pageContext.request.contextPath}/static/admin/bootstrap/css/bootstrap.min.css">--%>
 
 </head>
 <body>
@@ -32,10 +32,10 @@
             </div>
             <div class="cl pd-5 bg-1 bk-gray mt-20">
                     <span class="l">
-                            <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-                            <a class="btn btn-primary radius" data-title="添加资讯" href="admin/addtopic.action"><i class="Hui-iconfont">&#xe600;</i> 添加话题</a>
+                            <a href="javascript:;" onclick="batchDeletes()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                            <a class="btn btn-primary radius" data-title="添加话题" href="admin/addtopic.action"><i class="Hui-iconfont">&#xe600;</i> 添加话题</a>
                             </span>
-                <span class="r">共有数据：<strong>54</strong> 条</span>
+                <span class="r">共有数据：<strong>${n}</strong> 条</span>
             </div>
             <div class="mt-20">
                 <table class="table table-border table-bordered table-bg table-hover table-sort">
@@ -44,7 +44,7 @@
                         <th width="25"><input type="checkbox" name="" value=""></th>
                         <th width="80">ID</th>
                         <th width="80">标题</th>
-                        <th width="80">内容</th>
+                        <th width="0">内容</th>
                         <th width="80">来源</th>
                         <th width="120">发布时间</th>
                         <th width="75">浏览次数</th>
@@ -53,9 +53,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${pageInfo.list}" var="topics">
+                    <c:forEach items="${topics}" var="topics">
                     <tr class="text-c">
-                        <td><input type="checkbox" value="" name=""></td>
+                        <td><input type="checkbox" value="" id="subcheck"
+                                   name="subcheck"></td>
                         <td>${topics.topicId}</td>
                         <td><a style="cursor:pointer" href="articledetail.html">${topics.topicTitle}</a></td>
                         <td>${topics.topicContent}</td>
@@ -77,55 +78,55 @@
                 </table>
             </div>
 
-            <!--显示分页信息-->
-            <div class="row">
-                <!--文字信息-->
-                <div class="col-md-6">
-                    当前第 ${pageInfo.pageNum} 页.总共 ${pageInfo.pages} 页.一共 ${pageInfo.total} 条记录
-                </div>
+            <%--<!--显示分页信息-->--%>
+            <%--<div class="row">--%>
+                <%--<!--文字信息-->--%>
+                <%--<div class="col-md-6">--%>
+                    <%--当前第 ${pageInfo.pageNum} 页.总共 ${pageInfo.pages} 页.一共 ${pageInfo.total} 条记录--%>
+                <%--</div>--%>
 
-                <!--点击分页-->
-                <div class="col-md-6">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
+                <%--<!--点击分页-->--%>
+                <%--<div class="col-md-6">--%>
+                    <%--<nav aria-label="Page navigation">--%>
+                        <%--<ul class="pagination">--%>
 
-                            <li><a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=1">首页</a></li>
+                            <%--<li><a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=1">首页</a></li>--%>
 
-                            <!--上一页-->
-                            <li>
-                                <c:if test="${pageInfo.hasPreviousPage}">
-                                    <a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${pageInfo.pageNum-1}" aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                    </a>
-                                </c:if>
-                            </li>
+                            <%--<!--上一页-->--%>
+                            <%--<li>--%>
+                                <%--<c:if test="${pageInfo.hasPreviousPage}">--%>
+                                    <%--<a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${pageInfo.pageNum-1}" aria-label="Previous">--%>
+                                        <%--<span aria-hidden="true">«</span>--%>
+                                    <%--</a>--%>
+                                <%--</c:if>--%>
+                            <%--</li>--%>
 
-                            <!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->
-                            <c:forEach items="${pageInfo.navigatepageNums}" var="page_num">
-                                <c:if test="${page_num == pageInfo.pageNum}">
-                                    <li class="active"><a href="#">${page_num}</a></li>
-                                </c:if>
-                                <c:if test="${page_num != pageInfo.pageNum}">
-                                    <li><a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${page_num}">${page_num}</a></li>
-                                </c:if>
-                            </c:forEach>
+                            <%--<!--循环遍历连续显示的页面，若是当前页就高亮显示，并且没有链接-->--%>
+                            <%--<c:forEach items="${pageInfo.navigatepageNums}" var="page_num">--%>
+                                <%--<c:if test="${page_num == pageInfo.pageNum}">--%>
+                                    <%--<li class="active"><a href="#">${page_num}</a></li>--%>
+                                <%--</c:if>--%>
+                                <%--<c:if test="${page_num != pageInfo.pageNum}">--%>
+                                    <%--<li><a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${page_num}">${page_num}</a></li>--%>
+                                <%--</c:if>--%>
+                            <%--</c:forEach>--%>
 
-                            <!--下一页-->
-                            <li>
-                                <c:if test="${pageInfo.hasNextPage}">
-                                    <a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${pageInfo.pageNum+1}"
-                                       aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                    </a>
-                                </c:if>
-                            </li>
+                            <%--<!--下一页-->--%>
+                            <%--<li>--%>
+                                <%--<c:if test="${pageInfo.hasNextPage}">--%>
+                                    <%--<a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${pageInfo.pageNum+1}"--%>
+                                       <%--aria-label="Next">--%>
+                                        <%--<span aria-hidden="true">»</span>--%>
+                                    <%--</a>--%>
+                                <%--</c:if>--%>
+                            <%--</li>--%>
 
-                            <li><a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${pageInfo.pages}">尾页</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                            <%--<li><a href="${pageContext.request.contextPath}/admin/topicmanage.action?curPage=${pageInfo.pages}">尾页</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</nav>--%>
+                <%--</div>--%>
 
-            </div>
+            <%--</div>--%>
 
 
     </div>
@@ -137,7 +138,19 @@
 
 
 <script>
-
+    $('.table-sort').dataTable({
+        "aaSorting": [
+            [1, "desc"]
+        ], //默认第几个排序
+        "bStateSave": true, //状态保存
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {
+                "orderable": false,
+                "aTargets": [0, 7]
+            } // 不参与排序的列
+        ]
+    });
     /*删除*/
     function article_del(obj, id) {
         // alert('g');
@@ -167,6 +180,38 @@
                 },
             });
         });
+    }
+
+
+    //批量删除
+
+    function batchDeletes(){
+        //判断至少写了一项
+        var checkedNum = $("input[name='subcheck']:checked").length;
+        if(checkedNum==0){
+            alert("请至少选择一项!");
+            return false;
+        }
+        if(confirm("确定删除所选话题?")){
+            var checkedList = new Array();
+            $("input[name='subcheck']:checked").each(function(){
+                checkedList.push($(this).val());
+            });
+            $.ajax({
+                type:"POST",
+                url:"${pageContext.request.contextPath}/admin/batchdeletetopic.action",
+                data:{"delitems":checkedList.toString()},
+                datatype:"html",
+                success:function(data){
+                    alert("删除成功");
+                    //$("[name='checkbox2']:checkbox").attr("checked",false);
+                    location.reload();//页面刷新
+                },
+                error:function(data){
+                    alert("删除失败");
+                }
+            });
+        }
     }
 </script>
 </body>

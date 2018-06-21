@@ -269,8 +269,19 @@
       SELECT u.* FROM user u,article a WHERE a.articleId = #{articleId} AND u.userId = a.userId
   </select>
 
+    <!--根据作者id查询他最新发表的4篇文章-->
   <select id="selectLatestArticleByUserId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
      SELECT a.* FROM article a,user u WHERE u.userId = #{userId} AND u.userId=a.userId ORDER BY articleDate DESC limit 4
+  </select>
+
+  <!--根据当前文章id查询上一篇文章-->
+  <select id="selectPreArticle" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+     SELECT * FROM article WHERE articleId &lt; #{articleId} AND articletypeId = (SELECT articletypeId FROM article WHERE articleId = #{articleId}) ORDER BY articleId DESC limit 1
+  </select>
+
+  <!--根据当前文章id查询下一篇文章-->
+  <select id="selectNextArticle" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+     SELECT * FROM article WHERE articleId &gt; #{articleId} AND articletypeId = (SELECT articletypeId FROM article WHERE articleId = #{articleId}) ORDER BY articleId ASC limit 1
   </select>
 
 </mapper>

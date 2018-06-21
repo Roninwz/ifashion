@@ -76,8 +76,8 @@
 
                 <div class="am-tabs am-tabs-d2" data-am-tabs>
                     <ul class="am-avg-sm-3 am-tabs-nav am-nav am-nav-tabs">
-                        <li class="am-active"><a href="#tab1">文章收藏</a></li>
-                        <li><a href="#tab2">话题收藏</a></li>
+                        <li class="am-active"><a href="#tab1">通知消息</a></li>
+                        <li><a href="#tab2">系统消息</a></li>
                         <%--<li><a href="#tab3">交易信息</a></li>--%>
 
                     </ul>
@@ -95,17 +95,8 @@
                                     <h6 class="s-msg-bar"><span class="s-name">每日新鲜事</span></h6>
                                     <div class="s-msg-content i-msg-downup-wrap">
                                         <div class="i-msg-downup-con">
-                                            <a class="i-markRead" target="_blank" href="blog.html">
-                                                <img src="../images/TB102.jpg">
-                                                <p class="s-main-content">
-                                                    最特色的湖北年货都在这儿 ~快来囤年货啦！
-                                                </p>
-                                                <p class="s-row s-main-content">
-                                                    <a href="blog.html">
-                                                        阅读全文 <i class="am-icon-angle-right"></i>
-                                                    </a>
-                                                </p>
-                                            </a>
+                                            请输入：<textarea rows="5" cols="10" id="inputMsg" name="inputMsg"></textarea>
+                                            <button onclick="doSend();">发送</button>
                                         </div>
                                     </div>
                                     <a class="i-btn-forkout" href="#"><i class="am-icon-close am-icon-fw"></i></a>
@@ -196,7 +187,57 @@
     <%--</aside>--%>
 
 </div>
+<%--<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>--%>
+<script type="text/javascript" src="http://cdn.bootcss.com/sockjs-client/1.1.1/sockjs.js"></script>
+<script type="text/javascript">
+    // 初始化一个 WebSocket 对象
+    var websocket = null;
+    if ('WebSocket' in window) {
+        alert('1');
+        websocket = new WebSocket("ws://localhost:8088/ifashion/websocket/socketServer.action");
+        alert('11');
+    }
+    else if ('MozWebSocket' in window) {  alert('2');
 
+        websocket = new MozWebSocket("ws://localhost:8088/ifashion/websocket/socketServer.action");
+    }
+    else {
+        alert('3');
+        websocket = new SockJS("http://localhost:8088/ifashion/websocket/socketServer.action");
+    }
+    websocket.onopen = onOpen;
+    websocket.onmessage = onMessage;
+    websocket.onerror = onError;
+    websocket.onclose = onClose;
+    // 建立 web socket 连接成功触发事件
+    function onOpen(openEvt) {
+        //alert(openEvt.Data);
+    }
+    // 接收服务端数据时触发事件
+    function onMessage(evt) {
+        alert('22');
+        alert(evt.data);
+    }
+    function onError() {}
+    // 断开 web socket 连接成功触发事件
+    function onClose() {}
+
+    function doSend() {
+        // 使用 send() 方法发送数据
+        if (websocket.readyState == websocket.OPEN) {
+            var msg = document.getElementById("inputMsg").value;
+            websocket.send(msg);//调用后台handleTextMessage方法
+            alert("发送成功!");
+        } else {
+            alert("连接失败!");
+        }
+    }
+    window.close=function()
+    {
+        websocket.onclose();
+    }
+
+</script>
 
 
 

@@ -57,4 +57,10 @@ public interface ArticleService {
     //根据userid查询这个人最近写的4篇文章
     List<Article> selectLatestArticleByUserId(@Param("userId") Integer userId);
 
+    //根据当前文章id查询上一篇文章
+    Article selectPreArticle(Integer articleId);
+
+    //根据当前文章id查询下一篇文章
+    Article selectNextArticle(Integer articleId);
+
 }

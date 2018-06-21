@@ -10,6 +10,9 @@
 
   <!-- 添加   -->
   <insert id="addRole" parameterType="com.zua.ifashion.person.entity.Role">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="roleId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into role(roleId,roleName) values(#{roleId},#{roleName})
   </insert>
 
@@ -20,7 +23,7 @@
 
   <!-- 修改   -->
   <update id="updateRole" parameterType="com.zua.ifashion.person.entity.Role">
-    update  role set roleName = #{roleName}
+    update  role set roleName = #{roleName} WHERE  roleId = #{roleId}
   </update>
 
 

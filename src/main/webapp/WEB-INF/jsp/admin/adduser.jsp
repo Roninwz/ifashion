@@ -22,7 +22,7 @@
 
 
             <form class="form form-horizontal" id="form-article-add" enctype='multipart/form-data' action="admin/addhandleuser.action" method="post">
-
+                <input type="hidden" name="token" value="${token}">
                 <div class="row cl">
                     <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户名：</label>
                     <div class="formControls col-xs-8 col-sm-9">

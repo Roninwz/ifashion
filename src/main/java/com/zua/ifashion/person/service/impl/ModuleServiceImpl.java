@@ -23,7 +23,7 @@ public class ModuleServiceImpl implements ModuleService {
 
     @Override
     public int updateModuleSelective(Module module) {
-        return updateModuleSelective(module);
+        return moduleMapper.updateModuleSelective(module);
     }
 
     @Override

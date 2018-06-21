@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.person.mapper.LogFormMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.LogForm">
+    <id column="logId" jdbcType="INTEGER" property="logId" />
+    <result column="logOperation" jdbcType="INTEGER" property="logOperation" />
+    <result column="logName" jdbcType="INTEGER" property="logName" />
+    <result column="logIdentity" jdbcType="VARCHAR" property="logIdentity" />
+    <result column="logCreatedate" jdbcType="TIMESTAMP" property="logCreatedate" />
+  </resultMap>
+
+  <insert id="addLogFormSelective" parameterType="com.zua.ifashion.person.entity.LogForm">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="logId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into logform
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        logId,
+      </if>
+      <if test="logOperation != null">
+        logOperation,
+      </if>
+      <if test="logName != null">
+        logName,
+      </if>
+      <if test="logIdentity != null">
+        logIdentity,
+      </if>
+      <if test="logCreatedate != null">
+        logCreatedate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=INTEGER},
+      </if>
+      <if test="logOperation != null">
+        #{logOperation,jdbcType=VARCHAR},
+      </if>
+      <if test="logName != null">
+        #{logName,jdbcType=VARCHAR},
+      </if>
+      <if test="logIdentity != null">
+        #{logIdentity,jdbcType=INTEGER},
+      </if>
+      <if test="logCreatedate != null">
+        #{logCreatedate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+
+  <delete id="deleteLogForm" parameterType="int">
+    delete from logform where logId = #{logId}
+  </delete>
+
+
+  <select id="selectLogForm" parameterType="int" resultType="com.zua.ifashion.person.entity.LogForm">
+    select * from logform where logId =#{logId}
+  </select>
+
+
+
+
+  <select id="getAllLogForms"  resultType="com.zua.ifashion.person.entity.LogForm">
+    select * from logform
+  </select>
+
+
+  <select id="getAllUserLogForms"  resultType="com.zua.ifashion.person.entity.LogForm">
+    select * from logform
+  </select>
+
+  <select id="getAllAdminLogForms"  resultType="com.zua.ifashion.person.entity.LogForm">
+    select * from logform
+  </select>
+
+</mapper>

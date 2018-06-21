@@ -34,7 +34,6 @@
                 <table class="table table-border table-bordered table-bg table-hover table-sort">
                     <thead>
                     <tr class="text-c">
-                        <th width="25"><input type="checkbox" name="" value=""></th>
                         <th width="40">ID</th>
                         <th width="80">管理员名</th>
                         <%--<th width="80">添加时间</th>--%>
@@ -46,7 +45,6 @@
 
                     <c:forEach items="${adminRoleVos}" var="adminRoleVos">
                         <tr class="text-c">
-                            <td><input type="checkbox" value="" name=""></td>
                             <td>${adminRoleVos.adminId}</td>
                             <td><a style="cursor:pointer" href="articledetail.html">${adminRoleVos.adminName}</a></td>
 

@@ -9,14 +9,17 @@ import com.zua.ifashion.person.service.MyCollectionService;
 import com.zua.ifashion.person.service.RankService;
 import com.zua.ifashion.person.service.UserAttentionService;
 import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.person.util.websocket.SpringWebSocketHandler;
 import com.zua.ifashion.person.vo.MyCollectionVo;
 import com.zua.ifashion.person.vo.UserAttentionVo;
 import com.zua.ifashion.talk.entity.Topic;
 import com.zua.ifashion.talk.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.socket.TextMessage;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -26,6 +29,14 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user")
 public class PersonalMyController {
+
+
+
+    @Bean//这个注解会从Spring容器拿出Bean
+    public SpringWebSocketHandler infoHandler() {
+        return new SpringWebSocketHandler();
+    }
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -40,7 +51,7 @@ public class PersonalMyController {
     private UserAttentionService userAttentionService;
 //    @Autowired
     // 我的发表
-    @RequestMapping(value = "/publish", method = RequestMethod.GET)
+    @RequestMapping(value = "/mypublish", method = RequestMethod.GET)
     public String myPublish(HttpSession session, Map<String,Object> map) {
 
         //articleService.s
@@ -52,7 +63,7 @@ public class PersonalMyController {
         return "user/personal/user/mypublish";
     }
     // 我的收藏
-    @RequestMapping(value = "/collection", method = RequestMethod.GET)
+    @RequestMapping(value = "/mycollection", method = RequestMethod.GET)
     public String myCollection(HttpSession session, Map<String,Object> map) {
         //articleService.
         Integer userId= (Integer) session.getAttribute("userId");
@@ -86,7 +97,7 @@ public class PersonalMyController {
         return "user/personal/user/mycollection";
     }
     // 我的关注
-    @RequestMapping(value = "/attention", method = RequestMethod.GET)
+    @RequestMapping(value = "/myattention", method = RequestMethod.GET)
     public String myAttention(HttpSession session, Map<String,Object> map) {
 
         Integer userId= (Integer) session.getAttribute("userId");
@@ -117,13 +128,11 @@ public class PersonalMyController {
         return "user/personal/user/myattention";
     }
     // 我的消息
-    @RequestMapping(value = "/message", method = RequestMethod.GET)
+    @RequestMapping(value = "/mymessage", method = RequestMethod.GET)
     public String myMessage(HttpSession session, Map<String,Object> map) {
-
-
-
-
-
+        String username= (String) session.getAttribute("uname");
+        System.out.println(username);
+        infoHandler().sendMessageToUser(username, new TextMessage("你好，测试！！！！"));
         return "user/personal/user/mymessage";
     }
 

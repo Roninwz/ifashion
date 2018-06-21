@@ -41,8 +41,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/styles/site.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/styles/direction-reveal.css">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/css/newconment_1.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/css/newindex_v1.css" />
+    <%--<link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/css/newconment_1.css" />--%>
+    <%--<link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/css/newindex_v1.css" />--%>
     <link href="${pageContext.request.contextPath}/static/user/common/plugin/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/css/lunbo.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/index/css/home.css" type="text/css">

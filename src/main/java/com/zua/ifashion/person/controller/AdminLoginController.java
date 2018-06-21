@@ -162,5 +162,11 @@ public class AdminLoginController {
 
     }
 
-
+    @RequestMapping(value = "/adminlogout")
+    public String adminlogout(HttpSession session){
+        //清除session
+        session.invalidate();
+        //重定向到登录页面的跳转方法
+        return "admin/";
+    }
 }

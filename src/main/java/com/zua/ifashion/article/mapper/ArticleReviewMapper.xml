@@ -27,6 +27,52 @@
   </resultMap>
 
 
+    <!--添加评论不为空字段-->
+  <insert id="addArticleReviewSelective" parameterType="com.zua.ifashion.article.entity.ArticleReview">
+      INSERT INTO article_review
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+          <if test="reviewId != null">
+              reviewId,
+          </if>
+          <if test="articleId != null">
+              articleId,
+          </if>
+          <if test="userId != null">
+              userId,
+          </if>
+          <if test="reviewContent != null">
+              reviewContent,
+          </if>
+          <if test="reviewZan != null">
+              reviewZan,
+          </if>
+          <if test="reviewDate != null">
+              reviewDate,
+          </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+          <if test="reviewId != null">
+              #{reviewId},
+          </if>
+          <if test="articleId != null">
+              #{articleId},
+          </if>
+          <if test="userId != null">
+              #{userId},
+          </if>
+          <if test="reviewContent != null">
+              #{reviewContent},
+          </if>
+          <if test="reviewZan != null">
+              #{reviewZan},
+          </if>
+          <if test="reviewDate != null">
+              #{reviewDate},
+          </if>
+      </trim>
+  </insert>
+
+
   <!--根据评论id删除评论-->
   <delete id="deleteArticleReviewByReviewId" parameterType="int">
       DELETE FROM article_review WHERE reviewId = #{reviewId}

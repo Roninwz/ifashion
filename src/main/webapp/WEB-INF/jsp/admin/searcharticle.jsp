@@ -58,7 +58,9 @@
                         <td><a style="cursor:pointer" href="admin/articledetail.action">${articles.articleTitle}</a></td>
                         <td>${articles.articletypeId}</td>
                         <td>${articles.userId}</td>
-                        <td>${articles.articleDate}</td>
+                        <td>
+                            <fmt:formatDate value="${articles.articleDate}" pattern="yyyy-MM-dd" type="date"/>
+                        </td>
                         <td>${articles.reviewNum}</td>
                         <td class="td-status"><span class="label label-success radius">${articles.state}</span></td>
                         <td class="f-14 td-manage"><a style="text-decoration:none" onClick="article_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>

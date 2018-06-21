@@ -94,4 +94,14 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> selectLatestArticleByUserId(Integer userId) {
         return articleMapper.selectLatestArticleByUserId(userId);
     }
+
+    @Override
+    public Article selectPreArticle(Integer articleId) {
+        return articleMapper.selectPreArticle(articleId);
+    }
+
+    @Override
+    public Article selectNextArticle(Integer articleId) {
+        return articleMapper.selectNextArticle(articleId);
+    }
 }

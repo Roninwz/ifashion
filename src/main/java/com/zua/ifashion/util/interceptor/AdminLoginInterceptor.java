@@ -2,6 +2,8 @@ package com.zua.ifashion.util.interceptor;
 
 
 import com.zua.ifashion.person.entity.Admin;
+import com.zua.ifashion.person.service.LogFormService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -11,19 +13,23 @@ import javax.servlet.http.HttpSession;
 
 public class AdminLoginInterceptor implements HandlerInterceptor {
 
-
+    @Autowired
+    private LogFormService logFormService;
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+
+
+
+
+        //获取session
+        HttpSession session = httpServletRequest.getSession();
+        Admin admin= (Admin) session.getAttribute("admin");
 
         String uri = httpServletRequest.getRequestURI();
         //UTL:除了login.jsp是可以公开访问的，其他的URL都进行拦截控制
                 if (uri.indexOf("/admin/login.action") >= 0) {
                          return true;
                     }
-        //获取session
-        HttpSession session = httpServletRequest.getSession();
-        Admin admin= (Admin) session.getAttribute("admin");
-
                  if (admin != null) {
                          return true;
                     }

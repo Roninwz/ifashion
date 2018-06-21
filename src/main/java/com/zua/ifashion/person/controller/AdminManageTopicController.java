@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
@@ -37,16 +38,32 @@ public class AdminManageTopicController {
     //社区管理controller
     //话题列表
     @RequestMapping(value = "/topicmanage", method = RequestMethod.GET)
-    public String adminTopic(HttpSession session,  @RequestParam(required = false,defaultValue = "1",value = "curPage")Integer curPage,Map<String,Object> map) {
+    public String adminTopic(HttpSession session, Map<String,Object> map) {
 
-        int pageSize=10;
-        System.out.println(curPage);
-        PageHelper.startPage(curPage,pageSize);
-       List<Topic> topics= topicService.getAllTopic();
-        PageInfo<Topic> pageInfo = new PageInfo<>(topics);
-        map.put("pageInfo",pageInfo);
+        //int pageSize=10;
+       // System.out.println(curPage);
+
+//        List<TopicVo> topicVos=new ArrayList<>();
+//        TopicVo topicVo=new TopicVo();
+//        for (Topic t:topics){
+//            if(t.getUserId()!=null){
+//               User user= userService.selectUserByUserId(t.getUserId());
+//                topicVo.setUsername(user.getUsername());
+//               topicVo.setTopicContent(t.getTopicContent());
+//               topicVo.setTopicTitle(t.getTopicTitle());
+//               topicVo.setTopicEnd(t.getTopicEnd());
+//               topicVo.setTopicStart(t.getTopicStart());
+//
+//
+//            }
+//        }
+
+      //  PageHelper.startPage(curPage,pageSize);
+        List<Topic> topics= topicService.getAllTopic();
+       // PageInfo<Topic> pageInfo = new PageInfo<>(topics);
+       // map.put("pageInfo",pageInfo);
        int n= topicService.getAllTopicCount();
-        //map.put("topics",topics);
+        map.put("topics",topics);
         map.put("n",n);
         return "admin/topic";
     }
@@ -72,9 +89,8 @@ public class AdminManageTopicController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            topic1.setTopicImgurl("/upload/"+newFileName);
+            topic1.setTopicImgurl("/static/upload/images/"+newFileName);
         }
-
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateStringStart = formatter.format(topic.getTopicStart());
         String dateStringEnd = formatter.format(topic.getTopicEnd());
@@ -85,7 +101,6 @@ public class AdminManageTopicController {
         topic1.setTopicStart(newDateStart);
         topic1.setTopicEnd(newDateEnd);
         topicService.addTopicSelective(topic1);
-
        // PhotoUtil.saveFile(topImgurl,request);
         //重定向
         return "redirect:topicmanage.action";
@@ -202,7 +217,36 @@ public class AdminManageTopicController {
 
 
 
+//batchdeleteuser批量删除
 
+    @RequestMapping(value = "/batchdeletetopic", method = RequestMethod.POST)
+    public void batchDeleteTopic(HttpSession session, HttpServletResponse response, HttpServletRequest request, Map<String,Object> map) {
+        String msg = "";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+        //System.out.println(userId);
+        String items = request.getParameter("delitems");// System.out.println(items);
+        System.out.println(items);
+        String[] strs = items.split(",");
+
+        for (int i = 0; i < strs.length; i++) {
+            try {
+
+                int a = Integer.parseInt(strs[i]);
+                System.out.println("a"+a);
+                int n = topicService.deleteTopic(a);
+                if (n > 0) {
+                    msg = "删除成功";
+                } else {
+                    msg = "删除失败";
+                }
+                System.out.println(msg);
+            } catch (Exception e) {
+            }
+        }
+    }
+
+
+    //话题讨论列表
 
 
 

@@ -1,5 +1,7 @@
 package com.zua.ifashion.article.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class ArticleReview {
@@ -11,6 +13,7 @@ public class ArticleReview {
 
     private Integer reviewZan;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date reviewDate;
 
     private String reviewContent;

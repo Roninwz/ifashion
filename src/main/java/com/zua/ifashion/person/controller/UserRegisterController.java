@@ -2,16 +2,19 @@ package com.zua.ifashion.person.controller;
 
 import com.zua.ifashion.person.entity.User;
 import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.person.util.websocket.SpringWebSocketHandler;
 import com.zua.ifashion.util.MessageInfos;
 import com.zua.ifashion.util.RandUtil;
 import com.zua.ifashion.util.miaodiyun.httpApiDemo.AccountInfo;
 import com.zua.ifashion.util.miaodiyun.httpApiDemo.IndustrySMS;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.socket.TextMessage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,6 +23,12 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user")
 public class UserRegisterController {
+
+    @Bean//这个注解会从Spring容器拿出Bean
+    public SpringWebSocketHandler infoHandler() {
+        return new SpringWebSocketHandler();
+    }
+
     @Autowired
     private UserService userService;
 
@@ -87,6 +96,8 @@ public class UserRegisterController {
         System.out.println("yzm"+yzm);
         if (telcode.equals(yzm)) {
             userService.addUserSelective(user);
+
+            infoHandler().sendMessageToUser(user.getUsername(), new TextMessage("欢迎您"+user.getUsername()+"注册"));
             return "user/index";
         } else {
             System.out.println("验证码错误");

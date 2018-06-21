@@ -16,6 +16,11 @@ public class ArticleReviewServiceImpl implements ArticleReviewService {
     private ArticleReviewMapper articleReviewMapper;
 
     @Override
+    public int addArticleReviewSelective(ArticleReview articleReview) {
+        return articleReviewMapper.addArticleReviewSelective(articleReview);
+    }
+
+    @Override
     public int deleteArticleReviewByReviewId(Integer reviewId) {
         return articleReviewMapper.deleteArticleReviewByReviewId(reviewId);
     }

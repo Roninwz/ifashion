@@ -12,5 +12,13 @@ public class ListUtil {
 		        }        
 		      }        
 		    return list;       
-		}  
+		}
+
+		public static  boolean isEmptyList(List list){
+		if(list.size()>0&&list!=null){
+			return  false;
+		}else {
+			return  true;
+		}
+	}
 }

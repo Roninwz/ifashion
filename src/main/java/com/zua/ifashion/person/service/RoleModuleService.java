@@ -11,6 +11,8 @@ public interface RoleModuleService {
     //添加角色功能模块
     int addRoleModule(RoleModule roleModule);
 
+    //批量插入
+    int addBatchRoleModule(List<RoleModule> roleModules);
     //删除角色功能模块
     int deleteRoleModule(Integer rolemoduleId);
 

@@ -109,7 +109,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <a class="i-btn-forkout" href="user/article?articleId=${myCollectionVosa.articleId}"><i class="am-icon-close am-icon-fw"></i></a>
+                                    <a class="i-btn-forkout" href="user/article?articleId=${myCollectionVosa.articleId}"></a>
                                 </div>
                             </c:forEach>
 
@@ -118,7 +118,7 @@
                         <div class="am-tab-panel am-fade" id="tab2">
                             <c:forEach items="${myCollectionVost}" var="myCollectionVost">
                             <div class="s-msg-item s-msg-temp i-msg-downup">
-                                <h6 class="s-msg-bar"><span class="s-name">每日新鲜事</span></h6>
+                                <h6 class="s-msg-bar"><span class="s-name"></span></h6>
                                 <div class="s-msg-content i-msg-downup-wrap">
                                     <div class="i-msg-downup-con">
                                         <a class="i-markRead" target="_blank" href="blog.html">
@@ -135,7 +135,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <a class="i-btn-forkout" href="user/topic.action?topicId=${myCollectionVost.articleId}"><i class="am-icon-close am-icon-fw"></i></a>
+                                <a class="i-btn-forkout" href="user/topic.action?topicId=${myCollectionVost.articleId}"></a>
                             </div>
                             </c:forEach>
                         </div>

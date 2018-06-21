@@ -17,6 +17,11 @@ public class RoleModuleServiceImpl implements RoleModuleService {
     }
 
     @Override
+    public int addBatchRoleModule(List<RoleModule> roleModules) {
+        return roleModuleMapper.addBatchRoleModule(roleModules);
+    }
+
+    @Override
     public int deleteRoleModule(Integer rolemoduleId) {
         return roleModuleMapper.deleteRoleModule(rolemoduleId);
     }

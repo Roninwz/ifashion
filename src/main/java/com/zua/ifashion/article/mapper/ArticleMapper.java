@@ -57,5 +57,11 @@ public interface ArticleMapper {
     //根据userid查询他写最近写的4篇文章
     List<Article> selectLatestArticleByUserId(@Param("userId") Integer userId);
 
+    //根据当前文章id查询上一篇文章
+    Article selectPreArticle(@Param("articleId") Integer articleId);
+
+    //根据当前文章id 查询下一篇文章
+    Article selectNextArticle(@Param("articleId") Integer articleId);
+
 
 }

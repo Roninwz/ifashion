@@ -10,7 +10,7 @@ article .article-con{margin-top:41px;margin-bottom:30px;width:100%;line-height:2
 article .article-con p{margin-bottom:0}
 article .article-con img{max-width: 100%!important;}
 article .article-tag{margin-bottom:28px;}
-article .article-tag a{margin-right:13px;}
+article .article-tag a{margin-right:13px; font-size: 13px}
 article .arc-keyword {border-bottom:1px dashed #000;}
 article em {font-style:oblique;}
 .pager{margin-top:52px;margin-bottom:44px;}
@@ -28,6 +28,8 @@ article em {font-style:oblique;}
 .comment-area{margin-top: 30px;}
 .iframe-video{height:440px;}
 
+
+.center-block .text-black80{font-size: 13px}
 .ques-answer {
     position: relative;
     padding-left: 56px;

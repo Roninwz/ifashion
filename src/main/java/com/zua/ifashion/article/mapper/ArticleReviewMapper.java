@@ -9,6 +9,9 @@ import java.util.List;
 
 public interface ArticleReviewMapper {
 
+    //添加评论不为空字段
+    int addArticleReviewSelective(ArticleReview articleReview);
+
     //根据评论id删除评论
     int deleteArticleReviewByReviewId(@Param("reviewId") Integer reviewId);
 

@@ -127,11 +127,22 @@
       <artifactId>spring-websocket</artifactId>
       <version>4.2.1.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-messaging</artifactId>
+      <version>4.2.1.RELEASE</version>
+    </dependency>
     <!-- mybatis核心包 -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>3.2.2</version>
+    </dependency>
+    <!--mybatis延迟加载所需jar 会自动引入其它3个包，ant,asm,ant-lanunch-->
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.2.5</version>
     </dependency>
     <!-- spring和mybatis整合包 -->
     <dependency>
@@ -229,6 +240,7 @@
       <artifactId>commons-codec</artifactId>
       <version>1.10</version>
     </dependency>
+    <!--JSON插件3个-->
       <!-- org.json -->
       <!--JSON is a light-weight, language independent, data interchange format. See http://www.JSON.org/-->
       <dependency>
@@ -236,14 +248,28 @@
           <artifactId>json</artifactId>
           <version>20160212</version>
       </dependency>
-    <!--分页插件-->
+    <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.47</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib</artifactId>
+      <version>2.4</version>
+      <classifier>jdk15</classifier>
+    </dependency>
+
+
+
+
+    <!--分页插件2个-->
     <dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
       <version>4.2.1</version>
     </dependency>
-
-
     <!-- https://mvnrepository.com/artifact/com.github.jsqlparser/jsqlparser -->
     <dependency>
       <groupId>com.github.jsqlparser</groupId>
@@ -251,32 +277,65 @@
       <version>0.9.4</version>
     </dependency>
 
-    <!--发送邮件插件-->
+
+
+    <!--发送邮件插件1个-->
 
     <dependency>
       <groupId>javax.mail</groupId>
       <artifactId>javax.mail-api</artifactId>
       <version>1.6.0</version>
     </dependency>
-<!--秒嘀短信jar-->
-
+    <!--秒嘀短信jar 1个+codec1个-->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.0</version>
     </dependency>
+
+
+    <!--redis jar 2个包-->
     <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
     <dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
       <version>2.9.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>1.8.5.RELEASE</version>
+    </dependency>
+
+    <!--ehcache缓存-->
+    <dependency>
+      <groupId>net.sf.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>2.8.2</version>
+    </dependency>
+
+    <!-- Ehcache实现,用于参考 -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-ehcache</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+
 
     <!-- DateTimeFormat注解中使用到了joda包中的相关东西 -->
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
       <version>2.9.7</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
     </dependency>
 
 

@@ -5,7 +5,7 @@
     <id column="moduleId" jdbcType="INTEGER" property="moduleId" />
     <result column="moduleName" jdbcType="VARCHAR" property="moduleName" />
     <result column="moduleUrl" jdbcType= "VARCHAR" property="moduleUrl" />
-    <result column="parentId" jdbcType="INTEGER" property="parentId" />
+    <result column="pId" jdbcType="INTEGER" property="pId" />
   </resultMap>
 
 
@@ -13,9 +13,12 @@
     <!--insert into module (id_module, module_name, module_url,-->
     <!--parent_id)-->
     <!--values (#{idModule,jdbcType=INTEGER}, #{moduleName,jdbcType=VARCHAR}, #{moduleUrl,jdbcType=VARCHAR},-->
-    <!--#{parentId,jdbcType=INTEGER})-->
+    <!--#{pId,jdbcType=INTEGER})-->
   <!--</insert>-->
   <insert id="addModuleSelective" parameterType="com.zua.ifashion.person.entity.Module">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="moduleId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into module
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="moduleId != null">
@@ -27,8 +30,8 @@
       <if test="moduleUrl != null">
         moduleUrl,
       </if>
-      <if test="parentId != null">
-        parentId,
+      <if test="pId != null">
+        pId,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -41,8 +44,8 @@
       <if test="moduleUrl != null">
         #{moduleUrl,jdbcType=VARCHAR},
       </if>
-      <if test="parentId != null">
-        #{parentId,jdbcType=INTEGER},
+      <if test="pId != null">
+        #{pId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -61,8 +64,8 @@
       <if test="moduleUrl != null">
         moduleUrl = #{moduleUrl,jdbcType=VARCHAR},
       </if>
-      <if test="parentId != null">
-        parentId = #{parentId,jdbcType=INTEGER},
+      <if test="pId != null">
+        pId = #{pId,jdbcType=INTEGER},
       </if>
     </set>
     where moduleId = #{moduleId,jdbcType=INTEGER}
@@ -88,19 +91,19 @@
 
   <!-- 查询所有    -->
   <select id="getAllOneMenus"  resultType="com.zua.ifashion.person.entity.Module">
-    select * from module where parentId is null;
+    select * from module where pId = 0;
   </select>
 
 
   <!-- 查询所有    -->
   <select id="getAllTwoMenus"  resultType="com.zua.ifashion.person.entity.Module">
-    select * from module where parentId is not null;
+    select * from module where pId != 0;
   </select>
 
 
 
   <!-- 查询所有    -->
   <select id="getOneMenuTwoMenus" resultType="com.zua.ifashion.person.entity.Module">
-    select * from module where parentId =#{moduleId};
+    select * from module where pId =#{moduleId};
   </select>
 </mapper>

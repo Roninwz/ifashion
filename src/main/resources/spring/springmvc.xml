@@ -46,6 +46,10 @@
 
 	<!-- 设置静态资源的访问 -->
 	<mvc:resources location="/static/" mapping="/static/**"/>
+	<mvc:resources location="/" mapping="/**/*.js"/>
+	<mvc:resources location="/" mapping="/**/*.jpg" cache-period="31536000"/>
+	<mvc:resources location="/" mapping="/**/*.png" cache-period="31536000"/>
+	<mvc:resources location="/" mapping="/**/*.css"/>
 	<!--打开视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
@@ -61,7 +65,11 @@
 	com.zua.ifashion.talk.controller,
 	com.zua.ifashion.talk.service,
 	com.zua.ifashion.person.controller,
-	com.zua.ifashion.person.service,com.zua.ifashion.util.ueditor.controller,com.zua.ifashion.util.mail
+	com.zua.ifashion.person.service,
+	com.zua.ifashion.util.ueditor.controller,
+	com.zua.ifashion.util.mail,
+	com.zua.ifashion.util.interceptor,
+	com.zua.ifashion.person.util.websocket
 "/>
 	<!-- mvc:annotation-driven默认加载很多的参数绑定方法，比如json转换解析器， 如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter 
 		实际开发时使用mvc:annotation-driven -->
@@ -82,6 +90,15 @@
 		<!--<bean class="cn.lzc.interceptor.CustomInterceptor"/>-->
 		<!--</mvc:interceptor>-->
 
+		<!-- 拦截器配置 -->
+		<!-- 配置Token拦截器，防止用户重复提交数据 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/><!--这个地方时你要拦截得路径 我这个意思是拦截所有得URL-->
+			<bean class="com.zua.ifashion.util.interceptor.TokenInterceptor"/><!--class文件路径改成你自己写得拦截器路径！！ -->
+		</mvc:interceptor>
+
+
+
 		<!--前台登录拦截器-->
 		<!--<mvc:interceptor>-->
 			<!--<mvc:mapping path="/user/**" />-->
@@ -99,6 +116,55 @@
 			<mvc:exclude-mapping path="/admin/logincheck.action"/>
 			<bean class="com.zua.ifashion.util.interceptor.AdminLoginInterceptor"/>
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/addHandleArticle.action"/>
+			<mvc:mapping path="/admin/updateHandleArticle.action"/>
+			<mvc:mapping path="/admin/ajaxdeletearticle.action"/>
+			<mvc:mapping path="/admin/addtag.action"/>
+			<mvc:mapping path="/admin/updatehandletag.action"/>
+			<mvc:mapping path="/admin/ajaxdeletetag.action"/>
+			<mvc:mapping path="/admin/addhandleadmin.action"/>
+			<mvc:mapping path="/admin/updatehandleadmin.action"/>
+			<mvc:mapping path="/admin/ajaxdeleteadmin.action"/>
+			<mvc:mapping path="/admin/addHandleArticle.action"/>
+			<mvc:mapping path="/admin/updateHandleArticle.action"/>
+			<mvc:mapping path="/admin/ajaxdeletearticle.action"/>
+			<mvc:mapping path="/admin/addHandleTopic.action"/>
+			<mvc:mapping path="/admin/ajaxdeletetopic.action"/>
+			<mvc:mapping path="/admin/updateHandleTopic.action"/>
+			<mvc:mapping path="/admin/addhandleuser.action"/>
+			<mvc:mapping path="/admin/updatehandleuser.action"/>
+			<mvc:mapping path="/admin/ajaxdeleteuser.action"/>
+			<mvc:mapping path="/admin/updateadminpassword.action"/>
+			<mvc:mapping path="/admin/updateAdminInfo.action"/>
+			<!--<mvc:exclude-mapping path="/getSysManageLoginCode.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/logincheck.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/articlemanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/reviewmanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/complainmanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/usermanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/rolemanag.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/modulemanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/adminmanag.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/topicmanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/topicreviewmanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/system.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/person.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/systemlog.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/tagmanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/addtag.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/updatetag.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/updatearticle.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/addArticle.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/tagmanage.action"/>-->
+			<!--<mvc:exclude-mapping path="/admin/tagmanage.action"/>-->
+			<bean class="com.zua.ifashion.util.interceptor.LogRecordInterceptor"/>
+		</mvc:interceptor>
+
+		<!--<mvc:interceptor>-->
+			<!--<mvc:mapping path="/user/**"/>-->
+			<!--<bean class="com.zua.ifashion.person.util.websocket.SpringWebSocketHandlerInterceptor"/>-->
+		<!--</mvc:interceptor>-->
 	</mvc:interceptors>
 
 </beans>

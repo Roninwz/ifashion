@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
+<%--
+  Created by IntelliJ IDEA.
   User: Roninwz
   Date: 2018/6/4
   Time: 12:46
@@ -29,10 +31,7 @@
     <link rel="stylesheet" href="static/user/login/css/login.css">
 
 
-    <link href="static/user/article/clothes/match/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/user/article/clothes/match/css/common.css" rel="stylesheet" type="text/css">
-    <link href="static/user/article/clothes/match/css/article.css" rel="stylesheet">
-    <link href="static/user/article/clothes/match/css/foot.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/user/article/community/css/Untitled-5.css">
 
 
 
@@ -46,417 +45,257 @@
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
     <%--其它js--%>
 
+
+    <script type='text/javascript' src='static/user/article/community/js/mobile.js'></script>
+    <script src="static/user/article/community/js/jquery.js"></script>
+    <script src="static/user/article/community/js/swiper.jquery.min.js"></script>
+    <script src="static/user/article/community/js/jquery.switchable.min.js"></script>
+    <script src="static/user/article/community/js/cookie.js"></script>
+    <script src="static/user/article/community/js/login.js"></script>
+    <script src="static/user/article/community/js/global.js"></script>
+    <script src="static/user/article/community/js/loadgif.js"></script>
+
 </head>
-<body>
+<body style="background: #fff">
 
-<div class="container clearfix">
-    <script type="text/javascript">
-        _TrackObj.id=14700;
-        _TrackObj.type=0;
-    </script>
-    <div class="clearfix article-tip">
-        <div class="pull-left text-overflow nav-crob">
-            <span>当前位置&nbsp;:&nbsp;</span>
-            <span><a href="">iFashion</a></span>
-            <i class="icon icon-crob"></i>
-            <a href="">时装</a>
-            <i class="icon icon-crob"></i>
-            <a href="">时尚穿搭</a>
-            <i class="icon icon-crob"></i>
-            <span><b>${article.articleTitle}</b></span>
+
+
+
+
+
+<div class="container">
+    <div class="ad1000-90" id="TR_SYS_151"></div>
+
+    <!--head-->
+    <div class="header">
+        <div class="logo">
         </div>
     </div>
-    <div class="main pull-left">
-        <article>
-            <h1>${article.articleTitle}</h1>
-            <div class="clearfix text-black80 article-info-option">
-                <div class="inline-block pull-left article-info">
-                    <span>by <a href="" target="_blank">iFashion</a></span>
-                    <span>2018/05/31-10:00:00</span>
-                    <span>作者：iFashion</span>				<span>来源：iFashion</span>
-                    <!-- <span>浏览：22</span> -->
-                </div>
-                <div class="inline-block pull-right text-right article-option">
-                    <label ><i class="icon icon-like-3 icon-edit" id="praise_14700" data-tabid="0" data-id="14700"></i><span>0</span></label>
-                    <label ><i class="icon icon-collect icon-edit" id="collect_14700" data-tabid="0" data-id="14700"></i><span>0</span></label>
-                    <label ><i class="icon icon-comment" id="comment_14700" onclick="javascript:window.location.href='#comment-data';"></i><span>0</span></label>
-                </div>
-            </div>
-
-            <div style="margin:40px auto">
-                ${article.content}
-            </div>
-
-
-            <div class="article-tag">
-                标签&nbsp;:&nbsp;
-                <a href="">活力</a>
-                <a href="">清爽</a>
-                <a href="">清凉</a>
-                <a href="">元素</a>
-                <a href="">必备单品</a>
-                <a href="">卫衣搭配</a>
-                <a href="">水果</a>
-                <a href="">潮人</a>
-                <a href="">配饰</a>
-                <a href="">搭配</a>
-            </div>
-        </article>
-
-        <div class="clearfix text-center article-other">
-            <div class="pull-left text-overflow">
-                上一篇：
-                <a href="${pageContext.request.contextPath }/user/clothes/matchInfo.action?articleId=${article.articleId-1}">
-                    做时尚Office Lady,就请你白衬衫不要那么无聊！			</a>
-            </div>
-            <div class="pull-right text-overflow">
-                下一篇：
-                <a href="${pageContext.request.contextPath }/user/clothes/matchInfo.action?articleId=${article.articleId+1}">
-                    NIRO WANG品牌加入英国伦敦I LOVE LINEN亚麻推广运动				</a>
-            </div>
-        </div>
-
-
-        <div class="text-center article-sm">声明：未经授权，不得部分或全部转载本站内容，否则将追究相关的法律责任。</div>
-
-
-        <div class="other-article">
-            <h3>相关阅读</h3>
-            <ul class="clearfix list-unstyled">
-                <li>
-                    <a title="运动鞋搭裙子，绝配！" href="" target="_blank">
-                        <div class="center-block img-wrap">
-                            <img width="275" height="277" title="运动鞋搭裙子，绝配！" class="lazy" style="display: inline;" alt="运动鞋搭裙子，绝配！" src="../image/29.jpg" data-original="../image/29.jpg">
-                        </div>
-                    </a>
-                    <a title="运动鞋搭裙子，绝配！" href="" target="_blank">
-                        <h4 class="center-block text-overflow">
-                            运动鞋搭裙子，绝配！                        </h4>
-                    </a>
-                    <p class="center-block text-black80">这个季节绝对是裙子的主场，毫无疑问也是最为常见的出街造型，无需费力就能...</p>
-                </li>
-                <li>
-                    <a title="要想生活过得去，时髦又高级的来点“绿”！" href="" target="_blank">
-                        <div class="center-block img-wrap">
-                            <img width="275" height="277" title="要想生活过得去，时髦又高级的来点“绿”！" class="lazy" style="display: inline;" alt="要想生活过得去，时髦又高级的来点“绿”！" src="../image/30.jpg" data-original="../image/30.jpg">
-                        </div>
-                    </a>
-                    <a title="要想生活过得去，时髦又高级的来点“绿”！" href="" target="_blank">
-                        <h4 class="center-block text-overflow">
-                            要想生活过得去，时髦又高级的来点...                        </h4>
-                    </a>
-                    <p class="center-block text-black80">绿色，是一个充满希望的颜色，夏天穿上一抹绿，总是给人清新、活力、美好的...</p>
-                </li>
-                <li>
-                    <a title="近期买买，红黑榜了解一下！" href="" target="_blank">
-                        <div class="center-block img-wrap">
-                            <img width="275" height="277" title="近期买买，红黑榜了解一下！" class="lazy" style="display: inline;" alt="近期买买，红黑榜了解一下！" src="../image/31.jpg" data-original="../image/31.jpg">
-                        </div>
-                    </a>
-                    <a title="近期买买，红黑榜了解一下！" href="" target="_blank">
-                        <h4 class="center-block text-overflow">
-                            近期买买，红黑榜了解一下！                        </h4>
-                    </a>
-                    <p class="center-block text-black80">滴，5月已打卡。转眼间小半年过去了，从年前到现在买了不少好东西，也踩了...</p>
-                </li>
-            </ul>
-        </div>
-        <div class="other-article">
-            <h3>推荐阅读</h3>
-            <ul class="clearfix list-unstyled">
-                <li>
-                    <a title="早春乱穿衣，一件卫衣解锁潮范儿新姿势！" href="" target="_blank">
-                        <div class="center-block img-wrap">
-                            <img width="275" height="277" title="早春乱穿衣，一件卫衣解锁潮范儿新姿势！" class="lazy" style="display: inline;" alt="早春乱穿衣，一件卫衣解锁潮范儿新姿势！" src="../image/32.jpg" data-original="../image/32.jpg">
-                        </div>
-                    </a>
-                    <a title="早春乱穿衣，一件卫衣解锁潮范儿新姿势！" href="" target="_blank">
-                        <h4 class="center-block text-overflow">早春乱穿衣，一件卫衣解锁潮范儿新...</h4>
-                    </a>
-                    <p class="center-block text-black60">被大衣缠绕的冬季已然离去，春天的到来，不仅是花仙子的专场，印花仙女裙固...</p>
-                </li>
-                <li>
-                    <a title="高领衫：六招穿搭让你赢很大" href="" target="_blank">
-                        <div class="center-block img-wrap">
-                            <img width="275" height="277" title="高领衫：六招穿搭让你赢很大" class="lazy" style="display: inline;" alt="高领衫：六招穿搭让你赢很大" src="../image/33.jpg" data-original="../image/33.jpg">
-                        </div>
-                    </a>
-                    <a title="高领衫：六招穿搭让你赢很大" href="" target="_blank">
-                        <h4 class="center-block text-overflow">高领衫：六招穿搭让你赢很大</h4>
-                    </a>
-                    <p class="center-block text-black60">2017年的时尚圈，有很多曾经一度被嫌弃的单品都卷土重来，以时髦的姿态...</p>
-                </li>
-                <li>
-                    <a title="厉害了我的针织裙！云淡风轻时髦不掉线" href="" target="_blank">
-                        <div class="center-block img-wrap">
-                            <img width="275" height="277" title="厉害了我的针织裙！云淡风轻时髦不掉线" class="lazy" style="display: inline;" alt="厉害了我的针织裙！云淡风轻时髦不掉线" src="../image/34.jpg" data-original="../image/34.jpg">
-                        </div>
-                    </a>
-                    <a title="厉害了我的针织裙！云淡风轻时髦不掉线" href="" target="_blank">
-                        <h4 class="center-block text-overflow">厉害了我的针织裙！云淡风轻时髦不...</h4>
-                    </a>
-                    <p class="center-block text-black60">2017秋冬，时髦的单品太多，格纹、丝绒、金属...在这些独具个性的元...</p>
-                </li>
-            </ul>
-        </div>
-
-        <div class="comment-area" id="comment-data">
-            <div class="comment-box">
-                <div class="text-black80">穿搭评论</div>
-
-                <c:forEach var="arvo" items="${arvo}">
-
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <img title="${arvo.user.username}" src="${arvo.user.userImgurl}">
-                        </div>
-
-                        <div class="from-tag">
-                            <a>${arvo.user.username}</a>
-                            <a>${arvo.reviewDate}</a>
-                            <a href="" target="_blank" style="">回复</a>
-                        </div>
-
-                        <div class="ques-con">
-                            <p class="ques-con-content">${arvo.reviewContent}</p>
-                            <%--<div class="answer-content-all rich-text aimgPreview">--%>
-                                <%--<p> 价格这么好吗</p>--%>
-                            <%--</div>--%>
-                        </div>
-                    </div>
-
-
-                    <div class="answer-con first" id="answer-con" data-answer-id="269840">
-                        <div class="user">
-                            <hr>
-                            <%--<a>根本不行小姐 (作者) ：</a>--%>
-                            <span class="signature"></span>
-                        </div>
-                        <%--<div class="answer-content"> 价格这么好吗</div>--%>
-                    </div>
-                </c:forEach>
-
-
-                <div>
-                    <textarea name="commentcontent" class="text-black80" id="commentcontent" rows="2" cols="20"></textarea>
-                </div>
-                <div class="comment-option">
-
-                    <input class="btn btn-green text-white" id="btncomment" type="button" value="发布">
-                </div>
-            </div>
-            <div id="scroller"><ul class="comment-list list-unstyled text-black80"></ul></div>
-        </div>
-        <script src="/js/d3rich.comment.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            var outer_id = "14700";
-            var outer_type = 0;
-            var score = 5;
-        </script>
+    <!--head end-->
+    <div class="crumbs">
+        <a href="" title="首页" target="_blank">首页</a>  &gt;
+        <a href="" title="时装潮流" target="_blank">社区</a> &gt;
+        <span>${article.articleTitle}</span>
     </div>
-    <aside class="pull-right" style="margin-right: 0px;margin-bottom: 0px;margin-top:0px;">
-        <div class="gyzb com">
-            <div class="clearfix">
-                <div class="pull-left zs"></div>
-                <div class="pull-left bt">关于编辑</div>
-            </div>
-            <dl class="clearfix">
-                <dt class="pull-left">
-                    <a href="">
-                        <img width="50" height="50" class="lazy" style="display: inline;" alt="iFashion" src="${user.userImgurl}">
-                    </a>
-                </dt>
-                <dd class="pull-left">
-                    <a href=""><h4 class="text-overflow">${user.username}</h4></a>
-                    <div class="text-overflow"></div>
-                </dd>
-            </dl>
-            <div class="option">
-                <a class="inline-block text-center subscribe" id="subscribe_14700" href="javascript:void(0);" data-id="81" data-type="0">订阅</a><a class="inline-block text-center send-message" href="javascript:void(0);">消息</a>
-            </div>
 
-            <div><b>最近作品 :</b></div>
-            <ul class="list-unstyled">
+    <div class="content clearfix detail-content">
 
-                <c:forEach var="articles" items="${articles}">
-                <li class="text-overflow">
-                    <a title="${articles.articleTitle}" class="text-black80" href="">
-                            ${articles.articleTitle}</a>
-                </li>
-                </c:forEach>
+        <!--left-container -->
+        <div class="left-container">
 
-            </ul>
-        </div>
-        <div class="weektop10 com">
-            <div class="zs"></div>
-            <ul class="list-unstyled">
-                <li>
-                    <span class="inline-block top3">1</span>
-                    <c:forEach items="${hotArticle}" var="hotArticle" begin="0" end="0">
-                    <dl class="inline-block dl-horizontal">
-                        <dt>
-                            <a title="${hotArticle.articleTitle}" href="" target="_blank">
-                                <img width="125" height="110" title="${hotArticle.articleTitle}" class="lazy" style="display: inline;" alt="${hotArticle.articleTitle}" src="${hotArticle.imgurl}">
-                            </a>
-                        </dt>
-                        <dd>
-                            <a title="${hotArticle.articleTitle}" class="text-black90" href="" target="_blank">
-                                <h4>${hotArticle.articleTitle}</h4>
-                            </a>
-                            <div class="text-right">
-                                <!-- <i class="icon icon-view"></i><span>455</span> -->
-                            </div>
-                        </dd>
-                    </dl>
-                    </c:forEach>
-                </li>
+            <!--left-container right-side -->
+            <div class="article-wrap">
+                <h1 class="title-h1">${article.articleTitle}</h1>
+                <p class="info">
+                    <span class="“time”">时间：2018-05-22 00:31</span>
+                    <span>来源：iFashion</span>
+                </p>
 
-                <c:forEach items="${hotArticle}" var="hotArticle" varStatus="i" begin="1" end="9">
-                <li>
-                    <span class="inline-block top3">${i.index+1}</span>
-                    <a title="${hotArticle.articleTitle}" class="text-black80" href="" target="_blank">
-                        <p class="inline-block text-overflow">${hotArticle.articleTitle}</p>
-                    </a>
-                    <!-- <i class="icon icon-view"></i><span>388</span> -->
-                </li>
-                </c:forEach>
-
-
-            </ul>
-        </div>
-        <div class="hot-zt com">
-            <div class="zs">最新资讯</div>
-            <dl class="clearfix">
-                <dt class="pull-left">
-                    <a title="不大不时髦，Oversize耳饰让你的脸小一个Size!" href="" target="_blank">
-                        <img width="125" height="100" title="不大不时髦，Oversize耳饰让你的脸小一个Size!" class="lazy" style="display: inline;" alt="不大不时髦，Oversize耳饰让你的脸小一个Size!" src="../image/41.jpg" data-original="../image/41.jpg">
-                    </a>
-                </dt>
-                <dd class="pull-left">
-                    <a class="text-black90" href="">
-                        <h4 title="不大不时髦，Oversize耳饰让你的脸小一个Size!">
-                            不大不时髦，Oversize耳饰让你的脸...					</h4>
-                    </a>
-                    <p class="text-black80">大部分姑娘入手的第一件耳饰，是不是都是小巧精致似有若无的那种...</p>
-                </dd>
-            </dl>
-            <dl class="clearfix">
-                <dt class="pull-left">
-                    <a title="学会Bella Hadid的白色穿搭，一样拥有高级颜！" href="" target="_blank">
-                        <img width="125" height="100" title="学会Bella Hadid的白色穿搭，一样拥有高级颜！" class="lazy" style="display: inline;" alt="学会Bella Hadid的白色穿搭，一样拥有高级颜！" src="../image/42.jpg" data-original="../image/42.jpg">
-                    </a>
-                </dt>
-                <dd class="pull-left">
-                    <a class="text-black90" href="">
-                        <h4 title="学会Bella Hadid的白色穿搭，一样拥有高级颜！">
-                            学会Bella Hadid的白色穿搭，一...					</h4>
-                    </a>
-                    <p class="text-black80">Bella Hadid与姐姐Gigi Hadid为现今时尚圈...</p>
-                </dd>
-            </dl>
-            <dl class="clearfix">
-                <dt class="pull-left">
-                    <a title="将清爽的水果元素穿上身 变身元气时尚咖" href="" target="_blank">
-                        <img width="125" height="100" title="将清爽的水果元素穿上身 变身元气时尚咖" class="lazy" style="display: inline;" alt="将清爽的水果元素穿上身 变身元气时尚咖" src="../image/43.jpg" data-original="../image/43.jpg">
-                    </a>
-                </dt>
-                <dd class="pull-left">
-                    <a class="text-black90" href="">
-                        <h4 title="将清爽的水果元素穿上身 变身元气时尚咖">
-                            将清爽的水果元素穿上身 变身元气时尚咖					</h4>
-                    </a>
-                    <p class="text-black80">炎热的夏天即将抵达，你准备好用清爽的姿态迎接了嘛？说到夏天，...</p>
-                </dd>
-            </dl>
-            <dl class="clearfix">
-                <dt class="pull-left">
-                    <a title="做时尚Office Lady,就请你白衬衫不要那么无聊！" href="" target="_blank">
-                        <img width="125" height="100" title="做时尚Office Lady,就请你白衬衫不要那么无聊！" class="lazy" style="display: inline;" alt="做时尚Office Lady,就请你白衬衫不要那么无聊！" src="../image/44.jpg" data-original="../image/44.jpg">
-                    </a>
-                </dt>
-                <dd class="pull-left">
-                    <a class="text-black90" href="">
-                        <h4 title="做时尚Office Lady,就请你白衬衫不要那么无聊！">
-                            做时尚Office Lady,就请你白衬...					</h4>
-                    </a>
-                    <p class="text-black80">衬衫作为四季的必备单品，不止是因为百搭，更重要的可优雅、可青...</p>
-                </dd>
-            </dl>
-        </div>
-        <div class="text-center theone com">
-            <div class="center-block zs"></div>
-            <div class="to"><a href="">Special</a></div>
-            <div class="banner" id="theone">
-                <div class="hd">
-                    <ul class="text-center list-unstyled"><li>1</li><li>2</li><li class="on">3</li><li>4</li></ul>
+                <div class="article-content clearfix">
+                    ${article.content}
+                    <p class="statement">©版权声明：时尚芭莎网编辑K.C，本文系时尚芭莎网独家原创，如需转载请注明出处。</p>
                 </div>
-                <div class="bd">
-                    <div class="tempWrap" style="overflow:hidden; position:relative; width:328px"><ul class="list-unstyled" style="margin: 0px; padding: 0px; left: -984px; width: 1968px; overflow: hidden; position: relative;"><li class="clone" style="width: 328px; float: left;">
-                        <a title="没有这5种颜色的衣橱，秋冬怎么过？" href="" target="_blank">
-                            <div class="img-wrap">
-                                <img width="328" height="447" title="没有这5种颜色的衣橱，秋冬怎么过？" class="lazy" alt="没有这5种颜色的衣橱，秋冬怎么过？" src="../image/36.jpg" data-original="../image/36.jpg">
-                            </div>
+
+
+                <div class="pager-tip clearfix">
+                    <div class="left-pager">
+                        <c:if test="${empty preArticle.articleId}">
+                            <a>
+                                <span>上一篇</span>已是第一篇
+                            </a>
+                        </c:if>
+                        <c:if test="${not empty preArticle.articleId}">
+                            <a href="${pageContext.request.contextPath }/user/clothes/matchInfo.action?articleId=${preArticle.articleId}" title="">
+                                <span>上一篇</span>${preArticle.articleTitle}
+                            </a>
+                        </c:if>
+                    </div>
+                    <div class="right-pager">
+                        <c:if test="${empty nextArticle.articleId}">
+                            <a>
+                                <span>下一篇</span>已是最后一篇
+                            </a>
+                        </c:if>
+                        <c:if test="${not empty nextArticle.articleId}">
+                            <a href="${pageContext.request.contextPath }/user/clothes/matchInfo.action?articleId=${nextArticle.articleId}" title="">
+                                <span>下一篇</span>${nextArticle.articleTitle}
+                            </a>
+                        </c:if>
+                    </div>
+                </div>
+                <!--pager end-->
+
+                <!--other-->
+                <div class="share-container clearfix">
+                    <div class="bdsharebuttonbox bdshare-button-style0-16" data-tag="share_1" data-bd-bind="1528009056701">
+                        <%--<a class="bds_tsina" data-cmd="tsina" title="点赞"></a>--%>
+                    </div>
+                    <div class="like-to"> <span class="heart"></span> 收藏 | <span class="like-num">1</span> </div>
+                    <div class="collect-tips">提示</div>
+                </div>
+                <!--other end-->
+            </div>
+            <!--left-container right-side end -->
+
+
+
+            <!--可能喜欢-->
+            <div class="may-love">
+                <div class="title-ml clearfix">
+                    <h2 class="name-ml">YOU MIGHT LIKE 你可能喜欢</h2>
+                </div>
+                <ul class="list-ml">
+                    <li>
+                        <a href="" title="" target="_blank">
+                            <img src="../image/info/libEmMl69G8mw.jpg" height="170" width="170" alt="朋友圈靠鞋抢镜大赛，宋茜和周冬雨靠Bling Bling的宝石鞋赢了！">
                         </a>
-                        <h4><a title="没有这5种颜色的衣橱，秋冬怎么过？" href="" target="_blank">
-                            没有这5种颜色的衣橱...                                </a></h4>
-                        <p>每到换季都是一个大工程，一打开衣橱全是黑白灰，偶尔想换换口味又怕穿错。</p>
+                        <span class="caret"></span>
+                        <div class="text-ml">
+                            <a href="" title="FEATURE" class="name-ml" target="_blank">FEATURE</a>
+                            <a href="" title="朋友圈靠鞋抢镜大赛，宋茜和周冬雨靠Bling Bling的宝石鞋赢了！" target="_blank">朋友圈靠鞋抢镜大赛，宋茜和周冬雨靠Bling Bling的宝石鞋赢了！</a>
+                        </div>
                     </li>
-                        <li style="width: 328px; float: left;">
-                            <a title="为什么众女神专宠这条烟管裤？因为它遮肉显瘦，关键是百搭！" href="" target="_blank">
-                                <div class="img-wrap">
-                                    <img width="328" height="447" title="为什么众女神专宠这条烟管裤？因为它遮肉显瘦，关键是百搭！" class="lazy" style="display: inline;" alt="为什么众女神专宠这条烟管裤？因为它遮肉显瘦，关键是百搭！" src="../image/38.jpg" data-original="../image/38.jpg">
-                                </div>
-                            </a>
-                            <h4><a title="为什么众女神专宠这条烟管裤？因为它遮肉显瘦，关键是百搭！" href="" target="_blank">
-                                为什么众女神专宠这条...                                </a></h4>
-                            <p>有没有一条裤子遮肉显瘦，还精致大方，关键是相当百搭，甚至适宜出现在任何场合？有这...</p>
-                        </li>
-                        <li style="width: 328px; float: left;">
-                            <a title="时装精的诞生，就靠高级感的大地色！" href="" target="_blank">
-                                <div class="img-wrap">
-                                    <img width="328" height="447" title="时装精的诞生，就靠高级感的大地色！" class="lazy" style="display: inline;" alt="时装精的诞生，就靠高级感的大地色！" src="../image/39.jpg" data-original="../image/39.jpg">
-                                </div>
-                            </a>
-                            <h4><a title="时装精的诞生，就靠高级感的大地色！" href="" target="_blank">
-                                时装精的诞生，就靠高...                                </a></h4>
-                            <p>一般人提到驼色、卡其色、咖啡色等就会想到知性简约、无印风的文青穿搭。不过其实这些...</p>
-                        </li>
-                        <li style="width: 328px; float: left;">
-                            <a title="衬衫是法式衣橱挚爱，也是亲肤的时髦单品" href="" target="_blank">
-                                <div class="img-wrap">
-                                    <img width="328" height="447" title="衬衫是法式衣橱挚爱，也是亲肤的时髦单品" class="lazy" style="display: inline;" alt="衬衫是法式衣橱挚爱，也是亲肤的时髦单品" src="../image/37.jpg" data-original="../image/37.jpg">
-                                </div>
-                            </a>
-                            <h4><a title="衬衫是法式衣橱挚爱，也是亲肤的时髦单品" href="" target="_blank">
-                                衬衫是法式衣橱挚爱，...                                </a></h4>
-                            <p>在更新换代如此之快的时尚圈，衬衫是一个不过时的神话。它能衬托和挖掘出每一个穿着者...</p>
-                        </li>
-
-                    </ul></div>
-                </div>
+                    <li>
+                        <a href="" title="" target="_blank">
+                            <img src="../image/info/lij2sOW5mgkTI.jpg" height="170" width="170" alt="你以为盐系男孩只是花瓶摆设？戏痴坂口健太郎给你答案">
+                        </a>
+                        <span class="caret"></span>
+                        <div class="text-ml">
+                            <a href="" title="STAR" class="name-ml" target="_blank">STAR</a>
+                            <a href="" title="你以为盐系男孩只是花瓶摆设？戏痴坂口健太郎给你答案" target="_blank">你以为盐系男孩只是花瓶摆设？戏痴坂口健太郎给你答案</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="" title="" target="_blank">
+                            <img src="../image/info/ligom1wv6hrN6.jpg" height="170" width="170" alt="125岁的牛仔裤能卖到10万美金！杨幂热巴易烊千玺的球服造型你pick谁？"></a>
+                        <span class="caret"></span>
+                        <div class="text-ml">
+                            <a href="" title="STAR" class="name-ml" target="_blank">STAR</a>
+                            <a href="" title="125岁的牛仔裤能卖到10万美金！杨幂热巴易烊千玺的球服造型你pick谁？" target="_blank">125岁的牛仔裤能卖到10万美金！杨幂热巴易烊千玺的球服造型你pick谁？</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="" title="" target="_blank">
+                            <img src="../image/info/liNxFNXX1EmO2.jpg" height="170" width="170" alt="娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！">
+                        </a>
+                        <span class="caret"></span>
+                        <div class="text-ml">
+                            <a href="" title="FASHION" class="name-ml" target="_blank">FASHION</a>
+                            <a href="" title="娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！" target="_blank">娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <!--可能喜欢 end-->
         </div>
-        <!--
-<div class="searchbox com">
-    <form action="/search/index" method="get" id="searchform2">
-        <input class="searchtext" id="searchtext2" name="keywords" type="text"/><input class="searchbtn icon icon-search" type="button" onclick="if($('#searchtext2').val()!='') $('#searchform2').submit();" value="|">
-    </form>
-</div>
- -->
-    </aside>
-    <script>
-        $(function() {
-            $(".gifs").jqGifPreview();
-        });
-    </script>
-    <script language="Javascript">
-        document.oncontextmenu=new Function("event.returnValue=false");
-        document.onselectstart=new Function("event.returnValue=false");
-    </script>
+        <!--left-container end-->
+
+        <!--right-container -->
+        <div class="right-container" style="height: 1500px;">
+            <div class="sidebar-sticky" style="display: block; height: 1486px; width: auto; margin: auto; position: relative; float: none; left: auto; right: auto; top: auto; bottom: auto; vertical-align: top;">
+                <div class="right-sticky" style="width: 300px; top: 0px; bottom: auto; left: 0px; right: auto; position: absolute;">
+
+                    <div class="advertising" id="TR_SYS_150" style="overflow: hidden">
+                        <div style="right:0px;bottom:0px;" class="ad-icon">
+                        </div>
+                        <a href="" target="_blank">
+                            <img src="static/user/article/clothes/match/image/guanggao.jpg" width="300" height="510" alt="" title="" border="0">
+                        </a>
+                    </div>
+
+
+                    <!--编辑推荐-->
+                    <div class="editors-recommend">
+                        <div class="title-er">
+                            <h2 class="name-er"></h2>
+                        </div>
+                        <div class="conte-er fxCoverflow" id="img-flip">
+                            <span class="pre-er" id="prv"></span>
+                            <span class="next-er" id="next"></span>
+                            <ul class="list-er clearfix" id="list" style="position: absolute; left: 0px; width: 3000px;">
+                                <li class="active">
+                                    <a href="" title="娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！" target="_blank" style="overflow: hidden">
+                                        <img src="static/user/article/clothes/match/image/lb1.jpg" height="220" width="220" alt="娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！">
+                                    </a>
+                                    <div class="article-er">
+                                        <a href="" title="娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！" target="_blank">
+                                            娜扎的仙女裙领口有点低，但原来好身材全靠穿上这件深V！
+                                            <span>为什么娜扎阿娇Kendall都纷纷离不开深V啦？当然是因为V领能够让她们秀出完美身型～</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="active">
+                                <a href="" title="对话 澳洲版Harper's BAZAAR 总编辑Kellie Hush" target="_blank" style="overflow: hidden">
+                                    <img src="static/user/article/clothes/match/image/lb2.png" height="220" width="220" alt="对话 澳洲版Harper's BAZAAR 总编辑Kellie Hush">
+                                </a>
+
+                                <div class="article-er">
+                                    <a href="" title="对话 澳洲版Harper's BAZAAR 总编辑Kellie Hush" target="_blank">
+                                        对话 澳洲版Harper's BAZAAR 总编辑Kellie Hush
+                                        <span>作为澳洲版时尚芭莎的总编辑Kellie Hush，在今年被评为澳洲仅有的16位NSW时尚面孔荣誉称号之一。</span>
+                                    </a>
+                                </div>
+                                </li>
+
+                                <li class="active">
+                                    <a href="" title="儿童节就要这样穿，谁还不是个宝宝？【芭莎90秒】" target="_blank" style="overflow: hidden">
+                                        <img src="static/user/article/clothes/match/image/lb3.jpg" height="220" width="220" alt="儿童节就要这样穿，谁还不是个宝宝？【芭莎90秒】">
+                                    </a>
+
+                                    <div class="article-er">
+                                        <a href="" title="儿童节就要这样穿，谁还不是个宝宝？【芭莎90秒】" target="_blank">
+                                            儿童节就要这样穿，谁还不是个宝宝？【芭莎90秒】
+                                            <span>各位网友大家好，欢迎来到本期时尚芭莎90秒。又到了一年一度超龄儿童卖萌的日子，儿童节。光发票圈可不行，穿着有趣才能更好的体验节日的乐趣。所以今天小编想跟大家说说那些充满童趣的时尚品牌和单品。</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="active">
+                                    <a href="" title="我也能跟霍思燕一起过儿童节了，会呼吸的蕾丝穿上居然这么嫩" target="_blank">
+                                        <img src="static/user/article/clothes/match/image/lb4.jpg" height="220" width="220" alt="我也能跟霍思燕一起过儿童节了，会呼吸的蕾丝穿上居然这么嫩">
+                                    </a>
+                                    <div class="article-er">
+                                        <a href="" title="我也能跟霍思燕一起过儿童节了，会呼吸的蕾丝穿上居然这么嫩" target="_blank">
+                                            我也能跟霍思燕一起过儿童节了，会呼吸的蕾丝穿上居然这么嫩
+                                            <span>芭姐的小伙伴们六一快乐啊！《妈妈是超人》中宝贝们的可爱比拼让我已经被完全击败，妈妈们的私服更让芭姐眼花缭乱，比如霍思燕这件蕾丝镂空装</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="active">
+                                    <a href="" title="中国设计 | 通过影像介入时装，展现最具独特的品牌风格" target="_blank">
+                                        <img src="static/user/article/clothes/match/image/lb5.jpg" height="220" width="220" alt="中国设计 | 通过影像介入时装，展现最具独特的品牌风格">
+                                    </a>
+
+                                    <div class="article-er">
+                                        <a href="" title="中国设计 | 通过影像介入时装，展现最具独特的品牌风格" target="_blank">
+                                            中国设计 | 通过影像介入时装，展现最具独特的品牌风格
+                                            <span>Content的很多故事都是从影像中展开的，廖晓玲说，这或许这来源于作为建筑师的工作方式。它的作用就像一个抓手，让她可以寻求方案解决这个假设的问题。因为只有寻找问题，才能创造性解决问题。</span>
+                                        </a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--编辑推荐 end-->
+                </div></div>
+        </div>
+        <!--content end-->
+    </div>
+
+
 </div>
 
 
 <%@ include file="../../footer.jsp" %>
 
+
+<script type="text/javascript" src="static/user/article/community/js/jquery.hc-sticky.min.js"></script>
+<script type="text/javascript" src="static/user/article/community/js/article.js"></script>
+
+
 </body>
 </html>
+

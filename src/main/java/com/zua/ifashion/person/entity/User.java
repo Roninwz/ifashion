@@ -2,9 +2,10 @@ package com.zua.ifashion.person.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
     private Integer userId;
 
     private Integer rankId;

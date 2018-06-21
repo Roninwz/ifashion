@@ -4,6 +4,8 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zua.ifashion.person.entity.User;
 import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.util.interceptor.Token;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -76,21 +77,25 @@ public class AdminManageUserController {
 //    }
 //用户管理controller
 @RequestMapping(value = "/usermanage", method = RequestMethod.GET)
-public String adminUser(HttpServletRequest request, HttpServletResponse response, @RequestParam(required = false,defaultValue = "1",value = "curPage")Integer curPage,HttpSession session, Map<String, Object> map) {
-        int pageSize=10;
-        System.out.println(curPage);
-        PageHelper.startPage(curPage,pageSize);
+public String adminUser(HttpServletRequest request, HttpServletResponse response,HttpSession session, Map<String, Object> map) {
+       // int pageSize=10;
+        //System.out.println(curPage);
+       // PageHelper.startPage(curPage,pageSize);
         List<User> users=userService.getAllUsers();
-        PageInfo<User> pageInfo = new PageInfo<>(users);
-        map.put("pageInfo",pageInfo);
+       // PageInfo<User> pageInfo = new PageInfo<>(users);
+        //map.put("pageInfo",pageInfo);
         map.put("users",users);
-    return "admin/user";
+        map.put("n",users.size());
+        return "admin/user";
 }
+
+    @Token(save = true)
     @RequestMapping(value = "/adduser", method = RequestMethod.GET)
     public String addUser(HttpSession session) {
         session.getAttribute("adminModuleVos");
         return "admin/adduser";
     }
+    @Token(remove = true)
     @RequestMapping(value = "/addhandleuser", method = RequestMethod.POST)
     public String addHandleUser(HttpSession session,User user) {
 
@@ -155,7 +160,7 @@ public String adminUser(HttpServletRequest request, HttpServletResponse response
 
         return user;
     }
-
+//
 //    搜索用户
 @RequestMapping(value = "/searchuser", method = RequestMethod.POST)
 public String searchUser(HttpSession session,String username,Map<String,Object> map) {
@@ -169,4 +174,72 @@ public String searchUser(HttpSession session,String username,Map<String,Object> 
     }
     return "admin/searchuser";
 }
+
+
+    @RequestMapping(value = "/ajaxforbiddenuser", method = RequestMethod.POST)
+    @ResponseBody
+    public User ajaxForbiddenUser(HttpSession session,@RequestBody User user,Map<String,Object> map) {
+        String msg="";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+        //System.out.println(userId);
+        System.out.println(user.getUserId());
+        User user1=new User();
+        user1.setUserId(user.getUserId());
+        user1.setState(0);
+        int n=userService.updateUserSelective(user1);
+        if(n>0){
+            msg="禁用成功";
+        }else {
+            msg="禁用失败";
+        }
+        System.out.println(msg);
+        return user1;
+    }
+    //ajaxstartuser
+
+    @RequestMapping(value = "/ajaxstartuser", method = RequestMethod.POST)
+    @ResponseBody
+    public User ajaxStartUser(HttpSession session,@RequestBody User user,Map<String,Object> map) {
+        String msg="";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+        //System.out.println(userId);
+        System.out.println(user.getUserId());
+        User user1=new User();
+        user1.setUserId(user.getUserId());
+        user1.setState(1);
+        int n=userService.updateUserSelective(user1);
+        if(n>0){
+            msg="启用成功";
+        }else {
+            msg="启用失败";
+        }
+        System.out.println(msg);
+        return user;
+    }
+
+    //batchdeleteuser批量删除
+
+    @RequestMapping(value = "/batchdeleteuser", method = RequestMethod.POST)
+    public void batchDeleteUser(HttpSession session, HttpServletResponse response,HttpServletRequest request, Map<String,Object> map) {
+        String msg = "";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+        //System.out.println(userId);
+        String items = request.getParameter("delitems");// System.out.println(items);
+        String[] strs = items.split(",");
+
+        for (int i = 0; i < strs.length; i++) {
+            try {
+                int a = Integer.parseInt(strs[i]);
+                int n = userService.deleteUser(a);
+                if (n > 0) {
+                    msg = "删除成功";
+                } else {
+                    msg = "删除失败";
+                }
+                System.out.println(msg);
+            } catch (Exception e) {
+            }
+        }
+    }
+
 }

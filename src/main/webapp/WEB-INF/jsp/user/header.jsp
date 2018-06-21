@@ -14,7 +14,7 @@
     <title>Title</title>
 
     <%--登录模态框js--%>
-
+    <script src="${pageContext.request.contextPath}/static/user/common/plugin/jquery.cookie.js"></script>
 </head>
 <body>
 <%--头部--%>
@@ -126,14 +126,14 @@
         <c:if test="${not  empty isError}">
             <div class="error">${isError}</div>
         </c:if>
-        <input name="uname" type="text" placeholder="手机号/邮箱：">
-        <input name="password" type="password" placeholder="密码：">
+        <input name="uname" id="uname" type="text" placeholder="手机号/邮箱：">
+        <input name="password" id="password" type="password" placeholder="密码：">
         <input name="code" type="text" placeholder="验证码：" style="width: 180px;float: left;">
         <img id="codeValidateImg" onClick="javascript:flushValidateCode();"  alt="验证码" style="width: 100px;float: left;"/>
         <input type="submit" name="type" class="button-blue login" value="登录">
         <input type="hidden" name="return-url" value="">
         <div class="clearfix"></div>
-        <label class="remember"><input name="remember" type="checkbox" checked/>记住密码</label>
+        <label class="remember"><input name="remember" type="checkbox"  id="remember-password" onclick="remeber()"/>记住密码</label>
         <a class="forgot" id="forgot">忘记密码？</a>
     </form>
 </div>
@@ -166,7 +166,37 @@
     }
 
 
+    //jquery-cookie实现记住用户名和密码
+    $(function () {
 
+        var uname = $.cookie('uname');
+        var password = $.cookie('password');
+
+        //页面加载的时候从cookie中取出用户名和密码填充对应的输入框
+        $('#uname').val(uname);
+        $("#password").val(password)
+        //选中保存秘密的复选框　
+        if(uname != null && uname != '' && password != null && password != ''){
+            $("#remember-password").attr('checked',true);
+        }
+    });
+
+    function remeber(){
+
+        var uname = $("#uname").val();
+        var password = $("#password").val();
+
+        //判断复选框的选择状态添加cookie
+        if ($("#remember-password").is(":checked")) {
+            //存储一个带7天期限的cookie
+            $.cookie("uname", uname, { expires: 7 });
+            $.cookie("password", password, { expires: 7 });
+        }
+        else {
+            $.cookie("uname", "", { expires: -1 });
+            $.cookie("password", "", { expires: -1 });
+        }
+    }
 
 </script>
 </body>

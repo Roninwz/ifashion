@@ -1,12 +1,13 @@
 package com.zua.ifashion.article.controller;
 
 
-import com.zua.ifashion.article.entity.*;
+import com.zua.ifashion.article.entity.Article;
+import com.zua.ifashion.article.entity.ClothesTag;
+import com.zua.ifashion.article.entity.ClothesTagImg;
+import com.zua.ifashion.article.entity.ClothesTagType;
 import com.zua.ifashion.article.service.*;
-import com.zua.ifashion.article.vo.ArticleReviewUserVo;
 import com.zua.ifashion.article.vo.ArticleUserVo;
-import com.zua.ifashion.article.vo.ReplyReviewUserVo;
-import com.zua.ifashion.person.entity.User;
+import com.zua.ifashion.person.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,6 +37,9 @@ public class ClothesControl {
 
     @Autowired
     private ArticleReviewService articleReviewService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/clothes",method = RequestMethod.GET)
     public String ClothesHome(Map<String,Object> map, HttpServletRequest request, HttpServletResponse response){
@@ -122,41 +125,26 @@ public class ClothesControl {
     @RequestMapping(value = "/clothes/matchInfo",method = RequestMethod.GET)
     public String matchInfo(HttpServletRequest request,Integer articleId, HttpServletResponse response){
 
+        System.out.println(articleId);
         //文章内容
-        Article article = tagImgService.selectArticleByArticleId(articleId);
+        Article article = articleService.selectArticleByArticleId(articleId);
+        System.out.println(article.getArticleTitle());
+        System.out.println(article.getContent());
 
-        //文章作者信息
-        User user = articleService.selectUserByArticleId(articleId);
 
-        //文章作者最近写过的文章
-        List<Article> articles = new ArrayList<>();
-        articles = articleService.selectLatestArticleByUserId(user.getUserId());
-
-        //最热门的十篇文章
-        List<Article> hotArticle = new ArrayList<>();
-        hotArticle = articleService.selectHottestArticle();
-
-        //评论
-        List<ArticleReview> reviews = new ArrayList<>();
-        reviews = articleReviewService.selectLatestReviewByArticleId(articleId);
-
-        //查用户评论封装集合
-        List<ArticleReviewUserVo> arvo=new ArrayList<>();
-        for (ArticleReview ar:reviews){
-            ArticleReviewUserVo articleReviewUserVo=articleReviewService.selectUserByRevicewId(ar.getReviewId());
-            arvo.add(articleReviewUserVo);
-        }
-
+        //本篇文章的上一篇文章和下一篇文章
+        Article preArticle = articleService.selectPreArticle(articleId);
+        Article nextArticle = articleService.selectNextArticle(articleId);
 
 
         request.setAttribute("article",article);
-        request.setAttribute("user",user);
-        request.setAttribute("articles",articles);
-        request.setAttribute("hotArticle",hotArticle);
-        request.setAttribute("arvo",arvo);
+        request.setAttribute("preArticle",preArticle);
+        request.setAttribute("nextArticle",nextArticle);
 
 
         return "user/article/clothes/matchInfo";
     }
+
+
 
 }

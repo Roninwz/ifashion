@@ -9,7 +9,7 @@ public class Module {
 
     private String moduleUrl;
 
-    private Integer parentId;
+    private Integer pId;
 
     public Integer getModuleId() {
         return moduleId;
@@ -35,19 +35,19 @@ public class Module {
         this.moduleUrl = moduleUrl == null ? null : moduleUrl.trim();
     }
 
-    public Integer getParentId() {
-        return parentId;
+    public Integer getpId() {
+        return pId;
     }
 
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
+    public void setpId(Integer pId) {
+        this.pId = pId;
     }
 
-    public Module(Integer moduleId, String moduleName, String moduleUrl, Integer parentId) {
+    public Module(Integer moduleId, String moduleName, String moduleUrl, Integer pId) {
         this.moduleId = moduleId;
         this.moduleName = moduleName;
         this.moduleUrl = moduleUrl;
-        this.parentId = parentId;
+        this.pId = pId;
     }
 
     public Module() {
@@ -56,17 +56,17 @@ public class Module {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Module)) return false;
         Module module = (Module) o;
-        return Objects.equals(moduleId, module.moduleId) &&
-                Objects.equals(moduleName, module.moduleName) &&
-                Objects.equals(moduleUrl, module.moduleUrl) &&
-                Objects.equals(parentId, module.parentId);
+        return Objects.equals(getModuleId(), module.getModuleId()) &&
+                Objects.equals(getModuleName(), module.getModuleName()) &&
+                Objects.equals(getModuleUrl(), module.getModuleUrl()) &&
+                Objects.equals(getpId(), module.getpId());
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(moduleId, moduleName, moduleUrl, parentId);
+        return Objects.hash(getModuleId(), getModuleName(), getModuleUrl(), getpId());
     }
 }

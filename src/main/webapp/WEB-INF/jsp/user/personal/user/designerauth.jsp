@@ -394,11 +394,10 @@
             <li class="person">
                 <a href="#" class="person-detail">我的小窝</a>
                 <ul>
-                    <li> <a href="publish.html">我的发表</a></li>
-                    <li> <a href="collection.html">我的收藏</a></li>
-                    <li> <a href="attention.html">我的关注</a></li>
-                    <li> <a href="message.html">我的消息</a></li>
-
+                    <li> <a href="mypublish.html">我的发表</a></li>
+                    <li> <a href="mycollection.html">我的收藏</a></li>
+                    <li> <a href="myattention.html">我的关注</a></li>
+                    <li> <a href="mymessage.html">我的消息</a></li>
                 </ul>
             </li>
 

@@ -15,11 +15,23 @@ public class PersonOrderController {
     @Autowired
     RankService rankService;
 
+    //订单状态
+    //
+
+
     //   订单管理页面
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public String userOrders() {
 
+
+
+
         return "user/personal/user/orders";
     }
+
+
+
+
+
 
 }

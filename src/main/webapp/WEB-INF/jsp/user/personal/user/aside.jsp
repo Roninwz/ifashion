@@ -44,10 +44,10 @@
         <li class="person">
             <a href="#" class="person-detail">我的小窝</a>
             <ul>
-                <li> <a href="user/publish.action">我的发表</a></li>
-                <li> <a href="user/collection.action">我的收藏</a></li>
-                <li> <a href="user/attention.action">我的关注</a></li>
-                <li> <a href="user/message.action">我的消息</a></li>
+                <li> <a href="user/mypublish.action">我的发表</a></li>
+                <li> <a href="user/mycollection.action">我的收藏</a></li>
+                <li> <a href="user/myattention.action">我的关注</a></li>
+                <li> <a href="user/mymessage.action">我的消息</a></li>
 
             </ul>
         </li>

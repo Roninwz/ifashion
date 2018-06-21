@@ -12,13 +12,32 @@
 
   <!-- 添加管理员   -->
   <insert id="addRoleModule" parameterType="com.zua.ifashion.person.entity.RoleModule">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="rolemoduleId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into role_module(roleId,moduleId) values(#{roleId},#{moduleId})
   </insert>
 
+  <!-- 批量管理员   -->
+  <insert id="addBatchRoleModule"  parameterType="java.util.List">
+    insert into role_module (
+    roleId,
+    moduleId
+    )
+    values
+    <foreach collection="list" item="item" index="index" separator="," >
+      (
+      #{item.roleId,jdbcType=INTEGER},
+      #{item.moduleId,jdbcType=INTEGER}
+      )
+    </foreach>
+  </insert>
+
+
   <!-- 删除管理员    -->
-  <select id="deleteRoleModule" parameterType="int">
-    delete from role_module where rolemoduleId = #{rolemoduleId}
-  </select>
+  <delete id="deleteRoleModule" parameterType="java.lang.Integer">
+    delete from role_module where rolemoduleId = #{rolemoduleId,jdbcType=INTEGER}
+  </delete>
 
   <!-- 修改管理员    -->
 

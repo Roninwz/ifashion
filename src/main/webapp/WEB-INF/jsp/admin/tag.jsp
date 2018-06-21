@@ -38,7 +38,6 @@
                 <table class="table table-border table-bordered table-bg table-hover table-sort">
                     <thead>
                     <tr class="text-c">
-                        <th width="25"><input type="checkbox" name="" value=""></th>
                         <th width="40">ID</th>
                         <th width="80">标签名</th>
 
@@ -49,7 +48,7 @@
 
                     <c:forEach items="${tags}" var="tags">
                     <tr class="text-c">
-                        <td><input type="checkbox" value="" name=""></td>
+
                         <td>${tags.tagId}</td>
                         <td>${tags.tagName}</td>
 

@@ -48,7 +48,7 @@
         endDate
       </if>
     </trim>
-    <trim prefix="(" suffixOverrides="," suffix=")">
+    <trim prefix="values(" suffixOverrides="," suffix=")">
       <if test="ordersId!=null">
         #{ordersId}
       </if>
@@ -76,4 +76,49 @@
     </trim>
 
   </insert>
+
+  <!--public abstract List<Orders> selectAllOrders();-->
+  <select id="selectAllOrders" resultType="Orders">
+    select * from orders
+  </select>
+
+  <!--public abstract int updateOrder(Orders orders);-->
+  <update id="updateOrder" parameterType="Orders">
+    UPDATE orders set ordersId=#{ordersId},userId=#{userId},designerId=#{designerId},goodsId=#{goodsId},addressId=#{addressId},
+    ordersState=#{ordersState},ordersDate=#{ordersDate},endDate=#{endDate}
+  </update>
+
+  <!--public abstract int updateOrderSelective(Orders orders);-->
+  <update id="updateOrderSelective" parameterType="Orders">
+     UPDATE orders set
+      <if test="userId!=null">
+        userId=#{userId}
+      </if>
+      <if test="designerId!=null">
+        designerId=#{designerId}
+      </if>
+      <if test="goodsId!=null">
+        goodsId=#{goodsId}
+      </if>
+      <if test="addressId!=null">
+        addressId=#{addressId}
+      </if>
+      <if test="ordersState!=null">
+        ordersState=#{ordersState}
+      </if>
+      <if test="ordersDate!=null">
+        ordersDate=#{ordersDate}
+      </if>
+      <if test="endDate!=null">
+        endDate=#{endDate}
+      </if>
+    where  ordersId=#{ordersId}
+  </update>
+
+<!--
+  public abstract int deleteOrder(Integer orderId);
+-->
+<delete id="deleteOrder" parameterType="int">
+  delete * from orders where ordersId=#{param}
+</delete>
 </mapper>
