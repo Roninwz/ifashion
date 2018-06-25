@@ -1,6 +1,9 @@
 package com.zua.ifashion.talk.mapper;
 
 import com.zua.ifashion.talk.entity.DiscussReply;
+import com.zua.ifashion.talk.vo.CountDiscussId;
+import com.zua.ifashion.talk.vo.DiscussReplyUser;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 import java.util.List;
@@ -33,14 +36,18 @@ public interface DiscussReplyMapper {
     //通过discussId来查询评论
     List<DiscussReply> selectDiscussReplyByDiscussId(Integer discussId);
 
-    //查询某篇讨论的所有评论数量
-    int getDiscussReplyCountByDiscussId(Integer discussId);
+    //通过discussId来查询评论用户详情
+    List<DiscussReplyUser> selectDiscussReplyUByDiscussId(@Param("discussId") Integer discussId);
+
 
     //查询某个话题的所有回复
     List<DiscussReply> selectDiscussReplyByTopicId(Integer topicId);
 
     //查询某个话题的所有回复数量
     int selectDiscussReplyCountByTopicId(Integer topicId);
+
+    //查询某个讨论的所有回复数量
+    int selectDiscussReplyCountByDiscussId(Integer discussId);
 
     //查询点赞量
     int selectDiscussReplyByDiscussReplyZan(Integer discussId);
@@ -56,6 +63,10 @@ public interface DiscussReplyMapper {
 
     //查询所有回复数量
     int getAllDiscussReplyCount();
+
+    //查询讨论回复最多的讨论并排序
+
+    List<CountDiscussId> selectDiscussId();
 
 
 

@@ -33,6 +33,9 @@
       <if test="complainReason != null">
         complainReason,
       </if>
+      <if test="state != null">
+        state,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="reviewId != null">
@@ -47,8 +50,34 @@
       <if test="complainReason != null">
         #{complainReason},
       </if>
+      <if test="state != null">
+        #{state},
+      </if>
     </trim>
   </insert>
+
+  <!--更新非空字段举报-->
+  <update id="updateComplainSelective" parameterType="int">
+    INSERT INTO article
+    <set>
+      <if test="reviewId != null">
+        reviewId = #{reviewId},
+      </if>
+      <if test="complainUserid != null">
+        complainUserid = #{complainUserid},
+      </if>
+      <if test="complainedUserid != null">
+        complainedUserid = #{complainedUserid},
+      </if>
+      <if test="complainReason != null">
+        complainReason = #{complainReason},
+      </if>
+      <if test="state != null">
+        state = #{state}
+      </if>
+    </set>
+    where complainId = #{complainId}
+  </update>
 
   <!--删除举报-->
   <delete id="deleteComplain" parameterType="int">

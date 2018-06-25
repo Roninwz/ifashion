@@ -132,6 +132,15 @@
       <artifactId>spring-messaging</artifactId>
       <version>4.2.1.RELEASE</version>
     </dependency>
+
+    <!--javax-socket-->
+    <!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
+    <dependency>
+      <groupId>javax.websocket</groupId>
+      <artifactId>javax.websocket-api</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
     <!-- mybatis核心包 -->
     <dependency>
       <groupId>org.mybatis</groupId>
@@ -286,6 +295,11 @@
       <artifactId>javax.mail-api</artifactId>
       <version>1.6.0</version>
     </dependency>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.0</version>
+    </dependency>
     <!--秒嘀短信jar 1个+codec1个-->
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -293,7 +307,13 @@
       <version>2.0</version>
     </dependency>
 
-
+    <!--支付接口-->
+    <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+    <dependency>
+      <groupId>com.alipay.sdk</groupId>
+      <artifactId>alipay-sdk-java</artifactId>
+      <version>3.0.0</version>
+    </dependency>
     <!--redis jar 2个包-->
     <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
     <dependency>
@@ -337,7 +357,12 @@
       <artifactId>jta</artifactId>
       <version>1.1</version>
     </dependency>
-
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
 
   </dependencies>
 

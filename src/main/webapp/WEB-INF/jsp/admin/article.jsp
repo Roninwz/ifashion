@@ -55,7 +55,7 @@
                         <td><input type="checkbox" value="" id="subcheck"
                                    name="subcheck"></td>
                         <td>${articles.articleId}</td>
-                        <td><a style="cursor:pointer" href="admin/articledetail.action">${articles.articleTitle}</a></td>
+                        <td><a style="cursor:pointer" href="admin/articledetail.action?articleId=${articles.articleId}">${articles.articleTitle}</a></td>
                         <td>${articles.articletypeId}</td>
                         <td>${articles.userId}</td>
                         <td>

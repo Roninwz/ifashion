@@ -1,9 +1,10 @@
 package com.zua.ifashion.online.controller;
 
 
+import com.zua.ifashion.online.entity.Goods;
 import com.zua.ifashion.online.entity.GoodsReview;
-import com.zua.ifashion.online.service.GoodsService;
 import com.zua.ifashion.online.service.GoodsReviewService;
+import com.zua.ifashion.online.service.GoodsService;
 import com.zua.ifashion.online.vo.GoodsAndImgDesignerVO;
 import com.zua.ifashion.person.entity.User;
 import com.zua.ifashion.person.service.UserService;
@@ -58,8 +59,35 @@ public class DesignerController {
 //    根据商品的id得到商品的信息
     @RequestMapping("/online_buy")
     public String getBuyPage(HttpServletRequest request,HttpServletResponse response){
-        String id=request.getParameter("id");
+        String id=request.getParameter("id");  //商品id
+        String designerId=request.getParameter("userId"); //设计师的id
+
         Integer goodsId=Integer.parseInt(id);
+        Integer userId=Integer.parseInt(designerId);
+        List<GoodsAndImgDesignerVO> goodsAndImgDesignerVOList=goodsService.getGoodsByUserId(userId);
+        GoodsAndImgDesignerVO goodsAndImgDesignerVO=goodsService.getGoodsByGoodsId(goodsId);
+        goodsAndImgDesignerVOList.remove(goodsAndImgDesignerVO);
+        List<GoodsReview> goodsReviewList=goodsReviewService.getGoodsReviewByGoodsId(goodsId);
+        List<User> users=new ArrayList<>();
+        for(GoodsReview review:goodsReviewList){
+            User user=userService.selectUserByUserId(review.getUserId());
+            users.add(user);
+        }
+        request.setAttribute("user",users);
+        request.setAttribute("goodsReviewList",goodsReviewList);
+        request.setAttribute("goodsAndImgDesignerVO",goodsAndImgDesignerVO);
+        request.setAttribute("goodsAndImgDesignerVOList",goodsAndImgDesignerVOList);
+        return "/user/online/buygoods";
+    }
+
+    @RequestMapping("/online_buygoods")
+    public String getBuyGoods(HttpServletRequest request,HttpServletResponse response){
+        String id=request.getParameter("id");  //商品id
+        Integer goodsId=Integer.parseInt(id);
+        Goods goods=goodsService.selectGoodsByByGoodsId(goodsId);
+
+        List<GoodsAndImgDesignerVO> goodsAndImgDesignerVOList=goodsService.getGoodsByUserId(goods.getUserId());
+
         GoodsAndImgDesignerVO goodsAndImgDesignerVO=goodsService.getGoodsByGoodsId(goodsId);
         List<GoodsReview> goodsReviewList=goodsReviewService.getGoodsReviewByGoodsId(goodsId);
         List<User> users=new ArrayList<>();
@@ -70,6 +98,11 @@ public class DesignerController {
         request.setAttribute("user",users);
         request.setAttribute("goodsReviewList",goodsReviewList);
         request.setAttribute("goodsAndImgDesignerVO",goodsAndImgDesignerVO);
+        request.setAttribute("goodsAndImgDesignerVOList",goodsAndImgDesignerVOList);
         return "/user/online/buygoods";
     }
+
+
+
+
 }

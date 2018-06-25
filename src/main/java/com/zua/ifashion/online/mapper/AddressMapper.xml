@@ -8,8 +8,9 @@
 
   <insert id="addAddress" parameterType="Address">
     <selectKey resultType="INTEGER" order="AFTER" keyProperty="addressId">
-      SELECT LAST_INSERT_ID()
+    SELECT LAST_INSERT_ID()
     </selectKey>
+
      insert into address(addressId,userId,addressContent,addressState,receiverName,addressTel) values(#{addressId},#{userId},#{addressContent},#{addressState},#{receiverName},#{addressTel})
   </insert>
 
@@ -19,6 +20,7 @@
     <selectKey resultType="INTEGER" order="AFTER" keyProperty="addressId">
       SELECT LAST_INSERT_ID()
     </selectKey>
+
     insert into address
     <trim prefix="(" suffix=")" suffixOverrides=",">
         <if test="addressId!=null">
@@ -82,9 +84,7 @@
   <update id="updateAddressSelective" parameterType="Address">
     update address
     set
-    <if test="addressId!=null">
-      addressId=#{addressId}
-    </if>
+
     <if test="userId!=null">
       userId=#{userId}
     </if>
@@ -100,6 +100,7 @@
     <if test="addressTel!=null">
       addressTel=#{addressTel}
     </if>
+    where addressId=#{addressId}
   </update>
 
   <!--//通过收货地址id查询收货地址-->

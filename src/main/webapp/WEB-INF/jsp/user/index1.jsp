@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="static/user/common/top/css/newindex_v201607.css">
     <link rel="stylesheet" href="static/user/common/top/css/newconment_v201607.css">
     <link rel="stylesheet" href="static/user/login/css/login.css">
-
+    <link rel="stylesheet" href="static/user/login/header.css">
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
     <%--导航栏js--%>
     <script src="static/user/common/top/js/index_search.js"></script>
@@ -56,9 +56,39 @@
         </a>
     </h1>
     <div class="login">
-            <a  data-toggle="modal" href="#login-modal">登录</a> |
-            <a href="" target="_self" rel="nofollow">注册</a>
+        <c:set var="uname" value="${sessionScope.uname}"/>
+        <c:if test="${empty uname}">
+            <a  data-toggle="modal" href="#login-modal">
+                <button class="btn btn_primary radius">
+                    登录
+                </button></a>&nbsp;&nbsp;|
+            <a href="user/register.action" target="_self" rel="nofollow">
+                <button class="btn btn_primary radius">
+                    注册
+                </button></a>
 
+        </c:if>
+
+        <c:if test="${not empty uname}">
+            <span><button class="btn btn_primary radius">
+                       欢迎您 ${uname}
+            </button></span>
+            <button class="btn btn_primary radius">
+                <a href="user/personal.action" target="_self" rel="nofollow" style="color: #000">个人中心</a>
+            </button>
+            <button class="btn btn_primary radius">
+                <a href="user/userlogout.action" target="_self" rel="nofollow" style="color: #000">注销</a>
+            </button>
+
+            <div id="message" style="float: right">
+            <span data-type="1" class="message-bell-btn" title="99条新消息"><i class="fa fa-bell-o "></i>
+                <!-- <span class="badge-dot"></span> -->
+
+            </span>
+            </div>
+
+
+        </c:if>
     </div>
 </div>
 

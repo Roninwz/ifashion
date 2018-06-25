@@ -26,4 +26,36 @@
         SELECT a.* FROM article a,clothes_tag_img c WHERE c.articleId = #{articleId}
         AND a.articleId = c.articleId
     </select>
+
+    <insert id="addTagImgSelective" parameterType="com.zua.ifashion.article.entity.ClothesTagImg">
+        INSERT INTO clothes_tag_img
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="clothesTagImgId != null">
+                clothesTagImgId,
+            </if>
+            <if test="clothesTagId != null">
+                clothesTagId,
+            </if>
+            <if test="clothesTagImgUrl != null">
+                clothesTagImgUrl,
+            </if>
+            <if test="articleId != null">
+                articleId,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="clothesTagImgId != null">
+                #{clothesTagImgId},
+            </if>
+            <if test="clothesTagId != null">
+                #{clothesTagId},
+            </if>
+            <if test="clothesTagImgUrl != null">
+                #{clothesTagImgUrl},
+            </if>
+            <if test="articleId != null">
+                #{articleId},
+            </if>
+        </trim>
+    </insert>
 </mapper>

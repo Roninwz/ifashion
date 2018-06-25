@@ -67,5 +67,8 @@ public interface DiscussService {
     //查询forum页面的讨论
     List<DiscussUser> selectDiscussUserByTopicId(Integer topicId);
 
+    //根据lookNum来查询最新热门讨论
+    List<Discuss> selectDiscussByDiscussDateAndLookNum();
+
 
 }

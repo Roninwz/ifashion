@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../header.jsp" %>
+
 
 
 <%
@@ -62,7 +62,7 @@
 
 </head>
 <body style="background: #fff">
-
+<%@ include file="../../header.jsp" %>
 <!--banner-->
 <div class='bannerArea'>
     <div class='w1180'>
@@ -97,6 +97,7 @@
                     </div>
                 </a>
             </li>
+
             <li >
                 <a href='' title='又想换一双球鞋了？你可以看看最新的这30款' target='_blank'>
                     <img src='static/user/article/news/image/1527060085_zb2xwt.jpg' alt='又想换一双球鞋了？你可以看看最新的这30款' width='1180' height='550' />
@@ -106,99 +107,106 @@
                     </div>
                 </a>
             </li>
-            <li >
-                <a href='' title='被阔腿裤“承包”的夏天 清凉又时髦' target='_blank'>
-                    <img src='static/user/article/news/image/1527061009_3kzjij.png' alt='被阔腿裤“承包”的夏天 清凉又时髦' width='1180' height='550' />
-                    <div class='desc'>
-                        <div class='t'>如果你还在纠结穿什么显瘦又显高，阔腿裤一定会是你这个夏天最惊喜的发现。无论是高冷的御姐风，还是清爽的文艺风，阔腿裤都能...</div>
-                        <p></p>
-                    </div>
-                </a>
-            </li>
-            <li >
-                <a href='' title='其实冬天还应该要有一件皮衣的！好搭配又时尚！
-' target='_blank'>
-                    <img src='static/user/article/news/image/969-1g225104a4a9_a0e133_1160_544.jpg' alt='其实冬天还应该要有一件皮衣的！好搭配又时尚！
-' width='1180' height='550' />
-                    <div class='desc'>
-                        <div class='t'>冬天其实这个单品也是不能少的!特别是在风大的地方，皮衣不仅仅可以穿起来防风，还可以穿起来超级有个性，有味道的穿搭。所以说呢，冬天这个季节也一样可以搭配的!
-                        </div>
-                        <p></p>
-                    </div>
-                </a>
-            </li>
-            <li >
-                <a href='' title='来一款二次元双丸子头 更加时髦个性
+            <%----%>
+            <%--<li >--%>
+                <%--<a href='' title='被阔腿裤“承包”的夏天 清凉又时髦' target='_blank'>--%>
+                    <%--<img src='static/user/article/news/image/1527061009_3kzjij.png' alt='被阔腿裤“承包”的夏天 清凉又时髦' width='1180' height='550' />--%>
+                    <%--<div class='desc'>--%>
+                        <%--<div class='t'>如果你还在纠结穿什么显瘦又显高，阔腿裤一定会是你这个夏天最惊喜的发现。无论是高冷的御姐风，还是清爽的文艺风，阔腿裤都能...</div>--%>
+                        <%--<p></p>--%>
+                    <%--</div>--%>
+                <%--</a>--%>
+            <%--</li>--%>
+            <%--<li >--%>
+                <%--<a href='' title='其实冬天还应该要有一件皮衣的！好搭配又时尚！--%>
+<%--' target='_blank'>--%>
+                    <%--<img src='static/user/article/news/image/969-1g225104a4a9_a0e133_1160_544.jpg' alt='其实冬天还应该要有一件皮衣的！好搭配又时尚！--%>
+<%--' width='1180' height='550' />--%>
+                    <%--<div class='desc'>--%>
+                        <%--<div class='t'>冬天其实这个单品也是不能少的!特别是在风大的地方，皮衣不仅仅可以穿起来防风，还可以穿起来超级有个性，有味道的穿搭。所以说呢，冬天这个季节也一样可以搭配的!--%>
+                        <%--</div>--%>
+                        <%--<p></p>--%>
+                    <%--</div>--%>
+                <%--</a>--%>
+            <%--</li>--%>
+            <%--<li >--%>
+                <%--<a href='' title='来一款二次元双丸子头 更加时髦个性--%>
 
-' target='_blank'>
-                    <img src='static/user/article/news/image/1085-1g225101413201_0df89a_1160_544.jpg' alt='来一款二次元双丸子头 更加时髦个性
+<%--' target='_blank'>--%>
+                    <%--<img src='static/user/article/news/image/1085-1g225101413201_0df89a_1160_544.jpg' alt='来一款二次元双丸子头 更加时髦个性--%>
 
-' width='1180' height='550' />
-                    <div class='desc'>
-                        <div class='t'>人类已经挡不住丸子头的脚步了，从半丸子头到双丸子头，各路明星纷纷掌握。其实比起半丸子头，双丸子头会显得更有个性，更显古灵精怪的俏皮活力。
+<%--' width='1180' height='550' />--%>
+                    <%--<div class='desc'>--%>
+                        <%--<div class='t'>人类已经挡不住丸子头的脚步了，从半丸子头到双丸子头，各路明星纷纷掌握。其实比起半丸子头，双丸子头会显得更有个性，更显古灵精怪的俏皮活力。--%>
 
-                        </div>
-                        <p></p>
-                    </div>
-                </a>
-            </li>
-            <li >
-                <a href='' title='今年的戛纳红毯，我居然觉得没有最丑的…' target='_blank'>
-                    <img src='static/user/article/news/image/5af268c0a31db_536.jpg' alt='今年的戛纳红毯，我居然觉得没有最丑的…' width='1180' height='550' />
-                    <div class='desc'>
-                        <div class='t'>今年的戛纳红毯，我居然觉得没有最丑的…</div>
-                        <p></p>
-                    </div>
-                </a>
-            </li><li >
-            <a href='' title='王俊凯少年初长成魅力造型蜕变，诱人魅力四射,男友感MAX' target='_blank'>
-                <img src='static/user/article/news/image/1089-1p42q52u0s4_d884eb_1160_544.jpg' alt='王俊凯少年初长成魅力造型蜕变，诱人魅力四射,男友感MAX' width='1180' height='550' />
-                <div class='desc'>
-                    <div class='t'>王俊凯少年初长成魅力造型蜕变，诱人魅力四射 ,男友感MAX 王俊凯《OK！精彩》6周年封面及大片曝光。印有玫瑰花的黑色针织衫相称着被光映照的脸颊，少年轻咬复古的十字项链</div>
-                    <p></p>
-                </div>
-            </a>
-        </li><li >
-            <a href='' title='选长线条耳环胜过削骨 赵丽颖宋祖儿都跟风带' target='_blank'>
-                <img src='static/user/article/news/image/1526634959466.jpg' alt='选长线条耳环胜过削骨 赵丽颖宋祖儿都跟风带' width='1180' height='550' />
-                <div class='desc'>
-                    <div class='t'>选长线条耳环胜过削骨 赵丽颖宋祖儿都跟风带</div>
-                    <p></p>
-                </div>
-            </a>
-        </li><li >
-            <a href='' title='号称一秒出门的超火T恤裙 其实有很多Bug？！' target='_blank'>
-                <img src='static/user/article/news/image/1526458061531.jpg' alt='号称一秒出门的超火T恤裙 其实有很多Bug？！' width='1180' height='550' />
-                <div class='desc'>
-                    <div class='t'>号称一秒出门的超火T恤裙 其实有很多Bug？！</div>
-                    <p></p>
-                </div>
-            </a>
-        </li><li >
-            <a href='' title='周冬雨是Polo衫发起者？今夏的粗孔针织款既清凉又带感' target='_blank'>
-                <img src='static/user/article/news/image/1527060273943.jpg' alt='周冬雨是Polo衫发起者？今夏的粗孔针织款既清凉又带感' width='1180' height='550' />
-                <div class='desc'>
-                    <div class='t'>周冬雨是Polo衫发起者？今夏的粗孔针织款既清凉又带感</div>
-                    <p></p>
-                </div>
-            </a>
-        </li><li >
-            <a href='' title='宋祖儿 二十岁的年纪，她是哭与笑都惊艳时光的美少女' target='_blank'>
-                <img src='static/user/article/news/image/1527041939638.jpg' alt='宋祖儿 二十岁的年纪，她是哭与笑都惊艳时光的美少女' width='1180' height='550' />
-                <div class='desc'>
-                    <div class='t'>宋祖儿 二十岁的年纪，她是哭与笑都惊艳时光的美少女</div>
-                    <p></p>
-                </div>
-            </a>
-        </li><li >
-            <a href='' title='红毯造型屡获好评，Emma Stone如何练就0失误搭配？' target='_blank'>
-                <img src='static/user/article/news/image/5add68287b79e_192.jpg' alt='红毯造型屡获好评，Emma Stone如何练就0失误搭配？' width='1180' height='550' />
-                <div class='desc'>
-                    <div class='t'>红毯造型屡获好评，Emma Stone如何练就0失误搭配？</div>
-                    <p></p>
-                </div>
-            </a>
-        </li>
+                        <%--</div>--%>
+                        <%--<p></p>--%>
+                    <%--</div>--%>
+                <%--</a>--%>
+            <%--</li>--%>
+            <%--<li >--%>
+                <%--<a href='' title='今年的戛纳红毯，我居然觉得没有最丑的…' target='_blank'>--%>
+                    <%--<img src='static/user/article/news/image/5af268c0a31db_536.jpg' alt='今年的戛纳红毯，我居然觉得没有最丑的…' width='1180' height='550' />--%>
+                    <%--<div class='desc'>--%>
+                        <%--<div class='t'>今年的戛纳红毯，我居然觉得没有最丑的…</div>--%>
+                        <%--<p></p>--%>
+                    <%--</div>--%>
+                <%--</a>--%>
+            <%--</li>--%>
+            <%--<li >--%>
+            <%--<a href='' title='王俊凯少年初长成魅力造型蜕变，诱人魅力四射,男友感MAX' target='_blank'>--%>
+                <%--<img src='static/user/article/news/image/1089-1p42q52u0s4_d884eb_1160_544.jpg' alt='王俊凯少年初长成魅力造型蜕变，诱人魅力四射,男友感MAX' width='1180' height='550' />--%>
+                <%--<div class='desc'>--%>
+                    <%--<div class='t'>王俊凯少年初长成魅力造型蜕变，诱人魅力四射 ,男友感MAX 王俊凯《OK！精彩》6周年封面及大片曝光。印有玫瑰花的黑色针织衫相称着被光映照的脸颊，少年轻咬复古的十字项链</div>--%>
+                    <%--<p></p>--%>
+                <%--</div>--%>
+            <%--</a>--%>
+        <%--</li>--%>
+            <%--<li >--%>
+            <%--<a href='' title='选长线条耳环胜过削骨 赵丽颖宋祖儿都跟风带' target='_blank'>--%>
+                <%--<img src='static/user/article/news/image/1526634959466.jpg' alt='选长线条耳环胜过削骨 赵丽颖宋祖儿都跟风带' width='1180' height='550' />--%>
+                <%--<div class='desc'>--%>
+                    <%--<div class='t'>选长线条耳环胜过削骨 赵丽颖宋祖儿都跟风带</div>--%>
+                    <%--<p></p>--%>
+                <%--</div>--%>
+            <%--</a>--%>
+        <%--</li>--%>
+            <%--<li >--%>
+            <%--<a href='' title='号称一秒出门的超火T恤裙 其实有很多Bug？！' target='_blank'>--%>
+                <%--<img src='static/user/article/news/image/1526458061531.jpg' alt='号称一秒出门的超火T恤裙 其实有很多Bug？！' width='1180' height='550' />--%>
+                <%--<div class='desc'>--%>
+                    <%--<div class='t'>号称一秒出门的超火T恤裙 其实有很多Bug？！</div>--%>
+                    <%--<p></p>--%>
+                <%--</div>--%>
+            <%--</a>--%>
+        <%--</li>--%>
+            <%--<li >--%>
+            <%--<a href='' title='周冬雨是Polo衫发起者？今夏的粗孔针织款既清凉又带感' target='_blank'>--%>
+                <%--<img src='static/user/article/news/image/1527060273943.jpg' alt='周冬雨是Polo衫发起者？今夏的粗孔针织款既清凉又带感' width='1180' height='550' />--%>
+                <%--<div class='desc'>--%>
+                    <%--<div class='t'>周冬雨是Polo衫发起者？今夏的粗孔针织款既清凉又带感</div>--%>
+                    <%--<p></p>--%>
+                <%--</div>--%>
+            <%--</a>--%>
+        <%--</li>--%>
+            <%--<li >--%>
+            <%--<a href='' title='宋祖儿 二十岁的年纪，她是哭与笑都惊艳时光的美少女' target='_blank'>--%>
+                <%--<img src='static/user/article/news/image/1527041939638.jpg' alt='宋祖儿 二十岁的年纪，她是哭与笑都惊艳时光的美少女' width='1180' height='550' />--%>
+                <%--<div class='desc'>--%>
+                    <%--<div class='t'>宋祖儿 二十岁的年纪，她是哭与笑都惊艳时光的美少女</div>--%>
+                    <%--<p></p>--%>
+                <%--</div>--%>
+            <%--</a>--%>
+        <%--</li>--%>
+            <%--<li >--%>
+            <%--<a href='' title='红毯造型屡获好评，Emma Stone如何练就0失误搭配？' target='_blank'>--%>
+                <%--<img src='static/user/article/news/image/5add68287b79e_192.jpg' alt='红毯造型屡获好评，Emma Stone如何练就0失误搭配？' width='1180' height='550' />--%>
+                <%--<div class='desc'>--%>
+                    <%--<div class='t'>红毯造型屡获好评，Emma Stone如何练就0失误搭配？</div>--%>
+                    <%--<p></p>--%>
+                <%--</div>--%>
+            <%--</a>--%>
+        <%--</li>--%>
         </ul>
         <div class='leftCover'></div>
         <div class='rightCover'></div>
@@ -217,7 +225,7 @@
     <!-- Today's Focus -->
     <div class='todayFocus'>
         <h2 class='cateTitle'><span class="tit-txt">Today's Focus</span></h2>
-        <div class='todayArea'>
+        <div class='todayArea' style="margin-top: 20px;">
             <div class='partA fLeft'>
                 <dl class='list'>
                     <dd>
@@ -291,20 +299,37 @@
         <!-- model_title end -->
         <div class='area'>
             <ul class='list'>
-                <li class='style_show'><a href='http://streetstyle.onlylady.com/2018/0516/3938282.shtml' title='《北京女子图鉴》励不励志我不知道，但绝对是部菜鸟穿搭完美进阶史' target='_blank'>
-                    <img src='static/user/article/news/image/5b02961787f1d_342.jpg' alt='http://streetstyle.onlylady.com/2018/0516/3938282.shtml' width='366' height='300' />
-                    <div class='txt'><span>《北京女子图鉴》励不励志我不知道，但绝对是部菜鸟穿搭完美进阶史</span></div></a></li>
-                <li class='style_show'><a href='http://beauty.onlylady.com/2018/0426/3936828.shtml' title='男朋友说：春夏季节，该换护肤品啦！' target='_blank'>
-                    <img src='static/user/article/news/image/5afe33a839da5_804.jpg' alt='http://beauty.onlylady.com/2018/0426/3936828.shtml' width='366' height='300' /><div class='txt'><span>男朋友说：春夏季节，该换护肤品啦！</span></div></a></li>
-                <li class='style_show'><a href='http://streetstyle.onlylady.com/2018/0424/3936585.shtml' title='换季最美四月天，秀出衣柜中的时髦风衣' target='_blank'>
-                    <img src='static/user/article/news/image/5ae1aa1e4081d_891.jpg' alt='http://streetstyle.onlylady.com/2018/0424/3936585.shtml' width='366' height='300' /><div class='txt'><span>换季最美四月天，秀出衣柜中的时髦风衣</span></div></a></li>
+                <li class='style_show'>
+                    <a href='${pageContext.request.contextPath }/user/newsInfo.action?articleId=1040' title='《北京女子图鉴》励不励志我不知道，但绝对是部菜鸟穿搭完美进阶史' target='_blank'>
+                        <img src='static/user/article/news/image/5b02961787f1d_342.jpg' alt='http://streetstyle.onlylady.com/2018/0516/3938282.shtml' width='366' height='300' />
+                        <div class='txt'>
+                            <span>《北京女子图鉴》励不励志我不知道，但绝对是部菜鸟穿搭完美进阶史</span>
+                        </div>
+                    </a>
+                </li>
+                <li class='style_show'>
+                    <a href='http://beauty.onlylady.com/2018/0426/3936828.shtml' title='男朋友说：春夏季节，该换护肤品啦！' target='_blank'>
+                    <img src='static/user/article/news/image/5afe33a839da5_804.jpg' alt='http://beauty.onlylady.com/2018/0426/3936828.shtml' width='366' height='300' />
+                        <div class='txt'>
+                            <span>男朋友说：春夏季节，该换护肤品啦！</span>
+                        </div>
+                    </a>
+                </li>
+                <li class='style_show'>
+                    <a href='http://streetstyle.onlylady.com/2018/0424/3936585.shtml' title='换季最美四月天，秀出衣柜中的时髦风衣' target='_blank'>
+                        <img src='static/user/article/news/image/5ae1aa1e4081d_891.jpg' alt='http://streetstyle.onlylady.com/2018/0424/3936585.shtml' width='366' height='300' />
+                        <div class='txt'>
+                            <span>换季最美四月天，秀出衣柜中的时髦风衣</span>
+                        </div>
+                    </a>
+                </li>
                 <li class="style_show"><!--"OL_SYS_188_51"--><!--::1::--><ins class='dcmads' style='display:inline-block;width:366px;height:300px'    data-dcm-placement='N8897.2090304ONLYLADY/B20878410.216540146'    data-dcm-rendering-mode='script'    data-dcm-http-only    data-dcm-app-id=''>  <script src='static/user/article/news/js/dcmads.js'></script></ins><span id='opacityCoverGGW_188' style="z-index:999;position:absolute;left:0;bottom:0;background:url(Images/ggw.png) 0 0 repeat;width:25px;height:15px;display:block"></span><script>(function(){var opacityCoverGGW= $('#opacityCoverGGW_188'),parent_pos;if(!opacityCoverGGW){opacityCoverGGW= $jq('#opacityCoverGGW_188')}parent_pos=opacityCoverGGW.parent().css('position');if(parent_pos=='static'){ opacityCoverGGW.parent().css({position:'relative','line-height': 0});}})();</script><input  id="advid" name="advid" value="188"   type="hidden"/></li>
-                <li class='style_show'><a href='http://streetstyle.onlylady.com/2018/0404/3934928.shtml' title='热血召集人宋茜了解一下！' target='_blank'><img src='static/user/article/news/image/5acad15821b48_363.jpg' alt='http://streetstyle.onlylady.com/2018/0404/3934928.shtml' width='366' height='300' /><div class='txt'><span>热血召集人宋茜了解一下！</span></div></a></li>
-                <li ><a href='http://beauty.onlylady.com/2018/0327/3934097.shtml' title='男朋友说丨和不同类型女生谈恋爱是什么感觉？' target='_blank'><img src='static/user/article/news/image/5abcc594c9a8d_776.jpg' alt='http://beauty.onlylady.com/2018/0327/3934097.shtml' width='366' height='300' /><div class='txt'><span>男朋友说丨和不同类型女生谈恋爱是什么感觉？</span></div></a></li>
-                <li ><a href='http://bbs.onlylady.com/thread-4037796-1-1.html' title='你离如花美貌只差一个KENZO小礼盒的距离' target='_blank'><img src='static/user/article/news/image/5aa61564b1178_353.jpg' alt='http://bbs.onlylady.com/thread-4037796-1-1.html' width='366' height='300' /><div class='txt'><span>你离如花美貌只差一个KENZO小礼盒的距离</span></div></a></li>
-                <li ><a href='http://streetstyle.onlylady.com/2018/0316/3933102.shtml' title='孙怡演技在线屏霸影视圈，还颜高衣品好！' target='_blank'><img src='static/user/article/news/image/5acd823bca3dd_416.jpg' alt='http://streetstyle.onlylady.com/2018/0316/3933102.shtml' width='366' height='300' /><div class='txt'><span>孙怡演技在线屏霸影视圈，还颜高衣品好！</span></div></a></li>
-                <li ><a href='http://streetstyle.onlylady.com/2018/0314/3932830.shtml' title='《迷雾》47岁的女主是怎样把悬疑片演成了时装片？' target='_blank'><img src='static/user/article/news/image/5acd811cd5645_652.jpg' alt='http://streetstyle.onlylady.com/2018/0314/3932830.shtml' width='366' height='300' /><div class='txt'><span>《迷雾》47岁的女主是怎样把悬疑片演成了时装片？</span></div></a></li>
-                <li ><a href='http://hufu.onlylady.com/2018/0102/3926509.shtml' title='护手霜装腔指南' target='_blank'><img src='static/user/article/news/image/5a4c783f24c0d_987.jpg' alt='http://hufu.onlylady.com/2018/0102/3926509.shtml' width='366' height='300' /><div class='txt'><span>护手霜装腔指南</span></div></a></li> <li ><a href='http://hufu.onlylady.com/2018/0102/3926509.shtml' title='护手霜装腔指南' target='_blank'><img src='static/user/article/news/image/5a4c783f24c0d_987.jpg' alt='http://hufu.onlylady.com/2018/0102/3926509.shtml' width='366' height='300' /><div class='txt'><span>护手霜装腔指南</span></div></a></li>
+                <li class='style_show'><a href='#' title='热血召集人宋茜了解一下！' target='_blank'><img src='static/user/article/news/image/5acad15821b48_363.jpg' alt='http://streetstyle.onlylady.com/2018/0404/3934928.shtml' width='366' height='300' /><div class='txt'><span>热血召集人宋茜了解一下！</span></div></a></li>
+                <li ><a href='#' title='男朋友说丨和不同类型女生谈恋爱是什么感觉？' target='_blank'><img src='static/user/article/news/image/5abcc594c9a8d_776.jpg' alt='http://beauty.onlylady.com/2018/0327/3934097.shtml' width='366' height='300' /><div class='txt'><span>男朋友说丨和不同类型女生谈恋爱是什么感觉？</span></div></a></li>
+                <li ><a href='#' title='你离如花美貌只差一个KENZO小礼盒的距离' target='_blank'><img src='static/user/article/news/image/5aa61564b1178_353.jpg' alt='http://bbs.onlylady.com/thread-4037796-1-1.html' width='366' height='300' /><div class='txt'><span>你离如花美貌只差一个KENZO小礼盒的距离</span></div></a></li>
+                <li ><a href='#' title='孙怡演技在线屏霸影视圈，还颜高衣品好！' target='_blank'><img src='static/user/article/news/image/5acd823bca3dd_416.jpg' alt='http://streetstyle.onlylady.com/2018/0316/3933102.shtml' width='366' height='300' /><div class='txt'><span>孙怡演技在线屏霸影视圈，还颜高衣品好！</span></div></a></li>
+                <li ><a href='#' title='《迷雾》47岁的女主是怎样把悬疑片演成了时装片？' target='_blank'><img src='static/user/article/news/image/5acd811cd5645_652.jpg' alt='http://streetstyle.onlylady.com/2018/0314/3932830.shtml' width='366' height='300' /><div class='txt'><span>《迷雾》47岁的女主是怎样把悬疑片演成了时装片？</span></div></a></li>
+                <li ><a href='#' title='护手霜装腔指南' target='_blank'><img src='static/user/article/news/image/5a4c783f24c0d_987.jpg' alt='#' width='366' height='300' /><div class='txt'><span>护手霜装腔指南</span></div></a></li> <li ><a href='#' title='护手霜装腔指南' target='_blank'><img src='static/user/article/news/image/5a4c783f24c0d_987.jpg' alt='http://hufu.onlylady.com/2018/0102/3926509.shtml' width='366' height='300' /><div class='txt'><span>护手霜装腔指南</span></div></a></li>
             </ul>
             <div class='boutiqueColumn'>
                 <div class='title'><span class='lineC'></span><h3><span>精品栏目</span></h3></div>

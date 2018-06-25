@@ -14,4 +14,6 @@ public interface GoodsService {
 //    根据商品的id得到商品的信息和图片
     public abstract GoodsAndImgDesignerVO getGoodsByGoodsId(Integer goodsId);
 
+    public Goods selectGoodsByByGoodsId(Integer goodsId);
+
 }

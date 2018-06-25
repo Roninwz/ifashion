@@ -47,4 +47,6 @@ public interface GoodsMapper {
 
 //    根据商品id得到商品带图片
     public abstract GoodsAndImgDesignerVO selectGoodByGoodsId(Integer goodsId);
+
+    public Goods selectGoodsByByGoodsId(Integer goodsId);
 }

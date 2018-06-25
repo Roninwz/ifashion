@@ -23,5 +23,21 @@ public class GoodsAndImgDesignerVO extends Goods{
         this.goodsImgList = goodsImgList;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GoodsAndImgDesignerVO)) return false;
 
+        GoodsAndImgDesignerVO that = (GoodsAndImgDesignerVO) o;
+
+        if (getGoodsImgList() != null ? !getGoodsImgList().equals(that.getGoodsImgList()) : that.getGoodsImgList() != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return getGoodsImgList() != null ? getGoodsImgList().hashCode() : 0;
+    }
 }

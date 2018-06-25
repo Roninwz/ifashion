@@ -86,7 +86,7 @@
     </style>
 </head>
 <body>
-<div class='w1180 ad' id="OL_SYS_925_51">
+<%--<div class='w1180 ad' id="OL_SYS_925_51">
 </div>
 
 <div class='w1180 logoAndlogin'>
@@ -162,7 +162,9 @@
         <div id="OL_SYS_943_51" class="b1"></div>
         <div id="OL_SYS_448_51" class="b2"></div>
     </div>
-</div>
+</div>--%>
+<%@ include file="../header.jsp" %>
+<%@ include file="sixin.jsp"%>
 <!--crazy end-->
 <div class="piece gray">
     <!--个人简介开始-->
@@ -172,13 +174,13 @@
                 <%--<a href="#" class="chat">私信</a>
                 <a href="#" class="chat">关注</a>
 --%>
-                <a href="/dna/star/30822.html"  target="_self">
+                <a href="javascript:void(0)"  target="_self">
                     <dt><img src="${user.userImgurl}" alt="${user.username}" /></dt>
                 </a>
                 <dd>
 
                     <h2 class="name clearfix">
-                        <a href="/dna/star/30822.html"  target="_self">
+                        <a href="javascript:void(0)"  target="_self">
                             <strong  class="n">${user.truename}</strong>
 
                         </a>
@@ -190,8 +192,8 @@
                     <%--，并正式进入 ……<a href="/dna/star/d-30822.html" target="_self">【详情】</a></p>--%>
 
                     <p class="desc">${user.userIntroduce} ……<a href="/dna/star/d-30822.html" target="_self">【详情】</a></p>
-                    <a href="#" class="chat"><img src="static/user/online/images/gif-0185.gif" title="私信"/></a>
-                    <a href="#" class="attention"><img src="static/user/online/images/attention.png" title="关注"/></a>
+                    <%--<a href="${pageContext.request.contextPath }/chat.action" class="chat"><img src="static/user/online/images/gif-0185.gif" title="私信"/></a>
+                    <a href="#" class="attention"><img src="static/user/online/images/attention.png" title="关注"/></a>--%>
 
 
                 </dd>
@@ -205,7 +207,7 @@
     <div class="main">
 
         <h2 style="font-size:20px;font-weight: 900;margin-left: 100px;">设计师作品</h2>
-        <c:forEach var="i" begin="0" end="${fn:length(goodsList)/5}">
+        <c:forEach var="i" begin="0" end="${fn:length(goodsList)/5-1}">
             <div class="container">
                 <div class="row margin-bottom-40">
                     <div class="col-md-12 sale-product">
@@ -223,7 +225,7 @@
                                         </div>
                                         <h3><a href="shop-item.html">${goodsList[i*5+j].goodsName}</a></h3>
                                         <div class="pi-price">${goodsList[i*5+j].goodsPrice}</div>
-                                        <a href="user/online_buy.action?id=${goodsList[i*5+j].goodsId}" class="btn btn-default add2cart">立即购买</a>
+                                        <a href="user/online_buy.action?id=${goodsList[i*5+j].goodsId}&userId=${user.userId}" class="btn btn-default add2cart">立即购买</a>
                                         <div class="sticker sticker-sale"></div>
                                     </div>
                                 </div>
@@ -239,7 +241,7 @@
 
     <!-- BEGIN fast view of a product -->
 
- <!--弹出框-->
+ <!--弹出框开始-->
 <c:forEach var="i" begin="0" end="${fn:length(goodsList)/5}">
     <c:forEach var="j" begin="0" end="4">
         <div id="${goodsList[i*5+j].goodsId}" style="display: none; width: 700px;">
@@ -305,17 +307,18 @@
                             <button class="btn btn-primary" type="submit">立即购买</button>
                         </form>
 
-                        <div id="paidimg">
-                        </div>
+                        <%--<div id="paidimg">
+                        </div>--%>
                     </div>
 
-                    <div class="sticker sticker-sale"></div>
+                    <%--<div class="sticker sticker-sale"></div>--%>
                 </div>
             </div>
         </div>
     </div>
     </c:forEach>
 </c:forEach>
+
     <script src="static/user/online/assets/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="static/user/online/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
     <script src="static/user/online/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -343,7 +346,7 @@
 
 </div><!--商品列表结束-->
 
-<div class="footer" style="margin-top:50px; height:460px" >
+<%--<div class="footer" style="margin-top:50px; height:460px" >
     <div class="footer-wrap">
         <div class="footer-info">
             <div class="footer-address col-md-6">
@@ -383,6 +386,8 @@
             <p>ICP 号: 京 B2-20170261</p>
         </div>
     </div>
-</div>
+</div>--%>
+    <%@ include file="../footer.jsp" %>
+
 </body>
 </html>

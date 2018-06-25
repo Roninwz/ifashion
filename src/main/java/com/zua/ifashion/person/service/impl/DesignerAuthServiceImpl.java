@@ -3,8 +3,11 @@ package com.zua.ifashion.person.service.impl;
 import com.zua.ifashion.person.entity.DesignerAuth;
 import com.zua.ifashion.person.mapper.DesignerAuthMapper;
 import com.zua.ifashion.person.service.DesignerAuthService;
+import com.zua.ifashion.person.vo.AuthDesignerVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service("designerAuthService")
 public class DesignerAuthServiceImpl implements DesignerAuthService {
@@ -34,5 +37,10 @@ public class DesignerAuthServiceImpl implements DesignerAuthService {
     @Override
     public DesignerAuth selectDesignerByAuthId(Integer authId) {
         return designerAuthMapper.selectDesignerByAuthId(authId);
+    }
+
+    @Override
+    public List<AuthDesignerVo> getAllDesignerAuths() {
+        return designerAuthMapper.getAllDesignerAuths();
     }
 }

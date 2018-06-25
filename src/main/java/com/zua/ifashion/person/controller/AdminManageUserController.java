@@ -1,11 +1,11 @@
 package com.zua.ifashion.person.controller;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import com.zua.ifashion.article.entity.Article;
+import com.zua.ifashion.person.entity.DesignerAuth;
 import com.zua.ifashion.person.entity.User;
+import com.zua.ifashion.person.service.DesignerAuthService;
 import com.zua.ifashion.person.service.UserService;
 import com.zua.ifashion.util.interceptor.Token;
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,8 @@ public class AdminManageUserController {
 
     @Autowired
     private UserService userService;
-
+    @Autowired
+    DesignerAuthService designerAuthService;
 
 //    @RequestMapping(value="/list",method=RequestMethod.GET)
 //    @ResponseBody
@@ -241,5 +242,68 @@ public String searchUser(HttpSession session,String username,Map<String,Object> 
             }
         }
     }
+    //设计师审核审核状态ajax
+//                                <%--// 0 待审核--%>
+//                                <%--// 1 通过审核--%>
+//                                <%--// 2 未通过审核-%>
+    @RequestMapping(value = "/ajaxtongguoauth", method = RequestMethod.POST)
+    @ResponseBody
+    public DesignerAuth ajaxtongguoauth(HttpSession session, @RequestParam Integer authId, Map<String,Object> map) {
+        String msg="";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+        DesignerAuth designerAuth=new DesignerAuth();
+        designerAuth.setAuthId(authId);
+        designerAuth.setAuthState(1);
+        int n=designerAuthService.updateDesignerAuthSelective(designerAuth);
+        if(n>0){
+            msg="更新成功";
+        }else {
+            msg="更新失败";
+        }
+        System.out.println(msg);
 
+        return designerAuth;
+    }
+
+    @RequestMapping(value = "/ajaxnotongguoauth", method = RequestMethod.POST)
+    @ResponseBody
+    public DesignerAuth ajaxnotongguoauth(HttpSession session, @RequestParam Integer authId, Map<String,Object> map) {
+        Integer userId= (Integer) session.getAttribute("userId");
+        String msg="";
+        DesignerAuth designerAuth=new DesignerAuth();
+        designerAuth.setAuthId(authId);
+        designerAuth.setAuthState(2);
+        int n=designerAuthService.updateDesignerAuthSelective(designerAuth);
+        User user=new User();
+        user.setUserId(userId);
+        user.setUserMark(1);
+        int k=userService.updateUser(user);
+        if(n>0&&k>0){
+            msg="更新成功";
+        }else {
+            msg="更新失败";
+        }
+        System.out.println(msg);
+
+        return designerAuth;
+    }
+
+    //ajaxdeleteauth
+
+    @RequestMapping(value = "/ajaxdeleteauth", method = RequestMethod.POST)
+    @ResponseBody
+    public DesignerAuth ajaxdeleteauth(HttpSession session, @RequestBody DesignerAuth designerAuth, Map<String,Object> map) {
+        String msg="";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+
+        int n=designerAuthService.deleteDesignerAuth(designerAuth.getAuthId());
+        if(n>0){
+            msg="删除成功";
+        }else {
+            msg="删除失败";
+        }
+        System.out.println(msg);
+
+        return designerAuth;
+    }
 }

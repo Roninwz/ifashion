@@ -3,6 +3,7 @@ package com.zua.ifashion.talk.service.impl;
 import com.zua.ifashion.talk.entity.ReplyReplyQuestion;
 import com.zua.ifashion.talk.mapper.ReplyReplyQuestionMapper;
 import com.zua.ifashion.talk.service.ReplyReplyQuestionService;
+import com.zua.ifashion.talk.vo.RRQuestionUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,6 +57,11 @@ public class ReplyReplyQuestionServiceImpl implements ReplyReplyQuestionService{
     }
 
     @Override
+    public List<RRQuestionUser> selectReplyReplyQuestionUserByReplyquestionId(Integer replyquestionId) {
+        return replyReplyQuestionMapper.selectReplyReplyQuestionUserByReplyquestionId(replyquestionId);
+    }
+
+    @Override
     public int selectReplyReplyQuestionCountByReplyquestionId(Integer replyquestionId) {
         return replyReplyQuestionMapper.selectReplyReplyQuestionCountByReplyquestionId(replyquestionId);
     }
@@ -68,5 +74,15 @@ public class ReplyReplyQuestionServiceImpl implements ReplyReplyQuestionService{
     @Override
     public List<ReplyReplyQuestion> selectReplyReplyQuestionByLReplyReplyQuesDate(Date replyReplyQuesDate) {
         return replyReplyQuestionMapper.selectReplyReplyQuestionByLReplyReplyQuesDate(replyReplyQuesDate);
+    }
+
+    @Override
+    public List<RRQuestionUser> selectRRQuestionByHReplyReplyQuesId(Integer hreplyReplyQuesId) {
+        return replyReplyQuestionMapper.selectRRQuestionByHReplyReplyQuesId(hreplyReplyQuesId);
+    }
+
+    @Override
+    public ReplyReplyQuestion selectReplyReplyQuestionTop() {
+        return replyReplyQuestionMapper.selectReplyReplyQuestionTop();
     }
 }

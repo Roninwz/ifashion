@@ -36,6 +36,9 @@ public interface ArticleMapper {
     //通过文章标题模糊查询文章集合
     List<Article> selectArticleByTitle(@Param("articleTitle") String articleTitle);
 
+    //通过文章标题详细查询文章集合
+    Article selectArticleByTitle2(@Param("articleTitle") String articleTitle);
+
     //查询所有文章
     List<Article> selectAllArticle();
 
@@ -62,6 +65,9 @@ public interface ArticleMapper {
 
     //根据当前文章id 查询下一篇文章
     Article selectNextArticle(@Param("articleId") Integer articleId);
+
+    //
+    List<Article> selectArticleByUserId(@Param("userId") Integer userId);
 
 
 }

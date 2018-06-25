@@ -1,5 +1,7 @@
 package com.zua.ifashion.talk.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class ReplyQuestion {
@@ -9,6 +11,7 @@ public class ReplyQuestion {
 
     private Integer userId;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date replyDate;
 
     private String replyContent;

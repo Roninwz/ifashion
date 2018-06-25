@@ -231,6 +231,10 @@
     select topic.topicId,topic.userId,topic.topicImgurl,topic.topicPeople,topic.lookNum,topic.topicContent,topic.topicStart,topic.topicEnd,topic.topicTitle,user.username,user.userImgurl from topic,user where topic.userId=user.userId order by topic.lookNum desc
   </select>
 
+  <select id="selectTopiccByLookNumOrder" resultType="com.zua.ifashion.talk.entity.Topic">
+    select * from topic order by topic.lookNum desc
+  </select>
+
   <!--//根据参与人数给话题排序-->
   <!--List<Topic> selectTopicByTopicPeopleOrder();-->
   <select id="selectTopicByTopicPeopleOrder" resultType="Topic">

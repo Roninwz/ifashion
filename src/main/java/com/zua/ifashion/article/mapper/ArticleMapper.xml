@@ -218,22 +218,26 @@
 
   <!--根据文章id查询文章-->
   <select id="selectArticleByArticleId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
-      SELECT * FROM article WHERE articleId = #{articleId}
+      SELECT * FROM article WHERE articleId = #{articleId} AND state = 3
   </select>
 
   <!--通过文章类型id查询文章集合-->
   <select id="selectArticleByArticletypeId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
-      SELECT * FROM article WHERE articletypeId = #{articletypeId}
+      SELECT * FROM article WHERE articletypeId = #{articletypeId} AND state = 3
   </select>
 
   <!--通过文章标签查询文章集合-->
   <select id="selectArticleByTag" parameterType="string" resultType="com.zua.ifashion.article.entity.Article">
-      SELECT * FROM article WHERE tag LIKE "%"#{tag}"%"
+      SELECT * FROM article WHERE tag LIKE "%"#{tag}"%" AND state = 3
   </select>
 
   <!--通过文章标题模糊查询文章集合-->
   <select id="selectArticleByTitle" parameterType="string" resultType="com.zua.ifashion.article.entity.Article">
-      SELECT * FROM article WHERE articleTitle LIKE "%"#{articleTitle}"%"
+      SELECT * FROM article WHERE articleTitle LIKE "%"#{articleTitle}"%" AND state = 3
+  </select>
+
+  <select id="selectArticleByTitle2" parameterType="string" resultType="com.zua.ifashion.article.entity.Article">
+      SELECT * FROM article WHERE articleTitle = #{articleTitle}
   </select>
 
   <!--查询所有文章-->
@@ -250,19 +254,19 @@
   <select id="selectLatestArticleByTypeId" parameterType="int" resultMap="ArticleUserMap">
       SELECT a.*,u.username,u.userImgurl FROM article a,user u
         WHERE  u.userId=a.userId
-           AND articletypeId = #{articletypeId} ORDER by articleDate desc limit 10
+           AND articletypeId = #{articletypeId} AND a.state = 3 ORDER by articleDate desc limit 10
   </select>
 
   <!--根据点赞数 查询最热门的十篇文章-->
   <select id="selectHottestArticle" resultType="com.zua.ifashion.article.entity.Article">
-      SELECT * FROM article ORDER BY zanNum DESC limit 10
+      SELECT * FROM article WHERE state = 3 ORDER BY zanNum DESC limit 10
   </select>
 
   <!--根据点赞数和articletypeId 查询最热门的十篇文章-->
   <select id="selectHottestArticleByTypeId" parameterType="int" resultMap="ArticleUserMap">
       SELECT a.*,u.username,u.userImgurl FROM article a,user u
       WHERE  u.userId=a.userId
-      AND articletypeId = #{articletypeId} ORDER BY zanNum DESC limit 10
+      AND articletypeId = #{articletypeId} AND a.state = 3 ORDER BY zanNum DESC limit 10
   </select>
 
   <select id="selectUserByArticleId" parameterType="int" resultType="com.zua.ifashion.person.entity.User">
@@ -271,17 +275,21 @@
 
     <!--根据作者id查询他最新发表的4篇文章-->
   <select id="selectLatestArticleByUserId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
-     SELECT a.* FROM article a,user u WHERE u.userId = #{userId} AND u.userId=a.userId ORDER BY articleDate DESC limit 4
+     SELECT a.* FROM article a,user u WHERE u.userId = #{userId} AND u.userId=a.userId AND a.state = 3 ORDER BY articleDate DESC limit 4
   </select>
 
   <!--根据当前文章id查询上一篇文章-->
   <select id="selectPreArticle" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
-     SELECT * FROM article WHERE articleId &lt; #{articleId} AND articletypeId = (SELECT articletypeId FROM article WHERE articleId = #{articleId}) ORDER BY articleId DESC limit 1
+     SELECT * FROM article WHERE articleId &lt; #{articleId} AND articletypeId = (SELECT articletypeId FROM article WHERE articleId = #{articleId}) AND state = 3 ORDER BY articleId DESC limit 1
   </select>
 
   <!--根据当前文章id查询下一篇文章-->
   <select id="selectNextArticle" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
-     SELECT * FROM article WHERE articleId &gt; #{articleId} AND articletypeId = (SELECT articletypeId FROM article WHERE articleId = #{articleId}) ORDER BY articleId ASC limit 1
+     SELECT * FROM article WHERE articleId &gt; #{articleId} AND articletypeId = (SELECT articletypeId FROM article WHERE articleId = #{articleId}) AND state = 3 ORDER BY articleId ASC limit 1
   </select>
+
+    <select id="selectArticleByUserId" parameterType="int" resultType="com.zua.ifashion.article.entity.Article">
+        SELECT * FROM article WHERE userId = #{userId}
+    </select>
 
 </mapper>

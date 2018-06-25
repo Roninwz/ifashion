@@ -1,5 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: gxy
@@ -8,6 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -54,7 +56,7 @@
     <script src="static/user/online/lunbo/dist/js/swiper.min.js"></script>
 
     <!--选项卡-->
-    <script type="text/javascript" src="static/user/online/js/main.js"></script>
+    <script  src="static/user/online/js/main.js"></script>
 
     <!--懒加载开始-->
     <script src="static/user/online/js/jquery-1.9.1-jquery.js"></script>
@@ -62,9 +64,9 @@
     <!--懒加载结束-->
 
     <!--模态框 开始-->
-    <link rel="stylesheet" href="static/user/online/css/modal.css">
+   <%-- <link rel="stylesheet" href="static/user/online/css/modal.css">
     <script src="static/user/online/js/jquery.js" type="text/javascript"></script>
-    <script src="static/user/online/js/modal.js" type="text/javascript"></script> <!--模态框结束-->
+    <script src="static/user/online/js/modal.js" type="text/javascript"></script>--%> <!--模态框结束-->
 
     <!--选项卡选择第一个-->
 
@@ -198,90 +200,12 @@
 
 
 
-    <script type="application/javascript" src="static/user/online/js/main.js"></script>
+
     <link rel="stylesheet" type="text/css" href="static/user/online/css/main.css">
 </head>
+
 <body>
-<div class='w1180 ad' id="OL_SYS_925_51">
-</div>
-
-<div class='w1180 logoAndlogin'>
-    <h1 class='logo'>
-        <a href="">
-            <img src="static/user/common/top/images/top.png" height='52px' width='540' style='padding-left:200px' alt='iFashion' title='iFashion' />
-        </a>
-    </h1>
-    <div class="login">
-
-        <a href="" target="_self" rel="nofollow">登录</a> |
-        <a href="" target="_self" rel="nofollow">注册</a>
-
-        <!-- 个人中心 -->
-        <!-- <a href="" target="_self" rel="nofollow">个人中心</a> -->
-    </div>
-</div>
-<!-- <script type="text/javascript" src="../js/passport_olindex.js"></script>-->
-
-<div class='navSearch'>
-    <div class="navBg"></div>
-    <div class="w1180">
-        <div class="nav1">
-            <a href="index.html" class="here">首页</a>
-            <a href="clothes.html">穿衣搭配</a>
-            <a href="community.html">社区精选</a>
-            <a href="information.html">资讯</a>
-            <a href="online.html">私人定制</a>
-            <a href="javascript:void(0);" class="searchBt"></a>
-        </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="forum.html" target="_blank">论坛</a>
-                    <a href="community">社区</a>
-                </li>
-                <li></li>
-
-            </ul>
-        </div>
-    </div>
-    <div class='w1180 search'>
-        <form id="searchPage" target="_blank" method="get" action="user/search" accept-charset="utf8">
-            <div class="mainsearch">
-                <input onkeyup="selBrand('searchpro','auto_brand')" type="text" class="main_input" id="searchpro" autocomplete="off" name="q" value="请输入名称">
-                <div class="c1_se_2_c" id="auto_brand" style="display: none;"></div>
-            </div>
-            <input type="hidden" name="s" value="15679544665037353740">
-            <input type="hidden" name="nsid" value="1" class="aritcleType">
-            <input type="button" class="mainbtn" id="J_search_sub" value="">
-            <input type="button" title='关闭搜索框' class="closeSearchbtn" value="">
-        </form>
-        <div class='hotpro'>
-            <a href="" title="资讯-夏纳电影节" target="_blank">资讯-夏纳电影节</a>
-            <a href="" title="定制-裙子" target="_blank">定制-裙子</a>
-            <a href="" title="定制-运动鞋" target="_blank">定制-运动鞋</a>
-            <!-- 设计师 -->
-            <a href="" title="设计师-房莹" target="_blank">设计师-房莹</a>
-            <a href="" title="话题" target="_blank">话题-PVC</a>
-            <!-- <a href="" title="?????" target="_blank"></a> -->
-        </div>
-    </div>
-
-
-
-</div>
-<script type="text/javascript" src="static/user/common/top/js/index_search.js"></script>
-
-<!--crazy start-->
-<div id="crazynavdown">
-    <div id="OL_SYS_938_51" class="w1180s"></div>
-    <div class="b">
-        <div id="OL_SYS_943_51" class="b1"></div>
-        <div id="OL_SYS_448_51" class="b2"></div>
-    </div>
-</div>
-<!--crazy end-->
+<%@ include file="../header.jsp" %>
 
 <!-- Swiper -->
 <div class="swiper-container" id="swiper">
@@ -301,12 +225,12 @@
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
 </div>
-
+<%--<%@include file="order_liucheng.jsp"%>--%>
 <!--定制类型-->
 <div id="myorder">
     <div class="divcss5">
         <img src="static/user/online/images/online_book.jpg">
-        <div class="mask"><a href="#" class="trigger">在线定制</a></div>
+        <div class="mask"><a href="user/online_select1.action" class="trigger">在线定制</a></div>
     </div>
     <div class="divcss5">
         <img src="static/user/online/images/per.jpg">
@@ -318,7 +242,7 @@
     <h2 id="title" style="font-size:30px;font-weight:900;">开始你的创作吧!</h2>
 </div>
 
-<div id="modal-1" class="select_type"><!--modal-1开始-->
+<%--<div id="modal-1" class="select_type"><!--modal-1开始-->
     <!--    模态窗口的内容-->
     <div class="content">
         <div id="order-type-1" class="choose">
@@ -334,13 +258,13 @@
         </div>
     </div>
 
-</div><!--modal-1结束-->
-<script>
-    function select1(){
-        //alert(111)
+</div><!--modal-1结束-->--%>
+<%--<script>--%>
+   <%-- function select1(){
+        alert(111)
         $.ajax(
             {
-                url:"${pageContext.request.contextPath }/user/select1.action?id="+$("input[name='kind']").val(),
+                url:"${pageContext.request.contextPath }/user/online_select1.action?id="+$("input[name='kind']").val(),
                 type:"POST",
                 dataType:'json',
                 success:function(data){
@@ -361,27 +285,26 @@
     }
 
     function select2(){
-      //  alert(111)
+      // alert(111)
         $.ajax(
             {
-                url:"${pageContext.request.contextPath }/user/select2.action?id="+$("input[name='kind']").val()+"&id2="+$("input[name='childkind']").val(),
+                url:"${pageContext.request.contextPath }/user/online_select2.action?id="+$("input[name='kind']").val()+"&id2="+$("input[name='childkind']").val(),
                 type:"POST",
                 dataType:'json',
                 success:function(data){
-                   // alert("成功");
-                    var result="";
-                    if(data.length>0){
-                        result+="<span>请选择商品的具体定制信息 :</span><br/>";
-                        for(var i=0;i<data.length;i++){
-                            result+="<input type='radio' name='material'value='"+data[i].goodsmaterialId+"'/>"+data[i].goodsmaterialName
+                    //alert("成功");
+                   var re="<span>请选择商品的具体定制信息 :</span><br/>";
+                    for(var j=0;j<data.length;j++) {
 
-                        }
+                        re += "<input type='radio' name='material' value='"+data[j].goodsmaterialId + "'/>"+data[j].goodsmaterialName;
 
                     }
-                    else{
-                        result+="没有找到该类型的商品"
-                    }
-                    $("#modal-3 #order-type-3").html(result);
+
+                  /*  result += "<input type='radio' name='material' value='"+data[0].goodsmaterialId + "'/>"+data[0].goodsmaterialName;
+                    alert("chenggg");*/
+                   /* alert(data[0].goodsmaterialId+"&&"+data[0].goodsmaterialName)
+*/
+                    $("#modal-3 #order-type-3").html(re);
 
 
                 }
@@ -397,23 +320,25 @@
         $.ajax(
             {
                 type:"POST",
-                url:"${pageContext.request.contextPath }/user/select3.action?id="+$("input[name='kind']").val()+"&id2="+$("input[name='childkind']").val()+"&id3="+$("input[name='material']").val(),
+                url:"${pageContext.request.contextPath }/user/online_select3.action?id="+$("input[name='kind']").val()+"&id2="+$("input[name='childkind']").val()+"&id3="+$("input[name='material']").val(),
                 dataType:'json',
                 success:function(data){
                      alert("成功");
-                    var result="";
-                    if(data.length>0){
-                        result+="<span>请选择商品的具体定制信息 :</span><br/>";
-                        for(var i=0;i<data.length;i++){
-                            result+="<input type='radio' name='style' value='"+data[i].goodsstyleId+"'/>"+data[i].goodsstyleName
+                    var con="<span>请选择商品的具体定制信息 :</span><br/>";
+                    for(var i=0;i<data.length;i++){
+                        con+="<input type='radio' name='style' value='"+data[i].goodsstyleId+"'/>"+data[i].goodsstyleName;
 
-                        }
+                    }
+
+                    /*if(data.length>0){
+                        con+="<span>请选择商品的具体定制信息 :</span><br/>";
+
 
                     }
                     else{
-                        result+="没有找到该类型的商品"
-                    }
-                    $("#modal-4 #order-type-4").html(result);
+                        con+="没有找到该类型的商品";
+                    }*/
+                    $("#modal-4 #order-type-4").html(con);
 
 
                 }
@@ -427,8 +352,9 @@
 
 
 </script>
+--%>
 
-
+<%--/*
 <div id="modal-2"  class="select_type"><!--modal-2开始-->
     <div class="content">
         <div id="order-type-2" class="choose">
@@ -471,8 +397,18 @@
         </div><!--operation结束-->
     </div>
 </div><!--modal-4结束 -->
+*/--%>
 
 <!-- 分类栏 -->
+<script>
+    window.onload=function(){
+        for(var i=0;i<4;i++){
+            alert('${goodsIntegrateList[i].goodstypeId}')
+        }
+    }
+</script>
+<%--选项卡--%>
+<script  src="static/user/online/js/main.js"></script>
 <div class="classify">
     <div class="visual">
         <ul id="mytab">
@@ -498,13 +434,14 @@
 <div class="picture auto ohide" id="mycontent">
 
     <div class="lazyload">
+        <c:forEach items="${goodstype}" var="type">
         <c:forEach items="${goodsIntegrateList}" var="goodsTypeList">
-
-            <ul id="picturecontent">
+            <c:if test="${type.goodstypeId eq goodsTypeList.goodstypeId}">
+            <ul class="picturecontent">
                 <c:forEach items="${goodsTypeList.goodsAndImgDesignerVOList}" var="goodsList">
                     <li>
                         <div class="search-item ohide">
-                            <a href="user/online_buy.action?id=${goodsList.goodsId}" target="_blank">
+                            <a href="user/online_buygoods.action?id=${goodsList.goodsId}" target="_blank">
                                 <div class="item-pic item-s-pic">
                                    <%-- <c:forEach items="${goodsList.goodsImgList}" var="img">
                                         <img class="${img.mask}" data-img="${img.goodsImgurl}" src="static/user/online/images/blank.jpg" alt=""  style="display: inline;"/>${img.mask}
@@ -523,16 +460,21 @@
                                  <em class="money">${goodsList.goodsPrice}</em>
                                 </div>
                             </div>
+                                <div class="custom-now">
+                                    <a class="custom-now-span" href="user/online_buy.action?id=${goodsList.goodsId}&userId=${user.userId}" target="_blank">立即定制</a>
+                                </div>
 
                              </c:if>
                         </c:forEach>
-                            <div class="custom-now">
-                                <a class="custom-now-span" href="user/online_buy.action?id=${goodsList.goodsId}" target="_blank">立即定制</a>
-                            </div>
+                            <%--<div class="custom-now">
+                                <a class="custom-now-span" href="user/online_buy.action?id=${goodsList.goodsId}&userId=${user.userId}" target="_blank">立即定制</a>
+                            </div>--%>
                         </div>
                     </li>
                 </c:forEach>
             </ul>
+        </c:if>
+        </c:forEach>
         </c:forEach>
 
 </div>
@@ -540,7 +482,7 @@
 </div>
 <div style="text-align:center;clear:both;">
 </div>
-<script>
+<%--<script>
     $("#modal-1,#modal-2,#modal-3,#modal-4").iziModal({
         title: "",
         subtitle: "",
@@ -571,8 +513,8 @@
     $(document).on('click', '.trigger', function (event) {
         event.preventDefault();
         $('#modal-1').iziModal('open', this); // 需要带上 "this"
-    });
-//    $("#modal-next-1").click(function(){
+    });--%>
+<%--//    $("#modal-next-1").click(function(){
 //        $('#modal-1').iziModal('close');
 //        $('#modal-2').iziModal('open',this);
 //    });
@@ -585,10 +527,10 @@
 //
 //        $(this).parents(".select_type").iziModal('close');
 //
-//    });
+//    });--%>
 
-</script>
-<div class="footer" style="margin-top:50px; height:440px" >
+
+<%--<div class="footer" style="margin-top:50px; height:440px" >
     <div class="footer-wrap">
         <div class="footer-info">
             <div class="footer-address col-md-6">
@@ -628,7 +570,8 @@
             <p>ICP 号: 京 B2-20170261</p>
         </div>
     </div>
-</div>
+</div>--%>
+<%@ include file="../footer.jsp" %>
 
 <!--轮播-->
 <script>

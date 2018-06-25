@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../header.jsp" %>
+
 
 
 <%
@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" href="static/user/article/clothes/css/index.html_aio_f90dc93.css">
     <link rel="stylesheet" href="static/user/article/clothes/css/index.html_aio_2_ebc95bc.css">
+    <link href="static/user/article/clothes/match/css/bootstrap.min.css" rel="stylesheet">
 
 
 
@@ -43,47 +44,76 @@
     <%--登录js--%>
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
     <%--其它js--%>
+    <style>
+        #mypublish{
+            position: absolute;
+            top: 600px;
+            left:980px;
+        }
+    </style>
 
 </head>
 <body>
-
+<%@ include file="../../header.jsp" %>
 <div class="js-page-wrap" >
     <div class="side-page-wrap clearfix">
         <div class="js-side-right-wrap side-right-wrap float-right">
             <div class="title"><span class="icon-title"></span>热门推荐</div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E6%97%A5%E7%B3%BB">日系</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=3">日系</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E9%9F%A9%E7%B3%BB">韩系</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=2">休闲</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E6%AC%A7%E7%BE%8E">欧美</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=4">民族风</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E8%BD%BB%E7%86%9F">轻熟</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=5">轻熟</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E4%BC%91%E9%97%B2">休闲</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=6">遮粗腿</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E5%AD%A6%E9%99%A2">学院</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=14">活力黄</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E6%A3%AE%E7%B3%BB">森系</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=22">出行</a>
             </div>
 
             <div class="float-left round-button-container" style="width: 33.33%">
-                <a class="round-button ie-hack" href="http://ichuanyi.com/pc/page/suit_tag/?tag=%E6%B0%91%E6%97%8F%E9%A3%8E">民族风</a>
+                <a class="round-button ie-hack" href="${pageContext.request.contextPath }/user/clothes/clothesTag.action?clothesTagId=23">聚会</a>
             </div>
+
+
+            <c:set var="user" value="${sessionScope.user}"/>
+            <c:if test="${not empty user}">
+                <input id="current_user_name" value="${user.username}" hidden>
+                <input id="current_user_img" value="${user.userImgurl}" hidden>
+            </c:if>
+
+
+            <c:if test="${not empty user}">
+                <a id="mypublish" class="btn btn-default" role="button" href="${pageContext.request.contextPath }/user/publish.action?clothesTagId=${param.clothesTagId}" target="_blank">我要发表</a>
+            </c:if>
+            <c:if test="${empty user}">
+                <a id="mypublish" class="btn btn-default" role="button"  data-toggle="modal" href="#login-modal" >我要发表</a>
+            </c:if>
+
+
         </div>
+
+
+
+
+
         <div class="js-side-left-wrap side-left-wrap">
             <div>
                 <div class="waterfall-list-wrap">
@@ -94,7 +124,6 @@
                         </div>
                         </c:forEach>
                     </div>
-
 
                     <%--设置变量--%>
                     <c:set var="heightvar" value="${(tagImgCount-1)/2*506}"></c:set>

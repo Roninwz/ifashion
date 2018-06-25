@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RRRQuestion extends ReplyQuestionUser{
 
-    List<ReplyReplyQuestion> replyReplyQuestions;
+    List<RRQuestionUser> rrQuestionUsers;
 
     private Integer replyReplyCount;
 
@@ -31,25 +31,24 @@ public class RRRQuestion extends ReplyQuestionUser{
         this.replyReplyCount = replyReplyCount;
     }
 
-    public List<ReplyReplyQuestion> getReplyReplyQuestions() {
-        return replyReplyQuestions;
+    public List<RRQuestionUser> getRrQuestionUsers() {
+        return rrQuestionUsers;
     }
 
-    public void setReplyReplyQuestions(List<ReplyReplyQuestion> replyReplyQuestions) {
-        this.replyReplyQuestions = replyReplyQuestions;
+    public void setRrQuestionUsers(List<RRQuestionUser> rrQuestionUsers) {
+        this.rrQuestionUsers = rrQuestionUsers;
     }
 
-
-    public RRRQuestion(Integer questionId, Integer userId, Date replyDate, String replyContent, Integer zanNum, Integer againstNum, Integer reportState, User user, List<ReplyReplyQuestion> replyReplyQuestions, Integer replyReplyCount, Integer replyCount) {
+    public RRRQuestion(Integer questionId, Integer userId, Date replyDate, String replyContent, Integer zanNum, Integer againstNum, Integer reportState, User user, List<RRQuestionUser> rrQuestionUsers, Integer replyReplyCount, Integer replyCount) {
         super(questionId, userId, replyDate, replyContent, zanNum, againstNum, reportState, user);
-        this.replyReplyQuestions = replyReplyQuestions;
+        this.rrQuestionUsers = rrQuestionUsers;
         this.replyReplyCount = replyReplyCount;
         this.replyCount = replyCount;
     }
 
-    public RRRQuestion(Integer replyquestionId, Integer questionId, Integer userId, Date replyDate, String replyContent, Integer zanNum, Integer againstNum, Integer reportState, User user, List<ReplyReplyQuestion> replyReplyQuestions, Integer replyReplyCount, Integer replyCount) {
+    public RRRQuestion(Integer replyquestionId, Integer questionId, Integer userId, Date replyDate, String replyContent, Integer zanNum, Integer againstNum, Integer reportState, User user, List<RRQuestionUser> rrQuestionUsers, Integer replyReplyCount, Integer replyCount) {
         super(replyquestionId, questionId, userId, replyDate, replyContent, zanNum, againstNum, reportState, user);
-        this.replyReplyQuestions = replyReplyQuestions;
+        this.rrQuestionUsers = rrQuestionUsers;
         this.replyReplyCount = replyReplyCount;
         this.replyCount = replyCount;
     }

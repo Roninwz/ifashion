@@ -1,15 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Roninwz
-  Date: 2018/6/8
-  Time: 9:04
+  User: 李莉莉
+  Date: 2018/6/21
+  Time: 14:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../../header.jsp" %>
 
-<%--fmt  国际化格式--%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%
     String path = request.getContextPath();
@@ -17,25 +16,18 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-
-
-<%@ include file="../../header.jsp" %>
-
-
 <html>
 <head>
     <base href="<%=basePath%>">
-
-    <meta charset="utf-8">
     <title>Title</title>
-
-
     <%--底部css--%>
     <link rel="stylesheet" href="static/user/common/foot/css/foot.css">
     <%--导航栏css--%>
     <link rel="stylesheet" href="static/user/common/top/css/newindex_v201607.css">
     <link rel="stylesheet" href="static/user/common/top/css/newconment_v201607.css">
     <link rel="stylesheet" href="static/user/login/css/login.css">
+    <link rel="stylesheet" href="static/user/designer/css/style.css" />
+    <link rel="stylesheet" href="static/user/designer/css/xuanxiangka.css">
 
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
     <%--导航栏js--%>
@@ -44,114 +36,141 @@
     <script src="static/user/common/js/mouse.js"></script>
     <script src="static/user/login/js/login.js"></script>
     <%--登录js--%>
-    <script src="static/user/login/js/login.js"></script>
-    <script type="text/javascript" src="static/user/login/js/modal.js"></script>
+    <%--<script type="text/javascript" src="static/user/login/js/modal.js"></script>--%>
     <%--其它js--%>
 
-
-
-    <link rel="stylesheet" type="text/css" href="static/user/designer/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="static/user/designer/css/hurst.css">
-    <script src="static/user/designer/js/jquery.cookie.js" type="text/javascript"></script>
 </head>
-<body>
+<body style="background-color: white">
+<c:set var="user" value="${sessionScope.user}"/>
+<div id="back">
+<div class="changePattern">
+    <span id="pattern1"></span>
+    <span id="pattern2"></span>
+    <span id="pattern3"></span>
+    <span id="pattern4"></span>
+    <span id="pattern5"></span>
+    <span id="pattern6"></span>
+</div>
 
-<!-- 左侧导航栏 -->
-<div id="about">
-    <div class="mTags wrap">
-        <a href="#">iFashion</a>>
-        <a href="/member/index/channel/7.html">设计师个人中心</a>
+<header class="main_header">
+    <div class="wrapper">
+        <div class="logo1">
+            <a href="#" title="${user.username}" style="float:left; margin-top:-10px">
+                <img src="${user.userImgurl}" alt="${user.username}" width="100" height="100"/>
+            </a>
+            <a href="#" style="float:left; color:#999; margin-top:15px; font-size:30px; margin-left:20px">${user.username}</a>
+        </div>
+        <nav class="top_buttons">
+            <ul>
+
+                <li class="big_button">
+                    <div class="big_count">
+                        <span>7</span>
+                    </div>
+                    <div class="out_border">
+                        <div class="button_wrapper">
+                            <div class="in_border">
+                                <a href="#" title="私信" class="the_button">
+                                    <span class="i_32_support"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="big_button">
+                    <div class="out_border">
+                        <div class="button_wrapper">
+                            <div class="in_border">
+                                <a href="#" title="我的接单" class="the_button">
+                                    <span class="i_32_delivery"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <div class="mebBox">
-        <div class="meb-cont clearfix wrap">
-            <div class="meb-nav left dInline">
-                <ul class="clearfix">
-                    <li>
-                        <a href="user/designer.action">设计师首页</a>
-                    </li>
-                    <li>
-                        <a href="user/account.action">账户管理</a>
-                    </li>
-                    <li>
-                        <a href="user/trade.action">交易中心</a>
-                        <!-- 消息提醒，我的交易， -->
-                    </li>
-                    <li class="on">
-                        <a href="user/design.action">设计之家</a>
-                        <!-- 我的作品  -->
-                    </li>
-                    <li>
-                        <a href="user/other.action">其它</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="meb-right right dInline">
-                <div class="mr-top">
-                    <div class="mr-top-div clearfix">
-                        <!-- 设计师头像 -->
-                        <span class="left">
-                                <img src="images/photo.png" />
-                            </span>
-                        <!-- 设计师信息 -->
-                        <div class="mr-infor left dInline">
-                            <h2>中午好，尊敬的会员
-                                <b>董平运</b>
-                            </h2>
-                            <p>
-                                手机：15138911875 邮箱： | [
-                                <a href="/Member/manage/channel/7/list/15">管理账户信息</a> ]
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mr-detail">
-                    <div class="me-box">
-                        <div class="mx-a">
-                            <ul class="clearfix">
-                                <li>
-                                    <img src="images/hu1.png"/>
-                                    <span>您目前有 <a href="/Member/need/channel/7/list/11"><b>1</b></a> 个订单未付定金</span>
-                                </li>
-                                <li>
-                                    <img src="images/hu2.png"/>
-                                    <span>您共有 <a href="/Member/need/channel/7/list/11/tpl/4"><b>1</b></a> 个收藏的车型</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- <div class="mx-b">
-                        <ul>
-                            <li class="clearfix">
-                                <span class="left">
-                                    <img src="images/hu3.png"/>
-                                </span>
-                                <div class="mb-txt left dInline">
-                                    <h2>马上参加 <a href="/Tailor/index/channel/4.html">私人定制</a> </h2>
-                                    <p>没有您满意的车型吗，马上参加量身定制可预订指定车型，亿金名车为您量身定制</p>
-                                </div>
-                            </li>
-                            <li class="clearfix last">
-                                <span class="left">
-                                    <img src="images/hu4.png"/>
-                                </span>
-                                <div class="mb-txt left dInline">
-                                    <h2>您可以定制 <a href="#">到车通知</a> </h2>
-                                    <p>不想在每天数以万计的车源中错过自己满意的二手车吗？亿金收集您的需求，第一时间为您推送符合您的信息</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> -->
-                    </div>
+</header>
 
+<div class="wrapper contents_wrapper">
+
+    <aside class="sidebar">
+        <ul class="tab_nav">
+             <li class="active_tab i_32_dashboard">
+            <a href="${pageContext.request.contextPath}/user/personalHome.action" title="General Info">
+                <span class="tab_label">设计之家</span>
+
+            </a>
+            </li>
+            <li class="i_32_inbox">
+                <a href="${pageContext.request.contextPath}/user/mycollections.action" title="Your Messages">
+                    <span class="tab_label">我的收藏</span>
+
+                </a>
+            </li>
+            <li class="i_32_charts">
+                <a href="${pageContext.request.contextPath}/user/designUp.action" title="Visual Data">
+                    <span class="tab_label">设计上传</span>
+
+                </a>
+            </li>
+            <li class="i_32_ui">
+                <a href="${pageContext.request.contextPath}/user/myAttention.action" title="Kit elements">
+                    <span class="tab_label">关注&粉丝</span>
+
+                </a>
+            </li>
+            <li class="i_32_tables">
+                <a href="${pageContext.request.contextPath }/designer/myPublish.action" title="我的发表">
+                    <span class="tab_label">我的发表</span>
+
+                </a>
+            </li>
+            <li class="i_32_forms">
+                <a href="${pageContext.request.contextPath }/designer/personalInfo.action" title="个人信息">
+                    <span class="tab_label">个人信息</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="contents">
+        <div class="grid_wrapper">
+
+            <div class="con clearfix" id="one" style="display: block;">
+                <c:forEach var="goods" items="${goods}">
+                    <div class="exp-lf noMleft">
+                            <%--static/user/article/news/image/liDUq8dHh1EJ2.png--%>
+                        <a href="" title="“源自运动，融和时尚”-JOMA发布2018秋冬新品" target="_blank">
+                            <span class="img-txt1">￥${goods.goodsPrice}</span>
+                            <c:forEach var="goodsImgList" items="${goods.goodsImgList}" begin="0" end="0">
+                            <img src="${goodsImgList.goodsImgurl}" alt="${goods.goodsIntroduce}" width="250" height="300"/>
+                            </c:forEach>
+                            <span class="img-txt">${goods.goodsName}</span>
+
+                        </a>
+                    </div>
+                </c:forEach>
+                <div class="exp-center">
+                    <a href="" title="“源自运动，融和时尚”-JOMA发布2018秋冬新品" target="_blank">
+                        <span class="img-txt1">￥200</span>
+                        <img src="static/user/article/news/image/liz57SeFT8dRA.jpg" alt="“源自运动，融和时尚”-JOMA发布2018秋冬新品" width="250" height="300"/>
+                        <span class="img-txt">“源自运动，融和时尚”-JOMA发布2018秋冬新品</span>
+                    </a>
                 </div>
             </div>
+
+
         </div>
     </div>
+
 </div>
-<!-- 左侧导航栏  -->
 
 
 
-
-<%@ include file="../../footer.jsp" %>
+    <%@ include file="../../footer.jsp" %>
+</div>
 </body>
 </html>
+

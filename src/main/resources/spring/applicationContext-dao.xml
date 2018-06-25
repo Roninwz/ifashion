@@ -68,9 +68,15 @@
 		-->
 		<!--com.zua.ifashion.online.mapper,
 		com.zua.ifashion.talk.mapper,
-		com.zua.ifashion.article.mapper-->
+		com.zua.ifashion.article.mapper
+				com.zua.ifashion.online.util.webchat.mapping,
+		com.zua.ifashion.online.util.webchat.dao
+		-->
 		<property name="basePackage" 
-		value="com.zua.ifashion.person.mapper,com.zua.ifashion.talk.mapper,com.zua.ifashion.article.mapper,com.zua.ifashion.online.mapper
+		value="com.zua.ifashion.person.mapper,
+		com.zua.ifashion.talk.mapper,
+		com.zua.ifashion.article.mapper,
+		com.zua.ifashion.online.mapper
 		"/>
 		<!--
 		name使用sqlSessionFactoryBeanName

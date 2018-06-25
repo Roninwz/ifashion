@@ -3,7 +3,9 @@
 <mapper namespace="com.zua.ifashion.person.mapper.MyMessageMapper">
   <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.MyMessage">
     <id column="mymessageId" jdbcType="INTEGER" property="mymessageId" />
-    <id column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userId" jdbcType= "INTEGER" property="userId" />
+    <result column="messageState" jdbcType= "INTEGER" property="messageState" />
+    <result column="messageDate" jdbcType= "TIMESTAMP" property="messageDate" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.person.entity.MyMessage">
     <result column="mymessageContent" jdbcType="LONGVARCHAR" property="mymessageContent" />
@@ -22,8 +24,15 @@
       </if>
       <if test="userId != null">
         userId,
-      </if>  <if test="mymessageContent != null">
+      </if>
+      <if test="mymessageContent != null">
       mymessageContent,
+      </if>
+      <if test="messageState != null">
+        messageState,
+      </if>
+      <if test="messageDate != null">
+        messageDate,
       </if>
 
     </trim>
@@ -33,12 +42,40 @@
       </if>
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
-      </if> <if test="mymessageContent != null">
+      </if>
+      <if test="mymessageContent != null">
         #{mymessageContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageState != null">
+        #{messageState,jdbcType=INTEGER},
+      </if>
+      <if test="messageDate != null">
+        #{messageDate,jdbcType=TIMESTAMP},
       </if>
 
     </trim>
   </insert>
+<!--更新我的消息不为空字段-->
+  <update id="updateMymessageSelective" parameterType="com.zua.ifashion.person.entity.MyMessage">
+    update mymessage
+    <set>
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
+      </if>
+
+      <if test="mymessageContent != null">
+        mymessageContent = #{mymessageContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageState != null">
+        messageState = #{messageState,jdbcType=INTEGER},
+      </if>
+      <if test="messageDate != null">
+        messageDate = #{messageDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mymessageId = #{mymessageId,jdbcType=INTEGER}
+  </update>
+
 
 
   <delete id="deleteMyMessage" parameterType="java.lang.Integer">
@@ -52,4 +89,22 @@
   <select id="selectMyMessagesByUserId"  resultType="com.zua.ifashion.person.entity.MyMessage">
     select *  from mymessage where userId =#{userId}
   </select>
+
+  <select id="selectMyUnreadMessagesByUserId"  resultType="com.zua.ifashion.person.entity.MyMessage">
+    select *  from mymessage where userId =#{userId} AND  messageState =0
+  </select>
+
+
+  <select id="selectMyReadMessagesByUserId"  resultType="com.zua.ifashion.person.entity.MyMessage">
+    select *  from mymessage where userId =#{userId} AND  messageState =1
+  </select>
+
+  <select id="getAllUnreadMyMessages"  resultType="com.zua.ifashion.person.entity.MyMessage">
+    select *  from mymessage where messageState = 0
+  </select>
+
+  <select id="getAllReadedMyMessages"  resultType="com.zua.ifashion.person.entity.MyMessage">
+    select *  from mymessage where messageState = 1
+  </select>
+
 </mapper>

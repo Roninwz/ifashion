@@ -68,7 +68,8 @@ public class MailUtil {
             msg.setSubject("xxx账号激活邮件");
             msg.setSentDate(new Date());
 		//正文
-            msg.setContent("xxxxx<h1>来自dt的激活邮件，点击链接激活账号：</h1><h3><a href='localhost:8080/javamail01/active?code="+code+"'>localhost:8080/javamail01/active?code="+code+"</a></h3>", "text/html;charset=utf-8");
+           // msg.setContent("xxxxx<h1>来自iFashion的验证码，点击链接激活账号：</h1><h3><a href='localhost:8080/javamail01/active?code="+code+"'>localhost:8080/javamail01/active?code="+code+"</a></h3>", "text/html;charset=utf-8");
+            msg.setContent("尊敬的"+to+"您的验证码为"+code, "text/html;charset=utf-8");
 		// 3.发送激活邮件
 		Transport.send(msg);
 	}

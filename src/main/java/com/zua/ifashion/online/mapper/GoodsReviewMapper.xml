@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zua.ifashion.online.mapper.GoodsReviewMapper">
-  <resultMap id="BaseResultMap" type="com.zua.ifashion.online.entity.GoodsReview">
-    <id column="goodsreviewId" jdbcType="INTEGER" property="goodsreviewId" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-    <result column="goodsId" jdbcType="INTEGER" property="goodsId" />
-    <result column="reviewContent" jdbcType="VARCHAR" property="reviewContent" />
-    <result column="reviewRank" jdbcType="VARCHAR" property="reviewRank" />
-  </resultMap>
+
 
   <!--public abstract int addGoodsReview(GoodsReview goodsReview);-->
 
@@ -15,15 +9,15 @@
 
   <!--public abstract int deleteGoodsReview(Integer goodsreviewgId);-->
   <insert id="addGoodsReview" parameterType="GoodsReview">
-    insert into goods_review(goodsreviewgId,userId,goodsId,reviewContent,reviewRank)
-    values(#{goodsreviewgId},#{userId},#{goodsId},#{reviewContent},#{reviewRank})
+    insert into goods_review(goodsreviewId,userId,goodsId,reviewContent,reviewData,reviewRank)
+    values(#{goodsreviewId},#{userId},#{goodsId},#{reviewContent},#{reviewData},#{reviewRank})
   </insert>
 
   <insert id="addGoodsReviewSelective" parameterType="GoodsReview">
     insert into goods_review
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="goodsreviewgId!=null">
-        goodsreviewgId
+      <if test="goodsreviewId!=null">
+        goodsreviewId
       </if>
       <if test="userId!=null">
         userId
@@ -34,14 +28,18 @@
       <if test="reviewContent!=null">
         reviewContent
       </if>
+      <if test="reviewData!=null">
+        reviewData
+      </if>
       <if test="reviewRank!=null">
         reviewRank
       </if>
+
     </trim>
 
     <trim prefix="values(" suffixOverrides="," suffix=")">
-      <if test="goodsreviewgId!=null">
-        #{goodsreviewgId}
+      <if test="goodsreviewId!=null">
+        #{goodsreviewId}
       </if>
       <if test="userId!=null">
        #{userId}
@@ -52,14 +50,18 @@
       <if test="reviewContent!=null">
         #{reviewContent}
       </if>
+      <if test="reviewData!=null">
+        #{reviewData}
+      </if>
       <if test="reviewRank!=null">
         #{reviewRank}
       </if>
+
     </trim>
   </insert>
 
   <delete id="deleteGoodsReview" parameterType="int">
-    DELETE  * from goods_review where goodsreviewgId=#{param}
+    DELETE   from goods_review where goodsreviewId=#{param}
   </delete>
 
   <!--//    根据id查询-->
@@ -72,7 +74,7 @@
   <!--public abstract List<GoodsReview> selectGoodsReviewByGoodsId(Integer goodsId);-->
 
 <select id="selectGoodsReviewById" parameterType="int" resultType="GoodsReview">
-  select * from goods_review where goodsreviewgId=#{param}
+  select * from goods_review where goodsreviewId=#{param}
 </select>
 
   <select id="selectGoodsReviewByUserId" resultType="GoodsReview" parameterType="int">
@@ -87,5 +89,11 @@
   <!--public abstract List<GoodsReview> selectAllGoodsReview();-->
   <select id="selectAllGoodsReview" resultType="GoodsReview">
     select * from goods_review
+  </select>
+
+  <!--//    根据商品的id得到评价该商品的所有用户
+  public abstract  List<User> selectUserByGoodsId(Integer goodsId);-->
+  <select id="selectUserByGoodsId" resultType="User" parameterType="int">
+    select user.* from user,goods_review where goods_review.userId=user.userId and goods_review.goodsId=#{param}
   </select>
 </mapper>

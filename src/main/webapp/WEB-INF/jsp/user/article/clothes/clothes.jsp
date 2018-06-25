@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../header.jsp" %>
+
 
 <%
     String path = request.getContextPath();
@@ -23,7 +23,7 @@
     <%--底部css--%>
     <link rel="stylesheet" href="static/user/common/foot/css/foot.css">
     <%--导航栏css--%>
-    <link rel="stylesheet" href="static/user/common/top/css/newindex_v201607.css">
+    <link rel="stylesheet" href="static/user/article/clothes/css/gai.css">
     <link rel="stylesheet" href="static/user/common/top/css/newconment_v201607.css">
     <link rel="stylesheet" href="static/user/login/css/login.css">
 
@@ -58,6 +58,7 @@
 
 </head>
 <body>
+<%@ include file="../../header.jsp" %>
 <!-- clothes上部分开始 -->
 <div class="clothes-img">
     <!-- 小头像 -->
@@ -263,7 +264,7 @@
 
                 <c:forEach items="${hotMatch}" var="hotMatch" >
                     <div class="in-suit-item">
-                        <a href="matchInfo.jsp" target="_blank">
+                        <a href="${pageContext.request.contextPath }/user/clothes/matchInfo.action?articleId=${hotMatch.articleId}" target="_blank">
                             <div class="in-suit-pic-warp">
                                 <img class="item-pic js_in_suit_pic" src="${hotMatch.imgurl}">
                             </div>
@@ -295,7 +296,7 @@
         <!--－－－－－－－－－循环部分*10－－－－－－－－－－－-->
         <c:forEach items="${dailyBest}" var="dailyBest">
             <div class="daily-choice-item">
-                <a href="matchInfo.jsp" target="_blank">
+                <a href="${pageContext.request.contextPath }/user/clothes/matchInfo.action?articleId=${dailyBest.articleId}" target="_blank">
                     <img class="item-pic lazy" src="${dailyBest.imgurl}"></a>
 
                 <div class="item-name">${dailyBest.articleTitle}</div>

@@ -30,4 +30,9 @@ public class GoodsServiceImpl implements GoodsService {
     public GoodsAndImgDesignerVO getGoodsByGoodsId(Integer goodsId) {
         return goodsMapper.selectGoodByGoodsId(goodsId);
     }
+
+    @Override
+    public Goods selectGoodsByByGoodsId(Integer goodsId) {
+        return goodsMapper.selectGoodsByByGoodsId(goodsId);
+    }
 }

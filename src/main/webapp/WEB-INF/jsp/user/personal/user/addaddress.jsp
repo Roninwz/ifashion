@@ -143,7 +143,7 @@
                                 <div class="am-form-group">
                                     <div class="am-u-sm-9 am-u-sm-push-3">
                                         <div class="info-btn">
-                                            <div style="width: 100px;margin-left:70px;"><input type="submit" name="submit" value="保存修改"></div>
+                                            <div style="width: 100px;margin-left:70px;margin-top:30px;"><input type="submit" name="submit" value="保存修改"></div>
                                         </div>
                                         <%--<a class="am-btn am-btn-danger" href="user/addaddress.action" style="margin-left: 30px;">保存</a>--%>
                                         <%--<a href="javascript: void(0)" class="am-close am-btn am-btn-danger" data-am-modal-close>取消</a>--%>

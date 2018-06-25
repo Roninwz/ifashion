@@ -1,13 +1,18 @@
 package com.zua.ifashion.person.controller;
 
 import com.zua.ifashion.person.entity.Admin;
+import com.zua.ifashion.person.entity.LogForm;
 import com.zua.ifashion.person.service.AdminService;
+import com.zua.ifashion.person.service.LogFormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -16,7 +21,8 @@ public class AdminSystemController {
 
     @Autowired
     private AdminService adminService;
-
+@Autowired
+private LogFormService logFormService;
     //设置controller
     @RequestMapping(value = "/system", method = RequestMethod.GET)
     public String adminSystem(HttpSession session) {
@@ -70,4 +76,32 @@ public class AdminSystemController {
             }
         return "redirect:/admin/person.action";
     }
+
+
+    //systemlog
+
+    @RequestMapping(value = "/systemlog", method = RequestMethod.GET)
+    public String systemlog(HttpSession session,Map<String,Object> map) {
+      List<LogForm>  logForms=logFormService.getAllLogForms();
+        map.put("logForms",logForms);
+        return "admin/logform";
+    }
+
+    @RequestMapping(value = "/ajaxdeletelog", method = RequestMethod.POST)
+    @ResponseBody
+    public LogForm ajaxdeletelog(HttpSession session, @RequestBody LogForm logForm, Map<String,Object> map) {
+        String msg="";
+        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+
+        int n=logFormService.deleteLogForm(logForm.getLogId());
+        if(n>0){
+            msg="删除成功";
+        }else {
+            msg="删除失败";
+        }
+        System.out.println(msg);
+
+        return logForm;
+    }
+
 }

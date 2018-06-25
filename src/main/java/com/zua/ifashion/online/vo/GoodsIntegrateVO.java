@@ -22,4 +22,6 @@ public class GoodsIntegrateVO extends GoodsType {
     public GoodsIntegrateVO(){
 
     }
+
+
 }

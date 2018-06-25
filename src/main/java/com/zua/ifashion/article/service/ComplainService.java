@@ -11,7 +11,9 @@ public interface ComplainService {
     int addComplain(@Param("complain") Complain complain);
 
     //添加非空字段举报
-    int addComplainSelective(@Param("complain") Complain complain);
+    int addComplainSelective( Complain complain);
+
+    int updateComplainSelective( Integer complainId);
 
     //删除举报
     int deleteComplain(@Param("complainId") Integer complainId);

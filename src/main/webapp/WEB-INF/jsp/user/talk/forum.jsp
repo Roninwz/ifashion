@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@ include file="../header.jsp" %>
 
 <%--<%@ include file="../footer.jsp" %>--%>
 <%
@@ -29,7 +29,21 @@
     <link rel="stylesheet" href="static/user/common/top/css/newconment_v201607.css">
     <link rel="stylesheet" href="static/user/login/css/login.css">
     <%--其他css--%>
+    <link rel="stylesheet" href="static/user/talk/css/3.css">
     <link rel="stylesheet" href="static/user/talk/css/1.css">
+
+    <style type="text/css">
+        #low_right
+        {
+            position: fixed;
+            width: 85px;
+            height: 130px;
+            background: #eee;
+            bottom: 50%;
+            right: 10px;
+            text-align: center;
+        }
+    </style>
 
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
     <%--导航栏js--%>
@@ -42,9 +56,50 @@
     <%--其它js--%>
     <script type="text/javascript" src="static/user/talk/js/1.js"></script>
 
+    <script>
+        function wait(obj) {
+            $(obj).parent().children().removeClass("active");
+            $(obj).addClass("active");
+
+            $.ajax({
+                type:"post",
+                url:'${pageContext.request.contextPath }/user/waitAnswer.action',
+                dataType:'json',
+                success:function (data) {
+                    alert(data);
+                    var wait1="";
+                    for(var i=0;i<data.length;i++){
+                        wait1+= "<div id='issue-list' class='ques-answer no-answer'>"
+                            +"<div class='tag-img'>" + "<a href='' target='_blank'>"
+                            + "<img  src='"+data[i].quserImgurl+"'>" + "</a>"
+                            + "</div>"
+                            + "<div class='from-tag'>来自"
+                            + "<a href='' target='_blank'>" +data[i].quserName+"</a>"
+                            + "<a style='color:#999'>"+new Date(parseInt(data[i].questionDate)).toLocaleString()+"</a>"
+                            + "</div>"
+                            + "<div class='ques-con'>"
+                            + "<a class='ques-con-content' href='' target='_blank'>"+data[i].questionContent+"</a>"
+                            + "</div>"
+                            + "<div class='info-bar clearfix'>"
+                            + " <a class='to-answer' href=''>撰写答案</a>"
+                            + "<p class='integral-info'>"
+                            + "<a href='' target='_blank'>回答问题最高可获<span>2积分</span>哦！</a></p>"
+                            + "<a class='answer-num' href=''>1个回答</a>"
+                            + "<a class='follow' href='javascript:;' data-ques-id='390842'><i class='heart'>关注</i></a>"
+                            + "</div>" + "</div>";
+
+                    }
+                    alert(wait1);
+                    $("#issue-list").html(wait1);
+                }
+            });
+        }
+
+    </script>
+
 </head>
 <body style="background-color: white">
-<%@ include file="../header.jsp" %>
+<c:set var="user" value="${sessionScope.user}"/>
 <div id="main" style="margin-top:-40px">
 
     <div class="wenda clearfix">
@@ -52,13 +107,13 @@
             <div class="l wenda-main">
                 <div class="wd-top-slogan">
                     <span>时尚人士自己的问答社区</span>
-                    <a class="js-quiz" href="${pageContext.request.contextPath }/user/seditor.action">我要提问</a>
+                    <a class="js-quiz" href="${pageContext.request.contextPath }/user/seditor1.action">我要发布</a>
                 </div>
                 <div class="nav">
-                    <a class="active" href="">推荐</a>
-                    <a href="">最新</a>
-                    <a href="user/topic.action">话题</a>
-                    <a href="user/question.action">问题</a>
+                    <a class="active" href="${pageContext.request.contextPath }/user/forum.action">推荐</a>
+                    <a href="javascript:void(0)" onclick="wait(this)">等待回答</a>
+                    <a href="${pageContext.request.contextPath }/user/topic.action">话题</a>
+                    <a href="${pageContext.request.contextPath }/user/question.action">问题</a>
 
 
                 </div>
@@ -77,7 +132,7 @@
 
 
                 <!--左侧列表内容-->
-                <div class="wenda-list">
+                <div class="wenda-list" id="issue-list">
 
                   <c:forEach var="discussUsers" items="${discussUsers}">
                     <div class="ques-answer">
@@ -93,7 +148,7 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="&nbsp;${discussUsers.discussContent}" class="ques-con-content" href="user/forumInfo.action" target="_blank">${discussUsers.discussContent}</a>
+                            <a title="&nbsp;${discussUsers.discussTitle}" class="ques-con-content" href="${pageContext.request.contextPath }/user/forumInfo.action?discussId=${discussUsers.discussId}" target="_blank">${discussUsers.discussTitle}</a>
 
                         </div>
                     </div>
@@ -115,9 +170,7 @@
                         <!--.from-tag end-->
                         <div class="ques-con">
                             <a title="
-▎LOOK2
 换一件衣服，牛仔裙立马Rock起来！再加上街头感十足的气垫造型运动凉鞋，燥起来也是So Easy！" class="ques-con-content" href="" target="_blank">
-                                ▎LOOK2
                                 换一件衣服，牛仔裙立马Rock起来！再加上街头感十足的气垫造型运动凉鞋，燥起来也是So Easy！</a>
 
                         </div>
@@ -138,9 +191,7 @@
                         <!--.from-tag end-->
                         <div class="ques-con">
                             <a title="
-▎LOOK3
 在夏天,墨镜不一定要带脸上，衬衫不一定要好好穿，牛仔裙更不一定要穿常规款！" class="ques-con-content" href="" target="_blank">
-                                ▎LOOK3
                                 在夏天,墨镜不一定要带脸上，衬衫不一定要好好穿，牛仔裙更不一定要穿常规款！</a>
                         </div>
                         <!--.ques-con end-->
@@ -160,8 +211,8 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="▎LOOK4
-露肩连衣裙，爱臭美的懒癌星人只吃不减也不怕！" class="ques-con-content" href="/wenda/detail/383123" target="_blank">▎LOOK4
+                            <a title="
+露肩连衣裙，爱臭美的懒癌星人只吃不减也不怕！" class="ques-con-content" href="/wenda/detail/383123" target="_blank">
                                 露肩连衣裙，爱臭美的懒癌星人只吃不减也不怕！</a>
 
                         </div>
@@ -181,180 +232,8 @@
                         <!--.from-tag end-->
                         <div class="ques-con">
                             <a title="
-▎LOOK5
 蕾丝连衣裙外搭牛仔外套，踏着青草香，开启森林漫步模式。" class="ques-con-content" href="" target="_blank">
-                                ▎LOOK5
                                 蕾丝连衣裙外搭牛仔外套，踏着青草香，开启森林漫步模式。</a>
-
-                        </div>
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/11_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">格格baby啊</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="
-▎LOOK6
-黑白色的连衣裙，好像是永远都穿不腻的命题，衣柜里都是它，却又少了它，自带亮点的不用动脑穿搭，你值得拥有。" class="ques-con-content" href="" target="_blank">
-                                ▎LOOK6
-                                黑白色的连衣裙，好像是永远都穿不腻的命题，衣柜里都是它，却又少了它，自带亮点的不用动脑穿搭，你值得拥有。</a>
-
-                        </div>
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer no-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/15_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">piqiudaer</a>
-                            <a style="color:#999">2018-04-28</a>
-
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="辣妈范玮琪身上穿的估计能算的上市17年的网红爆款了，侧面深色拼接对于下身比上身胖一些的mm来说简直是福音，外深内浅的色彩搭配显瘦度满分，还有所谓凹字型的设计就是正面裙摆处被裁出一块凹字缺口，露出更多的肌肤看起来有拉长腿部线条的神奇视觉效果。" class="ques-con-content" href="" target="_blank">辣妈范玮琪身上穿的估计能算的上市17年的网红爆款了，侧面深色拼接对于下身比上身胖一些的mm来说简直是福音，外深内浅的色彩搭配显瘦度满分，还有所谓凹字型的设计就是正面裙摆处被裁出一块凹字缺口，露出更多的肌肤看起来有拉长腿部线条的神奇视觉效果。</a>
-                        </div>
-                        <!--.ques-con end-->
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/17_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">大家闺秀</a>
-                            <a style="color:#999">2018-04-28</a>
-
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长，也可以单独穿个人觉得如果牛仔裙是单排纽扣的款式会更好可是我没有纽扣款大家只能想象一下。" class="ques-con-content" href="" target="_blank">小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长，也可以单独穿个人觉得如果牛仔裙是单排纽扣的款式会更好可是我没有纽扣款大家只能想象一下。</a>
-
-                        </div>
-
-
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer no-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/18_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">魔力召唤</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="第一套是我最爱的露肩款的裙子。因为我手臂超级多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包。小女人的感觉。" class="ques-con-content" href="" target="_blank">第一套是我最爱的露肩款的裙子。因为我手臂超级多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包。小女人的感觉。</a>
-                        </div>
-                        <!--.ques-con end-->
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer no-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/18_avatar_middle1.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">GvaFoo</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="这个夏天，把牛仔裙穿好就这么简单" class="ques-con-content" href="" target="_blank">这个夏天，把牛仔裙穿好就这么简单</a>
-                        </div>
-                        <!--.ques-con end-->
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/23_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">Lexi</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="夏天必备的牛仔裙只要这么穿就一定时髦" class="ques-con-content" href="" target="_blank">夏天必备的牛仔裙只要这么穿就一定时髦</a>
-
-                        </div>
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/30_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">katrina</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="破洞牛仔是王道" class="ques-con-content" href="" target="_blank">破洞牛仔是王道</a>
-
-                        </div>
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/32_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">Teresa</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="一条牛仔裙的千百种姿态" class="ques-con-content" href="/wenda/detail/332686" target="_blank">一条牛仔裙的千百种姿态</a>
-
-                        </div>
-                    </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/33_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">Maria Jernov</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="这个夏日，你需要一条这样的拼接牛仔裙" class="ques-con-content" href="" target="_blank">这个夏日，你需要一条这样的拼接牛仔裙</a>
 
                         </div>
                     </div>
@@ -372,12 +251,13 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉" target="_blank">半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉</a>
+                            <a title="
+半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉" class="ques-con-content" href="" target="_blank">
+                                半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉</a>
 
                         </div>
                     </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer no-answer">
+                    <div class="ques-answer">
                         <div class="tag-img">
                             <a href="" target="_blank">
                                 <img src="static/user/talk/image/40_avatar_middle.jpg">
@@ -390,12 +270,13 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="永不过时牛仔裙今夏再登场" class="ques-con-content" href="" target="_blank">永不过时牛仔裙今夏再登场</a>
+                            <a title="
+永不过时牛仔裙今夏再登场" class="ques-con-content" href="" target="_blank">
+                                永不过时牛仔裙今夏再登场</a>
+
                         </div>
-                        <!--.ques-con end-->
                     </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer no-answer">
+                    <div class="ques-answer">
                         <div class="tag-img">
                             <a href="" target="_blank">
                                 <img src="static/user/talk/image/41_avatar_middle.jpg">
@@ -408,11 +289,12 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="A字短裙在手，魅力不怕没有" class="ques-con-content" href="" target="_blank">A字短裙在手，魅力不怕没有</a>
+                            <a title="
+A字短裙在手，魅力不怕没有" class="ques-con-content" href="" target="_blank">
+                                A字短裙在手，魅力不怕没有</a>
+
                         </div>
-                        <!--.ques-con end-->
                     </div>
-                    <!--.ques-answer end-->
                     <div class="ques-answer">
                         <div class="tag-img">
                             <a href="" target="_blank">
@@ -426,12 +308,13 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="纯白色的夏天清爽变时髦" class="ques-con-content" href="" target="_blank">纯白色的夏天清爽变时髦</a>
+                            <a title="
+纯白色的夏天清爽变时髦" class="ques-con-content" href="" target="_blank">
+                                纯白色的夏天清爽变时髦</a>
 
                         </div>
                     </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer no-answer">
+                    <div class="ques-answer">
                         <div class="tag-img">
                             <a href="" target="_blank">
                                 <img src="static/user/talk/image/46_avatar_middle.jpg">
@@ -444,12 +327,12 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="裤子靠边站，裙子才是这个季节的主角啊" class="ques-con-content" href="" target="_blank">裤子靠边站，裙子才是这个季节的主角啊</a>
-                        </div>
-                        <!--.ques-con end-->
+                            <a title="
+裤子靠边站，裙子才是这个季节的主角啊" class="ques-con-content" href="" target="_blank">
+                                裤子靠边站，裙子才是这个季节的主角啊</a>
 
+                        </div>
                     </div>
-                    <!--.ques-answer end-->
                     <div class="ques-answer">
                         <div class="tag-img">
                             <a href="" target="_blank">
@@ -463,45 +346,47 @@
                         </div>
                         <!--.from-tag end-->
                         <div class="ques-con">
-                            <a title="女人在你的年龄 穿你的裙子" class="ques-con-content" href="" target="_blank">女人在你的年龄 穿你的裙子</a>
+                            <a title="
+女人在你的年龄 穿你的裙子" class="ques-con-content" href="" target="_blank">
+                                女人在你的年龄 穿你的裙子</a>
 
                         </div>
                     </div>
-                    <!--.ques-answer end-->
-                    <div class="ques-answer">
-                        <div class="tag-img">
-                            <a href="" target="_blank">
-                                <img src="static/user/talk/image/50_avatar_middle.jpg">
-                            </a>
-                        </div>
-                        <!--.tag-img end-->
-                        <div class="from-tag"> 来自
-                            <a href="" target="_blank">刘方仪</a>
-                            <a style="color:#999">2018-04-28</a>
 
-                        </div>
-                        <!--.from-tag end-->
-                        <div class="ques-con">
-                            <a title="衬衫与裙子是命中注定的相爱" class="ques-con-content" href="" target="_blank">衬衫与裙子是命中注定的相爱</a>
+                    <div class="page">
+                        <a href="${pageContext.request.contextPath}/user/forum.action?curPage=1">首页</a>
+                        <span class="disabled_page">
+                            <c:if test="${pageInfo.hasPreviousPage}">
+                                    <a href="${pageContext.request.contextPath}/user/forum.action?curPage=${pageInfo.pageNum-1}" aria-label="Previous">
+                                        <span aria-hidden="true">上一页</span>
+                                    </a>
+                            </c:if>
+                        </span>
 
-                        </div>
+                        <c:forEach items="${pageInfo.navigatepageNums}" var="page_num">
+                            <c:if test="${page_num == pageInfo.pageNum}">
+                                <a class="active text-page-tag" href="javascript:void(0)">${page_num}</a>
+                            </c:if>
+                            <c:if test="${page_num != pageInfo.pageNum}">
+                                <a class="text-page-tag"  href="${pageContext.request.contextPath}/user/forum.action?curPage=${page_num}">${page_num}</a>
+                            </c:if>
+                        </c:forEach>
+                        <c:choose>
+                            <c:when test="${pageInfo.hasNextPage}">
+                                <a href="${pageContext.request.contextPath}/user/forum.action?curPage=${pageInfo.pageNum+1}" aria-label="Next">
+                                    <span aria-hidden="true">下一页</span>
+                                </a>
+                            </c:when>
+                        </c:choose>
+                        <a href="${pageContext.request.contextPath}/user/forum.action?curPage=${pageInfo.pages}">尾页</a>
                     </div>
-                    <!--.ques-answer end-->
-                    <div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a class="active text-page-tag" href="javascript:void(0)">1</a>
-                        <a class="text-page-tag" href="">2</a>
-                        <a class="text-page-tag" href="">3</a>
-                        <a class="text-page-tag" href="">4</a>
-                        <a class="text-page-tag" href="">5</a>
-                        <a class="text-page-tag" href="">6</a>
-                        <a class="text-page-tag" href="">7</a>
-                        <a href="">下一页</a><a href="">尾页</a></div>
 
 
                 </div>
             </div>
             <div class="r wenda-slider">
 
-
+              <c:if test="${not empty user}">
                 <div class="user-about">
                     <div class="user-info">
                         <div class="user-pic">
@@ -525,6 +410,7 @@
                     </div>
                     <!--.user-action end-->
                 </div>
+              </c:if>
                 <!--.user-about end-->
 
                 <!--.my-follow-class登录后可见-->
@@ -541,7 +427,9 @@
                     <ul>
                         <c:forEach var="tlistr" items="${tlistr}" begin="0" end="5">
                             <li>
-                                <p class="content"><a href="" target="_blank">${tlistr.topicTitle}</a></p>
+                                <p class="content">
+                                    <a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">${tlistr.topicTitle}</a>
+                                </p>
                                 <div class="info-bar clearfix">
                                     <a class="answer-num" href="/wenda/detail/390322" target="_blank">${tlistr.topicPeople} 回答</a>
                                     <a class="follow-num" href="/wenda/detail/390322" target="_blank">1 关注</a>
@@ -550,7 +438,7 @@
                             </li>
                         </c:forEach>
                         <li>
-                            <p class="content"><a href="" target="_blank">Slip Dress，复古与个性，姑娘的选择与挑战</a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">Slip Dress，复古与个性，姑娘的选择与挑战</a></p>
                             <div class="info-bar clearfix">
                                 <a class="answer-num" href="/wenda/detail/390033" target="_blank">12 回答</a>
                                 <a class="follow-num" href="/wenda/detail/390033" target="_blank">1 关注</a>
@@ -558,7 +446,7 @@
                             </div>
                         </li>
                         <li>
-                            <p class="content"><a href="/wenda/detail/389877" target="_blank">FASHION丨一件单品多重风格-随意切换的帽子戏法儿</a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">FASHION丨一件单品多重风格-随意切换的帽子戏法儿</a></p>
                             <div class="info-bar clearfix">
                                 <a class="answer-num" href="/wenda/detail/389877" target="_blank">12 回答</a>
                                 <a class="follow-num" href="/wenda/detail/389877" target="_blank">0 关注</a>
@@ -566,7 +454,7 @@
                             </div>
                         </li>
                         <li>
-                            <p class="content"><a href="/wenda/detail/390184" target="_blank">史上最全遮肉显瘦穿衣指南 </a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">史上最全遮肉显瘦穿衣指南 </a></p>
                             <div class="info-bar clearfix">
                                 <a class="answer-num" href="/wenda/detail/390184" target="_blank">9 回答</a>
                                 <a class="follow-num" href="/wenda/detail/390184" target="_blank">1 关注</a>
@@ -574,7 +462,7 @@
                             </div>
                         </li>
                         <li>
-                            <p class="content"><a href="/wenda/detail/390226" target="_blank">25套超美冰激凌色穿搭 照着穿显瘦又减龄~ </a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">25套超美冰激凌色穿搭 照着穿显瘦又减龄~ </a></p>
                             <div class="info-bar clearfix">
                                 <a class="answer-num" href="/wenda/detail/390226" target="_blank">9 回答</a>
                                 <a class="follow-num" href="/wenda/detail/390226" target="_blank">0 关注</a>
@@ -813,48 +701,21 @@
 </div>
 
 
-<div class="footer" style="margin-top:50px; height:450px;">
-    <div class="footer-wrap">
-        <div class="footer-info clearfix">
-            <div class="footer-address col-md-6">
-                <div class="footer-logo">
-                    <span></span>
-                    <h3>iFashion</h3>
-                </div>
-                <p>郑州航空工业管理学院东校区</p>
-                <p>客服电话：000-000-0000</p>
-                <p>邮箱：11111111@qq.com</p>
-            </div>
-            <div class="footer-nav col-md-6 clearfix">
-                <dl class="col-md-4">
-                    <dt><span>关于iFashion</span></dt>
-                    <dd><a href="">网站地图</a></dd>
-                    <dd><a href="">版权声明</a></dd>
-                    <dd><a href="">加入我们</a></dd>
-                    <dd><a href="">联系我们</a></dd>
-                </dl>
-                <dl class="col-md-4">
-                    <dt><span>iFashion产品</span></dt>
-                    <dd><a href="">穿衣搭配</a></dd>
-                    <dd><a href="">社区精选</a></dd>
-                    <dd><a href="">私人订制</a></dd>
-                    <dd><a href="">资讯</a></dd>
-                </dl>
-                <dl class="col-md-4">
-                    <dt><span>商业合作</span></dt>
-                    <dd><a href="" target="_blank">设计师合作</a></dd>
-                    <dd><a class="kol-join">杂志合作</a></dd>
-                    <dd><a class="kol-join">媒体合作</a></dd>
-                </dl>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright ©2016 京 ICP 备 16021078 号</p>
-            <p>ICP 号: 京 B2-20170261</p>
-        </div>
-    </div>
-</div>
+<%@ include file="../footer.jsp" %>
 
-
+<script type='text/javascript'>
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 108609);
+</script>
 </body>
 </html>

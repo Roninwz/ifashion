@@ -8,6 +8,7 @@
     <result column="discussDate" jdbcType="TIMESTAMP" property="discussDate" />
     <result column="reviewNum" jdbcType="INTEGER" property="reviewNum" />
     <result column="lookNum" jdbcType="INTEGER" property="lookNum" />
+    <result column="discussTitle" jdbcType="VARCHAR" property="discussTitle" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zua.ifashion.talk.entity.Discuss">
     <result column="discussContent" jdbcType="LONGVARCHAR" property="discussContent" />
@@ -18,9 +19,9 @@
   <!--int addDiscuss(Discuss discuss);-->
   <insert id="addDiscuss" parameterType="Discuss">
     insert into discuss (discussId,topicId,userId,
-    discussDate,reviewNum,lookNum,discussContent) values(#{discussId},
+    discussDate,reviewNum,lookNum,discussContent,discussTitle) values(#{discussId},
     #{topicId},#{userId},#{discussDate},#{reviewNum},#{lookNum},
-    #{discussContent})
+    #{discussContent},#{discussTitle})
   </insert>
 
   <!--//添加讨论-->
@@ -52,6 +53,9 @@
       <if test="topicEnd != null">
         topicEnd,
       </if>
+      <if test="discussTitle != null">
+        discussTitle,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="discussId != null">
@@ -75,6 +79,9 @@
       <if test="discussContent != null">
         #{discussContent},
       </if>
+      <if test="discussTitle != null">
+        #{discussTitle},
+      </if>
     </trim>
   </insert>
 
@@ -92,7 +99,8 @@
     discussDate=#{discussDate},
     reviewNum=#{reviewNum},
     lookNum=#{lookNum},
-    discussContent=#{discussContent}
+    discussContent=#{discussContent},
+    discussTitle=#{discussTitle}
   </update>
 
   <!--//修改讨论不为空字段-->
@@ -117,6 +125,9 @@
       </if>
       <if test="discussContent != null">
         discussContent = #{discussContent},
+      </if>
+      <if test="discussTitle != null">
+        discussTitle = #{discussTitle},
       </if>
     </set>
     where topicId = #{topicId}
@@ -148,7 +159,7 @@
 
   <!--//查询讨论浏览量-->
   <!--int selectLookNumByDiscussId(Integer discussId);-->
-  <select id="selectLookNumByDiscussId" parameterType="int">
+  <select id="selectLookNumByDiscussId" parameterType="int" resultType="int">
     select lookNum from discuss where discussId=#{discussId}
   </select>
 
@@ -209,6 +220,11 @@
   <!--//查询用户讨论数量并排序-->
   <!--List<UserDiscuss> selectDiscussCount();-->
 
+
+  <!--根据discussDate和lookNum来查询最新热门讨论-->
+  <select id="selectDiscussByDiscussDateAndLookNum" resultType="Discuss">
+    select * from discuss order by lookNum DESC
+  </select>
 
 
 

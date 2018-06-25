@@ -12,9 +12,12 @@
 <head>
     <meta charset="utf-8">
     <title>Title</title>
-
     <%--登录模态框js--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/person/message/css/mess.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/login/header.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/user/common/plugin/font-awesome/css/font-awesome.min.css">
     <script src="${pageContext.request.contextPath}/static/user/common/plugin/jquery.cookie.js"></script>
+
 </head>
 <body>
 <%--头部--%>
@@ -33,15 +36,40 @@
 
         <c:set var="uname" value="${sessionScope.uname}"/>
         <c:if test="${empty uname}">
-            <a  data-toggle="modal" href="#login-modal">登录</a> |
-            <a href="user/register.action" target="_self" rel="nofollow">注册</a>
+            <a  data-toggle="modal" href="#login-modal">
+            <button class="btn btn_primary radius">
+               登录
+            </button></a>&nbsp;&nbsp;|
+            <a href="user/register.action" target="_self" rel="nofollow">
+            <button class="btn btn_primary radius">
+                注册
+            </button></a>
+
         </c:if>
 
         <c:if test="${not empty uname}">
-            <span>欢迎您${uname}</span>
-            <a href="user/personal.action" target="_self" rel="nofollow" style="color: #000">个人中心</a>
-            <a href="user/userlogout.action" target="_self" rel="nofollow" style="color: #000">注销</a>
+            <span><button class="btn btn_primary radius">
+                       欢迎您 ${uname}
+            </button></span>
+            <a href="user/personal.action" target="_self" rel="nofollow" style="color: #000">
+            <button class="btn btn_primary radius">
+                个人中心
+            </button></a>
+            <a href="user/userlogout.action" target="_self" rel="nofollow" style="color: #000">
+            <button class="btn btn_primary radius">
+               注销
+            </button></a>
+
+            <div id="message" style="float: right;margin-left: 10px;">
+                <a href="user/mymessage.action"><span data-type="1" class="message-bell-btn" title="" id="message-bell-btn"><i class="fa fa-bell-o "></i>
+                 <span class="badge-dot" style="top:-10px;" id="badge"></span>
+
+            </span></a>
+            </div>
+
+
         </c:if>
+
         <!-- 个人中心 -->
         <!-- <a href="" target="_self" rel="nofollow">个人中心</a> -->
     </div>
@@ -55,22 +83,22 @@
             <a href="user/index.action" class="here">首页</a>
             <a href="user/clothes.action">穿衣搭配</a>
             <a href="user/forum.action">社区精选</a>
-            <a href="user/information.action">资讯</a>
+            <a href="user/newsHome.action">资讯</a>
             <a href="user/online_list.action">私人定制</a>
             <a href="javascript:void(0);" class="searchBt"></a>
         </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="user/forum.action" target="_blank">论坛</a>
-                    <a href="usre/community.action">社区</a>
-                </li>
-                <li></li>
+        <%--<div class="navChilren">--%>
+            <%--<ul>--%>
+                <%--<li></li>--%>
+                <%--<li></li>--%>
+                <%--<li>--%>
+                    <%--<a href="user/forum.action" target="_blank">论坛</a>--%>
+                    <%--<a href="usre/community.action">社区</a>--%>
+                <%--</li>--%>
+                <%--<li></li>--%>
 
-            </ul>
-        </div>
+            <%--</ul>--%>
+        <%--</div>--%>
     </div>
     <div class='w1180 search'>
         <form id="searchPage" target="_blank" method="get" action="user/search" accept-charset="utf8">
@@ -144,17 +172,24 @@
 <div class="modal" id="forgetform">
     <a class="close" data-dismiss="modal">×</a>
     <h1>忘记密码</h1>
-    <form class="forgot-form" method="post" action="http://www.jb51.net">
-        <input name="email" value="" placeholder="注册邮箱：">
+    <form class="forgot-form" method="post" action="user/updateResetPass.action">
+            <div class="error" id="error"></div>
+        <input type="text" name="tel" value="" placeholder="注册手机号：" id="tel">
+        <input type="text" name="resetcode" value="" placeholder="验证码：" style="width: 140px;" id="resetcode">
+        <input type="button" name="" value="获取手机号验证码" placeholder=""  style="width: 140px;" onclick="getCode()" id="getcodes">
+        <%--<a href="javascript:void(0)" style="width:180px;color: black;">获取手机号验证码</a>--%>
+        <input type="password" name="newpass" value="" placeholder="新密码">
         <div class="clearfix"></div>
-        <input type="submit" name="type" class="forgot button-blue" value="发送重设密码邮件">
+        <%--<a class="sendCode" id="sendCode">发送手机号验证码</a>--%>
+        <input type="submit" name="type" class="forgot button-blue" value="确认修改密码">
     </form>
 </div>
+
 <script type="text/javascript">
-    // $(document).ready(function() {
-    //     flushValidateCode();//进入页面就刷新生成验证码
-    // });
-    window.onload=flushValidateCode;
+    $(document).ready(function() {
+        flushValidateCode();//进入页面就刷新生成验证码
+    });
+    // window.onload=flushValidateCode;
 
 
 
@@ -162,7 +197,7 @@
     /* 刷新生成验证码 */
     function flushValidateCode(){
         var validateImgObject = document.getElementById("codeValidateImg");
-        validateImgObject.src = "${pageContext.request.contextPath }/getSysManageLoginCode.action?time=" + new Date();
+        validateImgObject.src = "${pageContext.request.contextPath}/getSysManageLoginCode.action?time=" + new Date();
     }
 
 
@@ -176,9 +211,9 @@
         $('#uname').val(uname);
         $("#password").val(password)
         //选中保存秘密的复选框　
-        if(uname != null && uname != '' && password != null && password != ''){
-            $("#remember-password").attr('checked',true);
-        }
+        // if(uname != null && uname != '' && password != null && password != ''){
+        //     $("#remember-password").attr('checked',true);
+        // }
     });
 
     function remeber(){
@@ -198,6 +233,173 @@
         }
     }
 
+
+    function getCode() {
+        //alert('11');
+       var tel=$("input[id='tel']").val();
+        var datas={"tel":tel};
+        $.ajax({
+            type: 'POST',
+            url: '${pageContext.request.contextPath}/user/ajaxgetresetPasscode.action',
+            dataType: 'json', //表示返回值的数据类型
+            contentType: 'application/json;charset=UTF-8', //内容类型
+            traditional: true, //使json格式的字符串不会被转码
+            data: JSON.stringify(datas),
+            success: function (data) {
+                // alert(data);
+                //alert("e");
+                $("#getcodes").val("已发送");
+            }
+        });
+    }
+
+
+
+    //websocket
+    // 初始化一个 WebSocket 对象
+    var websocket = null;
+    if ('WebSocket' in window) {
+    // alert('1');
+    websocket = new WebSocket("ws://localhost:8088/ifashion/websocket/socketServer.action");
+    // alert('11');
+    }
+    else if ('MozWebSocket' in window) {  alert('2');
+
+    websocket = new MozWebSocket("ws://localhost:8088/ifashion/websocket/socketServer.action");
+    }
+    else {
+    //alert('3');
+    websocket = new SockJS("http://localhost:8088/ifashion/websocket/socketServer.action");
+    }
+    websocket.onopen = onOpen;
+    websocket.onmessage = onMessage;
+    websocket.onerror = onError;
+    websocket.onclose = onClose;
+    // 建立 web socket 连接成功触发事件
+    function onOpen(openEvt) {
+
+    //alert(openEvt.Data);
+    }
+    // // 接收服务端数据时触发事件
+    function onMessage(evt) {
+    // alert('22');
+    //alert(evt.data);
+
+
+    //showNotice(evt.data);
+       // var ss="您有"+evt.data+"条未读消息";
+
+        if(evt.data=="您没有未读消息"){
+            $("#message-bell-btn").attr("title",evt.data);
+            $("#badge").hide();
+        }else if(evt.data=="您收到一条新消息"){
+            $("#message-bell-btn").attr("title","您收到新消息了");
+            showNotice(evt.data);
+        }else if(evt.data.length==1){
+            $("#message-bell-btn").attr("title","您有"+evt.data+"条未读消息");
+            showNotice("您有"+evt.data+"条未读消息");
+        }else {
+            $("#message-bell-btn").attr("title",evt.data);
+            // showNotice(evt.data);
+        }
+
+
+
+    }
+
+
+
+    function onError() {}
+    // 断开 web socket 连接成功触发事件
+    function onClose() {}
+
+    function doSend() {
+    // 使用 send() 方法发送数据
+    if (websocket.readyState == websocket.OPEN) {
+    var msg = document.getElementById("inputMsg").value;
+    websocket.send(msg);//调用后台handleTextMessage方法
+    alert("发送成功!");
+    } else {
+    alert("连接失败!");
+    }
+    }
+
+    function showNotice(content) {
+    Notification.requestPermission(function (perm) {
+    if (perm == "granted") {
+    var notification = new Notification("iFashion:", {
+    dir: "auto",
+    lang: "hi",
+    tag: "testTag",
+    icon: "${pageContext.request.contextPath}/static/admin/images/logo.png",
+    body: content
+    });
+    }
+    })
+    }
+
+
+    window.close=function()
+    {
+    websocket.onclose();
+    }
+
+
+
+
+
+
+    <%--$("#resetcode").blur(function () {--%>
+        <%--var resetcode=$("input[id='resetcode']").val();--%>
+        <%--var datas={"resetcode":resetcode};--%>
+        <%--$.ajax({--%>
+            <%--type: 'POST',--%>
+            <%--url: '${pageContext.request.contextPath}/user/ajaxResetGetCode.action',--%>
+            <%--dataType: 'json', //表示返回值的数据类型--%>
+            <%--traditional: true, //使json格式的字符串不会被转码--%>
+            <%--data: datas,--%>
+            <%--success: function (data) {--%>
+                <%--if(data.message=="验证码错误"){--%>
+                    <%--$("#error").html(data.message);--%>
+                    <%--$("input[id='resetcode']").focus();--%>
+                <%--}--%>
+                <%--//alert("111");--%>
+                <%--//alert("e");--%>
+            <%--}--%>
+        <%--});--%>
+    <%--})--%>
+
+// function test() {
+//    $("#message-bell-btn").attr("title","您好");
+// }
+//     test();
+<%--function  getMessage() {--%>
+    <%--var datas={"id":1};--%>
+    <%--$.ajax({--%>
+    <%--type: 'POST',--%>
+    <%--url: '${pageContext.request.contextPath}/user/ajaxGetMessages.action',--%>
+    <%--dataType: 'json', //表示返回值的数据类型--%>
+    <%--traditional: true, //使json格式的字符串不会被转码--%>
+    <%--data: datas,--%>
+    <%--success: function (data) {--%>
+        <%--if(data.message=='0'){--%>
+           <%--// alert(data.message);--%>
+            <%--$("#message-bell-btn").attr("title","您没有未读消息");--%>
+            <%--$("#badge").hide();--%>
+        <%--}else {--%>
+            <%--//alert(data.message);--%>
+            <%--var ss="您有"+data.message+"条未读消息";--%>
+            <%--$("#message-bell-btn").attr("title",ss);--%>
+        <%--}--%>
+    <%--//alert("111");--%>
+    <%--//alert("e");--%>
+    <%--}--%>
+<%--})--%>
+<%--}--%>
+    //getMessage();
+    // setInterval("getMessage()",5000);
 </script>
+
+
 </body>
 </html>

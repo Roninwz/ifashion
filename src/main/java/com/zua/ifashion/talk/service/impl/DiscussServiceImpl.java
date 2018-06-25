@@ -123,5 +123,10 @@ public class DiscussServiceImpl implements DiscussService{
         return discussUserMapper.selectDiscussUserByTopicId(topicId);
     }
 
+    @Override
+    public List<Discuss> selectDiscussByDiscussDateAndLookNum() {
+        return discussMapper.selectDiscussByDiscussDateAndLookNum();
+    }
+
 
 }

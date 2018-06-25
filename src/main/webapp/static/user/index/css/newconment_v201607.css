@@ -66,6 +66,10 @@ div,ul,dl,.clearfix {zoom:1; /* for IE6 IE7 */}
 .fLeft{float:left;}
 .fRight{float:right;}
 
+
+
+
+
 a{color:#000;}
 a:hover {color:#ba9e66;}
 a:active{outline:none;}
@@ -83,3 +87,11 @@ a.nohover:hover img,.ad a:hover img{transform:scale(1, 1);-ms-transform:scale(1,
 #crazynavdown .s div{/*height:40px;*/}
 #crazynavdown .close{background: url('../Images/adclose.gif') no-repeat;bottom:0;cursor: pointer;height: 20px;overflow: hidden;position: absolute;right: 0;width: 50px;z-index:99;}
 #crazynavdown .zz{ width:1180px; height:80px; background:url('../Images/space.gif'); position:absolute; top:0; left:0; z-index:20; cursor:pointer;}
+
+
+
+
+
+
+/*添加首页样式*/
+

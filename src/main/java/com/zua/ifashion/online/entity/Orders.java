@@ -19,11 +19,25 @@ public class Orders {
 
     private Date endDate;
 
+    private String orderNumber;
+
+    public void setOrdersId(Integer ordersId) {
+        this.ordersId = ordersId;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
     public Integer getOrdersId() {
         return ordersId;
     }
 
-    public void setOrdersId(Integer ordersId) {
+    public void setOrderId(Integer ordersId) {
         this.ordersId = ordersId;
     }
 
@@ -95,5 +109,17 @@ public class Orders {
     }
 
     public Orders() {
+    }
+
+    public Orders(Integer ordersId, Integer userId, Integer designerId, Integer goodsId, Integer addressId, Integer ordersState, Date ordersDate, Date endDate, String orderNumber) {
+        this.ordersId = ordersId;
+        this.userId = userId;
+        this.designerId = designerId;
+        this.goodsId = goodsId;
+        this.addressId = addressId;
+        this.ordersState = ordersState;
+        this.ordersDate = ordersDate;
+        this.endDate = endDate;
+        this.orderNumber = orderNumber;
     }
 }

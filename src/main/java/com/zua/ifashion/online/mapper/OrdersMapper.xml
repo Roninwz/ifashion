@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zua.ifashion.online.mapper.OrdersMapper">
-  <resultMap id="BaseResultMap" type="com.zua.ifashion.online.entity.Orders">
-    <id column="ordersId" jdbcType="INTEGER" property="ordersId" />
-    <result column="userId" jdbcType="INTEGER" property="userId" />
-    <result column="designerId" jdbcType="INTEGER" property="designerId" />
-    <result column="goodsId" jdbcType="INTEGER" property="goodsId" />
-    <result column="addressId" jdbcType="INTEGER" property="addressId" />
-    <result column="ordersState" jdbcType="INTEGER" property="ordersState" />
-    <result column="ordersDate" jdbcType="TIMESTAMP" property="ordersDate" />
-    <result column="endDate" jdbcType="TIMESTAMP" property="endDate" />
-  </resultMap>
+
 
   <!--public abstract int addOrder(Order order);-->
   <!--public abstract int addOrderSelective(Order order);-->
 
   <insert id="addOrder" parameterType="Orders">
-    insert into orders(ordersId,userId,designerId,goodsId,addressId,ordersState,ordersDate,endDate)
-      values(#{ordersId},#{userId},#{designerId},#{goodsId},#{addressId}，#{ordersState})
+    insert into orders(ordersId,userId,designerId,goodsId,addressId,ordersState,ordersDate,endDate,orderNumber)
+      values(#{ordersId},#{userId},#{designerId},#{goodsId},#{addressId},#{ordersState},#{ordersDate},#{endDate},#{orderNumber})
   </insert>
 
   <insert id="addOrderSelective" parameterType="Orders">
@@ -47,6 +38,9 @@
       <if test="endDate!=null">
         endDate
       </if>
+      <if test="orderNumber!=null">
+        orderNumber
+      </if>
     </trim>
     <trim prefix="values(" suffixOverrides="," suffix=")">
       <if test="ordersId!=null">
@@ -73,6 +67,9 @@
       <if test="endDate!=null">
         #{endDate}
       </if>
+      <if test="orderNumber!=null">
+        #{orderNumber}
+      </if>
     </trim>
 
   </insert>
@@ -85,7 +82,7 @@
   <!--public abstract int updateOrder(Orders orders);-->
   <update id="updateOrder" parameterType="Orders">
     UPDATE orders set ordersId=#{ordersId},userId=#{userId},designerId=#{designerId},goodsId=#{goodsId},addressId=#{addressId},
-    ordersState=#{ordersState},ordersDate=#{ordersDate},endDate=#{endDate}
+    ordersState=#{ordersState},ordersDate=#{ordersDate},endDate=#{endDate},orderNumber=#{orderNumber}
   </update>
 
   <!--public abstract int updateOrderSelective(Orders orders);-->
@@ -112,6 +109,9 @@
       <if test="endDate!=null">
         endDate=#{endDate}
       </if>
+      <if test="orderNumber!=null">
+      orderNumber=#{orderNumber}
+     </if>
     where  ordersId=#{ordersId}
   </update>
 
@@ -119,6 +119,15 @@
   public abstract int deleteOrder(Integer orderId);
 -->
 <delete id="deleteOrder" parameterType="int">
-  delete * from orders where ordersId=#{param}
+  delete  from orders where ordersId=#{param}
 </delete>
+  <!--public abstract Orders selectOrdersById(Integer orderId);-->
+  <select id="selectOrdersById" resultType="Orders" parameterType="int">
+    select * from  orders where ordersId=#{param}
+  </select>
+
+  <!--public abstract Orders selectOrdersByOrderNumber(String orderNumber);-->
+  <select id="selectOrdersByOrderNumber" parameterType="string" resultType="Orders">
+     select * from  orders where orderNumber=#{param}
+  </select>
 </mapper>

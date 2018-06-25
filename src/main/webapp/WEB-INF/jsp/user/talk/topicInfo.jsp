@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ include file="../header.jsp" %>
 
 <%
@@ -29,6 +30,21 @@
     <link rel="stylesheet" href="static/user/login/css/login.css">
 
     <link href="static/user/talk/css/topicInfo.css" rel="stylesheet">
+    <link href="static/user/talk/css/heart.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/user/talk/css/1.css">
+
+    <style type="text/css">
+        #low_right
+        {
+            position: fixed;
+            width: 85px;
+            height: 130px;
+            background: #eee;
+            bottom: 50%;
+            right: 20px;
+            text-align: center;
+        }
+    </style>
 
 
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
@@ -42,10 +58,73 @@
     <%--其它js--%>
     <script type="text/javascript" src="static/user/talk/js/1.js"></script>
 
+    <script>
+        $(document).ready(function()
+        {
+            $('body').on("click",'.heart',function()
+            {
+
+                var A=$(this).attr("id");
+                var B=A.split("like");
+                var messageID=B[1];
+                var C=parseInt($("#likeCount"+messageID).html());
+                $(this).css("background-position","")
+                var D=$(this).attr("rel");
+                var topicId = $("#topic_id_var").val();
+                var userid = $("#current_user_id").val();
+                var datas = {"topicId":topicId,
+                    "userid":userid  };
+
+                if(D === 'like')
+                {
+                    $("#likeCount"+messageID).html(C+1);
+                    $.ajax({
+                        type: 'POST',
+                        url: '${pageContext.request.contextPath}/user/addCollectTopic.action',
+                        dataType: 'json', //表示返回值的数据类型
+                        contentType: 'application/json;charset=UTF-8', //内容类型
+                        traditional: true, //使json格式的字符串不会被转码
+                        data: JSON.stringify(datas),
+                        success: function(data) {
+                            alert("收藏成功");
+                        },
+                        error: function(data) {
+                            alert("失败");
+                        },
+                    });
+                    $(this).addClass("heartAnimation").attr("rel","unlike");
+
+                }
+                else
+                {
+                    $("#likeCount"+messageID).html(C-1);
+                    $.ajax({
+                        type: 'POST',
+                        url: '${pageContext.request.contextPath}/user/cancelCollectTopic.action',
+                        dataType: 'json', //表示返回值的数据类型
+                        contentType: 'application/json;charset=UTF-8', //内容类型
+                        traditional: true, //使json格式的字符串不会被转码
+                        data: JSON.stringify(datas),
+                        success: function(data) {
+                            alert("取消收藏成功");
+                        },
+                        error: function(data) {
+                            alert("失败");
+                        },
+                    });
+                    $(this).removeClass("heartAnimation").attr("rel","like");
+                    $(this).css("background-position","left");
+                }
+            });
+        });
+    </script>
+
 
 </head>
 <body style="background-color: white">
-
+<c:set var="user" value="${sessionScope.user}"/>
+<input id="topic_id_var" value="${topic.topicId}" type="hidden">
+<input id="current_user_id" value="${user.userId}" type="hidden">
 <div id="main" style="margin-top:-20px">
 
     <!-- 顶部 -->
@@ -67,9 +146,25 @@
 
             <div class="l issue-content">
                 <h1 title="${topic.topicTitle}" class="issue-title more-ellipsis">${topic.topicTitle}</h1>
+
+                    <c:choose>
+                        <c:when test="${empty myCollection}">
+                <a title="收藏">
+                            <div style="position: absolute;top: -10px;left: 745px;" class="heart" id="like3" rel="like"></div>
+                </a>
+                        </c:when>
+                        <c:otherwise>
+                <a title="已收藏">
+                            <div style="position: absolute;top: -10px;left: 745px;" class="heart heartAnimation" id="like3" rel=""></div>
+                </a>
+                </c:otherwise>
+                    </c:choose>
+
+
                 <div class="issue-desc-box js-issue-desc-box">
-                    <p class="MsoListParagraph" style='padding: 0px; color: rgb(77, 85, 93); line-height: 16.1px; text-indent: 32px; font-family: "PingFang SC", 微软雅黑, "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 28px; white-space: normal; background-color: rgb(255, 255, 255);'>            <span style="color: rgb(0, 0, 0); line-height: 18.4px; font-family: 微软雅黑, sans-serif; font-size: 16px;">
-            </span>
+                    <p class="MsoListParagraph" style='padding: 0px; color: rgb(77, 85, 93); line-height: 16.1px; text-indent: 32px; font-family: "PingFang SC", 微软雅黑, "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 28px; white-space: normal; background-color: rgb(255, 255, 255);'>
+                        <span style="color: rgb(0, 0, 0); line-height: 18.4px; font-family: 微软雅黑, sans-serif; font-size: 16px;">
+                        </span>
                     </p>
                     <p style="background: white; line-height: 16px;">
                         <span style="color: rgb(0, 0, 0); font-family: 微软雅黑, sans-serif; font-size: 16px;">${topic.topicContent}
@@ -94,8 +189,8 @@
                     </div>-->
                 </div>
                 <div class="issue-bottom">
-                    <a class="js-quiz quiz-btn l" href="${pageContext.request.contextPath }/user/seditor.action" target="_blank" data-topicid="27">参与话题</a>
-                    <a class="js-quiz quiz-btn l" href="${pageContext.request.contextPath }/user/seditor.action" target="_blank" data-topicid="27">发布话题</a>
+                    <a class="js-quiz quiz-btn l" href="${pageContext.request.contextPath }/user/addinformation.action?topicId=${topic.topicId}" target="_blank" data-topicid="27">参与话题</a>
+                    <a class="js-quiz quiz-btn l" href="${pageContext.request.contextPath }/user/seditor1.action" target="_blank" data-topicid="27">发布话题</a>
                 </div>
             </div>
         </div>
@@ -122,7 +217,7 @@
                             <a href="" target="_blank">${discussUsers.user.username}</a>
                             <a style="color:#999"><fmt:formatDate value="${discussUsers.discussDate}"/></a>
                         </div>
-                        <a title="&nbsp;${discussUsers.discussContent}" class="issue-title" href="" target="_blank">${discussUsers.discussContent}</a>
+                        <a title="&nbsp;${discussUsers.discussTitle}" class="issue-title" href="${pageContext.request.contextPath }/user/forumInfo.action?discussId=1" target="_blank">${discussUsers.discussTitle}</a>
                         <div class="has-answer clearfix">
                             <div class="answer-bottom clearfix">
                                 <!-- 点赞 -->
@@ -292,310 +387,338 @@
 
                     </div>
                 </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/17_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">大家闺秀</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长，也可以单独穿个人觉得如果牛仔裙是单排纽扣的款式会更好可是我没有纽扣款大家只能想象一下。" class="issue-title" href="" target="_blank">小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长，也可以单独穿个人觉得如果牛仔裙是单排纽扣的款式会更好可是我没有纽扣款大家只能想象一下。</a>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/17_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">大家闺秀</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长，也可以单独穿个人觉得如果牛仔裙是单排纽扣的款式会更好可是我没有纽扣款大家只能想象一下。" class="issue-title" href="" target="_blank">小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长，也可以单独穿个人觉得如果牛仔裙是单排纽扣的款式会更好可是我没有纽扣款大家只能想象一下。</a>--%>
 
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="280534" data-ques-id="389245"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    2</em></a>
-                                <!-- 点赞end -->
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="280534" data-ques-id="389245"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--2</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
 
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/18_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">魔力召唤</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="第一套是我最爱的露肩款的裙子。因为我手臂超级多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包。小女人的感觉。" class="issue-title" href="" target="_blank">第一套是我最爱的露肩款的裙子。因为我手臂超级多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包。小女人的感觉。</a>
-                        <div class="has-answer clearfix">
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/18_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">魔力召唤</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="第一套是我最爱的露肩款的裙子。因为我手臂超级多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包。小女人的感觉。" class="issue-title" href="" target="_blank">第一套是我最爱的露肩款的裙子。因为我手臂超级多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包。小女人的感觉。</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
 
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="279491" data-ques-id="388642"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    3</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/18_avatar_middle1.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">GvaFoo</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="这个夏天，把牛仔裙穿好就这么简单" class="issue-title" href="" target="_blank">这个夏天，把牛仔裙穿好就这么简单</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">
-                                    <i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>
-                                    <em>5</em>
-                                </a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/23_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">Lexi</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="夏天必备的牛仔裙只要这么穿就一定时髦" class="issue-title" href="" target="_blank">夏天必备的牛仔裙只要这么穿就一定时髦</a>
-                        <div class="has-answer clearfix">
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="279491" data-ques-id="388642"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--3</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/18_avatar_middle1.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">GvaFoo</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="这个夏天，把牛仔裙穿好就这么简单" class="issue-title" href="" target="_blank">这个夏天，把牛仔裙穿好就这么简单</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">--%>
+                                    <%--<i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>--%>
+                                    <%--<em>5</em>--%>
+                                <%--</a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/23_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">Lexi</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="夏天必备的牛仔裙只要这么穿就一定时髦" class="issue-title" href="" target="_blank">夏天必备的牛仔裙只要这么穿就一定时髦</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
 
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="279269" data-ques-id="388503"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    3</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/30_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">katrina</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="破洞牛仔是王道" class="issue-title" href="" target="_blank">破洞牛仔是王道</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278750" data-ques-id="387484"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    2</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/32_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">Teresa</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="一条牛仔裙的千百种姿态" class="issue-title" href="/wenda/detail/332686" target="_blank">一条牛仔裙的千百种姿态</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">
-                                    <i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>
-                                    <em>5</em>
-                                </a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/33_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">Maria Jernov</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="这个夏日，你需要一条这样的拼接牛仔裙" class="issue-title" href="" target="_blank">这个夏日，你需要一条这样的拼接牛仔裙</a>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="279269" data-ques-id="388503"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--3</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/30_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">katrina</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="破洞牛仔是王道" class="issue-title" href="" target="_blank">破洞牛仔是王道</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278750" data-ques-id="387484"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--2</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/32_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">Teresa</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="一条牛仔裙的千百种姿态" class="issue-title" href="/wenda/detail/332686" target="_blank">一条牛仔裙的千百种姿态</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">--%>
+                                    <%--<i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>--%>
+                                    <%--<em>5</em>--%>
+                                <%--</a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/33_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">Maria Jernov</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="这个夏日，你需要一条这样的拼接牛仔裙" class="issue-title" href="" target="_blank">这个夏日，你需要一条这样的拼接牛仔裙</a>--%>
 
-                        <div class="has-answer clearfix">
+                        <%--<div class="has-answer clearfix">--%>
 
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278591" data-ques-id="387480"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    1</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/36_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">Summer</a>
-                            <a style="color:#999">2018-04-28</a>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278591" data-ques-id="387480"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--1</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/36_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">Summer</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
 
-                        </div>
-                        <a title="半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉" class="issue-title" target="_blank">半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉</a>
-                        <div class="has-answer clearfix">
+                        <%--</div>--%>
+                        <%--<a title="半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉" class="issue-title" target="_blank">半裙可以说是夏天最能遮肉的裙子了，刚好到膝盖或者过了膝盖的长度能很明显的遮住臀部的赘肉</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
 
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278226" data-ques-id="387891"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    1</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/40_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">Seven</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="永不过时牛仔裙今夏再登场" class="ques-con-content" href="" target="_blank">永不过时牛仔裙今夏再登场</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278170" data-ques-id="387688"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    5</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/41_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">katrinaaa</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="A字短裙在手，魅力不怕没有" class="issue-title" href="" target="_blank">A字短裙在手，魅力不怕没有</a>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278226" data-ques-id="387891"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--1</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/40_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">Seven</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="永不过时牛仔裙今夏再登场" class="ques-con-content" href="" target="_blank">永不过时牛仔裙今夏再登场</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278170" data-ques-id="387688"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--5</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/41_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">katrinaaa</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="A字短裙在手，魅力不怕没有" class="issue-title" href="" target="_blank">A字短裙在手，魅力不怕没有</a>--%>
 
-                        <div class="has-answer clearfix">
+                        <%--<div class="has-answer clearfix">--%>
 
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278168" data-ques-id="387693"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    4</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/44_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">阮阮</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="纯白色的夏天清爽变时髦" class="issue-title" href="" target="_blank">纯白色的夏天清爽变时髦</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">
-                                    <i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>
-                                    <em>5</em>
-                                </a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/46_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">Meng.Li</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="裤子靠边站，裙子才是这个季节的主角啊" class="issue-title" href="" target="_blank">裤子靠边站，裙子才是这个季节的主角啊</a>
-                        <div class="has-answer clearfix">
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278168" data-ques-id="387693"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--4</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/44_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">阮阮</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="纯白色的夏天清爽变时髦" class="issue-title" href="" target="_blank">纯白色的夏天清爽变时髦</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">--%>
+                                    <%--<i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>--%>
+                                    <%--<em>5</em>--%>
+                                <%--</a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/46_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">Meng.Li</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="裤子靠边站，裙子才是这个季节的主角啊" class="issue-title" href="" target="_blank">裤子靠边站，裙子才是这个季节的主角啊</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
 
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278052" data-ques-id="387481"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    3</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/47_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">邑</a>
-                            <a style="color:#999">2018-04-28</a>
-                        </div>
-                        <a title="女人在你的年龄 穿你的裙子" class="issue-title" href="" target="_blank">女人在你的年龄 穿你的裙子</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278037" data-ques-id="387482"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>
-                                    15</em></a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="issue-item js-issue-item clearfix">
-                    <a class="tag-img l" href="" target="_blank">
-                        <img src="static/user/talk/image/50_avatar_middle.jpg">
-                    </a>
-                    <div class="issue-content-box l">
-                        <div class="tag-box">
-                            <a href="" target="_blank">刘方仪</a>
-                            <a style="color:#999">2018-04-28</a>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278052" data-ques-id="387481"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--3</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/47_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">邑</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
+                        <%--</div>--%>
+                        <%--<a title="女人在你的年龄 穿你的裙子" class="issue-title" href="" target="_blank">女人在你的年龄 穿你的裙子</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="278037" data-ques-id="387482"><i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i><em>--%>
+                                    <%--15</em></a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="issue-item js-issue-item clearfix">--%>
+                    <%--<a class="tag-img l" href="" target="_blank">--%>
+                        <%--<img src="static/user/talk/image/50_avatar_middle.jpg">--%>
+                    <%--</a>--%>
+                    <%--<div class="issue-content-box l">--%>
+                        <%--<div class="tag-box">--%>
+                            <%--<a href="" target="_blank">刘方仪</a>--%>
+                            <%--<a style="color:#999">2018-04-28</a>--%>
 
-                        </div>
-                        <a title="衬衫与裙子是命中注定的相爱" class="issue-title" href="" target="_blank">衬衫与裙子是命中注定的相爱</a>
-                        <div class="has-answer clearfix">
-                            <div class="answer-bottom clearfix">
-                                <!-- 点赞 -->
-                                <a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">
-                                    <i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>
-                                    <em>5</em>
-                                </a>
-                                <!-- 点赞end -->
-                            </div>
-                        </div>
+                        <%--</div>--%>
+                        <%--<a title="衬衫与裙子是命中注定的相爱" class="issue-title" href="" target="_blank">衬衫与裙子是命中注定的相爱</a>--%>
+                        <%--<div class="has-answer clearfix">--%>
+                            <%--<div class="answer-bottom clearfix">--%>
+                                <%--<!-- 点赞 -->--%>
+                                <%--<a class="l js-parise-btn issue-btn " href="javascript:void(0);" data-hasop="" data-answer-id="277994" data-ques-id="387476">--%>
+                                    <%--<i class="icon-thumb-revert"><img src="static/user/talk/image/zan.png"></i>--%>
+                                    <%--<em>5</em>--%>
+                                <%--</a>--%>
+                                <%--<!-- 点赞end -->--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
 
-                    </div>
-                </li>
+                    <%--</div>--%>
+                <%--</li>--%>
 
             </ul>
             <!-- 分页 -->
+            <div class="page">
+                <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=1">首页</a>
+                <span class="disabled_page">
+                            <c:if test="${pageInfo.hasPreviousPage}">
+                                    <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${pageInfo.pageNum-1}" aria-label="Previous">
+                                        <span aria-hidden="true">上一页</span>
+                                    </a>
+                            </c:if>
+                        </span>
+
+                <c:forEach items="${pageInfo.navigatepageNums}" var="page_num">
+                    <c:if test="${page_num == pageInfo.pageNum}">
+                        <a class="active text-page-tag" href="javascript:void(0)">${page_num}</a>
+                    </c:if>
+                    <c:if test="${page_num != pageInfo.pageNum}">
+                        <a class="text-page-tag"  href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${page_num}">${page_num}</a>
+                    </c:if>
+                </c:forEach>
+                <c:choose>
+                    <c:when test="${pageInfo.hasNextPage}">
+                        <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${pageInfo.pageNum+1}" aria-label="Next">
+                            <span aria-hidden="true">下一页</span>
+                        </a>
+                    </c:when>
+                </c:choose>
+                <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${pageInfo.pages}">尾页</a>
+            </div>
+
             <!-- 分页 end -->
         </div>
         <!-- 话题列表end -->
@@ -910,47 +1033,23 @@
 </div>
 
 
-<div class="footer" style="height:450px;">
-    <div class="footer-wrap">
-        <div class="footer-info clearfix">
-            <div class="footer-address col-md-6">
-                <div class="footer-logo">
-                    <span></span>
-                    <h3>iFashion</h3>
-                </div>
-                <p>郑州航空工业管理学院东校区</p>
-                <p>客服电话：000-000-0000</p>
-                <p>邮箱：11111111@qq.com</p>
-            </div>
-            <div class="footer-nav col-md-6 clearfix">
-                <dl class="col-md-4">
-                    <dt><span>关于iFashion</span></dt>
-                    <dd><a href="">网站地图</a></dd>
-                    <dd><a href="">版权声明</a></dd>
-                    <dd><a href="">加入我们</a></dd>
-                    <dd><a href="">联系我们</a></dd>
-                </dl>
-                <dl class="col-md-4">
-                    <dt><span>iFashion产品</span></dt>
-                    <dd><a href="">穿衣搭配</a></dd>
-                    <dd><a href="">社区精选</a></dd>
-                    <dd><a href="">私人订制</a></dd>
-                    <dd><a href="">资讯</a></dd>
-                </dl>
-                <dl class="col-md-4">
-                    <dt><span>商业合作</span></dt>
-                    <dd><a href="" target="_blank">设计师合作</a></dd>
-                    <dd><a class="kol-join">杂志合作</a></dd>
-                    <dd><a class="kol-join">媒体合作</a></dd>
-                </dl>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright ©2016 京 ICP 备 16021078 号</p>
-            <p>ICP 号: 京 B2-20170261</p>
-        </div>
-    </div>
-</div>
+<%@ include file="../footer.jsp" %>
+<script type='text/javascript'>
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 108609);
+</script>
+
+
 
 
 </body>

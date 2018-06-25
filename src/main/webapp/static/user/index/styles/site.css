@@ -452,14 +452,13 @@ body {
 }
 
 a {
-  color: #1976D2;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-a:hover, a:focus {
-  color: #2196F3;
-}
+/*a:hover, a:focus {*/
+  /*color: #2196F3;*/
+/*}*/
 
 
 

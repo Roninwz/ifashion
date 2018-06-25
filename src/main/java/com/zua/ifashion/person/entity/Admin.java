@@ -1,8 +1,9 @@
 package com.zua.ifashion.person.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Admin {
+public class Admin implements Serializable{
     private Integer adminId;
 
     private String adminName;

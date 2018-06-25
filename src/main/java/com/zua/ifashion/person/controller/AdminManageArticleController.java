@@ -3,10 +3,17 @@ package com.zua.ifashion.person.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zua.ifashion.article.entity.Article;
+import com.zua.ifashion.article.entity.ArticleReview;
+import com.zua.ifashion.article.entity.Complain;
+import com.zua.ifashion.article.service.ArticleReviewService;
 import com.zua.ifashion.article.service.ArticleService;
 import com.zua.ifashion.article.service.ArticleTypeService;
+import com.zua.ifashion.article.service.ComplainService;
 import com.zua.ifashion.person.entity.Admin;
 import com.zua.ifashion.person.entity.User;
+import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.person.vo.AdminArticleReivewVo;
+import com.zua.ifashion.person.vo.AdminComplainVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -28,6 +36,12 @@ public class AdminManageArticleController {
     private ArticleService articleService;
     @Autowired
     private ArticleTypeService articleTypeService;
+    @Autowired
+    UserService userService;
+    @Autowired
+    private ArticleReviewService articleReviewService;
+    @Autowired
+    private ComplainService complainService;
 //    @Autowired
 //    private ArticleType articleType;
     // 文章管理controller
@@ -197,6 +211,8 @@ public class AdminManageArticleController {
 
         Article article= articleService.selectArticleByArticleId(articleId);
 
+
+
         map.put("article",article);
 
         return "admin/articledetail";
@@ -312,6 +328,66 @@ public class AdminManageArticleController {
         return article;
     }
 
+    @RequestMapping(value = "/reviewmanage", method = RequestMethod.GET)
+    public String reviewManage(HttpSession session,Map<String,Object> map) {
+       List<ArticleReview> articleReviews=articleReviewService.selectAllArticleReview();
+        System.out.println(articleReviews.size());
+       List<AdminArticleReivewVo> adminArticleReivewVos=new ArrayList<>();
+       for(ArticleReview articleReview:articleReviews){
+
+           AdminArticleReivewVo adminArticleReivewVo=new AdminArticleReivewVo();
+              Article article=   articleService.selectArticleByArticleId(articleReview.getArticleId());
+           adminArticleReivewVo.setArticleTitle(article.getArticleTitle());
+         User user=  userService.selectUserByUserId(articleReview.getUserId());
+           adminArticleReivewVo.setUsername(user.getUsername());
+           adminArticleReivewVo.setReviewContent(articleReview.getReviewContent());
+           adminArticleReivewVo.setReviewDate(articleReview.getReviewDate());
+           adminArticleReivewVo.setReviewZan(articleReview.getReviewZan());
+           adminArticleReivewVos.add(adminArticleReivewVo);
+       }
+        System.out.println("adminArticleReivewVos2:"+adminArticleReivewVos.size());
+        map.put("adminArticleReivewVos",adminArticleReivewVos);
+        //map.put("pageInfo",pageInfo);
+        map.put("n",adminArticleReivewVos.size());
+        return "admin/articlereview";
+    }
+
+//    评论详情
+    @RequestMapping(value = "/articlereviewdetail", method = RequestMethod.GET)
+    public String articlereviewdetail(HttpSession session,Integer reviewId, Map<String,Object> map) {
+
+       // Article article=articleReviewService.;
+
+
+
+        //map.put("article",article);
+
+        return "admin/articlereviewdetail";
+    }
+
+    //complainmanage
+    @RequestMapping(value = "/complainmanage", method = RequestMethod.GET)
+    public String complainmanage(HttpSession session,Integer reviewId, Map<String,Object> map) {
+
+        // Article article=articleReviewService.;
+       List<Complain> complains= complainService.selectAllComplain();
+       List<AdminComplainVo> complainVos=new ArrayList<>();
+            for(Complain complain:complains){
+                AdminComplainVo adminComplainVo=new AdminComplainVo();
+                User user=userService.selectUserByUserId(complain.getComplainUserid());
+                User userd=userService.selectUserByUserId(complain.getComplainedUserid());
+                adminComplainVo.setUsername(user.getUsername());
+                adminComplainVo.setUsernameed(userd.getUsername());
+                adminComplainVo.setComplainReason(complain.getComplainReason());
+                adminComplainVo.setReviewId(complain.getReviewId());
+                adminComplainVo.setState(complain.getState());
+                complainVos.add(adminComplainVo);
+            }
+
+        map.put("complainVos",complainVos);
+
+        return "admin/complain";
+    }
 
 
 }

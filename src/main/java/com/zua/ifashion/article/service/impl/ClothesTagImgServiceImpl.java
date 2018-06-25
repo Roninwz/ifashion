@@ -29,4 +29,9 @@ public class ClothesTagImgServiceImpl implements ClothesTagImgService {
     public Article selectArticleByArticleId(Integer articleId) {
         return clothesTagImgMapper.selectArticleByArticleId(articleId);
     }
+
+    @Override
+    public int addTagImgSelective(ClothesTagImg clothesTagImg) {
+        return clothesTagImgMapper.addTagImgSelective(clothesTagImg);
+    }
 }

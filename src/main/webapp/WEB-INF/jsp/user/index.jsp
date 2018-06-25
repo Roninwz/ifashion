@@ -52,14 +52,36 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/user/index/scripts/lunbo.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/user/index/scripts/home.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/user/index/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script src="${pageContext.request.contextPath}/static/user/index/scripts/zzsc.js" type="text/javascript"></script>
+
     <script src="${pageContext.request.contextPath}/static/user/index/scripts/tagcloud2.js" type="text/javascript"></script>
 
+    <style>
 
+
+        .boutiqueColumn .box{
+            font-size: 20px;!important;
+            color: red;
+
+        }
+        .boutiqueColumn .box li{
+            line-height: 25px;
+        }
+        .clothes-matching p{
+            line-height: 25px;
+        }
+        .doukan-list li{
+            line-height: 25px;
+        }
+        .doukan-list2 li{
+            line-height: 25px;
+        }
+        .doukan{
+            margin-top: -300px;
+        }
+    </style>
 
 </head>
 <body>
-
 
 
 <%@ include file="header.jsp" %>
@@ -118,8 +140,8 @@
                 <img src="${pageContext.request.contextPath}/static/user/index/images/shouyezixun1.jpg" alt="Image" class="img-fluid">
 
                 <div class="direction-reveal__overlay">
-                    <h3 class="direction-reveal__title">Lorem ipsum</h3>
-                    <p class="direction-reveal__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore eritatis et quasi.</p>
+                    <h3 class="direction-reveal__title">iFashion</h3>
+                    <p class="direction-reveal__text">前段时间《Interview》宣告停刊一事在时尚圈中沸沸扬扬，这本由Andy Warhol一手创办的著名时尚刊物在即将迎来创刊50周年的时候宣布永久关闭，让人唏嘘不已。杂志在49年里留下了无数的经典封面，而封面人物本身在当时又极具话题性</p>
                 </div>
             </a>
 
@@ -127,8 +149,8 @@
                 <img src="${pageContext.request.contextPath}/static/user/index/images/shouyezixun2.jpg" alt="Image" class="img-fluid">
 
                 <div class="direction-reveal__overlay">
-                    <h3 class="direction-reveal__title">Lorem ipsum</h3>
-                    <p class="direction-reveal__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore eritatis et quasi.</p>
+                    <h3 class="direction-reveal__title">iFashion</h3>
+                    <p class="direction-reveal__text">看惯了博主的free style造型也得看看有专门造型师打造的明星街拍造型了，上次的MET GALA上的妖艳造型热潮已经退去，现在明星们又要以街拍造型决胜负了。</p>
                 </div>
             </a>
 
@@ -136,8 +158,8 @@
                 <img src="${pageContext.request.contextPath}/static/user/index/images/shouyezixun3.jpg" alt="Image" class="img-fluid" width="356px">
 
                 <div class="direction-reveal__overlay">
-                    <h3 class="direction-reveal__title">Lorem ipsum</h3>
-                    <p class="direction-reveal__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore eritatis et quasi.</p>
+                    <h3 class="direction-reveal__title">iFashion</h3>
+                    <p class="direction-reveal__text">Dolce & Gabbana一直都是很难驾驭的时尚品牌，除了他的服装系列都采用夸张华丽的巴洛克式设计外，颜色也非常鲜艳大胆，如果气质不够好或衣品不够高的人，穿起来就会很像中年妇女或村姑。</p>
                 </div>
             </a>
 
@@ -145,8 +167,8 @@
                 <img src="${pageContext.request.contextPath}/static/user/index/images/shouyezixun4.jpg" alt="Image" class="img-fluid">
 
                 <div class="direction-reveal__overlay">
-                    <h3 class="direction-reveal__title">Lorem ipsum</h3>
-                    <p class="direction-reveal__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore eritatis et quasi.</p>
+                    <h3 class="direction-reveal__title">iFashion</h3>
+                    <p class="direction-reveal__text">ANNAKIKI 2018秋冬系列灵感是来自当下审美疲劳和流行过剩而引发的深思。 设计师杨子想传递一个审美疲劳的暗号，尝试一种新的设计语言，每件作品都是精心考究，为传承经典而作。她认为，每件衣服都是值得被收藏而不是随意丢弃的：.</p>
                 </div>
             </a>
 
@@ -154,8 +176,8 @@
                 <img src="${pageContext.request.contextPath}/static/user/index/images/shouyezixun5.jpg" alt="Image" class="img-fluid">
 
                 <div class="direction-reveal__overlay">
-                    <h3 class="direction-reveal__title">Lorem ipsum</h3>
-                    <p class="direction-reveal__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore eritatis et quasi.</p>
+                    <h3 class="direction-reveal__title">iFashion</h3>
+                    <p class="direction-reveal__text">喜欢关注潮流时尚的姑娘们，有没有发现今年一股时尚趋势正在悄悄大流行？答案就是复古风！这股热潮到了夏季更是火热，而哪些又是复古风格最IN的时尚单品呢？.</p>
                 </div>
             </a>
 
@@ -213,23 +235,23 @@
             <ul id="caseList3" class="list1">
                 <li>
                     <img src="${pageContext.request.contextPath}/static/user/index/images/shouyedapei1.jpg" height="420px" width="900px">
-                    <p>第一个图片</p>
+                    <p>娘Man风成为今年大热</p>
                 </li>
                 <li>
                     <img src="${pageContext.request.contextPath}/static/user/index/images/shouyedapei2.jpg" height="420px" width="900px">
-                    <p>第二个图片</p>
+                    <p>竖条纹长裙让你显瘦一百倍</p>
                 </li>
                 <li>
                     <img src="${pageContext.request.contextPath}/static/user/index/images/shouyedapei3.jpg" height="420px" width="900px">
-                    <p>第三个图片</p>
+                    <p>跟她学穿搭拥有超模风</p>
                 </li>
                 <li>
                     <img src="${pageContext.request.contextPath}/static/user/index/images/shouyedapei4.jpg" height="420px" width="900px">
-                    <p>第四个图片</p>
+                    <p>慵懒风小西装让你成为职场达人</p>
                 </li>
                 <li>
                     <img src="${pageContext.request.contextPath}/static/user/index/images/shouyedapei5.jpg" height="420px" width="900px">
-                    <p>第五个图片</p>
+                    <p>英伦风毛呢大衣百搭帅气</p>
                 </li>
             </ul>
         </div>
@@ -351,7 +373,7 @@
         </div>
         <div class="doukan-list2">
             <ul >
-                <br><br>
+                <br>
                 <li><a href="#">不大不时髦oversize耳饰让你脸小一个size</a></li>
                 <li><a href="#">5个既显脸小又精神的帽子戴法</a></li>
                 <li><a href="#">学会Bella Hadid白色穿搭拥有高级颜</a></li>
@@ -451,53 +473,53 @@
 
 
 <!-- 社区精选 -->
-<div class="forumjx">
-    <img src="${pageContext.request.contextPath}/static/user/index/images/sqjx.png">
+<%--<div class="forumjx">--%>
+    <%--<img src="${pageContext.request.contextPath}/static/user/index/images/sqjx.png">--%>
 
-    <div id="tabs2">
-        <ul>
-            <li><a href="#tabs-1" title="">Tab 1</a></li>
-            <li><a href="#tabs-2" title="">Tab 2</a></li>
-            <li><a href="#tabs-3" title="">Tab 3</a></li>
-        </ul>
+    <%--<div id="tabs2">--%>
+        <%--<ul>--%>
+            <%--<li><a href="#tabs-1" title="">Tab 1</a></li>--%>
+            <%--<li><a href="#tabs-2" title="">Tab 2</a></li>--%>
+            <%--<li><a href="#tabs-3" title="">Tab 3</a></li>--%>
+        <%--</ul>--%>
 
-        <div id="tabs_container">
-            <div id="tabs-1">
-                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus.</p><p>Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-            </div>
+        <%--<div id="tabs_container">--%>
+            <%--<div id="tabs-1">--%>
+                <%--<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus.</p><p>Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>--%>
+            <%--</div>--%>
 
-            <div id="tabs-2">
-                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.</p>
+            <%--<div id="tabs-2">--%>
+                <%--<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.</p>--%>
 
-            </div>
+            <%--</div>--%>
 
-            <div id="tabs-3">
-                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.</p><p> Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>
-            </div>
-        </div><!--End tabs container-->
-    </div><!--End tabs-->
-    <script type="text/javascript" src="${pageContext.request.contextPath}/static/user/index/scripts/tabulous.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function($) {
-            $('#tabs').tabulous({
-                effect: 'scale'
-            });
+            <%--<div id="tabs-3">--%>
+                <%--<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.</p><p> Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>--%>
+            <%--</div>--%>
+        <%--</div><!--End tabs container-->--%>
+    <%--</div><!--End tabs-->--%>
+    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/static/user/index/scripts/tabulous.js"></script>--%>
+    <%--<script type="text/javascript">--%>
+        <%--$(document).ready(function($) {--%>
+            <%--$('#tabs').tabulous({--%>
+                <%--effect: 'scale'--%>
+            <%--});--%>
 
-            $('#tabs2').tabulous({
-                effect: 'slideLeft'
-            });
+            <%--$('#tabs2').tabulous({--%>
+                <%--effect: 'slideLeft'--%>
+            <%--});--%>
 
-            $('#tabs3').tabulous({
-                effect: 'scaleUp'
-            });
+            <%--$('#tabs3').tabulous({--%>
+                <%--effect: 'scaleUp'--%>
+            <%--});--%>
 
-            $('#tabs4').tabulous({
-                effect: 'flip'
-            });
-        });
-    </script>
+            <%--$('#tabs4').tabulous({--%>
+                <%--effect: 'flip'--%>
+            <%--});--%>
+        <%--});--%>
+    <%--</script>--%>
 
-</div>
+<%--</div>--%>
 
 
 
@@ -505,40 +527,41 @@
 
 <!--标签云-->
 
-<div class="hotest-look">
+<%--<div class="hotest-look">--%>
 
-    <div id="tagscloud" class="biaoqian">
-        <a href="#" class="tagc1">我要提问</a>
-        <a href="#" class="tagc2">达人专栏</a>
-        <a href="#" class="tagc5">新闻播报</a>
-        <a href="#" class="tagc3">问答社区</a>
-            <a href="#" class="tagc2" >我要提问</a>
-            <a href="#" class="tagc1" >达人专栏</a>
-            <a href="#" class="tagc2">热门话题</a>
-            <a href="#" class="tagc3">新闻播报</a>
-            <a href="#" class="tagc2">我要提问</a>
-            <a href="#" class="tagc3">问答社区</a>
-            <a href="#" class="tagc5">热门话题</a>
-            <a href="#" class="tagc2">新闻播报</a>
-            <a href="#" class="tagc3">热门话题</a>
-            <a href="#" class="tagc2">我要提问</a>
-            <a href="#" class="tagc5">新闻播报</a>
-            <a href="#" class="tagc2">热门话题</a>
-                <a href="#" class="tagc3" >我要提问</a>
-                <a href="#" class="tagc1" >达人专栏</a>
-                <a href="#" class="tagc2">热门话题</a>
-                <a href="#" class="tagc5">新闻播报</a>
-                <a href="#" class="tagc3">我要提问</a>
-                <a href="#" class="tagc2">问答社区</a>
-                <a href="#" class="tagc5">热门话题</a>
-                <a href="#" class="tagc3">新闻播报</a>
-          </div>
-</div>
+    <%--<div id="tagscloud" class="biaoqian">--%>
+        <%--<a href="#" class="tagc1">我要提问</a>--%>
+        <%--<a href="#" class="tagc2">达人专栏</a>--%>
+        <%--<a href="#" class="tagc5">新闻播报</a>--%>
+        <%--<a href="#" class="tagc3">问答社区</a>--%>
+            <%--<a href="#" class="tagc2" >我要提问</a>--%>
+            <%--<a href="#" class="tagc1" >达人专栏</a>--%>
+            <%--<a href="#" class="tagc2">热门话题</a>--%>
+            <%--<a href="#" class="tagc3">新闻播报</a>--%>
+            <%--<a href="#" class="tagc2">我要提问</a>--%>
+            <%--<a href="#" class="tagc3">问答社区</a>--%>
+            <%--<a href="#" class="tagc5">热门话题</a>--%>
+            <%--<a href="#" class="tagc2">新闻播报</a>--%>
+            <%--<a href="#" class="tagc3">热门话题</a>--%>
+            <%--<a href="#" class="tagc2">我要提问</a>--%>
+            <%--<a href="#" class="tagc5">新闻播报</a>--%>
+            <%--<a href="#" class="tagc2">热门话题</a>--%>
+                <%--<a href="#" class="tagc3" >我要提问</a>--%>
+                <%--<a href="#" class="tagc1" >达人专栏</a>--%>
+                <%--<a href="#" class="tagc2">热门话题</a>--%>
+                <%--<a href="#" class="tagc5">新闻播报</a>--%>
+                <%--<a href="#" class="tagc3">我要提问</a>--%>
+                <%--<a href="#" class="tagc2">问答社区</a>--%>
+                <%--<a href="#" class="tagc5">热门话题</a>--%>
+                <%--<a href="#" class="tagc3">新闻播报</a>--%>
+          <%--</div>--%>
+<%--</div>--%>
 
 
 
 <%@ include file="footer.jsp" %>
-
+<script src="${pageContext.request.contextPath}/static/user/index/scripts/zzsc.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/static/user/index/scripts/bundle.js"></script>
+
 </body>
 </html>

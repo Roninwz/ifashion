@@ -80,6 +80,10 @@
                 </div>
                 <hr/>
                 <ul class="am-avg-sm-1 am-avg-md-3 am-thumbnails">
+                <c:if test="${empty addresses}">
+                    您还没有收货地址，请去添加。
+                </c:if>
+            <c:if test="${not empty addresses}">
                 <c:forEach items="${addresses}" var="addresses">
 
 
@@ -135,6 +139,7 @@
 
                     </c:if>
                 </c:forEach>
+                    </c:if>
                     <%--<li class="user-addresslist">--%>
                         <%--<span class="new-option-r"><i class="am-icon-check-circle"></i>设为默认</span>--%>
                         <%--<p class="new-tit new-p-re">--%>

@@ -46,6 +46,7 @@ public interface TopicMapper {
 
     //根据浏览量来给话题排序
     List<TopicUser> selectTopicByLookNumOrder();
+    List<Topic> selectTopiccByLookNumOrder();
 
     //查询所有话题
     List<Topic> getAllTopic();

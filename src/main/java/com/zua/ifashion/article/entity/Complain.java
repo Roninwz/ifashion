@@ -11,6 +11,16 @@ public class Complain {
 
     private String complainReason;
 
+    private Integer state;
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
     public Integer getComplainId() {
         return complainId;
     }
@@ -51,12 +61,13 @@ public class Complain {
         this.complainReason = complainReason == null ? null : complainReason.trim();
     }
 
-    public Complain(Integer complainId, Integer reviewId, Integer complainUserid, Integer complainedUserid, String complainReason) {
+    public Complain(Integer complainId, Integer reviewId, Integer complainUserid, Integer complainedUserid, String complainReason, Integer state) {
         this.complainId = complainId;
         this.reviewId = reviewId;
         this.complainUserid = complainUserid;
         this.complainedUserid = complainedUserid;
         this.complainReason = complainReason;
+        this.state = state;
     }
 
     public Complain() {

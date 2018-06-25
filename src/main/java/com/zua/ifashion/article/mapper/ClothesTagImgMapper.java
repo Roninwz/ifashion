@@ -16,4 +16,7 @@ public interface ClothesTagImgMapper {
 
     //根据articleId 查询文章
     Article selectArticleByArticleId(@Param("articleId") Integer articleId);
+
+    //添加不为空字段实体
+    int addTagImgSelective(ClothesTagImg clothesTagImg);
 }

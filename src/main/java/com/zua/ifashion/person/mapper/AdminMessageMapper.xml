@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zua.ifashion.person.mapper.AdminMessageMapper">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.AdminMessage">
+    <id column="adminMessageId" jdbcType="INTEGER" property="adminMessageId" />
+    <result column="adminId" jdbcType="INTEGER" property="adminId" />
+    <result column="adminMessageContent" jdbcType="LONGVARCHAR" property="adminMessageContent" />
+    <result column="messageState" jdbcType="INTEGER" property="messageState" />
+  </resultMap>
+
+
+  <insert id="addAdminMessageSelective" parameterType="com.zua.ifashion.person.entity.AdminMessage">
+    <selectKey resultType="INTEGER" order="AFTER" keyProperty="adminMessageId">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into admin_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="adminMessageId != null">
+        adminMessageId,
+      </if>
+      <if test="adminId != null">
+        adminId,
+      </if>
+      <if test="adminMessageContent != null">
+        adminMessageContent,
+      </if>
+      <if test="messageState != null">
+        messageState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="adminMessageId != null">
+        #{adminMessageId,jdbcType=INTEGER},
+      </if>
+      <if test="adminId != null">
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="adminMessageContent != null">
+        #{adminMessageContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="messageState != null">
+        #{messageState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <!-- 删除    -->
+  <delete id="deleteAdminMessage" parameterType="int">
+    delete from admin_message where adminMessageId = #{adminMessageId}
+  </delete>
+<!--更新管理员-->
+  <update id="updateAdminmessageSelective" parameterType="com.zua.ifashion.person.entity.AdminMessage">
+    update admin_message
+    <set>
+      <if test="adminId != null">
+        adminId = #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="adminMessageContent != null">
+        adminMessageContent = #{adminMessageContent,jdbcType=VARCHAR},
+      </if>
+      <if test="messageState != null">
+        messageState = #{messageState,jdbcType=INTEGER},
+      </if>
+    </set>
+    where adminMessageId = #{adminMessageId,jdbcType=INTEGER}
+  </update>
+
+  <!-- 通过id查询   -->
+  <select id="selectAdminMessageById" parameterType="int" resultType="com.zua.ifashion.person.entity.AdminMessage">
+    select * from admin_message where adminMessageId =#{adminMessageId}
+  </select>
+
+
+  <!-- 通过管理员id查询   -->
+  <select id="selectAdminMessagesByAdminId" parameterType="int" resultType="com.zua.ifashion.person.entity.AdminMessage">
+    select * from admin_message where adminId =#{adminId}
+  </select>
+
+
+
+  <select id="getAllUnreadAdminMessages" parameterType="int" resultType="com.zua.ifashion.person.entity.AdminMessage">
+    select * from admin_message where messageState = 0
+  </select>
+
+
+  <select id="getAllReadedAdminMessages" parameterType="int" resultType="com.zua.ifashion.person.entity.AdminMessage">
+    select * from admin_message where messageState = 1
+  </select>
+</mapper>

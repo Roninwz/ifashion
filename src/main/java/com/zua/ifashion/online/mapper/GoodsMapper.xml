@@ -111,7 +111,7 @@
   <!--//    删除商品-->
   <!--public abstract int deleteGoods(Integer goodsId);-->
   <delete id="deleteGoods" parameterType="int">
-    delete * from goods where goodsId=#{param}
+    delete  from goods where goodsId=#{param}
   </delete>
 
   <!--//    更新商品-->
@@ -247,5 +247,11 @@
   <select id="selectGoodByGoodsId" parameterType="int" resultMap="selectGoodsByIdMapper">
     select g.*,img.goodsimgId,img.goodsImgurl from goods_img img,goods g where g.goodsId=img.goodsId and g.goodsId=#{param}
   </select>
+
+  <!--根据商品id查询商品-->
+  <select id="selectGoodsByByGoodsId" parameterType="int" resultType="com.zua.ifashion.online.entity.Goods">
+    select * from goods where goodsId=#{goodsId}
+  </select>
+
 
 </mapper>

@@ -1,6 +1,7 @@
 package com.zua.ifashion.talk.mapper;
 
 import com.zua.ifashion.talk.entity.ReplyReplyQuestion;
+import com.zua.ifashion.talk.vo.RRQuestionUser;
 
 import java.util.Date;
 import java.util.List;
@@ -30,6 +31,9 @@ public interface ReplyReplyQuestionMapper {
     //通过回答id来查询回复
     List<ReplyReplyQuestion> selectReplyReplyQuestionByReplyquestionId(Integer replyquestionId);
 
+    //通过回答id来查询回复用户信息
+    List<RRQuestionUser> selectReplyReplyQuestionUserByReplyquestionId(Integer replyquestionId);
+
     //通过回答id来查询回复数量
     int selectReplyReplyQuestionCountByReplyquestionId(Integer replyquestionId);
 
@@ -40,7 +44,11 @@ public interface ReplyReplyQuestionMapper {
     List<ReplyReplyQuestion> selectReplyReplyQuestionByLReplyReplyQuesDate(Date replyReplyQuesDate);
 
 
+    //根据回复复id来查询回复复
+    List<RRQuestionUser> selectRRQuestionByHReplyReplyQuesId(Integer hreplyReplyQuesId);
 
+    //查询最新一条回复
+    ReplyReplyQuestion selectReplyReplyQuestionTop();
 
 
 

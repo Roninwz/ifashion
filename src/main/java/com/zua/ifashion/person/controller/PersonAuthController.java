@@ -37,7 +37,6 @@ public class PersonAuthController {
 
         Integer userId= (Integer) session.getAttribute("userId");
         User user=userService.selectUserByUserId(userId);
-
         Rank rank= rankService.selectRankByRankId(user.getRankId());
         map.put("user",user);
         map.put("rank",rank);
@@ -69,8 +68,8 @@ public class PersonAuthController {
         Integer userId= (Integer) session.getAttribute("userId");
         User user1= userService.selectUserByUserId(userId);
        String isError="";
-        System.out.println("1"+user1.getUsername());
-        System.out.println("2"+user.getUsername());
+        //System.out.println("1"+user1.getUsername());
+        //System.out.println("2"+user.getUsername());
         if(!user.getUsername().equals(user1.getUsername())){
             isError="usernameerror";
         }else if(user1.getEmail().isEmpty()){

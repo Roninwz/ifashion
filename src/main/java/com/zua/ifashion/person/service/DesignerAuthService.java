@@ -1,6 +1,9 @@
 package com.zua.ifashion.person.service;
 
 import com.zua.ifashion.person.entity.DesignerAuth;
+import com.zua.ifashion.person.vo.AuthDesignerVo;
+
+import java.util.List;
 
 public interface DesignerAuthService {
 
@@ -16,4 +19,5 @@ public interface DesignerAuthService {
 
     DesignerAuth selectDesignerByUserId(Integer userId);
     DesignerAuth selectDesignerByAuthId(Integer authId);
+    List<AuthDesignerVo> getAllDesignerAuths();
 }

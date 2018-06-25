@@ -5,6 +5,16 @@ public class GoodsType {
 
     private String goodstypeName;
 
+    private String goodstypeimgUrl;
+
+    public String getGoodstypeimgUrl() {
+        return goodstypeimgUrl;
+    }
+
+    public void setGoodstypeimgUrl(String goodstypeimgUrl) {
+        this.goodstypeimgUrl = goodstypeimgUrl;
+    }
+
     public Integer getGoodstypeId() {
         return goodstypeId;
     }
@@ -24,6 +34,12 @@ public class GoodsType {
     public GoodsType(Integer goodstypeId, String goodstypeName) {
         this.goodstypeId = goodstypeId;
         this.goodstypeName = goodstypeName;
+    }
+
+    public GoodsType(Integer goodstypeId, String goodstypeName, String goodstypeimgUrl) {
+        this.goodstypeId = goodstypeId;
+        this.goodstypeName = goodstypeName;
+        this.goodstypeimgUrl = goodstypeimgUrl;
     }
 
     public GoodsType() {

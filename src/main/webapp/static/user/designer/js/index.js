@@ -1,44 +1,39 @@
+// (function($) {
+//
+// 	var tabs =  $(".tabs li a");
+//
+// 	tabs.click(function() {
+// 		var content = this.hash.replace('/','');
+// 		tabs.removeClass("active");
+// 		$(this).addClass("active");
+//     $("#content").find('p').hide();
+//     $(content).fadeIn(200);
+// 	});
+//
+// })(jQuery);
 
-$(function(){
-	 
-	/*$('.banShow').cycle(
-	{
-		
-		fx:'fade',
-		timeout:6000,
-		next:'.nexts',
-		prev:'.prevs'
-	}
-	); */
-   
-	$('.c-item').hover(function(){
-		
-		$(this).toggleClass('active');
-	});
-	
-	$(window).bind('scroll',function(e){
-		var sTop=$(window).scrollTop();
-		if(sTop<=460){
-			
-			$('.head-search').hide();
-			$('#header .logo').hide();
-			$('.nav a:first').css('padding-left','0px');
-		}else{
-			$('.head-search').fadeIn();
-			$('#header .logo').show();
-			$('.nav a:first').css('padding-left','20px');
-		}
-	});
-	
-	$(".slide").slide({titCell:'.hd li',mainCell:".bd ul",effect:"fold",autoPlay:true,vis:1});
-	
-	$('.mDiv').hover(function(){
-		$(this).addClass('active');
-	})
-	$('.jpTit a').each(function(index){
-		$(this).click(function(){
-			$(this).addClass('on').siblings().removeClass('on');
-			$('.jpDl').eq(index).fadeIn().siblings().hide();
-		})
-	});
-})
+
+window.onload = function() {
+    var oLi = document.getElementById('tab').getElementsByTagName('li');
+    var oUl = document.getElementById('content').getElementsByClassName('con');
+    for (var i = 0; i < oLi.length; i++) {
+
+        oLi[i].index = i;
+        oLi[i].onclick = function() {
+            //alert('ff');
+            // for (var n in oLi) oLi[n].className = '';
+            for (var n = 0; n < oLi.length; n++) {
+                oLi[n].className = '';
+                //alert(oLi[n].className);
+            }
+            this.className = 'active';
+            for (var n = 0; n < oUl.length; n++) {
+                //
+                //alert(oUl[n].style.display);
+                oUl[n].style.display = "none";
+            }
+
+            oUl[this.index].style.display = "block";
+        }
+    }
+}

@@ -9,6 +9,8 @@
     <result column="introduce" jdbcType="VARCHAR" property="introduce" />
   </resultMap>
 
+  <cache type="com.zua.ifashion.util.redis.RedisCache"/> <!-- *映射语句 -->
+
   <sql id="Base_Column_List">
     adminId, adminName, password, createDate, introduce
   </sql>

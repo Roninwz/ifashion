@@ -369,7 +369,7 @@ Header and header elements
 }
 .pi-img-wrapper div {
 	background: rgba(0,0,0,0.3);
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 0;
 	display: none;
@@ -387,7 +387,8 @@ Header and header elements
 	margin: -13px 5px 0;
 	background: transparent;
 	position: relative;
-	top: 50%;
+	/*top: 50%;*/
+	top:120px;
 	font-size: 12px;
 }
 .product-item .btn:hover {

@@ -25,6 +25,11 @@ public class ComplainServiceImpl implements ComplainService {
     }
 
     @Override
+    public int updateComplainSelective(Integer complainId) {
+        return complainMapper.updateComplainSelective(complainId);
+    }
+
+    @Override
     public int deleteComplain(Integer complainId) {
         return complainMapper.deleteComplain(complainId);
     }

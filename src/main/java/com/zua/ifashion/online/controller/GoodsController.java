@@ -1,5 +1,7 @@
 package com.zua.ifashion.online.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zua.ifashion.online.entity.*;
 import com.zua.ifashion.online.service.*;
 import com.zua.ifashion.online.vo.GoodsAndImgDesignerVO;
@@ -10,16 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @RequestMapping("/user")
@@ -43,51 +43,81 @@ public class GoodsController{
 
     @Autowired
     private GoodsStyleService goodsStyleService;
+
+    @Autowired
+    private  GoodsReviewService goodsReviewService;
+
+    @Autowired
+    private OnlineOrderGoodsService onlineOrderGoodsService;
 //    按类型得到所有商品
     @RequestMapping("/online_list")
     public String  getAllGoodsType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<GoodsType> goodsTypeList=goodsTypeService.getAllGoodsType();
         List<GoodsIntegrateVO> goodsIntegrateList=goodsIntegrateService.getAllGoodsIntegrate();
+       /* System.out.println(goodsIntegrateList.size());*/
         List<Integer> userId=new ArrayList<>();
         List<User> users=new ArrayList<>();
         for(GoodsIntegrateVO goodsIntegrateVO:goodsIntegrateList){
+            System.out.println(goodsIntegrateVO.getGoodstypeId());
             List<GoodsAndImgDesignerVO> goodsAndImgDesignerVO=goodsIntegrateVO.getGoodsAndImgDesignerVOList();
             for(GoodsAndImgDesignerVO goodsList:goodsAndImgDesignerVO){
                userId.add(goodsList.getUserId());
             }
+
         }
         if(userId.size()>0){
             for(Integer id:userId){
                 users.add(userService.selectUserByUserId(id));
             }
         }
+
         request.setAttribute("user",users);
         request.setAttribute("goodsIntegrateList",goodsIntegrateList);
+        System.out.println(goodsIntegrateList.size());
         request.setAttribute("goodstype",goodsTypeList);
         return "user/online/order";
     }
 
-//    在线定制，按类型筛选商品
-    @RequestMapping(value = "/select1",method= RequestMethod.POST)
-    @ResponseBody
-    public List<GoodsChildType> queryGoods(HttpServletRequest request, HttpServletResponse response){
-        String type=request.getParameter("id");
-      //  System.out.println(type.toString());
-        Integer typeId=Integer.parseInt(type);
-        List<GoodsChildType> goodsChildTypeList=goodsChildTypeService.getAllGoodsChildType(typeId);
-        return goodsChildTypeList;
+    @RequestMapping(value = "/online_select1",method = RequestMethod.GET)
+
+    public String getGoodsType(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        List<GoodsType> goodsTypes=goodsTypeService.getAllGoodsType();
+        request.setAttribute("goodsTypes",goodsTypes);
+        return "user/online/order_liucheng";
 
 
     }
-    @RequestMapping(value = "/select2",method= RequestMethod.POST)
+   /* @RequestMapping(value = "/online_select11",method = RequestMethod.POST)
     @ResponseBody
-    public List<GoodsMaterial> queryMaterial(HttpServletRequest request,HttpServletResponse response){
+    public List<GoodsType> goodstype(HttpServletRequest request,HttpServletResponse response){
+        System.out.println("kaish");
+        List<GoodsType> goodsTypes=goodsTypeService.getAllGoodsType();
+        return goodsTypes;
+    }*/
+//    在线定制，按类型筛选商品
+    @RequestMapping(value = "/online_select2",method=RequestMethod.GET)
+    @ResponseBody
+    public  List<GoodsChildType> queryGoods(HttpServletRequest request, HttpServletResponse response) {
+        String type=request.getParameter("id");
+        System.out.println(type+"ssss");
+      //  System.out.println(type.toString());
+        Integer typeId=Integer.parseInt(type);
+
+        List<GoodsChildType> goodsChildTypeList=goodsChildTypeService.getAllGoodsChildType(typeId);
+        request.setAttribute("goodsChildTypeList",goodsChildTypeList);
+        System.out.println("2222ssssss");
+        return goodsChildTypeList;
+       /* return "/jsp/online_order1.jsp";*/
+    }
+    @RequestMapping(value = "/online_select3",method= RequestMethod.POST)
+    @ResponseBody
+    public Set<GoodsMaterial> queryMaterial(HttpServletRequest request,HttpServletResponse response){
         String id=request.getParameter("id");
-        String id2=request.getParameter("id2");
+        String id2=request.getParameter("goodschildId");
         Integer goodstypeId=Integer.parseInt(id);
         Integer goodschildId=Integer.parseInt(id2);
         List<Goods> goods=goodsService.getGoodsByConditions(goodstypeId,goodschildId,null);
-        List<GoodsMaterial> goodsMaterialList=new ArrayList<>();
+        Set<GoodsMaterial> goodsMaterialList=new HashSet<>();
         if(goods.size()>0){
             for(Goods good:goods){
                 GoodsMaterial goodsMaterial=goodsMaterialService.getGoodsMaterialByGoodsId(good.getGoodsId());
@@ -95,25 +125,25 @@ public class GoodsController{
             }
 
         }
-        return goodsMaterialList;
 
+      /*  System.out.println(goodsMaterialList.size());*/
+
+        return goodsMaterialList;
 
     }
 
-    @RequestMapping(value = "/select3.action",method= RequestMethod.POST)
+    @RequestMapping(value = "/online_select4.action",method= RequestMethod.GET)
     @ResponseBody
-    public List<GoodsStyle> queryGoodsStyle(HttpServletRequest request, HttpServletResponse response){
+    public Set<GoodsStyle> queryGoodsStyle(HttpServletRequest request, HttpServletResponse response){
         Set<GoodsStyle> goodsStyleList=new HashSet<>();
         String id=request.getParameter("id");
-        String id2=request.getParameter("id2");
-        String id3=request.getParameter("id3");
+        String id2=request.getParameter("goodschildId");
+        String id3=request.getParameter("materiId");
         Integer goodstypeId=Integer.parseInt(id);
         Integer goodschildId=Integer.parseInt(id2);
         Integer goodsmaterialId=Integer.parseInt(id3);
-        System.out.println("11111");
 
         List<Goods> goods=goodsService.getGoodsByConditions(goodstypeId,goodschildId,goodsmaterialId);
-        System.out.println("2222");
         if(goods.size()>0){
             for(Goods good:goods){
                List<GoodsStyle> goodsStyleList1=goodsStyleService.getgoodsstyleListByGoodsId(good.getGoodsId());
@@ -122,18 +152,52 @@ public class GoodsController{
                }
             }
         }
-
-//        System.out.println(goodsStyleList.size());
-//        System.out.println(goodsStyleList);
-        List<GoodsStyle> list=new ArrayList<>(goodsStyleList);
-//        for(GoodsStyle go:goodsStyleList){
-//            System.out.println(go.getGoodsstyleId()+go.getGoodsstyleName());
-//        }
-        System.out.println("33333");
-        return list;
+        return goodsStyleList;
 
     }
+    @RequestMapping("/online_order")
+    public String getBuyPage(HttpServletRequest request, HttpServletResponse response, @RequestParam(required = false,defaultValue = "1",value = "curPage")Integer curPage) {
 
 
+        String typeid = request.getParameter("typeid");
+        String childid = request.getParameter("childid");
+        String materiId = request.getParameter("materiId");
+        String styleId = request.getParameter("styleId");
+
+        Integer goodstypeId = Integer.parseInt(typeid);
+        Integer goodschildId = Integer.parseInt(childid);
+        Integer goodsMaterial = Integer.parseInt(materiId);
+        Integer goodsStyle = Integer.parseInt(styleId);
+        List<GoodsReview> reviews=new ArrayList<>();
+        Map<GoodsAndImgDesignerVO,List<User>> map1=new HashMap<>();  //一个商品的所有评价用户
+        List<User> users=new ArrayList<>();
+        Map<GoodsAndImgDesignerVO,List<GoodsReview>> map=new HashMap<>(); //一个商品对应的所有评论
+        int pageSize=1;
+        PageHelper.startPage(curPage,pageSize);
+        List<Goods> goodsList=goodsService.getGoodsByConditions(goodstypeId, goodschildId, goodsMaterial);
+      /*  List<GoodsAndImgDesignerVO> goodsList =onlineOrderGoodsService.getGoodsByCondition(goodstypeId, goodschildId, goodsMaterial,goodsStyle);*/
+        PageInfo<Goods> pageInfo = new PageInfo<Goods>(goodsList);
+        List<GoodsAndImgDesignerVO> goodsAndImgDesignerVO=new ArrayList<>();
+        for(Goods goods:goodsList){
+            GoodsAndImgDesignerVO goodsAndImgDesignerVO1=goodsService.getGoodsByGoodsId(goods.getGoodsId());
+            reviews=goodsReviewService.getGoodsReviewByGoodsId(goodsAndImgDesignerVO1.getGoodsId());
+            map.put(goodsAndImgDesignerVO1,reviews);
+            users=goodsReviewService.getUserByGoodsId(goodsAndImgDesignerVO1.getGoodsId());
+            map1.put(goodsAndImgDesignerVO1,users);
+            System.out.println(goodsAndImgDesignerVO1.getGoodsName());
+            goodsAndImgDesignerVO.add(goodsAndImgDesignerVO1);
+        }
+
+        request.setAttribute("pageInfo",pageInfo);
+        request.setAttribute("goodsAndImgDesignerVO",goodsAndImgDesignerVO);
+        request.setAttribute("goodstypeId",goodstypeId);
+        request.setAttribute("childid",childid);
+        request.setAttribute("materiId",materiId);
+        request.setAttribute("styleId",styleId);
+        request.setAttribute("map1",map1);
+        request.setAttribute("map",map);
+        System.out.println(goodsList.size());
+        return "user/online/online_order1";
+    }
 
 }

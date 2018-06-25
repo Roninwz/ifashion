@@ -36,6 +36,9 @@ public interface ArticleService {
     //通过文章标题模糊查询文章集合
     List<Article> selectArticleByTitle(@Param("articleTitle") String articleTitle);
 
+    Article selectArticleByTitle2(String articleTitle);
+
+
     //查询所有文章
     List<Article> selectAllArticle();
 
@@ -62,5 +65,8 @@ public interface ArticleService {
 
     //根据当前文章id查询下一篇文章
     Article selectNextArticle(Integer articleId);
+
+    List<Article> selectArticleByUserId(Integer userId);
+
 
 }

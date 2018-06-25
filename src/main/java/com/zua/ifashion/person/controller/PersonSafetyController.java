@@ -3,10 +3,14 @@ package com.zua.ifashion.person.controller;
 import com.zua.ifashion.person.entity.User;
 import com.zua.ifashion.person.service.RankService;
 import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.util.MessageInfos;
+import com.zua.ifashion.util.RandUtil;
+import com.zua.ifashion.util.mail.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -22,7 +26,9 @@ public class PersonSafetyController {
 
     //    安全设置页面
     @RequestMapping(value = "/safety", method = RequestMethod.GET)
-    public String userSafety() {
+    public String userSafety(HttpSession session,Map<String,Object> map) {
+        User user = (User) session.getAttribute("user");
+        map.put("user",user);
         return "user/personal/user/safety";
     }
 //updatepassword
@@ -59,6 +65,7 @@ public class PersonSafetyController {
 
     @RequestMapping(value = "/updatetel", method = RequestMethod.GET)
     public String updatetel() {
+
         return "user/personal/user/updatetel";
     }
         @RequestMapping(value = "/updatetelcheck", method = RequestMethod.POST)
@@ -82,27 +89,64 @@ public class PersonSafetyController {
     public String updateemail() {
         return "user/personal/user/updateemail";
     }
+//    @RequestMapping(value = "/updateemailcheck", method = RequestMethod.POST)
+//    public String userUpdateEmail(HttpSession session,String beforEmail,String email,Map<String,Object> map) {
+//        Integer userId= (Integer) session.getAttribute("userId");
+//        User user=userService.selectUserByUserId(userId);
+//        User user1=new User();
+//        user1.setUserId(userId);
+//        user1.setEmail(email);
+//        String isError="";
+//        if(!user.getEmail().equals(beforEmail)){
+//            isError="原邮箱输入错误";
+//            System.out.println(isError);
+//            return "user/personal/user/updateemail";
+//        } else {
+//            isError="修改成功";
+//            System.out.println(isError);
+//            userService.updateEmail(user1);
+//            return "user/personal/user/safety";
+//        }
+//
+//    }
+
+
+
+    //ajaxgetEmailCode
+
+    @RequestMapping(value = "/ajaxgetEmailCode", method = RequestMethod.POST)
+    @ResponseBody
+    public MessageInfos ajaxReaded(HttpSession session, String newemail, Map<String,Object> map) throws Exception {
+
+        MessageInfos messageInfos=new MessageInfos();
+        messageInfos.setMessage("验证码发送成功");
+        String code = RandUtil.getRandNum();
+        MailUtil.sendMail(newemail,code);
+        session.setAttribute("emailcode",code);
+        return messageInfos;
+    }
+
     @RequestMapping(value = "/updateemailcheck", method = RequestMethod.POST)
-    public String userUpdateEmail(HttpSession session,String beforEmail,String email,Map<String,Object> map) {
+    public String userUpdateEmail(HttpSession session,String email,String ecode,Map<String,Object> map) {
         Integer userId= (Integer) session.getAttribute("userId");
-        User user=userService.selectUserByUserId(userId);
+        String emailcode= (String) session.getAttribute("emailcode");
+        //User user=userService.selectUserByUserId(userId);
         User user1=new User();
         user1.setUserId(userId);
         user1.setEmail(email);
         String isError="";
-        if(!user.getEmail().equals(beforEmail)){
-            isError="原邮箱输入错误";
+        if(!ecode.equals(emailcode)){
+            isError="验证码输入错误";
             System.out.println(isError);
             return "user/personal/user/updateemail";
         } else {
             isError="修改成功";
             System.out.println(isError);
             userService.updateEmail(user1);
-            return "user/personal/user/safety";
+            return "redirect：/user/safety.action";
         }
 
     }
-
 
 
 

@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%--<%@ include file="../header.jsp" %>--%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -26,7 +29,18 @@
 
     <link href="static/user/talk/css/information.css" rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="static/user/talk/css/demo.css">
-
+    <style type="text/css">
+        #low_right
+        {
+            position: fixed;
+            width: 85px;
+            height: 130px;
+            background: #eee;
+            bottom: 50%;
+            right: 20px;
+            text-align: center;
+        }
+    </style>
 
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
     <%--导航栏js--%>
@@ -38,102 +52,16 @@
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
     <%--其它js--%>
     <script type="text/javascript" src="static/user/talk/js/zan.js"></script>
+    <script type="text/javascript" src="static/ueditor/ueditor.config.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/ueditor/ueditor.all.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/ueditor/lang/zh-cn/zh-cn.js"></script>
+
 
 
 </head>
 <body style="background-color: white">
-<div  class='w1180 ad' id="OL_SYS_925_51"><!--大顶通OL_SYS_925_51-->
-</div>
-<!--logo 登录 注册-->
-<div class='w1180 logoAndlogin'>
-    <h1 class='logo'>
-        <a href="">
-            <img src='static/user/common/top/images/top.png' height='72' width='780' style='padding-left:200px' alt='iFashion' title='iFashion' />
-        </a>
-    </h1>
-    <div class="login">
-        <a href="" target="_self" rel="nofollow">登录</a> |
-        <a href="" target="_self" rel="nofollow">注册</a>
-    </div>
-</div>
-<!--/logo 登录 注册-->
-<!--/nav 搜索-->
-<div class='navSearch'>
-    <div class="navBg"></div>
-    <div class="w1180">
-        <div class="nav1">
-            <a href="" target="_blank" class="here">首页</a>
-            <a href="" target="_blank">穿衣搭配</a>
-            <a href="" target="_blank">社区精选</a>
-            <a href="" target="_blank">资讯</a>
-            <a href="" target="_blank">私人订制</a>
-            <a href="javascript:void(0);" class="searchBt"></a>
-        </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="" target="_blank">社区</a>
-                    <a href="" target="_blank">论坛</a>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
-    <div class='w1180 search'>
-        <form id="searchPage" target="_blank" method="get" action="" accept-charset="utf8">
-            <div class="mainsearch">
-                <input  onkeyup="selBrand('searchpro','auto_brand')" type="text" class="main_input" id="searchpro" autocomplete="off" name="q" value="请输入品牌（拼音、英文、缩写）、产品名称或关键字" >
-                <!--  新加1 -->
-                <div class="c1_se_2_c" id="auto_brand" style="display: none;"></div>
-                <!--  新加1 end -->
-            </div>
-            <!--  新加2 -->
-            <input type="hidden" name="s" value="15679544665037353740"  >
-            <input type="hidden" name="nsid" value="1" class="aritcleType" >
-            <!--  新加2 end -->
-            <input type="button" class="mainbtn" id="J_search_sub" value="">
-            <input type="button" title='关闭搜索' class="closeSearchbtn" value="">
-        </form>
-        <div class='hotpro'>
-            <a href="" title="资讯-夏纳电影节" target="_blank">资讯-夏纳电影节</a>
-            <a href="" title="定制-裙子" target="_blank">定制-裙子</a>
-            <a href="" title="定制-运动鞋" target="_blank">定制-运动鞋</a>
-            <!-- 设计师 -->
-            <a href="" title="设计师-房莹" target="_blank">设计师-房莹</a>
-            <a href="" title="话题" target="_blank">话题-PVC</a>
-        </div>
-    </div>
-
-
-
-</div>
-<script type="text/javascript" src='../js/index_search.js'></script>
-<!--nav搜索 end-->
-
-<!--crazy start-->
-<div id="crazynavdown"><!--首下拉‘大’扩展大图--->
-    <div id="OL_SYS_938_51" class="w1180 s"></div>
-    <div class="b"><!--首页下拉回收-->
-        <div id="OL_SYS_943_51" class="b1"></div>
-        <!--首下拉‘小’扩展大图-->
-        <div id="OL_SYS_448_51" class="b2"></div>
-    </div>
-</div>
-<!--crazy end-->
-
-
-
-
-
-
-
-
-
-
-
+<c:set var="user" value="${sessionScope.user}"/>
+<%@ include file="../header.jsp" %>
 <div class="mn">
     <div class="pl bm" id="postlist">
         <table cellspacing="0" cellpadding="0">
@@ -422,6 +350,9 @@
                 </tbody>
             </table>
         </div>
+
+
+        <c:forEach var="discussReplyUsers" items="${discussReplyUsers}">
         <div id="post_68950281">
             <table id="pid68950281" cellspacing="0" cellpadding="0" summary="pid68950281">
                 <tbody>
@@ -430,14 +361,14 @@
                         <div>
                             <div class="avatar">
                                 <a href="" target="_blank">
-                                    <img src="static/user/talk/image/noavatar_middle.gif.jpg"></a>
+                                    <img src="${discussReplyUsers.userImgurl}" width="132" height="135"></a>
                             </div>
                             <div class="pi">
                                 <div class="authi">
-                                    <a class="xw1" href="" target="_blank">刘刘的溜溜球
+                                    <a class="xw1" href="" target="_blank">${discussReplyUsers.username}
                                     </a>
 
-                                    [<a target="_blank" rel="nofollow">奥特兄弟</a>]
+                                    [<a target="_blank" rel="nofollow">${discussReplyUsers.rankName}</a>]
                                 </div>
                             </div>
                         </div>
@@ -460,17 +391,13 @@
                                 </div>
                                 <div class="authi">
                                     <img class="authicn vm" id="authicon68950281" src="static/user/talk/image/information/online_member.gif">
-                                    <em id="authorposton68950281">发表于 2018-6-2 15:16:53</em>
+                                    <em id="authorposton68950281">发表于 <fmt:formatDate value="${discussReplyUsers.discussreplyDate}" pattern="yyyy-MM-dd hh:mm:ss"></fmt:formatDate></em>
                                     <div class="praise">
                                         <span id="praise"><img src="static/user/talk/image/zan1.png" id="praise-img" /></span>
                                         <span id="praise-txt">1455</span>
                                     </div>
 
                                 </div>
-
-
-
-
                             </div>
                         </div>
                         <div class="pct">
@@ -480,7 +407,7 @@
                                         <tbody>
                                         <tr>
                                             <td class="t_f" id="postmessage_68950281">
-                                                最喜欢第四种打扮
+                                                ${discussReplyUsers.discussreplyContent}
                                             </td>
                                         </tr>
                                         </tbody>
@@ -526,6 +453,7 @@
                 </tr>
                 </tbody></table>
         </div>
+        </c:forEach>
         <div id="post_72607611">
             <table id="pid72607611" cellspacing="0" cellpadding="0" summary="pid72607611">
                 <tbody>
@@ -621,63 +549,103 @@
     </div>
 
     <div class="pl bm bmw" id="f_pst">
-        <form id="fastpostform" onsubmit="return fastpostvalidate(this)" action="forum.php?mod=post&amp;action=reply&amp;fid=4&amp;tid=4024110&amp;extra=page%3D1&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" method="post" autocomplete="off">
+        <div id="fastpostform">
             <table cellspacing="0" cellpadding="0">
                 <tbody><tr>
                     <td class="pls">
                     </td>
                     <td class="plc">
-
-                        <span id="fastpostreturn"></span>
-
-
-                        <div class="cl">
-                            <div class="y" id="fastsmiliesdiv"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
-                            <div class="tedt mtn">
-                                <div class="bar">
-<span class="y">
-<a onclick="return switchAdvanceMode(this.href)" href="forum.php?mod=post&amp;action=reply&amp;fid=4&amp;tid=4024110" rel="nofollow">高级模式</a>
-</span><script src="../js/seditor.js?B1E" type="text/javascript"></script>
-                                    <div class="fpd">
-                                        <a title="文字加粗" class="fbld" href="javascript:;">B</a>
-                                        <a title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</a>
-                                        <a title="图片" class="fmg" id="fastpostimg" href="javascript:;">Image</a>
-                                        <a class="fsml" id="fastpostsml" href="javascript:;">Smilies</a>
-                                    </div></div>
-                                <div class="area">
-                                    <div class="pt hm">您需要登录后才可以回帖 <a class="xi2" onclick="showWindow('login', this.href)" href="http://bbs.onlylady.com/member.php?mod=logging&amp;action=login">登录</a> | <a class="xi2" href="http://bbs.onlylady.com/member.php?mod=register">立即注册</a>
-                                    </div>
-                                </div>
-                                <script>
-                                    function is_user_apply_activity(special){
-                                        if(special!=4) return true;
-                                        var applied = document.getElementById('applied').value;
-                                        var activityclose = document.getElementById('activityclose').value;
-                                        if(applied!=0 || activityclose!=0){
-                                            return true;
-                                        } else {
-                                            href = location.href;
-                                            hrefArr = href.split('#');
-                                            url = hrefArr['0']+'#user_apply_activity';
-                                            showDialog('您还没参加活动,请参加后再回复~', "notice", "", 'location.href="'+url+'"');
-                                        }
-                                    }
+                            <c:if test="${empty user}">
+                                <script id="container" name="content" type="text/plain" >
+                                   您还没有登录，请先 登录|注册
                                 </script>
-                            </div>
-                        </div>
-                        </div>
+                            </c:if>
+                            <c:if test="${not empty user}">
+                                <input name="userId" id="userId" type="hidden" value="${user.userId}">
+                                <input name="discussId" id="discussId" type="hidden" value="${discussId}">
+                            <script id="container" name="content" type="text/plain">
 
-                        <input name="formhash" type="hidden" value="4c4b6739">
-                        <input name="subject" type="hidden" value="">
-                        <p class="ptm pnpost">
-                            <button name="replysubmit" tabindex="5" class="pn pnc vm" id="fastpostsubmit" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login&amp;guestmessage=yes')" type="button" value="replysubmit"><strong>发表回复</strong></button>
-                            <script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
-                        </p>
+                            </script>
+                            </c:if>
+                            <button type="submit" style="margin-top: 10px;float: right;width: 60px;height: 40px;font-size: 14px;color: #fff;line-height: 40px;text-align: center;cursor: pointer;background-color: #F93;" onclick="cc(this);">提交</button>
+                        <script>
+                            var ue= UE.getEditor("container",{
+                                initialFrameWidth : '100%',//宽度
+                                initialFrameHeight: 100,//高度
+                                toolbars: [[
+                                    'undo', 'redo', 'bold', 'italic', 'underline', 'formatmatch', 'autotypeset', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall']
+                                ]});
+
+                            var ue1 = UE.getContent();
+                            //对编辑器的操作最好在编辑器ready之后再做
+                            ue1.ready(function() {
+                                //设置编辑器的内容
+                                //ue1.setContent('hello');
+                                //获取html内容，返回: <p>hello</p>
+                                var html = ue1.getContent();
+                                //获取纯文本内容，返回: hello
+                                var txt = ue1.getContentTxt();
+                            });
+                            //    alert(ue);
+
+                            function cc(obj) {
+                                alert(111111);
+                                var userId=$(obj).parent().children().siblings("#userId");
+                                var discussId=$(obj).parent().children().siblings("#discussId").val();
+                                alert(discussId);
+                                var date=new Date().toLocaleString( );
+                                var datas={"discussreplyContent":ue.getContent(),"discussId":discussId};
+
+                                $.ajax({
+                                    url: '${pageContext.request.contextPath }/user/addInfoReply.action',
+                                    type: 'POST',
+                                    dataType: 'json', //表示返回值的数据类型
+                                    contentType: 'application/json;charset=UTF-8', //内容类型
+                                    traditional: true, //使json格式的字符串不会被转码
+                                    data: JSON.stringify(datas),
+                                    success: function(data) {
+                                        var discussreply="<div id='post_72607611'>";
+                                        discussreply="<table id='pid72607611' cellspacing='0' cellpadding='0' summary='pid72607611'>"
+                                                +"<tbody><tr><td class='pls' rowspan='2'><div><div class='avatar'><a href='' target='_blank'>"
+                                                +"<img style='height:135; width: 132 ' src='"+data.userImgurl+"'></a></div>"
+                                                +"<div class='pi'><div class='authi'><a class='xw1' href='' target='_blank'>"
+                                                +data.username+"</a>[<a href='' target='_blank' rel='nofollow'>"+data.rankName
+                                                +"</a>]</div></div></div><ul class='xl xl2 o cl'><li class='buddy'>"
+                                                +"<a title='加好友' class='xi2' id='a_friend_li_72607611' href='' rel='nofollow'>"
+                                                +"加好友"+"</a></li><li class='pm2'><a title='发消息' class='xi2' href='' rel='nofollow'>"
+                                                +"发消息"+"</a></li></ul></td><td class='plc'><div class='pi'><strong>"
+                                                +"<a href='' rel='nofollow'>"+"板凳"+"</a></strong><div class='pti'><div class='pdbt'>"
+                                                +"</div><div class='authi'><img class='authicn vm' id='authicon72607611' src='static/user/talk/image/information/online_member.gif'>"
+                                                +"<em id='authorposton72607611'>发表于 "+date+"</em><div class='praise'>"
+                                                +"<span id='praise'><img src='static/user/talk/image/zan1.png' id='praise-img' /></span>"
+                                                +"<span id='praise-txt'>"+"1455"+"</span></div></div></div></div><div class='pct'>"
+                                                +"<div class='pcb'><div class='t_fsz'><table cellspacing='0' cellpadding='0'><tbody>"
+                                                +"<tr><td class='t_f' id='postmessage_72607611'>"+data.discussreplyContent
+                                                +"</td></tr></tbody></table></div><div class='cm' id='comment_72607611'></div>"
+                                                +"<div id='post_rate_div_72607611'></div></div></div></td></tr><tr><td class='plc plm'>"
+                                                +"<div class='a_pb' id='OL_SYS_876'></div></td></tr><tr><td class='pls'></td>"
+                                                +"<td class='plc'><div class='po'><div class='pob cl'><em></em><p><a href=''>举报</a>"
+                                                +"</p><ul class='p_pop mgcmn' id='mgc_post_72607611_menu' style='display: none;'>"
+                                                +"</ul></div></div></td></tr><tr class='ad'><td class='plc' colspan='2'></td>"
+                                                +"</tr></tbody></table></div>";
+                                        $("#postlist").append(discussreply);
+                                    },
+                                    error: function(data) {
+                                       alert(222222222222);
+                                    }
+                                });
+                            }
+
+
+
+
+
+                        </script>
                     </td>
                 </tr>
                 </tbody>
             </table>
-        </form>
+    </div>
     </div>
 
 
@@ -692,14 +660,16 @@
                 </div>
                 <div class="sd_weekreply block move-span" id="portal_block_178">
                     <div class="blocktitle title">
-                        <span class="titletext">一周回复最多帖</span>
+                        <span class="titletext">回复最多帖</span>
                     </div>
                     <div class="dxb_bc" id="portal_block_178_content">
                         <div class="module cl xl xl1">
                             <ul>
+                                <c:forEach var="manydiscuss" items="${manydiscuss}">
                                 <li>
-                                    <a title="想要在夏天的人群中吸睛就必须耍点小心机" href="" target="_blank">想要在夏天的人群中吸睛就必须耍点小心机</a>
+                                    <a title="${manydiscuss.discussContent}" href="" target="_blank">${manydiscuss.discussContent}</a>
                                 </li>
+                                </c:forEach>
                                 <li>
                                     <a title="牛仔裙立马Rock起来！再加上街头感十足的气垫造型运动鞋" href="" target="_blank">牛仔裙立马Rock起来！再加上街头感十足的气垫造型运动凉鞋</a>
                                 </li>
@@ -738,9 +708,11 @@
                     <div class="dxb_bc" id="portal_block_179_content">
                         <div class="module cl xl xl1">
                             <ul>
+                                <c:forEach var="hotdiscusses" items="${hotdiscusses}">
                                 <li>
-                                    <a title="夏天必备的牛仔裙只要这么穿就一定时髦" href="" target="_blank">夏天必备的牛仔裙只要这么穿就一定时髦</a>
+                                    <a title="${hotdiscusses.discussContent}" href="" target="_blank">${hotdiscusses.discussContent}</a>
                                 </li>
+                                </c:forEach>
                                 <li>
                                     <a title="破洞牛仔是王道" href="" target="_blank">破洞牛仔是王道</a>
                                 </li>
@@ -780,54 +752,6 @@
         <div><div id="OL_SYS_861"></div></div>
         <!--newomd end-->
     </div>
-    <div class="area" id="diyforumdisplayrightjh">
-        <div class=" frame move-span cl frame-1" id="framecB776k">
-            <div class="column frame-1-c" id="framecB776k_left">
-                <div class="move-span temp" id="framecB776k_left_temp">
-                </div>
-                <div class="sd_jinghuatie block move-span" id="portal_block_180">
-                    <div class="blocktitle title">
-                        <span class="titletext">最新精华帖</span></div>
-                    <div class="dxb_bc" id="portal_block_180_content">
-                        <div class="module cl xl xl1">
-                            <ul>
-                                <li>
-                                    <a title="女人在你的年龄 穿你的裙子" href="" target="_blank">女人在你的年龄 穿你的裙子</a>
-                                </li>
-                                <li>
-                                    <a title="换一件衣服，牛仔裙立马Rock起来！再加上街头感十足的气垫造型运动凉鞋" href="" target="_blank">换一件衣服，牛仔裙立马Rock起来！再加上街头感十足的气垫造型运动凉鞋</a>
-                                </li>
-                                <li>
-                                    <a title="在夏天,墨镜不一定要带脸上，衬衫不一定要好好穿，牛仔裙更不一定要穿常规款！" href="" target="_blank">在夏天,墨镜不一定要带脸上，衬衫不一定要好好穿，牛仔裙更不一定要穿常规款！</a>
-                                </li>
-                                <li>
-                                    <a title="露肩连衣裙，爱臭美的懒癌星人只吃不减也不怕！" href="" target="_blank">露肩连衣裙，爱臭美的懒癌星人只吃不减也不怕！</a>
-                                </li>
-                                <li>
-                                    <a title="蕾丝连衣裙外搭牛仔外套，踏着青草香，开启森林漫步模式。" href="" target="_blank">蕾丝连衣裙外搭牛仔外套，踏着青草香，开启森林漫步模式。</a>
-                                </li>
-                                <li>
-                                    <a title="黑白色的连衣裙，好像是永远都穿不腻的命题" href="" target="_blank">黑白色的连衣裙，好像是永远都穿不腻的命题</a>
-                                </li>
-                                <li>
-                                    <a title="小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长" href="" target="_blank">小葡萄试衣间牛仔裙和白色睡裙居然也能搭里面的睡裙比较长</a>
-                                </li>
-                                <li>
-                                    <a title="多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包" href="" target="_blank">多肉，露肩款是最遮肉的。这样的长裙穿着逛街，约会都适合，搭配浅色的包包</a>
-                                </li>
-                                <li>
-                                    <a title="韩国时尚界的弄潮儿，IMVELY这个网红不简单" href="" target="_blank">韩国时尚界的弄潮儿，IMVELY这个网红不简单</a>
-                                </li>
-                                <li>
-                                    <a title="想要在夏天的人群中吸睛就必须耍点小心机" href="" target="_blank">想要在夏天的人群中吸睛就必须耍点小心机</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--[/diy]-->
     <div class="img207x180 mt6">
         <!--newomd start custom_13}-->
         <div><div id="OL_SYS_881"></div></div>
@@ -896,7 +820,20 @@
         </div>
     </div>
 </div>
-
+<script type='text/javascript'>
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 108609);
+</script>
 
 
 </body>

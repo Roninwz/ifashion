@@ -48,7 +48,7 @@
   <!--//删除商品的照片-->
   <!--public abstract int deleteGoodsImg(Integer goodImgId);-->
   <delete id="deleteGoodsImg" parameterType="int">
-    delete * from goods_img where goodsimgId=#{param}
+    delete from goods_img where goodsimgId=#{param}
   </delete>
 
   <!--//更新商品的照片-->
@@ -61,17 +61,16 @@
   <!--//    更新商品的照片不为空的字段
   public abstract int updateGoodsImgSelective(GoodsImg goodsImg);-->
 
-  <update id="updateGoodsImgSelective" parameterType="goodsImg">
+  <update id="updateGoodsImgSelective" parameterType="GoodsImg">
     update goods_img set
-    <if test="goodsimgId!=null">
-      goodsimgId=#{goodsimgId}
-    </if>
+
     <if test="goodsId!=null">
       goodsId=#{goodsId}
     </if>
     <if test="goodsImgurl!=null">
       goodsImgurl=#{goodsImgurl}
     </if>
+    where goodsimgId=#{goodsimgId}
   </update>
 
   <!--//    根据商品照片id查找信息-->

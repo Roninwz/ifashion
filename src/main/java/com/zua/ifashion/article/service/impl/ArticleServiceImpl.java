@@ -61,6 +61,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public Article selectArticleByTitle2(String articleTitle) {
+        return articleMapper.selectArticleByTitle2(articleTitle);
+    }
+
+    @Override
     public List<Article> selectAllArticle() {
         return articleMapper.selectAllArticle();
     }
@@ -103,5 +108,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article selectNextArticle(Integer articleId) {
         return articleMapper.selectNextArticle(articleId);
+    }
+
+    @Override
+    public List<Article> selectArticleByUserId(Integer userId) {
+        return articleMapper.selectArticleByUserId(userId);
     }
 }

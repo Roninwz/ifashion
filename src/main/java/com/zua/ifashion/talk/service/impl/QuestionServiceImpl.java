@@ -93,4 +93,14 @@ public class QuestionServiceImpl implements QuestionService{
     public List<Question> selectAllQuestion() {
         return questionMapper.selectAllQuestion();
     }
+
+    @Override
+    public int selectTagIdByQuestionId(Integer questionId) {
+        return questionMapper.selectTagIdByQuestionId(questionId);
+    }
+
+    @Override
+    public List<Question> selectQuestionOrderByQuestionDate() {
+        return questionMapper.selectQuestionOrderByQuestionDate();
+    }
 }

@@ -62,6 +62,11 @@ public class ReplyQuestionServiceImpl implements ReplyQuestionService{
     }
 
     @Override
+    public int selectReplyQuestionCountByQuestionId(Integer questionId) {
+        return replyQuestionMapper.selectReplyQuestionCountByQuestionId(questionId);
+    }
+
+    @Override
     public int selectZanNumByReplyQuestionId(Integer replyquestionId) {
         return replyQuestionMapper.selectZanNumByReplyQuestionId(replyquestionId);
     }

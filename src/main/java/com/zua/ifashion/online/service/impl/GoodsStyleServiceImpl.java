@@ -16,4 +16,9 @@ public class GoodsStyleServiceImpl implements GoodsStyleService {
     public List<GoodsStyle> getgoodsstyleListByGoodsId(Integer goodsId) {
         return goodsStyleMapper.goodsstyleList(goodsId);
     }
+
+    @Override
+    public List<Integer> getGoodsByStyleId(Integer styleId) {
+        return goodsStyleMapper.selectGoodsByStyleId(styleId);
+    }
 }

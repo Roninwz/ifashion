@@ -3,6 +3,8 @@ package com.zua.ifashion.talk.service.impl;
 import com.zua.ifashion.talk.entity.DiscussReply;
 import com.zua.ifashion.talk.mapper.DiscussReplyMapper;
 import com.zua.ifashion.talk.service.DiscussReplyService;
+import com.zua.ifashion.talk.vo.CountDiscussId;
+import com.zua.ifashion.talk.vo.DiscussReplyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,8 +62,8 @@ public class DiscussReplyServiceImpl implements DiscussReplyService {
     }
 
     @Override
-    public int getDiscussReplyCountByDiscussId(Integer discussId) {
-        return discussReplyMapper.getDiscussReplyCountByDiscussId(discussId);
+    public List<DiscussReplyUser> selectDiscussReplyUByDiscussId(Integer discussId) {
+        return discussReplyMapper.selectDiscussReplyUByDiscussId(discussId);
     }
 
     @Override
@@ -97,5 +99,15 @@ public class DiscussReplyServiceImpl implements DiscussReplyService {
     @Override
     public int getAllDiscussReplyCount() {
         return discussReplyMapper.getAllDiscussReplyCount();
+    }
+
+    @Override
+    public int selectDiscussReplyCountByDiscussId(Integer discussId) {
+        return discussReplyMapper.selectDiscussReplyCountByDiscussId(discussId);
+    }
+
+    @Override
+    public List<CountDiscussId> selectDiscussId() {
+        return discussReplyMapper.selectDiscussId();
     }
 }

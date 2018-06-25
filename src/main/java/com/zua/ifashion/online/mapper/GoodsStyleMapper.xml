@@ -8,4 +8,10 @@
   <select id="goodsstyleList" parameterType="int" resultType="com.zua.ifashion.online.entity.GoodsStyle">
     select  g.* from goos_style_relation s,goods_style g where goodsId=#{param} and s.goodsstyleId=g.goodsstyleId
   </select>
+
+<!--  //    根据风格的id查询商品的id
+  public List<Integer> selectGoodsByStyleId(Integer styleId);-->
+  <select id="selectGoodsByStyleId" parameterType="int" resultType="int">
+    select goodsId from goos_style_relation where goodsstyleId=#{styleId}
+  </select>
 </mapper>

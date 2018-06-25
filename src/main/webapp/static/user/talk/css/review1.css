@@ -1273,6 +1273,7 @@ address, caption, cite, code, dfn, em, strong, th, var, optgroup {
     resize: none;
     width: 100%;
     min-height: 60px;
+    border: none;
 }
 .ques-answer .release-reply-con .err-tip {
     font-size: 12px;
@@ -1292,6 +1293,18 @@ address, caption, cite, code, dfn, em, strong, th, var, optgroup {
     border: 1px solid #d0d6d9;
     z-index: 900;
 }
+.ques-answer .release-reply-con .do-reply-btn {
+    float: right;
+    width: 60px;
+    height: 40px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f01400;
+}
+
 .ques-answer .accordion-content .reply-con .reply-list {
     margin-top: 20px;
 }
@@ -1389,6 +1402,10 @@ address, caption, cite, code, dfn, em, strong, th, var, optgroup {
     cursor: pointer;
 }
 
+.advertisement img{
+    height: 400px;
+    width: 280px;
+}
 
 
 

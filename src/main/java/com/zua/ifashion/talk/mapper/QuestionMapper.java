@@ -54,5 +54,11 @@ public interface QuestionMapper {
     //查询所有问题
     List<Question> selectAllQuestion();
 
+    //根据问题id查询标签
+    int selectTagIdByQuestionId(Integer questionId);
+
+    //查询最新问题排序
+    List<Question> selectQuestionOrderByQuestionDate();
+
 
 }

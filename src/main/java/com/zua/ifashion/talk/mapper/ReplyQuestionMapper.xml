@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zua.ifashion.talk.mapper.ReplyQuestionMapper">
+  <resultMap id="selectAReplyQuestionByQuestionIdMap" type="com.zua.ifashion.talk.vo.ReplyQuestionUser">
+    <id column="replyquestionId" property="replyquestionId"></id>
+    <result column="questionId" property="questionId"></result>
+    <result column="userId" property="userId"></result>
+    <result column="replyDate" property="replyDate"></result>
+    <result column="replyContent" property="replyContent"></result>
+    <result column="zanNum" property="zanNum"></result>
+    <result column="againstNum" property="againstNum"></result>
+    <result column="reportState" property="reportState"></result>
+    <association property="user" javaType="User">
+      <result column="username" property="username"></result>
+      <result column="userImgurl" property="userImgurl"></result>
+    </association>
+  </resultMap>
 
 
   <!--//添加回答-->
@@ -138,8 +152,14 @@
 
   <!--//通过问题ID来查询全部回答-->
   <!--List<ReplyQuestionUser> selectAReplyQuestionByQuestionId(Integer questionId);-->
-  <select id="selectAReplyQuestionByQuestionId" parameterType="int" resultType="com.zua.ifashion.talk.vo.ReplyQuestionUser">
-    select * from reply_question,user where questionId =#{questionId} and reply_question.userId=user.userId
+  <select id="selectAReplyQuestionByQuestionId" parameterType="int" resultMap="selectAReplyQuestionByQuestionIdMap">
+    select reply_question.*,user.username,user.userImgurl from reply_question,user where questionId =#{questionId} and reply_question.userId=user.userId
+  </select>
+
+  <!--//查询每个问题的回答数量-->
+  <!--int selectReplyQuestionCountByQuestionId(Integer questionId);-->
+  <select id="selectReplyQuestionCountByQuestionId" resultType="int" parameterType="int">
+    select count(*) from reply_question where questionId =#{questionId}
   </select>
 
   <!--//查询回答点赞量-->

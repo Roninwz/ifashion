@@ -1,5 +1,7 @@
 package com.zua.ifashion.person.entity;
 
+import java.util.Date;
+
 public class DesignerAuth {
 
     private Integer authId;
@@ -7,7 +9,7 @@ public class DesignerAuth {
     private  String cardNum;
     private String authImgurl;
     private Integer authState;
-
+    private Date authDate;
     public Integer getAuthId() {
         return authId;
     }
@@ -48,15 +50,23 @@ public class DesignerAuth {
         this.authImgurl = authImgurl;
     }
 
+    public Date getAuthDate() {
+        return authDate;
+    }
+
+    public void setAuthDate(Date authDate) {
+        this.authDate = authDate;
+    }
 
     public DesignerAuth() {
     }
 
-    public DesignerAuth(Integer authId, Integer userId, String cardNum, String authImgurl, Integer authState) {
+    public DesignerAuth(Integer authId, Integer userId, String cardNum, String authImgurl, Integer authState, Date authDate) {
         this.authId = authId;
         this.userId = userId;
         this.cardNum = cardNum;
         this.authImgurl = authImgurl;
         this.authState = authState;
+        this.authDate = authDate;
     }
 }

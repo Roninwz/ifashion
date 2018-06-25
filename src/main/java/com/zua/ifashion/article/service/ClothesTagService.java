@@ -9,5 +9,5 @@ public interface ClothesTagService {
 
     List<ClothesTag> selectTagNameByTypeId(@Param("clothesTagTypeId") Integer clothesTagTypeId);
 
-    List<ClothesTag> selectTagNameByType(@Param("type") String type);
+    List<ClothesTag> selectTagNameByType(String type);
 }

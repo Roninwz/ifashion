@@ -14,4 +14,7 @@ public interface ClothesTagImgService {
 
     Article selectArticleByArticleId(@Param("articleId") Integer articleId);
 
+    int addTagImgSelective(ClothesTagImg clothesTagImg);
+
+
 }

@@ -1,10 +1,13 @@
 package com.zua.ifashion.person.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class LogForm {
     private Integer logId;
     private  String logOperation;
     private String logName;
     private  Integer logIdentity;//0是用户，1是管理员
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private  String logCreatedate;
 
     public Integer getLogId() {

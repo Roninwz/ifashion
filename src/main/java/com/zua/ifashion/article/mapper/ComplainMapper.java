@@ -13,6 +13,9 @@ public interface ComplainMapper {
     //添加非空字段举报
     int addComplainSelective(@Param("complain") Complain complain);
 
+    //更新非空字段举报
+    int updateComplainSelective(@Param("complainId") Integer complainId);
+
     //删除举报
     int deleteComplain(@Param("complainId") Integer complainId);
 

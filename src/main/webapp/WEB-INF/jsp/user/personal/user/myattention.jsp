@@ -29,7 +29,7 @@
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
     <%--其它js--%>
 
-
+    <link rel="stylesheet" href="static/admin/bootstrap/css/bootstrap.min.css">
     <!-- 公用css  -->
     <link href="static/user/person/css/admin.css" rel="stylesheet" type="text/css">
     <link href="static/user/person/css/amazeui.css" rel="stylesheet" type="text/css">
@@ -45,6 +45,9 @@
     <!-- 日期插件 -->
     <script src="${pageContext.request.contextPath }/static/user/person/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
     <%--<script src="static/user/person/js/amazeui.js" type="text/javascript"></script>--%>
+
+    <script src="static/admin/bootstrap/js/bootstrap.min.js"></script>
+
     <style>
 
         /*.person-right{*/
@@ -91,22 +94,22 @@
                                 <%--</div>--%>
 
                                 <!--消息 -->
-                                <c:forEach items="${userAttentionVosu}" var="userAttentionVosu">
-                                <div class="s-msg-item s-msg-temp i-msg-downup" style="float: left;box-shadow:2px 2px 5px #333333;margin-left: 20px;width: 150px;height: 150px;text-align: center;">
-                                    <h6 class="s-msg-bar"><span class="s-name">用户：</span>${userAttentionVosu.username}</h6>
-                                    <div class="s-msg-content i-msg-downup-wrap">
-                                        <div class="i-msg-downup-con">
-                                            <a class="i-markRead" target="_blank" href="blog.html">
-                                                <img src="${userAttentionVosu.userImgurl}" style="width: 100px;height: 100px;">
-                                                <%--<p class="s-main-content">--%>
-                                                    <%--<span>用户简介:</span>--%>
-                                                <%--</p>--%>
-                                                <%--<p class="s-row s-main-content">--%>
-                                                    <%--<a href="blog.html">--%>
-                                                        <%--阅读全文 <i class="am-icon-angle-right"></i>--%>
-                                                    <%--</a>--%>
-                                                <%--</p>--%>
-                                            </a>
+                                <c:forEach items="${userAttentionVosu}" var="userAttentionVosu" varStatus="status">
+                                <div class="s-msg-item s-msg-temp i-msg-downup panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            编号：${status.count}  <span class="s-name" style="float: right;">用户名：${userAttentionVosu.username}</span>
+                                        </h3>
+                                        <div class="goods-date" data-date="2015-12-21">
+
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default col-md-6">
+                                        <div class="panel-body">
+
+                                                    <a class="i-markRead" target="_blank" href="blog.html">
+                                                        <span style="vertical-align:top;">用户头像</span>  <img style="vertical-align:middle;width: 100px;height: 100px;"  src="${userAttentionVosu.userImgurl}">
+                                                    </a>
                                         </div>
                                     </div>
                                     <%--<a class="i-btn-forkout" href="#"><i class="am-icon-close am-icon-fw"></i></a>--%>

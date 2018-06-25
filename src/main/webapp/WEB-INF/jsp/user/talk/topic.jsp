@@ -29,7 +29,22 @@
     <link rel="stylesheet" href="static/user/common/top/css/newconment_v201607.css">
     <link rel="stylesheet" href="static/user/login/css/login.css">
 
+    <link rel="stylesheet" href="static/user/talk/css/3.css">
     <link href="static/user/talk/css/2.css" rel="stylesheet">
+
+    <style type="text/css">
+        #low_right
+        {
+            position: fixed;
+            width: 85px;
+            height: 130px;
+            background: #eee;
+            bottom: 50%;
+            right: 20px;
+            text-align: center;
+        }
+    </style>
+
 
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
     <%--导航栏js--%>
@@ -41,11 +56,52 @@
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
     <%--其它js--%>
     <script type="text/javascript" src="static/user/talk/js/1.js"></script>
+    <script>
+        function wait(obj) {
+            $(obj).parent().children().removeClass("active");
+            $(obj).addClass("active");
+
+            $.ajax({
+                type:"post",
+                url:'${pageContext.request.contextPath }/user/waitAnswer.action',
+                dataType:'json',
+                success:function (data) {
+                    alert(data);
+                    var wait1="";
+                    for(var i=0;i<data.length;i++){
+                        wait1+= "<div id='issue-list' class='ques-answer no-answer'>"
+                            +"<div class='tag-img'>" + "<a href='' target='_blank'>"
+                            + "<img  src='"+data[i].quserImgurl+"'>" + "</a>"
+                            + "</div>"
+                            + "<div class='from-tag'>来自"
+                            + "<a href='' target='_blank'>" +data[i].quserName+"</a>"
+                            + "<a style='color:#999'>"+new Date(parseInt(data[i].questionDate)).toLocaleString()+"</a>"
+                            + "</div>"
+                            + "<div class='ques-con'>"
+                            + "<a class='ques-con-content' href='' target='_blank'>"+data[i].questionContent+"</a>"
+                            + "</div>"
+                            + "<div class='info-bar clearfix'>"
+                            + " <a class='to-answer' href=''>撰写答案</a>"
+                            + "<p class='integral-info'>"
+                            + "<a href='' target='_blank'>回答问题最高可获<span>2积分</span>哦！</a></p>"
+                            + "<a class='answer-num' href=''>1个回答</a>"
+                            + "<a class='follow' href='javascript:;' data-ques-id='390842'><i class='heart'>关注</i></a>"
+                            + "</div>" + "</div>";
+
+                    }
+                    alert(wait1);
+                    $("#issue-list").html(wait1);
+                }
+            });
+        }
+
+    </script>
+
 
 
 </head>
 <body style="background-color: white">
-
+<c:set var="user" value="${sessionScope.user}"/>
 <div id="main" style="margin-top:-55px">
 
     <div class="wenda clearfix">
@@ -53,13 +109,13 @@
             <div class="l wenda-main">
                 <div class="wd-top-slogan">
                     <span>时尚人士自己的问答社区</span>
-                    <a class="js-quiz" href="${pageContext.request.contextPath }/user/seditor.action">我要提问</a>
+                    <a class="js-quiz" href="${pageContext.request.contextPath }/user/seditor1.action">我要发布</a>
                 </div>
                 <div class="nav">
-                    <a href="">推荐</a>
-                    <a href="">最新</a>
-                    <a href="">等待回答</a>
-                    <a class="active" href="">话题</a>
+                    <a href="${pageContext.request.contextPath }/user/forum.action">推荐</a>
+                    <a href="javascript:void(0)" onclick="wait(this)">等待回答</a>
+                    <a class="active" href="${pageContext.request.contextPath }/user/topic.action">话题</a>
+                    <a href="${pageContext.request.contextPath }/user/question.action">问题</a>
 
                 </div><!--.nav end-->
 
@@ -68,7 +124,7 @@
                 <!--recommend end-->
 
                 <!--左侧列表内容-->
-                <div class="issue-list">
+                <div class="issue-list" id="issue-list">
                     <ul class="issue-box">
                       <c:forEach var="tlistl" items="${tlistl}">
                         <li class="issue-item clearfix">
@@ -80,9 +136,9 @@
                                 <p class="issue-title">
 
                                     <a title="${tlistl.topicTitle}" href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=${tlistl.topicId}" target="_blank">${tlistl.topicTitle}</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a>
+                                    <%--<a style="float:right; margin-top:-30px">--%>
+                                        <%--<div class="heart" id="like3" rel="like"></div>--%>
+                                    <%--</a>--%>
                                 </p>
                                 <p title="${tlistl.topicContent}" class="issue-desc">${tlistl.topicContent}"</p>
                                 <div class="detail-box clearfix">
@@ -109,9 +165,8 @@
                                 <div class="issue-status issue-begin">已结束</div>
                             </a>
                             <div class="issue-content l">
-                                <p class="issue-title"><a title="削肩设计" href="" target="_blank">削肩设计</a><a style="float:right; margin-top:-30px">
-                                    <img src="static/user/talk/image/attention.png">
-                                </a></p>
+                                <p class="issue-title"><a title="削肩设计" href="" target="_blank">削肩设计</a>
+                                </p>
                                 <p title="夏天一来，女星们也开始变着法子地秀起了身材。流行的一字肩和斜肩玩腻了，她们又转投削肩的怀抱！一个小小的荷叶边削肩，让唐嫣看起来又苗条了几度~" class="issue-desc">夏天一来，女星们也开始变着法子地秀起了身材。流行的一字肩和斜肩玩腻了，她们又转投削肩的怀抱！一个小小的荷叶边削肩，让唐嫣看起来又苗条了几度~</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -139,9 +194,8 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="勒脖裙" href="" target="_blank">勒脖裙</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="向来肤白貌美的小仙女Dakota Fanning在出席美剧《沉默的天使》的艾美奖宣传会时，身着一条粉蓝色挂脖长裙，大秀完美肩颈线条。" class="issue-desc">向来肤白貌美的小仙女Dakota Fanning在出席美剧《沉默的天使》的艾美奖宣传会时，身着一条粉蓝色挂脖长裙，大秀完美肩颈线条。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -168,9 +222,8 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="仙女裙" href="" target="_blank">仙女裙</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="本周完婚后的公爵夫人Meghan首次和“皇亲国戚”亮相，完成她优雅装扮的one piece就已经卖断货；另一位带货女王江疏影不仅没把条纹衬衫穿成病号服，胸前的荷叶边还卷曲出少女感；张雨绮上热搜的仙女长裙还是靠她自己加分的。" class="issue-desc">本周完婚后的公爵夫人Meghan首次和“皇亲国戚”亮相，完成她优雅装扮的one piece就已经卖断货；另一位带货女王江疏影不仅没把条纹衬衫穿成病号服，胸前的荷叶边还卷曲出少女感；张雨绮上热搜的仙女长裙还是靠她自己加分的。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -197,9 +250,7 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="飘逸纱裙" href="" target="_blank">飘逸纱裙</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+                                </p>
                                 <p title="带你看看仙女的衣橱，这个夏天本仙也需要一条飘逸纱裙助攻！【每日星范】" class="issue-desc">带你看看仙女的衣橱，这个夏天本仙也需要一条飘逸纱裙助攻！【每日星范】</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -226,9 +277,7 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="吊带裙" href="" target="_blank">吊带裙</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+                                </p>
                                 <p title="'大表姐'刘雯穿了一条黑色丝绒吊带裙参加活动，搭配复古风情的波浪卷发和红唇，一如既往地美艳大方~" class="issue-desc">“大表姐”刘雯穿了一条黑色丝绒吊带裙参加活动，搭配复古风情的波浪卷发和红唇，一如既往地美艳大方~</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -255,9 +304,8 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="Polo衫" href="" target="_blank">Polo衫</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="前几天霍思燕和杜江机场再次合体，这小手牵得跟被粘了502一样，冷冰冰的狗粮在芭姐脸上胡乱地拍,身上的这件白色 Polo 连衣裙让她显得格外清纯动人，动感的横条纹和 Polo 领反而给瘦削的身躯增添了力量感" class="issue-desc">前几天霍思燕和杜江机场再次合体，这小手牵得跟被粘了502一样，冷冰冰的狗粮在芭姐脸上胡乱地拍,身上的这件白色 Polo 连衣裙让她显得格外清纯动人，动感的横条纹和 Polo 领反而给瘦削的身躯增添了力量感</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -283,9 +331,8 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="听说想要Angelababy一样的少女力，这个夏日穿冰淇淋色就可以" href="" target="_blank">听说想要Angelababy一样的少女力，这个夏日穿冰..</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="Angelababy近日穿了一条浅蓝色的连衣裙出席活动，整个人看起来像一只甜甜的海盐味儿冰淇淋，而且是甜度飙到100%的那种！" class="issue-desc">Angelababy近日穿了一条浅蓝色的连衣裙出席活动，整个人看起来像一只甜甜的海盐味儿冰淇淋，而且是甜度飙到100%的那种</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -312,9 +359,8 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="透明的帽子、衣服、包包和鞋子……今年PVC风潮可谓是真正地从头到脚！年初就开始火的PVC透明靴时髦好看" href="" target="_blank">透明的帽子、衣服、包包和鞋子……今年PVC风潮..</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="PVC在今年势头相当猛，从衣帽到鞋包都逃不开它，相信Chanel的这双时髦女们人手一双的鞋你们都快看腻了" class="issue-desc">PVC在今年势头相当猛，从衣帽到鞋包都逃不开它，相信Chanel的这双时髦女们人手一双的鞋你们都快看腻了</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -342,9 +388,8 @@
                             <div class="issue-content l">
                                 <p class="issue-title">
                                     <a title="腰间的粗抽绳还巧妙地绑出了俏皮的花苞造型，勾勒腰身。" href="" target="_blank">腰间的粗抽绳还巧妙地绑出了俏皮的花苞造型，勾勒腰身。</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="近日，刘诗诗穿着牛仔夹克搭配抽绳阔腿短裤现身机场。诗诗的低调大家都知道，乍一看这一身就是简单的机场look，但她腰上的那根小绳却是全身look的精髓。" class="issue-desc">近日，刘诗诗穿着牛仔夹克搭配抽绳阔腿短裤现身机场。诗诗的低调大家都知道，乍一看这一身就是简单的机场look，但她腰上的那根小绳却是全身look的精髓。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -372,9 +417,8 @@
                                 <p class="issue-title">
                                     <a title="黑色薄纱抹胸礼服裙" href="
                             " target="_blank">黑色薄纱抹胸礼服裙</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+
+                                </p>
                                 <p title="此次她在 2018 戛纳红毯上的造型都是吸睛亮点。 尤 其在Chopard 举行的神秘晚宴派对上,奚梦瑶身穿意大利高端时装品牌ErmannoScervino 特 别定制的黑色薄纱抹胸礼服裙, 性感到让人移不开视线。" class="issue-desc">此次她在 2018 戛纳红毯上的造型都是吸睛亮点。 尤 其在Chopard 举行的神秘晚宴派对上,奚梦瑶身穿意大利高端时装品牌ErmannoScervino 特 别定制的黑色薄纱抹胸礼服裙, 性感到让人移不开视线。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -402,9 +446,7 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="牛仔外套" href="" target="_blank">牛仔外套</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+                                </p>
                                 <p title="近日，景甜在活动中穿的这一套丹宁夹克配短裙，可以说是超级有心机了。廓形夹克和刻意制造出的V领不仅让天鹅颈显露无疑，卷起的袖口更显手臂纤细。稍稍向后拉扯的夹克，露出细腰的同时，女王范也是信手拈来。" class="issue-desc">近日，景甜在活动中穿的这一套丹宁夹克配短裙，可以说是超级有心机了。廓形夹克和刻意制造出的V领不仅让天鹅颈显露无疑，卷起的袖口更显手臂纤细。稍稍向后拉扯的夹克，露出细腰的同时，女王范也是信手拈来。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -432,9 +474,7 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="【空水墨画印花旗袍" href="" target="_blank">水墨画印花旗袍</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+                                </p>
                                 <p title="六月度假，青城山下，一起享受中式摩登生活。" class="issue-desc">六月度假，青城山下，一起享受中式摩登生活。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -462,9 +502,7 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="精致的包包" href="" target="_blank">精致的包包</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+                                   </p>
                                 <p title="说起浪漫约会LOOK，精致的妆容必不可少。但是一款精致的包包，能让你在瞬间成为人群的焦点。" class="issue-desc">说起浪漫约会LOOK，精致的妆容必不可少。但是一款精致的包包，能让你在瞬间成为人群的焦点。</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -491,9 +529,7 @@
                             </a>
                             <div class="issue-content l">
                                 <p class="issue-title"><a title="Denim短裤，超显腿长" href="" target="_blank">Denim短裤，超显腿长</a>
-                                    <a style="float:right; margin-top:-30px">
-                                        <img src="static/user/talk/image/attention.png">
-                                    </a></p>
+                                </p>
                                 <p title="作为衣橱里的基础款，牛仔短裤是夏天大街上随处可见的单品。周冬雨在不久前的路演中着一条敞口的H型Denim短裤亮相，筷子腿显露无遗。" class="issue-desc">作为衣橱里的基础款，牛仔短裤是夏天大街上随处可见的单品。周冬雨在不久前的路演中着一条敞口的H型Denim短裤亮相，筷子腿显露无遗.</p>
                                 <div class="detail-box clearfix">
                                     <div class="left-detail l">
@@ -514,12 +550,40 @@
                         </li>
 
                     </ul>
+                    <div class="page">
+                        <a href="${pageContext.request.contextPath}/user/topic.action?curPage=1">首页</a>
+                        <span class="disabled_page">
+                            <c:if test="${pageInfo.hasPreviousPage}">
+                                    <a href="${pageContext.request.contextPath}/user/topic.action?curPage=${pageInfo.pageNum-1}" aria-label="Previous">
+                                        <span aria-hidden="true">上一页</span>
+                                    </a>
+                            </c:if>
+                        </span>
+
+                        <c:forEach items="${pageInfo.navigatepageNums}" var="page_num">
+                            <c:if test="${page_num == pageInfo.pageNum}">
+                                <a class="active text-page-tag" href="javascript:void(0)">${page_num}</a>
+                            </c:if>
+                            <c:if test="${page_num != pageInfo.pageNum}">
+                                <a class="text-page-tag"  href="${pageContext.request.contextPath}/user/topic.action?curPage=${page_num}">${page_num}</a>
+                            </c:if>
+                        </c:forEach>
+                        <c:choose>
+                            <c:when test="${pageInfo.hasNextPage}">
+                                <a href="${pageContext.request.contextPath}/user/topic.action?curPage=${pageInfo.pageNum+1}" aria-label="Next">
+                                    <span aria-hidden="true">下一页</span>
+                                </a>
+                            </c:when>
+                        </c:choose>
+                        <a href="${pageContext.request.contextPath}/user/topic.action?curPage=${pageInfo.pages}">尾页</a>
+                    </div>
+
                 </div>
 
                 <!-- 左侧列表内容 end -->
             </div>
             <div class="r wenda-slider">
-
+              <c:if test="${not empty user}">
                 <div class="user-about">
                     <div class="user-info">
                         <div class="user-pic">
@@ -552,48 +616,50 @@
                         <div class="follow-immediately">马上关注</div>
                     </div><!--.no-tag end-->
                 </div>
+
+              </c:if>
                 <div class="hot-ques">
                     <h3 class="title">热门话题</h3>
                     <ul>
                         <c:forEach var="tlistr" items="${tlistr}" begin="0" end="5">
                         <li>
-                            <p class="content"><a href="" target="_blank">${tlistr.topicTitle}</a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">${tlistr.topicTitle}</a></p>
                             <div class="info-bar clearfix">
-                                <a class="answer-num" href="/wenda/detail/390322" target="_blank">${tlistr.topicPeople} 回答</a>
-                                <a class="follow-num" href="/wenda/detail/390322" target="_blank">1 关注</a>
+                                <a class="answer-num" href="javascript:void (0)" target="_blank">${tlistr.topicPeople} 回答</a>
+                                <a class="follow-num" href="javascript:void (0)" target="_blank">1 关注</a>
 
                             </div>
                         </li>
                         </c:forEach>
                         <li>
-                            <p class="content"><a href="" target="_blank">Slip Dress，复古与个性，姑娘的选择与挑战</a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">Slip Dress，复古与个性，姑娘的选择与挑战</a></p>
                             <div class="info-bar clearfix">
-                                <a class="answer-num" href="/wenda/detail/390033" target="_blank">12 回答</a>
-                                <a class="follow-num" href="/wenda/detail/390033" target="_blank">1 关注</a>
+                                <a class="answer-num" href="javascript:void (0)" target="_blank">12 回答</a>
+                                <a class="follow-num" href="javascript:void (0)" target="_blank">1 关注</a>
 
                             </div>
                         </li>
                         <li>
-                            <p class="content"><a href="/wenda/detail/389877" target="_blank">FASHION丨一件单品多重风格-随意切换的帽子戏法儿</a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">FASHION丨一件单品多重风格-随意切换的帽子戏法儿</a></p>
                             <div class="info-bar clearfix">
-                                <a class="answer-num" href="/wenda/detail/389877" target="_blank">12 回答</a>
-                                <a class="follow-num" href="/wenda/detail/389877" target="_blank">0 关注</a>
+                                <a class="answer-num" href="javascript:void (0)" target="_blank">12 回答</a>
+                                <a class="follow-num" href="javascript:void (0)" target="_blank">0 关注</a>
 
                             </div>
                         </li>
                         <li>
-                            <p class="content"><a href="/wenda/detail/390184" target="_blank">史上最全遮肉显瘦穿衣指南 </a></p>
+                            <p class="content"><a href="${pageContext.request.contextPath }/user/topicInfo.action?topicId=2" target="_blank">史上最全遮肉显瘦穿衣指南 </a></p>
                             <div class="info-bar clearfix">
-                                <a class="answer-num" href="/wenda/detail/390184" target="_blank">9 回答</a>
-                                <a class="follow-num" href="/wenda/detail/390184" target="_blank">1 关注</a>
+                                <a class="answer-num" href="javascript:void (0)" target="_blank">9 回答</a>
+                                <a class="follow-num" href="javascript:void (0)" target="_blank">1 关注</a>
 
                             </div>
                         </li>
                         <li>
                             <p class="content"><a href="/wenda/detail/390226" target="_blank">25套超美冰激凌色穿搭 照着穿显瘦又减龄~ </a></p>
                             <div class="info-bar clearfix">
-                                <a class="answer-num" href="/wenda/detail/390226" target="_blank">9 回答</a>
-                                <a class="follow-num" href="/wenda/detail/390226" target="_blank">0 关注</a>
+                                <a class="answer-num" href="javascript:void (0)" target="_blank">9 回答</a>
+                                <a class="follow-num" href="javascript:void (0)" target="_blank">0 关注</a>
 
                             </div>
                         </li>
@@ -846,6 +912,22 @@
     </div>
 </div>
 <%@ include file="../footer.jsp" %>
+<script type='text/javascript'>
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 108609);
+</script>
+
+
 </body>
 </html>
 

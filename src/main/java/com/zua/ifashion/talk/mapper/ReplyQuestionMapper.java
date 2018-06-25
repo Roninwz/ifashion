@@ -32,6 +32,9 @@ public interface ReplyQuestionMapper {
     //通过问题ID来查询全部回答
     List<ReplyQuestionUser> selectAReplyQuestionByQuestionId(Integer questionId);
 
+    //查询每个问题的回答数量
+    int selectReplyQuestionCountByQuestionId(Integer questionId);
+
     //查询回答点赞量
     int selectZanNumByReplyQuestionId(Integer replyquestionId);
 

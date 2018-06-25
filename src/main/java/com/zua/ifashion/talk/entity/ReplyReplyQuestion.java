@@ -1,5 +1,7 @@
 package com.zua.ifashion.talk.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class ReplyReplyQuestion {
@@ -9,9 +11,20 @@ public class ReplyReplyQuestion {
 
     private Integer userId;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private Date replyReplyQuesDate;
 
     private String replyReplyQuesContent;
+
+    private Integer hreplyReplyQuesId;
+
+    public Integer getHreplyReplyQuesId() {
+        return hreplyReplyQuesId;
+    }
+
+    public void setHreplyReplyQuesId(Integer hreplyReplyQuesId) {
+        this.hreplyReplyQuesId = hreplyReplyQuesId;
+    }
 
     public Integer getReplyReplyQuesId() {
         return replyReplyQuesId;
@@ -53,19 +66,13 @@ public class ReplyReplyQuestion {
         this.replyReplyQuesContent = replyReplyQuesContent;
     }
 
-    public ReplyReplyQuestion(Integer replyReplyQuesId, Integer replyquestionId, Integer userId, Date replyReplyQuesDate, String replyReplyQuesContent) {
+    public ReplyReplyQuestion(Integer replyReplyQuesId, Integer replyquestionId, Integer userId, Date replyReplyQuesDate, String replyReplyQuesContent, Integer hreplyReplyQuesId) {
         this.replyReplyQuesId = replyReplyQuesId;
         this.replyquestionId = replyquestionId;
         this.userId = userId;
         this.replyReplyQuesDate = replyReplyQuesDate;
         this.replyReplyQuesContent = replyReplyQuesContent;
-    }
-
-    public ReplyReplyQuestion(Integer replyquestionId, Integer userId, Date replyReplyQuesDate, String replyReplyQuesContent) {
-        this.replyquestionId = replyquestionId;
-        this.userId = userId;
-        this.replyReplyQuesDate = replyReplyQuesDate;
-        this.replyReplyQuesContent = replyReplyQuesContent;
+        this.hreplyReplyQuesId = hreplyReplyQuesId;
     }
 
     public ReplyReplyQuestion() {

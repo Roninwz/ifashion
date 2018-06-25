@@ -12,5 +12,7 @@ public interface OrdersMapper {
     public abstract int updateOrder(Orders orders);
     public abstract int updateOrderSelective(Orders orders);
     public abstract int deleteOrder(Integer orderId);
+    public abstract Orders selectOrdersById(Integer orderId);
+    public abstract Orders selectOrdersByOrderNumber(String orderNumber);
 
 }

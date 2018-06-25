@@ -35,6 +35,8 @@
     <link href="static/user/online/assets/plugins/rateit/src/rateit.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin styles END -->
 
+
+
     <!-- Theme styles START -->
     <link href="static/user/online/assets/pages/css/components.css" rel="stylesheet">
     <link href="static/user/online/assets/corporate/css/style.css" rel="stylesheet">
@@ -76,92 +78,12 @@
     </style>
 </head>
 <body>
-<div class='w1180 ad' id="OL_SYS_925_51">
-</div>
 
-<div class='w1180 logoAndlogin'>
-    <h1 class='logo'>
-        <a href="">
-            <img src="static/user/common/top/images/top.png" height='72' width='840' style='padding-left:200px' alt='iFashion' title='iFashion' />
-        </a>
-    </h1>
-    <div class="login">
-
-        <a href="" target="_self" rel="nofollow">登录</a> |
-        <a href="" target="_self" rel="nofollow">注册</a>
-
-        <!-- 个人中心 -->
-        <!-- <a href="" target="_self" rel="nofollow">个人中心</a> -->
-    </div>
-</div>
-<div class='navSearch'>
-    <div class="navBg"></div>
-    <div class="w1180">
-        <div class="nav1">
-            <a href="index.html" class="here">首页</a>
-            <a href="clothes.html">穿衣搭配</a>
-            <a href="community.html">社区精选</a>
-            <a href="information.html">资讯</a>
-            <a href="online.html">私人定制</a>
-            <a href="javascript:void(0);" class="searchBt"></a>
-        </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="forum.html" target="_blank">论坛</a>
-                    <a href="community">社区</a>
-                </li>
-                <li></li>
-
-            </ul>
-        </div>
-    </div>
-    <div class='w1180 search'>
-        <form id="searchPage" target="_blank" method="get" action="user/search" accept-charset="utf8">
-            <div class="mainsearch">
-                <input onkeyup="selBrand('searchpro','auto_brand')" type="text" class="main_input" id="searchpro" autocomplete="off" name="q" value="请输入名称">
-                <div class="c1_se_2_c" id="auto_brand" style="display: none;"></div>
-            </div>
-            <input type="hidden" name="s" value="15679544665037353740">
-            <input type="hidden" name="nsid" value="1" class="aritcleType">
-            <input type="button" class="mainbtn" id="J_search_sub" value="">
-            <input type="button" title='关闭搜索框' class="closeSearchbtn" value="">
-        </form>
-        <div class='hotpro'>
-            <a href="" title="资讯-夏纳电影节" target="_blank">资讯-夏纳电影节</a>
-            <a href="" title="定制-裙子" target="_blank">定制-裙子</a>
-            <a href="" title="定制-运动鞋" target="_blank">定制-运动鞋</a>
-            <!-- 设计师 -->
-            <a href="" title="设计师-房莹" target="_blank">设计师-房莹</a>
-            <a href="" title="话题" target="_blank">话题-PVC</a>
-            <!-- <a href="" title="?????" target="_blank"></a> -->
-        </div>
-    </div>
-
-
-
-</div>
-
-
-<!--crazy start-->
-<div id="crazynavdown">
-    <div id="OL_SYS_938_51" class="w1180 s"></div>
-    <div class="b">
-        <div id="OL_SYS_943_51" class="b1"></div>
-        <div id="OL_SYS_448_51" class="b2"></div>
-    </div>
-</div>
-<!--crazy end-->
+<%@ include file="../header.jsp"%>
 
 <div class="main ecommerce">
     <div class="container">
-        <%--<ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="">Store</a></li>
-            <li class="active">Cool green dress with red bell</li>
-        </ul>--%>
+
         <div class="col-md-9 col-sm-7" id="content">
             <div class="product-page">
                 <div class="row">
@@ -228,26 +150,120 @@
 
                             </div>
                         </div>
-                        <ul class="social-icons">
+                        <%--<ul class="social-icons">
                             <li><a class="facebook" data-original-title="facebook" href="javascript:;"></a></li>
                             <li><a class="twitter" data-original-title="twitter" href="javascript:;"></a></li>
                             <li><a class="googleplus" data-original-title="googleplus" href="javascript:;"></a></li>
                             <li><a class="evernote" data-original-title="evernote" href="javascript:;"></a></li>
                             <li><a class="tumblr" data-original-title="tumblr" href="javascript:;"></a></li>
-                        </ul>
+                        </ul>--%>
+                        <ul class="bdsharebuttonbox">
+                            <li><a href="#" class="bds_more" data-cmd="more"></a></li><li><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></li>
+                            <li><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
+                            <li><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></li></ul>
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"":{"viewList":["weixin","tsina","qzone"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","qzoe"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                        <%--<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>--%>
+                        <script>
+                            var url = "http://www.junlenet.com";
+                            var desc_ = "iFashion";
+                            function tencentWeiBo(){
+                                var _url = "http://www.junlenet.com";
+                                var _showcount = 0;
+                                var _summary = "";
+                                var _title = desc_;
+                                var _site = "http://www.junlenet.com";
+                                var _width = "600px";
+                                var _height = "800px";
+                                var _pic = "http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg";
+                                var _shareUrl = 'http://share.v.t.qq.com/index.php?c=share&a=index';
+                                _shareUrl += '&title=' + encodeURIComponent(_title||document.title);    //分享的标题
+                                _shareUrl += '&url=' + encodeURIComponent(_url||location.href);    //分享的链接
+                                _shareUrl += '&appkey=5bd32d6f1dff4725ba40338b233ff155';    //在腾迅微博平台创建应用获取微博AppKey
+                                //_shareUrl += '&site=' + encodeURIComponent(_site||'');   //分享来源
+                                _shareUrl += '&pic=' + encodeURIComponent(_pic||'');    //分享的图片，如果是多张图片，则定义var _pic='图片url1|图片url2|图片url3....'
+                                window.open(_shareUrl,'width='+_width+',height='+_height+',left='+(screen.width-_width)/2+',top='+(screen.height-_height)/2+',toolbar=no,menubar=no,scrollbars=no,resizable=1,location=no,status=0');
+                            }
+                            var top = window.screen.height / 2 - 250;
+                            var left = window.screen.width / 2 - 300;
+                            var height = window.screen.height;
+                            var width =  window.screen.width;
+                            /*title是标题，rLink链接，summary内容，site分享来源，pic分享图片路径,分享到新浪微博*/
+                            function shareTSina() {
+                                var title = desc_;
+                                var   rLink = "http://www.junlenet.com";
+                                var backUrl = "http://wx.hengfu100.com/member/c_friend";
+                                var site = desc_;
+                                var pic = "http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg";
+                                window.open("http://service.weibo.com/share/share.php?pic=" +encodeURIComponent(pic) +"&title=" +
+                                    encodeURIComponent(title.replace(/ /g, " ").replace(/<br \/>/g, " "))+ "&url=" + encodeURIComponent(rLink),
+                                    "分享至新浪微博",
+                                    "height=500,width=600,top=" + top + ",left=" + left + ",toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+                            }
+
+                            function qqFriend() {
+                                var p = {
+                                    url : 'http://www.junlenet.com', /*获取URL，可加上来自分享到QQ标识，方便统计*/
+                                    desc:'',
+                                    //title : '新玩法，再不来你就out了！', /*分享标题(可选)*/
+                                    title:desc_,
+                                    summary : '', /*分享摘要(可选)*/
+                                    pics : 'http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg', /*分享图片(可选)*/
+                                    flash : '', /*视频地址(可选)*/
+                                    site : 'http://www.junlenet.com', /*分享来源(可选) 如：QQ分享*/
+                                    style : '201',
+                                    width : 32,
+                                    height : 32
+                                };
+                                var s = [];
+                                for ( var i in p) {
+                                    s.push(i + '=' + encodeURIComponent(p[i] || ''));
+                                }
+                                var url = "http://connect.qq.com/widget/shareqq/index.html?"+s.join('&');
+                                return url;
+                                //window.location.href = url;
+                                //document.write(['<a class="qcShareQQDiv" href="http://connect.qq.com/widget/shareqq/index.html?',s.join('&'), '" >分享给QQ好友</a>' ].join(''));
+                            }
+
+                            function qqZone(){
+                                var _url = "http://www.junlenet.com";
+                                var _showcount = 0;
+                                var _desc = desc_;
+                                var _summary = "";
+                                var _title = "iFashion";
+                                var _site = "";
+                                var _width = "600px";
+                                var _height = "800px";
+                                var _summary = "";
+                                var _pic = "http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg";
+                                var _shareUrl = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?';
+                                _shareUrl += 'url=' + encodeURIComponent(_url||document.location);   //参数url设置分享的内容链接|默认当前页location
+                                _shareUrl += '&showcount=' + _showcount||0;      //参数showcount是否显示分享总数,显示：'1'，不显示：'0'，默认不显示
+                                _shareUrl += '&desc=' + encodeURIComponent(_desc||'分享的描述');    //参数desc设置分享的描述，可选参数
+                                //_shareUrl += '&summary=' + encodeURIComponent(_summary||'分享摘要');    //参数summary设置分享摘要，可选参数
+                                _shareUrl += '&title=' + encodeURIComponent(_title||document.title);    //参数title设置分享标题，可选参数
+                                //_shareUrl += '&site=' + encodeURIComponent(_site||'');   //参数site设置分享来源，可选参数
+                                _shareUrl += '&pics=' + encodeURIComponent(_pic||'');   //参数pics设置分享图片的路径，多张图片以＂|＂隔开，可选参数
+                                window.open(_shareUrl,'width='+_width+',height='+_height+',top='+(screen.height-_height)/2+',left='+(screen.width-_width)/2+',toolbar=no,menubar=no,scrollbars=no,resizable=1,location=no,status=0');
+                            }
+
+                            $(function(){
+                                var url = qqFriend();
+                                $("#qq_id").attr("href",url);
+                            })
+                        </script>
                     </div>
 
                     <div class="product-page-content">
                         <ul id="myTab" class="nav nav-tabs">
                             <li><a href="#Description" data-toggle="tab">商品描述</a></li>
-                            <li><a href="#Information" data-toggle="tab">商品信息</a></li>
+                           <%-- <li><a href="#Information" data-toggle="tab">商品信息</a></li>--%>
                             <li class="active"><a href="#Reviews" data-toggle="tab">评论(${goodsAndImgDesignerVO.reviewNum})</a></li>
                         </ul>
                         <div id="myTabContent" class="tab-content">
                             <div class="tab-pane fade" id="Description">
                                 <p>${goodsAndImgDesignerVO.goodsIntroduce}</p>
                             </div>
-                            <div class="tab-pane fade" id="Information">
+                            <%--<div class="tab-pane fade" id="Information">
                                 <table class="datasheet">
                                     <tr>
                                         <th colspan="2">Additional features</th>
@@ -273,7 +289,7 @@
                                         <td>plastic</td>
                                     </tr>
                                 </table>
-                            </div>
+                            </div>--%>
                             <div class="tab-pane fade in active" id="Reviews">
                                 <!--<p>There are no reviews for this product.</p>-->
                                 <c:forEach items="${goodsReviewList}" var="review">
@@ -311,7 +327,25 @@
         <div class="col-md-12 col-sm-12">
             <h2>猜你喜欢</h2>
             <div class="owl-carousel owl-carousel4">
-                <div>
+                <c:forEach var="i" begin="0" end="4">
+                    <div>
+                        <div class="product-item">
+                            <div class="pi-img-wrapper">
+                                <img src="${goodsAndImgDesignerVOList[i].goodsImgList[0].goodsImgurl}" class="img-responsive" >
+                                <div>
+                                    <a href="${goodsAndImgDesignerVOList[i].goodsImgList[0].goodsImgurl}" class="btn btn-default fancybox-button">Zoom</a>
+                                    <a href="#${goodsAndImgDesignerVOList[i].goodsId}" class="btn btn-default fancybox-fast-view">View</a>
+                                </div>
+                            </div>
+                            <h3><a href="shop-item.html">${goodsAndImgDesignerVOList[i].goodsName}</a></h3>
+                            <div class="pi-price">${goodsAndImgDesignerVOList[i].goodsPrice}</div>
+                            <a href="user/online_buygoods.action?id=${goodsAndImgDesignerVOList[i].goodsId}" class="btn btn-default add2cart">立即购买</a>
+                            <div class="sticker sticker-new"></div>
+                        </div>
+                    </div>
+                </c:forEach>
+
+               <%-- <div>
                     <div class="product-item">
                         <div class="pi-img-wrapper">
                             <img src="static/user/online/assets/pages/img/products/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
@@ -325,8 +359,8 @@
                         <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
                         <div class="sticker sticker-new"></div>
                     </div>
-                </div>
-                <div>
+                </div>--%>
+               <%-- <div>
                     <div class="product-item">
                         <div class="pi-img-wrapper">
                             <img src="static/user/online/assets/pages/img/products/k2.jpg" class="img-responsive" alt="Berry Lace Dress">
@@ -339,8 +373,8 @@
                         <div class="pi-price">$29.00</div>
                         <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
                     </div>
-                </div>
-                <div>
+                </div>--%>
+               <%-- <div>
                     <div class="product-item">
                         <div class="pi-img-wrapper">
                             <img src="static/user/online/assets/pages/img/products/k3.jpg" class="img-responsive" alt="Berry Lace Dress">
@@ -353,8 +387,8 @@
                         <div class="pi-price">$29.00</div>
                         <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
                     </div>
-                </div>
-                <div>
+                </div>--%>
+                <%--<div>
                     <div class="product-item">
                         <div class="pi-img-wrapper">
                             <img src="static/user/online/assets/pages/img/products/k4.jpg" class="img-responsive" alt="Berry Lace Dress">
@@ -368,8 +402,8 @@
                         <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
                         <div class="sticker sticker-sale"></div>
                     </div>
-                </div>
-                <div>
+                </div>--%>
+              <%--  <div>
                     <div class="product-item">
                         <div class="pi-img-wrapper">
                             <img src="static/user/online/assets/pages/img/products/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
@@ -382,8 +416,8 @@
                         <div class="pi-price">$29.00</div>
                         <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
                     </div>
-                </div>
-                <div>
+                </div>--%>
+                <%--<div>
                     <div class="product-item">
                         <div class="pi-img-wrapper">
                             <img src="static/user/online/assets/pages/img/products/k2.jpg" class="img-responsive" alt="Berry Lace Dress">
@@ -396,75 +430,93 @@
                         <div class="pi-price">$29.00</div>
                         <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
     <!-- END SIMILAR PRODUCTS -->
 </div>
 </div>
-<div id="product-pop-up" style="display: none; width: 700px;">
+<c:forEach var="i" begin="0" end="4">
+<div id="${goodsAndImgDesignerVOList[i].goodsId}" style="display: none; width: 700px;">
     <div class="product-page product-pop-up">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-3">
                 <div class="product-main-image">
-                    <img src="static/user/online/assets/pages/img/products/model7.jpg" alt="Cool green dress with red bell" class="img-responsive">
+                    <img src="${goodsAndImgDesignerVOList[i].goodsImgList[0].goodsImgurl}" alt="${goodsAndImgDesignerVOList[i].goodsName}" class="img-responsive">
                 </div>
                 <div class="product-other-images">
-                    <a href="javascript:;" class="active"><img alt="Berry Lace Dress" src="static/user/online/assets/pages/img/products/model3.jpg"></a>
-                    <a href="javascript:;"><img alt="Berry Lace Dress" src="static/user/online/assets/pages/img/products/model4.jpg"></a>
-                    <a href="javascript:;"><img alt="Berry Lace Dress" src="static/user/online/assets/pages/img/products/model5.jpg"></a>
+                    <c:forEach var="img" items="${goodsAndImgDesignerVOList[i].goodsImgList}">
+                        <a href="javascript:;"><img alt="${goodsAndImgDesignerVOList[i].goodsName}" src="${img.goodsImgurl}"></a>
+                    </c:forEach>
+                        <%--<a href="javascript:;" class="active"><img alt="Berry Lace Dress" src="static/user/online/assets/pages/img/products/model3.jpg"></a>
+                        <a href="javascript:;"><img alt="Berry Lace Dress" src="static/user/online/assets/pages/img/products/model4.jpg"></a>
+                        <a href="javascript:;"><img alt="Berry Lace Dress" src="static/user/online/assets/pages/img/products/model5.jpg"></a>--%>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-9">
-
+                <br/>
                 <div class="price-availability-block clearfix">
                     <div class="price" id="cloth_price">
-                        <strong><span>$</span>47.00</strong>
-                        <em>$<span>62.00</span></em>
+                        <strong><span>$</span>${goodsAndImgDesignerVOList[i].goodsPrice}</strong>
+                        <em>$<span>${goodsAndImgDesignerVOList[i].goodsPrice+200}</span></em>
                     </div>
                     <div class="availability">
                         Availability: <strong>In Stock</strong>
                     </div>
                 </div>
                 <div class="description">
-                    <p>Lorem ipsum dolor ut sit ame dolore  adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat
-                        Nostrud duis molestie at dolore.</p>
+                    <p>${goodsAndImgDesignerVOList[i].goodsIntroduce}</p>
                 </div>
                 <div class="product-page-options">
                     <div class="pull-left">
                         <label class="control-label">Size:</label>
                         <select class="form-control input-sm">
-                            <option>L</option>
-                            <option>M</option>
-                            <option>XL</option>
+                            <c:forEach items="${fn:split(goodsAndImgDesignerVOList[i].size,',')}" var="size">
+                                <option>${size}</option>
+                            </c:forEach>
+
                         </select>
                     </div>
                     <div class="pull-left">
                         <label class="control-label">Color:</label>
                         <select class="form-control input-sm">
-                            <option>Red</option>
+                            <c:forEach items="${fn:split(goodsAndImgDesignerVOList[i].color,',')}" var="color">
+                                <option>${color}</option>
+                            </c:forEach>
+                            <%--<option>Red</option>
                             <option>Blue</option>
-                            <option>Black</option>
+                            <option>Black</option>--%>
                         </select>
                     </div>
                 </div>
                 <div class="product-page-cart">
-                    <form action="" method="post">
                         <div class="product-quantity">
                             <input id="product-quantity2" type="text" value="1" readonly class="form-control input-sm">
                         </div>
-                        <button class="btn btn-primary" type="submit">立即购买</button>
-                    </form>
+                        <%--<button class="btn btn-primary buygoods">立即购买</button>--%>
+                    <a href="user/online_buygoods.action?id=${goodsAndImgDesignerVOList[i].goodsId}" class="btn btn-default add2cart">立即购买</a>
+                    <div id="paidimg">
+                    </div>
+                   <%-- <script>
+                        $(".buygoods").click(function(){
+                            window.location.href="user/online_buygoods.action?id=${goodsAndImgDesignerVOList[i].goodsId}";
+                        });
+                    </script>--%>
 
                 </div>
-
-
-                <div class="sticker sticker-sale"></div>
+                <div class="sticker"></div>
             </div>
+
+
         </div>
     </div>
 </div>
+</c:forEach>
+
+
+
+
 <!-- END fast view of a product -->
 <script src="static/user/online/assets/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="static/user/online/assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
@@ -480,7 +532,7 @@
 <script src="static/user/online/assets/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
 <script src="static/user/online/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="static/user/online/assets/plugins/rateit/src/jquery.rateit.js" type="text/javascript"></script>
-
+<script src="static/user/online/assets/pages/scripts/bs-carousel.js" type="text/javascript"></script>
 <script src="static/user/online/assets/corporate/scripts/layout.js" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
@@ -492,48 +544,18 @@
         Layout.initUniform();
     });
 </script>
-<!-- END PAGE LEVEL JAVASCRIPTS -->
-<div class="footer" style="margin-top:50px; height:440px" >
-    <div class="footer-wrap">
-        <div class="footer-info">
-            <div class="footer-address col-md-6">
-                <div class="footer-logo">
-                    <span></span>
-                    <h3>iFashion</h3>
-                </div>
-                <p>郑州航空工业管理学院东校区</p>
-                <p>客服电话：000-000-0000</p>
-                <p>邮箱：11111111@qq.com</p>
-            </div>
-            <div class="footer-nav col-md-6 clearfix">
-                <dl class="col-md-4">
-                    <dt><span>关于iFashion</span></dt>
-                    <dd><a href="">网站地图</a></dd>
-                    <dd><a href="">版权声明</a></dd>
-                    <dd><a href="">加入我们</a></dd>
-                    <dd><a href="">联系我们</a></dd>
-                </dl>
-                <dl class="col-md-4">
-                    <dt><span>iFashion产品</span></dt>
-                    <dd><a href="">穿衣搭配</a></dd>
-                    <dd><a href="">社区精选</a></dd>
-                    <dd><a href="">私人订制</a></dd>
-                    <dd><a href="">资讯</a></dd>
-                </dl>
-                <dl class="col-md-4">
-                    <dt><span>商业合作</span></dt>
-                    <dd><a href="" target="_blank">设计师合作</a></dd>
-                    <dd><a class="kol-join">杂志合作</a></dd>
-                    <dd><a class="kol-join">媒体合作</a></dd>
-                </dl>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright ©2016 京 ICP 备 16021078 号</p>
-            <p>ICP 号: 京 B2-20170261</p>
-        </div>
-    </div>
-</div>
 
+<script>
+    $("button[type='submit']").click(function () {
+
+        var num=$("#product-quantity").val();
+
+
+        window.location.href="user/online_pay.action?goodsNum="+num+"&goodsName=${goodsAndImgDesignerVO.goodsName}&introduce=${goodsAndImgDesignerVO.goodsIntroduce}$price=${goodsAndImgDesignerVO.goodsPrice*num}";
+    })
+</script>
+<!-- END PAGE LEVEL JAVASCRIPTS -->
+
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

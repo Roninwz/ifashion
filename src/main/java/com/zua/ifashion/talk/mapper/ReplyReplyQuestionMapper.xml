@@ -2,14 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zua.ifashion.talk.mapper.ReplyReplyQuestionMapper">
 
+  <resultMap id="ReplyReplyQuestionUserMap" type="com.zua.ifashion.talk.vo.RRQuestionUser">
+    <id column="replyReplyQuesId" property="replyReplyQuesId"></id>
+    <result column="replyquestionId" property="replyquestionId"></result>
+    <result column="userId" property="userId"></result>
+    <result column="replyReplyQuesDate" property="replyReplyQuesDate"></result>
+    <result column="replyReplyQuesContent" property="replyReplyQuesContent"></result>
+    <result column="hreplyReplyQuesId" property="hreplyReplyQuesId"></result>
+    <association property="user" javaType="User">
+      <result column="username" property="username"></result>
+      <result column="userImgurl" property="userImgurl"></result>
+    </association>
+
+  </resultMap>
+
+
+
+
 
   <!--//添加回复-->
   <!--int addReplyReplyQuestion(ReplyReplyQuestion replyReplyQuestion);-->
   <insert id="addReplyReplyQuestion" parameterType="com.zua.ifashion.talk.entity.ReplyReplyQuestion">
     insert into reply_replyquestion (replyReplyQuesId,replyquestionId,userId,replyReplyQuesDate,
-    replyReplyQuesContent) values(#{replyReplyQuesId},
+    replyReplyQuesContent,hreplyReplyQuesId) values(#{replyReplyQuesId},
     #{replyquestionId},#{userId},#{replyReplyQuesDate},
-    #{replyReplyQuesContent})
+    #{replyReplyQuesContent},#{hreplyReplyQuesId})
   </insert>
 
   <!--//添加回复-->
@@ -32,6 +49,9 @@
       <if test="replyReplyQuesContent != null">
         replyReplyQuesContent,
       </if>
+      <if test="hreplyReplyQuesId != null">
+        hreplyReplyQuesId,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="replyReplyQuesId != null">
@@ -49,6 +69,9 @@
       <if test="replyReplyQuesContent != null">
         #{replyReplyQuesContent},
       </if>
+      <if test="hreplyReplyQuesId != null">
+        #{hreplyReplyQuesId},
+      </if>
     </trim>
   </insert>
 
@@ -64,7 +87,9 @@
     update reply_replyquestion set replyquestionId=#{replyquestionId},
     userId=#{userId},
     replyReplyQuesDate=#{replyReplyQuesDate},
-    replyReplyQuesContent=#{replyReplyQuesContent}
+    replyReplyQuesContent=#{replyReplyQuesContent},
+    hreplyReplyQuesId=#{hreplyReplyQuesId}
+
   </update>
 
   <!--//修改回复不为空字段-->
@@ -83,6 +108,9 @@
       </if>
       <if test="replyReplyQuesContent != null">
         replyReplyQuesContent = #{replyReplyQuesContent},
+      </if>
+      <if test="hreplyReplyQuesId != null">
+        #{hreplyReplyQuesId},
       </if>
     </set>
     where replyReplyQuesId = #{replyReplyQuesId}
@@ -106,6 +134,12 @@
     select * from reply_replyquestion where replyquestionId =#{replyquestionId}
   </select>
 
+  <!--//通过回答id来查询回复用户信息-->
+  <!--List<RRQuestionUser> selectReplyReplyQuestionUserByReplyquestionId(Integer replyquestionId);-->
+  <select id="selectReplyReplyQuestionUserByReplyquestionId" parameterType="int" resultMap="ReplyReplyQuestionUserMap">
+    select reply_replyquestion.*,user.userImgurl,user.username from reply_replyquestion,user where replyquestionId =#{replyquestionId} and reply_replyquestion.userId=user.userId
+  </select>
+
   <!--//通过回答id来查询回复数量-->
   <!--int selectReplyReplyQuestionCountByReplyquestionId(Integer replyquestionId);-->
   <select id="selectReplyReplyQuestionCountByReplyquestionId" parameterType="int" resultType="int">
@@ -123,7 +157,15 @@
   <select id="selectReplyReplyQuestionByLReplyReplyQuesDate" resultType="com.zua.ifashion.talk.entity.ReplyReplyQuestion" parameterType="Date">
     select * from reply_replyquestion where replyReplyQuesDate &gt; #{replyReplyQuesDate}
   </select>
+  
+  <!--根据回复复id来查询回复复-->
+  <!--<select id="selectRRQuestionByHReplyReplyQuesId" parameterType="int" resultType="ReplyReplyQuestionUserMap">-->
+    <!--select reply_replyquestion.*,user.userImgurl,user.username from reply_replyquestion,user  where hreplyReplyQuesId=#{hreplyReplyQuesId}-->
+  <!--</select>-->
 
+  <select id="selectReplyReplyQuestionTop" resultType="com.zua.ifashion.talk.entity.ReplyReplyQuestion">
+    select * from reply_replyquestion order by replyReplyQuesDate DESC limit 1
+  </select>
 
 
 

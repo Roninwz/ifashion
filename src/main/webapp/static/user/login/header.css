@@ -1,0 +1,33 @@
+.logoAndlogin  .login .btn {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    /*background-color: #49c8f2;*/
+    font-size: 14px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    margin: 2px 6px;
+    /*behavior: url(../js/PIE.htc);*/
+}
+
+.logoAndlogin  .login .btn:hover {
+    /*background-color: #65cdf0;*/
+}
+
+.logoAndlogin  .login .btn_primary {
+    background-color: #ffffff;
+    color: #666;
+    /*border: 1px solid #f1f1f1;*/
+}
+
+.logoAndlogin  .login .btn_primary:hover {
+    background-color: #f1f1f1;
+}
+.logoAndlogin  .login .radius {
+    border-radius: 28px;
+    /*behavior: url(../js/PIE.htc)\9;*/
+}

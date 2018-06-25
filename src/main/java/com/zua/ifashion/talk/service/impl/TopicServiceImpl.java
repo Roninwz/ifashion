@@ -90,6 +90,11 @@ public class TopicServiceImpl implements TopicService{
     }
 
     @Override
+    public List<Topic> selectTopiccByLookNumOrder() {
+        return topicMapper.selectTopiccByLookNumOrder();
+    }
+
+    @Override
     public List<Topic> getAllTopic() {
         return topicMapper.getAllTopic();
     }

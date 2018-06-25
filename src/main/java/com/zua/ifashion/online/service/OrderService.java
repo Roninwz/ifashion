@@ -16,4 +16,8 @@ public interface OrderService {
 
     public abstract int removeOrder(Integer ordersId);
 
+    public abstract Orders getOrdersById(Integer orderId);
+
+    public abstract Orders getOrdersByOrderNumber(String orderNumber);
+
 }

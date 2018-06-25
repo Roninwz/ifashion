@@ -1,7 +1,10 @@
 package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.DesignerAuth;
+import com.zua.ifashion.person.vo.AuthDesignerVo;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface DesignerAuthMapper {
 
@@ -16,4 +19,8 @@ public interface DesignerAuthMapper {
     DesignerAuth selectDesignerByUserId(@Param("userId") Integer userId);
 
     DesignerAuth selectDesignerByAuthId(@Param("authId") Integer authId);
+
+    List<AuthDesignerVo> getAllDesignerAuths();
+
+
 }

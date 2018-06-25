@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zua.ifashion.person.mapper.DesignerAuthMapper">
-  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.entity.DesignerAuth">
+  <resultMap id="BaseResultMap" type="com.zua.ifashion.person.vo.AuthDesignerVo">
     <id column="authId" jdbcType="INTEGER" property="authId" />
     <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="cardNum" jdbcType="VARCHAR" property="cardNum" />
     <result column="authImgurl" jdbcType="VARCHAR" property="authImgurl" />
     <result column="authState" jdbcType="INTEGER" property="authState" />
+    <result column="authDate" jdbcType="TIMESTAMP" property="authDate" />
+    <association property="user" javaType="com.zua.ifashion.person.entity.User">
+      <result column="username" jdbcType="VARCHAR" property="username" />
+    </association>
   </resultMap>
+
+
+
 
 
 
@@ -31,6 +38,8 @@
       </if>
       <if test="authState != null">
         authState,
+      </if><if test="authDate != null">
+        authState,
       </if>
 
     </trim>
@@ -49,6 +58,9 @@
       </if>
       <if test="authState != null">
         #{authState,jdbcType=INTEGER}
+      </if>
+      <if test="authDate != null">
+        #{authDate,jdbcType=TIMESTAMP}
       </if>
         </trim>
   </insert>
@@ -73,6 +85,9 @@
       <if test="authState != null">
         authState = #{authState,jdbcType=INTEGER},
       </if>
+      <if test="authDate != null">
+        authDate = #{authDate,jdbcType=TIMESTAMP},
+    </if>
     </set>
     where authId = #{authId,jdbcType=INTEGER}
   </update>
@@ -84,6 +99,11 @@
 
   <select id="selectDesignerByAuthId" parameterType="int" resultType="com.zua.ifashion.person.entity.DesignerAuth">
     select * from designer_auth where authId =#{authId}
+  </select>
+
+
+  <select id="getAllDesignerAuths"  resultMap="BaseResultMap">
+    select d.* ,u.username from designer_auth d,user u
   </select>
 
 </mapper>

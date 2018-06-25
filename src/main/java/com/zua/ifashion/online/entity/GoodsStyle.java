@@ -28,4 +28,22 @@ public class GoodsStyle {
         this.goodsstyleId = goodsstyleId;
         this.goodsstyleName = goodsstyleName;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GoodsStyle that = (GoodsStyle) o;
+
+        if (goodsstyleId != null ? !goodsstyleId.equals(that.goodsstyleId) : that.goodsstyleId != null) return false;
+        return goodsstyleName != null ? goodsstyleName.equals(that.goodsstyleName) : that.goodsstyleName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = goodsstyleId != null ? goodsstyleId.hashCode() : 0;
+        result = 31 * result + (goodsstyleName != null ? goodsstyleName.hashCode() : 0);
+        return result;
+    }
 }

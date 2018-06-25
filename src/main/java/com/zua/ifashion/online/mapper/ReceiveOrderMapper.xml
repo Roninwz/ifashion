@@ -82,4 +82,16 @@
   </trim>
 </insert>
 
+
+  <!--根据设计师id来查询接单-->
+  <select id="selectReceiveByDesignerId" resultType="com.zua.ifashion.online.entity.ReceiveOrder" parameterType="int">
+    select * from receive_order where designerId=#{designerId}
+  </select>
+
+  <!--根据订单id来查询接单-->
+  <select id="selectReceiveByOrdersId" parameterType="int" resultType="com.zua.ifashion.online.entity.ReceiveOrder">
+    select * from receive_order where ordersId=#{ordersId}
+  </select>
+
+
 </mapper>

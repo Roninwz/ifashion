@@ -3,7 +3,7 @@ package com.zua.ifashion.online.entity;
 import java.util.Date;
 
 public class GoodsReview {
-    private Integer goodsreviewgId;
+    private Integer goodsreviewId;
 
     private Integer userId;
 
@@ -23,12 +23,12 @@ public class GoodsReview {
         this.reviewData = reviewData;
     }
 
-    public Integer getGoodsreviewgId() {
-        return goodsreviewgId;
+    public Integer getGoodsreviewId() {
+        return goodsreviewId;
     }
 
     public void setGoodsreviewgId(Integer goodsreviewgId) {
-        this.goodsreviewgId = goodsreviewgId;
+        this.goodsreviewId = goodsreviewId;
     }
 
     public Integer getUserId() {
@@ -63,8 +63,8 @@ public class GoodsReview {
         this.reviewRank = reviewRank == null ? null : reviewRank.trim();
     }
 
-    public GoodsReview(Integer goodsreviewgId, Integer userId, Integer goodsId, String reviewContent, String reviewRank) {
-        this.goodsreviewgId = goodsreviewgId;
+    public GoodsReview(Integer goodsreviewId, Integer userId, Integer goodsId, String reviewContent, String reviewRank) {
+        this.goodsreviewId = goodsreviewId;
         this.userId = userId;
         this.goodsId = goodsId;
         this.reviewContent = reviewContent;
@@ -74,8 +74,8 @@ public class GoodsReview {
     public GoodsReview() {
     }
 
-    public GoodsReview(Integer goodsreviewgId, Integer userId, Integer goodsId, String reviewContent, String reviewRank, Date reviewData) {
-        this.goodsreviewgId = goodsreviewgId;
+    public GoodsReview(Integer goodsreviewId, Integer userId, Integer goodsId, String reviewContent, String reviewRank, Date reviewData) {
+        this.goodsreviewId = goodsreviewId;
         this.userId = userId;
         this.goodsId = goodsId;
         this.reviewContent = reviewContent;

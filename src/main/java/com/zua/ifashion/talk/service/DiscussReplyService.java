@@ -1,6 +1,8 @@
 package com.zua.ifashion.talk.service;
 
 import com.zua.ifashion.talk.entity.DiscussReply;
+import com.zua.ifashion.talk.vo.CountDiscussId;
+import com.zua.ifashion.talk.vo.DiscussReplyUser;
 
 import java.util.Date;
 import java.util.List;
@@ -33,8 +35,11 @@ public interface DiscussReplyService {
     //通过discussId来查询评论
     List<DiscussReply> selectDiscussReplyByDiscussId(Integer discussId);
 
-    //查询某篇讨论的所有评论数量
-    int getDiscussReplyCountByDiscussId(Integer discussId);
+    //通过discussId来查询评论用户详情
+    List<DiscussReplyUser> selectDiscussReplyUByDiscussId(Integer discussId);
+
+
+
 
     //查询某个话题的所有回复
     List<DiscussReply> selectDiscussReplyByTopicId(Integer topicId);
@@ -56,5 +61,12 @@ public interface DiscussReplyService {
 
     //查询所有回复数量
     int getAllDiscussReplyCount();
+
+    //查询某个讨论的所有回复数量
+    int selectDiscussReplyCountByDiscussId(Integer discussId);
+
+    //查询讨论回复最多的讨论并排序
+
+    List<CountDiscussId> selectDiscussId();
 
 }

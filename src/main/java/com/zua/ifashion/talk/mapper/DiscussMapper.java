@@ -64,6 +64,8 @@ public interface DiscussMapper {
     //查询所有讨论
     List<Discuss> getAllDiscuss();
 
+    //根据lookNum来查询最新热门讨论
+    List<Discuss> selectDiscussByDiscussDateAndLookNum();
 
 
 

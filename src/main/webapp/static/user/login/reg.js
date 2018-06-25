@@ -258,7 +258,7 @@ $(function() {
             });
 
 
-            alert("w");
+            //alert("w");
                 var time = 30;
                 var code = $(this);
                 if (validCode) {

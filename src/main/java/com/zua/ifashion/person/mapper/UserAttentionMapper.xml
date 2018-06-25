@@ -6,6 +6,18 @@
     <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="userdId" jdbcType="INTEGER" property="userdId" />
   </resultMap>
+  <resultMap id="UserAttentionVo2" type="com.zua.ifashion.person.vo.UserAttentionVo2">
+    <id column="attentionId" property="attentionId"/>
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userdId" jdbcType="INTEGER" property="userdId" />
+    <association property="user" javaType="com.zua.ifashion.person.entity.User">
+      <id column="userId" jdbcType="INTEGER" property="userId" />
+      <result column="username" jdbcType="VARCHAR" property="username" />
+      <result column="userImgurl" jdbcType="VARCHAR" property="userImgurl" />
+      <result column="userIntroduce" jdbcType="VARCHAR" property="userIntroduce"/>
+      <result column="userMark" jdbcType="INTEGER" property="userMark"/>
+    </association>
+  </resultMap>
 
 
   <insert id="addUserAttentionSelective" parameterType="com.zua.ifashion.person.entity.UserAttention">
@@ -41,6 +53,12 @@
     where attentionId = #{attentionId,jdbcType=INTEGER}
   </delete>
 
+  <delete id="deleteUserAttentionByUserIdAndUsered" parameterType="java.lang.Integer">
+    delete from user_attention
+    where userId = #{userId,jdbcType=INTEGER} AND userdId=#{userdId,jdbcType=INTEGER}
+  </delete>
+
+
   <select id="selectUserAttentionById" parameterType="int" resultType="com.zua.ifashion.person.entity.UserAttention">
     select *  from user_attention where attentionId =#{attentionId}
   </select>
@@ -52,6 +70,19 @@
 
   <select id="getAllAttentions" resultType="com.zua.ifashion.person.entity.UserAttention">
     select *  from user_attention
+  </select>
+
+  <select id="selectFansByUserdId" parameterType="int" resultMap="UserAttentionVo2">
+    SELECT a.*,u.userId,u.username,u.userImgurl,u.userIntroduce,u.userMark FROM user_attention a,user u WHERE a.userdId = #{userdId} AND a.userId = u.userId
+  </select>
+
+  <select id="selectAttentionByUserId" parameterType="int" resultMap="UserAttentionVo2">
+        SELECT a.*,u.userId,u.username,u.userImgurl,u.userIntroduce,u.userMark FROM user_attention a,user u WHERE a.userId = #{userId} AND a.userdId = u.userId
+
+  </select>
+
+  <select id="selectIt" resultType="com.zua.ifashion.person.entity.UserAttention">
+    SELECT * FROM user_attention WHERE userId = #{0} AND userdId = #{1}
   </select>
 
 </mapper>

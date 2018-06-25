@@ -9,6 +9,7 @@
         <result column="reviewNum" jdbcType="INTEGER" property="reviewNum" />
         <result column="lookNum" jdbcType="INTEGER" property="lookNum" />
         <result column="discussContent" jdbcType="LONGVARCHAR" property="discussContent" />
+        <result column="discussTitle" jdbcType="VARCHAR" property="discussTitle" />
         <association property="user" javaType="User">
             <result column="username" property="username"></result>
             <result column="userImgurl" property="userImgurl"></result>
@@ -20,7 +21,7 @@
   <!--List<DiscussUser> selectDiscussUserByTopicId(Integer topicId);-->
    <select id="selectDiscussUserByTopicId" resultMap="DiscussUserByTopicIdMap">
         select discussId,topicId,discussDate,discuss.userId,reviewNum,lookNum,
-        discussContent,username,userImgurl from discuss,user
+        discussContent,discussTitle,username,userImgurl from discuss,user
         where user.userId=discuss.userId and topicId=#{topicId}
    </select>
 

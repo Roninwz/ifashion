@@ -1,11 +1,17 @@
 package com.zua.ifashion.person.entity;
 
+import java.util.Date;
+
 public class MyMessage {
     private Integer mymessageId;
 
     private  Integer userId;
 
     private String mymessageContent;
+
+    private Integer messageState;//0是未读，1是已读
+
+    private Date messageDate;
 
     public Integer getMymessageId() {
         return mymessageId;
@@ -31,10 +37,30 @@ public class MyMessage {
         this.mymessageContent = mymessageContent == null ? null : mymessageContent.trim();
     }
 
-    public MyMessage(Integer mymessageId, Integer userId, String mymessageContent) {
+
+    public Integer getMessageState() {
+        return messageState;
+    }
+
+    public void setMessageState(Integer messageState) {
+        this.messageState = messageState;
+    }
+
+    public Date getMessageDate() {
+        return messageDate;
+    }
+
+    public void setMessageDate(Date messageDate) {
+        this.messageDate = messageDate;
+    }
+
+
+    public MyMessage(Integer mymessageId, Integer userId, String mymessageContent, Integer messageState, Date messageDate) {
         this.mymessageId = mymessageId;
         this.userId = userId;
         this.mymessageContent = mymessageContent;
+        this.messageState = messageState;
+        this.messageDate = messageDate;
     }
 
     public MyMessage() {

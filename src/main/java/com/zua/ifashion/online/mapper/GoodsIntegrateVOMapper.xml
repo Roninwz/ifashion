@@ -33,7 +33,7 @@
     </collection>
   </resultMap>
   <select id="selectAllGoodsIntegrateList" resultMap="selectAllGoodsIntegrateMapper">
-    select g.*,img.goodsImgurl,img.mask,t.goodstypeName from goods g,goods_img img, goods_type t where g.goodsId=img.goodsId
+    select g.*,img.goodsImgurl,img.mask,t.goodstypeName,t.goodstypeId from goods g,goods_img img, goods_type t where g.goodsId=img.goodsId
       and g.goodstypeId=t.goodstypeId
   </select>
 </mapper>

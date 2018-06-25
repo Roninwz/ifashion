@@ -1,5 +1,7 @@
 package com.zua.ifashion.talk.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Question {
@@ -7,6 +9,7 @@ public class Question {
 
     private Integer userId;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date questionDate;
 
     private Integer lookNum;
@@ -105,5 +108,19 @@ public class Question {
     }
 
     public Question() {
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionId=" + questionId +
+                ", userId=" + userId +
+                ", questionDate=" + questionDate +
+                ", lookNum=" + lookNum +
+                ", questionContent='" + questionContent + '\'' +
+                ", attentionNum=" + attentionNum +
+                ", reportState=" + reportState +
+                ", tagId=" + tagId +
+                '}';
     }
 }

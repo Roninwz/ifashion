@@ -29,12 +29,14 @@ public class SpringWebSocketHandlerInterceptor extends HttpSessionHandshakeInter
                 System.out.println("进入session");
                 //使用userName区分WebSocketHandler，以便定向发送消息
                 String userName = (String) session.getAttribute("uname");
+                Integer userId = (Integer) session.getAttribute("userId");
 
                 if (userName==null) {
                     userName="default-system";
                 }
                 System.out.println(userName);
                 attributes.put("WEBSOCKET_USERNAME",userName);
+                attributes.put("WEBSOCKET_USERID",userId);
             }
         }
        // return super.beforeHandshake(request, response, wsHandler, attributes);

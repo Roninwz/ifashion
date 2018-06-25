@@ -87,23 +87,25 @@
                 <div class="info-main">
                     <form class="am-form am-form-horizontal" action="user/updateemailcheck.action" method="post">
 
+                        <div id="error"></div>
+                        <%--<c:if test="${empty isError}">--%>
+                           <%--<div>${isError}</div>--%>
+                        <%--</c:if>--%>
 
-                        <c:if test="${empty isError}">
-                           <div>${isError}</div>
-                        </c:if>
+                        <%--<div class="am-form-group">--%>
+                            <%--<label for="user-name2" class="am-form-label">原邮箱</label>--%>
+                            <%--<div class="am-form-content">--%>
+                                <%--<input type="text" name="beforEmail" id="user-name1" placeholder="请输入原邮箱">--%>
+
+                            <%--</div>--%>
+                        <%--</div>--%>
+
                         <div class="am-form-group">
-                            <label for="user-name2" class="am-form-label">原邮箱</label>
+                            <label  class="am-form-label">新邮箱</label>
                             <div class="am-form-content">
-                                <input type="text" name="beforEmail" id="user-name1" placeholder="请输入原邮箱">
-
-                            </div>
-                        </div>
-
-                        <div class="am-form-group">
-                            <label for="user-name2" class="am-form-label">新邮箱</label>
-                            <div class="am-form-content">
-                                <input type="text" name="email" id="user-name2" placeholder="请输入新邮箱">
-
+                                <input type="text" name="email" id="email12" placeholder="请输入新邮箱" style="width:250px;">
+                                <input type="button" value="获取邮箱验证码" name="email" id="newemail" placeholder="" onclick="getEmail()" style="margin-top: 20px;color: black;width:110px;height:30px;text-align: center;">
+                                <input type="text" name="ecode" id="ecode" placeholder="请输入验证码" style="width:250px;margin-top: 20px;">
                             </div>
                         </div>
                         <%--<div class="am-form-group">--%>
@@ -115,7 +117,7 @@
                         <%--</div>--%>
 
                         <div class="info-btn">
-                            <div style="width: 100px;margin-left:70px;"><input type="submit" name="submit" value="保存修改"></div>
+                            <div style="width: 100px;height:30px;margin-left:70px;margin-top:100px;"><input type="submit" name="submit" value="保存修改"></div>
                         </div>
 
                     </form>
@@ -173,5 +175,59 @@
     <%@ include file="aside.jsp" %>
 </div>
 
+
+<script>
+    $("#email12").blur(function () {
+        var email = $("#email12").val();
+        var flag = false;
+        var message = "";
+        var myreg = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+        if(email ==''){
+            message = "邮箱不能为空！";
+        }else if(!myreg.test(email)){
+            message = "请输入有效的邮箱地址！";
+        }else{
+            flag = true;
+        }
+        if(!flag){
+
+
+            $("#error").html(message);
+            $("#email12").focus();
+            //错误提示
+            //jQuery("#emailDiv").removeClass().addClass("ui-form-item has-error");
+            // jQuery("#emailP").html("");
+            //jQuery("#emailP").html("<i class=\"icon-error ui-margin-right10\">&nbsp;<\/i>"+message);
+            //jQuery("#email").focus();
+        }else{
+            //正确提示
+            //jQuery("#emailDiv").removeClass().addClass("ui-form-item has-success");
+            //jQuery("#emailP").html("");
+            //jQuery("#emailP").html("<i class=\"icon-success ui-margin-right10\">&nbsp;<\/i>该邮箱可用");
+        }
+    })
+    function getEmail() {
+
+        var newemail=$("input[id='email12']").val();
+        alert(newemail);
+        var datas={"newemail":newemail};
+        $.ajax({
+            type: 'POST',
+            url: '${pageContext.request.contextPath}/user/ajaxgetEmailCode.action',
+            dataType: 'json', //表示返回值的数据类型
+            //contentType: 'application/json;charset=UTF-8', //内容类型
+            traditional: true, //使json格式的字符串不会被转码
+            data: datas,
+            success: function (data) {
+                alert(data.message);
+                //alert("e");
+                $("#newemail").val("已发送");
+            }
+        });
+
+
+
+    }
+</script>
 </body>
 </html>

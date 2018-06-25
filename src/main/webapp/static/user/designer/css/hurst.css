@@ -1,4 +1,4 @@
-.mebBox{background:#fff url(../images/m_bg1.jpg) repeat center top;min-height:826px;}
+.mebBox{background:#fff url("../image/m_bg1.jpg") repeat center top;min-height:826px;}
 .meb-cont{padding-top:40px;}
 .meb-nav{width:194px;background:#fff;box-shadow:0 0 5px rgba(0,0,0,0.1);}
 .meb-nav li{height:56px;}
@@ -51,7 +51,7 @@
 .price{margin:15px 0;}
 .price .num1{width:365px;height:18px;line-height:18px;color:#454545; border-left:1px solid #ddd;padding-left:10px;margin-left:10px;display:inline-block;padding-top:15px ;padding-bottom:5px;}
 .pNum{padding-top:8px;width:133px;color:#2e71b8;}
-.price .num1 font{display:inline-block;float:right;background: url(../images/dia.jpg) no-repeat left center;padding-left:21px;}
+.price .num1 font{display:inline-block;float:right;background: url("../image/dia.jpg") no-repeat left center;padding-left:21px;}
 .cs_bt{height:32px;line-height:32px;padding-top:10px;}
 .cs_bt a{display:inline-block;float: left;width:90px;height:32px;line-height:32px;border:1px solid #ddd;text-align:center;margin-right:10px;border-radius:5px;}
 .cs_bt a:hover,.cs_ding a.right:hover{background:#f60;color:#fff;}

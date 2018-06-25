@@ -660,7 +660,7 @@ hr {
     }
     .person .person-detail {
         display: block;
-        color: #EEEEEE;
+        color: #000;
     }
     /*主题*/
     .col-main {

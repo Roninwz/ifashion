@@ -37,7 +37,7 @@
 		img.style.width = img.style.height = '';
 
 		$(img)
-			.addClass('zoomImg')
+			/*.addClass('zoomImg')*/
 			.css({
 				position: 'absolute',
 				top: 0,
@@ -48,7 +48,7 @@
 				border: 'none',
 				maxWidth: 'none'
 			})
-			.appendTo(target);
+			/*.appendTo(target);*/
 
 		return {
 			init: function() {

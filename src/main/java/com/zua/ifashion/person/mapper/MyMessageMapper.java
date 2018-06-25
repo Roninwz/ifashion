@@ -10,8 +10,22 @@ public interface MyMessageMapper {
 
     int deleteMyMessage(Integer mymessageId);
 
+    int updateMymessageSelective(MyMessage myMessage);
+
+
     MyMessage selectMyMessageById(Integer mymessageId);
 
-  List<MyMessage> selectMyMessagesByUserId(Integer userId);
+     List<MyMessage> selectMyMessagesByUserId(Integer userId);
+
+     List<MyMessage> selectMyUnreadMessagesByUserId(Integer userId);
+
+     List<MyMessage> selectMyReadMessagesByUserId(Integer userId);
+
+
+         //获取所有的未读消息
+         List<MyMessage> getAllUnreadMyMessages();
+
+        //获取所有的已读消息
+         List<MyMessage> getAllReadedMyMessages();
 
 }

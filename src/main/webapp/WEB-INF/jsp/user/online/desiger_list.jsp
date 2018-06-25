@@ -122,11 +122,11 @@
                 <c:forEach var="goods" items="${map[user]}">
                     <div class="listingworks">
                         <p class="fd_bg">
-                            <a href="${pageContext.request.contextPath }/user/online_buy.action?id=${goods.goodsId}" target="_blank">
+                            <a href="${pageContext.request.contextPath }/user/online_buy.action?id=${goods.goodsId}&userId=${user.userId}" target="_blank">
                                 <img  src="${goods.goodsImgList[0].goodsImgurl}"/>
                             </a>
                         </p>
-                        <p class="idx-more"><a href="${pageContext.request.contextPath }/user/online_buy.action?id=${goods.goodsId}" target="_blank">${goods.goodsName}</a></p>
+                        <p class="idx-more"><a href="${pageContext.request.contextPath }/user/online_buy.action?id=${goods.goodsId}&userId=${user.userId}" target="_blank">${goods.goodsName}</a></p>
                         <p class="price">￥${goods.goodsPrice}</p>
                     </div>
                 </c:forEach>
@@ -137,7 +137,7 @@
 
 
     <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
-    <div class="idx-page"><span class="page"><a disabled="disabled">&lt;&lt;上一页</a></span>&nbsp;&nbsp;<span class="page cur">1</span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=2'>2</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=3'>3</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=4'>4</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=5'>5</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=6'>6</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=7'>7</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=8'>8</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=9'>9</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=10'>10</a></span>&nbsp;&nbsp;<a href='/Designer/Designerlist?orderType=1&page=11'>...</a>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=158'>158</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=2'>下一页&gt;&gt;</a></span></div>
+    <%--<div class="idx-page"><span class="page"><a disabled="disabled">&lt;&lt;上一页</a></span>&nbsp;&nbsp;<span class="page cur">1</span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=2'>2</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=3'>3</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=4'>4</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=5'>5</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=6'>6</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=7'>7</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=8'>8</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=9'>9</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=10'>10</a></span>&nbsp;&nbsp;<a href='/Designer/Designerlist?orderType=1&page=11'>...</a>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=158'>158</a></span>&nbsp;&nbsp;<span class="page"><a href='/Designer/Designerlist?orderType=1&page=2'>下一页&gt;&gt;</a></span></div>--%>
     <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
 </div>
 </div>
@@ -171,7 +171,7 @@
     });
 
 </script>
-<div class="footer" style="margin-top:50px; height:440px" >
+<%--<div class="footer" style="margin-top:50px; height:440px" >
     <div class="footer-wrap">
         <div class="footer-info">
             <div class="footer-address col-md-6">
@@ -211,7 +211,8 @@
             <p>ICP 号: 京 B2-20170261</p>
         </div>
     </div>
-</div>
+</div>--%>
+<%@ include file="../footer.jsp" %>
 
 </body>
 

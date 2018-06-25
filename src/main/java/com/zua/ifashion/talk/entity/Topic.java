@@ -16,11 +16,11 @@ public class Topic {
     private Integer lookNum;
 
     private String topicContent;
-
     @DateTimeFormat(pattern="yyyy-MM-dd")
+
     private Date topicStart;
-
     @DateTimeFormat(pattern="yyyy-MM-dd")
+
     private Date topicEnd;
 
     private String topicTitle;

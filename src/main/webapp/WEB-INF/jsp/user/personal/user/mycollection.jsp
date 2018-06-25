@@ -95,21 +95,21 @@
                                     <h6 class="s-msg-bar"><span class="s-name"></span></h6>
                                     <div class="s-msg-content i-msg-downup-wrap">
                                         <div class="i-msg-downup-con">
-                                            <a class="i-markRead" target="_blank" href="blog.html">
+                                            <a class="i-markRead" target="_blank" href="user/clothes/matchInfo.action?articleId=${myCollectionVosa.articleId}">
                                                 <%--<img src="static/user/article/news/image/2c138362d83f7937da0b09fe5212684a.jpg" style="width: 100px;height:100px;">--%>
                                                 <img src="${myCollectionVosa.imgurl}" style="width: 100px;height:100px;">
                                                 <p class="s-main-content">
                                                     ${myCollectionVosa.articleTitle}
                                                 </p>
                                                 <p class="s-row s-main-content">
-                                                    <a href="blog.html">
+                                                    <a href="user/clothes/matchInfo.action?articleId=${myCollectionVosa.articleId}">
                                                         阅读全文 <i class="am-icon-angle-right"></i>
                                                     </a>
                                                 </p>
                                             </a>
                                         </div>
                                     </div>
-                                    <a class="i-btn-forkout" href="user/article?articleId=${myCollectionVosa.articleId}"></a>
+                                    <a class="i-btn-forkout" href="user/clothes/matchInfo.action?articleId=${myCollectionVosa.articleId}"></a>
                                 </div>
                             </c:forEach>
 
@@ -121,21 +121,21 @@
                                 <h6 class="s-msg-bar"><span class="s-name"></span></h6>
                                 <div class="s-msg-content i-msg-downup-wrap">
                                     <div class="i-msg-downup-con">
-                                        <a class="i-markRead" target="_blank" href="blog.html">
+                                        <a class="i-markRead" target="_blank" href="user/topicInfo.action?topicId=${myCollectionVost.topicId}">
                                                 <%--<img src="static/user/article/news/image/2c138362d83f7937da0b09fe5212684a.jpg" style="width: 100px;height:100px;">--%>
                                             <img src="${myCollectionVost.imgurl}" style="width: 100px;height:100px;">
                                             <p class="s-main-content">
                                                     ${myCollectionVost.articleTitle}
                                             </p>
                                             <p class="s-row s-main-content">
-                                                <a href="blog.html">
+                                                <a href="user/topicInfo.action?topicId=${myCollectionVost.topicId}">
                                                     阅读全文 <i class="am-icon-angle-right"></i>
                                                 </a>
                                             </p>
                                         </a>
                                     </div>
                                 </div>
-                                <a class="i-btn-forkout" href="user/topic.action?topicId=${myCollectionVost.articleId}"></a>
+                                <a class="i-btn-forkout" href="user/topicInfo.action?topicId=${myCollectionVost.topicId}"></a>
                             </div>
                             </c:forEach>
                         </div>

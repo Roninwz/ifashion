@@ -8,6 +8,48 @@
     <result column="topicId" jdbcType="INTEGER" property="topicId" />
   </resultMap>
 
+  <resultMap id="UserCollectTopicVo" type="com.zua.ifashion.person.vo.UserCollectTopicVo">
+    <id column="mycollectId" jdbcType="INTEGER" property="mycollectId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <!--<result column="articleId" jdbcType="INTEGER" property="articleId" />-->
+    <result column="topicId" jdbcType="INTEGER" property="topicId" />
+    <association property="topicUser" javaType="com.zua.ifashion.talk.vo.TopicUser">
+      <id column="topicId" property="topicId"/>
+      <result column="userId" property="userId"/>
+      <result column="topicTitle" property="topicTitle"/>
+      <result column="topicImgurl" property="topicImgurl"/>
+      <result column="topicContent" property="topicContent"/>
+      <result column="topicPeople" property="topicPeople"/>
+      <result column="lookNum" property="lookNum"/>
+
+      <association property="user" javaType="com.zua.ifashion.person.entity.User">
+        <id column="userId" property="userId"/>
+        <result column="userImgurl" property="userImgurl"/>
+      </association>
+    </association>
+  </resultMap>
+
+  <resultMap id="UserCollectArticleVo" type="com.zua.ifashion.person.vo.UserCollectArticleVo">
+    <id column="mycollectId" jdbcType="INTEGER" property="mycollectId" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="articleId" jdbcType="INTEGER" property="articleId" />
+    <!--<result column="topicId" jdbcType="INTEGER" property="topicId" />-->
+    <association property="articleUserVo" javaType="com.zua.ifashion.article.vo.ArticleUserVo">
+      <id column="articleId" property="articleId"/>
+      <result column="userId" property="userId"/>
+      <result column="articleTitle" property="articleTitle"/>
+      <result column="imgurl" property="imgurl"/>
+      <result column="imgmark" property="imgmark"/>
+      <result column="zanNum" property="zanNum"/>
+      <result column="collectNum" property="collectNum"/>
+
+      <association property="user" javaType="com.zua.ifashion.person.entity.User">
+        <id column="userId" property="userId"/>
+        <result column="userImgurl" property="userImgurl"/>
+      </association>
+    </association>
+  </resultMap>
+
 
   <insert id="addMyCollectionSelective" parameterType="com.zua.ifashion.person.entity.MyCollection">
     insert into mycollect
@@ -53,4 +95,27 @@
     select *  from mycollect where userId =#{userId}
   </select>
 
+  <select id="selectCollectByUAndA" parameterType="int" resultType="com.zua.ifashion.person.entity.MyCollection">
+    SELECT * FROM mycollect WHERE userId = #{0} AND articleId = #{1}
+  </select>
+
+  <select id="selectTopicCollectByUserId" parameterType="int" resultMap="UserCollectTopicVo">
+    SELECT c.mycollectId,c.userId cuserId,c.topicId,t.userId puserId,t.topicTitle,t.topicImgurl,t.topicContent,
+          t.topicPeople,t.lookNum,u.userImgurl FROM mycollect c,topic t,user u WHERE
+          c.userId = #{userId} AND c.topicId = t.topicId AND t.userId = u.userId
+  </select>
+
+  <select id="selectArticleCollectByUserId" parameterType="int" resultMap="UserCollectArticleVo">
+    SELECT c.mycollectId,c.userId cuserId,c.articleId,a.userId puserId,a.articleTitle,a.imgurl,a.imgmark,
+          a.zanNum,a.collectNum,u.userImgurl FROM mycollect c,article a,user u WHERE
+          c.userId = #{userId} AND c.articleId = a.articleId AND a.userId = u.userId
+  </select>
+
+
+
+
+
+  <select id="selectCollectByUAndT" parameterType="int" resultType="com.zua.ifashion.person.entity.MyCollection">
+  SELECT * FROM mycollect WHERE userId = #{0} AND topicId = #{1}
+  </select>
 </mapper>

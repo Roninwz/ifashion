@@ -22,6 +22,11 @@ public class MyMessageServiceImpl implements MyMessageService{
     }
 
     @Override
+    public int updateMymessageSelective(MyMessage myMessage) {
+        return myMessageMapper.updateMymessageSelective(myMessage);
+    }
+
+    @Override
     public MyMessage selectMyMessageById(Integer mymessageId) {
         return myMessageMapper.selectMyMessageById(mymessageId);
     }
@@ -29,5 +34,25 @@ public class MyMessageServiceImpl implements MyMessageService{
     @Override
     public List<MyMessage> selectMyMessagesByUserId(Integer userId) {
         return myMessageMapper.selectMyMessagesByUserId(userId);
+    }
+
+    @Override
+    public List<MyMessage> selectMyUnreadMessagesByUserId(Integer userId) {
+        return myMessageMapper.selectMyUnreadMessagesByUserId(userId);
+    }
+
+    @Override
+    public List<MyMessage> selectMyReadMessagesByUserId(Integer userId) {
+        return myMessageMapper.selectMyReadMessagesByUserId(userId);
+    }
+
+    @Override
+    public List<MyMessage> getAllUnreadMyMessages() {
+        return myMessageMapper.getAllUnreadMyMessages();
+    }
+
+    @Override
+    public List<MyMessage> getAllReadedMyMessages() {
+        return myMessageMapper.getAllReadedMyMessages();
     }
 }

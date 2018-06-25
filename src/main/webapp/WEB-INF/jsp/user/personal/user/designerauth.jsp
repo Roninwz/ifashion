@@ -133,7 +133,7 @@
                         <li id="st3">
                             <div class="step_inner fr">
                                 <span class="icon_step">3</span>
-                                <h4>完善开发者资料</h4>
+                                <h4>完善设计师资料</h4>
                             </div>
                         </li>
                     </ol>
@@ -146,14 +146,14 @@
                             <div class="frm_control_group">
                                 <label class="frm_label">用户名</label>
                                 <div class="frm_controls">
-                                    <input type="username" name="" class="frm_input passwd" id="username"/>
+                                    <input type="username" name="" class="frm_input passwd" id="username" value="${user.username}"/>
                                     <p class="frm_tips">字母、数字或者英文符号，最短6位，区分大小写</p>
                                 </div>
                             </div>
                             <div class="frm_control_group">
                                 <label class="frm_label">邮箱</label>
                                 <div class="frm_controls">
-                                    <input type="email" name="" class="frm_input email" maxlength="32" id="email" />
+                                    <input type="email" name="" class="frm_input email" maxlength="32" id="email" value="${user.email}"/>
                                     <p class="frm_tips">作为登录帐号，请填写未被微信开放平台注册、未被微信公众平台注册、未被微信私人帐号绑定的邮箱</p>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
 
 
                                 <div class="form-group">
-                                    <label  class="col-sm-3 control-label">上传头像</label>
+                                    <label  class="col-sm-3 control-label">上传设计师证书</label>
                                     <%--<div class="col-sm-8">--%>
                                         <%--<img id="image" class="cover-radius"  src="static/admin/plugin/fileinput/images/noimage.png"--%>
                                              <%--width="100%" style="cursor: pointer;" />--%>
@@ -194,7 +194,7 @@
 
                                         <div class="con4">
                                             <canvas id="cvs" width="200" height="200"></canvas>
-                                            <span class="btn upload">上传头像<input type="file" name="file" class="upload_pic" id="upload" /></span>
+                                            <span class="btn upload">上传设计师证书<input type="file" name="file" class="upload_pic" id="upload" /></span>
                                         </div>
 
                                         <%--<input type="file" name="file">--%>
@@ -330,7 +330,7 @@
                             <div class="frm_control_group">
                                 <label class="frm_label">手机号</label>
                                 <div class="frm_controls">
-                                    <input type="text" name="tel" class="frm_input phone" id="tel"/>
+                                    <input type="text" name="telephone" class="frm_input phone" id="telephone"/>
                                     <p class="frm_tips">请填写常用手机号</p>
                                 </div>
                             </div>
@@ -362,13 +362,13 @@
 
     </div>
     <%--<%@ include file="./aside.jsp" %>--%>
-    <aside class="menu" style="margin-left: 100px;margin-right: -100px;margin-top: 10px;">
+    <aside class="menu">
         <ul>
             <li class="person">
                 <a href="user/personal.action" class="per">个人中心</a>
             </li>
             <li class="person">
-                <a href="user/personal.action" class="person-detail">个人资料</a>
+                <a href="user/information.action" class="person-detail">个人资料</a>
                 <ul>
                     <li> <a href="user/information.action">个人信息</a></li>
                     <li> <a href="user/safety.action">安全设置</a></li>
@@ -377,30 +377,40 @@
                 </ul>
             </li>
             <li class="person">
-                <a href="#" class="person-detail">我的交易</a>
+                <a href="user/orders.action" class="person-detail">我的交易</a>
                 <ul>
                     <li><a href="user/orders.action">订单管理</a></li>
-                    <li> <a href="user/information.action">退款售后</a></li>
+                    <%--<li> <a href="user/information.action">退款售后</a></li>--%>
                 </ul>
             </li>
 
             <li class="person">
-                <a href="#" class="person-detail">认证中心</a>
+                <a href="user/authstate.action" class="person-detail">认证中心</a>
                 <ul>
                     <li> <a href="user/designerauth.action">设计师认证</a></li>
                     <li> <a href="user/authstate.action">认证状态</a></li>
                 </ul>
             </li>
             <li class="person">
-                <a href="#" class="person-detail">我的小窝</a>
+                <a href="user/mymessage.action" class="person-detail">我的小窝</a>
                 <ul>
-                    <li> <a href="mypublish.html">我的发表</a></li>
-                    <li> <a href="mycollection.html">我的收藏</a></li>
-                    <li> <a href="myattention.html">我的关注</a></li>
-                    <li> <a href="mymessage.html">我的消息</a></li>
+                    <li> <a href="user/mypublish.action">我的发表</a></li>
+                    <li> <a href="user/mycollection.action">我的收藏</a></li>
+                    <li> <a href="user/myattention.action">我的关注</a></li>
+                    <li> <a href="user/mymessage.action">我的消息<span>
+                </span></a></li>
+
                 </ul>
             </li>
+            <li class="person">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1597895998&site=qq&menu=yes" class="person-detail">在线帮助</a>
+                <ul>
+                    <%--<li> <a href="user/mypublish.action">意见反馈</a></li>--%>
+                    <li> <a href="http://wpa.qq.com/msgrd?v=3&uin=1597895998&site=qq&menu=yes">QQ客服</a></li>
+                    </span></a></li>
 
+                </ul>
+            </li>
         </ul>
     </aside>
 </div>
@@ -486,7 +496,7 @@
                             //     $("input[id='email']").focus();
                             // },3000);
                         }else {
-                            alert('成功');
+                            //alert('成功');
                             showTips('提交成功~ 即将进入下一步', 2500, 1);
                             $('#step1').fadeOut(300);
                             $('#step2').fadeIn(500);
@@ -515,7 +525,7 @@
 
 
                 function savePic(){
-                    alert("进来了");
+                   // alert("进来了");
                     var formData = new FormData($( "#uploadPic" )[0]);
                     var ajaxUrl = "${pageContext.request.contextPath}/user/saveHeaderPic.action";
                     //alert(ajaxUrl);
@@ -530,8 +540,8 @@
                         contentType: false,
                         processData: false,
                         success: function (data) {
-                            alert("成功");
-                            alert(data);
+                           // alert("成功");
+                            //alert(data);
                         },
                         error: function(data) {
                             alert("error:"+data.responseText);
@@ -564,9 +574,9 @@
 
             //finishedBtn
             $('#getauthcode').click(function () {
-                var tel=$('#tel').val();
-                var datas={"tel":tel};
-                if(tel==''){
+                var telephone=$('#telephone').val();
+                var datas={"tel":telephone};
+                if(telephone==''){
                     showTips('请填写您的手机号~');
                 }else {
                     $.ajax({
@@ -577,7 +587,7 @@
                         traditional: true, //使json格式的字符串不会被转码
                         data: JSON.stringify(datas),
                         success: function (data) {
-                            alert(data);
+                            //alert(data);
                             // alert(data.username);
                             // if(data.username!=null){
                             //    // $('#tel').parent().siblings('.mes').find('.error').show().find('span').eq(0).removeClass().addClass('error_icon').next('span').html('手机号码已存在');

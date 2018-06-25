@@ -71,12 +71,12 @@
                     <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">个人资料</strong> / <small>Personal&nbsp;information</small></div>
                 </div>
                 <%--<hr style="width:100%;"/>--%>
-
+                <form class="am-form am-form-horizontal" action="user/updateuserinfo.action" method="post">
                 <!--头像 -->
                 <div class="user-infoPic">
 
                     <div class="filePic">
-                        <input type="file" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*">
+                        <input type="file" name="userImgurl" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*">
 
                         <img class="am-circle am-img-thumbnail" src="${user.userImgurl}" alt="" />
                     </div>
@@ -101,7 +101,7 @@
 
                 <!--个人信息 -->
                 <div class="info-main">
-                    <form class="am-form am-form-horizontal" action="user/updateuserinfo.action" method="post">
+
 
                         <div class="am-form-group">
                             <label for="user-name2" class="am-form-label">用户名</label>

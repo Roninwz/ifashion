@@ -29,7 +29,10 @@ public interface GoodsAddressService {
 
     //删除地址
     int deleteAddress(Integer addressId);
+
     //更新收货不为空字段
     int updateAddressSelective(Address address);
+
+
 
 }

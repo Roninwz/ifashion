@@ -12,7 +12,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../header.jsp" %>
+
 
 
 <%
@@ -58,7 +58,7 @@
 
 </head>
 <body>
-
+<%@ include file="../../header.jsp" %>
 <div class="container clearfix">
     <script type="text/javascript">
         _TrackObj.id=14700;
@@ -291,7 +291,7 @@
                 }
                 $.ajax({
                     type: 'POST',
-                    url: '${pageContext.request.contextPath}/user/clothes/ajaxAddReview.action',
+                    url: '${pageContext.request.contextPath}/user/community/ajaxAddReview.action',
                     dataType: 'json', //表示返回值的数据类型
                     contentType: 'application/json;charset=UTF-8', //内容类型
                     traditional: true, //使json格式的字符串不会被转码

@@ -31,7 +31,7 @@ public class UserLoginInterceptor implements HandlerInterceptor {
 
         httpServletRequest.setAttribute("msg", "您还没有登录，请先登录！");
         System.out.println("用户您好，您还没有登录，请先登录！");
-        httpServletRequest.getRequestDispatcher("/WEB-INF/jsp/user/index1.jsp").forward(httpServletRequest, httpServletResponse);
+        httpServletRequest.getRequestDispatcher("/WEB-INF/jsp/user/index.jsp").forward(httpServletRequest, httpServletResponse);
         return false;
     }
 
