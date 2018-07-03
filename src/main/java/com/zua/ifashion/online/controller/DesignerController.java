@@ -7,6 +7,8 @@ import com.zua.ifashion.online.service.GoodsReviewService;
 import com.zua.ifashion.online.service.GoodsService;
 import com.zua.ifashion.online.vo.GoodsAndImgDesignerVO;
 import com.zua.ifashion.person.entity.User;
+import com.zua.ifashion.person.entity.UserAttention;
+import com.zua.ifashion.person.service.UserAttentionService;
 import com.zua.ifashion.person.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +34,9 @@ public class DesignerController {
     @Autowired
     private GoodsReviewService goodsReviewService;
 
+    @Autowired
+    private UserAttentionService userAttentionService;
+
     @RequestMapping("/designerList")
 //    得到所有的设计师
     public String getAllDesigner(HttpServletRequest request, HttpServletResponse response){
@@ -46,11 +52,22 @@ public class DesignerController {
     }
 
     @RequestMapping("/online_designerMainPage")
-    public String getDesignerMainPage(HttpServletRequest request,HttpServletResponse response){
+    public String getDesignerMainPage(HttpServletRequest request, HttpServletResponse response, HttpSession session){
+        int mark=-1;
         String id=request.getParameter("id");
-        Integer userId=Integer.parseInt(id);
-        User user=userService.selectUserByUserId(userId);
-        List<GoodsAndImgDesignerVO> goodsList=goodsService.getGoodsByUserId(userId);
+        Integer desId=Integer.parseInt(id);
+        User user=userService.selectUserByUserId(desId);
+        List<GoodsAndImgDesignerVO> goodsList=goodsService.getGoodsByUserId(desId);
+        Integer userId= (Integer) session.getAttribute("userId");
+        if(userId!=null){
+            UserAttention userAttention=userAttentionService.selectIt(userId,desId);
+            if(userAttention==null){
+                mark=0;
+            }else{
+                mark=1;
+            }
+        }
+        request.setAttribute("mark",mark);
         request.setAttribute("user",user);
         request.setAttribute("goodsList",goodsList);
         return "user/online/desiger_mainpage";
@@ -61,7 +78,8 @@ public class DesignerController {
     public String getBuyPage(HttpServletRequest request,HttpServletResponse response){
         String id=request.getParameter("id");  //商品id
         String designerId=request.getParameter("userId"); //设计师的id
-
+        System.out.println(id+"des");
+       /* System.out.println("2222222222222222222222222222222222");*/
         Integer goodsId=Integer.parseInt(id);
         Integer userId=Integer.parseInt(designerId);
         List<GoodsAndImgDesignerVO> goodsAndImgDesignerVOList=goodsService.getGoodsByUserId(userId);
@@ -76,6 +94,7 @@ public class DesignerController {
         request.setAttribute("user",users);
         request.setAttribute("goodsReviewList",goodsReviewList);
         request.setAttribute("goodsAndImgDesignerVO",goodsAndImgDesignerVO);
+        request.setAttribute("designerId",userId);  //设计师的id
         request.setAttribute("goodsAndImgDesignerVOList",goodsAndImgDesignerVOList);
         return "/user/online/buygoods";
     }

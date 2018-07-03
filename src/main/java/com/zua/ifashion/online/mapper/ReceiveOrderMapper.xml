@@ -16,69 +16,74 @@
   <!--public abstract int addReceiveOrderSelective(ReceiveOrder receiveOrder);-->
 
   <insert id="addReceiveOrder" parameterType="ReceiveOrder">
-     insert into receive_order(receiveorderId,userId,designerId,ordersId,startDate,endDate,orderState,trueOrder,virtulOrder)
-      values(#{receiveorderId},#{userId},#{designerId},#{ordersId},#{startDate},#{endDate},#{orderState},#{trueOrder},#{virtulOrder})
+     insert into receive_order(receiveorderId,userId,designerId,ordersId,startDate,endDate,orderState,trueOrder,virtueOrder)
+      values(#{receiveorderId},#{userId},#{designerId},#{ordersId},#{startDate},#{endDate},#{orderState},#{trueOrder},#{virtueOrder})
   </insert>
 <insert id="addReceiveOrderSelective" parameterType="ReceiveOrder">
   insert into receive_order
+  <selectKey resultType="INTEGER" order="AFTER" keyProperty="receiveorderId">
+    SELECT LAST_INSERT_ID()
+  </selectKey>
   <trim prefix="(" suffix=")" suffixOverrides=",">
     <if test="receiveorderId!=null">
-      receiveorderId
+      receiveorderId,
     </if>
     <if test="userId!=null">
-      userId
+      userId,
     </if>
     <if test="designerId!=null">
-      designerId
+      designerId,
     </if>
     <if test="ordersId!=null">
-      ordersId
+      ordersId,
     </if>
     <if test="startDate!=null">
-      startDate
+      startDate,
     </if>
     <if test="endDate!=null">
-      endDate
+      endDate,
     </if>
     <if test="orderState!=null">
-      orderState
+      orderState,
     </if>
     <if test="trueOrder!=null">
-      trueOrder
+      trueOrder,
     </if>
-    <if test="virtulOrder!=null">
-      virtulOrder
+    <if test="virtueOrder!=null">
+      virtueOrder
     </if>
+
   </trim>
 
-  <trim prefix="(" suffix=")" suffixOverrides=",">
+  <trim prefix="values(" suffix=")" suffixOverrides=",">
     <if test="receiveorderId!=null">
-      receiveorderId
+      #{receiveorderId},
     </if>
     <if test="userId!=null">
-      userId
+      #{userId},
     </if>
     <if test="designerId!=null">
-      #{designerId}
+      #{designerId},
     </if>
     <if test="ordersId!=null">
-      #{ordersId}
+      #{ordersId},
     </if>
     <if test="startDate!=null">
-      #{startDate}
+      #{startDate},
     </if>
     <if test="endDate!=null">
-      #{endDate}
+      #{endDate},
     </if>
     <if test="orderState!=null">
-      #{orderState}
+      #{orderState},
     </if>
     <if test="trueOrder!=null">
-      #{trueOrder}
+      #{trueOrder},
     </if>
-    <if test="virtulOrder!=null">
-      #{virtulOrder}
+    <if test="virtueOrder!=null">
+      #{virtueOrder}
     </if>
+
   </trim>
 </insert>
 
@@ -92,6 +97,38 @@
   <select id="selectReceiveByOrdersId" parameterType="int" resultType="com.zua.ifashion.online.entity.ReceiveOrder">
     select * from receive_order where ordersId=#{ordersId}
   </select>
+  <!--public abstract int updateReceiveOrder(ReceiveOrder receiveOrder);-->
+  <update id="updateReceiveOrder" parameterType="ReceiveOrder">
+    UPDATE receive_order set
 
+    <if test="receiveorderId!=null">
+      receiveorderId=#{receiveorderId},
+    </if>
+    <if test="userId!=null">
+      userId=#{userId},
+    </if>
+    <if test="designerId!=null">
+      designerId=#{designerId},
+    </if>
+    <if test="ordersId!=null">
+      ordersId=#{ordersId},
+    </if>
+    <if test="startDate!=null">
+      startDate=#{startDate},
+    </if>
+    <if test="endDate!=null">
+      endDate=#{endDate},
+    </if>
+    <if test="orderState!=null">
+      orderState=#{orderState},
+    </if>
+    <if test="trueOrder!=null">
+      trueOrder=#{trueOrder},
+    </if>
+    <if test="virtueOrder!=null">
+      virtueOrder=#{virtueOrder}
+    </if>
+    where ordersId=#{ordersId}
+  </update>
 
 </mapper>

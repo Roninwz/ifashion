@@ -10,4 +10,8 @@ public interface ReceiveOrderService {
 
     public List<GoodsImg> selectGoodsImgBygoodId(Integer goodsId);
     public ReceiveOrder selectReceiveByOrdersId(Integer ordersId);
+
+    public abstract int updateReceiveOrder(ReceiveOrder receiveOrder);
+
+    public abstract int addReceiveOrder(ReceiveOrder receiveOrder);
 }

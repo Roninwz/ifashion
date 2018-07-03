@@ -66,7 +66,7 @@
                 url:'${pageContext.request.contextPath }/user/waitAnswer.action',
                 dataType:'json',
                 success:function (data) {
-                    alert(data);
+                  //  alert(data);
                     var wait1="";
                     for(var i=0;i<data.length;i++){
                         wait1+= "<div id='issue-list' class='ques-answer no-answer'>"
@@ -89,7 +89,7 @@
                             + "</div>" + "</div>";
 
                     }
-                    alert(wait1);
+                    //alert(wait1);
                     $("#issue-list").html(wait1);
                 }
             });

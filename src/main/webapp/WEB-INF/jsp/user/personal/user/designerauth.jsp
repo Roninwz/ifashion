@@ -270,7 +270,7 @@
                                             }
                                         };
                                         function savePic(){
-                                            alert("进来了");
+                                           // alert("进来了");
                                             var formData = new FormData($( "#uploadPic" )[0]);
                                             var ajaxUrl = "${pageContext.request.contextPath}/user/saveHeaderPic.action";
                                             //alert(ajaxUrl);
@@ -285,11 +285,11 @@
                                                 contentType: false,
                                                 processData: false,
                                                 success: function (data) {
-                                                    alert("成功");
-                                                    alert(data);
+                                                    //alert("成功");
+                                                   // alert(data);
                                                 },
                                                 error: function(data) {
-                                                    alert("error:"+data.responseText);
+                                                   // alert("error:"+data.responseText);
 
                                                 }
                                             });

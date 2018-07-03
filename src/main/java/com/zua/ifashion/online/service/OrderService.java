@@ -20,4 +20,7 @@ public interface OrderService {
 
     public abstract Orders getOrdersByOrderNumber(String orderNumber);
 
+    public Orders selectOrdersByOrdersId(Integer ordersId);
+    public Orders selectOrderByOrderNumber(String orderNumber);
+
 }

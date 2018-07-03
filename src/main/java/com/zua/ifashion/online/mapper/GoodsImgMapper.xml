@@ -48,7 +48,7 @@
   <!--//删除商品的照片-->
   <!--public abstract int deleteGoodsImg(Integer goodImgId);-->
   <delete id="deleteGoodsImg" parameterType="int">
-    delete from goods_img where goodsimgId=#{param}
+    delete * from goods_img where goodsimgId=#{param}
   </delete>
 
   <!--//更新商品的照片-->

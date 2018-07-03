@@ -51,6 +51,14 @@ public class OrderServiceImpl implements OrderService {
     public Orders getOrdersByOrderNumber(String orderNumber) {
         return ordersMapper.selectOrdersByOrderNumber(orderNumber);
     }
+    @Override
+    public Orders selectOrdersByOrdersId(Integer ordersId) {
+        return ordersMapper.selectOrdersByOrdersId(ordersId);
+    }
 
+    @Override
+    public Orders selectOrderByOrderNumber(String orderNumber) {
+        return ordersMapper.selectOrderByOrderNumber(orderNumber);
+    }
 
 }

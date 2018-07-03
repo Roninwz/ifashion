@@ -188,7 +188,7 @@
 
   <!--//根据问题id查询标签-->
   <!--int selectTagIdByQuestionId(Integer questionId);-->
-  <select id="selectTagIdByQuestionId" parameterType="int" resultType="int">
+  <select id="selectTagIdByQuestionId"  resultType="Integer">
     select tagId from question where questionId=#{questionId}
   </select>
 

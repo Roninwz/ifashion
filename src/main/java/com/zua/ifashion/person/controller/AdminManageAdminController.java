@@ -413,4 +413,24 @@ public class AdminManageAdminController {
         System.out.println("n::::"+n);
         return "redirect:/admin/modulemanage.action";
     }
+
+
+    @RequestMapping(value = "/ajaxdeletemodule", method = RequestMethod.POST)
+    @ResponseBody
+    public Module ajaxDeleteRole(HttpSession session, @RequestBody Module module, Map<String,Object> map) {
+        String msg="";
+
+
+        int n=moduleService.deleteModule(module.getModuleId());
+       // roleModuleService.deleteRoleModule();
+        if(n>0){
+            msg="删除成功";
+        }else {
+            msg="删除失败";
+        }
+        System.out.println(msg);
+        session.getAttribute("adminModuleVos");
+
+        return module;
+    }
 }

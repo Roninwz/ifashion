@@ -242,7 +242,7 @@
     //审核
     function article_shenhe(obj, id) {
         var authId=id;
-        alert(authId);
+        //alert(authId);
         var datas={"authId":authId};
         layer.confirm('审核设计师？', {
                 btn: ['通过', '不通过', '取消'],
@@ -259,7 +259,7 @@
                     traditional: true, //使json格式的字符串不会被转码
                     data: datas,
                     success: function(data) {
-                        alert(data);
+                        //alert(data);
 
                         //var str= '<a class="c-primary" onClick="article_shangxian(this,'+data.articleId+')" href="javascript:;" title="申请上线"><i class="Hui-iconfont">&#xe603;上线</i></a>';
                        // $(obj).parents("tr").find(".td-manage").prepend(str);
@@ -272,7 +272,7 @@
                         });
                     },
                     error: function(data) {
-                        alert("data");
+                       // alert("data");
                         //alert('1');
                         console.log(data.msg);
                     },
@@ -288,7 +288,7 @@
                     traditional: true, //使json格式的字符串不会被转码
                     data: datas,
                     success: function(data) {
-                        alert(data);
+                       // alert(data);
                         var str= '<a class="c-primary" onClick="article_shenhe(this,'+data.authId+')" href="javascript:;" title="审核"><i class="Hui-iconfont">&#xe634;审核</i></a>';
                         $(obj).parents("tr").find(".td-manage").prepend(str);
                         //$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_shenhe(this,data.articleId)" href="javascript:;" title="审核"><i class="Hui-iconfont">&#xe634;审核</i></a>');
@@ -351,7 +351,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: JSON.stringify(datas),
                 success: function(data) {
-                    alert(data);
+                   // alert(data);
                     $(obj).parents("tr").remove();
                     layer.msg('已删除!', {
                         icon: 1,
@@ -359,8 +359,8 @@
                     });
                 },
                 error: function(data) {
-                    alert("data");
-                    alert('1');
+                    //alert("data");
+                   // alert('1');
                     console.log(data.msg);
                 },
             });

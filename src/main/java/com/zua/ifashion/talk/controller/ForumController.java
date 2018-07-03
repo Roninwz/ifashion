@@ -3,11 +3,10 @@ package com.zua.ifashion.talk.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zua.ifashion.person.entity.MyCollection;
+import com.zua.ifashion.person.entity.Rank;
 import com.zua.ifashion.person.entity.User;
-import com.zua.ifashion.person.service.MyCollectionService;
-import com.zua.ifashion.person.service.RankService;
-import com.zua.ifashion.person.service.TagService;
-import com.zua.ifashion.person.service.UserService;
+import com.zua.ifashion.person.entity.UserAttention;
+import com.zua.ifashion.person.service.*;
 import com.zua.ifashion.talk.entity.*;
 import com.zua.ifashion.talk.service.*;
 import com.zua.ifashion.talk.vo.*;
@@ -50,6 +49,8 @@ public class ForumController {
     private TagService tagService;
     @Autowired
     private MyCollectionService myCollectionService;
+    @Autowired
+    private UserAttentionService userAttentionService;
 
     TopicUser topicUser=new TopicUser();
 
@@ -127,10 +128,31 @@ public class ForumController {
 
 
     @RequestMapping(value = "/forumInfo",method = {RequestMethod.GET,RequestMethod.POST})
-    public String information(Integer discussId, Map<String, Object> map,@RequestParam(required = false,defaultValue = "1",value = "curPage")Integer curPage){
+    public String information(HttpSession session,Integer discussId, Map<String, Object> map,@RequestParam(required = false,defaultValue = "1",value = "curPage")Integer curPage){
+
+
         //左侧讨论详情
         System.out.println(discussId);
         map.put("discussId",discussId);
+        //用户讨论详情
+        Discuss discuss=discussService.selectDiscussByDiscussId(discussId);
+        map.put("discuss",discuss);
+        Topic topic=topicService.selectTopicByTopicId(discuss.getTopicId());
+        map.put("topic",topic);
+        //用户
+        User user=userService.selectUserByUserId(discuss.getUserId());
+        System.out.println("头像"+user.getUserImgurl());
+        System.out.println("姓名"+user.getUsername());
+        map.put("u",user);
+        Rank rank=rankService.selectRankByRankId(user.getRankId());
+        map.put("rank",rank);
+
+        User user1= (User) session.getAttribute("user");
+        if (user1!=null){
+            UserAttention userAttention = userAttentionService.selectIt(user1.getUserId(),user.getUserId());
+            map.put("userAttention",userAttention);
+        }
+
         System.out.println(discussReplyService.selectDiscussReplyUByDiscussId(discussId));
         //左侧评论
         PageHelper.startPage(curPage,3);
@@ -149,15 +171,20 @@ public class ForumController {
         }
         map.put("manydiscuss",manydiscuss);
         //右侧精华帖
-
-
         //左侧浏览量
-        int lookNum=discussService.selectLookNumByDiscussId(discussId);
+        int lookNum=0;
+        if (discussService.selectLookNumByDiscussId(discussId)==null){
+             lookNum=0;
+        }else {
+             lookNum=discussService.selectLookNumByDiscussId(discussId);
+        }
+
         map.put("lookNum",lookNum);
         //左侧回复数
         int drcount=discussReplyService.selectDiscussReplyCountByDiscussId(discussId);
+        map.put("drcount",drcount);
 
-        return "user/talk/information";
+        return "user/talk/information1";
     }
 
     @RequestMapping(value = "/topicInfo",method = {RequestMethod.GET,RequestMethod.POST})
@@ -199,6 +226,7 @@ public class ForumController {
         map.put("discussUsers",discussUsers);
         Topic topic=topicService.selectTopicByTopicId(topicId);
         map.put("topic",topic);
+        System.out.println("话题id"+topic.getTopicId());
         return "user/talk/topicInfo";
     }
     @RequestMapping(value = "/seditor1",method = RequestMethod.GET)
@@ -347,13 +375,19 @@ public class ForumController {
         map.put("replyCount",replyCount);
 
         //左侧标签
-        Integer tagId=questionService.selectTagIdByQuestionId(questionId);
-        String tagName=tagService.selectTagByTagId(tagId).getTagName();
-        map.put("tagName",tagName);
+        if(questionService.selectTagIdByQuestionId(questionId)==null){
+            map.put("tagName",null);
+        }else{
+            Integer tagId=questionService.selectTagIdByQuestionId(questionId);
+            String tagName=tagService.selectTagByTagId(tagId).getTagName();
+            map.put("tagName",tagName);
+            List<Question> questionTag=questionService.selectQuestionByTagId(tagId);
+            map.put("questionTag",questionTag);
+        }
+
 
         //右侧相关问题
-        List<Question> questionTag=questionService.selectQuestionByTagId(tagId);
-        map.put("questionTag",questionTag);
+
 
         //右侧最新问题
         List<Question> questionNew=questionService.selectQuestionOrderByQuestionDate();
@@ -445,7 +479,7 @@ public class ForumController {
         User user= (User) session.getAttribute("user");
         Topic topic1=new Topic();
         if (!topImgurl.isEmpty()) {
-            String path = "F:\\Tool\\WorkSpace\\BAK1\\ifashion\\ifashion\\src\\main\\webapp\\static\\user\\talk\\image\\topic\\";
+            String path = "F:\\JavaWorkspace\\ideawork\\ifashion\\src\\main\\webapp\\static\\user\\talk\\image\\topic\\";
             String originalFileName = topImgurl.getOriginalFilename();
             // 新的图片名称
             String newFileName = UUID.randomUUID() + originalFileName.substring(originalFileName.lastIndexOf("."));
@@ -516,6 +550,7 @@ public class ForumController {
         System.out.println("回复内容:"+replyQuestionUser1.getReplyContent());
         replyQuestionUser1.setUser(user);
         replyQuestionUser1.setReplyContent(replyQuestionUser.getReplyContent());
+        replyQuestionUser1.setReplyDate(new Date());
 
 
         //封装进数据库的对象
@@ -603,9 +638,7 @@ public class ForumController {
     @RequestMapping(value = "/cancelCollectTopic", method = RequestMethod.POST)
     @ResponseBody
     public MyCollection cancelCollectTopic(HttpSession session, @RequestBody MyCollection myCollection, Map<String,Object> map) {
-
         String msg="";
-        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
         User user= (User) session.getAttribute("user");
         int userid=Integer.parseInt(String.valueOf(user.getUserId()));
         Integer topicId = myCollection.getTopicId();
@@ -625,7 +658,50 @@ public class ForumController {
         return myCollection;
     }
 
+    @RequestMapping(value = "matchInfo/ajaxcancelAttention",method = RequestMethod.POST)
+    @ResponseBody
+    public UserAttention ajaxcancelAttention(@RequestBody UserAttention userAttention, HttpSession session){
+        String msg="";
+        System.out.println("取消关注！！！！！！！！！");
+        int userId= (Integer) session.getAttribute("userId");
+        int userdId = userAttention.getUserdId();
 
+        UserAttention userAttention1 = userAttentionService.selectIt(userId,userdId);
+        int attentionId = userAttention1.getAttentionId();
+        int n = userAttentionService.deleteUserAttention(attentionId);
+        if(n>0){
+            msg="删除成功";
+        }else {
+            msg="删除失败";
+        }
+        System.out.println(msg);
 
+        return userAttention1;
+    }
+
+    @RequestMapping(value = "magazine",method = {RequestMethod.POST,RequestMethod.GET})
+    public String magazine(){
+        return "user/talk/magazine";
+    }
+
+    @RequestMapping(value = "copyright",method = {RequestMethod.POST,RequestMethod.GET})
+    public String copyright(){
+        return "user/foot/copyright";
+    }
+
+    @RequestMapping(value = "aboutus",method = {RequestMethod.POST,RequestMethod.GET})
+    public String aboutus(){
+        return "user/foot/aboutus";
+    }
+
+    @RequestMapping(value = "joinus",method = {RequestMethod.POST,RequestMethod.GET})
+    public String joinus(){
+        return "user/foot/joinus";
+    }
+
+    @RequestMapping(value = "map",method = {RequestMethod.POST,RequestMethod.GET})
+    public String map(){
+        return "user/foot/mapmap";
+    }
 
 }

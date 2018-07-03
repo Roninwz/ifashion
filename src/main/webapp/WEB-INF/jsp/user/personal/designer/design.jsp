@@ -81,7 +81,7 @@
                     <div class="out_border">
                         <div class="button_wrapper">
                             <div class="in_border">
-                                <a href="#" title="我的接单" class="the_button">
+                                <a href="${pageContext.request.contextPath }/designer/myTrade.action" title="我的接单" class="the_button">
                                     <span class="i_32_delivery"></span>
                                 </a>
                             </div>
@@ -98,25 +98,25 @@
     <aside class="sidebar">
         <ul class="tab_nav">
              <li class="active_tab i_32_dashboard">
-            <a href="${pageContext.request.contextPath}/user/personalHome.action" title="General Info">
+            <a href="${pageContext.request.contextPath}/designer/design.action" title="设计之家">
                 <span class="tab_label">设计之家</span>
 
             </a>
             </li>
             <li class="i_32_inbox">
-                <a href="${pageContext.request.contextPath}/user/mycollections.action" title="Your Messages">
+                <a href="${pageContext.request.contextPath}/user/mycollections.action" title="我的收藏">
                     <span class="tab_label">我的收藏</span>
 
                 </a>
             </li>
             <li class="i_32_charts">
-                <a href="${pageContext.request.contextPath}/user/designUp.action" title="Visual Data">
+                <a href="${pageContext.request.contextPath}/user/designUp.action" title="设计上传">
                     <span class="tab_label">设计上传</span>
 
                 </a>
             </li>
             <li class="i_32_ui">
-                <a href="${pageContext.request.contextPath}/user/myAttention.action" title="Kit elements">
+                <a href="${pageContext.request.contextPath}/user/myAttention.action" title="关注&粉丝">
                     <span class="tab_label">关注&粉丝</span>
 
                 </a>

@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>--%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -11,7 +9,7 @@
 <%@ include file="left.jsp"%>
 
 <section class="Hui-article-box">
-    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a>
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="amdin/index.action" class="maincolor">首页</a>
         <!-- <span class="c-999 en">&gt;</span> -->
         <!-- <span class="c-666">我的桌面</span>  -->
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
@@ -47,7 +45,7 @@
                     <c:forEach items="${complainVos}" var="complainVos">
                     <tr class="text-c">
                         <td>${complainVos.complainId}</td>
-                        <td><a style="cursor:pointer" href="admin/articlereviewdetail.action?complainId=${complainVos.complainId}">${adminArticleReivewVos.username}</a></td>
+                        <td><a style="cursor:pointer" href="admin/articlereviewdetail.action?complainId=${complainVos.complainId}">${adminArticleReivewVos.reviewId}</a></td>
                         <td>${complainVos.username}</td>
                         <td>
                             ${complainVos.usernameed}
@@ -66,7 +64,7 @@
                             <c:if test="${complainVos.state == 0}">
                                 <a style="text-decoration:none" class="ml-5" onClick="article_shenhe(this,${complainVos.usernameed})" href="javascript:;" title="禁用"><i class="Hui-iconfont">&#xe6de;处理</i></a>
                             </c:if>
-                            <a style="text-decoration:none" class="ml-5" onClick="article_del(this,${complainVos.articleId})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;删除</i></a></td>
+                            <a style="text-decoration:none" class="ml-5" onClick="article_del(this,${complainVos.complainId})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;删除</i></a></td>
                     </tr>
                     </c:forEach>
                     </tbody>

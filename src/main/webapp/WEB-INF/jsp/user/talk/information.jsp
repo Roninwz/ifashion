@@ -589,10 +589,10 @@
                             //    alert(ue);
 
                             function cc(obj) {
-                                alert(111111);
+                                //alert(111111);
                                 var userId=$(obj).parent().children().siblings("#userId");
                                 var discussId=$(obj).parent().children().siblings("#discussId").val();
-                                alert(discussId);
+                               // alert(discussId);
                                 var date=new Date().toLocaleString( );
                                 var datas={"discussreplyContent":ue.getContent(),"discussId":discussId};
 
@@ -631,7 +631,7 @@
                                         $("#postlist").append(discussreply);
                                     },
                                     error: function(data) {
-                                       alert(222222222222);
+                                       //alert(222222222222);
                                     }
                                 });
                             }

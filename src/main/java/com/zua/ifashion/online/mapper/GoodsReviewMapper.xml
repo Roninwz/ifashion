@@ -17,41 +17,41 @@
     insert into goods_review
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="goodsreviewId!=null">
-        goodsreviewId
+        goodsreviewId,
       </if>
       <if test="userId!=null">
-        userId
+        userId,
       </if>
       <if test="goodsId!=null">
-        goodsId
+        goodsId,
       </if>
       <if test="reviewContent!=null">
-        reviewContent
+        reviewContent,
       </if>
       <if test="reviewData!=null">
-        reviewData
+        reviewData,
       </if>
       <if test="reviewRank!=null">
-        reviewRank
+        reviewRank,
       </if>
 
     </trim>
 
     <trim prefix="values(" suffixOverrides="," suffix=")">
       <if test="goodsreviewId!=null">
-        #{goodsreviewId}
+        #{goodsreviewId},
       </if>
       <if test="userId!=null">
-       #{userId}
+       #{userId},
       </if>
       <if test="goodsId!=null">
-        #{goodsId}
+        #{goodsId},
       </if>
       <if test="reviewContent!=null">
-        #{reviewContent}
+        #{reviewContent},
       </if>
       <if test="reviewData!=null">
-        #{reviewData}
+        #{reviewData},
       </if>
       <if test="reviewRank!=null">
         #{reviewRank}
@@ -61,7 +61,7 @@
   </insert>
 
   <delete id="deleteGoodsReview" parameterType="int">
-    DELETE   from goods_review where goodsreviewId=#{param}
+    DELETE  * from goods_review where goodsreviewId=#{param}
   </delete>
 
   <!--//    根据id查询-->

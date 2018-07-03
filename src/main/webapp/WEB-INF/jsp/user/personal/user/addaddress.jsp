@@ -109,28 +109,28 @@
                                         <input id="user-phone" name="addressTel" placeholder="手机号必填" type="text">
                                     </div>
                                 </div>
-                                <div class="am-form-group">
-                                    <label  class="am-form-label">所在地</label>
-                                    <div class="am-form-content address" data-toggle="distpicker">
-                                        <!-- <select data-am-selected>
-                                                        <option value="a">浙江省</option>
-                                                        <option value="b" selected>湖北省</option>
-                                                    </select>
-                                                    <select data-am-selected>
-                                                        <option value="a">温州市</option>
-                                                        <option value="b" selected>武汉市</option>
-                                                    </select>
-                                                    <select data-am-selected>
-                                                        <option value="a">瑞安区</option>
-                                                        <option value="b" selected>洪山区</option>
-                                                    </select> -->
+                                <%--<div class="am-form-group">--%>
+                                    <%--<label  class="am-form-label">所在地</label>--%>
+                                    <%--<div class="am-form-content address" data-toggle="distpicker">--%>
+                                        <%--<!-- <select data-am-selected>--%>
+                                                        <%--<option value="a">浙江省</option>--%>
+                                                        <%--<option value="b" selected>湖北省</option>--%>
+                                                    <%--</select>--%>
+                                                    <%--<select data-am-selected>--%>
+                                                        <%--<option value="a">温州市</option>--%>
+                                                        <%--<option value="b" selected>武汉市</option>--%>
+                                                    <%--</select>--%>
+                                                    <%--<select data-am-selected>--%>
+                                                        <%--<option value="a">瑞安区</option>--%>
+                                                        <%--<option value="b" selected>洪山区</option>--%>
+                                                    <%--</select> -->--%>
 
-                                        <select></select>
-                                        <select></select>
-                                        <select></select>
+                                        <%--<select></select>--%>
+                                        <%--<select></select>--%>
+                                        <%--<select></select>--%>
 
-                                    </div>
-                                </div>
+                                    <%--</div>--%>
+                                <%--</div>--%>
 
                                 <div class="am-form-group">
                                     <label for="user-intro" class="am-form-label">详细地址</label>

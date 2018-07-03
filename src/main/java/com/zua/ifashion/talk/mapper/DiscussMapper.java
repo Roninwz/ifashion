@@ -47,16 +47,16 @@ public interface DiscussMapper {
     int selectReviewNumByDiscussId(Integer discussId);
 
     //查询讨论浏览量
-    int selectLookNumByDiscussId(Integer discussId);
+    Integer selectLookNumByDiscussId(@Param("discussId") Integer discussId);
 
     //查询比某个时间晚的所有讨论
     List<Discuss> selectDiscussByEDiscussDate(@Param("discussDate") Date discussDate);
 
     //查询比某个时间早的所有讨论
-    List<Discuss> selectDiscussByLDiscussDate(@Param("discussDate")Date discussDate);
+    List<Discuss> selectDiscussByLDiscussDate(@Param("discussDate") Date discussDate);
 
     //查询时间段内的讨论
-    List<Discuss> selectAllDiscuss(@Param("start")Date start,@Param("end")Date end);
+    List<Discuss> selectAllDiscuss(@Param("start") Date start, @Param("end") Date end);
 
     // 查询所有话题数量
     int getAllDiscussCount();

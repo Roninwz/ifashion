@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="../header.jsp" %>
+
 
 <%--<%@ include file="../footer.jsp" %>--%>
 <%
@@ -46,6 +46,7 @@
     </style>
 
     <script src="static/user/common/jquery/jquery-3.1.1.min.js"></script>
+    <%@ include file="../header.jsp" %>
     <%--导航栏js--%>
     <script src="static/user/common/top/js/index_search.js"></script>
     <%-- 鼠标点击弹出文字特效js --%>
@@ -66,7 +67,7 @@
                 url:'${pageContext.request.contextPath }/user/waitAnswer.action',
                 dataType:'json',
                 success:function (data) {
-                    alert(data);
+                   // alert(data);
                     var wait1="";
                     for(var i=0;i<data.length;i++){
                         wait1+= "<div id='issue-list' class='ques-answer no-answer'>"
@@ -89,7 +90,7 @@
                             + "</div>" + "</div>";
 
                     }
-                    alert(wait1);
+                    //alert(wait1);
                     $("#issue-list").html(wait1);
                 }
             });

@@ -111,7 +111,7 @@
   <!--//    删除商品-->
   <!--public abstract int deleteGoods(Integer goodsId);-->
   <delete id="deleteGoods" parameterType="int">
-    delete  from goods where goodsId=#{param}
+    delete * from goods where goodsId=#{param}
   </delete>
 
   <!--//    更新商品-->
@@ -250,8 +250,14 @@
 
   <!--根据商品id查询商品-->
   <select id="selectGoodsByByGoodsId" parameterType="int" resultType="com.zua.ifashion.online.entity.Goods">
-    select * from goods where goodsId=#{goodsId}
+    select goodsId,userId,goodstypeId,goodschildtypeId as goodschildId,goodsName,goodsPrice,goodsDate,goodsCount,goodsSale,reviewNum,size,color,goodsIntroduce from goods where goodsId=#{goodsId}
   </select>
 
 
+ <!-- //    根据商品的id得到设计师
+  public User selectDesignerByGoodsId(Integer goodsId);
+-->
+  <select id="selectDesignerByGoodsId" parameterType="int" resultType="User">
+    select user.* from user,goods where goods.userId=user.userId and goods.goodsId=#{param}
+  </select>
 </mapper>

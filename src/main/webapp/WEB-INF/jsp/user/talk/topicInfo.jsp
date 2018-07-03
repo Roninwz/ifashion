@@ -217,7 +217,7 @@
                             <a href="" target="_blank">${discussUsers.user.username}</a>
                             <a style="color:#999"><fmt:formatDate value="${discussUsers.discussDate}"/></a>
                         </div>
-                        <a title="&nbsp;${discussUsers.discussTitle}" class="issue-title" href="${pageContext.request.contextPath }/user/forumInfo.action?discussId=1" target="_blank">${discussUsers.discussTitle}</a>
+                        <a title="&nbsp;${discussUsers.discussTitle}" class="issue-title" href="${pageContext.request.contextPath }/user/forumInfo.action?discussId=${discussUsers.discussId}" target="_blank">${discussUsers.discussTitle}</a>
                         <div class="has-answer clearfix">
                             <div class="answer-bottom clearfix">
                                 <!-- 点赞 -->
@@ -692,10 +692,10 @@
             </ul>
             <!-- 分页 -->
             <div class="page">
-                <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=1">首页</a>
+                <a href="${pageContext.request.contextPath}/user/topicInfo.action?topicId=${topic.topicId}&curPage=1">首页</a>
                 <span class="disabled_page">
                             <c:if test="${pageInfo.hasPreviousPage}">
-                                    <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${pageInfo.pageNum-1}" aria-label="Previous">
+                                    <a href="${pageContext.request.contextPath}/user/topicInfo.action?topicId=${topic.topicId}&curPage=${pageInfo.pageNum-1}" aria-label="Previous">
                                         <span aria-hidden="true">上一页</span>
                                     </a>
                             </c:if>
@@ -706,17 +706,17 @@
                         <a class="active text-page-tag" href="javascript:void(0)">${page_num}</a>
                     </c:if>
                     <c:if test="${page_num != pageInfo.pageNum}">
-                        <a class="text-page-tag"  href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${page_num}">${page_num}</a>
+                        <a class="text-page-tag"  href="${pageContext.request.contextPath}/user/topicInfo.action?topicId=${topic.topicId}&curPage=${page_num}">${page_num}</a>
                     </c:if>
                 </c:forEach>
                 <c:choose>
                     <c:when test="${pageInfo.hasNextPage}">
-                        <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${pageInfo.pageNum+1}" aria-label="Next">
+                        <a href="${pageContext.request.contextPath}/user/topicInfo.action?topicId=${topic.topicId}&curPage=${pageInfo.pageNum+1}" aria-label="Next">
                             <span aria-hidden="true">下一页</span>
                         </a>
                     </c:when>
                 </c:choose>
-                <a href="${pageContext.request.contextPath}/user/topicInfo.action?curPage=${pageInfo.pages}">尾页</a>
+                <a href="${pageContext.request.contextPath}/user/topicInfo.action?topicId=${topic.topicId}&curPage=${pageInfo.pages}">尾页</a>
             </div>
 
             <!-- 分页 end -->

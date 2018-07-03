@@ -2,6 +2,7 @@ package com.zua.ifashion.online.mapper;
 
 import com.zua.ifashion.online.entity.Goods;
 import com.zua.ifashion.online.vo.GoodsAndImgDesignerVO;
+import com.zua.ifashion.person.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -49,4 +50,7 @@ public interface GoodsMapper {
     public abstract GoodsAndImgDesignerVO selectGoodByGoodsId(Integer goodsId);
 
     public Goods selectGoodsByByGoodsId(Integer goodsId);
+
+//    根据商品的id得到设计师
+    public User selectDesignerByGoodsId(Integer goodsId);
 }

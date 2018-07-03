@@ -68,7 +68,7 @@
 	com.zua.ifashion.article.service,
 	com.zua.ifashion.online.controller,
 	com.zua.ifashion.online.service,
-
+	com.zua.ifashion.online.util,
 	com.zua.ifashion.talk.controller,
 	com.zua.ifashion.talk.service,
 	com.zua.ifashion.person.controller,
@@ -141,6 +141,7 @@
 			<mvc:mapping path="/user/cancelCollectTopic.action"/>
 			<!--个人中心-->
 			<mvc:mapping path="/user/personal.action"/>
+			<mvc:mapping path="/user/information.action"/>
 			<mvc:mapping path="/user/updateuserinfo.action"/>
 			<mvc:mapping path="/user/mypublish.action"/>
 			<mvc:mapping path="/user/mycollection.action"/>

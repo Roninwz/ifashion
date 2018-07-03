@@ -21,6 +21,16 @@ public class Orders {
 
     private String orderNumber;
 
+    private String trueOrder;
+
+    public String getTrueOrder() {
+        return trueOrder;
+    }
+
+    public void setTrueOrder(String trueOrder) {
+        this.trueOrder = trueOrder;
+    }
+
     public void setOrdersId(Integer ordersId) {
         this.ordersId = ordersId;
     }
@@ -109,6 +119,19 @@ public class Orders {
     }
 
     public Orders() {
+    }
+
+    public Orders(Integer ordersId, Integer userId, Integer designerId, Integer goodsId, Integer addressId, Integer ordersState, Date ordersDate, Date endDate, String orderNumber, String trueOrder) {
+        this.ordersId = ordersId;
+        this.userId = userId;
+        this.designerId = designerId;
+        this.goodsId = goodsId;
+        this.addressId = addressId;
+        this.ordersState = ordersState;
+        this.ordersDate = ordersDate;
+        this.endDate = endDate;
+        this.orderNumber = orderNumber;
+        this.trueOrder = trueOrder;
     }
 
     public Orders(Integer ordersId, Integer userId, Integer designerId, Integer goodsId, Integer addressId, Integer ordersState, Date ordersDate, Date endDate, String orderNumber) {

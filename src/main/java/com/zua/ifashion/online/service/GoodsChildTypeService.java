@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface GoodsChildTypeService {
     public List<GoodsChildType> getAllGoodsChildType(Integer goodstypeId);
+    public GoodsChildType selectGoodsChildTypeByGoodsChildId(Integer goodschildId);
 }

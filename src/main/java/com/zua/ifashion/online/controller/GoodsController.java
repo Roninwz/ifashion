@@ -169,8 +169,8 @@ public class GoodsController{
         Integer goodsMaterial = Integer.parseInt(materiId);
         Integer goodsStyle = Integer.parseInt(styleId);
         List<GoodsReview> reviews=new ArrayList<>();
-        Map<GoodsAndImgDesignerVO,List<User>> map1=new HashMap<>();  //一个商品的所有评价用户
-        List<User> users=new ArrayList<>();
+        Map<GoodsAndImgDesignerVO,User> map1=new HashMap<>();  //一个商品的设计师
+       /* List<User> users=new ArrayList<>();*/
         Map<GoodsAndImgDesignerVO,List<GoodsReview>> map=new HashMap<>(); //一个商品对应的所有评论
         int pageSize=1;
         PageHelper.startPage(curPage,pageSize);
@@ -180,10 +180,12 @@ public class GoodsController{
         List<GoodsAndImgDesignerVO> goodsAndImgDesignerVO=new ArrayList<>();
         for(Goods goods:goodsList){
             GoodsAndImgDesignerVO goodsAndImgDesignerVO1=goodsService.getGoodsByGoodsId(goods.getGoodsId());
-            reviews=goodsReviewService.getGoodsReviewByGoodsId(goodsAndImgDesignerVO1.getGoodsId());
-            map.put(goodsAndImgDesignerVO1,reviews);
-            users=goodsReviewService.getUserByGoodsId(goodsAndImgDesignerVO1.getGoodsId());
-            map1.put(goodsAndImgDesignerVO1,users);
+        /*    reviews=goodsReviewService.getGoodsReviewByGoodsId(goodsAndImgDesignerVO1.getGoodsId());*/
+          /*  map.put(goodsAndImgDesignerVO1,reviews);*/
+            User user=goodsService.selectDesignerByGoodsId(goodsAndImgDesignerVO1.getGoodsId());
+
+            map1.put(goodsAndImgDesignerVO1,user);
+            System.out.println(map1.get(goodsAndImgDesignerVO1).getUserId());
             System.out.println(goodsAndImgDesignerVO1.getGoodsName());
             goodsAndImgDesignerVO.add(goodsAndImgDesignerVO1);
         }
@@ -195,7 +197,7 @@ public class GoodsController{
         request.setAttribute("materiId",materiId);
         request.setAttribute("styleId",styleId);
         request.setAttribute("map1",map1);
-        request.setAttribute("map",map);
+      /*  request.setAttribute("map",map);*/
         System.out.println(goodsList.size());
         return "user/online/online_order1";
     }

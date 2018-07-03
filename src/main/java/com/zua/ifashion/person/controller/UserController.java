@@ -24,7 +24,7 @@ public class UserController {
     private UserService userService;
     @RequestMapping(value="/index",method= RequestMethod.GET)
     public String userIndex(){
-        return "user/index";
+        return "user/home";
     }
 
 
@@ -80,7 +80,7 @@ public class UserController {
            int n= userService.updateUserSelective(user1);
         }
 
-        return "user/index";
+        return "user/home";
     }
 
 }

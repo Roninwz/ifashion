@@ -159,7 +159,7 @@
 
   <!--//查询讨论浏览量-->
   <!--int selectLookNumByDiscussId(Integer discussId);-->
-  <select id="selectLookNumByDiscussId" parameterType="int" resultType="int">
+  <select id="selectLookNumByDiscussId" resultType="Integer">
     select lookNum from discuss where discussId=#{discussId}
   </select>
 

@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -253,7 +255,7 @@ public class ClothesControl {
 
 
     @RequestMapping(value = "/publishcheck",method = RequestMethod.POST)
-    public String publishcheck(HttpSession session, @RequestParam("topImgurl") MultipartFile topImgurl,Article article, HttpServletRequest request){
+    public String publishcheck(HttpSession session, @RequestParam("topImgurl") MultipartFile topImgurl,Article article, HttpServletRequest request) throws ParseException {
 
 
         Integer userId= (Integer) session.getAttribute("userId");
@@ -265,7 +267,7 @@ public class ClothesControl {
         String TagId = request.getParameter("clothesTagId");
         int clothesTagId = Integer.parseInt(TagId);
         if (!topImgurl.isEmpty()) {
-            String path = "F:\\JavaWorkspace\\ideawork\\ifashion\\src\\main\\webapp\\static\\user\\article\\clothes\\images\\";
+            String path = "E:\\ifashion\\static\\";
             String originalFileName = topImgurl.getOriginalFilename();
             // 新的图片名称
             String newFileName = UUID.randomUUID() + originalFileName.substring(originalFileName.lastIndexOf("."));
@@ -278,17 +280,21 @@ public class ClothesControl {
                 e.printStackTrace();
             }
 
-            article1.setImgurl("static/user/article/clothes/images/"+newFileName);
+
+
+            article1.setImgurl("/ifashion/static/upload/images/"+newFileName);
             article1.setArticletypeId(1);
-            clothesTagImg.setClothesTagImgUrl("static/user/article/clothes/images/"+newFileName);
+            clothesTagImg.setClothesTagImgUrl("/ifashion/static/upload/images/"+newFileName);
         }
 
         System.out.println(article.getArticleTitle());
 
         System.out.println(article.getContent());
-
+        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(clothesTagId);
-
+        String reviewDate = formatter.format(new Date());
+        Date newreviewDate= formatter.parse(reviewDate);
+        article1.setArticleDate(newreviewDate);
         article1.setContent(article.getContent());
         article1.setArticleTitle(article.getArticleTitle());
         article1.setUserId(uid);

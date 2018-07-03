@@ -4,6 +4,7 @@ import com.zua.ifashion.online.entity.Goods;
 import com.zua.ifashion.online.mapper.GoodsMapper;
 import com.zua.ifashion.online.service.GoodsService;
 import com.zua.ifashion.online.vo.GoodsAndImgDesignerVO;
+import com.zua.ifashion.person.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,10 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public Goods selectGoodsByByGoodsId(Integer goodsId) {
         return goodsMapper.selectGoodsByByGoodsId(goodsId);
+    }
+
+    @Override
+    public User selectDesignerByGoodsId(Integer goodsId) {
+        return goodsMapper.selectDesignerByGoodsId(goodsId);
     }
 }

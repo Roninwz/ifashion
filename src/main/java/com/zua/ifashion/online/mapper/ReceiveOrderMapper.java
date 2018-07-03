@@ -10,4 +10,5 @@ public interface ReceiveOrderMapper {
 
     public List<ReceiveOrder> selectReceiveByDesignerId(Integer designerId);
     public ReceiveOrder selectReceiveByOrdersId(Integer ordersId);
+    public abstract int updateReceiveOrder(ReceiveOrder receiveOrder);
 }

@@ -275,7 +275,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: JSON.stringify(datas),
                 success: function(data) {
-                    alert(data);
+                   // alert(data);
 
                     var str= '<a class="c-primary" onClick="article_start(this,'+data.userId+')" href="javascript:;" title="审核"><i class="Hui-iconfont">&#xe6de;启用</i></a>';
                     $(obj).parents("tr").find(".td-manage").prepend(str);
@@ -289,8 +289,8 @@
                     });
                 },
                 error: function(data) {
-                    alert("data");
-                    alert('1');
+                    //alert("data");
+                    //alert('1');
                     console.log(data.msg);
                 },
             });
@@ -315,7 +315,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: JSON.stringify(datas),
                 success: function(data) {
-                    alert(data);
+                   // alert(data);
 
                     var str= '<a class="c-primary" onClick="article_stop(this,'+data.userId+')" href="javascript:;" title="审核"><i class="Hui-iconfont">&#xe6de;禁用</i></a>';
                     $(obj).parents("tr").find(".td-manage").prepend(str);
@@ -327,8 +327,8 @@
                     });
                 },
                 error: function(data) {
-                    alert("data");
-                    alert('1');
+                    //alert("data");
+                   // alert('1');
                     console.log(data.msg);
                 },
             });

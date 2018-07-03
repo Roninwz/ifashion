@@ -15,4 +15,7 @@ public interface OrdersMapper {
     public abstract Orders selectOrdersById(Integer orderId);
     public abstract Orders selectOrdersByOrderNumber(String orderNumber);
 
+    public Orders selectOrdersByOrdersId(Integer ordersId);
+    public Orders selectOrderByOrderNumber(String orderNumber);
+
 }

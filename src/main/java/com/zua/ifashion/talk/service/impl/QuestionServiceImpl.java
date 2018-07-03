@@ -95,7 +95,7 @@ public class QuestionServiceImpl implements QuestionService{
     }
 
     @Override
-    public int selectTagIdByQuestionId(Integer questionId) {
+    public Integer selectTagIdByQuestionId(Integer questionId) {
         return questionMapper.selectTagIdByQuestionId(questionId);
     }
 

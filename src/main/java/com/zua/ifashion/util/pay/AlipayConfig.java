@@ -29,8 +29,7 @@ public class AlipayConfig {
 	/*public static String notify_url = "http://localhost:8088/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp";
 */
 	// 椤甸潰璺宠浆鍚屾閫氱煡椤甸潰璺緞 闇http://鏍煎紡鐨勫畬鏁磋矾寰勶紝涓嶈兘鍔?id=123杩欑被鑷畾涔夊弬鏁帮紝蹇呴』澶栫綉鍙互姝ｅ父璁块棶
-	/*public static String return_url = "http://localhost:8088/alipay.trade.page.pay-JAVA-UTF-8/test.jsp";*/
-    public static String return_url = "http://localhost:8081/ifashion/user/payreturn.action";
+	public static String return_url ="http://localhost:8081/ifashion/user/payreturn.action";
 
 	// 绛惧悕鏂瑰紡
 	public static String sign_type = "RSA2";

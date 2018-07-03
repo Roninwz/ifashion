@@ -25,7 +25,7 @@
     <script src="static/user/common/js/mouse.js"></script>
     <script src="static/user/login/js/login.js"></script>
     <%--登录js--%>
-    <script src="static/user/login/js/login.js"></script>
+    <%--<script src="static/user/login/js/login.js"></script>--%>
     <script type="text/javascript" src="static/user/login/js/modal.js"></script>
     <%--其它js--%>
 

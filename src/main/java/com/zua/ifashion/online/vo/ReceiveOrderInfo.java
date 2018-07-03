@@ -3,6 +3,36 @@ package com.zua.ifashion.online.vo;
 import java.util.Date;
 
 public class ReceiveOrderInfo {
+    private Integer ordersId;
+
+    public ReceiveOrderInfo(Integer ordersId, String orderNumber, String receiveUserName, Integer receiveUserId, String tel, String addressContent, Double goodsPrice, Integer ordersState, Date ordersDate, Date endDate, Date startDate, String goodsImgurl, String goodsName, String color, String size, String goodschildName) {
+        this.ordersId = ordersId;
+        this.orderNumber = orderNumber;
+        this.receiveUserName = receiveUserName;
+        this.receiveUserId = receiveUserId;
+        this.tel = tel;
+        this.addressContent = addressContent;
+        this.goodsPrice = goodsPrice;
+        this.ordersState = ordersState;
+        this.ordersDate = ordersDate;
+        this.endDate = endDate;
+        this.startDate = startDate;
+        this.goodsImgurl = goodsImgurl;
+        this.goodsName = goodsName;
+        this.color = color;
+        this.size = size;
+        this.goodschildName = goodschildName;
+    }
+
+    public Integer getOrdersId() {
+
+        return ordersId;
+    }
+
+    public void setOrdersId(Integer ordersId) {
+        this.ordersId = ordersId;
+    }
+
     private String orderNumber;//订单编号
     private String receiveUserName;//收件人
     private Integer receiveUserId;//收件人
@@ -18,6 +48,37 @@ public class ReceiveOrderInfo {
     private String color;//颜色
     private String size;//尺码
     private String goodschildName;//类型名称
+
+    private String trueOrder;
+
+    public ReceiveOrderInfo(Integer ordersId, String orderNumber, String receiveUserName, Integer receiveUserId, String tel, String addressContent, Double goodsPrice, Integer ordersState, Date ordersDate, Date endDate, Date startDate, String goodsImgurl, String goodsName, String color, String size, String goodschildName, String trueOrder) {
+        this.ordersId = ordersId;
+        this.orderNumber = orderNumber;
+        this.receiveUserName = receiveUserName;
+        this.receiveUserId = receiveUserId;
+        this.tel = tel;
+        this.addressContent = addressContent;
+        this.goodsPrice = goodsPrice;
+        this.ordersState = ordersState;
+        this.ordersDate = ordersDate;
+        this.endDate = endDate;
+        this.startDate = startDate;
+        this.goodsImgurl = goodsImgurl;
+        this.goodsName = goodsName;
+        this.color = color;
+        this.size = size;
+        this.goodschildName = goodschildName;
+        this.trueOrder = trueOrder;
+    }
+
+    public String getTrueOrder() {
+
+        return trueOrder;
+    }
+
+    public void setTrueOrder(String trueOrder) {
+        this.trueOrder = trueOrder;
+    }
 
     public String getGoodschildName() {
         return goodschildName;

@@ -23,7 +23,8 @@
     <link href="static/user/online/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="static/user/online/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Global styles END -->
-
+    <%--关注--%>
+  <%--  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">--%>
     <!-- Page level plugin styles START -->
     <link href="static/user/online/assets/pages/css/animate.css" rel="stylesheet">
     <link href="static/user/online/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
@@ -81,88 +82,66 @@
             width:40px;
             height:23px;
         }
+        /*关注*/
+        .follow {
+            margin: 1.5em auto 0 auto;
+            background-color: #2589cc;
+            width: 70px;
+            color: white;
+            font-family: 'Microsoft YaHei','Lantinghei SC','Open Sans',Arial,'Hiragino Sans GB','STHeiti','WenQuanYi Micro Hei','SimSun',sans-serif;
+            text-align: center;
+            padding: .5em;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-timing-function: ease;
+            -o-transition-timing-function: ease;
+            transition-timing-function: ease; }
+
+        .follow1 {
+            margin: 1.5em auto 0 auto;
+            background-color: #34CF7A;
+            width: 70px;
+            color: white;
+            font-family: 'Microsoft YaHei','Lantinghei SC','Open Sans',Arial,'Hiragino Sans GB','STHeiti','WenQuanYi Micro Hei','SimSun',sans-serif;
+            text-align: center;
+            padding: .5em;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-timing-function: ease;
+            -o-transition-timing-function: ease;
+            transition-timing-function: ease; }
+        .follow:hover,.follow1:hover {
+            cursor: pointer; }
 
 
     </style>
 </head>
 <body>
-<%--<div class='w1180 ad' id="OL_SYS_925_51">
-</div>
 
-<div class='w1180 logoAndlogin'>
-    <h1 class='logo'>
-        <a href="">
-            <img src="static/user/common/top/images/top.png" height='72px' width='800' style='padding-left:200px' alt='iFashion' title='iFashion' />
-        </a>
-    </h1>
-    <div class="login">
-
-        <a href="" target="_self" rel="nofollow">登录</a> |
-        <a href="" target="_self" rel="nofollow">注册</a>
-
-    </div>
-</div>
-<!-- <script type="text/javascript" src="../js/passport_olindex.js"></script>-->
-
-<div class='navSearch'>
-    <div class="navBg"></div>
-    <div class="w1180">
-        <div class="nav1">
-            <a href="index.html" class="here">首页</a>
-            <a href="clothes.html">穿衣搭配</a>
-            <a href="community.html">社区精选</a>
-            <a href="information.html">资讯</a>
-            <a href="online.html">私人定制</a>
-            <a href="javascript:void(0);" class="searchBt"></a>
-        </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="forum.html" target="_blank">论坛</a>
-                    <a href="community">社区</a>
-                </li>
-                <li></li>
-
-            </ul>
-        </div>
-    </div>
-    <div class='w1180 search'>
-        <form id="searchPage" target="_blank" method="get" action="user/search" accept-charset="utf8">
-            <div class="mainsearch">
-                <input onkeyup="selBrand('searchpro','auto_brand')" type="text" class="main_input" id="searchpro" autocomplete="off" name="q" value="请输入名称">
-                <div class="c1_se_2_c" id="auto_brand" style="display: none;"></div>
-            </div>
-            <input type="hidden" name="s" value="15679544665037353740">
-            <input type="hidden" name="nsid" value="1" class="aritcleType">
-            <input type="button" class="mainbtn" id="J_search_sub" value="">
-            <input type="button" title='关闭搜索框' class="closeSearchbtn" value="">
-        </form>
-        <div class='hotpro'>
-            <a href="" title="资讯-夏纳电影节" target="_blank">资讯-夏纳电影节</a>
-            <a href="" title="定制-裙子" target="_blank">定制-裙子</a>
-            <a href="" title="定制-运动鞋" target="_blank">定制-运动鞋</a>
-            <!-- 设计师 -->
-            <a href="" title="设计师-房莹" target="_blank">设计师-房莹</a>
-            <a href="" title="话题" target="_blank">话题-PVC</a>
-            <!-- <a href="" title="?????" target="_blank"></a> -->
-        </div>
-    </div>
-
-
-
-</div>
-<script type="text/javascript" src="static/user/common/js/index_search.js"></script>
-
-<!--crazy start-->
-<div id="crazynavdown">
-    <div id="OL_SYS_938_51" class="w1180 s"></div>
-    <div class="b">
-        <div id="OL_SYS_943_51" class="b1"></div>
-        <div id="OL_SYS_448_51" class="b2"></div>
-    </div>
-</div>--%>
 <%@ include file="../header.jsp" %>
 <%@ include file="sixin.jsp"%>
 <!--crazy end-->
@@ -192,9 +171,117 @@
                     <%--，并正式进入 ……<a href="/dna/star/d-30822.html" target="_self">【详情】</a></p>--%>
 
                     <p class="desc">${user.userIntroduce} ……<a href="/dna/star/d-30822.html" target="_self">【详情】</a></p>
-                    <%--<a href="${pageContext.request.contextPath }/chat.action" class="chat"><img src="static/user/online/images/gif-0185.gif" title="私信"/></a>
-                    <a href="#" class="attention"><img src="static/user/online/images/attention.png" title="关注"/></a>--%>
+                    <a href="${pageContext.request.contextPath}/user/chat.action" class="chat"><img src="static/user/online/images/gif-0185.gif" title="私信"/></a>
+                    <%--<a href="#" class="attention"><img src="static/user/online/images/attention.png" title="关注"/></a>--%>
+                    <div class="container">
+                        <div class="content">
+                            <c:choose>
+                                <c:when test="${empty userId}">
+                                    <div class="follow" onclick="noLogin()"> <div class="icon-twitter"></div> 关注</div>  <%--未登录--%>
+                                </c:when>
+                                <c:when test="${not empty userId}">
+                                    <c:if test="${mark==0}">
+                                        <div class="follow" onclick="noAttention()"> <div class="icon-twitter"></div>关注 </div>
+                                    </c:if>
+                                    <c:if test="${mark==1}">
+                                        <div class="follow1" onclick="attention()"> <div class="icon-ok"></div>已关注</div>
+                                    </c:if>
+                                </c:when>
+                            </c:choose>
 
+
+                        </div>
+                    </div>
+            <script>
+                var i=0;
+                var j=0;
+                function noLogin() {
+                    alert("请先登录");
+                }
+                function noAttention(){
+                    i++;
+                    if(i%2==1){
+                        $.ajax({
+                            url:"user/online_addAttention.action?desId="+${user.userId},
+                            type:"POST",
+                            success:function (data) {
+                                alert("关注成功");
+
+                                $('.content').html('<div class="follow1" onclick="noAttention()"><div class="icon-twitter"></div> 已关注</div>');
+                            }
+                        });
+
+                      /*  $('.follow').css('background-color','#34CF7A');*/
+                     /*   $('.content').html('<div class="follow1" onclick="noAttention()"><div class="icon-ok"></div> 已关注</div>');*/
+
+
+                    }
+                    if(i%2==0){
+//                        $('.follow').css('background-color','#2589cc');
+                       /* $('.follow').html('<div class="icon-twitter"></div> 转粉');*/
+                        $.ajax({
+                            url:"user/online_removeAttention.action?desId="+${user.userId},
+                            type:"POST",
+                            success:function (data) {
+                                alert("取消关注成功");
+
+                                $('.content').html('<div class="follow" onclick="noAttention()"><div class="icon-twitter"></div> 关注</div>');
+                            }
+                        });
+                       /* $('.content').html('<div class="follow" onclick="noAttention()"><div class="icon-twitter"></div> 关注</div>')*/
+                    }
+                }
+                function attention() {
+                    j++;
+                    if(j%2==1){
+                        $.ajax({
+                            url:"user/online_removeAttention.action?desId="+${user.userId},
+                            type:"POST",
+                            success:function (data) {
+                                alert("取消关注成功");
+
+                                $('.content').html('<div class="follow" onclick="attention()"><div class="icon-twitter"></div> 关注</div>');
+                            }
+
+                        });
+
+                    }
+                    if(j%2==0){
+                        $.ajax({
+                            url:"user/online_addAttention.action?desId="+${user.userId},
+                            type:"POST",
+                            success:function (data) {
+                                alert("关注成功")
+                                $('.content').html('<div class="follow1" onclick="attention()"><div class="icon-ok"></div> 已关注</div>');
+                            }
+
+                        });
+
+                    }
+                }
+                 /*   $(document).ready(
+
+                        function iniciar(){
+
+                            var i=0;
+                            $('.follow').on("click", function(){
+                            i++;
+                            if(i%2==1){
+
+                            $('.follow').css('background-color','#34CF7A');
+                            $('.follow').html('<div class="icon-ok"></div> 已转粉');
+
+
+                            }
+                            if(i%2==0){
+                            $('.follow').css('background-color','#2589cc');
+                            $('.follow').html('<div class="icon-twitter"></div> 转粉');
+                            }
+
+                    });
+                    }
+                    );*/
+        </script>
 
                 </dd>
             </dl>
@@ -269,10 +356,10 @@
                     <div class="price-availability-block clearfix">
                         <div class="price" id="cloth_price">
                             <strong><span>${goodsList[i*5+j].goodsPrice}</span></strong>
-                            <em>$<span>${goodsList[i*5+j].goodsPrice+200}</span></em>
+                            <em>￥<span>${goodsList[i*5+j].goodsPrice+200}</span></em>
                         </div>
                         <div class="availability">
-                            Availability: <strong>In Stock</strong>
+
                         </div>
                     </div>
                     <div class="description">
@@ -300,15 +387,27 @@
                         </div>
                     </div>
                     <div class="product-page-cart">
-                        <form action="" method="post">
+
                             <div class="product-quantity">
                                 <input id="product-quantity2" type="text" value="1" readonly class="form-control input-sm">
                             </div>
-                            <button class="btn btn-primary" type="submit">立即购买</button>
-                        </form>
+                            <button class="btn btn-primary"  id="buyGoods" onclick="buy(${goodsList[i*5+j].goodsId},${user.userId})">立即购买</button>
+
 
                         <%--<div id="paidimg">
                         </div>--%>
+                        <script>
+                            function buy(id,userId) {
+                                alert(111)
+                                alert(id)
+                                alert(userId)
+
+                                window.location.href="${pageContext.request.contextPath }/user/online_buygoods.action?id="+id+"&userId="+userId;
+                            }
+
+
+
+                        </script>
                     </div>
 
                     <%--<div class="sticker sticker-sale"></div>--%>

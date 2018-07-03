@@ -121,7 +121,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: JSON.stringify(datas),
                 success: function (data) {
-                    alert(data);
+                    //alert(data);
                     $(obj).parents("tr").remove();
                     layer.msg('已删除!', {
                         icon: 1,
@@ -129,8 +129,8 @@
                     });
                 },
                 error: function (data) {
-                    alert("data");
-                    alert('1');
+                   // alert("data");
+                    //alert('1');
                     console.log(data.msg);
                 },
             });

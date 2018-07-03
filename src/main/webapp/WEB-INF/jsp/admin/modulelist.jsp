@@ -140,7 +140,7 @@
     /*资讯-删除*/
     function article_del(obj, id) {
 // alert('g');
-        alert(id);
+       // alert(id);
         var moduleId = id;
         var datas = {"moduleId": moduleId};
         layer.confirm('确认要删除吗？', function (index) {
@@ -160,8 +160,8 @@
                     });
                 },
                 error: function (data) {
-                    alert("data");
-                    alert('1');
+                    //alert("data");
+                    //alert('1');
                     console.log(data.msg);
                 },
             });

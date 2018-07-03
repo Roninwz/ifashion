@@ -2,6 +2,7 @@ package com.zua.ifashion.online.service;
 
 import com.zua.ifashion.online.entity.Goods;
 import com.zua.ifashion.online.vo.GoodsAndImgDesignerVO;
+import com.zua.ifashion.person.entity.User;
 
 import java.util.List;
 
@@ -15,5 +16,7 @@ public interface GoodsService {
     public abstract GoodsAndImgDesignerVO getGoodsByGoodsId(Integer goodsId);
 
     public Goods selectGoodsByByGoodsId(Integer goodsId);
+
+    public User selectDesignerByGoodsId(Integer goodsId);
 
 }

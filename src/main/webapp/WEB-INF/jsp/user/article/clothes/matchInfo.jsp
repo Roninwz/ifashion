@@ -26,6 +26,23 @@
     <base href="<%=basePath%>">
     <meta charset="UTF-8">
     <title>matchInfo</title>
+    <%--登录--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/login2/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/person/message/css/mess.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/user/login/header.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/user/common/plugin/font-awesome/css/font-awesome.min.css">
+    <script src="${pageContext.request.contextPath}/static/user/common/plugin/jquery.cookie.js"></script>
+    <style>
+        .tc_login  .right .remember-code{
+            width:30px;height:30px;margin-top:20px;margin-right:150px;
+        }
+
+        .tc_login  .right .span-code{
+            width:200px;height:30px;margin-top:-40px;
+        }
+
+    </style>
+
     <%--底部css--%>
     <link rel="stylesheet" href="static/user/common/foot/css/foot.css">
     <%--导航栏css--%>
@@ -68,8 +85,12 @@
 <body>
 
 
-<%--头部--%>
 
+
+
+
+
+<%--头部--%>
 
 <div class='w1180 ad' id="OL_SYS_925_51">
 </div>
@@ -84,15 +105,40 @@
 
         <c:set var="uname" value="${sessionScope.uname}"/>
         <c:if test="${empty uname}">
-            <a  data-toggle="modal" href="#login-modal">登录</a> |
-            <a href="user/register.action" target="_self" rel="nofollow">注册</a>
+            <a  href="javascript:void(0)" class="tc">
+                <button class="btn btn_primary radius">
+                    登录
+                </button></a>&nbsp;&nbsp;|
+            <a href="user/register.action" target="_self" rel="nofollow">
+                <button class="btn btn_primary radius">
+                    注册
+                </button></a>
+
         </c:if>
 
         <c:if test="${not empty uname}">
-            <span>欢迎您${uname}</span>
-            <a href="user/personal.action" target="_self" rel="nofollow" style="color: #000">个人中心</a>
-            <a href="user/userlogout.action" target="_self" rel="nofollow" style="color: #000">注销</a>
+            <span><button class="btn btn_primary radius">
+                       欢迎您 ${uname}
+            </button></span>
+            <a href="user/personal.action" target="_self" rel="nofollow" style="color: #000">
+                <button class="btn btn_primary radius">
+                    个人中心
+                </button></a>
+            <a href="user/userlogout.action" target="_self" rel="nofollow" style="color: #000">
+                <button class="btn btn_primary radius">
+                    注销
+                </button></a>
+
+            <div id="message" style="float: right;margin-left: 10px;">
+                <a href="user/mymessage.action"><span data-type="1" class="message-bell-btn" title="" id="message-bell-btn"><i class="fa fa-bell-o "></i>
+                 <span class="badge-dot" style="top:-10px;" id="badge"></span>
+
+            </span></a>
+            </div>
+
+
         </c:if>
+
         <!-- 个人中心 -->
         <!-- <a href="" target="_self" rel="nofollow">个人中心</a> -->
     </div>
@@ -106,22 +152,22 @@
             <a href="user/index.action" class="here">首页</a>
             <a href="user/clothes.action">穿衣搭配</a>
             <a href="user/forum.action">社区精选</a>
-            <a href="user/information.action">资讯</a>
+            <a href="user/newsHome.action">资讯</a>
             <a href="user/online_list.action">私人定制</a>
             <a href="javascript:void(0);" class="searchBt"></a>
         </div>
-        <div class="navChilren">
-            <ul>
-                <li></li>
-                <li></li>
-                <li>
-                    <a href="user/forum.action" target="_blank">论坛</a>
-                    <a href="user/community.action">社区</a>
-                </li>
-                <li></li>
+        <%--<div class="navChilren">--%>
+        <%--<ul>--%>
+        <%--<li></li>--%>
+        <%--<li></li>--%>
+        <%--<li>--%>
+        <%--<a href="user/forum.action" target="_blank">论坛</a>--%>
+        <%--<a href="usre/community.action">社区</a>--%>
+        <%--</li>--%>
+        <%--<li></li>--%>
 
-            </ul>
-        </div>
+        <%--</ul>--%>
+        <%--</div>--%>
     </div>
     <div class='w1180 search'>
         <form id="searchPage" target="_blank" method="get" action="user/search" accept-charset="utf8">
@@ -149,15 +195,184 @@
 
 </div>
 
-<!--crazy start-->
-<div id="crazynavdown">
-    <div id="OL_SYS_938_51" class="w1180 s"></div>
-    <div class="b">
-        <div id="OL_SYS_943_51" class="b1"></div>
-        <div id="OL_SYS_448_51" class="b2"></div>
+
+<div id="gray"></div>
+<div class="popup" id="popup">
+
+    <div class="top_nav" id='top_nav'>
+        <div align="center">
+            <i></i>
+            <span>登录账号</span>
+            <c:if test="${not  empty isError}">
+                <div class="error">${isError}</div>
+            </c:if>
+            <a class="guanbi"></a>
+        </div>
     </div>
+
+    <div class="min">
+
+        <div class="tc_login">
+
+            <div class="left">
+                <h4 align="center">微信扫描，关注一下</h4>
+                <div align="center"><img src="${pageContext.request.contextPath}/static/user/login2/wei.jpg" width="150" height="150" /></div>
+                <dd>
+                    <div align="center">欢迎您关注我们的微信公众号</div>
+                </dd>
+            </div>
+
+            <div class="right">
+                <form method="POST" name="form_login"  action="user/logincheck.action">
+                    <div align="center">
+                        <%--<a href="">短信快捷登录</a>--%>
+                        <i class="icon-mobile-phone"></i>
+                        <input type="text" name="uname" id="uname" required="required" placeholder="用户名" autocomplete="off" class="input_yh">
+                        <input type="password" name="password" id="password" required="required" placeholder="密码" autocomplete="off" class="input_mm">
+                        <input type="text" name="code" id="pass" required="required" placeholder="验证码" style="width: 130px;float:left;margin-left:5px;" class="input_mm">
+                        <img id="codeValidateImg" onClick="javascript:flushValidateCode();"  alt="验证码" style="width: 100px;height:40px;margin-top: 20px;float: left;"/>
+                        <%--<input type="checkbox" name="remember" id="remember-password"   onclick="remeber()" class="remember-code">--%>
+                        <%--<span class="span-code">记住密码</span>--%>
+                        <%--<input type="checkbox" name="remember" id="remember-password"   onclick="remeber()" class="remember-code">--%>
+                        <div id="codered" style="width:240px;height:40px;">
+                            <input type="checkbox" name="remember" id="remember-password"   onclick="remeber()" class="remember-code">
+                            <span style="width:200px;height:30px;margin-top:-40px;">记住密码</span>
+                        </div>
+                    </div>
+
+                    <div align="center">
+                        <input type="submit" class="button" title="Sign In" value="登录">
+                    </div>
+                </form>
+                <dd>
+
+                    <div><a href="javascript:void(0)" style="float: left;" onclick="forgetPassWord()">忘记密码</a><span style="width: 200px;"></span><a href="user/register.action" target="_blank">立即注册</a></div>
+                    <%--<div align="right"><a href="#" target="_blank">忘记密码</a></div>--%>
+
+                </dd>
+                <dd>
+
+                    <%--<div style="width: 130px;height: 30px;"><input type="checkbox" name="red" style="width: 30px;height: 30px;margin-top:-4px;margin-right: 160px;"> <span style="margin-left:120px;margin-top:-30px;width: 100px;height: 30px;">记住密码</span></div>--%>
+                    <%--<div align="right"><a href="#" target="_blank">忘记密码</a></div>--%>
+                </dd>
+                <hr align="center" />
+                <%--<div align="center">期待更多功能 </div>--%>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
-<!--crazy end-->
+
+
+<script type="text/javascript">
+    function clearAllCookie() {
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        if(keys) {
+            for(var i = keys.length; i--;)
+                document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+        }
+    }
+    var wrap= document.getElementById("codered");
+    wrap.onclick=function(){
+        $("#remember-password").prop("checked",$("#remember-password").is(':checked')?false:true);
+
+        function remeber(){
+
+
+            var uname = $("#uname").val();
+            var password = $("#password").val();
+
+            //判断复选框的选择状态添加cookie
+            if ($("#remember-password").is(":checked")) {
+
+                //存储一个带7天期限的cookie
+                $.cookie("uname", uname, { expires: 7 });
+                $.cookie("password", password, { expires: 7 });
+            }
+            else {
+                $.cookie("uname", "", { expires: -1 });
+                $.cookie("password", "", { expires: -1 });
+            }
+        }
+
+        remeber();
+    }
+
+    // var check=document.getElementById("remember-password");
+    // check.onclick=function(){
+    //     return true;
+    // }
+
+
+
+
+
+    //窗口效果
+    //点击登录class为tc 显示
+    $(".tc").click(function(){
+        $("#gray").show();
+        $("#popup").show();//查找ID为popup的DIV show()显示#gray
+        tc_center();
+    });
+    //点击关闭按钮
+    $("a.guanbi").click(function(){
+        $("#gray").hide();
+        $("#popup").hide();//查找ID为popup的DIV hide()隐藏
+    })
+
+    //窗口水平居中
+    $(window).resize(function(){
+        tc_center();
+    });
+
+    function tc_center(){
+        var wtop= document.body.clientWidth;
+        var wleft= document.body.clientHeight;
+        // var _top=($(window).height()-$(".popup").height())/2;
+        // var _left=($(window).width()-$(".popup").width())/2;
+        var _top=($(body).height()-$(".popup").height())/2;
+        var _left=($(body).width()-$(".popup").width())/2;
+
+        $(".popup").css({top:_top,left:_left});
+    }
+
+
+
+    $(document).ready(function() {
+        flushValidateCode();//进入页面就刷新生成验证码
+    });
+    // window.onload=flushValidateCode;
+
+
+
+
+    /* 刷新生成验证码 */
+    function flushValidateCode(){
+        var validateImgObject = document.getElementById("codeValidateImg");
+        validateImgObject.src = "${pageContext.request.contextPath}/getSysManageLoginCode.action?time=" + new Date();
+    }
+
+
+    // jquery-cookie实现记住用户名和密码
+    $(function () {
+
+        var uname = $.cookie('uname');
+        var password = $.cookie('password');
+
+        //页面加载的时候从cookie中取出用户名和密码填充对应的输入框
+        $('#uname').val(uname);
+        $("#password").val(password)
+        //选中保存秘密的复选框　
+        // if(uname != null && uname != '' && password != null && password != ''){
+        //     $("#remember-password").attr('checked',true);
+        // }
+        // if (!$("#remember-password").is(":checked")){
+        //     clearAllCookie();
+        // }
+    });
+</script>
 
 
 <%--头部结束--%>
@@ -175,90 +390,6 @@
 <input id="userdId" value="${author.userId}" hidden>
 
 <%--登录模态框--%>
-
-
-<div class="modal" id="login-modal" style="top: 50%;left: 50%;z-index: 10500;height: 400px">
-    <a class="close" data-dismiss="modal">×</a>
-    <h1>登录</h1>
-    <form class="login-form clearfix" method="post" action="user/logincheck.action">
-        <div class="form-arrow">	</div>
-        <c:if test="${not  empty isError}">
-            <div class="error">${isError}</div>
-        </c:if>
-        <input name="uname" id="uname" type="text" placeholder="手机号/邮箱：">
-        <input name="password" id="password" type="password" placeholder="密码：">
-        <input name="code" type="text" placeholder="验证码：" style="width: 180px;float: left;">
-        <img id="codeValidateImg" onClick="javascript:flushValidateCode();"  alt="验证码" style="width: 100px;float: left;"/>
-        <input type="submit" name="type" class="button-blue login" value="登录">
-        <input type="hidden" name="return-url" value="">
-        <div class="clearfix"></div>
-        <label class="remember"><input name="remember" type="checkbox"  id="remember-password" onclick="remeber()"/>记住密码</label>
-        <a class="forgot" id="forgot">忘记密码？</a>
-    </form>
-</div>
-
-
-
-
-<div class="modal" id="forgetform">
-    <a class="close" data-dismiss="modal">×</a>
-    <h1>忘记密码</h1>
-    <form class="forgot-form" method="post" action="http://www.jb51.net">
-        <input name="email" value="" placeholder="注册邮箱：">
-        <div class="clearfix"></div>
-        <input type="submit" name="type" class="forgot button-blue" value="发送重设密码邮件">
-    </form>
-</div>
-<script type="text/javascript">
-    // $(document).ready(function() {
-    //     flushValidateCode();//进入页面就刷新生成验证码
-    // });
-    window.onload=flushValidateCode;
-
-
-
-
-    /* 刷新生成验证码 */
-    function flushValidateCode(){
-        var validateImgObject = document.getElementById("codeValidateImg");
-        validateImgObject.src = "${pageContext.request.contextPath }/getSysManageLoginCode.action?time=" + new Date();
-    }
-
-
-    //jquery-cookie实现记住用户名和密码
-    $(function () {
-
-        var uname = $.cookie('uname');
-        var password = $.cookie('password');
-
-        //页面加载的时候从cookie中取出用户名和密码填充对应的输入框
-        $('#uname').val(uname);
-        $("#password").val(password)
-        //选中保存秘密的复选框　
-        if(uname != null && uname != '' && password != null && password != ''){
-            $("#remember-password").attr('checked',true);
-        }
-    });
-
-    function remeber(){
-
-        var uname = $("#uname").val();
-        var password = $("#password").val();
-
-        //判断复选框的选择状态添加cookie
-        if ($("#remember-password").is(":checked")) {
-            //存储一个带7天期限的cookie
-            $.cookie("uname", uname, { expires: 7 });
-            $.cookie("password", password, { expires: 7 });
-        }
-        else {
-            $.cookie("uname", "", { expires: -1 });
-            $.cookie("password", "", { expires: -1 });
-        }
-    }
-
-</script>
-
 
 
 

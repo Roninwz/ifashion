@@ -142,4 +142,12 @@ public class Goods {
 
     public Goods() {
     }
+
+    public Integer getGoodschildId() {
+        return goodschildId;
+    }
+
+    public void setGoodschildId(Integer goodschildId) {
+        this.goodschildId = goodschildId;
+    }
 }

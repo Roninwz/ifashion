@@ -55,7 +55,7 @@ public interface QuestionService {
     List<Question> selectAllQuestion();
 
     //根据问题id查询标签
-    int selectTagIdByQuestionId(Integer questionId);
+    Integer selectTagIdByQuestionId(Integer questionId);
 
     //查询最新问题排序
     List<Question> selectQuestionOrderByQuestionDate();

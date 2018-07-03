@@ -71,18 +71,22 @@
                     <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">个人资料</strong> / <small>Personal&nbsp;information</small></div>
                 </div>
                 <%--<hr style="width:100%;"/>--%>
-                <form class="am-form am-form-horizontal" action="user/updateuserinfo.action" method="post">
+
                 <!--头像 -->
                 <div class="user-infoPic">
-
+                    <%--<form class="am-form am-form-horizontal" action="user/updateuserImgurl.action" method="post">--%>
                     <div class="filePic">
                         <input type="file" name="userImgurl" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*">
-
+                    <c:if test="${not empty user.userImgurl}">
                         <img class="am-circle am-img-thumbnail" src="${user.userImgurl}" alt="" />
+                    </c:if>
+                        <c:if test="${empty user.userImgurl}">
+                            <img class="am-circle am-img-thumbnail" src="static/user/online/images/p9.jpg" alt="" />
+                        </c:if>
                     </div>
 
-                    <p class="am-form-help">头像</p>
-
+                    <p class="am-form-help">修改头像</p>
+                    <%--</form>--%>
                     <div class="info-m">
                         <div><b>用户名：<i>${user.username}</i></b></div>
                         <div class="u-level">
@@ -102,7 +106,7 @@
                 <!--个人信息 -->
                 <div class="info-main">
 
-
+                    <form class="am-form am-form-horizontal" action="user/updateuserinfo.action" method="post">
                         <div class="am-form-group">
                             <label for="user-name2" class="am-form-label">用户名</label>
                             <div class="am-form-content">

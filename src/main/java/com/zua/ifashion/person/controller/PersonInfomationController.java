@@ -1,5 +1,6 @@
 package com.zua.ifashion.person.controller;
 
+import com.zua.ifashion.person.entity.Rank;
 import com.zua.ifashion.person.entity.User;
 import com.zua.ifashion.person.service.RankService;
 import com.zua.ifashion.person.service.UserService;
@@ -30,7 +31,10 @@ public class PersonInfomationController {
         Integer userId= (Integer) session.getAttribute("userId");
        //Integer uid=Integer.parseInt(userId);
         User user=userService.selectUserByUserId(userId);
+       Rank rank= rankService.selectRankByRankId(user.getRankId());
         map.put("user",user);
+        map.put("rank",rank);
+
         return "user/personal/user/information";
     }
     //updateinfo
@@ -61,7 +65,7 @@ public class PersonInfomationController {
         System.out.println(isError);
         map.put("isError",isError);
 
-        return "user/personal/user/information";
+        return "redirect:/user/information.action";
     }
 
 }

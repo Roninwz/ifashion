@@ -28,7 +28,7 @@ public class UserLoginController {
 
    @RequestMapping(value="login",method=RequestMethod.GET)
     public String userLogin(){
-        return "user/index";
+        return "user/home";
     }
 
     @SuppressWarnings("unused")
@@ -44,26 +44,32 @@ public class UserLoginController {
             map.put("isError",isError);
             System.out.println(isError);
 //            return "user/index-login";
-            return  "user/index";
+            return  "user/home";
         }else if(!code.equalsIgnoreCase(ycode)){
             isError="验证码错误";
             System.out.println(isError);
             map.put("isError",isError);
-            return "user/index";
+            return "user/home";
         }else if(user.getState()==0){
             isError="您的账户已被禁用。";
             map.put("isError",isError);
 //            return "user/index-login";
-            return  "user/index";
+            return  "user/home";
         } else {
             System.out.println(uname+"登录");
             //System.out.println("登录成功");
             session.setAttribute("userId", user.getUserId());
             session.setAttribute("uname", uname);
             session.setAttribute("user", user);
+
+            //websocket
+            session.setAttribute("userid",uname);
+            session.setAttribute("login_status", true);
+
+
             session.setAttribute("messagecount", messagecount);
 //            return "user/index";
-            return  "user/index";
+            return  "user/home";
         }
 
     }
@@ -94,7 +100,7 @@ public class UserLoginController {
                  //清除session
         session.invalidate();
                  //重定向到登录页面的跳转方法
-        return "user/index";
+        return "user/home";
    }
 
 

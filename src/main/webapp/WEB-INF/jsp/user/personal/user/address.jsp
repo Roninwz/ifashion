@@ -205,7 +205,7 @@
                 $(document).ready(function() {
                     $(".new-option-r").click(function() {
                         var addId=$(this).next().val();
-                        alert(addId);
+                        //alert(addId);
                         var datas={"addressId":addId};
                         $.ajax({
                             type: 'POST',
@@ -216,10 +216,10 @@
                            // data: JSON.stringify(datas),
                             data:datas,
                             success: function(data) {
-                                alert(data);
+                                alert("修改成功");
                             },
                             error: function(data) {
-                                alert('1');
+                               // alert('1');
 
                             },
                         });

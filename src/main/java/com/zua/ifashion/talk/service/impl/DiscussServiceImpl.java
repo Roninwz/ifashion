@@ -89,7 +89,7 @@ public class DiscussServiceImpl implements DiscussService{
     }
 
     @Override
-    public int selectLookNumByDiscussId(Integer discussId) {
+    public Integer selectLookNumByDiscussId(Integer discussId) {
         return discussMapper.selectLookNumByDiscussId(discussId);
     }
 

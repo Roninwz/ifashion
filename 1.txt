@@ -4,6 +4,7 @@ yyyy-MM-dd HH:mm:ss
                 <fmt:formatDate value="  ${logForms.logCreatedate}" pattern="yyyy-MM-dd HH:mm:ss" type="date"/>
 第一次测试git小乌龟
 redirect:/admin/adminmanage.action
+javascript:void(0)
     String reviewDate = formatter.format(new Date());
         Date newreviewDate= formatter.parse(reviewDate);
         goodsReview.setReviewData(newreviewDate);

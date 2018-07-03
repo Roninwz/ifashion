@@ -91,15 +91,15 @@
                                 <%--</div>--%>
 
                                 <!--消息 -->
-                            <c:forEach items="${topics}" var="topics">
+                            <c:forEach items="${articles}" var="articles">
                                 <div class="s-msg-item s-msg-temp i-msg-downup" style="float: left;width: 200px;height: 300px;margin-left: 20px;box-shadow:2px 2px 5px #333333;text-align: center;">
-                                    <h6 class="s-msg-bar"><span class="s-name">${topics.topicTitle}</span></h6>
+                                    <h6 class="s-msg-bar"><span class="s-name">${articles.articleTitle}</span></h6>
                                     <div class="s-msg-content i-msg-downup-wrap">
                                         <div class="i-msg-downup-con">
                                             <a class="i-markRead" target="_blank" href="blog.html">
-                                                <img src="${topics.topicImgurl}" style="width: 150px;height: 150px;">
+                                                <img src="${articles.imgurl}" style="width: 150px;height: 150px;">
                                                 <p class="s-main-content">
-                                                   ${topics.topicTitle}
+                                                   ${articles.articleTitle}
                                                 </p>
                                                 <p class="s-row s-main-content">
                                                     <a href="blog.html">

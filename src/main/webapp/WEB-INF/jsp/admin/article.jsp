@@ -193,7 +193,7 @@
     /*删除*/
     function article_del(obj, id) {
         // alert('g');
-        alert(id);
+        //alert(id);
         var articleId=id;
         var datas={"articleId":articleId};
         layer.confirm('确认要删除吗？', function(index) {
@@ -205,7 +205,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: JSON.stringify(datas),
                 success: function(data) {
-                    alert(data);
+                    //alert(data);
                     $(obj).parents("tr").remove();
                     layer.msg('已删除!', {
                         icon: 1,
@@ -213,8 +213,8 @@
                     });
                 },
                 error: function(data) {
-                    alert("data");
-                    alert('1');
+                    //alert("data");
+                    //alert('1');
                     console.log(data.msg);
                 },
             });
@@ -273,7 +273,7 @@
                     traditional: true, //使json格式的字符串不会被转码
                     data: datas,
                     success: function(data) {
-                        alert(data);
+                        //alert(data);
 
                         var str= '<a class="c-primary" onClick="article_shangxian(this,'+data.articleId+')" href="javascript:;" title="申请上线"><i class="Hui-iconfont">&#xe603;上线</i></a>';
                         $(obj).parents("tr").find(".td-manage").prepend(str);
@@ -286,8 +286,8 @@
                         });
                     },
                     error: function(data) {
-                        alert("data");
-                        alert('1');
+                       // alert("data");
+                      //  alert('1');
                         console.log(data.msg);
                     },
                 });
@@ -302,7 +302,7 @@
                     traditional: true, //使json格式的字符串不会被转码
                     data: datas,
                     success: function(data) {
-                        alert(data);
+                        //alert(data);
                         var str= '<a class="c-primary" onClick="article_shenhe(this,'+data.articleId+')" href="javascript:;" title="审核"><i class="Hui-iconfont">&#xe634;审核</i></a>';
                         $(obj).parents("tr").find(".td-manage").prepend(str);
                         //$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="article_shenhe(this,data.articleId)" href="javascript:;" title="审核"><i class="Hui-iconfont">&#xe634;审核</i></a>');
@@ -314,8 +314,8 @@
                         });
                     },
                     error: function(data) {
-                        alert("data");
-                        alert('1');
+                       // alert("data");
+                       // alert('1');
                         console.log(data.msg);
                     },
                 });
@@ -337,7 +337,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: datas,
                 success: function(data) {
-                    alert(data);
+                   // alert(data);
                     var str= '<a class="c-primary" onClick="article_shangxian(this,'+data.articleId+')" href="javascript:;" title="上线"><i class="Hui-iconfont">&#xe603;上线</i></a>';
                     $(obj).parents("tr").find(".td-manage").prepend(str);
                     //$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_shangxian(this,data.articleId)" href="javascript:;" title="上线"><i class="Hui-iconfont">&#xe603;上线</i></a>');
@@ -349,8 +349,8 @@
                     });
                 },
                 error: function(data) {
-                    alert("data");
-                    alert('1');
+                   // alert("data");
+                    //alert('1');
                     console.log(data.msg);
                 },
             });
@@ -378,7 +378,7 @@
                 traditional: true, //使json格式的字符串不会被转码
                 data: datas,
                 success: function(data) {
-                    alert(data);
+                    //alert(data);
                     var str= '<a class="c-primary" onClick="article_xiaxian(this,'+data.articleId+')" href="javascript:;" title="下线"><i class="Hui-iconfont">&#xe6de;下线</i></a>';
                     $(obj).parents("tr").find(".td-manage").prepend(str);
                    // $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="article_xiaxian(this,data.articleId)" href="javascript:;" title="下线"><i class="Hui-iconfont">&#xe6de;下线</i></a>');
@@ -390,8 +390,8 @@
                     });
                 },
                 error: function(data) {
-                    alert("data");
-                    alert('1');
+                    //alert("data");
+                    //alert('1');
                     console.log(data.msg);
                 },
             });

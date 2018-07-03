@@ -3,9 +3,9 @@ package com.zua.ifashion.person.mapper;
 import com.zua.ifashion.person.entity.DesignerAuth;
 import com.zua.ifashion.person.vo.AuthDesignerVo;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 public interface DesignerAuthMapper {
 
     //添加管理员不为空字段

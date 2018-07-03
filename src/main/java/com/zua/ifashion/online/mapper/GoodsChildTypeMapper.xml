@@ -8,6 +8,8 @@
   <select id="selectGoodsChildType" parameterType="int" resultType="com.zua.ifashion.online.entity.GoodsChildType">
     select * from goods_child_type where goodstypeId=#{param}
   </select>
-
+  <select id="selectGoodsChildTypeByGoodsChildId" parameterType="int" resultType="com.zua.ifashion.online.entity.GoodsChildType">
+    select * from goods_child_type where goodschildId=#{goodschildId}
+  </select>
 
 </mapper>

@@ -47,7 +47,7 @@ public interface DiscussService {
     int selectReviewNumByDiscussId(Integer discussId);
 
     //查询讨论浏览量
-    int selectLookNumByDiscussId(Integer discussId);
+    Integer selectLookNumByDiscussId(Integer discussId);
 
     //查询比某个时间晚的所有讨论
     List<Discuss> selectDiscussByEDiscussDate(Date discussDate);

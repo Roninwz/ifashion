@@ -2,6 +2,7 @@ package com.zua.ifashion.person.mapper;
 
 import com.zua.ifashion.person.entity.UserAttention;
 import com.zua.ifashion.person.vo.UserAttentionVo2;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface UserAttentionMapper {
     int deleteUserAttention(Integer attentionId);
 
 
-    int deleteUserAttentionByUserIdAndUsered(Integer userId,Integer userdId);
+    int deleteUserAttentionByUserIdAndUsered(@Param("userId") Integer userId, @Param("userdId") Integer userdId);
 
 
 

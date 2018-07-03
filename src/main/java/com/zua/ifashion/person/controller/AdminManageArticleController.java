@@ -376,6 +376,7 @@ public class AdminManageArticleController {
                 AdminComplainVo adminComplainVo=new AdminComplainVo();
                 User user=userService.selectUserByUserId(complain.getComplainUserid());
                 User userd=userService.selectUserByUserId(complain.getComplainedUserid());
+                adminComplainVo.setComplainId(complain.getComplainId());
                 adminComplainVo.setUsername(user.getUsername());
                 adminComplainVo.setUsernameed(userd.getUsername());
                 adminComplainVo.setComplainReason(complain.getComplainReason());
@@ -385,7 +386,9 @@ public class AdminManageArticleController {
             }
 
         map.put("complainVos",complainVos);
-
+        for (Complain complain:complainVos){
+            System.out.println(complain.getComplainReason());
+        }
         return "admin/complain";
     }
 

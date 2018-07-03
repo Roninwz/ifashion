@@ -61,8 +61,10 @@ public class PersonalMyController {
         Integer userId= (Integer) session.getAttribute("userId");
         User user=userService.selectUserByUserId(userId);
       List<Topic> topics=topicService.selectTopicByUserId(userId);
+      List<Article> articles=articleService.selectArticleByUserId(userId);
           map.put("user",user);
           map.put("topics",topics);
+          map.put("articles",articles);
         return "user/personal/user/mypublish";
     }
     // 我的收藏

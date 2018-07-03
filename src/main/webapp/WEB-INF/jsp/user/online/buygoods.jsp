@@ -334,7 +334,7 @@
                                 <img src="${goodsAndImgDesignerVOList[i].goodsImgList[0].goodsImgurl}" class="img-responsive" >
                                 <div>
                                     <a href="${goodsAndImgDesignerVOList[i].goodsImgList[0].goodsImgurl}" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#${goodsAndImgDesignerVOList[i].goodsId}" class="btn btn-default fancybox-fast-view">View</a>
+                                  <%--  <a href="#${goodsAndImgDesignerVOList[i].goodsId}" class="btn btn-default fancybox-fast-view">View</a>--%>
                                 </div>
                             </div>
                             <h3><a href="shop-item.html">${goodsAndImgDesignerVOList[i].goodsName}</a></h3>
@@ -458,11 +458,11 @@
                 <br/>
                 <div class="price-availability-block clearfix">
                     <div class="price" id="cloth_price">
-                        <strong><span>$</span>${goodsAndImgDesignerVOList[i].goodsPrice}</strong>
-                        <em>$<span>${goodsAndImgDesignerVOList[i].goodsPrice+200}</span></em>
+                        <strong><span>￥</span>${goodsAndImgDesignerVOList[i].goodsPrice}</strong>
+                        <em>￥<span>${goodsAndImgDesignerVOList[i].goodsPrice+200}</span></em>
                     </div>
                     <div class="availability">
-                        Availability: <strong>In Stock</strong>
+                       <%-- Availability: <strong>In Stock</strong>--%>
                     </div>
                 </div>
                 <div class="description">
@@ -551,7 +551,7 @@
         var num=$("#product-quantity").val();
 
 
-        window.location.href="user/online_pay.action?goodsNum="+num+"&goodsName=${goodsAndImgDesignerVO.goodsName}&introduce=${goodsAndImgDesignerVO.goodsIntroduce}$price=${goodsAndImgDesignerVO.goodsPrice*num}";
+        window.location.href="user/receive_address.action?goodsNum="+num+"&price="+'${goodsAndImgDesignerVO.goodsPrice}'+"&goodsId="+'${goodsAndImgDesignerVO.goodsId}&desId='+${designerId}
     })
 </script>
 <!-- END PAGE LEVEL JAVASCRIPTS -->

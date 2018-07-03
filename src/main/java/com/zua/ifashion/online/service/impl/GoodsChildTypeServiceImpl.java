@@ -16,4 +16,8 @@ public class GoodsChildTypeServiceImpl implements GoodsChildTypeService{
     public List<GoodsChildType> getAllGoodsChildType(Integer goodstypeId) {
         return goodsChildTypeMapper.selectGoodsChildType(goodstypeId);
     }
+    @Override
+    public GoodsChildType selectGoodsChildTypeByGoodsChildId(Integer goodschildId) {
+        return goodsChildTypeMapper.selectGoodsChildTypeByGoodsChildId(goodschildId);
+    }
 }
